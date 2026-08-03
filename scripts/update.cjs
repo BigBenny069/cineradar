@@ -28,15 +28,19 @@ function splitProviders(fr) {
 
 async function getLetterboxdRating(url) {
   try {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      },
-    });
     if (!res.ok) return { rating: null, votes: null };
     const html = await res.text();
 
+    // Tentative 1 : bloc de données structurées (schema.org) utilisé pour le référencement Google
+    const ldJsonMatch = html.match(/"ratingValue"\s*:\s*"?([\d.]+)"?[\s\S]{0,200}?"ratingCount"\s*:\s*"?([\d,]+)"?/);
+    if (ldJsonMatch) {
+      return {
+        rating: parseFloat(ldJsonMatch[1]),
+        votes: parseInt(ldJsonMatch[2].replace(/,/g, ""), 10),
+      };
+    }
+
+    // Tentative 2 : la bulle d'info donne la moyenne pondérée + le nombre de votes
     const tooltipMatch = html.match(/Weighted average of ([\d.]+) based on ([\d,]+)\s*ratings?/i);
     if (tooltipMatch) {
       return {
@@ -45,10 +49,13 @@ async function getLetterboxdRating(url) {
       };
     }
 
+    // Repli : la note moyenne seule est présente dans une balise meta
     const metaMatch = html.match(/name="twitter:data2" content="([\d.]+) out of 5"/);
     if (metaMatch) {
       return { rating: parseFloat(metaMatch[1]), votes: null };
     }
+
+    return { rating: null, votes: null };
 
     return { rating: null, votes: null };
   } catch (e) {
