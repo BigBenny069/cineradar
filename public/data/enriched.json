@@ -1,0 +1,32 @@
+[
+  {
+    "tmdbId": 5910,
+    "title": "Hana-bi",
+    "year": "1997",
+    "director": "Takeshi Kitano",
+    "poster": "https://image.tmdb.org/t/p/w500/oWI4NovPYyAObZcKMUHCuaU8mhg.jpg",
+    "synopsis": "Terriblement traumatisé par la fin prochaine de sa femme et la paralysie d'un de ses collegues, blessé au cours d'une fusillade, le détective Nishi quitte la police. Il va commettre un hold-up pour soulager les miseres de ceux qui l'entourent. La sérénite du dernier voyage qu'il entreprend avec sa femme, vers le mont Fuji, va etre brisée par l'arrivée de yakusas vengeurs.",
+    "genres": [
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Takeshi Kitano",
+      "Kayoko Kishimoto",
+      "Ren Ōsugi",
+      "Susumu Terajima",
+      "渡辺哲"
+    ],
+    "tmdbRating": 7.7,
+    "tmdbVotes": 789,
+    "imdbId": "tt0119250",
+    "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD"
+      ]
+    },
+    "lastChecked": "2026-08-03T21:47:49.972Z"
+  }
+]
