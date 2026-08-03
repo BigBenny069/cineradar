@@ -171,7 +171,7 @@ function MovieCard({ movie, onOpen }) {
         borderRadius: 8,
       }}
     >
-      <div style={{ height: 220, position: "relative", background: "#000" }}>
+      <div style={{ aspectRatio: "2 / 3", position: "relative", background: "#000" }}>
         {movie.poster ? (
           <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
@@ -246,7 +246,7 @@ function DetailView({ movie, onBack }) {
       <Header onBack={onBack} />
       <div style={{ padding: "0 16px 96px" }}>
         <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
-          <div style={{ height: 320, background: "#000" }}>
+          <div style={{ aspectRatio: "2 / 3", background: "#000" }}>
             {movie.poster && (
               <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             )}
