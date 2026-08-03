@@ -293,7 +293,7 @@ function DetailView({ movie, onBack }) {
                 }}
               >
                 <span style={{ color: COLORS.red, fontSize: 12 }}>★</span>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.red, lineHeight: 1 }}>
+               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.red, lineHeight: 1 }}>
                   {movie.letterboxdRating ?? movie.tmdbRating}
                 </span>
               </div>
