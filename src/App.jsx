@@ -294,15 +294,17 @@ function DetailView({ movie, onBack }) {
               >
                 <span style={{ color: COLORS.red, fontSize: 12 }}>★</span>
                 <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.red, lineHeight: 1 }}>
-                  {movie.tmdbRating}
+                  {movie.letterboxdRating ?? movie.tmdbRating}
                 </span>
               </div>
               <div>
                 <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
-                  TMDB (note Letterboxd bientôt)
+                  {movie.letterboxdRating ? "LETTERBOXD" : "TMDB (Letterboxd indisponible)"}
                 </div>
                 <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: COLORS.cream }}>
-                  {movie.tmdbVotes} votes
+                  {movie.letterboxdVotes
+                    ? `${movie.letterboxdVotes.toLocaleString("fr-FR")} votes`
+                    : `${movie.tmdbVotes} votes TMDB`}
                 </div>
               </div>
             </div>
