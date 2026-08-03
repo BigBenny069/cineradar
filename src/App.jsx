@@ -246,9 +246,9 @@ function DetailView({ movie, onBack }) {
       <Header onBack={onBack} />
       <div style={{ padding: "0 16px 96px" }}>
         <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
-          <div style={{ maxHeight: "42vh", background: "#000", display: "flex", justifyContent: "center", overflow: "hidden" }}>
+          <div style={{ height: "42vh", background: "#000" }}>
             {movie.poster && (
-              <img src={movie.poster} alt={movie.title} style={{ height: "100%", width: "auto", objectFit: "contain" }} />
+              <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             )}
           </div>
           <div style={{ padding: "14px 16px 18px" }}>
