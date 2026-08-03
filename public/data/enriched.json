@@ -19,6 +19,8 @@
     ],
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
+    "letterboxdRating": 4.23,
+    "letterboxdVotes": null,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -27,6 +29,6 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-03T21:47:49.972Z"
+    "lastChecked": "2026-08-03T22:18:49.416Z"
   }
 ]
