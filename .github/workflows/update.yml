@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/update.js
+      - run: node scripts/update.cjs
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
       - name: Commit changes
