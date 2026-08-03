@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE = "https://api.themoviedb.org/3";
@@ -60,6 +61,7 @@ async function main() {
     });
   }
 
+  fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   console.log(`Terminé : ${output.length} film(s) mis à jour.`);
 }
