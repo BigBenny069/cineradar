@@ -26,6 +26,37 @@ function splitProviders(fr) {
   };
 }
 
+async function getLetterboxdRating(url) {
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+      },
+    });
+    if (!res.ok) return { rating: null, votes: null };
+    const html = await res.text();
+
+    const tooltipMatch = html.match(/Weighted average of ([\d.]+) based on ([\d,]+)\s*ratings?/i);
+    if (tooltipMatch) {
+      return {
+        rating: parseFloat(tooltipMatch[1]),
+        votes: parseInt(tooltipMatch[2].replace(/,/g, ""), 10),
+      };
+    }
+
+    const metaMatch = html.match(/name="twitter:data2" content="([\d.]+) out of 5"/);
+    if (metaMatch) {
+      return { rating: parseFloat(metaMatch[1]), votes: null };
+    }
+
+    return { rating: null, votes: null };
+  } catch (e) {
+    console.log(`  Letterboxd indisponible (${e.message})`);
+    return { rating: null, votes: null };
+  }
+}
+
 async function main() {
   const input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const output = [];
@@ -43,6 +74,15 @@ async function main() {
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
 
+    let letterboxdRating = null;
+    let letterboxdVotes = null;
+    if (movie.letterboxdUrl) {
+      console.log(`  Récupération de la note Letterboxd...`);
+      const lb = await getLetterboxdRating(movie.letterboxdUrl);
+      letterboxdRating = lb.rating;
+      letterboxdVotes = lb.votes;
+    }
+
     output.push({
       tmdbId: details.id,
       title: details.title,
@@ -54,6 +94,8 @@ async function main() {
       cast,
       tmdbRating: details.vote_average,
       tmdbVotes: details.vote_count,
+      letterboxdRating,
+      letterboxdVotes,
       imdbId: details.imdb_id,
       letterboxdUrl: movie.letterboxdUrl || null,
       providers,
