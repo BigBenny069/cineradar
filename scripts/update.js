@@ -60,7 +60,7 @@ async function main() {
     });
   }
 
-  fs.writeFileSync("data/enriched.json", JSON.stringify(output, null, 2));
+  fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   console.log(`Terminé : ${output.length} film(s) mis à jour.`);
 }
 
