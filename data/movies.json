@@ -4,5 +4,11 @@
     "year": 1997,
     "director": "Takeshi Kitano",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/"
+  },
+  {
+    "title": "The Thing",
+    "year": 1982,
+    "director": "John Carpenter",
+    "letterboxdUrl": null
   }
 ]
