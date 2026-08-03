@@ -184,24 +184,24 @@ function MovieCard({ movie, onOpen }) {
               justifyContent: "center",
               color: COLORS.muted,
               fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: 11,
+              fontSize: 10,
             }}
           >
             Affiche indisponible
           </div>
         )}
-        <div style={{ position: "absolute", top: 8, right: 8 }}>
+        <div style={{ position: "absolute", top: 6, right: 6 }}>
           <MarqueeBadge>DISPO</MarqueeBadge>
         </div>
       </div>
-      <div style={{ padding: "10px 12px" }}>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.cream, lineHeight: 1 }}>
+      <div style={{ padding: "8px 10px" }}>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
           {movie.title}
         </div>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.muted, marginTop: 4 }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted, marginTop: 3 }}>
           {movie.year} · {movie.director}
         </div>
-        <div style={{ marginTop: 8, display: "flex", gap: 6, flexWrap: "wrap" }}>
+        <div style={{ marginTop: 6, display: "flex", gap: 5, flexWrap: "wrap" }}>
           {providers.slice(0, 3).map((p) => {
             const meta = PROVIDER_META[p] || { bg: COLORS.surfaceRaised, fg: COLORS.cream, label: p.slice(0, 1) };
             return (
@@ -209,16 +209,16 @@ function MovieCard({ movie, onOpen }) {
                 key={p}
                 title={p}
                 style={{
-                  width: 22,
-                  height: 22,
-                  borderRadius: 5,
+                  width: 18,
+                  height: 18,
+                  borderRadius: 4,
                   background: meta.bg,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <span style={{ color: meta.fg, fontWeight: meta.weight || 700, fontSize: 9 }}>{meta.label}</span>
+                <span style={{ color: meta.fg, fontWeight: meta.weight || 700, fontSize: 8 }}>{meta.label}</span>
               </div>
             );
           })}
