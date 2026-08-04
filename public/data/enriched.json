@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-04T16:48:25.509Z"
+    "lastChecked": "2026-08-04T16:48:44.869Z"
   },
   {
     "tmdbId": 1091,
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-04T16:48:25.526Z"
+    "lastChecked": "2026-08-04T16:48:44.914Z"
   },
   {
     "tmdbId": 270303,
@@ -113,7 +113,7 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-04T16:48:25.693Z"
+    "lastChecked": "2026-08-04T16:48:44.960Z"
   },
   {
     "tmdbId": 440161,
@@ -157,7 +157,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-04T16:48:25.835Z"
+    "lastChecked": "2026-08-04T16:48:45.122Z"
   },
   {
     "tmdbId": 1092,
@@ -203,6 +203,45 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-04T16:48:26.007Z"
+    "lastChecked": "2026-08-04T16:48:45.281Z"
+  },
+  {
+    "tmdbId": 11547,
+    "title": "Cabin Fever",
+    "year": "2003",
+    "director": "Eli Roth",
+    "poster": "https://image.tmdb.org/t/p/w500/u0yGh4lxRieRd4ou8lElUGih35A.jpg",
+    "synopsis": "Trois jeunes hommes et deux jeunes filles ont loué une cabane dans la forêt pour y fêter la fin de leurs études et profiter des derniers jours de liberté avant d'entrer dans le monde du travail. Mais la fiesta tourne au cauchemar quand un ermite infecté par un mystérieux virus fait son apparition. Les cinq jeunes gens vont devoir faire face à ce terrible virus qui dévore les chairs de ses victimes...",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Rider Strong",
+      "Jordan Ladd",
+      "Cerina Vincent",
+      "Giuseppe Andrews",
+      "James DeBello"
+    ],
+    "tmdbRating": 5.684,
+    "tmdbVotes": 1464,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0303816",
+    "letterboxdUrl": null,
+    "providers": {
+      "abonnement": [
+        "Lionsgate+ Amazon Channels"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "YouTube",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "lastChecked": "2026-08-04T16:48:45.461Z"
   }
 ]
