@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-04T16:47:04.999Z"
+    "lastChecked": "2026-08-04T16:47:57.301Z"
   },
   {
     "tmdbId": 1091,
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-04T16:47:05.186Z"
+    "lastChecked": "2026-08-04T16:47:57.325Z"
   },
   {
     "tmdbId": 270303,
@@ -113,6 +113,50 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-04T16:47:05.370Z"
+    "lastChecked": "2026-08-04T16:47:57.389Z"
+  },
+  {
+    "tmdbId": 440161,
+    "title": "Les Frères Sisters",
+    "year": "2018",
+    "director": "Jacques Audiard",
+    "poster": "https://image.tmdb.org/t/p/w500/cfTIqWn8YLds4GqW37XggmySjT8.jpg",
+    "synopsis": "Charlie et Elie Sisters évoluent dans un monde sauvage et hostile, ils ont du sang sur les mains: celui de criminels, celui d'innocents... Ils n'éprouvent aucun état d'âme à tuer. C'est leur métier. Charlie, le cadet, est né pour ça. Elie, lui, ne rêve que d'une vie normale. Ils sont engagés par le Commodore pour rechercher et tuer un homme. De l'Oregon à la Californie, une traque implacable commence, un parcours initiatique qui va éprouver ce lien fou qui les unit. Un chemin vers leur humanité?",
+    "genres": [
+      "Western",
+      "Drame",
+      "Comédie"
+    ],
+    "cast": [
+      "John C. Reilly",
+      "Joaquin Phoenix",
+      "Jake Gyllenhaal",
+      "Riz Ahmed",
+      "Rebecca Root"
+    ],
+    "tmdbRating": 6.832,
+    "tmdbVotes": 2109,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt4971344",
+    "letterboxdUrl": null,
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Rakuten TV",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique",
+        "Canal VOD",
+        "Orange VOD"
+      ]
+    },
+    "lastChecked": "2026-08-04T16:47:57.427Z"
   }
 ]
