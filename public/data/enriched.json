@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85239,
+    "letterboxdVotes": 85275,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -29,6 +29,50 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-03T22:30:41.789Z"
+    "lastChecked": "2026-08-04T16:41:31.502Z"
+  },
+  {
+    "tmdbId": 1091,
+    "title": "The Thing",
+    "year": "1982",
+    "director": "John Carpenter",
+    "poster": "https://image.tmdb.org/t/p/w500/gajOIkrWq10MDjpHwCmIt4Yip2z.jpg",
+    "synopsis": "Hiver 1982 au cœur de l’Antarctique. Une équipe de recherche composée de 12 hommes, découvre un corps enfoui sous la neige depuis plus de 100 000 ans. Décongelée, la créature retourne à la vie et témoigne très vite de sa capacité à parasiter puis assimiler toute forme de vie. Isolés du monde, ne sachant plus qui est contaminé et qui ne l'est pas, les hommes de l'équipe vont sombrer dans la peur et la paranoïa. Un véritable combat s’engage.",
+    "genres": [
+      "Horreur",
+      "Mystère",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Kurt Russell",
+      "Wilford Brimley",
+      "T.K. Carter",
+      "David Clennon",
+      "Keith David"
+    ],
+    "tmdbRating": 8.072,
+    "tmdbVotes": 8093,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0084787",
+    "letterboxdUrl": null,
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "YouTube",
+        "Rakuten TV",
+        "LaCinetek",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "lastChecked": "2026-08-04T16:41:31.690Z"
   }
 ]
