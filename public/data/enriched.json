@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-04T16:41:31.502Z"
+    "lastChecked": "2026-08-04T16:47:04.999Z"
   },
   {
     "tmdbId": 1091,
@@ -73,6 +73,46 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-04T16:41:31.690Z"
+    "lastChecked": "2026-08-04T16:47:05.186Z"
+  },
+  {
+    "tmdbId": 270303,
+    "title": "It Follows",
+    "year": "2015",
+    "director": "David Robert Mitchell",
+    "poster": "https://image.tmdb.org/t/p/w500/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
+    "synopsis": "Une jeune femme est poursuivie par une force surnaturelle inconnue, après une relation sexuelle.",
+    "genres": [
+      "Horreur",
+      "Mystère"
+    ],
+    "cast": [
+      "Maika Monroe",
+      "Keir Gilchrist",
+      "Daniel Zovatto",
+      "Jake Weary",
+      "Olivia Luccardi"
+    ],
+    "tmdbRating": 6.58,
+    "tmdbVotes": 7039,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt3235888",
+    "letterboxdUrl": null,
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "lastChecked": "2026-08-04T16:47:05.370Z"
   }
 ]
