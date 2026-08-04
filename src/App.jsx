@@ -156,6 +156,32 @@ function MarqueeBadge({ children }) {
   );
 }
 
+function StampBadge({ children, size = "normal" }) {
+  const pad = size === "small" ? "3px 8px" : "5px 12px";
+  const fontSize = size === "small" ? 9 : 11;
+  return (
+    <div
+      style={{
+        display: "inline-block",
+        transform: "rotate(-7deg)",
+        padding: pad,
+        border: `2px solid ${COLORS.gold}`,
+        borderRadius: 4,
+        boxShadow: `0 0 0 2px ${COLORS.bg}, 0 0 0 3px ${COLORS.gold}`,
+        background: "rgba(19,16,12,0.6)",
+        color: COLORS.gold,
+        fontFamily: "'IBM Plex Mono', monospace",
+        fontSize,
+        letterSpacing: 1.5,
+        textTransform: "uppercase",
+        fontWeight: 600,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function MovieCard({ movie, onOpen }) {
   const providers = [...(movie.providers?.abonnement || []), ...(movie.providers?.vod || [])];
   return (
@@ -190,9 +216,11 @@ function MovieCard({ movie, onOpen }) {
             Affiche indisponible
           </div>
         )}
-        <div style={{ position: "absolute", top: 6, right: 6 }}>
-          <MarqueeBadge>DISPO</MarqueeBadge>
-        </div>
+        {movie.providers?.abonnement?.length > 0 && (
+          <div style={{ position: "absolute", top: 6, right: 6 }}>
+            <StampBadge size="small">Abonné</StampBadge>
+          </div>
+        )}
       </div>
       <div style={{ padding: "8px 10px" }}>
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
@@ -236,7 +264,7 @@ function SectionTitle({ children }) {
   );
 }
 
-function DetailView({ movie, onBack }) {
+function DetailView({ movie, onBack, onEdit }) {
   const [showLinks, setShowLinks] = useState(false);
   const abonnement = movie.providers?.abonnement || [];
   const vod = movie.providers?.vod || [];
@@ -248,13 +276,15 @@ function DetailView({ movie, onBack }) {
         <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
           <div style={{ height: "42vh", background: "#000" }}>
             {movie.poster && (
-              <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             )}
           </div>
           <div style={{ padding: "14px 16px 18px" }}>
-            <div style={{ marginBottom: 8 }}>
-              <MarqueeBadge>DISPONIBLE</MarqueeBadge>
-            </div>
+            {abonnement.length > 0 && (
+              <div style={{ marginBottom: 10 }}>
+                <StampBadge>Abonné</StampBadge>
+              </div>
+            )}
             <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: COLORS.cream, lineHeight: 1 }}>
               {movie.title}
             </div>
@@ -487,7 +517,24 @@ function DetailView({ movie, onBack }) {
           )}
         </div>
 
-        <div style={{ marginTop: 24, textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
+        <button
+          onClick={() => onEdit(movie)}
+          style={{
+            width: "100%",
+            marginTop: 24,
+            padding: "12px 0",
+            border: `1px solid ${COLORS.line}`,
+            borderRadius: 6,
+            fontFamily: "'IBM Plex Mono', monospace",
+            fontSize: 12,
+            color: COLORS.muted,
+            letterSpacing: 0.5,
+          }}
+        >
+          MODIFIER CETTE FICHE
+        </button>
+
+        <div style={{ marginTop: 16, textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
           Dernière vérification · {new Date(movie.lastChecked).toLocaleString("fr-FR")}
         </div>
       </div>
@@ -556,11 +603,12 @@ function HomeView({ movies, onOpen, loading, error, onAdd }) {
   );
 }
 
-function AddView({ onCancel }) {
-  const [title, setTitle] = useState("");
-  const [year, setYear] = useState("");
-  const [director, setDirector] = useState("");
-  const [letterboxdUrl, setLetterboxdUrl] = useState("");
+function AddView({ onCancel, editingMovie }) {
+  const isEditing = Boolean(editingMovie);
+  const [title, setTitle] = useState(editingMovie?.title || "");
+  const [year, setYear] = useState(editingMovie ? String(editingMovie.year) : "");
+  const [director, setDirector] = useState(editingMovie?.director || "");
+  const [letterboxdUrl, setLetterboxdUrl] = useState(editingMovie?.letterboxdUrl || "");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
@@ -585,7 +633,15 @@ function AddView({ onCancel }) {
       const res = await fetch("/api/add-movie", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, year, director, letterboxdUrl, password }),
+        body: JSON.stringify({
+          title,
+          year,
+          director,
+          letterboxdUrl,
+          password,
+          originalTitle: editingMovie?.title,
+          originalYear: editingMovie?.year,
+        }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -619,7 +675,7 @@ function AddView({ onCancel }) {
             margin: "4px 0 20px",
           }}
         >
-          Ajouter un film
+          {isEditing ? "Modifier la fiche" : "Ajouter un film"}
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -667,13 +723,14 @@ function AddView({ onCancel }) {
             opacity: canSubmit ? 1 : 0.5,
           }}
         >
-          {status === "loading" ? "AJOUT EN COURS..." : "AJOUTER À LA LISTE"}
+          {status === "loading" ? "ENVOI EN COURS..." : isEditing ? "METTRE À JOUR" : "AJOUTER À LA LISTE"}
         </button>
 
         {status === "success" && (
           <div style={{ marginTop: 16, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
-            Film ajouté ! Il apparaîtra sur l'accueil d'ici quelques minutes, le temps que les infos se récupèrent
-            automatiquement.
+            {isEditing
+              ? "Fiche mise à jour ! Les changements seront visibles d'ici quelques minutes."
+              : "Film ajouté ! Il apparaîtra sur l'accueil d'ici quelques minutes, le temps que les infos se récupèrent automatiquement."}
           </div>
         )}
         {status === "error" && (
@@ -692,6 +749,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("home");
+  const [editingMovie, setEditingMovie] = useState(null);
 
   useEffect(() => {
     fetch("/data/enriched.json")
@@ -710,18 +768,37 @@ export default function App() {
   }, []);
 
   if (view === "add") {
-    return <AddView onCancel={() => setView("home")} />;
+    return (
+      <AddView
+        editingMovie={editingMovie}
+        onCancel={() => {
+          setEditingMovie(null);
+          setView("home");
+        }}
+      />
+    );
   }
 
   return selected ? (
-    <DetailView movie={selected} onBack={() => setSelected(null)} />
+    <DetailView
+      movie={selected}
+      onBack={() => setSelected(null)}
+      onEdit={(movie) => {
+        setEditingMovie(movie);
+        setSelected(null);
+        setView("add");
+      }}
+    />
   ) : (
     <HomeView
       movies={movies}
       onOpen={setSelected}
       loading={loading}
       error={error}
-      onAdd={() => setView("add")}
+      onAdd={() => {
+        setEditingMovie(null);
+        setView("add");
+      }}
     />
   );
 }
