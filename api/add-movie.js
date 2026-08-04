@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
 
-  const { title, year, director, letterboxdUrl, password } = req.body || {};
+  const { title, year, director, letterboxdUrl, password, originalTitle, originalYear } = req.body || {};
 
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
@@ -32,12 +32,29 @@ export default async function handler(req, res) {
     const currentContent = Buffer.from(fileData.content, "base64").toString("utf-8");
     const movies = JSON.parse(currentContent);
 
-    movies.push({
+    const isEditing = Boolean(originalTitle) && Boolean(originalYear);
+    let matchIndex = -1;
+    if (isEditing) {
+      matchIndex = movies.findIndex(
+        (m) => m.title.toLowerCase() === String(originalTitle).toLowerCase() && String(m.year) === String(originalYear)
+      );
+    }
+
+    const newEntry = {
       title: title.trim(),
       year: parseInt(year, 10),
       director: director.trim(),
       letterboxdUrl: letterboxdUrl?.trim() || null,
-    });
+    };
+
+    let commitMessage;
+    if (matchIndex >= 0) {
+      movies[matchIndex] = newEntry;
+      commitMessage = `Modification de "${title}" via l'app`;
+    } else {
+      movies.push(newEntry);
+      commitMessage = `Ajout de "${title}" via l'app`;
+    }
 
     const newContentBase64 = Buffer.from(JSON.stringify(movies, null, 2), "utf-8").toString("base64");
 
@@ -48,7 +65,7 @@ export default async function handler(req, res) {
         Accept: "application/vnd.github+json",
       },
       body: JSON.stringify({
-        message: `Ajout de "${title}" via l'app`,
+        message: commitMessage,
         content: newContentBase64,
         sha: fileData.sha,
       }),
@@ -64,3 +81,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: e.message });
   }
 }
+
