@@ -171,7 +171,7 @@ function MovieCard({ movie, onOpen }) {
         borderRadius: 8,
       }}
     >
-      <div style={{ height: 220, position: "relative", background: "#000" }}>
+      <div style={{ aspectRatio: "2 / 3", position: "relative", background: "#000" }}>
         {movie.poster ? (
           <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
@@ -184,24 +184,24 @@ function MovieCard({ movie, onOpen }) {
               justifyContent: "center",
               color: COLORS.muted,
               fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: 11,
+              fontSize: 10,
             }}
           >
             Affiche indisponible
           </div>
         )}
-        <div style={{ position: "absolute", top: 8, right: 8 }}>
+        <div style={{ position: "absolute", top: 6, right: 6 }}>
           <MarqueeBadge>DISPO</MarqueeBadge>
         </div>
       </div>
-      <div style={{ padding: "10px 12px" }}>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.cream, lineHeight: 1 }}>
+      <div style={{ padding: "8px 10px" }}>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
           {movie.title}
         </div>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.muted, marginTop: 4 }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted, marginTop: 3 }}>
           {movie.year} · {movie.director}
         </div>
-        <div style={{ marginTop: 8, display: "flex", gap: 6, flexWrap: "wrap" }}>
+        <div style={{ marginTop: 6, display: "flex", gap: 5, flexWrap: "wrap" }}>
           {providers.slice(0, 3).map((p) => {
             const meta = PROVIDER_META[p] || { bg: COLORS.surfaceRaised, fg: COLORS.cream, label: p.slice(0, 1) };
             return (
@@ -209,16 +209,16 @@ function MovieCard({ movie, onOpen }) {
                 key={p}
                 title={p}
                 style={{
-                  width: 22,
-                  height: 22,
-                  borderRadius: 5,
+                  width: 18,
+                  height: 18,
+                  borderRadius: 4,
                   background: meta.bg,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <span style={{ color: meta.fg, fontWeight: meta.weight || 700, fontSize: 9 }}>{meta.label}</span>
+                <span style={{ color: meta.fg, fontWeight: meta.weight || 700, fontSize: 8 }}>{meta.label}</span>
               </div>
             );
           })}
@@ -246,7 +246,7 @@ function DetailView({ movie, onBack }) {
       <Header onBack={onBack} />
       <div style={{ padding: "0 16px 96px" }}>
         <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
-          <div style={{ height: 320, background: "#000" }}>
+          <div style={{ height: "42vh", background: "#000" }}>
             {movie.poster && (
               <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             )}
@@ -294,15 +294,17 @@ function DetailView({ movie, onBack }) {
               >
                 <span style={{ color: COLORS.red, fontSize: 12 }}>★</span>
                 <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.red, lineHeight: 1 }}>
-                  {movie.tmdbRating}
+                  {movie.letterboxdRating ?? movie.tmdbRating}
                 </span>
               </div>
               <div>
                 <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
-                  TMDB (note Letterboxd bientôt)
+                  {movie.letterboxdRating ? "LETTERBOXD" : "TMDB (Letterboxd indisponible)"}
                 </div>
                 <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: COLORS.cream }}>
-                  {movie.tmdbVotes} votes
+                  {movie.letterboxdVotes
+                    ? `${movie.letterboxdVotes.toLocaleString("fr-FR")} votes`
+                    : `${movie.tmdbVotes} votes TMDB`}
                 </div>
               </div>
             </div>
