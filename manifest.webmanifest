@@ -1,0 +1,21 @@
+{
+  "name": "CinéRadar",
+  "short_name": "CinéRadar",
+  "description": "Séance privée · 2 places",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#13100C",
+  "theme_color": "#13100C",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
