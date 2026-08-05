@@ -34,5 +34,11 @@
     "year": 2003,
     "director": "Eli Roth",
     "letterboxdUrl": null
+  },
+  {
+    "title": "It Follows",
+    "year": 2015,
+    "director": "David Robert Mitchell",
+    "letterboxdUrl": "https://letterboxd.com/film/it-follows/"
   }
 ]
