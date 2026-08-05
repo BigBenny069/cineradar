@@ -295,8 +295,10 @@ function BottomNav({ view, onChange }) {
       style={{
         position: "fixed",
         bottom: 0,
-        left: 0,
-        right: 0,
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "100%",
+        maxWidth: 480,
         display: "flex",
         background: COLORS.surface,
         borderTop: `1px solid ${COLORS.line}`,
@@ -368,7 +370,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header onBack={onBack} />
       <div style={{ padding: "0 16px 96px" }}>
         <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
@@ -755,7 +757,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
 
 function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing }) {
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
@@ -835,7 +837,7 @@ function SearchView({ movies, onOpen }) {
   const filtered = query.trim() ? movies.filter((m) => normalizeText(m.title).includes(normalizedQuery)) : movies;
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
@@ -882,7 +884,7 @@ function HistoryView({ movies, onOpen }) {
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
@@ -988,7 +990,7 @@ function SettingsView() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
@@ -1196,7 +1198,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header onBack={onCancel} />
       <div style={{ padding: "0 16px 60px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
