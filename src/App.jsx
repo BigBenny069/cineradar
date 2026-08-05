@@ -383,9 +383,9 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         </div>
 
         {movie.letterboxdUrl && (
-          
-            href={movie.letterboxdUrl}
-            style={{
+  
+    href={movie.letterboxdUrl}
+    style={{
               display: "flex",
               marginTop: 16,
               alignItems: "center",
