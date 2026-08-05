@@ -64,6 +64,7 @@ export default async function handler(req, res) {
       year: parseInt(year, 10),
       director: director.trim(),
       letterboxdUrl: letterboxdUrl?.trim() || null,
+      updatedAt: new Date().toISOString(),
     };
 
     // On conserve le tmdbId connu pour fiabiliser les futures modifications
