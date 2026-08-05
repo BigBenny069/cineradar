@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.212Z"
+    "lastChecked": "2026-08-05T10:08:33.711Z"
   },
   {
     "tmdbId": 1091,
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.401Z"
+    "lastChecked": "2026-08-05T10:08:34.020Z"
   },
   {
     "tmdbId": 270303,
@@ -113,7 +113,7 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.433Z"
+    "lastChecked": "2026-08-05T10:08:34.224Z"
   },
   {
     "tmdbId": 440161,
@@ -157,7 +157,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.706Z"
+    "lastChecked": "2026-08-05T10:08:34.491Z"
   },
   {
     "tmdbId": 1092,
@@ -203,7 +203,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.815Z"
+    "lastChecked": "2026-08-05T10:08:34.760Z"
   },
   {
     "tmdbId": 11547,
@@ -224,10 +224,10 @@
     ],
     "tmdbRating": 5.684,
     "tmdbVotes": 1464,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
+    "letterboxdRating": 2.73,
+    "letterboxdVotes": 100017,
     "imdbId": "tt0303816",
-    "letterboxdUrl": null,
+    "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
       "abonnement": [
         "Lionsgate+ Amazon Channels"
@@ -242,6 +242,6 @@
         "Premiere Max"
       ]
     },
-    "lastChecked": "2026-08-05T10:06:22.827Z"
+    "lastChecked": "2026-08-05T10:08:35.233Z"
   }
 ]
