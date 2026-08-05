@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85341,
+    "letterboxdVotes": 85346,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:58.691Z"
+    "lastChecked": "2026-08-05T18:18:26.227Z"
   },
   {
     "tmdbId": 1091,
@@ -52,9 +52,9 @@
       "Keith David"
     ],
     "tmdbRating": 8.072,
-    "tmdbVotes": 8099,
+    "tmdbVotes": 8100,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1369156,
+    "letterboxdVotes": 1369362,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -65,17 +65,17 @@
         "Canal VOD",
         "YouTube",
         "Rakuten TV",
-        "LaCinetek",
         "Sooner",
         "Amazon Video",
         "Pathé Home",
         "VIVA by videofutur",
         "Premiere Max",
+        "LaCinetek",
         "ARTE Boutique"
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:58.891Z"
+    "lastChecked": "2026-08-05T18:18:26.451Z"
   },
   {
     "tmdbId": 270303,
@@ -96,7 +96,7 @@
       "Olivia Luccardi"
     ],
     "tmdbRating": 6.58,
-    "tmdbVotes": 7040,
+    "tmdbVotes": 7041,
     "letterboxdRating": null,
     "letterboxdVotes": null,
     "imdbId": "tt3235888",
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:58.974Z"
+    "lastChecked": "2026-08-05T18:18:26.559Z"
   },
   {
     "tmdbId": 440161,
@@ -140,7 +140,7 @@
     "tmdbRating": 6.832,
     "tmdbVotes": 2109,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 94559,
+    "letterboxdVotes": 94568,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:59.276Z"
+    "lastChecked": "2026-08-05T18:18:26.972Z"
   },
   {
     "tmdbId": 1092,
@@ -184,7 +184,7 @@
     "tmdbRating": 7.89,
     "tmdbVotes": 2142,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 201754,
+    "letterboxdVotes": 201787,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -197,17 +197,17 @@
         "Orange VOD",
         "YouTube",
         "Rakuten TV",
-        "LaCinetek",
         "Sooner",
         "Amazon Video",
         "Pathé Home",
         "VIVA by videofutur",
         "Premiere Max",
+        "LaCinetek",
         "ARTE Boutique"
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:59.534Z"
+    "lastChecked": "2026-08-05T18:18:27.255Z"
   },
   {
     "tmdbId": 11547,
@@ -229,7 +229,7 @@
     "tmdbRating": 5.684,
     "tmdbVotes": 1464,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100020,
+    "letterboxdVotes": 100036,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -246,6 +246,6 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-05T13:57:59.813Z"
+    "lastChecked": "2026-08-05T18:18:27.660Z"
   }
 ]
