@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85317,
+    "letterboxdVotes": 85323,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.701Z"
+    "lastChecked": "2026-08-05T08:44:17.031Z"
   },
   {
     "tmdbId": 1091,
@@ -51,9 +51,9 @@
       "Keith David"
     ],
     "tmdbRating": 8.072,
-    "tmdbVotes": 8098,
+    "tmdbVotes": 8099,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1368837,
+    "letterboxdVotes": 1368966,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.809Z"
+    "lastChecked": "2026-08-05T08:44:17.224Z"
   },
   {
     "tmdbId": 270303,
@@ -113,7 +113,7 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.825Z"
+    "lastChecked": "2026-08-05T08:44:17.238Z"
   },
   {
     "tmdbId": 440161,
@@ -136,10 +136,10 @@
     ],
     "tmdbRating": 6.832,
     "tmdbVotes": 2109,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
+    "letterboxdRating": 3.57,
+    "letterboxdVotes": 94554,
     "imdbId": "tt4971344",
-    "letterboxdUrl": null,
+    "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
       "abonnement": [],
       "vod": [
@@ -157,7 +157,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.838Z"
+    "lastChecked": "2026-08-05T08:44:17.509Z"
   },
   {
     "tmdbId": 1092,
@@ -180,7 +180,7 @@
     "tmdbRating": 7.89,
     "tmdbVotes": 2142,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 201722,
+    "letterboxdVotes": 201732,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -203,7 +203,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.934Z"
+    "lastChecked": "2026-08-05T08:44:17.689Z"
   },
   {
     "tmdbId": 11547,
@@ -242,7 +242,7 @@
         "Premiere Max"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:04.948Z"
+    "lastChecked": "2026-08-05T08:44:17.703Z"
   },
   {
     "tmdbId": 270303,
@@ -265,7 +265,7 @@
     "tmdbRating": 6.58,
     "tmdbVotes": 7040,
     "letterboxdRating": 3.39,
-    "letterboxdVotes": 891526,
+    "letterboxdVotes": 891584,
     "imdbId": "tt3235888",
     "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
     "providers": {
@@ -282,6 +282,6 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-05T05:34:05.228Z"
+    "lastChecked": "2026-08-05T08:44:17.970Z"
   }
 ]
