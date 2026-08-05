@@ -1,6 +1,5 @@
 {
   "enabled": [
-    "netflix",
     "prime",
     "disney",
     "canal",
@@ -9,5 +8,6 @@
     "paramount",
     "ocs",
     "max"
-  ]
+  ],
+  "notifyEmail": "benoitmillet.69@gmail.com"
 }
