@@ -522,7 +522,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
           </div>
           {showLinks && (
             <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-              
+              <a
                 href={`https://www.themoviedb.org/movie/${movie.tmdbId}`}
                 style={{
                   flex: 1,
@@ -538,7 +538,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                 TMDB ↗
               </a>
               {movie.imdbId && (
-                
+                <a
                   href={`https://www.imdb.com/title/${movie.imdbId}/`}
                   style={{
                     flex: 1,
