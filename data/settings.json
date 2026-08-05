@@ -1,3 +1,13 @@
 {
-  "enabled": ["netflix", "prime", "disney", "canal", "canalseries", "appletv", "paramount", "ocs"]
+  "enabled": [
+    "netflix",
+    "prime",
+    "disney",
+    "canal",
+    "canalseries",
+    "appletv",
+    "paramount",
+    "ocs",
+    "max"
+  ]
 }
