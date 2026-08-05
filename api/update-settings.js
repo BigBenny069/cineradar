@@ -2,12 +2,15 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
-  const { enabled, password } = req.body || {};
+  const { enabled, notifyEmail, password } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
   }
   if (!Array.isArray(enabled)) {
     return res.status(400).json({ error: "Liste d'abonnements invalide" });
+  }
+  if (notifyEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(notifyEmail)) {
+    return res.status(400).json({ error: "Adresse email invalide" });
   }
   const repo = process.env.GITHUB_REPO;
   const token = process.env.GITHUB_TOKEN;
@@ -25,7 +28,10 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: `Impossible de lire settings.json (${getRes.status})`, details });
     }
     const fileData = await getRes.json();
-    const newContentBase64 = Buffer.from(JSON.stringify({ enabled }, null, 2), "utf-8").toString("base64");
+    const newContentBase64 = Buffer.from(
+      JSON.stringify({ enabled, notifyEmail: notifyEmail || null }, null, 2),
+      "utf-8"
+    ).toString("base64");
     const putRes = await fetch(apiUrl, {
       method: "PUT",
       headers: {
