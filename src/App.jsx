@@ -383,9 +383,9 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         </div>
 
         {movie.letterboxdUrl && (
-  <a
-    href={movie.letterboxdUrl}
-    style={{
+          <a
+            href={movie.letterboxdUrl}
+            style={{
               display: "flex",
               marginTop: 16,
               alignItems: "center",
@@ -678,7 +678,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   );
 }
 
-function HomeView({ movies, onOpen, loading, error, onAdd }) {
+function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing }) {
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg }}>
       <Header />
@@ -716,6 +716,21 @@ function HomeView({ movies, onOpen, loading, error, onAdd }) {
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 24, marginBottom: 12 }}>
           <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: COLORS.cream }}>Derniers films</div>
+          <button
+            onClick={onRefresh}
+            disabled={refreshing}
+            style={{
+              padding: "6px 12px",
+              border: `1px solid ${COLORS.line}`,
+              borderRadius: 6,
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: 11,
+              color: COLORS.gold,
+              opacity: refreshing ? 0.5 : 1,
+            }}
+          >
+            {refreshing ? "..." : "↻ Actualiser"}
+          </button>
         </div>
 
         {loading && (
@@ -887,22 +902,35 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("home");
   const [editingMovie, setEditingMovie] = useState(null);
+  const [refreshing, setRefreshing] = useState(false);
 
-  useEffect(() => {
-    fetch("/data/enriched.json")
+  const fetchMovies = () => {
+    return fetch(`/data/enriched.json?t=${Date.now()}`)
       .then((res) => {
         if (!res.ok) throw new Error("fichier introuvable");
         return res.json();
       })
       .then((data) => {
         setMovies(data);
-        setLoading(false);
+        setError(null);
       })
       .catch((err) => {
         setError(err.message);
-        setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchMovies().finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selected, view]);
+
+  const handleRefresh = () => {
+    setRefreshing(true);
+    fetchMovies().finally(() => setRefreshing(false));
+  };
 
   if (view === "add") {
     return (
@@ -937,6 +965,8 @@ export default function App() {
         setEditingMovie(null);
         setView("add");
       }}
+      onRefresh={handleRefresh}
+      refreshing={refreshing}
     />
   );
 }
