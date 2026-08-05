@@ -936,6 +936,7 @@ function HistoryView({ movies, onOpen }) {
 
 function SettingsView() {
   const [enabled, setEnabled] = useState([]);
+  const [notifyEmail, setNotifyEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [password, setPassword] = useState("");
@@ -950,6 +951,7 @@ function SettingsView() {
       })
       .then((data) => {
         setEnabled(data.enabled || []);
+        setNotifyEmail(data.notifyEmail || "");
         setLoading(false);
       })
       .catch((err) => {
@@ -970,7 +972,7 @@ function SettingsView() {
       const res = await fetch("/api/update-settings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ enabled, password }),
+        body: JSON.stringify({ enabled, notifyEmail: notifyEmail.trim(), password }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -1058,6 +1060,29 @@ function SettingsView() {
               })}
             </div>
 
+            <div style={{ marginTop: 28 }}>
+              <SectionTitle>Notifications</SectionTitle>
+              <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 13, color: COLORS.muted, marginBottom: 10 }}>
+                Reçois un email dès qu'un film de ta liste devient disponible sur l'un de tes abonnements.
+              </p>
+              <input
+                placeholder="ton.email@exemple.com"
+                type="email"
+                value={notifyEmail}
+                onChange={(e) => setNotifyEmail(e.target.value)}
+                style={{
+                  width: "100%",
+                  background: COLORS.surface,
+                  border: `1px solid ${COLORS.line}`,
+                  borderRadius: 6,
+                  color: COLORS.cream,
+                  fontFamily: "'Source Serif 4', serif",
+                  fontSize: 14,
+                  padding: "10px 12px",
+                }}
+              />
+            </div>
+
             <div style={{ marginTop: 20 }}>
               <input
                 placeholder="Mot de passe pour enregistrer"
@@ -1095,7 +1120,7 @@ function SettingsView() {
               </button>
               {status === "success" && (
                 <div style={{ marginTop: 12, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
-                  Abonnements enregistrés ! Les fiches seront mises à jour au prochain passage automatique.
+                  Paramètres enregistrés !
                 </div>
               )}
               {status === "error" && (
