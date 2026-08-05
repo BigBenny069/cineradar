@@ -1,22 +1,35 @@
+function normalize(str) {
+  return String(str)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
-
-  const { title, year, director, letterboxdUrl, password, originalTitle, originalYear } = req.body || {};
-
+  const {
+    title,
+    year,
+    director,
+    letterboxdUrl,
+    password,
+    originalTitle,
+    originalYear,
+    originalTmdbId,
+  } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
   }
   if (!title || !director || !/^\d{4}$/.test(String(year))) {
     return res.status(400).json({ error: "Titre, réalisateur et une année à 4 chiffres sont obligatoires" });
   }
-
   const repo = process.env.GITHUB_REPO;
   const token = process.env.GITHUB_TOKEN;
   const filePath = "data/movies.json";
   const apiUrl = `https://api.github.com/repos/${repo}/contents/${filePath}`;
-
   try {
     const getRes = await fetch(apiUrl, {
       headers: {
@@ -32,11 +45,17 @@ export default async function handler(req, res) {
     const currentContent = Buffer.from(fileData.content, "base64").toString("utf-8");
     const movies = JSON.parse(currentContent);
 
-    const isEditing = Boolean(originalTitle) && Boolean(originalYear);
     let matchIndex = -1;
-    if (isEditing) {
+
+    // Priorité au matching par tmdbId (fiable et stable)
+    if (originalTmdbId) {
+      matchIndex = movies.findIndex((m) => String(m.tmdbId) === String(originalTmdbId));
+    }
+
+    // Repli : titre + année, normalisés (sans accents, casse ignorée)
+    if (matchIndex === -1 && originalTitle && originalYear) {
       matchIndex = movies.findIndex(
-        (m) => m.title.toLowerCase() === String(originalTitle).toLowerCase() && String(m.year) === String(originalYear)
+        (m) => normalize(m.title) === normalize(originalTitle) && String(m.year) === String(originalYear)
       );
     }
 
@@ -46,6 +65,13 @@ export default async function handler(req, res) {
       director: director.trim(),
       letterboxdUrl: letterboxdUrl?.trim() || null,
     };
+
+    // On conserve le tmdbId connu pour fiabiliser les futures modifications
+    if (originalTmdbId) {
+      newEntry.tmdbId = originalTmdbId;
+    } else if (matchIndex >= 0 && movies[matchIndex].tmdbId) {
+      newEntry.tmdbId = movies[matchIndex].tmdbId;
+    }
 
     let commitMessage;
     if (matchIndex >= 0) {
@@ -57,7 +83,6 @@ export default async function handler(req, res) {
     }
 
     const newContentBase64 = Buffer.from(JSON.stringify(movies, null, 2), "utf-8").toString("base64");
-
     const putRes = await fetch(apiUrl, {
       method: "PUT",
       headers: {
@@ -70,15 +95,12 @@ export default async function handler(req, res) {
         sha: fileData.sha,
       }),
     });
-
     if (!putRes.ok) {
       const details = await putRes.text();
       return res.status(500).json({ error: `Impossible d'enregistrer (${putRes.status})`, details });
     }
-
     return res.status(200).json({ success: true });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
 }
-
