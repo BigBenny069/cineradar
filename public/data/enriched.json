@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85328,
+    "letterboxdVotes": 85329,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:33.711Z"
+    "lastChecked": "2026-08-05T10:28:03.705Z"
   },
   {
     "tmdbId": 1091,
@@ -53,7 +53,7 @@
     "tmdbRating": 8.072,
     "tmdbVotes": 8099,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1369011,
+    "letterboxdVotes": 1369022,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:34.020Z"
+    "lastChecked": "2026-08-05T10:28:03.984Z"
   },
   {
     "tmdbId": 270303,
@@ -113,7 +113,7 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:34.224Z"
+    "lastChecked": "2026-08-05T10:28:04.156Z"
   },
   {
     "tmdbId": 440161,
@@ -157,7 +157,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:34.491Z"
+    "lastChecked": "2026-08-05T10:28:04.580Z"
   },
   {
     "tmdbId": 1092,
@@ -180,14 +180,13 @@
     "tmdbRating": 7.89,
     "tmdbVotes": 2142,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 201735,
+    "letterboxdVotes": 201737,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
-      "abonnement": [
-        "Artiflix"
-      ],
+      "abonnement": [],
       "vod": [
+        "Artiflix",
         "Apple TV Store",
         "Google Play Movies",
         "Canal VOD",
@@ -203,7 +202,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:34.760Z"
+    "lastChecked": "2026-08-05T10:28:04.887Z"
   },
   {
     "tmdbId": 11547,
@@ -225,14 +224,13 @@
     "tmdbRating": 5.684,
     "tmdbVotes": 1464,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100017,
+    "letterboxdVotes": 100018,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
-      "abonnement": [
-        "Lionsgate+ Amazon Channels"
-      ],
+      "abonnement": [],
       "vod": [
+        "Lionsgate+ Amazon Channels",
         "Apple TV Store",
         "Google Play Movies",
         "Canal VOD",
@@ -242,6 +240,6 @@
         "Premiere Max"
       ]
     },
-    "lastChecked": "2026-08-05T10:08:35.233Z"
+    "lastChecked": "2026-08-05T10:28:05.255Z"
   }
 ]
