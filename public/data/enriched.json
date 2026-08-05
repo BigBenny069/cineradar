@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85323,
+    "letterboxdVotes": 85328,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -29,7 +29,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.031Z"
+    "lastChecked": "2026-08-05T10:06:22.212Z"
   },
   {
     "tmdbId": 1091,
@@ -53,7 +53,7 @@
     "tmdbRating": 8.072,
     "tmdbVotes": 8099,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1368966,
+    "letterboxdVotes": 1369011,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -73,7 +73,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.224Z"
+    "lastChecked": "2026-08-05T10:06:22.401Z"
   },
   {
     "tmdbId": 270303,
@@ -113,7 +113,7 @@
         "YouTube"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.238Z"
+    "lastChecked": "2026-08-05T10:06:22.433Z"
   },
   {
     "tmdbId": 440161,
@@ -137,7 +137,7 @@
     "tmdbRating": 6.832,
     "tmdbVotes": 2109,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 94554,
+    "letterboxdVotes": 94556,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -157,7 +157,7 @@
         "Orange VOD"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.509Z"
+    "lastChecked": "2026-08-05T10:06:22.706Z"
   },
   {
     "tmdbId": 1092,
@@ -180,7 +180,7 @@
     "tmdbRating": 7.89,
     "tmdbVotes": 2142,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 201732,
+    "letterboxdVotes": 201735,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -203,7 +203,7 @@
         "ARTE Boutique"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.689Z"
+    "lastChecked": "2026-08-05T10:06:22.815Z"
   },
   {
     "tmdbId": 11547,
@@ -242,46 +242,6 @@
         "Premiere Max"
       ]
     },
-    "lastChecked": "2026-08-05T08:44:17.703Z"
-  },
-  {
-    "tmdbId": 270303,
-    "title": "It Follows",
-    "year": "2015",
-    "director": "David Robert Mitchell",
-    "poster": "https://image.tmdb.org/t/p/w500/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
-    "synopsis": "Une jeune femme est poursuivie par une force surnaturelle inconnue, après une relation sexuelle.",
-    "genres": [
-      "Horreur",
-      "Mystère"
-    ],
-    "cast": [
-      "Maika Monroe",
-      "Keir Gilchrist",
-      "Daniel Zovatto",
-      "Jake Weary",
-      "Olivia Luccardi"
-    ],
-    "tmdbRating": 6.58,
-    "tmdbVotes": 7040,
-    "letterboxdRating": 3.39,
-    "letterboxdVotes": 891584,
-    "imdbId": "tt3235888",
-    "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
-    "providers": {
-      "abonnement": [],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Google Play Movies",
-        "YouTube"
-      ]
-    },
-    "lastChecked": "2026-08-05T08:44:17.970Z"
+    "lastChecked": "2026-08-05T10:06:22.827Z"
   }
 ]
