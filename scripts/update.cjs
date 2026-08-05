@@ -22,21 +22,22 @@ const CANONICAL_SUBSCRIPTIONS = {
 // Valeurs par défaut utilisées si data/settings.json est absent ou illisible.
 const DEFAULT_ENABLED = ["netflix", "prime", "disney", "canal", "canalseries", "appletv", "paramount", "ocs"];
 
-function loadEnabledSubscriptions() {
+function loadSettings() {
   try {
     const raw = fs.readFileSync("data/settings.json", "utf-8");
     const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed.enabled)) {
-      return parsed.enabled;
-    }
-    return DEFAULT_ENABLED;
+    return {
+      enabled: Array.isArray(parsed.enabled) ? parsed.enabled : DEFAULT_ENABLED,
+      notifyEmail: parsed.notifyEmail || null,
+    };
   } catch (e) {
     console.log("  data/settings.json introuvable ou invalide, utilisation des valeurs par défaut.");
-    return DEFAULT_ENABLED;
+    return { enabled: DEFAULT_ENABLED, notifyEmail: null };
   }
 }
 
-const ENABLED_KEYS = loadEnabledSubscriptions();
+const SETTINGS = loadSettings();
+const ENABLED_KEYS = SETTINGS.enabled;
 const MY_SUBSCRIPTIONS = ENABLED_KEYS.flatMap((key) => CANONICAL_SUBSCRIPTIONS[key] || []);
 
 function normalize(str) {
@@ -52,6 +53,20 @@ const NORMALIZED_SUBSCRIPTIONS = MY_SUBSCRIPTIONS.map(normalize);
 function isMySubscription(providerName) {
   const n = normalize(providerName);
   return NORMALIZED_SUBSCRIPTIONS.some((sub) => n === sub || n.includes(sub) || sub.includes(n));
+}
+
+function loadPreviousAbonnements() {
+  try {
+    const raw = fs.readFileSync("public/data/enriched.json", "utf-8");
+    const parsed = JSON.parse(raw);
+    const map = {};
+    for (const m of parsed) {
+      map[m.tmdbId] = new Set(m.providers?.abonnement || []);
+    }
+    return map;
+  } catch (e) {
+    return {};
+  }
 }
 
 async function findMovie(title, year) {
@@ -96,7 +111,6 @@ async function getLetterboxdRating(url) {
     if (!res.ok) return { rating: null, votes: null };
     const html = await res.text();
 
-    // Tentative 1 : bloc de données structurées (schema.org) utilisé pour le référencement Google
     const ldJsonMatch = html.match(/"ratingValue"\s*:\s*"?([\d.]+)"?[\s\S]{0,200}?"ratingCount"\s*:\s*"?([\d,]+)"?/);
     if (ldJsonMatch) {
       const rating = parseFloat(ldJsonMatch[1]);
@@ -106,7 +120,6 @@ async function getLetterboxdRating(url) {
       }
     }
 
-    // Tentative 2 : la bulle d'info donne la moyenne pondérée + le nombre de votes
     const tooltipMatch = html.match(/Weighted average of ([\d.]+) based on ([\d,]+)\s*ratings?/i);
     if (tooltipMatch) {
       const rating = parseFloat(tooltipMatch[1]);
@@ -116,7 +129,6 @@ async function getLetterboxdRating(url) {
       }
     }
 
-    // Repli : la note moyenne seule est présente dans une balise meta
     const metaMatch = html.match(/name="twitter:data2" content="([\d.]+) out of 5"/);
     if (metaMatch) {
       const rating = parseFloat(metaMatch[1]);
@@ -132,8 +144,47 @@ async function getLetterboxdRating(url) {
   }
 }
 
+async function sendNotificationEmail(newlyAvailable, notifyEmail) {
+  if (!notifyEmail) {
+    console.log("Aucune adresse email configurée dans Paramètres, notification ignorée.");
+    return;
+  }
+  if (!process.env.RESEND_API_KEY) {
+    console.log("RESEND_API_KEY absent, impossible d'envoyer l'email.");
+    return;
+  }
+  const listHtml = newlyAvailable
+    .map((item) => `<li><strong>${item.title}</strong> est maintenant disponible sur ${item.providers.join(", ")}</li>`)
+    .join("");
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "CinéRadar <onboarding@resend.dev>",
+        to: [notifyEmail],
+        subject: `CinéRadar : ${newlyAvailable.length} film(s) disponible(s) sur vos abonnements`,
+        html: `<h2>Bonne nouvelle !</h2><ul>${listHtml}</ul>`,
+      }),
+    });
+    if (!res.ok) {
+      const details = await res.text();
+      console.log(`Erreur d'envoi d'email (${res.status}) : ${details}`);
+      return;
+    }
+    console.log(`Email envoyé à ${notifyEmail} (${newlyAvailable.length} film(s)).`);
+  } catch (e) {
+    console.log(`Erreur d'envoi d'email : ${e.message}`);
+  }
+}
+
 async function main() {
   const input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
+  const previousAbonnements = loadPreviousAbonnements();
+  const newlyAvailable = [];
   const output = [];
 
   for (const movie of input) {
@@ -148,6 +199,12 @@ async function main() {
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
+
+    const prevSet = previousAbonnements[details.id] || new Set();
+    const newProviders = providers.abonnement.filter((p) => !prevSet.has(p));
+    if (newProviders.length > 0) {
+      newlyAvailable.push({ title: details.title, providers: newProviders });
+    }
 
     let letterboxdRating = null;
     let letterboxdVotes = null;
@@ -182,6 +239,13 @@ async function main() {
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   console.log(`Terminé : ${output.length} film(s) mis à jour.`);
+
+  if (newlyAvailable.length > 0) {
+    console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
+    await sendNotificationEmail(newlyAvailable, SETTINGS.notifyEmail);
+  } else {
+    console.log("Aucune nouvelle disponibilité à notifier.");
+  }
 }
 
 main();
