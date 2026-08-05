@@ -178,44 +178,44 @@ function buildEmailHtml(newlyAvailable) {
   const intro =
     newlyAvailable.length > 1
       ? `${newlyAvailable.length} films sont maintenant disponibles sur tes abonnements :`
-      : "Un film est maintenant disponible sur ton abonnement :";
+      : "Un film est maintenant disponible sur tes abonnements :";
 
   return `
-  <body style="margin:0;padding:32px 12px;background:#0D0B08;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:480px;margin:0 auto;background:#1D1812;border:1px solid #37301F;border-radius:10px;overflow:hidden;">
-      <tr>
-        <td style="padding:24px 20px 18px;text-align:center;border-bottom:1px solid #37301F;">
-          <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;letter-spacing:1px;color:#F3ECDF;">
-            CINÉ<span style="color:#E7A23A;">RADAR</span>
-          </div>
-          <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;color:#93877A;margin-top:6px;text-transform:uppercase;">
-            Nouvelle disponibilité
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:18px 20px 6px;">
-          <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;color:#F3ECDF;">
-            ${intro}
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-            ${rows}
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding:16px 20px 22px;text-align:center;">
-          <div style="font-family:'Courier New',monospace;font-size:10px;color:#5A5148;">
-            Envoyé automatiquement par CinéRadar
-          </div>
-        </td>
-      </tr>
-    </table>
-  </body>
+    <div style="background:#0D0B08;padding:32px 12px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:480px;margin:0 auto;background:#1D1812;border:1px solid #37301F;border-radius:10px;overflow:hidden;">
+        <tr>
+          <td style="padding:24px 20px 18px;text-align:center;border-bottom:1px solid #37301F;">
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;letter-spacing:1px;color:#F3ECDF;">
+              CINÉ<span style="color:#E7A23A;">RADAR</span>
+            </div>
+            <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;color:#93877A;margin-top:6px;text-transform:uppercase;">
+              Nouvelle disponibilité
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:18px 20px 6px;">
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;color:#F3ECDF;">
+              ${intro}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              ${rows}
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:16px 20px 22px;text-align:center;">
+            <div style="font-family:'Courier New',monospace;font-size:10px;color:#5A5148;">
+              Envoyé automatiquement par CinéRadar
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   `;
 }
 
@@ -228,7 +228,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
     console.log("RESEND_API_KEY absent, impossible d'envoyer l'email.");
     return;
   }
-  const textFallback = newlyAvailable
+  const textVersion = newlyAvailable
     .map((item) => `${item.title} - disponible sur ${item.providers.join(", ")}`)
     .join("\n");
   try {
@@ -243,7 +243,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
         to: [notifyEmail],
         subject: `CinéRadar : ${newlyAvailable.length} film(s) disponible(s) sur vos abonnements`,
         html: buildEmailHtml(newlyAvailable),
-        text: textFallback,
+        text: textVersion,
       }),
     });
     if (!res.ok) {
@@ -275,7 +275,7 @@ async function main() {
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
-    const posterUrl = details.poster_path ? `https://image.tmdb.org/t/p/w200${details.poster_path}` : null;
+    const posterUrl = details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null;
 
     const prevSet = previousAbonnements[details.id] || new Set();
     const newProviders = providers.abonnement.filter((p) => !prevSet.has(p));
@@ -302,7 +302,7 @@ async function main() {
       title: details.title,
       year: details.release_date?.slice(0, 4),
       director: director?.name || movie.director,
-      poster: posterUrl ? posterUrl.replace("/t/p/w200", "/t/p/w500") : null,
+      poster: posterUrl,
       synopsis: details.overview,
       genres: (details.genres || []).map((g) => g.name),
       cast,
