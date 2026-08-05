@@ -4,6 +4,42 @@ const path = require("path");
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE = "https://api.themoviedb.org/3";
 
+// Liste de tes abonnements réels : seuls ces noms seront affichés comme "MES ABONNEMENTS".
+// Les noms viennent de TMDB (souvent identiques à JustWatch) et sont comparés sans tenir
+// compte des accents/majuscules, donc pas besoin d'être parfaitement exact sur la casse.
+// Ajoute/retire des entrées ici si un film affiche un mauvais fournisseur.
+const MY_SUBSCRIPTIONS = [
+  "Netflix",
+  "Amazon Prime Video",
+  "Prime Video",
+  "Disney Plus",
+  "Disney+",
+  "Canal+",
+  "Canal+ Séries",
+  "Apple TV+",
+  "Apple TV Plus",
+  "Paramount Plus",
+  "Paramount+",
+  "OCS",
+  "Cine+ OCS",
+  "Ciné+ OCS",
+];
+
+function normalize(str) {
+  return String(str)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+const NORMALIZED_SUBSCRIPTIONS = MY_SUBSCRIPTIONS.map(normalize);
+
+function isMySubscription(providerName) {
+  const n = normalize(providerName);
+  return NORMALIZED_SUBSCRIPTIONS.some((sub) => n === sub || n.includes(sub) || sub.includes(n));
+}
+
 async function findMovie(title, year) {
   const url = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&year=${year}&language=fr-FR`;
   const res = await fetch(url);
@@ -18,8 +54,17 @@ async function getDetails(id) {
 }
 
 function splitProviders(fr) {
-  const abonnement = (fr?.flatrate || []).map((p) => p.provider_name);
-  const vod = [...(fr?.rent || []), ...(fr?.buy || [])].map((p) => p.provider_name);
+  const allFlatrate = (fr?.flatrate || []).map((p) => p.provider_name);
+
+  // Seuls tes abonnements réels sont classés en "abonnement" (déjà inclus, gratuit à regarder)
+  const abonnement = allFlatrate.filter((name) => isMySubscription(name));
+
+  // Le reste (location/achat, + les abonnements TMDB que tu n'as pas) va en "vod"
+  const flatrateNonAbonnes = allFlatrate.filter((name) => !isMySubscription(name));
+  const vod = [...flatrateNonAbonnes, ...(fr?.rent || []), ...(fr?.buy || [])].map((p) =>
+    typeof p === "string" ? p : p.provider_name
+  );
+
   return {
     abonnement: [...new Set(abonnement)],
     vod: [...new Set(vod)],
