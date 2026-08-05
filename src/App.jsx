@@ -274,6 +274,7 @@ function SectionTitle({ children }) {
 
 function DetailView({ movie, onBack, onEdit, onDeleted }) {
   const [showLinks, setShowLinks] = useState(false);
+  const [showVod, setShowVod] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deletePassword, setDeletePassword] = useState("");
   const [deleteStatus, setDeleteStatus] = useState(null);
@@ -439,65 +440,6 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         )}
 
         <div style={{ marginTop: 24 }}>
-          <SectionTitle>Où regarder</SectionTitle>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {abonnement.length > 0 && (
-              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.gold, marginBottom: 8 }}>
-                  MES ABONNEMENTS
-                </div>
-                {abonnement.map((p) => (
-                  <div
-                    key={p}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      padding: "10px 0",
-                      borderTop: `1px solid ${COLORS.line}`,
-                    }}
-                  >
-                    <PlatformBadge name={p} />
-                    <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
-                      Voir →
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {vod.length > 0 && (
-              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted, marginBottom: 8 }}>
-                  VOD · PAYANT
-                </div>
-                {vod.map((p) => (
-                  <div
-                    key={p}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      padding: "10px 0",
-                      borderTop: `1px solid ${COLORS.line}`,
-                    }}
-                  >
-                    <PlatformBadge name={p} />
-                    <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
-                      Voir →
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {abonnement.length === 0 && vod.length === 0 && (
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
-                Aucune offre trouvée en France pour le moment.
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div style={{ marginTop: 24 }}>
           <SectionTitle>Informations</SectionTitle>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 6 }}>
@@ -556,6 +498,83 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
               )}
             </div>
           )}
+        </div>
+
+        <div style={{ marginTop: 24 }}>
+          <SectionTitle>Où regarder</SectionTitle>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {abonnement.length > 0 && (
+              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
+                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.gold, marginBottom: 8 }}>
+                  MES ABONNEMENTS
+                </div>
+                {abonnement.map((p) => (
+                  <div
+                    key={p}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "10px 0",
+                      borderTop: `1px solid ${COLORS.line}`,
+                    }}
+                  >
+                    <PlatformBadge name={p} />
+                    <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
+                      Voir →
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {vod.length > 0 && (
+              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
+                <button
+                  onClick={() => setShowVod((v) => !v)}
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    textAlign: "left",
+                  }}
+                >
+                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
+                    VOD · LOCATION / ACHAT ({vod.length})
+                  </span>
+                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+                    {showVod ? "▲" : "▼"}
+                  </span>
+                </button>
+                {showVod && (
+                  <div style={{ marginTop: 8 }}>
+                    {vod.map((p) => (
+                      <div
+                        key={p}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          padding: "10px 0",
+                          borderTop: `1px solid ${COLORS.line}`,
+                        }}
+                      >
+                        <PlatformBadge name={p} />
+                        <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
+                          Voir →
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+            {abonnement.length === 0 && vod.length === 0 && (
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+                Aucune offre trouvée en France pour le moment.
+              </div>
+            )}
+          </div>
         </div>
 
         <button
