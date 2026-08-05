@@ -25,6 +25,40 @@ const PROVIDER_META = {
   YouTube: { bg: "#FF0000", fg: "#FFFFFF", label: "▶", weight: 700, category: "vod" },
 };
 
+const SUBSCRIPTION_OPTIONS = [
+  { key: "netflix", label: "Netflix" },
+  { key: "prime", label: "Prime Video" },
+  { key: "disney", label: "Disney+" },
+  { key: "canal", label: "Canal+" },
+  { key: "canalseries", label: "Canal+ Séries" },
+  { key: "appletv", label: "Apple TV+" },
+  { key: "paramount", label: "Paramount+" },
+  { key: "ocs", label: "OCS" },
+  { key: "max", label: "Max (HBO)" },
+];
+
+function normalizeText(str) {
+  return String(str || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function formatRelativeDate(iso) {
+  if (!iso) return "Date inconnue";
+  const date = new Date(iso);
+  const now = new Date();
+  const diffMs = now - date;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (diffDays === 0) {
+    return `Aujourd'hui à ${date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}`;
+  }
+  if (diffDays === 1) return "Hier";
+  if (diffDays < 7) return `Il y a ${diffDays} jours`;
+  return date.toLocaleDateString("fr-FR");
+}
+
 function LetterboxdMark({ size = 34 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" aria-label="Letterboxd">
@@ -191,7 +225,6 @@ function StampBadge({ children, size = "normal" }) {
 }
 
 function MovieCard({ movie, onOpen }) {
-  const providers = [...(movie.providers?.abonnement || []), ...(movie.providers?.vod || [])];
   return (
     <button
       onClick={() => onOpen(movie)}
@@ -237,28 +270,6 @@ function MovieCard({ movie, onOpen }) {
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted, marginTop: 3 }}>
           {movie.year} · {movie.director}
         </div>
-        <div style={{ marginTop: 6, display: "flex", gap: 5, flexWrap: "wrap" }}>
-          {providers.slice(0, 3).map((p) => {
-            const meta = PROVIDER_META[p] || { bg: COLORS.surfaceRaised, fg: COLORS.cream, label: p.slice(0, 1) };
-            return (
-              <div
-                key={p}
-                title={p}
-                style={{
-                  width: 18,
-                  height: 18,
-                  borderRadius: 4,
-                  background: meta.bg,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <span style={{ color: meta.fg, fontWeight: meta.weight || 700, fontSize: 8 }}>{meta.label}</span>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </button>
   );
@@ -268,6 +279,51 @@ function SectionTitle({ children }) {
   return (
     <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.cream, marginBottom: 10 }}>
       {children}
+    </div>
+  );
+}
+
+function BottomNav({ view, onChange }) {
+  const items = [
+    { key: "home", label: "Accueil", icon: "🏠" },
+    { key: "search", label: "Recherche", icon: "🔍" },
+    { key: "history", label: "Historique", icon: "🕘" },
+    { key: "settings", label: "Paramètres", icon: "⚙️" },
+  ];
+  return (
+    <div
+      style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        display: "flex",
+        background: COLORS.surface,
+        borderTop: `1px solid ${COLORS.line}`,
+        paddingBottom: "env(safe-area-inset-bottom)",
+        zIndex: 10,
+      }}
+    >
+      {items.map((item) => (
+        <button
+          key={item.key}
+          onClick={() => onChange(item.key)}
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            padding: "10px 0 8px",
+            color: view === item.key ? COLORS.gold : COLORS.muted,
+          }}
+        >
+          <span style={{ fontSize: 18 }}>{item.icon}</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, letterSpacing: 0.5 }}>
+            {item.label}
+          </span>
+        </button>
+      ))}
     </div>
   );
 }
@@ -701,7 +757,7 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg }}>
       <Header />
-      <div style={{ padding: "0 16px 40px" }}>
+      <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
           GUICHET
         </div>
@@ -768,6 +824,288 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
             <MovieCard key={m.tmdbId} movie={m} onOpen={onOpen} />
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function SearchView({ movies, onOpen }) {
+  const [query, setQuery] = useState("");
+  const normalizedQuery = normalizeText(query);
+  const filtered = query.trim() ? movies.filter((m) => normalizeText(m.title).includes(normalizedQuery)) : movies;
+
+  return (
+    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+      <Header />
+      <div style={{ padding: "0 16px 90px" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+          RECHERCHE
+        </div>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 16 }}>
+          Trouver un film
+        </div>
+        <input
+          placeholder="Rechercher un titre..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          style={{
+            width: "100%",
+            marginBottom: 20,
+            background: COLORS.surface,
+            border: `1px solid ${COLORS.line}`,
+            borderRadius: 6,
+            color: COLORS.cream,
+            fontFamily: "'Source Serif 4', serif",
+            fontSize: 15,
+            padding: "12px 14px",
+          }}
+        />
+        {filtered.length === 0 ? (
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+            Aucun film ne correspond à cette recherche.
+          </div>
+        ) : (
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            {filtered.map((m) => (
+              <MovieCard key={m.tmdbId} movie={m} onOpen={onOpen} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function HistoryView({ movies, onOpen }) {
+  const sorted = [...movies]
+    .filter((m) => m.updatedAt)
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+
+  return (
+    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+      <Header />
+      <div style={{ padding: "0 16px 90px" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+          HISTORIQUE
+        </div>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 16 }}>
+          Activité récente
+        </div>
+        {sorted.length === 0 ? (
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+            Aucune activité récente pour l'instant.
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {sorted.map((m) => (
+              <button
+                key={m.tmdbId}
+                onClick={() => onOpen(m)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  padding: 10,
+                  background: COLORS.surface,
+                  border: `1px solid ${COLORS.line}`,
+                  borderRadius: 8,
+                  textAlign: "left",
+                }}
+              >
+                <div style={{ width: 44, height: 66, borderRadius: 4, overflow: "hidden", background: "#000", flexShrink: 0 }}>
+                  {m.poster && (
+                    <img src={m.poster} alt={m.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  )}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
+                    {m.title}
+                  </div>
+                  <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted, marginTop: 4 }}>
+                    Mis à jour · {formatRelativeDate(m.updatedAt)}
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SettingsView() {
+  const [enabled, setEnabled] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    fetch("/api/get-settings")
+      .then((res) => {
+        if (!res.ok) throw new Error("Impossible de charger les paramètres");
+        return res.json();
+      })
+      .then((data) => {
+        setEnabled(data.enabled || []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  const toggle = (key) => {
+    setEnabled((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
+    setStatus(null);
+  };
+
+  const save = async () => {
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/update-settings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ enabled, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMsg(data.error || "Erreur inconnue");
+        return;
+      }
+      setStatus("success");
+    } catch (e) {
+      setStatus("error");
+      setErrorMsg(e.message);
+    }
+  };
+
+  return (
+    <div style={{ minHeight: "100vh", background: COLORS.bg }}>
+      <Header />
+      <div style={{ padding: "0 16px 90px" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+          PARAMÈTRES
+        </div>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 4 }}>
+          Mes abonnements
+        </div>
+        <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 13, color: COLORS.muted, marginBottom: 16 }}>
+          Active uniquement les plateformes auxquelles tu es abonné. Les autres apparaîtront en "VOD" sur les fiches films.
+        </p>
+
+        {loading && (
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+            Chargement...
+          </div>
+        )}
+        {error && (
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+            Erreur : {error}
+          </div>
+        )}
+
+        {!loading && !error && (
+          <>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {SUBSCRIPTION_OPTIONS.map((opt) => {
+                const isOn = enabled.includes(opt.key);
+                return (
+                  <button
+                    key={opt.key}
+                    onClick={() => toggle(opt.key)}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "12px 14px",
+                      background: COLORS.surface,
+                      border: `1px solid ${isOn ? COLORS.gold : COLORS.line}`,
+                      borderRadius: 8,
+                    }}
+                  >
+                    <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 14, color: COLORS.cream }}>
+                      {opt.label}
+                    </span>
+                    <span
+                      style={{
+                        width: 40,
+                        height: 22,
+                        borderRadius: 11,
+                        background: isOn ? COLORS.gold : COLORS.line,
+                        position: "relative",
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          top: 2,
+                          left: isOn ? 20 : 2,
+                          width: 18,
+                          height: 18,
+                          borderRadius: "50%",
+                          background: COLORS.bg,
+                        }}
+                      />
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div style={{ marginTop: 20 }}>
+              <input
+                placeholder="Mot de passe pour enregistrer"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={{
+                  width: "100%",
+                  background: COLORS.surface,
+                  border: `1px solid ${COLORS.line}`,
+                  borderRadius: 6,
+                  color: COLORS.cream,
+                  fontFamily: "'Source Serif 4', serif",
+                  fontSize: 14,
+                  padding: "10px 12px",
+                  marginBottom: 10,
+                }}
+              />
+              <button
+                onClick={save}
+                disabled={!password || status === "loading"}
+                style={{
+                  width: "100%",
+                  padding: "12px 0",
+                  background: COLORS.gold,
+                  borderRadius: 6,
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: 13,
+                  color: "#1A1206",
+                  letterSpacing: 0.5,
+                  opacity: !password || status === "loading" ? 0.5 : 1,
+                }}
+              >
+                {status === "loading" ? "ENREGISTREMENT..." : "ENREGISTRER"}
+              </button>
+              {status === "success" && (
+                <div style={{ marginTop: 12, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+                  Abonnements enregistrés ! Les fiches seront mises à jour au prochain passage automatique.
+                </div>
+              )}
+              {status === "error" && (
+                <div style={{ marginTop: 12, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+                  Erreur : {errorMsg}
+                </div>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -920,6 +1258,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("home");
+  const [previousView, setPreviousView] = useState("home");
   const [editingMovie, setEditingMovie] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -957,35 +1296,49 @@ export default function App() {
         editingMovie={editingMovie}
         onCancel={() => {
           setEditingMovie(null);
-          setView("home");
+          setView(previousView);
         }}
       />
     );
   }
 
-  return selected ? (
-    <DetailView
-      movie={selected}
-      onBack={() => setSelected(null)}
-      onEdit={(movie) => {
-        setEditingMovie(movie);
-        setSelected(null);
-        setView("add");
-      }}
-      onDeleted={() => setSelected(null)}
-    />
-  ) : (
-    <HomeView
-      movies={movies}
-      onOpen={setSelected}
-      loading={loading}
-      error={error}
-      onAdd={() => {
-        setEditingMovie(null);
-        setView("add");
-      }}
-      onRefresh={handleRefresh}
-      refreshing={refreshing}
-    />
+  if (selected) {
+    return (
+      <DetailView
+        movie={selected}
+        onBack={() => setSelected(null)}
+        onEdit={(movie) => {
+          setEditingMovie(movie);
+          setSelected(null);
+          setPreviousView(view);
+          setView("add");
+        }}
+        onDeleted={() => setSelected(null)}
+      />
+    );
+  }
+
+  return (
+    <>
+      {view === "home" && (
+        <HomeView
+          movies={movies}
+          onOpen={setSelected}
+          loading={loading}
+          error={error}
+          onAdd={() => {
+            setEditingMovie(null);
+            setPreviousView(view);
+            setView("add");
+          }}
+          onRefresh={handleRefresh}
+          refreshing={refreshing}
+        />
+      )}
+      {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
+      {view === "history" && <HistoryView movies={movies} onOpen={setSelected} />}
+      {view === "settings" && <SettingsView />}
+      <BottomNav view={view} onChange={setView} />
+    </>
   );
 }
