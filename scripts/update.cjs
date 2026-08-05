@@ -4,26 +4,40 @@ const path = require("path");
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE = "https://api.themoviedb.org/3";
 
-// Liste de tes abonnements réels : seuls ces noms seront affichés comme "MES ABONNEMENTS".
-// Les noms viennent de TMDB (souvent identiques à JustWatch) et sont comparés sans tenir
-// compte des accents/majuscules, donc pas besoin d'être parfaitement exact sur la casse.
-// Ajoute/retire des entrées ici si un film affiche un mauvais fournisseur.
-const MY_SUBSCRIPTIONS = [
-  "Netflix",
-  "Amazon Prime Video",
-  "Prime Video",
-  "Disney Plus",
-  "Disney+",
-  "Canal+",
-  "Canal+ Séries",
-  "Apple TV+",
-  "Apple TV Plus",
-  "Paramount Plus",
-  "Paramount+",
-  "OCS",
-  "Cine+ OCS",
-  "Ciné+ OCS",
-];
+// Table de correspondance entre les clés utilisées dans data/settings.json (pilotées
+// depuis l'écran Paramètres de l'app) et les noms de fournisseurs tels que TMDB les renvoie.
+// Si un film affiche un mauvais fournisseur, ajoute son nom exact dans le tableau correspondant.
+const CANONICAL_SUBSCRIPTIONS = {
+  netflix: ["Netflix"],
+  prime: ["Amazon Prime Video", "Prime Video"],
+  disney: ["Disney Plus", "Disney+"],
+  canal: ["Canal+"],
+  canalseries: ["Canal+ Séries"],
+  appletv: ["Apple TV+", "Apple TV Plus"],
+  paramount: ["Paramount Plus", "Paramount+"],
+  ocs: ["OCS", "Cine+ OCS", "Ciné+ OCS"],
+  max: ["Max", "HBO Max"],
+};
+
+// Valeurs par défaut utilisées si data/settings.json est absent ou illisible.
+const DEFAULT_ENABLED = ["netflix", "prime", "disney", "canal", "canalseries", "appletv", "paramount", "ocs"];
+
+function loadEnabledSubscriptions() {
+  try {
+    const raw = fs.readFileSync("data/settings.json", "utf-8");
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed.enabled)) {
+      return parsed.enabled;
+    }
+    return DEFAULT_ENABLED;
+  } catch (e) {
+    console.log("  data/settings.json introuvable ou invalide, utilisation des valeurs par défaut.");
+    return DEFAULT_ENABLED;
+  }
+}
+
+const ENABLED_KEYS = loadEnabledSubscriptions();
+const MY_SUBSCRIPTIONS = ENABLED_KEYS.flatMap((key) => CANONICAL_SUBSCRIPTIONS[key] || []);
 
 function normalize(str) {
   return String(str)
@@ -56,10 +70,10 @@ async function getDetails(id) {
 function splitProviders(fr) {
   const allFlatrate = (fr?.flatrate || []).map((p) => p.provider_name);
 
-  // Seuls tes abonnements réels sont classés en "abonnement" (déjà inclus, gratuit à regarder)
+  // Seuls tes abonnements réels (activés dans Paramètres) sont classés en "abonnement"
   const abonnement = allFlatrate.filter((name) => isMySubscription(name));
 
-  // Le reste (location/achat, + les abonnements TMDB que tu n'as pas) va en "vod"
+  // Le reste (location/achat, + les abonnements TMDB que tu n'as pas activés) va en "vod"
   const flatrateNonAbonnes = allFlatrate.filter((name) => !isMySubscription(name));
   const vod = [...flatrateNonAbonnes, ...(fr?.rent || []), ...(fr?.buy || [])].map((p) =>
     typeof p === "string" ? p : p.provider_name
@@ -160,6 +174,7 @@ async function main() {
       imdbId: details.imdb_id,
       letterboxdUrl: movie.letterboxdUrl || null,
       providers,
+      updatedAt: movie.updatedAt || null,
       lastChecked: new Date().toISOString(),
     });
   }
