@@ -144,6 +144,81 @@ async function getLetterboxdRating(url) {
   }
 }
 
+function buildMovieRowHtml(item) {
+  const posterCell = item.poster
+    ? `<img src="${item.poster}" width="60" height="90" style="display:block;border-radius:4px;object-fit:cover;" alt="${item.title}" />`
+    : `<div style="width:60px;height:90px;background:#241D16;border-radius:4px;"></div>`;
+
+  const letterboxdButton = item.letterboxdUrl
+    ? `<a href="${item.letterboxdUrl}" style="display:inline-block;margin-top:10px;padding:6px 12px;border:1px solid #E7A23A;border-radius:4px;font-family:'Courier New',monospace;font-size:10px;color:#E7A23A;text-decoration:none;letter-spacing:0.5px;">VOIR SUR LETTERBOXD →</a>`
+    : "";
+
+  return `
+    <tr>
+      <td style="padding:14px 20px;border-top:1px solid #37301F;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td width="60" valign="top">${posterCell}</td>
+            <td style="padding-left:14px;" valign="top">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;color:#F3ECDF;line-height:1.2;">${item.title}</div>
+              <div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.5px;color:#E7A23A;margin-top:6px;text-transform:uppercase;">
+                Disponible sur ${item.providers.join(", ")}
+              </div>
+              ${letterboxdButton}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  `;
+}
+
+function buildEmailHtml(newlyAvailable) {
+  const rows = newlyAvailable.map(buildMovieRowHtml).join("");
+  const intro =
+    newlyAvailable.length > 1
+      ? `${newlyAvailable.length} films sont maintenant disponibles sur tes abonnements :`
+      : "Un film est maintenant disponible sur ton abonnement :";
+
+  return `
+  <body style="margin:0;padding:32px 12px;background:#0D0B08;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:480px;margin:0 auto;background:#1D1812;border:1px solid #37301F;border-radius:10px;overflow:hidden;">
+      <tr>
+        <td style="padding:24px 20px 18px;text-align:center;border-bottom:1px solid #37301F;">
+          <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;letter-spacing:1px;color:#F3ECDF;">
+            CINÉ<span style="color:#E7A23A;">RADAR</span>
+          </div>
+          <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;color:#93877A;margin-top:6px;text-transform:uppercase;">
+            Nouvelle disponibilité
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:18px 20px 6px;">
+          <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;color:#F3ECDF;">
+            ${intro}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+            ${rows}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:16px 20px 22px;text-align:center;">
+          <div style="font-family:'Courier New',monospace;font-size:10px;color:#5A5148;">
+            Envoyé automatiquement par CinéRadar
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+  `;
+}
+
 async function sendNotificationEmail(newlyAvailable, notifyEmail) {
   if (!notifyEmail) {
     console.log("Aucune adresse email configurée dans Paramètres, notification ignorée.");
@@ -153,9 +228,9 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
     console.log("RESEND_API_KEY absent, impossible d'envoyer l'email.");
     return;
   }
-  const listHtml = newlyAvailable
-    .map((item) => `<li><strong>${item.title}</strong> est maintenant disponible sur ${item.providers.join(", ")}</li>`)
-    .join("");
+  const textFallback = newlyAvailable
+    .map((item) => `${item.title} - disponible sur ${item.providers.join(", ")}`)
+    .join("\n");
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -167,7 +242,8 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
         from: "CinéRadar <onboarding@resend.dev>",
         to: [notifyEmail],
         subject: `CinéRadar : ${newlyAvailable.length} film(s) disponible(s) sur vos abonnements`,
-        html: `<h2>Bonne nouvelle !</h2><ul>${listHtml}</ul>`,
+        html: buildEmailHtml(newlyAvailable),
+        text: textFallback,
       }),
     });
     if (!res.ok) {
@@ -199,11 +275,17 @@ async function main() {
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
+    const posterUrl = details.poster_path ? `https://image.tmdb.org/t/p/w200${details.poster_path}` : null;
 
     const prevSet = previousAbonnements[details.id] || new Set();
     const newProviders = providers.abonnement.filter((p) => !prevSet.has(p));
     if (newProviders.length > 0) {
-      newlyAvailable.push({ title: details.title, providers: newProviders });
+      newlyAvailable.push({
+        title: details.title,
+        providers: newProviders,
+        poster: posterUrl,
+        letterboxdUrl: movie.letterboxdUrl || null,
+      });
     }
 
     let letterboxdRating = null;
@@ -220,7 +302,7 @@ async function main() {
       title: details.title,
       year: details.release_date?.slice(0, 4),
       director: director?.name || movie.director,
-      poster: details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null,
+      poster: posterUrl ? posterUrl.replace("/t/p/w200", "/t/p/w500") : null,
       synopsis: details.overview,
       genres: (details.genres || []).map((g) => g.name),
       cast,
