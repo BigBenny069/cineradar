@@ -78,7 +78,7 @@ function PlatformBadge({ name }) {
 
 function Header({ onBack }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 16px 16px" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 16px 16px", paddingTop: "calc(14px + env(safe-area-inset-top))" }}>
       {onBack && (
         <button onClick={onBack} style={{ padding: 4, marginLeft: -4 }} aria-label="Retour">
           <span style={{ color: COLORS.cream, fontSize: 22 }}>←</span>
