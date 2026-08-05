@@ -78,7 +78,15 @@ function PlatformBadge({ name }) {
 
 function Header({ onBack }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 16px 16px", paddingTop: "calc(14px + env(safe-area-inset-top))" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        padding: "14px 16px 16px",
+        paddingTop: "calc(14px + env(safe-area-inset-top))",
+      }}
+    >
       {onBack && (
         <button onClick={onBack} style={{ padding: 4, marginLeft: -4 }} aria-label="Retour">
           <span style={{ color: COLORS.cream, fontSize: 22 }}>←</span>
@@ -264,10 +272,43 @@ function SectionTitle({ children }) {
   );
 }
 
-function DetailView({ movie, onBack, onEdit }) {
+function DetailView({ movie, onBack, onEdit, onDeleted }) {
   const [showLinks, setShowLinks] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [deletePassword, setDeletePassword] = useState("");
+  const [deleteStatus, setDeleteStatus] = useState(null);
+  const [deleteError, setDeleteError] = useState("");
+
   const abonnement = movie.providers?.abonnement || [];
   const vod = movie.providers?.vod || [];
+
+  const confirmDelete = async () => {
+    setDeleteStatus("loading");
+    setDeleteError("");
+    try {
+      const res = await fetch("/api/delete-movie", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: movie.title,
+          year: movie.year,
+          tmdbId: movie.tmdbId,
+          password: deletePassword,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setDeleteStatus("error");
+        setDeleteError(data.error || "Erreur inconnue");
+        return;
+      }
+      setDeleteStatus("success");
+      setTimeout(() => onDeleted?.(), 1200);
+    } catch (e) {
+      setDeleteStatus("error");
+      setDeleteError(e.message);
+    }
+  };
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg }}>
@@ -342,7 +383,7 @@ function DetailView({ movie, onBack, onEdit }) {
         </div>
 
         {movie.letterboxdUrl && (
-          <a
+          
             href={movie.letterboxdUrl}
             style={{
               display: "flex",
@@ -481,7 +522,7 @@ function DetailView({ movie, onBack, onEdit }) {
           </div>
           {showLinks && (
             <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-              <a
+              
                 href={`https://www.themoviedb.org/movie/${movie.tmdbId}`}
                 style={{
                   flex: 1,
@@ -497,7 +538,7 @@ function DetailView({ movie, onBack, onEdit }) {
                 TMDB ↗
               </a>
               {movie.imdbId && (
-                <a
+                
                   href={`https://www.imdb.com/title/${movie.imdbId}/`}
                   style={{
                     flex: 1,
@@ -533,6 +574,101 @@ function DetailView({ movie, onBack, onEdit }) {
         >
           MODIFIER CETTE FICHE
         </button>
+
+        {!showDeleteConfirm ? (
+          <button
+            onClick={() => setShowDeleteConfirm(true)}
+            style={{
+              width: "100%",
+              marginTop: 10,
+              padding: "12px 0",
+              border: `1px solid ${COLORS.red}`,
+              borderRadius: 6,
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: 12,
+              color: COLORS.red,
+              letterSpacing: 0.5,
+            }}
+          >
+            SUPPRIMER CETTE FICHE
+          </button>
+        ) : (
+          <div
+            style={{
+              marginTop: 10,
+              padding: 14,
+              border: `1px solid ${COLORS.red}`,
+              borderRadius: 6,
+            }}
+          >
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.cream, marginBottom: 10 }}>
+              Confirmer la suppression de « {movie.title} » ?
+            </div>
+            <input
+              placeholder="Mot de passe"
+              type="password"
+              value={deletePassword}
+              onChange={(e) => setDeletePassword(e.target.value)}
+              style={{
+                background: COLORS.surface,
+                border: `1px solid ${COLORS.line}`,
+                borderRadius: 6,
+                color: COLORS.cream,
+                fontFamily: "'Source Serif 4', serif",
+                fontSize: 14,
+                padding: "10px 12px",
+                width: "100%",
+                marginBottom: 10,
+              }}
+            />
+            <div style={{ display: "flex", gap: 8 }}>
+              <button
+                onClick={() => {
+                  setShowDeleteConfirm(false);
+                  setDeletePassword("");
+                  setDeleteStatus(null);
+                }}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  border: `1px solid ${COLORS.line}`,
+                  borderRadius: 6,
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: 12,
+                  color: COLORS.muted,
+                }}
+              >
+                Annuler
+              </button>
+              <button
+                onClick={confirmDelete}
+                disabled={!deletePassword || deleteStatus === "loading"}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  background: COLORS.red,
+                  borderRadius: 6,
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: 12,
+                  color: COLORS.cream,
+                  opacity: !deletePassword || deleteStatus === "loading" ? 0.5 : 1,
+                }}
+              >
+                {deleteStatus === "loading" ? "Suppression..." : "Confirmer"}
+              </button>
+            </div>
+            {deleteStatus === "success" && (
+              <div style={{ marginTop: 10, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+                Supprimé ! Retour à l'accueil...
+              </div>
+            )}
+            {deleteStatus === "error" && (
+              <div style={{ marginTop: 10, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+                Erreur : {deleteError}
+              </div>
+            )}
+          </div>
+        )}
 
         <div style={{ marginTop: 16, textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
           Dernière vérification · {new Date(movie.lastChecked).toLocaleString("fr-FR")}
@@ -641,6 +777,7 @@ function AddView({ onCancel, editingMovie }) {
           password,
           originalTitle: editingMovie?.title,
           originalYear: editingMovie?.year,
+          originalTmdbId: editingMovie?.tmdbId,
         }),
       });
       const data = await res.json();
@@ -788,6 +925,7 @@ export default function App() {
         setSelected(null);
         setView("add");
       }}
+      onDeleted={() => setSelected(null)}
     />
   ) : (
     <HomeView
