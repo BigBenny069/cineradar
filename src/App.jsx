@@ -1136,7 +1136,7 @@ function SettingsView() {
   );
 }
 
-function AddView({ onCancel, editingMovie }) {
+function AddView({ onCancel, editingMovie, onSuccess }) {
   const isEditing = Boolean(editingMovie);
   const [title, setTitle] = useState(editingMovie?.title || "");
   const [year, setYear] = useState(editingMovie ? String(editingMovie.year) : "");
@@ -1188,6 +1188,7 @@ function AddView({ onCancel, editingMovie }) {
       setYear("");
       setDirector("");
       setLetterboxdUrl("");
+      setTimeout(() => onSuccess?.(), 1400);
     } catch (e) {
       setStatus("error");
       setErrorMsg(e.message);
@@ -1320,6 +1321,10 @@ export default function App() {
       <AddView
         editingMovie={editingMovie}
         onCancel={() => {
+          setEditingMovie(null);
+          setView(previousView);
+        }}
+        onSuccess={() => {
           setEditingMovie(null);
           setView(previousView);
         }}
