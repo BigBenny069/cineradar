@@ -20,7 +20,7 @@
     "tmdbRating": 7.7,
     "tmdbVotes": 789,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85452,
+    "letterboxdVotes": 85482,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:55.287Z"
+    "lastChecked": "2026-08-07T21:35:33.529Z"
   },
   {
     "tmdbId": 1091,
@@ -51,10 +51,10 @@
       "David Clennon",
       "Keith David"
     ],
-    "tmdbRating": 8.1,
-    "tmdbVotes": 8102,
+    "tmdbRating": 8.072,
+    "tmdbVotes": 8103,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1371466,
+    "letterboxdVotes": 1371991,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:55.532Z"
+    "lastChecked": "2026-08-07T21:35:33.655Z"
   },
   {
     "tmdbId": 270303,
@@ -95,7 +95,7 @@
       "Jake Weary",
       "Olivia Luccardi"
     ],
-    "tmdbRating": 6.58,
+    "tmdbRating": 6.6,
     "tmdbVotes": 7043,
     "letterboxdRating": null,
     "letterboxdVotes": null,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:55.614Z"
+    "lastChecked": "2026-08-07T21:35:33.697Z"
   },
   {
     "tmdbId": 440161,
@@ -140,7 +140,7 @@
     "tmdbRating": 6.832,
     "tmdbVotes": 2109,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 94605,
+    "letterboxdVotes": 94616,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:55.909Z"
+    "lastChecked": "2026-08-07T21:35:34.040Z"
   },
   {
     "tmdbId": 1092,
@@ -184,7 +184,7 @@
     "tmdbRating": 7.89,
     "tmdbVotes": 2143,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 202029,
+    "letterboxdVotes": 202088,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:56.135Z"
+    "lastChecked": "2026-08-07T21:35:34.247Z"
   },
   {
     "tmdbId": 11547,
@@ -229,7 +229,7 @@
     "tmdbRating": 5.7,
     "tmdbVotes": 1465,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100155,
+    "letterboxdVotes": 100188,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -246,50 +246,6 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-07T09:35:56.402Z"
-  },
-  {
-    "tmdbId": 798645,
-    "title": "Running Man",
-    "year": "2025",
-    "director": "Edgar Wright",
-    "poster": "https://image.tmdb.org/t/p/w500/7IwZANZ0V9ygf0LM7NsRVeIKZJR.jpg",
-    "synopsis": "Dans un futur proche, les participants du jeu télévisé Running Man sont traqués en direct par des chasseurs professionnels. Ils doivent survivre 30 jours sous les yeux d’un public avide de violence. Ben Richards, prêt à tout pour sauver sa fille malade, est forcé de participer par un producteur impitoyable. Mais son courage et sa révolte feront de lui le favori du public… et la pire menace du système.",
-    "genres": [
-      "Action",
-      "Thriller",
-      "Science-Fiction"
-    ],
-    "cast": [
-      "Glen Powell",
-      "Colman Domingo",
-      "Lee Pace",
-      "Josh Brolin",
-      "William H. Macy"
-    ],
-    "tmdbRating": 6.749,
-    "tmdbVotes": 1824,
-    "letterboxdRating": 3.13,
-    "letterboxdVotes": 571076,
-    "imdbId": "tt14107334",
-    "letterboxdUrl": "https://letterboxd.com/film/the-running-man-2025/",
-    "providers": {
-      "abonnement": [
-        "Canal+"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "TF1+",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "updatedAt": "2026-08-05T22:30:11.962Z",
-    "lastChecked": "2026-08-07T09:35:56.544Z"
+    "lastChecked": "2026-08-07T21:35:34.602Z"
   }
 ]
