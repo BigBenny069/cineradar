@@ -261,13 +261,20 @@ async function main() {
   const input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const previousAbonnements = loadPreviousAbonnements();
   const newlyAvailable = [];
+  const unmatched = [];
   const output = [];
 
   for (const movie of input) {
     console.log(`Recherche : ${movie.title} (${movie.year})`);
     const found = await findMovie(movie.title, movie.year);
     if (!found) {
-      console.log(`  Introuvable sur TMDB, ignoré.`);
+      console.log(`  Introuvable sur TMDB, marqué en erreur.`);
+      unmatched.push({
+        title: movie.title,
+        year: movie.year,
+        director: movie.director,
+        updatedAt: movie.updatedAt || null,
+      });
       continue;
     }
     const details = await getDetails(found.id);
@@ -320,7 +327,8 @@ async function main() {
 
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
-  console.log(`Terminé : ${output.length} film(s) mis à jour.`);
+  fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
+  console.log(`Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur.`);
 
   if (newlyAvailable.length > 0) {
     console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
