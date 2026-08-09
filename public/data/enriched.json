@@ -20,7 +20,7 @@
     "tmdbRating": 7.67,
     "tmdbVotes": 792,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85608,
+    "letterboxdVotes": 85615,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:26.397Z"
+    "lastChecked": "2026-08-09T16:07:53.102Z"
   },
   {
     "tmdbId": 1091,
@@ -54,7 +54,7 @@
     "tmdbRating": 8.1,
     "tmdbVotes": 8108,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1374117,
+    "letterboxdVotes": 1374323,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:26.685Z"
+    "lastChecked": "2026-08-09T16:07:53.357Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:26.776Z"
+    "lastChecked": "2026-08-09T16:07:53.543Z"
   },
   {
     "tmdbId": 440161,
@@ -140,7 +140,7 @@
     "tmdbRating": 6.832,
     "tmdbVotes": 2110,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 94647,
+    "letterboxdVotes": 94652,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:27.106Z"
+    "lastChecked": "2026-08-09T16:07:53.920Z"
   },
   {
     "tmdbId": 1092,
@@ -184,7 +184,7 @@
     "tmdbRating": 7.9,
     "tmdbVotes": 2145,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 202262,
+    "letterboxdVotes": 202284,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:27.332Z"
+    "lastChecked": "2026-08-09T16:07:54.280Z"
   },
   {
     "tmdbId": 11547,
@@ -229,7 +229,7 @@
     "tmdbRating": 5.687,
     "tmdbVotes": 1466,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100300,
+    "letterboxdVotes": 100309,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -246,6 +246,51 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T08:09:27.657Z"
+    "lastChecked": "2026-08-09T16:07:54.660Z"
+  },
+  {
+    "tmdbId": 1140535,
+    "title": "Presence",
+    "year": "2025",
+    "director": "Steven Soderbergh",
+    "poster": "https://image.tmdb.org/t/p/w500/n2MH5xiSS36f8pCTbehXlZq3WP0.jpg",
+    "synopsis": "Une famille est convaincue qu'elle n'est pas seule après avoir emménagé dans sa nouvelle maison en banlieue.",
+    "genres": [
+      "Drame",
+      "Horreur",
+      "Thriller"
+    ],
+    "cast": [
+      "Callina Liang",
+      "Lucy Liu",
+      "Chris Sullivan",
+      "Eddy Maday",
+      "West Mulholland"
+    ],
+    "tmdbRating": 6.106,
+    "tmdbVotes": 780,
+    "letterboxdRating": 2.95,
+    "letterboxdVotes": 277358,
+    "imdbId": "tt28249919",
+    "letterboxdUrl": "https://letterboxd.com/film/presence-2024/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Rakuten TV",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "updatedAt": "2026-08-09T16:07:38.946Z",
+    "lastChecked": "2026-08-09T16:07:54.898Z"
   }
 ]
