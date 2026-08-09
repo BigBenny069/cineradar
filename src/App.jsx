@@ -878,7 +878,144 @@ function SearchView({ movies, onOpen }) {
   );
 }
 
-function HistoryView({ movies, onOpen }) {
+function UnmatchedItem({ item, onDeleted }) {
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const confirmDelete = async () => {
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/delete-unmatched", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: item.title,
+          year: item.year,
+          director: item.director,
+          updatedAt: item.updatedAt,
+          password,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMsg(data.error || "Erreur inconnue");
+        return;
+      }
+      onDeleted(item);
+    } catch (e) {
+      setStatus("error");
+      setErrorMsg(e.message);
+    }
+  };
+
+  return (
+    <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.red}`, borderRadius: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+        <div>
+          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
+            {item.title}
+          </div>
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted, marginTop: 4 }}>
+            {item.year} · {item.director}
+          </div>
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.red, marginTop: 6 }}>
+            Introuvable sur TMDB · vérifie le titre / l'année
+          </div>
+        </div>
+        {!showConfirm && (
+          <button
+            onClick={() => setShowConfirm(true)}
+            style={{
+              flexShrink: 0,
+              padding: "6px 10px",
+              border: `1px solid ${COLORS.red}`,
+              borderRadius: 6,
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: 10,
+              color: COLORS.red,
+            }}
+          >
+            Supprimer
+          </button>
+        )}
+      </div>
+      {showConfirm && (
+        <div style={{ marginTop: 10 }}>
+          <input
+            placeholder="Mot de passe"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              width: "100%",
+              background: COLORS.surfaceRaised,
+              border: `1px solid ${COLORS.line}`,
+              borderRadius: 6,
+              color: COLORS.cream,
+              fontFamily: "'Source Serif 4', serif",
+              fontSize: 13,
+              padding: "8px 10px",
+              marginBottom: 8,
+            }}
+          />
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              onClick={() => {
+                setShowConfirm(false);
+                setPassword("");
+                setStatus(null);
+              }}
+              style={{
+                flex: 1,
+                padding: "8px 0",
+                border: `1px solid ${COLORS.line}`,
+                borderRadius: 6,
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: 11,
+                color: COLORS.muted,
+              }}
+            >
+              Annuler
+            </button>
+            <button
+              onClick={confirmDelete}
+              disabled={!password || status === "loading"}
+              style={{
+                flex: 1,
+                padding: "8px 0",
+                background: COLORS.red,
+                borderRadius: 6,
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: 11,
+                color: COLORS.cream,
+                opacity: !password || status === "loading" ? 0.5 : 1,
+              }}
+            >
+              {status === "loading" ? "..." : "Confirmer"}
+            </button>
+          </div>
+          {status === "error" && (
+            <div style={{ marginTop: 8, fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.red }}>
+              Erreur : {errorMsg}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function HistoryView({ movies, unmatched, onOpen }) {
+  const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
+
+  useEffect(() => {
+    setLocalUnmatched(unmatched || []);
+  }, [unmatched]);
+
   const sorted = [...movies]
     .filter((m) => m.updatedAt)
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
@@ -893,6 +1030,26 @@ function HistoryView({ movies, onOpen }) {
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 16 }}>
           Activité récente
         </div>
+
+        {localUnmatched.length > 0 && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.red, letterSpacing: 1, marginBottom: 10 }}>
+              ERREURS ({localUnmatched.length})
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {localUnmatched.map((item, i) => (
+                <UnmatchedItem
+                  key={item.updatedAt || `${item.title}-${i}`}
+                  item={item}
+                  onDeleted={(deletedItem) => {
+                    setLocalUnmatched((prev) => prev.filter((u) => u !== deletedItem));
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         {sorted.length === 0 ? (
           <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
             Aucune activité récente pour l'instant.
@@ -1282,6 +1439,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
 
 export default function App() {
   const [movies, setMovies] = useState([]);
+  const [unmatched, setUnmatched] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -1291,13 +1449,17 @@ export default function App() {
   const [refreshing, setRefreshing] = useState(false);
 
   const fetchMovies = () => {
-    return fetch(`/data/enriched.json?t=${Date.now()}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("fichier introuvable");
-        return res.json();
-      })
-      .then((data) => {
-        setMovies(data);
+    const moviesPromise = fetch(`/data/enriched.json?t=${Date.now()}`).then((res) => {
+      if (!res.ok) throw new Error("fichier introuvable");
+      return res.json();
+    });
+    const unmatchedPromise = fetch(`/data/unmatched.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+    return Promise.all([moviesPromise, unmatchedPromise])
+      .then(([moviesData, unmatchedData]) => {
+        setMovies(moviesData);
+        setUnmatched(unmatchedData);
         setError(null);
       })
       .catch((err) => {
@@ -1368,7 +1530,7 @@ export default function App() {
         />
       )}
       {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
-      {view === "history" && <HistoryView movies={movies} onOpen={setSelected} />}
+      {view === "history" && <HistoryView movies={movies} unmatched={unmatched} onOpen={setSelected} />}
       {view === "settings" && <SettingsView />}
       <BottomNav view={view} onChange={setView} />
     </>
