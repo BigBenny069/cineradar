@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:53.102Z"
+    "lastChecked": "2026-08-09T16:09:05.688Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:53.357Z"
+    "lastChecked": "2026-08-09T16:09:05.937Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:53.543Z"
+    "lastChecked": "2026-08-09T16:09:06.001Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:53.920Z"
+    "lastChecked": "2026-08-09T16:09:06.319Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:54.280Z"
+    "lastChecked": "2026-08-09T16:09:06.479Z"
   },
   {
     "tmdbId": 11547,
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:07:54.660Z"
+    "lastChecked": "2026-08-09T16:09:06.722Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,6 +291,51 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-09T16:07:54.898Z"
+    "lastChecked": "2026-08-09T16:09:07.016Z"
+  },
+  {
+    "tmdbId": 399170,
+    "title": "Logan Lucky",
+    "year": "2017",
+    "director": "Steven Soderbergh",
+    "poster": "https://image.tmdb.org/t/p/w500/6AyZ3qQjcP1EPFm4EDwZmTY8VMH.jpg",
+    "synopsis": "Deux frères pas très futés décident de monter le casse du siècle: empocher les recettes de la plus grosse course automobile de l’année. Pour réussir, ils ont besoin du meilleur braqueur de coffre-fort du pays: Joe Bang. Le problème, c’est qu’il est en prison…",
+    "genres": [
+      "Comédie",
+      "Crime",
+      "Action",
+      "Drame"
+    ],
+    "cast": [
+      "Channing Tatum",
+      "Adam Driver",
+      "Daniel Craig",
+      "Riley Keough",
+      "Katie Holmes"
+    ],
+    "tmdbRating": 6.736,
+    "tmdbVotes": 3895,
+    "letterboxdRating": 3.55,
+    "letterboxdVotes": 303890,
+    "imdbId": "tt5439796",
+    "letterboxdUrl": "https://letterboxd.com/film/logan-lucky/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "Orange VOD",
+        "YouTube",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "updatedAt": "2026-08-09T16:08:52.772Z",
+    "lastChecked": "2026-08-09T16:09:07.294Z"
   }
 ]
