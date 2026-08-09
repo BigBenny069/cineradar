@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:05.688Z"
+    "lastChecked": "2026-08-09T16:10:14.494Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:05.937Z"
+    "lastChecked": "2026-08-09T16:10:14.617Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:06.001Z"
+    "lastChecked": "2026-08-09T16:10:14.656Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:06.319Z"
+    "lastChecked": "2026-08-09T16:10:14.867Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:06.479Z"
+    "lastChecked": "2026-08-09T16:10:15.106Z"
   },
   {
     "tmdbId": 11547,
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:09:06.722Z"
+    "lastChecked": "2026-08-09T16:10:15.381Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-09T16:09:07.016Z"
+    "lastChecked": "2026-08-09T16:10:15.605Z"
   },
   {
     "tmdbId": 399170,
@@ -336,6 +336,52 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-09T16:09:07.294Z"
+    "lastChecked": "2026-08-09T16:10:15.720Z"
+  },
+  {
+    "tmdbId": 221,
+    "title": "La Fureur de vivre",
+    "year": "1955",
+    "director": "Nicholas Ray",
+    "poster": "https://image.tmdb.org/t/p/w500/7Ve2oZJ8QBUhlMgzPMYkJQtORNX.jpg",
+    "synopsis": "Jim Stark est le petit nouveau au lycée. Un jeune homme accablé de problèmes familiaux et brimé par ses camarades mais qui n'aspire qu'à se faire une place parmi ses camarades. Entraîné malgré lui dans un défi de vitesse face à Buzz, chef d'un groupe un peu rebelle, ce dernier y perdra la vie. Suite à ce drame, Jim est entraîné dans une spirale de violence.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "James Dean",
+      "Natalie Wood",
+      "Sal Mineo",
+      "Jim Backus",
+      "Ann Doran"
+    ],
+    "tmdbRating": 7.49,
+    "tmdbVotes": 1791,
+    "letterboxdRating": 3.83,
+    "letterboxdVotes": 192519,
+    "imdbId": "tt0048545",
+    "letterboxdUrl": "https://letterboxd.com/film/rebel-without-a-cause/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "updatedAt": "2026-08-09T16:10:02.797Z",
+    "lastChecked": "2026-08-09T16:10:15.847Z"
   }
 ]
