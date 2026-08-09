@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:27.385Z"
+    "lastChecked": "2026-08-09T16:12:34.004Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:27.708Z"
+    "lastChecked": "2026-08-09T16:12:34.199Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:27.878Z"
+    "lastChecked": "2026-08-09T16:12:34.251Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:28.241Z"
+    "lastChecked": "2026-08-09T16:12:34.405Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:28.545Z"
+    "lastChecked": "2026-08-09T16:12:34.565Z"
   },
   {
     "tmdbId": 11547,
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-09T16:11:28.882Z"
+    "lastChecked": "2026-08-09T16:12:34.675Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-09T16:11:29.201Z"
+    "lastChecked": "2026-08-09T16:12:34.864Z"
   },
   {
     "tmdbId": 399170,
@@ -336,7 +336,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-09T16:11:29.466Z"
+    "lastChecked": "2026-08-09T16:12:35.187Z"
   },
   {
     "tmdbId": 221,
@@ -382,6 +382,42 @@
       ]
     },
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-09T16:11:29.679Z"
+    "lastChecked": "2026-08-09T16:12:35.418Z"
+  },
+  {
+    "tmdbId": 28260,
+    "title": "Le Retour des morts-vivants 3",
+    "year": "1993",
+    "director": "Brian Yuzna",
+    "poster": "https://image.tmdb.org/t/p/w500/omh46iIM1wjhqsb5ABCpSKMZpBk.jpg",
+    "synopsis": "Curt est le fils du colonel Sinclair, un scientifique qui a dédié sa vie à un étrange projet de recherche. Jumlie est une splendide adolescente dont Curl est éperdument amoureux. Quand Julie meurt dans un accident, Curt utilise le projet de son père pour la ramener à la vie...",
+    "genres": [
+      "Horreur",
+      "Romance"
+    ],
+    "cast": [
+      "Melinda Clarke",
+      "J. Trevor Edmond",
+      "Kent McCord",
+      "Sarah Douglas",
+      "James T. Callahan"
+    ],
+    "tmdbRating": 6.574,
+    "tmdbVotes": 915,
+    "letterboxdRating": 3.09,
+    "letterboxdVotes": 21865,
+    "imdbId": "tt0107953",
+    "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Shadowz Amazon Channel",
+        "Shadowz",
+        "Lionsgate+ Amazon Channels"
+      ]
+    },
+    "updatedAt": "2026-08-09T16:12:20.239Z",
+    "lastChecked": "2026-08-09T16:12:35.845Z"
   }
 ]
