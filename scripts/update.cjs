@@ -273,6 +273,7 @@ async function main() {
         title: movie.title,
         year: movie.year,
         director: movie.director,
+        letterboxdUrl: movie.letterboxdUrl || null,
         updatedAt: movie.updatedAt || null,
       });
       continue;
