@@ -878,7 +878,7 @@ function SearchView({ movies, onOpen }) {
   );
 }
 
-function UnmatchedItem({ item, onDeleted }) {
+function UnmatchedItem({ item, onDeleted, onEdit }) {
   const [showConfirm, setShowConfirm] = useState(false);
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(null);
@@ -927,20 +927,34 @@ function UnmatchedItem({ item, onDeleted }) {
           </div>
         </div>
         {!showConfirm && (
-          <button
-            onClick={() => setShowConfirm(true)}
-            style={{
-              flexShrink: 0,
-              padding: "6px 10px",
-              border: `1px solid ${COLORS.red}`,
-              borderRadius: 6,
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: 10,
-              color: COLORS.red,
-            }}
-          >
-            Supprimer
-          </button>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6, flexShrink: 0 }}>
+            <button
+              onClick={() => onEdit(item)}
+              style={{
+                padding: "6px 10px",
+                border: `1px solid ${COLORS.gold}`,
+                borderRadius: 6,
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: 10,
+                color: COLORS.gold,
+              }}
+            >
+              Modifier
+            </button>
+            <button
+              onClick={() => setShowConfirm(true)}
+              style={{
+                padding: "6px 10px",
+                border: `1px solid ${COLORS.red}`,
+                borderRadius: 6,
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: 10,
+                color: COLORS.red,
+              }}
+            >
+              Supprimer
+            </button>
+          </div>
         )}
       </div>
       {showConfirm && (
@@ -1009,7 +1023,7 @@ function UnmatchedItem({ item, onDeleted }) {
   );
 }
 
-function HistoryView({ movies, unmatched, onOpen }) {
+function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
 
   useEffect(() => {
@@ -1041,6 +1055,7 @@ function HistoryView({ movies, unmatched, onOpen }) {
                 <UnmatchedItem
                   key={item.updatedAt || `${item.title}-${i}`}
                   item={item}
+                  onEdit={onEditUnmatched}
                   onDeleted={(deletedItem) => {
                     setLocalUnmatched((prev) => prev.filter((u) => u !== deletedItem));
                   }}
@@ -1334,6 +1349,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
           originalTitle: editingMovie?.title,
           originalYear: editingMovie?.year,
           originalTmdbId: editingMovie?.tmdbId,
+          originalUpdatedAt: editingMovie?.updatedAt,
         }),
       });
       const data = await res.json();
@@ -1530,7 +1546,24 @@ export default function App() {
         />
       )}
       {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
-      {view === "history" && <HistoryView movies={movies} unmatched={unmatched} onOpen={setSelected} />}
+      {view === "history" && (
+        <HistoryView
+          movies={movies}
+          unmatched={unmatched}
+          onOpen={setSelected}
+          onEditUnmatched={(item) => {
+            setEditingMovie({
+              title: item.title,
+              year: item.year,
+              director: item.director,
+              letterboxdUrl: item.letterboxdUrl || null,
+              updatedAt: item.updatedAt,
+            });
+            setPreviousView(view);
+            setView("add");
+          }}
+        />
+      )}
       {view === "settings" && <SettingsView />}
       <BottomNav view={view} onChange={setView} />
     </>
