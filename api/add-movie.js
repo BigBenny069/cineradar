@@ -19,6 +19,7 @@ export default async function handler(req, res) {
     originalTitle,
     originalYear,
     originalTmdbId,
+    originalUpdatedAt,
   } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
@@ -47,12 +48,18 @@ export default async function handler(req, res) {
 
     let matchIndex = -1;
 
-    // Priorité au matching par tmdbId (fiable et stable)
-    if (originalTmdbId) {
+    // Priorité absolue : l'horodatage unique posé à chaque ajout/modif (fiable même
+    // pour les fiches jamais retrouvées sur TMDB, qui n'ont pas encore de tmdbId)
+    if (originalUpdatedAt) {
+      matchIndex = movies.findIndex((m) => m.updatedAt === originalUpdatedAt);
+    }
+
+    // Repli : matching par tmdbId (fiable et stable pour les fiches déjà enrichies)
+    if (matchIndex === -1 && originalTmdbId) {
       matchIndex = movies.findIndex((m) => String(m.tmdbId) === String(originalTmdbId));
     }
 
-    // Repli : titre + année, normalisés (sans accents, casse ignorée)
+    // Dernier repli : titre + année, normalisés (sans accents, casse ignorée)
     if (matchIndex === -1 && originalTitle && originalYear) {
       matchIndex = movies.findIndex(
         (m) => normalize(m.title) === normalize(originalTitle) && String(m.year) === String(originalYear)
