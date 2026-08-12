@@ -1,16 +1,506 @@
 import { useState, useEffect } from "react";
 
-const COLORS = {
-  bg: "#13100C",
-  surface: "#1D1812",
-  surfaceRaised: "#241D16",
-  gold: "#E7A23A",
-  goldDim: "#8A6A34",
-  red: "#B23A32",
-  cream: "#F3ECDF",
-  muted: "#93877A",
-  line: "#37301F",
+// ─────────────────────────────────────────────────────────────
+// SYSTÈME DE THÈMES
+// T (couleurs/formes) et F (polices) sont mutés en place via
+// Object.assign() à chaque changement de thème, jamais réaffectés.
+// Tous les composants lisent T.xxx / F.xxx au moment du rendu, donc
+// un simple re-rendu global (themeTick) suffit à tout propager.
+// ─────────────────────────────────────────────────────────────
+const THEMES = {
+  sombre: {
+    label: "Guichet Nocturne",
+    colors: {
+      bg: "#13100C",
+      surface: "#1D1812",
+      surfaceRaised: "#241D16",
+      accent: "#E7A23A",
+      accentDim: "#8A6A34",
+      accentSoft: "rgba(231,162,58,0.12)",
+      accentSecondary: "#B23A32",
+      accentSecondarySoft: "rgba(178,58,50,0.14)",
+      cream: "#F3ECDF",
+      muted: "#93877A",
+      mutedDim: "#5F5648",
+      line: "#37301F",
+      alert: "#B23A32",
+      alertSoft: "rgba(178,58,50,0.14)",
+      radius: 8,
+      radiusSm: 4,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  clair: {
+    label: "Matinée",
+    colors: {
+      bg: "#F5F1E8",
+      surface: "#FFFFFF",
+      surfaceRaised: "#EFE8D8",
+      accent: "#B8792E",
+      accentDim: "#D8B98A",
+      accentSoft: "rgba(184,121,46,0.10)",
+      accentSecondary: "#A83232",
+      accentSecondarySoft: "rgba(168,50,50,0.10)",
+      cream: "#241D16",
+      muted: "#8A7F70",
+      mutedDim: "#C7BFAF",
+      line: "#E3DACB",
+      alert: "#C23B3B",
+      alertSoft: "rgba(194,59,59,0.10)",
+      radius: 10,
+      radiusSm: 6,
+      shadow: "0 1px 3px rgba(0,0,0,0.08)",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  neon: {
+    label: "Vidéoclub 88",
+    colors: {
+      bg: "#0D0620",
+      surface: "#1A0E33",
+      surfaceRaised: "#241442",
+      accent: "#FF2E88",
+      accentDim: "#7A1A48",
+      accentSoft: "rgba(255,46,136,0.14)",
+      accentSecondary: "#2EE6D6",
+      accentSecondarySoft: "rgba(46,230,214,0.14)",
+      cream: "#F5E9FF",
+      muted: "#8A79B8",
+      mutedDim: "#4E4380",
+      line: "#3D2A66",
+      alert: "#FF3B5C",
+      alertSoft: "rgba(255,59,92,0.16)",
+      radius: 4,
+      radiusSm: 3,
+      shadow: "0 0 14px rgba(255,46,136,0.30)",
+      borderWidth: 2,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  noir: {
+    label: "Film Noir",
+    colors: {
+      bg: "#0A0A0A",
+      surface: "#161616",
+      surfaceRaised: "#1F1F1F",
+      accent: "#E8E8E8",
+      accentDim: "#5C5C5C",
+      accentSoft: "rgba(232,232,232,0.10)",
+      accentSecondary: "#8B1E1E",
+      accentSecondarySoft: "rgba(139,30,30,0.16)",
+      cream: "#EDEDED",
+      muted: "#8C8C8C",
+      mutedDim: "#4A4A4A",
+      line: "#2E2E2E",
+      alert: "#8B1E1E",
+      alertSoft: "rgba(139,30,30,0.16)",
+      radius: 0,
+      radiusSm: 0,
+      shadow: "0 2px 10px rgba(0,0,0,0.6)",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  sepia: {
+    label: "Pellicule Vintage",
+    colors: {
+      bg: "#2B2013",
+      surface: "#3A2C1A",
+      surfaceRaised: "#453520",
+      accent: "#C08A3E",
+      accentDim: "#7A5C2E",
+      accentSoft: "rgba(192,138,62,0.14)",
+      accentSecondary: "#9C4A35",
+      accentSecondarySoft: "rgba(156,74,53,0.16)",
+      cream: "#EDE0C8",
+      muted: "#A08C6D",
+      mutedDim: "#5E5138",
+      line: "#57452C",
+      alert: "#9C4A35",
+      alertSoft: "rgba(156,74,53,0.16)",
+      radius: 6,
+      radiusSm: 4,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  imax: {
+    label: "Salle IMAX",
+    colors: {
+      bg: "#060B14",
+      surface: "#0E1826",
+      surfaceRaised: "#142234",
+      accent: "#3FA9F5",
+      accentDim: "#1E4A6B",
+      accentSoft: "rgba(63,169,245,0.14)",
+      accentSecondary: "#F5A623",
+      accentSecondarySoft: "rgba(245,166,35,0.14)",
+      cream: "#E8F1FA",
+      muted: "#7C93AC",
+      mutedDim: "#3D5066",
+      line: "#1D3048",
+      alert: "#E5484D",
+      alertSoft: "rgba(229,72,77,0.16)",
+      radius: 10,
+      radiusSm: 6,
+      shadow: "0 0 18px rgba(63,169,245,0.22)",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  drivein: {
+    label: "Ciné Plein Air",
+    colors: {
+      bg: "#1B1B3A",
+      surface: "#262650",
+      surfaceRaised: "#303066",
+      accent: "#FF6F59",
+      accentDim: "#8A3B30",
+      accentSoft: "rgba(255,111,89,0.14)",
+      accentSecondary: "#2FBFA6",
+      accentSecondarySoft: "rgba(47,191,166,0.14)",
+      cream: "#FCEEDD",
+      muted: "#9B93C9",
+      mutedDim: "#524C87",
+      line: "#3A3A6E",
+      alert: "#FF4D6A",
+      alertSoft: "rgba(255,77,106,0.16)",
+      radius: 16,
+      radiusSm: 10,
+      shadow: "none",
+      borderWidth: 2,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  cannes: {
+    label: "Tapis Rouge",
+    colors: {
+      bg: "#1A0A0C",
+      surface: "#240F13",
+      surfaceRaised: "#2E1418",
+      accent: "#D4AF37",
+      accentDim: "#7A6420",
+      accentSoft: "rgba(212,175,55,0.14)",
+      accentSecondary: "#7A1128",
+      accentSecondarySoft: "rgba(122,17,40,0.18)",
+      cream: "#F5E9D8",
+      muted: "#9C837A",
+      mutedDim: "#553F3A",
+      line: "#3D1D22",
+      alert: "#7A1128",
+      alertSoft: "rgba(122,17,40,0.18)",
+      radius: 4,
+      radiusSm: 3,
+      shadow: "0 4px 14px rgba(0,0,0,0.5)",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  ticket: {
+    label: "Ticket de cinéma",
+    colors: {
+      bg: "#14100C",
+      surface: "#1F1912",
+      surfaceRaised: "#2A2216",
+      accent: "#C58D29",
+      accentDim: "#6E5A22",
+      accentSoft: "#3A2C13",
+      accentSecondary: "#56929F",
+      accentSecondarySoft: "#16262A",
+      cream: "#F3EEE3",
+      muted: "#9C9284",
+      mutedDim: "#6B6355",
+      line: "#332B22",
+      alert: "#B85C4A",
+      alertSoft: "#2E1A15",
+      radius: 16,
+      radiusSm: 8,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Bebas Neue', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  bleu: {
+    label: "Bleu moderne",
+    colors: {
+      bg: "#0B0E14",
+      surface: "#131720",
+      surfaceRaised: "#1B212C",
+      accent: "#3D7DFF",
+      accentDim: "#1F3F80",
+      accentSoft: "#152244",
+      accentSecondary: "#7FB4FF",
+      accentSecondarySoft: "#16223F",
+      cream: "#EDEFF3",
+      muted: "#7C8494",
+      mutedDim: "#4E5666",
+      line: "#1F2530",
+      alert: "#E85D6E",
+      alertSoft: "#301A20",
+      radius: 16,
+      radiusSm: 8,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Sora', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  table: {
+    label: "Table lumineuse",
+    colors: {
+      bg: "#EDEEE8",
+      surface: "#FFFFFF",
+      surfaceRaised: "#E2E3DB",
+      accent: "#E8432F",
+      accentDim: "#8A2A1E",
+      accentSoft: "#F5D9D4",
+      accentSecondary: "#6B6E64",
+      accentSecondarySoft: "#DEDFD8",
+      cream: "#14171C",
+      muted: "#4A4D45",
+      mutedDim: "#7A7D75",
+      line: "#14171C22",
+      alert: "#E8432F",
+      alertSoft: "#F5D9D4",
+      radius: 2,
+      radiusSm: 2,
+      shadow: "none",
+      borderWidth: 2,
+    },
+    fonts: {
+      marquee: "'Source Serif 4', serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  affiche: {
+    label: "Affiche de festival",
+    colors: {
+      bg: "#F2F0E8",
+      surface: "#FFFFFF",
+      surfaceRaised: "#F0F0EA",
+      accent: "#00D9C0",
+      accentDim: "#0A6E62",
+      accentSoft: "#FF7A1A",
+      accentSecondary: "#2F6BFF",
+      accentSecondarySoft: "#FFF1DC",
+      gold: "#FFD400",
+      cream: "#0D0D0D",
+      muted: "#0D0D0DB3",
+      mutedDim: "#0D0D0D80",
+      line: "#0D0D0D33",
+      alert: "#FF7A1A",
+      alertSoft: "#FFE9D6",
+      radius: 0,
+      radiusSm: 0,
+      shadow: "4px 4px 0 #0D0D0D",
+      borderWidth: 3,
+    },
+    fonts: {
+      marquee: "'Archivo Black', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  minitel: {
+    label: "Minitel",
+    colors: {
+      bg: "#000000",
+      surface: "#000000",
+      surfaceRaised: "#0A0A0A",
+      accent: "#00D9C0",
+      accentDim: "#0A6E62",
+      accentSoft: "#FF7A1A",
+      accentSecondary: "#2F6BFF",
+      accentSecondarySoft: "#0A1830",
+      gold: "#FFD400",
+      cream: "#F0F0F0",
+      muted: "#F0F0F099",
+      mutedDim: "#F0F0F066",
+      line: "#F0F0F033",
+      alert: "#FF7A1A",
+      alertSoft: "#2A1400",
+      radius: 0,
+      radiusSm: 0,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'IBM Plex Mono', monospace",
+      serif: "'IBM Plex Mono', monospace",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
+  salle: {
+    label: "Salle privée",
+    colors: {
+      bg: "#1B1720",
+      surface: "#241F2C",
+      surfaceRaised: "#2E2836",
+      accent: "#C9A876",
+      accentDim: "#7A6544",
+      accentSoft: "#3A3226",
+      accentSecondary: "#8E7F9E",
+      accentSecondarySoft: "#332C42",
+      cream: "#F0EAE2",
+      muted: "#A69AAE",
+      mutedDim: "#6E637A",
+      line: "#332C3D",
+      alert: "#C97C6E",
+      alertSoft: "#3A2620",
+      radius: 20,
+      radiusSm: 16,
+      shadow: "0 8px 20px rgba(0,0,0,0.35)",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Playfair Display', serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'Inter', sans-serif",
+    },
+  },
+  letterboxd: {
+    label: "Letterboxd",
+    colors: {
+      bg: "#14181C",
+      surface: "#1C2228",
+      surfaceRaised: "#242C33",
+      accent: "#00E054",
+      accentDim: "#0A6E2A",
+      accentSoft: "#0F2A1C",
+      accentSecondary: "#40BCF4",
+      accentSecondarySoft: "#0F222E",
+      gold: "#FF8000",
+      cream: "#F5F5F5",
+      muted: "#8CA3B3",
+      mutedDim: "#5A6E7B",
+      line: "#2A333A",
+      alert: "#FF8000",
+      alertSoft: "#2E1F0A",
+      radius: 6,
+      radiusSm: 4,
+      shadow: "none",
+      borderWidth: 1,
+    },
+    fonts: {
+      marquee: "'Inter', sans-serif",
+      serif: "'Source Serif 4', serif",
+      mono: "'IBM Plex Mono', monospace",
+    },
+  },
 };
+
+let T = { ...THEMES.sombre.colors };
+let F = { ...THEMES.sombre.fonts };
+let CURRENT_THEME = "sombre";
+
+function applyTheme_(name) {
+  const theme = THEMES[name] || THEMES.sombre;
+  Object.assign(T, theme.colors);
+  Object.assign(F, theme.fonts);
+  CURRENT_THEME = THEMES[name] ? name : "sombre";
+  try {
+    localStorage.setItem("cineradar_theme", name);
+  } catch {}
+}
+
+function getStoredTheme_() {
+  try {
+    return localStorage.getItem("cineradar_theme") || "sombre";
+  } catch {
+    return "sombre";
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// MOT DE PASSE MÉMORISÉ SUR L'APPAREIL
+// Demandé une seule fois via window.prompt(), stocké en localStorage.
+// Effacé automatiquement si le serveur répond 401 (mauvais mot de passe).
+// ─────────────────────────────────────────────────────────────
+const PWD_KEY = "cineradar_pwd";
+
+function getStoredPassword() {
+  try {
+    return localStorage.getItem(PWD_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function askAndStorePassword() {
+  const pwd = window.prompt("Mot de passe CinéRadar :");
+  if (pwd) {
+    try {
+      localStorage.setItem(PWD_KEY, pwd);
+    } catch {}
+  }
+  return pwd || "";
+}
+
+async function apiWrite(url, body) {
+  let password = getStoredPassword();
+  if (!password) password = askAndStorePassword();
+  if (!password) return { ok: false, error: "Mot de passe requis" };
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...body, password }),
+  });
+  const data = await res.json().catch(() => ({}));
+
+  if (res.status === 401) {
+    try {
+      localStorage.removeItem(PWD_KEY);
+    } catch {}
+    return { ok: false, error: "Mot de passe incorrect (redemandé au prochain essai)" };
+  }
+  if (!res.ok) return { ok: false, error: data.error || "Erreur serveur" };
+  return { ok: true, data };
+}
 
 const PROVIDER_META = {
   "Canal+": { bg: "#000000", fg: "#FFFFFF", label: "CANAL+", weight: 800, category: "abonnement" },
@@ -74,8 +564,8 @@ function LetterboxdMark({ size = 34 }) {
 
 function PlatformBadge({ name }) {
   const meta = PROVIDER_META[name] || {
-    bg: COLORS.surfaceRaised,
-    fg: COLORS.cream,
+    bg: T.surfaceRaised,
+    fg: T.cream,
     label: name.slice(0, 1),
     weight: 700,
   };
@@ -91,7 +581,7 @@ function PlatformBadge({ name }) {
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          border: meta.bg === "#FFFFFF" ? `1px solid ${COLORS.line}` : "none",
+          border: meta.bg === "#FFFFFF" ? `1px solid ${T.line}` : "none",
         }}
       >
         <span
@@ -105,7 +595,7 @@ function PlatformBadge({ name }) {
           {meta.label}
         </span>
       </div>
-      <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 14, color: COLORS.cream }}>{name}</span>
+      <span style={{ fontFamily: F.serif, fontSize: 14, color: T.cream }}>{name}</span>
     </div>
   );
 }
@@ -123,7 +613,7 @@ function Header({ onBack }) {
     >
       {onBack && (
         <button onClick={onBack} style={{ padding: 4, marginLeft: -4 }} aria-label="Retour">
-          <span style={{ color: COLORS.cream, fontSize: 22 }}>←</span>
+          <span style={{ color: T.cream, fontSize: 22 }}>←</span>
         </button>
       )}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -132,31 +622,31 @@ function Header({ onBack }) {
             width: 36,
             height: 36,
             borderRadius: "50%",
-            border: `1.5px solid ${COLORS.gold}`,
+            border: `1.5px solid ${T.accent}`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <span style={{ color: COLORS.gold, fontSize: 16 }}>🎬</span>
+          <span style={{ color: T.accent, fontSize: 16 }}>🎬</span>
         </div>
         <div>
           <div
             style={{
-              fontFamily: "'Bebas Neue', sans-serif",
+              fontFamily: F.marquee,
               fontSize: 24,
               letterSpacing: 1,
-              color: COLORS.cream,
+              color: T.cream,
               lineHeight: 1,
             }}
           >
-            CINÉ<span style={{ color: COLORS.gold }}>RADAR</span>
+            CINÉ<span style={{ color: T.accent }}>RADAR</span>
           </div>
           <div
             style={{
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: F.mono,
               fontSize: 9,
-              color: COLORS.muted,
+              color: T.muted,
               letterSpacing: 1,
             }}
           >
@@ -177,10 +667,10 @@ function MarqueeBadge({ children }) {
         gap: 6,
         padding: "4px 10px",
         background: "rgba(231,162,58,0.12)",
-        color: COLORS.gold,
-        border: `1px solid ${COLORS.goldDim}`,
+        color: T.accent,
+        border: `1px solid ${T.accentDim}`,
         borderRadius: 3,
-        fontFamily: "'IBM Plex Mono', monospace",
+        fontFamily: F.mono,
         fontSize: 11,
       }}
     >
@@ -189,8 +679,8 @@ function MarqueeBadge({ children }) {
           width: 6,
           height: 6,
           borderRadius: "50%",
-          background: COLORS.gold,
-          boxShadow: `0 0 6px ${COLORS.gold}`,
+          background: T.accent,
+          boxShadow: `0 0 6px ${T.accent}`,
         }}
       />
       {children}
@@ -207,12 +697,12 @@ function StampBadge({ children, size = "normal" }) {
         display: "inline-block",
         transform: "rotate(-7deg)",
         padding: pad,
-        border: `2px solid ${COLORS.gold}`,
+        border: `2px solid ${T.accent}`,
         borderRadius: 4,
-        boxShadow: `0 0 0 2px ${COLORS.bg}, 0 0 0 3px ${COLORS.gold}`,
+        boxShadow: `0 0 0 2px ${T.bg}, 0 0 0 3px ${T.accent}`,
         background: "rgba(19,16,12,0.6)",
-        color: COLORS.gold,
-        fontFamily: "'IBM Plex Mono', monospace",
+        color: T.accent,
+        fontFamily: F.mono,
         fontSize,
         letterSpacing: 1.5,
         textTransform: "uppercase",
@@ -233,9 +723,10 @@ function MovieCard({ movie, onOpen }) {
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
-        background: COLORS.surface,
-        border: `1px solid ${COLORS.line}`,
-        borderRadius: 8,
+        background: T.surface,
+        border: `${T.borderWidth}px solid ${T.line}`,
+        borderRadius: T.radius,
+        boxShadow: T.shadow,
       }}
     >
       <div style={{ aspectRatio: "2 / 3", position: "relative", background: "#000" }}>
@@ -249,8 +740,8 @@ function MovieCard({ movie, onOpen }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: COLORS.muted,
-              fontFamily: "'IBM Plex Mono', monospace",
+              color: T.muted,
+              fontFamily: F.mono,
               fontSize: 10,
             }}
           >
@@ -264,10 +755,10 @@ function MovieCard({ movie, onOpen }) {
         )}
       </div>
       <div style={{ padding: "8px 10px" }}>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
+        <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>
           {movie.title}
         </div>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted, marginTop: 3 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted, marginTop: 3 }}>
           {movie.year} · {movie.director}
         </div>
       </div>
@@ -277,7 +768,7 @@ function MovieCard({ movie, onOpen }) {
 
 function SectionTitle({ children }) {
   return (
-    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.cream, marginBottom: 10 }}>
+    <div style={{ fontFamily: F.marquee, fontSize: 20, color: T.cream, marginBottom: 10 }}>
       {children}
     </div>
   );
@@ -300,8 +791,8 @@ function BottomNav({ view, onChange }) {
         width: "100%",
         maxWidth: 480,
         display: "flex",
-        background: COLORS.surface,
-        borderTop: `1px solid ${COLORS.line}`,
+        background: T.surface,
+        borderTop: `1px solid ${T.line}`,
         paddingBottom: "env(safe-area-inset-bottom)",
         zIndex: 10,
       }}
@@ -317,11 +808,11 @@ function BottomNav({ view, onChange }) {
             alignItems: "center",
             gap: 2,
             padding: "10px 0 8px",
-            color: view === item.key ? COLORS.gold : COLORS.muted,
+            color: view === item.key ? T.accent : T.muted,
           }}
         >
           <span style={{ fontSize: 18 }}>{item.icon}</span>
-          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, letterSpacing: 0.5 }}>
+          <span style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: 0.5 }}>
             {item.label}
           </span>
         </button>
@@ -334,7 +825,6 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   const [showLinks, setShowLinks] = useState(false);
   const [showVod, setShowVod] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const [deletePassword, setDeletePassword] = useState("");
   const [deleteStatus, setDeleteStatus] = useState(null);
   const [deleteError, setDeleteError] = useState("");
 
@@ -344,36 +834,25 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   const confirmDelete = async () => {
     setDeleteStatus("loading");
     setDeleteError("");
-    try {
-      const res = await fetch("/api/delete-movie", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: movie.title,
-          year: movie.year,
-          tmdbId: movie.tmdbId,
-          password: deletePassword,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setDeleteStatus("error");
-        setDeleteError(data.error || "Erreur inconnue");
-        return;
-      }
-      setDeleteStatus("success");
-      setTimeout(() => onDeleted?.(), 1200);
-    } catch (e) {
+    const result = await apiWrite("/api/delete-movie", {
+      title: movie.title,
+      year: movie.year,
+      tmdbId: movie.tmdbId,
+    });
+    if (!result.ok) {
       setDeleteStatus("error");
-      setDeleteError(e.message);
+      setDeleteError(result.error);
+      return;
     }
+    setDeleteStatus("success");
+    setTimeout(() => onDeleted?.(), 1200);
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header onBack={onBack} />
       <div style={{ padding: "0 16px 96px" }}>
-        <div style={{ background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: "hidden" }}>
+        <div style={{ background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radius, boxShadow: T.shadow, overflow: "hidden" }}>
           <div style={{ height: "42vh", background: "#000" }}>
             {movie.poster && (
               <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
@@ -385,10 +864,10 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                 <StampBadge>Abonné</StampBadge>
               </div>
             )}
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: COLORS.cream, lineHeight: 1 }}>
+            <div style={{ fontFamily: F.marquee, fontSize: 32, color: T.cream, lineHeight: 1 }}>
               {movie.title}
             </div>
-            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted, marginTop: 6 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted, marginTop: 6 }}>
               {movie.year} · {movie.director}
             </div>
             <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
@@ -397,10 +876,10 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                   key={g}
                   style={{
                     padding: "4px 10px",
-                    fontFamily: "'IBM Plex Mono', monospace",
+                    fontFamily: F.mono,
                     fontSize: 10,
-                    color: COLORS.cream,
-                    border: `1px solid ${COLORS.line}`,
+                    color: T.cream,
+                    border: `1px solid ${T.line}`,
                     borderRadius: 3,
                   }}
                 >
@@ -414,7 +893,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                   width: 64,
                   height: 64,
                   borderRadius: "50%",
-                  border: `2px solid ${COLORS.red}`,
+                  border: `2px solid ${T.accentSecondary}`,
                   transform: "rotate(-6deg)",
                   display: "flex",
                   flexDirection: "column",
@@ -422,16 +901,16 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                   justifyContent: "center",
                 }}
               >
-                <span style={{ color: COLORS.red, fontSize: 12 }}>★</span>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: COLORS.red, lineHeight: 1 }}>
+                <span style={{ color: T.accentSecondary, fontSize: 12 }}>★</span>
+                <span style={{ fontFamily: F.marquee, fontSize: 20, color: T.accentSecondary, lineHeight: 1 }}>
                   {movie.letterboxdRating ?? movie.tmdbRating}
                 </span>
               </div>
               <div>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
+                <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted }}>
                   {movie.letterboxdRating ? "LETTERBOXD" : "TMDB (Letterboxd indisponible)"}
                 </div>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: COLORS.cream }}>
+                <div style={{ fontFamily: F.mono, fontSize: 13, color: T.cream }}>
                   {movie.letterboxdVotes
                     ? `${movie.letterboxdVotes.toLocaleString("fr-FR")} votes`
                     : `${movie.tmdbVotes} votes TMDB`}
@@ -451,12 +930,12 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
               justifyContent: "center",
               gap: 12,
               padding: "12px 0",
-              background: COLORS.surface,
-              border: `1.5px solid ${COLORS.gold}`,
+              background: T.surface,
+              border: `1.5px solid ${T.accent}`,
               borderRadius: 6,
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: F.mono,
               fontSize: 13,
-              color: COLORS.gold,
+              color: T.accent,
               letterSpacing: 0.5,
             }}
           >
@@ -467,7 +946,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         {movie.synopsis && (
           <div style={{ marginTop: 24 }}>
             <SectionTitle>Synopsis</SectionTitle>
-            <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 15, lineHeight: 1.6, color: COLORS.cream }}>
+            <p style={{ fontFamily: F.serif, fontSize: 15, lineHeight: 1.6, color: T.cream }}>
               {movie.synopsis}
             </p>
           </div>
@@ -482,12 +961,12 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                   key={c}
                   style={{
                     padding: "10px 12px",
-                    background: COLORS.surface,
-                    border: `1px solid ${COLORS.line}`,
+                    background: T.surface,
+                    border: `1px solid ${T.line}`,
                     borderRadius: 6,
-                    fontFamily: "'Source Serif 4', serif",
+                    fontFamily: F.serif,
                     fontSize: 14,
-                    color: COLORS.cream,
+                    color: T.cream,
                   }}
                 >
                   {c}
@@ -500,22 +979,22 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         <div style={{ marginTop: 24 }}>
           <SectionTitle>Informations</SectionTitle>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-            <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 6 }}>
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted }}>
+            <div style={{ padding: 12, background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm }}>
+              <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted }}>
                 RÉALISATION
               </div>
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: COLORS.cream, marginTop: 4 }}>
+              <div style={{ fontFamily: F.mono, fontSize: 13, color: T.cream, marginTop: 4 }}>
                 {movie.director}
               </div>
             </div>
             <button
               onClick={() => setShowLinks((v) => !v)}
-              style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 6, textAlign: "left" }}
+              style={{ padding: 12, background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm, textAlign: "left" }}
             >
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: COLORS.muted }}>
+              <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted }}>
                 NOTE TMDB · toucher
               </div>
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: COLORS.cream, marginTop: 4 }}>
+              <div style={{ fontFamily: F.mono, fontSize: 13, color: T.cream, marginTop: 4 }}>
                 {movie.tmdbRating}/10
               </div>
             </button>
@@ -528,11 +1007,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                   flex: 1,
                   textAlign: "center",
                   padding: "10px 0",
-                  border: `1px solid ${COLORS.line}`,
+                  border: `1px solid ${T.line}`,
                   borderRadius: 6,
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: F.mono,
                   fontSize: 12,
-                  color: COLORS.cream,
+                  color: T.cream,
                 }}
               >
                 TMDB ↗
@@ -544,11 +1023,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                     flex: 1,
                     textAlign: "center",
                     padding: "10px 0",
-                    border: `1px solid ${COLORS.line}`,
+                    border: `1px solid ${T.line}`,
                     borderRadius: 6,
-                    fontFamily: "'IBM Plex Mono', monospace",
+                    fontFamily: F.mono,
                     fontSize: 12,
-                    color: COLORS.cream,
+                    color: T.cream,
                   }}
                 >
                   IMDb ↗
@@ -562,8 +1041,8 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
           <SectionTitle>Où regarder</SectionTitle>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {abonnement.length > 0 && (
-              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.gold, marginBottom: 8 }}>
+              <div style={{ padding: 12, background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm }}>
+                <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accent, marginBottom: 8 }}>
                   MES ABONNEMENTS
                 </div>
                 {abonnement.map((p) => (
@@ -574,11 +1053,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                       alignItems: "center",
                       justifyContent: "space-between",
                       padding: "10px 0",
-                      borderTop: `1px solid ${COLORS.line}`,
+                      borderTop: `1px solid ${T.line}`,
                     }}
                   >
                     <PlatformBadge name={p} />
-                    <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
+                    <span style={{ fontFamily: F.mono, fontSize: 11, color: T.accent }}>
                       Voir →
                     </span>
                   </div>
@@ -586,7 +1065,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
               </div>
             )}
             {vod.length > 0 && (
-              <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 8 }}>
+              <div style={{ padding: 12, background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm }}>
                 <button
                   onClick={() => setShowVod((v) => !v)}
                   style={{
@@ -597,10 +1076,10 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                     textAlign: "left",
                   }}
                 >
-                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
+                  <span style={{ fontFamily: F.mono, fontSize: 10, color: T.muted }}>
                     VOD · LOCATION / ACHAT ({vod.length})
                   </span>
-                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+                  <span style={{ fontFamily: F.mono, fontSize: 12, color: T.accent }}>
                     {showVod ? "▲" : "▼"}
                   </span>
                 </button>
@@ -614,11 +1093,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
                           alignItems: "center",
                           justifyContent: "space-between",
                           padding: "10px 0",
-                          borderTop: `1px solid ${COLORS.line}`,
+                          borderTop: `1px solid ${T.line}`,
                         }}
                       >
                         <PlatformBadge name={p} />
-                        <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold }}>
+                        <span style={{ fontFamily: F.mono, fontSize: 11, color: T.accent }}>
                           Voir →
                         </span>
                       </div>
@@ -628,7 +1107,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
               </div>
             )}
             {abonnement.length === 0 && vod.length === 0 && (
-              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+              <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
                 Aucune offre trouvée en France pour le moment.
               </div>
             )}
@@ -641,11 +1120,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
             width: "100%",
             marginTop: 24,
             padding: "12px 0",
-            border: `1px solid ${COLORS.line}`,
+            border: `1px solid ${T.line}`,
             borderRadius: 6,
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: F.mono,
             fontSize: 12,
-            color: COLORS.muted,
+            color: T.muted,
             letterSpacing: 0.5,
           }}
         >
@@ -659,11 +1138,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
               width: "100%",
               marginTop: 10,
               padding: "12px 0",
-              border: `1px solid ${COLORS.red}`,
+              border: `1px solid ${T.accentSecondary}`,
               borderRadius: 6,
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: F.mono,
               fontSize: 12,
-              color: COLORS.red,
+              color: T.accentSecondary,
               letterSpacing: 0.5,
             }}
           >
@@ -674,80 +1153,62 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
             style={{
               marginTop: 10,
               padding: 14,
-              border: `1px solid ${COLORS.red}`,
+              border: `1px solid ${T.accentSecondary}`,
               borderRadius: 6,
             }}
           >
-            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.cream, marginBottom: 10 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 12, color: T.cream, marginBottom: 10 }}>
               Confirmer la suppression de « {movie.title} » ?
             </div>
-            <input
-              placeholder="Mot de passe"
-              type="password"
-              value={deletePassword}
-              onChange={(e) => setDeletePassword(e.target.value)}
-              style={{
-                background: COLORS.surface,
-                border: `1px solid ${COLORS.line}`,
-                borderRadius: 6,
-                color: COLORS.cream,
-                fontFamily: "'Source Serif 4', serif",
-                fontSize: 14,
-                padding: "10px 12px",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            />
             <div style={{ display: "flex", gap: 8 }}>
               <button
                 onClick={() => {
                   setShowDeleteConfirm(false);
-                  setDeletePassword("");
                   setDeleteStatus(null);
                 }}
                 style={{
                   flex: 1,
                   padding: "10px 0",
-                  border: `1px solid ${COLORS.line}`,
+                  border: `1px solid ${T.line}`,
                   borderRadius: 6,
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: F.mono,
                   fontSize: 12,
-                  color: COLORS.muted,
+                  color: T.muted,
                 }}
               >
                 Annuler
               </button>
               <button
                 onClick={confirmDelete}
-                disabled={!deletePassword || deleteStatus === "loading"}
+                disabled={deleteStatus === "loading"}
                 style={{
                   flex: 1,
                   padding: "10px 0",
-                  background: COLORS.red,
+                  background: T.accentSecondary,
                   borderRadius: 6,
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: F.mono,
                   fontSize: 12,
-                  color: COLORS.cream,
-                  opacity: !deletePassword || deleteStatus === "loading" ? 0.5 : 1,
+                  color: T.cream,
+                  opacity: deleteStatus === "loading" ? 0.5 : 1,
                 }}
               >
                 {deleteStatus === "loading" ? "Suppression..." : "Confirmer"}
               </button>
             </div>
             {deleteStatus === "success" && (
-              <div style={{ marginTop: 10, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+              <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
                 Supprimé ! Retour à l'accueil...
               </div>
             )}
             {deleteStatus === "error" && (
-              <div style={{ marginTop: 10, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+              <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>
                 Erreur : {deleteError}
               </div>
             )}
           </div>
         )}
 
-        <div style={{ marginTop: 16, textAlign: "center", fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>
+        <div style={{ marginTop: 16, textAlign: "center", fontFamily: F.mono, fontSize: 10, color: T.muted }}>
           Dernière vérification · {new Date(movie.lastChecked).toLocaleString("fr-FR")}
         </div>
       </div>
@@ -757,20 +1218,20 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
 
 function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing }) {
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           GUICHET
         </div>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: COLORS.cream, marginTop: 4, lineHeight: 1.05 }}>
+        <div style={{ fontFamily: F.marquee, fontSize: 32, color: T.cream, marginTop: 4, lineHeight: 1.05 }}>
           Où regarder votre prochain film ?
         </div>
 
         <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
-          <div style={{ flex: 1, textAlign: "center", padding: "16px 8px", background: COLORS.surface, border: `1px solid ${COLORS.line}`, borderRadius: 6 }}>
-            <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: COLORS.cream }}>{movies.length}</div>
-            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted }}>SUIVIS</div>
+          <div style={{ flex: 1, textAlign: "center", padding: "16px 8px", background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm }}>
+            <div style={{ fontFamily: F.marquee, fontSize: 28, color: T.cream }}>{movies.length}</div>
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted }}>SUIVIS</div>
           </div>
         </div>
 
@@ -780,11 +1241,11 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
             width: "100%",
             marginTop: 12,
             padding: "12px 0",
-            border: `1px solid ${COLORS.gold}`,
+            border: `1px solid ${T.accent}`,
             borderRadius: 6,
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: F.mono,
             fontSize: 13,
-            color: COLORS.gold,
+            color: T.accent,
             letterSpacing: 0.5,
           }}
         >
@@ -792,17 +1253,17 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
         </button>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 24, marginBottom: 12 }}>
-          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: COLORS.cream }}>Derniers films</div>
+          <div style={{ fontFamily: F.marquee, fontSize: 22, color: T.cream }}>Derniers films</div>
           <button
             onClick={onRefresh}
             disabled={refreshing}
             style={{
               padding: "6px 12px",
-              border: `1px solid ${COLORS.line}`,
+              border: `1px solid ${T.line}`,
               borderRadius: 6,
-              fontFamily: "'IBM Plex Mono', monospace",
+              fontFamily: F.mono,
               fontSize: 11,
-              color: COLORS.gold,
+              color: T.accent,
               opacity: refreshing ? 0.5 : 1,
             }}
           >
@@ -811,12 +1272,12 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
         </div>
 
         {loading && (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
             Chargement des données...
           </div>
         )}
         {error && (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>
             Erreur : {error}
           </div>
         )}
@@ -837,13 +1298,13 @@ function SearchView({ movies, onOpen }) {
   const filtered = query.trim() ? movies.filter((m) => normalizeText(m.title).includes(normalizedQuery)) : movies;
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           RECHERCHE
         </div>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 16 }}>
+        <div style={{ fontFamily: F.marquee, fontSize: 26, color: T.cream, marginTop: 4, marginBottom: 16 }}>
           Trouver un film
         </div>
         <input
@@ -853,17 +1314,17 @@ function SearchView({ movies, onOpen }) {
           style={{
             width: "100%",
             marginBottom: 20,
-            background: COLORS.surface,
-            border: `1px solid ${COLORS.line}`,
+            background: T.surface,
+            border: `1px solid ${T.line}`,
             borderRadius: 6,
-            color: COLORS.cream,
-            fontFamily: "'Source Serif 4', serif",
+            color: T.cream,
+            fontFamily: F.serif,
             fontSize: 15,
             padding: "12px 14px",
           }}
         />
         {filtered.length === 0 ? (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
             Aucun film ne correspond à cette recherche.
           </div>
         ) : (
@@ -880,49 +1341,37 @@ function SearchView({ movies, onOpen }) {
 
 function UnmatchedItem({ item, onDeleted, onEdit }) {
   const [showConfirm, setShowConfirm] = useState(false);
-  const [password, setPassword] = useState("");
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
 
   const confirmDelete = async () => {
     setStatus("loading");
     setErrorMsg("");
-    try {
-      const res = await fetch("/api/delete-unmatched", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: item.title,
-          year: item.year,
-          director: item.director,
-          updatedAt: item.updatedAt,
-          password,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMsg(data.error || "Erreur inconnue");
-        return;
-      }
-      onDeleted(item);
-    } catch (e) {
+    const result = await apiWrite("/api/delete-unmatched", {
+      title: item.title,
+      year: item.year,
+      director: item.director,
+      updatedAt: item.updatedAt,
+    });
+    if (!result.ok) {
       setStatus("error");
-      setErrorMsg(e.message);
+      setErrorMsg(result.error);
+      return;
     }
+    onDeleted(item);
   };
 
   return (
-    <div style={{ padding: 12, background: COLORS.surface, border: `1px solid ${COLORS.red}`, borderRadius: 8 }}>
+    <div style={{ padding: 12, background: T.surface, border: `1px solid ${T.accentSecondary}`, borderRadius: 8 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
         <div>
-          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
+          <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>
             {item.title}
           </div>
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted, marginTop: 4 }}>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 4 }}>
             {item.year} · {item.director}
           </div>
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.red, marginTop: 6 }}>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accentSecondary, marginTop: 6 }}>
             Introuvable sur TMDB · vérifie le titre / l'année
           </div>
         </div>
@@ -932,11 +1381,11 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
               onClick={() => onEdit(item)}
               style={{
                 padding: "6px 10px",
-                border: `1px solid ${COLORS.gold}`,
+                border: `1px solid ${T.accent}`,
                 borderRadius: 6,
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: F.mono,
                 fontSize: 10,
-                color: COLORS.gold,
+                color: T.accent,
               }}
             >
               Modifier
@@ -945,11 +1394,11 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
               onClick={() => setShowConfirm(true)}
               style={{
                 padding: "6px 10px",
-                border: `1px solid ${COLORS.red}`,
+                border: `1px solid ${T.accentSecondary}`,
                 borderRadius: 6,
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: F.mono,
                 fontSize: 10,
-                color: COLORS.red,
+                color: T.accentSecondary,
               }}
             >
               Supprimer
@@ -959,61 +1408,43 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
       </div>
       {showConfirm && (
         <div style={{ marginTop: 10 }}>
-          <input
-            placeholder="Mot de passe"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{
-              width: "100%",
-              background: COLORS.surfaceRaised,
-              border: `1px solid ${COLORS.line}`,
-              borderRadius: 6,
-              color: COLORS.cream,
-              fontFamily: "'Source Serif 4', serif",
-              fontSize: 13,
-              padding: "8px 10px",
-              marginBottom: 8,
-            }}
-          />
           <div style={{ display: "flex", gap: 8 }}>
             <button
               onClick={() => {
                 setShowConfirm(false);
-                setPassword("");
                 setStatus(null);
               }}
               style={{
                 flex: 1,
                 padding: "8px 0",
-                border: `1px solid ${COLORS.line}`,
+                border: `1px solid ${T.line}`,
                 borderRadius: 6,
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: F.mono,
                 fontSize: 11,
-                color: COLORS.muted,
+                color: T.muted,
               }}
             >
               Annuler
             </button>
             <button
               onClick={confirmDelete}
-              disabled={!password || status === "loading"}
+              disabled={status === "loading"}
               style={{
                 flex: 1,
                 padding: "8px 0",
-                background: COLORS.red,
+                background: T.accentSecondary,
                 borderRadius: 6,
-                fontFamily: "'IBM Plex Mono', monospace",
+                fontFamily: F.mono,
                 fontSize: 11,
-                color: COLORS.cream,
-                opacity: !password || status === "loading" ? 0.5 : 1,
+                color: T.cream,
+                opacity: status === "loading" ? 0.5 : 1,
               }}
             >
               {status === "loading" ? "..." : "Confirmer"}
             </button>
           </div>
           {status === "error" && (
-            <div style={{ marginTop: 8, fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.red }}>
+            <div style={{ marginTop: 8, fontFamily: F.mono, fontSize: 10, color: T.accentSecondary }}>
               Erreur : {errorMsg}
             </div>
           )}
@@ -1035,19 +1466,19 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           HISTORIQUE
         </div>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 16 }}>
+        <div style={{ fontFamily: F.marquee, fontSize: 26, color: T.cream, marginTop: 4, marginBottom: 16 }}>
           Activité récente
         </div>
 
         {localUnmatched.length > 0 && (
           <div style={{ marginBottom: 24 }}>
-            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.red, letterSpacing: 1, marginBottom: 10 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, letterSpacing: 1, marginBottom: 10 }}>
               ERREURS ({localUnmatched.length})
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -1066,7 +1497,7 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
         )}
 
         {sorted.length === 0 ? (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
             Aucune activité récente pour l'instant.
           </div>
         ) : (
@@ -1080,8 +1511,8 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
                   alignItems: "center",
                   gap: 12,
                   padding: 10,
-                  background: COLORS.surface,
-                  border: `1px solid ${COLORS.line}`,
+                  background: T.surface,
+                  border: `1px solid ${T.line}`,
                   borderRadius: 8,
                   textAlign: "left",
                 }}
@@ -1092,10 +1523,10 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
                   )}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: COLORS.cream, lineHeight: 1 }}>
+                  <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>
                     {m.title}
                   </div>
-                  <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: COLORS.muted, marginTop: 4 }}>
+                  <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 4 }}>
                     Mis à jour · {formatRelativeDate(m.updatedAt)}
                   </div>
                 </div>
@@ -1108,12 +1539,11 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
   );
 }
 
-function SettingsView() {
+function SettingsView({ theme, onChangeTheme }) {
   const [enabled, setEnabled] = useState([]);
   const [notifyEmail, setNotifyEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [password, setPassword] = useState("");
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -1142,49 +1572,77 @@ function SettingsView() {
   const save = async () => {
     setStatus("loading");
     setErrorMsg("");
-    try {
-      const res = await fetch("/api/update-settings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ enabled, notifyEmail: notifyEmail.trim(), password }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMsg(data.error || "Erreur inconnue");
-        return;
-      }
-      setStatus("success");
-    } catch (e) {
+    const result = await apiWrite("/api/update-settings", { enabled, notifyEmail: notifyEmail.trim() });
+    if (!result.ok) {
       setStatus("error");
-      setErrorMsg(e.message);
+      setErrorMsg(result.error);
+      return;
     }
+    setStatus("success");
+  };
+
+  const forgetPassword = () => {
+    try {
+      localStorage.removeItem(PWD_KEY);
+    } catch {}
+    window.alert("Mot de passe oublié. Il sera redemandé à la prochaine action.");
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
-          PARAMÈTRES
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>PARAMÈTRES</div>
+
+        <div style={{ marginTop: 4, marginBottom: 4 }}>
+          <SectionTitle>Apparence</SectionTitle>
         </div>
-        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: COLORS.cream, marginTop: 4, marginBottom: 4 }}>
-          Mes abonnements
+        <p style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginBottom: 12 }}>
+          Choisis l'ambiance visuelle de l'app.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 28 }}>
+          {Object.entries(THEMES).map(([key, def]) => {
+            const isActive = theme === key;
+            return (
+              <button
+                key={key}
+                onClick={() => onChangeTheme(key)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "10px 12px",
+                  background: T.surface,
+                  border: `${isActive ? 2 : 1}px solid ${isActive ? T.accent : T.line}`,
+                  borderRadius: T.radiusSm,
+                  textAlign: "left",
+                }}
+              >
+                <span
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: "50%",
+                    background: def.colors.accent,
+                    border: `1px solid ${def.colors.line}`,
+                    flexShrink: 0,
+                    boxShadow: `0 0 0 3px ${def.colors.bg} inset`,
+                  }}
+                />
+                <span style={{ fontFamily: F.serif, fontSize: 12, color: T.cream }}>{def.label}</span>
+              </button>
+            );
+          })}
         </div>
-        <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 13, color: COLORS.muted, marginBottom: 16 }}>
-          Active uniquement les plateformes auxquelles tu es abonné. Les autres apparaîtront en "VOD" sur les fiches films.
+
+        <SectionTitle>Mes abonnements</SectionTitle>
+        <p style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginBottom: 16 }}>
+          Active uniquement les plateformes auxquelles tu es abonné. Les autres apparaîtront en "VOD" sur les fiches
+          films.
         </p>
 
-        {loading && (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.muted }}>
-            Chargement...
-          </div>
-        )}
-        {error && (
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
-            Erreur : {error}
-          </div>
-        )}
+        {loading && <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>Chargement...</div>}
+        {error && <div style={{ fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>Erreur : {error}</div>}
 
         {!loading && !error && (
           <>
@@ -1200,20 +1658,18 @@ function SettingsView() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       padding: "12px 14px",
-                      background: COLORS.surface,
-                      border: `1px solid ${isOn ? COLORS.gold : COLORS.line}`,
+                      background: T.surface,
+                      border: `1px solid ${isOn ? T.accent : T.line}`,
                       borderRadius: 8,
                     }}
                   >
-                    <span style={{ fontFamily: "'Source Serif 4', serif", fontSize: 14, color: COLORS.cream }}>
-                      {opt.label}
-                    </span>
+                    <span style={{ fontFamily: F.serif, fontSize: 14, color: T.cream }}>{opt.label}</span>
                     <span
                       style={{
                         width: 40,
                         height: 22,
                         borderRadius: 11,
-                        background: isOn ? COLORS.gold : COLORS.line,
+                        background: isOn ? T.accent : T.line,
                         position: "relative",
                       }}
                     >
@@ -1225,7 +1681,7 @@ function SettingsView() {
                           width: 18,
                           height: 18,
                           borderRadius: "50%",
-                          background: COLORS.bg,
+                          background: T.bg,
                         }}
                       />
                     </span>
@@ -1236,7 +1692,7 @@ function SettingsView() {
 
             <div style={{ marginTop: 28 }}>
               <SectionTitle>Notifications</SectionTitle>
-              <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 13, color: COLORS.muted, marginBottom: 10 }}>
+              <p style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginBottom: 10 }}>
                 Reçois un email dès qu'un film de ta liste devient disponible sur l'un de tes abonnements.
               </p>
               <input
@@ -1246,11 +1702,11 @@ function SettingsView() {
                 onChange={(e) => setNotifyEmail(e.target.value)}
                 style={{
                   width: "100%",
-                  background: COLORS.surface,
-                  border: `1px solid ${COLORS.line}`,
+                  background: T.surface,
+                  border: `1px solid ${T.line}`,
                   borderRadius: 6,
-                  color: COLORS.cream,
-                  fontFamily: "'Source Serif 4', serif",
+                  color: T.cream,
+                  fontFamily: F.serif,
                   fontSize: 14,
                   padding: "10px 12px",
                 }}
@@ -1258,51 +1714,50 @@ function SettingsView() {
             </div>
 
             <div style={{ marginTop: 20 }}>
-              <input
-                placeholder="Mot de passe pour enregistrer"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                style={{
-                  width: "100%",
-                  background: COLORS.surface,
-                  border: `1px solid ${COLORS.line}`,
-                  borderRadius: 6,
-                  color: COLORS.cream,
-                  fontFamily: "'Source Serif 4', serif",
-                  fontSize: 14,
-                  padding: "10px 12px",
-                  marginBottom: 10,
-                }}
-              />
               <button
                 onClick={save}
-                disabled={!password || status === "loading"}
+                disabled={status === "loading"}
                 style={{
                   width: "100%",
                   padding: "12px 0",
-                  background: COLORS.gold,
+                  background: T.accent,
                   borderRadius: 6,
-                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontFamily: F.mono,
                   fontSize: 13,
                   color: "#1A1206",
                   letterSpacing: 0.5,
-                  opacity: !password || status === "loading" ? 0.5 : 1,
+                  opacity: status === "loading" ? 0.5 : 1,
                 }}
               >
                 {status === "loading" ? "ENREGISTREMENT..." : "ENREGISTRER"}
               </button>
               {status === "success" && (
-                <div style={{ marginTop: 12, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+                <div style={{ marginTop: 12, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
                   Paramètres enregistrés !
                 </div>
               )}
               {status === "error" && (
-                <div style={{ marginTop: 12, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+                <div style={{ marginTop: 12, fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>
                   Erreur : {errorMsg}
                 </div>
               )}
             </div>
+
+            <button
+              onClick={forgetPassword}
+              style={{
+                width: "100%",
+                marginTop: 24,
+                padding: "10px 0",
+                border: `1px solid ${T.line}`,
+                borderRadius: 6,
+                fontFamily: F.mono,
+                fontSize: 11,
+                color: T.muted,
+              }}
+            >
+              Oublier le mot de passe enregistré sur cet appareil
+            </button>
           </>
         )}
       </div>
@@ -1310,78 +1765,67 @@ function SettingsView() {
   );
 }
 
+
 function AddView({ onCancel, editingMovie, onSuccess }) {
   const isEditing = Boolean(editingMovie);
   const [title, setTitle] = useState(editingMovie?.title || "");
   const [year, setYear] = useState(editingMovie ? String(editingMovie.year) : "");
   const [director, setDirector] = useState(editingMovie?.director || "");
   const [letterboxdUrl, setLetterboxdUrl] = useState(editingMovie?.letterboxdUrl || "");
-  const [password, setPassword] = useState("");
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
 
   const fieldStyle = {
-    background: COLORS.surface,
-    border: `1px solid ${COLORS.line}`,
+    background: T.surface,
+    border: `1px solid ${T.line}`,
     borderRadius: 6,
-    color: COLORS.cream,
-    fontFamily: "'Source Serif 4', serif",
+    color: T.cream,
+    fontFamily: F.serif,
     fontSize: 14,
     padding: "10px 12px",
     width: "100%",
   };
 
-  const canSubmit = title && director && /^\d{4}$/.test(year) && password && status !== "loading";
+  const canSubmit = title && director && /^\d{4}$/.test(year) && status !== "loading";
 
   const submit = async () => {
     setStatus("loading");
     setErrorMsg("");
-    try {
-      const res = await fetch("/api/add-movie", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title,
-          year,
-          director,
-          letterboxdUrl,
-          password,
-          originalTitle: editingMovie?.title,
-          originalYear: editingMovie?.year,
-          originalTmdbId: editingMovie?.tmdbId,
-          originalUpdatedAt: editingMovie?.updatedAt,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMsg(data.error || "Erreur inconnue");
-        return;
-      }
-      setStatus("success");
-      setTitle("");
-      setYear("");
-      setDirector("");
-      setLetterboxdUrl("");
-      setTimeout(() => onSuccess?.(), 1400);
-    } catch (e) {
+    const result = await apiWrite("/api/add-movie", {
+      title,
+      year,
+      director,
+      letterboxdUrl,
+      originalTitle: editingMovie?.title,
+      originalYear: editingMovie?.year,
+      originalTmdbId: editingMovie?.tmdbId,
+      originalUpdatedAt: editingMovie?.updatedAt,
+    });
+    if (!result.ok) {
       setStatus("error");
-      setErrorMsg(e.message);
+      setErrorMsg(result.error);
+      return;
     }
+    setStatus("success");
+    setTitle("");
+    setYear("");
+    setDirector("");
+    setLetterboxdUrl("");
+    setTimeout(() => onSuccess?.(), 1400);
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: COLORS.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header onBack={onCancel} />
       <div style={{ padding: "0 16px 60px" }}>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: COLORS.gold, letterSpacing: 1 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           COMMANDE
         </div>
         <div
           style={{
-            fontFamily: "'Bebas Neue', sans-serif",
+            fontFamily: F.marquee,
             fontSize: 30,
-            color: COLORS.cream,
+            color: T.cream,
             margin: "4px 0 20px",
           }}
         >
@@ -1408,13 +1852,6 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
             onChange={(e) => setLetterboxdUrl(e.target.value)}
             style={fieldStyle}
           />
-          <input
-            placeholder="Mot de passe"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={fieldStyle}
-          />
         </div>
 
         <button
@@ -1424,9 +1861,9 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
             width: "100%",
             marginTop: 16,
             padding: "12px 0",
-            background: COLORS.gold,
+            background: T.accent,
             borderRadius: 6,
-            fontFamily: "'IBM Plex Mono', monospace",
+            fontFamily: F.mono,
             fontSize: 13,
             color: "#1A1206",
             letterSpacing: 0.5,
@@ -1437,14 +1874,14 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
         </button>
 
         {status === "success" && (
-          <div style={{ marginTop: 16, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.gold }}>
+          <div style={{ marginTop: 16, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
             {isEditing
               ? "Fiche mise à jour ! Les changements seront visibles d'ici quelques minutes."
               : "Film ajouté ! Il apparaîtra sur l'accueil d'ici quelques minutes, le temps que les infos se récupèrent automatiquement."}
           </div>
         )}
         {status === "error" && (
-          <div style={{ marginTop: 16, fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: COLORS.red }}>
+          <div style={{ marginTop: 16, fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>
             Erreur : {errorMsg}
           </div>
         )}
@@ -1463,6 +1900,21 @@ export default function App() {
   const [previousView, setPreviousView] = useState("home");
   const [editingMovie, setEditingMovie] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
+  const [theme, setTheme] = useState("sombre");
+  const [, setThemeTick] = useState(0);
+
+  useEffect(() => {
+    const stored = getStoredTheme_();
+    setTheme(stored);
+    applyTheme_(stored);
+    setThemeTick((n) => n + 1);
+  }, []);
+
+  const changeTheme = (name) => {
+    setTheme(name);
+    applyTheme_(name);
+    setThemeTick((n) => n + 1);
+  };
 
   const fetchMovies = () => {
     const moviesPromise = fetch(`/data/enriched.json?t=${Date.now()}`).then((res) => {
@@ -1564,7 +2016,7 @@ export default function App() {
           }}
         />
       )}
-      {view === "settings" && <SettingsView />}
+      {view === "settings" && <SettingsView theme={theme} onChangeTheme={changeTheme} />}
       <BottomNav view={view} onChange={setView} />
     </>
   );
