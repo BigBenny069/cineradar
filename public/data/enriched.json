@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:52.370Z"
+    "lastChecked": "2026-08-13T21:59:20.349Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:52.545Z"
+    "lastChecked": "2026-08-13T21:59:20.463Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:52.688Z"
+    "lastChecked": "2026-08-13T21:59:20.492Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:52.952Z"
+    "lastChecked": "2026-08-13T21:59:20.750Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:53.266Z"
+    "lastChecked": "2026-08-13T21:59:20.929Z"
   },
   {
     "tmdbId": 11547,
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:56:53.642Z"
+    "lastChecked": "2026-08-13T21:59:21.043Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-13T21:56:54.072Z"
+    "lastChecked": "2026-08-13T21:59:21.325Z"
   },
   {
     "tmdbId": 399170,
@@ -336,7 +336,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-13T21:56:54.499Z"
+    "lastChecked": "2026-08-13T21:59:21.452Z"
   },
   {
     "tmdbId": 221,
@@ -358,7 +358,7 @@
     "tmdbRating": 7.5,
     "tmdbVotes": 1796,
     "letterboxdRating": 3.83,
-    "letterboxdVotes": 193034,
+    "letterboxdVotes": 193035,
     "imdbId": "tt0048545",
     "letterboxdUrl": "https://letterboxd.com/film/rebel-without-a-cause/",
     "providers": {
@@ -382,7 +382,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-13T21:56:54.839Z"
+    "lastChecked": "2026-08-13T21:59:21.730Z"
   },
   {
     "tmdbId": 28260,
@@ -418,7 +418,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-08-13T21:56:55.149Z"
+    "lastChecked": "2026-08-13T21:59:21.844Z"
   },
   {
     "tmdbId": 2614,
@@ -462,7 +462,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-08-13T21:56:55.471Z"
+    "lastChecked": "2026-08-13T21:59:21.951Z"
   },
   {
     "tmdbId": 551,
@@ -502,7 +502,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-08-13T21:56:55.831Z"
+    "lastChecked": "2026-08-13T21:59:22.068Z"
   },
   {
     "tmdbId": 27932,
@@ -538,7 +538,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-08-13T21:56:56.229Z"
+    "lastChecked": "2026-08-13T21:59:22.364Z"
   },
   {
     "tmdbId": 24929,
@@ -573,7 +573,7 @@
       ]
     },
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-08-13T21:56:56.548Z"
+    "lastChecked": "2026-08-13T21:59:22.475Z"
   },
   {
     "tmdbId": 28260,
@@ -609,6 +609,47 @@
       ]
     },
     "updatedAt": "2026-08-13T21:56:38.113Z",
-    "lastChecked": "2026-08-13T21:56:56.847Z"
+    "lastChecked": "2026-08-13T21:59:22.642Z"
+  },
+  {
+    "tmdbId": 109428,
+    "title": "Evil Dead",
+    "year": "2013",
+    "director": "Fede Álvarez",
+    "poster": "https://image.tmdb.org/t/p/w500/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
+    "synopsis": "Mia a déjà connu pas mal de galères dans sa vie, et elle est décidée à en finir une bonne fois pour toutes avec ses addictions. Pour réussir à se sevrer de tout, elle demande à son frère David, sa petite amie Natalie et deux amis d’enfance, Olivia et Eric, de l’accompagner dans la cabane familiale perdue au fond des bois. Dans la cabane isolée, les jeunes gens découvrent un étrange autel, et surtout un livre très ancien, dont Eric commet l’erreur de lire un passage à haute voix. Les plus épouvantables des forces vont se déchaîner sur eux…",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Jane Levy",
+      "Shiloh Fernandez",
+      "Lou Taylor Pucci",
+      "Jessica Lucas",
+      "Elizabeth Blackmore"
+    ],
+    "tmdbRating": 6.649,
+    "tmdbVotes": 5262,
+    "letterboxdRating": 3.41,
+    "letterboxdVotes": 485121,
+    "imdbId": "tt1288558",
+    "letterboxdUrl": "https://letterboxd.com/film/evil-dead/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Orange VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "updatedAt": "2026-08-13T21:59:08.036Z",
+    "lastChecked": "2026-08-13T21:59:22.972Z"
   }
 ]
