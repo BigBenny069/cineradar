@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:20.349Z"
+    "lastChecked": "2026-08-13T22:00:15.077Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:20.463Z"
+    "lastChecked": "2026-08-13T22:00:15.172Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:20.492Z"
+    "lastChecked": "2026-08-13T22:00:15.184Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:20.750Z"
+    "lastChecked": "2026-08-13T22:00:15.293Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:20.929Z"
+    "lastChecked": "2026-08-13T22:00:15.390Z"
   },
   {
     "tmdbId": 11547,
@@ -229,7 +229,7 @@
     "tmdbRating": 5.684,
     "tmdbVotes": 1471,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100600,
+    "letterboxdVotes": 100601,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:59:21.043Z"
+    "lastChecked": "2026-08-13T22:00:15.725Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-13T21:59:21.325Z"
+    "lastChecked": "2026-08-13T22:00:15.822Z"
   },
   {
     "tmdbId": 399170,
@@ -316,7 +316,7 @@
     "tmdbRating": 6.735,
     "tmdbVotes": 3899,
     "letterboxdRating": 3.56,
-    "letterboxdVotes": 304279,
+    "letterboxdVotes": 304280,
     "imdbId": "tt5439796",
     "letterboxdUrl": "https://letterboxd.com/film/logan-lucky/",
     "providers": {
@@ -336,7 +336,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-13T21:59:21.452Z"
+    "lastChecked": "2026-08-13T22:00:16.325Z"
   },
   {
     "tmdbId": 221,
@@ -382,7 +382,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-13T21:59:21.730Z"
+    "lastChecked": "2026-08-13T22:00:16.425Z"
   },
   {
     "tmdbId": 28260,
@@ -418,7 +418,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-08-13T21:59:21.844Z"
+    "lastChecked": "2026-08-13T22:00:16.527Z"
   },
   {
     "tmdbId": 2614,
@@ -462,7 +462,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-08-13T21:59:21.951Z"
+    "lastChecked": "2026-08-13T22:00:16.806Z"
   },
   {
     "tmdbId": 551,
@@ -502,7 +502,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-08-13T21:59:22.068Z"
+    "lastChecked": "2026-08-13T22:00:17.053Z"
   },
   {
     "tmdbId": 27932,
@@ -538,7 +538,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-08-13T21:59:22.364Z"
+    "lastChecked": "2026-08-13T22:00:17.143Z"
   },
   {
     "tmdbId": 24929,
@@ -573,7 +573,7 @@
       ]
     },
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-08-13T21:59:22.475Z"
+    "lastChecked": "2026-08-13T22:00:17.241Z"
   },
   {
     "tmdbId": 28260,
@@ -609,7 +609,7 @@
       ]
     },
     "updatedAt": "2026-08-13T21:56:38.113Z",
-    "lastChecked": "2026-08-13T21:59:22.642Z"
+    "lastChecked": "2026-08-13T22:00:17.334Z"
   },
   {
     "tmdbId": 109428,
@@ -631,7 +631,7 @@
     "tmdbRating": 6.649,
     "tmdbVotes": 5262,
     "letterboxdRating": 3.41,
-    "letterboxdVotes": 485121,
+    "letterboxdVotes": 485120,
     "imdbId": "tt1288558",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead/",
     "providers": {
@@ -650,6 +650,48 @@
       ]
     },
     "updatedAt": "2026-08-13T21:59:08.036Z",
-    "lastChecked": "2026-08-13T21:59:22.972Z"
+    "lastChecked": "2026-08-13T22:00:17.448Z"
+  },
+  {
+    "tmdbId": 713704,
+    "title": "Evil Dead Rise",
+    "year": "2023",
+    "director": "Lee Cronin",
+    "poster": "https://image.tmdb.org/t/p/w500/n9xIr60snZnhlzvUaFcmyAhKNgk.jpg",
+    "synopsis": "Alors que Beth n’a pas vu sa grande sœur Ellie depuis longtemps, elle vient lui rendre visite à Los Angeles où elle élève, seule, ses trois enfants. Mais leurs retrouvailles tournent au cauchemar, quand ils découvrent un mystérieux livre dans le sous-sol de l’immeuble, dont la lecture libère des démons qui prennent possession des vivants...",
+    "genres": [
+      "Horreur",
+      "Thriller"
+    ],
+    "cast": [
+      "Lily Sullivan",
+      "Alyssa Sutherland",
+      "Morgan Davies",
+      "Gabrielle Echols",
+      "Nell Fisher"
+    ],
+    "tmdbRating": 7,
+    "tmdbVotes": 3901,
+    "letterboxdRating": 3.15,
+    "letterboxdVotes": 917521,
+    "imdbId": "tt13345606",
+    "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Orange VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "updatedAt": "2026-08-13T22:00:03.051Z",
+    "lastChecked": "2026-08-13T22:00:17.691Z"
   }
 ]
