@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:48.967Z"
+    "lastChecked": "2026-08-13T21:56:52.370Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:49.203Z"
+    "lastChecked": "2026-08-13T21:56:52.545Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:49.251Z"
+    "lastChecked": "2026-08-13T21:56:52.688Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:49.499Z"
+    "lastChecked": "2026-08-13T21:56:52.952Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:49.779Z"
+    "lastChecked": "2026-08-13T21:56:53.266Z"
   },
   {
     "tmdbId": 11547,
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T21:55:50.249Z"
+    "lastChecked": "2026-08-13T21:56:53.642Z"
   },
   {
     "tmdbId": 1140535,
@@ -270,7 +270,7 @@
     "tmdbRating": 6.11,
     "tmdbVotes": 783,
     "letterboxdRating": 2.95,
-    "letterboxdVotes": 277795,
+    "letterboxdVotes": 277796,
     "imdbId": "tt28249919",
     "letterboxdUrl": "https://letterboxd.com/film/presence-2024/",
     "providers": {
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-13T21:55:50.373Z"
+    "lastChecked": "2026-08-13T21:56:54.072Z"
   },
   {
     "tmdbId": 399170,
@@ -336,7 +336,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-13T21:55:50.494Z"
+    "lastChecked": "2026-08-13T21:56:54.499Z"
   },
   {
     "tmdbId": 221,
@@ -382,7 +382,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-13T21:55:50.731Z"
+    "lastChecked": "2026-08-13T21:56:54.839Z"
   },
   {
     "tmdbId": 28260,
@@ -418,7 +418,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-08-13T21:55:51.072Z"
+    "lastChecked": "2026-08-13T21:56:55.149Z"
   },
   {
     "tmdbId": 2614,
@@ -462,7 +462,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-08-13T21:55:51.387Z"
+    "lastChecked": "2026-08-13T21:56:55.471Z"
   },
   {
     "tmdbId": 551,
@@ -502,7 +502,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-08-13T21:55:51.686Z"
+    "lastChecked": "2026-08-13T21:56:55.831Z"
   },
   {
     "tmdbId": 27932,
@@ -538,7 +538,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-08-13T21:55:51.995Z"
+    "lastChecked": "2026-08-13T21:56:56.229Z"
   },
   {
     "tmdbId": 24929,
@@ -573,6 +573,42 @@
       ]
     },
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-08-13T21:55:52.275Z"
+    "lastChecked": "2026-08-13T21:56:56.548Z"
+  },
+  {
+    "tmdbId": 28260,
+    "title": "Le Retour des morts-vivants 3",
+    "year": "1993",
+    "director": "Brian Yuzna",
+    "poster": "https://image.tmdb.org/t/p/w500/omh46iIM1wjhqsb5ABCpSKMZpBk.jpg",
+    "synopsis": "Curt est le fils du colonel Sinclair, un scientifique qui a dédié sa vie à un étrange projet de recherche. Jumlie est une splendide adolescente dont Curl est éperdument amoureux. Quand Julie meurt dans un accident, Curt utilise le projet de son père pour la ramener à la vie...",
+    "genres": [
+      "Horreur",
+      "Romance"
+    ],
+    "cast": [
+      "Melinda Clarke",
+      "J. Trevor Edmond",
+      "Kent McCord",
+      "Sarah Douglas",
+      "James T. Callahan"
+    ],
+    "tmdbRating": 6.574,
+    "tmdbVotes": 915,
+    "letterboxdRating": 3.09,
+    "letterboxdVotes": 21914,
+    "imdbId": "tt0107953",
+    "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Shadowz Amazon Channel",
+        "Shadowz",
+        "Lionsgate+ Amazon Channels"
+      ]
+    },
+    "updatedAt": "2026-08-13T21:56:38.113Z",
+    "lastChecked": "2026-08-13T21:56:56.847Z"
   }
 ]
