@@ -30,7 +30,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.077Z"
+    "lastChecked": "2026-08-13T22:00:56.739Z"
   },
   {
     "tmdbId": 1091,
@@ -75,7 +75,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.172Z"
+    "lastChecked": "2026-08-13T22:00:56.984Z"
   },
   {
     "tmdbId": 270303,
@@ -116,7 +116,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.184Z"
+    "lastChecked": "2026-08-13T22:00:57.147Z"
   },
   {
     "tmdbId": 440161,
@@ -161,7 +161,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.293Z"
+    "lastChecked": "2026-08-13T22:00:57.392Z"
   },
   {
     "tmdbId": 1092,
@@ -207,7 +207,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.390Z"
+    "lastChecked": "2026-08-13T22:00:57.631Z"
   },
   {
     "tmdbId": 11547,
@@ -229,7 +229,7 @@
     "tmdbRating": 5.684,
     "tmdbVotes": 1471,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100601,
+    "letterboxdVotes": 100600,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -246,7 +246,7 @@
       ]
     },
     "updatedAt": null,
-    "lastChecked": "2026-08-13T22:00:15.725Z"
+    "lastChecked": "2026-08-13T22:00:57.881Z"
   },
   {
     "tmdbId": 1140535,
@@ -291,7 +291,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-13T22:00:15.822Z"
+    "lastChecked": "2026-08-13T22:00:58.112Z"
   },
   {
     "tmdbId": 399170,
@@ -336,7 +336,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-13T22:00:16.325Z"
+    "lastChecked": "2026-08-13T22:00:58.340Z"
   },
   {
     "tmdbId": 221,
@@ -382,7 +382,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-13T22:00:16.425Z"
+    "lastChecked": "2026-08-13T22:00:58.636Z"
   },
   {
     "tmdbId": 28260,
@@ -418,7 +418,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-08-13T22:00:16.527Z"
+    "lastChecked": "2026-08-13T22:00:58.867Z"
   },
   {
     "tmdbId": 2614,
@@ -462,7 +462,7 @@
       ]
     },
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-08-13T22:00:16.806Z"
+    "lastChecked": "2026-08-13T22:00:59.097Z"
   },
   {
     "tmdbId": 551,
@@ -502,7 +502,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-08-13T22:00:17.053Z"
+    "lastChecked": "2026-08-13T22:00:59.337Z"
   },
   {
     "tmdbId": 27932,
@@ -538,7 +538,7 @@
       ]
     },
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-08-13T22:00:17.143Z"
+    "lastChecked": "2026-08-13T22:00:59.620Z"
   },
   {
     "tmdbId": 24929,
@@ -573,43 +573,7 @@
       ]
     },
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-08-13T22:00:17.241Z"
-  },
-  {
-    "tmdbId": 28260,
-    "title": "Le Retour des morts-vivants 3",
-    "year": "1993",
-    "director": "Brian Yuzna",
-    "poster": "https://image.tmdb.org/t/p/w500/omh46iIM1wjhqsb5ABCpSKMZpBk.jpg",
-    "synopsis": "Curt est le fils du colonel Sinclair, un scientifique qui a dédié sa vie à un étrange projet de recherche. Jumlie est une splendide adolescente dont Curl est éperdument amoureux. Quand Julie meurt dans un accident, Curt utilise le projet de son père pour la ramener à la vie...",
-    "genres": [
-      "Horreur",
-      "Romance"
-    ],
-    "cast": [
-      "Melinda Clarke",
-      "J. Trevor Edmond",
-      "Kent McCord",
-      "Sarah Douglas",
-      "James T. Callahan"
-    ],
-    "tmdbRating": 6.574,
-    "tmdbVotes": 915,
-    "letterboxdRating": 3.09,
-    "letterboxdVotes": 21914,
-    "imdbId": "tt0107953",
-    "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
-    "providers": {
-      "abonnement": [],
-      "vod": [
-        "Molotov TV",
-        "Shadowz Amazon Channel",
-        "Shadowz",
-        "Lionsgate+ Amazon Channels"
-      ]
-    },
-    "updatedAt": "2026-08-13T21:56:38.113Z",
-    "lastChecked": "2026-08-13T22:00:17.334Z"
+    "lastChecked": "2026-08-13T22:00:59.964Z"
   },
   {
     "tmdbId": 109428,
@@ -650,7 +614,7 @@
       ]
     },
     "updatedAt": "2026-08-13T21:59:08.036Z",
-    "lastChecked": "2026-08-13T22:00:17.448Z"
+    "lastChecked": "2026-08-13T22:01:00.191Z"
   },
   {
     "tmdbId": 713704,
@@ -673,7 +637,7 @@
     "tmdbRating": 7,
     "tmdbVotes": 3901,
     "letterboxdRating": 3.15,
-    "letterboxdVotes": 917521,
+    "letterboxdVotes": 917523,
     "imdbId": "tt13345606",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
     "providers": {
@@ -692,6 +656,6 @@
       ]
     },
     "updatedAt": "2026-08-13T22:00:03.051Z",
-    "lastChecked": "2026-08-13T22:00:17.691Z"
+    "lastChecked": "2026-08-13T22:01:00.494Z"
   }
 ]
