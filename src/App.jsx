@@ -1266,13 +1266,25 @@ function BottomNav({ view, onChange }) {
             alignItems: "center",
             gap: 2,
             padding: "10px 0 8px",
-            color: item.isAdd ? T.accent : view === item.key ? T.accent : T.muted,
+            color: view === item.key ? T.accent : T.muted,
           }}
         >
           {item.isAdd ? (
-            <span style={{ fontSize: 18, lineHeight: "18px", fontWeight: 700, color: T.accent }}>+</span>
+            <span
+              style={{
+                width: 18,
+                height: 18,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <span style={{ fontSize: 20, lineHeight: 1, fontWeight: 700, color: T.accent }}>+</span>
+            </span>
           ) : (
-            <span style={{ fontSize: 18 }}>{item.icon}</span>
+            <span style={{ width: 18, height: 18, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>
+              {item.icon}
+            </span>
           )}
           <span style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: 0.5 }}>
             {item.label}
