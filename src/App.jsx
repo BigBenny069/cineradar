@@ -714,6 +714,94 @@ function StampBadge({ children, size = "normal" }) {
   );
 }
 
+function CompactCard({ movie, onOpen, colorIndex = 0 }) {
+  const borderColors = [T.accent, T.accentSecondary, T.accentDim];
+  const borderColor = borderColors[colorIndex % borderColors.length];
+  const rating = movie.letterboxdRating ?? movie.tmdbRating;
+  const providerLabel = movie.providers?.abonnement?.[0] || movie.providers?.vod?.[0] || null;
+
+  return (
+    <button
+      onClick={() => onOpen(movie)}
+      style={{
+        flexShrink: 0,
+        width: 108,
+        textAlign: "left",
+        background: T.surface,
+        borderRadius: T.radiusSm,
+        overflow: "hidden",
+        border: `2px solid ${borderColor}`,
+      }}
+    >
+      <div style={{ width: 108, height: 152, background: "#000" }}>
+        {movie.poster ? (
+          <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        ) : (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: T.muted,
+              fontFamily: F.mono,
+              fontSize: 9,
+            }}
+          >
+            —
+          </div>
+        )}
+      </div>
+      <div style={{ padding: "7px 8px 9px" }}>
+        <div
+          style={{
+            fontFamily: F.serif,
+            fontWeight: 600,
+            fontSize: 11.5,
+            lineHeight: 1.25,
+            color: T.cream,
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            minHeight: 28,
+          }}
+        >
+          {movie.title}
+        </div>
+        <div style={{ fontFamily: F.mono, fontSize: 8.5, color: T.muted, marginTop: 4, lineHeight: 1.4 }}>
+          {providerLabel && <span style={{ color: T.accent }}>{providerLabel}</span>}
+          {providerLabel ? " · " : ""}
+          {movie.year}
+          {rating != null ? ` · ★ ${rating}` : ""}
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function HorizontalRow({ icon, label, movies, onOpen, emptyText }) {
+  return (
+    <div style={{ marginTop: 22 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+        <span style={{ fontSize: 14 }}>{icon}</span>
+        <span style={{ fontFamily: F.marquee, fontSize: 17, color: T.cream, whiteSpace: "nowrap" }}>{label}</span>
+        <span style={{ flex: 1, height: 1, background: T.line }} />
+      </div>
+      {movies.length === 0 ? (
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.muted }}>{emptyText}</div>
+      ) : (
+        <div style={{ display: "flex", gap: 10, overflowX: "auto", margin: "0 -16px", padding: "0 16px 4px" }}>
+          {movies.map((m, i) => (
+            <CompactCard key={m.tmdbId} movie={m} onOpen={onOpen} colorIndex={i} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MovieCard({ movie, onOpen }) {
   return (
     <button
@@ -778,6 +866,7 @@ function BottomNav({ view, onChange }) {
   const items = [
     { key: "home", label: "Accueil", icon: "🏠" },
     { key: "search", label: "Recherche", icon: "🔍" },
+    { key: "library", label: "Bibliothèque", icon: "📚" },
     { key: "history", label: "Historique", icon: "🕘" },
     { key: "settings", label: "Paramètres", icon: "⚙️" },
   ];
@@ -1217,6 +1306,16 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
 }
 
 function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing }) {
+  const recentlyAvailable = [...movies]
+    .filter((m) => m.availableSince)
+    .sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince))
+    .slice(0, 5);
+
+  const lastAdded = [...movies]
+    .filter((m) => m.updatedAt)
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .slice(0, 5);
+
   return (
     <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
@@ -1235,58 +1334,65 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
           </div>
         </div>
 
-        <button
-          onClick={onAdd}
-          style={{
-            width: "100%",
-            marginTop: 12,
-            padding: "12px 0",
-            border: `1px solid ${T.accent}`,
-            borderRadius: 6,
-            fontFamily: F.mono,
-            fontSize: 13,
-            color: T.accent,
-            letterSpacing: 0.5,
-          }}
-        >
-          + AJOUTER UN FILM
-        </button>
-
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 24, marginBottom: 12 }}>
-          <div style={{ fontFamily: F.marquee, fontSize: 22, color: T.cream }}>Derniers films</div>
+        <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+          <button
+            onClick={onAdd}
+            style={{
+              flex: 1,
+              padding: "12px 0",
+              border: `1px solid ${T.accent}`,
+              borderRadius: 6,
+              fontFamily: F.mono,
+              fontSize: 13,
+              color: T.accent,
+              letterSpacing: 0.5,
+            }}
+          >
+            + AJOUTER UN FILM
+          </button>
           <button
             onClick={onRefresh}
             disabled={refreshing}
             style={{
-              padding: "6px 12px",
+              padding: "12px 16px",
               border: `1px solid ${T.line}`,
               borderRadius: 6,
               fontFamily: F.mono,
-              fontSize: 11,
-              color: T.accent,
+              fontSize: 12,
+              color: T.muted,
               opacity: refreshing ? 0.5 : 1,
             }}
           >
-            {refreshing ? "..." : "↻ Actualiser"}
+            {refreshing ? "..." : "↻"}
           </button>
         </div>
 
         {loading && (
-          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted, marginTop: 20 }}>
             Chargement des données...
           </div>
         )}
         {error && (
-          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.accentSecondary }}>
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.accentSecondary, marginTop: 20 }}>
             Erreur : {error}
           </div>
         )}
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-          {movies.map((m) => (
-            <MovieCard key={m.tmdbId} movie={m} onOpen={onOpen} />
-          ))}
-        </div>
+        <HorizontalRow
+          icon="✨"
+          label="Récemment disponibles"
+          movies={recentlyAvailable}
+          onOpen={onOpen}
+          emptyText="Rien de nouveau sur tes abonnements pour l'instant."
+        />
+
+        <HorizontalRow
+          icon="🎬"
+          label="Derniers ajouts"
+          movies={lastAdded}
+          onOpen={onOpen}
+          emptyText="Aucun film ajouté récemment."
+        />
       </div>
     </div>
   );
@@ -1334,6 +1440,132 @@ function SearchView({ movies, onOpen }) {
             ))}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function LibraryView({ movies, onOpen }) {
+  const [query, setQuery] = useState("");
+  const [sortMode, setSortMode] = useState("az");
+  const [genre, setGenre] = useState("Tous");
+
+  let filtered = movies;
+  if (query.trim()) {
+    const nq = normalizeText(query);
+    filtered = filtered.filter((m) => normalizeText(m.title).includes(nq));
+  }
+  if (genre !== "Tous") {
+    filtered = filtered.filter((m) => (m.genres || []).includes(genre));
+  }
+
+  const sorted = [...filtered].sort((a, b) => {
+    if (sortMode === "az") return normalizeText(a.title).localeCompare(normalizeText(b.title));
+    if (sortMode === "za") return normalizeText(b.title).localeCompare(normalizeText(a.title));
+    const ra = a.letterboxdRating ?? a.tmdbRating ?? 0;
+    const rb = b.letterboxdRating ?? b.tmdbRating ?? 0;
+    if (sortMode === "ratingDesc") return rb - ra;
+    if (sortMode === "ratingAsc") return ra - rb;
+    return 0;
+  });
+
+  const genreOptions = ["Tous", ...[...new Set(movies.flatMap((m) => m.genres || []))].sort((a, b) => a.localeCompare(b))];
+
+  const sortOptions = [
+    { key: "az", label: "A → Z" },
+    { key: "za", label: "Z → A" },
+    { key: "ratingDesc", label: "★ ↓" },
+    { key: "ratingAsc", label: "★ ↑" },
+  ];
+
+  return (
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+      <Header />
+      <div style={{ padding: "0 16px 90px" }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
+          BIBLIOTHÈQUE
+        </div>
+        <div style={{ fontFamily: F.marquee, fontSize: 26, color: T.cream, marginTop: 4, marginBottom: 16 }}>
+          Toute ta collection
+        </div>
+
+        <input
+          placeholder="Rechercher un titre..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          style={{
+            width: "100%",
+            marginBottom: 14,
+            background: T.surface,
+            border: `1px solid ${T.line}`,
+            borderRadius: 6,
+            color: T.cream,
+            fontFamily: F.serif,
+            fontSize: 15,
+            padding: "12px 14px",
+          }}
+        />
+
+        <div style={{ display: "flex", gap: 6, marginBottom: 14 }}>
+          {sortOptions.map((opt) => (
+            <button
+              key={opt.key}
+              onClick={() => setSortMode(opt.key)}
+              style={{
+                flex: 1,
+                padding: "9px 4px",
+                background: T.surface,
+                border: `1px solid ${sortMode === opt.key ? T.accent : T.line}`,
+                borderRadius: 6,
+                fontFamily: F.mono,
+                fontSize: 10,
+                color: sortMode === opt.key ? T.accent : T.muted,
+              }}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+
+        {genreOptions.length > 1 && (
+          <div style={{ display: "flex", gap: 8, overflowX: "auto", margin: "0 -16px 16px", padding: "0 16px" }}>
+            {genreOptions.map((g) => (
+              <button
+                key={g}
+                onClick={() => setGenre(g)}
+                style={{
+                  flexShrink: 0,
+                  padding: "6px 13px",
+                  borderRadius: 20,
+                  border: `1px solid ${genre === g ? T.accent : T.line}`,
+                  background: genre === g ? T.accent : T.surface,
+                  fontFamily: F.mono,
+                  fontSize: 10.5,
+                  color: genre === g ? "#1A1206" : T.muted,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {g}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {sorted.length === 0 ? (
+          <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
+            Aucun film ne correspond à ces critères.
+          </div>
+        ) : (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, 108px)", gap: 10 }}>
+            {sorted.map((m, i) => (
+              <CompactCard key={m.tmdbId} movie={m} onOpen={onOpen} colorIndex={i} />
+            ))}
+          </div>
+        )}
+
+        <div style={{ marginTop: 16, fontFamily: F.mono, fontSize: 10, color: T.mutedDim, textAlign: "center" }}>
+          {sorted.length} film{sorted.length > 1 ? "s" : ""} affiché{sorted.length > 1 ? "s" : ""} sur {movies.length}
+        </div>
       </div>
     </div>
   );
@@ -1998,6 +2230,7 @@ export default function App() {
         />
       )}
       {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
+      {view === "library" && <LibraryView movies={movies} onOpen={setSelected} />}
       {view === "history" && (
         <HistoryView
           movies={movies}
