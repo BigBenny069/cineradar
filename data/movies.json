@@ -121,5 +121,12 @@
     "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
     "updatedAt": "2026-08-14T17:23:35.231Z",
     "tmdbId": 270303
+  },
+  {
+    "title": "Jason and the Argonauts",
+    "year": 1963,
+    "director": "Don Chaffey",
+    "letterboxdUrl": "https://letterboxd.com/film/jason-and-the-argonauts/",
+    "updatedAt": "2026-08-14T22:10:28.023Z"
   }
 ]
