@@ -3,25 +3,29 @@
     "title": "Hana-bi",
     "year": 1997,
     "director": "Takeshi Kitano",
-    "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/"
+    "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
+    "tmdbId": 5910
   },
   {
     "title": "The Thing",
     "year": 1982,
     "director": "John Carpenter",
-    "letterboxdUrl": "https://letterboxd.com/film/the-thing/"
+    "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
+    "tmdbId": 1091
   },
   {
     "title": "Les Frères Sisters",
     "year": 2018,
     "director": "Jacques Audiard",
-    "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/"
+    "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
+    "tmdbId": 440161
   },
   {
     "title": "Le Troisième Homme",
     "year": 1949,
     "director": "Carol Reed",
-    "letterboxdUrl": "https://letterboxd.com/film/the-third-man/"
+    "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
+    "tmdbId": 1092
   },
   {
     "title": "Cabin Fever",
@@ -35,70 +39,80 @@
     "year": 2024,
     "director": "Steven soderbergh",
     "letterboxdUrl": "https://letterboxd.com/film/presence-2024/",
-    "updatedAt": "2026-08-09T16:07:38.946Z"
+    "updatedAt": "2026-08-09T16:07:38.946Z",
+    "tmdbId": 1140535
   },
   {
     "title": "Logan lucky",
     "year": 2017,
     "director": "Steven Soderbergh",
     "letterboxdUrl": "https://letterboxd.com/film/logan-lucky/",
-    "updatedAt": "2026-08-09T16:08:52.772Z"
+    "updatedAt": "2026-08-09T16:08:52.772Z",
+    "tmdbId": 399170
   },
   {
     "title": "La fureur de vivre",
     "year": 1955,
     "director": "Nicholas Ray",
     "letterboxdUrl": "https://letterboxd.com/film/rebel-without-a-cause/",
-    "updatedAt": "2026-08-09T16:10:02.797Z"
+    "updatedAt": "2026-08-09T16:10:02.797Z",
+    "tmdbId": 221
   },
   {
     "title": "Le retour des morts vivants 3",
     "year": 1993,
     "director": "Brian Yuzna",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
-    "updatedAt": "2026-08-09T16:12:20.239Z"
+    "updatedAt": "2026-08-09T16:12:20.239Z",
+    "tmdbId": 28260
   },
   {
     "title": "L’aventure interieur",
     "year": 1987,
     "director": "Joe Dante",
     "letterboxdUrl": "https://letterboxd.com/film/innerspace/",
-    "updatedAt": "2026-08-09T16:34:02.844Z"
+    "updatedAt": "2026-08-09T16:34:02.844Z",
+    "tmdbId": 2614
   },
   {
     "title": "L’aventure du poséidon",
     "year": 1972,
     "director": "Ronald Neame",
     "letterboxdUrl": "https://letterboxd.com/film/the-poseidon-adventure/",
-    "updatedAt": "2026-08-09T19:30:27.136Z"
+    "updatedAt": "2026-08-09T19:30:27.136Z",
+    "tmdbId": 551
   },
   {
     "title": "747 en péril",
     "year": 1974,
     "director": "Jack Smight",
     "letterboxdUrl": "https://letterboxd.com/film/airport-1975/",
-    "updatedAt": "2026-08-09T19:38:27.239Z"
+    "updatedAt": "2026-08-09T19:38:27.239Z",
+    "tmdbId": 27932
   },
   {
     "title": "Le retour des morts-vivants 2",
     "year": 1988,
     "director": "Ken Wiederhorn",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-part-ii/",
-    "updatedAt": "2026-08-13T21:55:35.358Z"
+    "updatedAt": "2026-08-13T21:55:35.358Z",
+    "tmdbId": 24929
   },
   {
     "title": "Evil dead",
     "year": 2014,
     "director": "Fede Alvarez",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead/",
-    "updatedAt": "2026-08-13T21:59:08.036Z"
+    "updatedAt": "2026-08-13T21:59:08.036Z",
+    "tmdbId": 109428
   },
   {
     "title": "Evil dead rise",
     "year": 2023,
     "director": "Lee Cronin",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
-    "updatedAt": "2026-08-13T22:00:03.051Z"
+    "updatedAt": "2026-08-13T22:00:03.051Z",
+    "tmdbId": 713704
   },
   {
     "title": "It Follows",
