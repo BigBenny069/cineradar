@@ -20,7 +20,7 @@
     "tmdbRating": 7.671,
     "tmdbVotes": 794,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 85989,
+    "letterboxdVotes": 85998,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -31,7 +31,7 @@
     },
     "availableSince": null,
     "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:50.697Z"
+    "lastChecked": "2026-08-14T19:49:47.495Z"
   },
   {
     "tmdbId": 1091,
@@ -52,10 +52,10 @@
       "David Clennon",
       "Keith David"
     ],
-    "tmdbRating": 8.073,
-    "tmdbVotes": 8131,
+    "tmdbRating": 8.1,
+    "tmdbVotes": 8132,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1380746,
+    "letterboxdVotes": 1380870,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -77,49 +77,7 @@
     },
     "availableSince": null,
     "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:50.900Z"
-  },
-  {
-    "tmdbId": 270303,
-    "title": "It Follows",
-    "year": "2015",
-    "director": "David Robert Mitchell",
-    "poster": "https://image.tmdb.org/t/p/w500/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
-    "synopsis": "Une jeune femme est poursuivie par une force surnaturelle inconnue, après une relation sexuelle.",
-    "genres": [
-      "Horreur",
-      "Mystère"
-    ],
-    "cast": [
-      "Maika Monroe",
-      "Keir Gilchrist",
-      "Daniel Zovatto",
-      "Jake Weary",
-      "Olivia Luccardi"
-    ],
-    "tmdbRating": 6.578,
-    "tmdbVotes": 7064,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
-    "imdbId": "tt3235888",
-    "letterboxdUrl": null,
-    "providers": {
-      "abonnement": [],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Google Play Movies",
-        "YouTube"
-      ]
-    },
-    "availableSince": null,
-    "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:51.048Z"
+    "lastChecked": "2026-08-14T19:49:47.626Z"
   },
   {
     "tmdbId": 440161,
@@ -143,7 +101,7 @@
     "tmdbRating": 6.832,
     "tmdbVotes": 2113,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 94803,
+    "letterboxdVotes": 94805,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -165,7 +123,7 @@
     },
     "availableSince": null,
     "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:51.373Z"
+    "lastChecked": "2026-08-14T19:49:47.944Z"
   },
   {
     "tmdbId": 1092,
@@ -188,7 +146,7 @@
     "tmdbRating": 7.9,
     "tmdbVotes": 2151,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 202874,
+    "letterboxdVotes": 202892,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -212,7 +170,7 @@
     },
     "availableSince": null,
     "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:51.669Z"
+    "lastChecked": "2026-08-14T19:49:48.203Z"
   },
   {
     "tmdbId": 11547,
@@ -234,7 +192,7 @@
     "tmdbRating": 5.686,
     "tmdbVotes": 1472,
     "letterboxdRating": 2.73,
-    "letterboxdVotes": 100647,
+    "letterboxdVotes": 100651,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -252,7 +210,7 @@
     },
     "availableSince": null,
     "updatedAt": null,
-    "lastChecked": "2026-08-14T17:23:52.028Z"
+    "lastChecked": "2026-08-14T19:49:48.571Z"
   },
   {
     "tmdbId": 1140535,
@@ -276,7 +234,7 @@
     "tmdbRating": 6.108,
     "tmdbVotes": 784,
     "letterboxdRating": 2.95,
-    "letterboxdVotes": 277855,
+    "letterboxdVotes": 277867,
     "imdbId": "tt28249919",
     "letterboxdUrl": "https://letterboxd.com/film/presence-2024/",
     "providers": {
@@ -298,7 +256,7 @@
     },
     "availableSince": "2026-08-14T09:09:49.163Z",
     "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-14T17:23:52.308Z"
+    "lastChecked": "2026-08-14T19:49:48.724Z"
   },
   {
     "tmdbId": 399170,
@@ -323,7 +281,7 @@
     "tmdbRating": 6.735,
     "tmdbVotes": 3900,
     "letterboxdRating": 3.55,
-    "letterboxdVotes": 304354,
+    "letterboxdVotes": 304371,
     "imdbId": "tt5439796",
     "letterboxdUrl": "https://letterboxd.com/film/logan-lucky/",
     "providers": {
@@ -344,7 +302,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-08-14T17:23:52.662Z"
+    "lastChecked": "2026-08-14T19:49:49.012Z"
   },
   {
     "tmdbId": 221,
@@ -366,7 +324,7 @@
     "tmdbRating": 7.5,
     "tmdbVotes": 1797,
     "letterboxdRating": 3.83,
-    "letterboxdVotes": 193105,
+    "letterboxdVotes": 193115,
     "imdbId": "tt0048545",
     "letterboxdUrl": "https://letterboxd.com/film/rebel-without-a-cause/",
     "providers": {
@@ -391,7 +349,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-08-14T17:23:52.940Z"
+    "lastChecked": "2026-08-14T19:49:49.214Z"
   },
   {
     "tmdbId": 28260,
@@ -414,7 +372,7 @@
     "tmdbRating": 6.573,
     "tmdbVotes": 916,
     "letterboxdRating": 3.09,
-    "letterboxdVotes": 21930,
+    "letterboxdVotes": 21931,
     "imdbId": "tt0107953",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
     "providers": {
@@ -428,7 +386,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-08-14T17:23:53.325Z"
+    "lastChecked": "2026-08-14T19:49:49.474Z"
   },
   {
     "tmdbId": 2614,
@@ -452,7 +410,7 @@
     "tmdbRating": 6.828,
     "tmdbVotes": 1433,
     "letterboxdRating": 3.49,
-    "letterboxdVotes": 43312,
+    "letterboxdVotes": 43315,
     "imdbId": "tt0093260",
     "letterboxdUrl": "https://letterboxd.com/film/innerspace/",
     "providers": {
@@ -473,7 +431,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-08-14T17:23:53.617Z"
+    "lastChecked": "2026-08-14T19:49:49.706Z"
   },
   {
     "tmdbId": 551,
@@ -497,7 +455,7 @@
     "tmdbRating": 7.155,
     "tmdbVotes": 1043,
     "letterboxdRating": 3.52,
-    "letterboxdVotes": 33377,
+    "letterboxdVotes": 33378,
     "imdbId": "tt0069113",
     "letterboxdUrl": "https://letterboxd.com/film/the-poseidon-adventure/",
     "providers": {
@@ -514,7 +472,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-08-14T17:23:54.014Z"
+    "lastChecked": "2026-08-14T19:49:49.969Z"
   },
   {
     "tmdbId": 27932,
@@ -551,7 +509,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-08-14T17:23:54.305Z"
+    "lastChecked": "2026-08-14T19:49:50.287Z"
   },
   {
     "tmdbId": 24929,
@@ -574,7 +532,7 @@
     "tmdbRating": 6.359,
     "tmdbVotes": 699,
     "letterboxdRating": 2.82,
-    "letterboxdVotes": 24306,
+    "letterboxdVotes": 24308,
     "imdbId": "tt0095990",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-part-ii/",
     "providers": {
@@ -587,7 +545,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-08-14T17:23:54.609Z"
+    "lastChecked": "2026-08-14T19:49:50.490Z"
   },
   {
     "tmdbId": 109428,
@@ -609,7 +567,7 @@
     "tmdbRating": 6.65,
     "tmdbVotes": 5267,
     "letterboxdRating": 3.41,
-    "letterboxdVotes": 485528,
+    "letterboxdVotes": 485571,
     "imdbId": "tt1288558",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead/",
     "providers": {
@@ -629,7 +587,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-13T21:59:08.036Z",
-    "lastChecked": "2026-08-14T17:23:54.899Z"
+    "lastChecked": "2026-08-14T19:49:50.626Z"
   },
   {
     "tmdbId": 713704,
@@ -652,7 +610,7 @@
     "tmdbRating": 7,
     "tmdbVotes": 3904,
     "letterboxdRating": 3.15,
-    "letterboxdVotes": 918152,
+    "letterboxdVotes": 918245,
     "imdbId": "tt13345606",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
     "providers": {
@@ -672,7 +630,7 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-13T22:00:03.051Z",
-    "lastChecked": "2026-08-14T17:23:55.165Z"
+    "lastChecked": "2026-08-14T19:49:50.894Z"
   },
   {
     "tmdbId": 270303,
@@ -695,7 +653,7 @@
     "tmdbRating": 6.578,
     "tmdbVotes": 7064,
     "letterboxdRating": 3.39,
-    "letterboxdVotes": 897734,
+    "letterboxdVotes": 897826,
     "imdbId": "tt3235888",
     "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
     "providers": {
@@ -714,6 +672,6 @@
     },
     "availableSince": null,
     "updatedAt": "2026-08-14T17:23:35.231Z",
-    "lastChecked": "2026-08-14T17:23:55.376Z"
+    "lastChecked": "2026-08-14T19:49:51.186Z"
   }
 ]
