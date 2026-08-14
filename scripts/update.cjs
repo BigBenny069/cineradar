@@ -281,6 +281,15 @@ async function main() {
       continue;
     }
     const details = await getDetails(found.id);
+
+    // Mémorise le tmdbId dès la première synchronisation (pas seulement à
+    // l'édition) : ça fiabilise tout futur matching (édition, suppression)
+    // même si le titre/année saisis à l'origine diffèrent légèrement de
+    // ceux que TMDB renvoie — évite les fiches en double.
+    if (String(movie.tmdbId) !== String(details.id)) {
+      movie.tmdbId = details.id;
+    }
+
     const director = details.credits?.crew?.find((c) => c.job === "Director");
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
@@ -341,6 +350,9 @@ async function main() {
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
+  // Réécrit data/movies.json avec les tmdbId mémorisés au passage (voir plus
+  // haut) — sans effet si rien n'a changé, le workflow ne commitera rien.
+  fs.writeFileSync("data/movies.json", JSON.stringify(input, null, 2) + "\n");
   console.log(`Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur.`);
 
   if (newlyAvailable.length > 0) {
