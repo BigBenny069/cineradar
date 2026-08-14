@@ -1274,12 +1274,34 @@ function BottomNav({ view, onChange }) {
               style={{
                 width: 18,
                 height: 18,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                position: "relative",
+                display: "block",
               }}
             >
-              <span style={{ fontSize: 20, lineHeight: 1, fontWeight: 700, color: T.accent }}>+</span>
+              <span
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: 15,
+                  height: 3.5,
+                  background: T.accent,
+                  borderRadius: 2,
+                  transform: "translate(-50%, -50%)",
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: 3.5,
+                  height: 15,
+                  background: T.accent,
+                  borderRadius: 2,
+                  transform: "translate(-50%, -50%)",
+                }}
+              />
             </span>
           ) : (
             <span style={{ width: 18, height: 18, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>
