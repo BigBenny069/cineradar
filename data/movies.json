@@ -105,5 +105,13 @@
     "director": "Lee Cronin",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
     "updatedAt": "2026-08-13T22:00:03.051Z"
+  },
+  {
+    "title": "It Follows",
+    "year": 2015,
+    "director": "David Robert Mitchell",
+    "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
+    "updatedAt": "2026-08-14T17:23:35.231Z",
+    "tmdbId": 270303
   }
 ]
