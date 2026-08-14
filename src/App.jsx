@@ -681,8 +681,8 @@ function RadarIntro({ ready, onDone }) {
   const MIN_SWEEP_DURATION = 3000;
   const LOCK_DELAY = 450;
   const LOCK_DURATION = 900;
-  const HOLD_DURATION = 1700;
-  const FADE_OUT_DURATION = 800;
+  const HOLD_DURATION = 2000;
+  const FADE_OUT_DURATION = 1000;
 
   const [minSweepDone, setMinSweepDone] = useState(false);
 
