@@ -678,10 +678,13 @@ function RadarIntro({ ready, onDone }) {
   const [hidden, setHidden] = useState(false);
   const [showSkip, setShowSkip] = useState(false);
 
+  const MIN_SWEEP_DURATION = 3000;
   const LOCK_DELAY = 450;
   const LOCK_DURATION = 900;
   const HOLD_DURATION = 1700;
   const FADE_OUT_DURATION = 800;
+
+  const [minSweepDone, setMinSweepDone] = useState(false);
 
   // Couleurs fixes — la "vision bleue" d'origine, indépendante du thème actif.
   const BLUE = "#3D7DFF";
@@ -699,15 +702,22 @@ function RadarIntro({ ready, onDone }) {
     return () => clearTimeout(t);
   }, []);
 
-  // sweep -> lock : uniquement déclenché par `ready`, aucune minuterie
-  // propre à cet effet (voir la note dans le composant précédent sur le
-  // piège d'un setTimeout programmé dans le même effet que celui qui
-  // change la dépendance qui le déclenche).
+  // Durée minimale de balayage, même si les données arrivent plus vite —
+  // sans ça, sur une connexion rapide, le balayage ne dure quasiment rien.
   useEffect(() => {
-    if (!ready) return;
+    const t = setTimeout(() => setMinSweepDone(true), MIN_SWEEP_DURATION);
+    return () => clearTimeout(t);
+  }, []);
+
+  // sweep -> lock : uniquement déclenché par `ready` ET le minimum de
+  // balayage écoulé, aucune minuterie propre à cet effet (voir la note
+  // dans le composant précédent sur le piège d'un setTimeout programmé
+  // dans le même effet que celui qui change la dépendance qui le déclenche).
+  useEffect(() => {
+    if (!ready || !minSweepDone) return;
     const t = setTimeout(() => setPhase("lock"), LOCK_DELAY);
     return () => clearTimeout(t);
-  }, [ready]);
+  }, [ready, minSweepDone]);
 
   // lock -> reveal
   useEffect(() => {
