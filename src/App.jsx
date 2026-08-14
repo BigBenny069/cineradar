@@ -600,6 +600,197 @@ function PlatformBadge({ name }) {
   );
 }
 
+function RadarIntro({ ready, onDone }) {
+  const [phase, setPhase] = useState("sweep"); // sweep | lock | flash
+  const [minSweepDone, setMinSweepDone] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setMinSweepDone(true), 2500);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (phase === "sweep" && ready && minSweepDone) {
+      setPhase("lock");
+      const t1 = setTimeout(() => setPhase("flash"), 700);
+      const t2 = setTimeout(() => onDone?.(), 700 + 600);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
+    }
+  }, [phase, ready, minSweepDone]);
+
+  const blips = [
+    { top: "28%", left: "62%", delay: "0s" },
+    { top: "58%", left: "72%", delay: "0.4s" },
+    { top: "70%", left: "38%", delay: "0.9s" },
+    { top: "35%", left: "30%", delay: "1.3s" },
+  ];
+  const lockTarget = blips[0];
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: T.bg,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 100,
+        overflow: "hidden",
+      }}
+    >
+      {/* Écran radar */}
+      <div
+        style={{
+          position: "relative",
+          width: 220,
+          height: 220,
+          opacity: phase === "flash" ? 0 : 1,
+          transform: phase === "flash" ? "scale(0.9)" : "scale(1)",
+          transition: "opacity 0.35s ease, transform 0.35s ease",
+        }}
+      >
+        {[1, 0.66, 0.33].map((s) => (
+          <div
+            key={s}
+            style={{
+              position: "absolute",
+              top: `${(1 - s) * 50}%`,
+              left: `${(1 - s) * 50}%`,
+              width: `${s * 100}%`,
+              height: `${s * 100}%`,
+              borderRadius: "50%",
+              border: `1px solid ${T.line}`,
+            }}
+          />
+        ))}
+        <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: T.line }} />
+        <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: T.line }} />
+
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "50%",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              background: `conic-gradient(from 0deg, transparent 0deg, transparent 265deg, ${T.accent}55 320deg, ${T.accent} 360deg)`,
+              animation: "cr-radar-spin 2.2s linear infinite",
+              animationPlayState: phase === "sweep" ? "running" : "paused",
+            }}
+          />
+        </div>
+
+        {blips.map((b, i) => (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              top: b.top,
+              left: b.left,
+              width: 7,
+              height: 7,
+              marginTop: -3.5,
+              marginLeft: -3.5,
+              borderRadius: "50%",
+              background: T.accent,
+              animation: phase === "sweep" ? "cr-radar-pulse 1.8s ease-in-out infinite" : "none",
+              animationDelay: b.delay,
+              opacity: phase === "sweep" ? undefined : 1,
+            }}
+          />
+        ))}
+
+        {phase === "lock" && (
+          <div
+            style={{
+              position: "absolute",
+              top: lockTarget.top,
+              left: lockTarget.left,
+              width: 34,
+              height: 34,
+              marginTop: -17,
+              marginLeft: -17,
+              borderRadius: "50%",
+              border: `2px solid ${T.accentSecondary}`,
+              animation: "cr-radar-lock 0.65s ease-out forwards",
+            }}
+          />
+        )}
+
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: 4,
+            height: 4,
+            marginTop: -2,
+            marginLeft: -2,
+            borderRadius: "50%",
+            background: T.muted,
+          }}
+        />
+      </div>
+
+      {/* Flash + logo */}
+      {phase === "flash" && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: T.accent,
+            animation: "cr-radar-flash 0.6s ease-out forwards",
+          }}
+        />
+      )}
+      <div
+        style={{
+          position: "absolute",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 10,
+          opacity: phase === "flash" ? 1 : 0,
+          transform: phase === "flash" ? "scale(1)" : "scale(0.85)",
+          transition: "opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s",
+        }}
+      >
+        <div
+          style={{
+            width: 52,
+            height: 52,
+            borderRadius: "50%",
+            border: `1.5px solid ${T.accent}`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span style={{ color: T.accent, fontSize: 22 }}>🎬</span>
+        </div>
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontFamily: F.marquee, fontSize: 30, letterSpacing: 1, color: T.cream, lineHeight: 1 }}>
+            CINÉ<span style={{ color: T.accent }}>RADAR</span>
+          </div>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, letterSpacing: 1, marginTop: 6 }}>
+            SÉANCE PRIVÉE · 2 PLACES
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Header({ onBack }) {
   return (
     <div
@@ -2134,6 +2325,7 @@ export default function App() {
   const [refreshing, setRefreshing] = useState(false);
   const [theme, setTheme] = useState("sombre");
   const [, setThemeTick] = useState(0);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const stored = getStoredTheme_();
@@ -2179,6 +2371,10 @@ export default function App() {
     setRefreshing(true);
     fetchMovies().finally(() => setRefreshing(false));
   };
+
+  if (showIntro) {
+    return <RadarIntro ready={!loading} onDone={() => setShowIntro(false)} />;
+  }
 
   if (view === "add") {
     return (
