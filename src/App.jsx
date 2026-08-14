@@ -1234,7 +1234,7 @@ function SectionTitle({ children }) {
 function BottomNav({ view, onChange }) {
   const items = [
     { key: "home", label: "Accueil", icon: "🏠" },
-    { key: "search", label: "Recherche", icon: "🔍" },
+    { key: "add", label: "Ajouter", isAdd: true },
     { key: "library", label: "Bibliothèque", icon: "📚" },
     { key: "history", label: "Historique", icon: "🕘" },
     { key: "settings", label: "Paramètres", icon: "⚙️" },
@@ -1266,10 +1266,14 @@ function BottomNav({ view, onChange }) {
             alignItems: "center",
             gap: 2,
             padding: "10px 0 8px",
-            color: view === item.key ? T.accent : T.muted,
+            color: item.isAdd ? T.accent : view === item.key ? T.accent : T.muted,
           }}
         >
-          <span style={{ fontSize: 18 }}>{item.icon}</span>
+          {item.isAdd ? (
+            <span style={{ fontSize: 18, lineHeight: "18px", fontWeight: 700, color: T.accent }}>+</span>
+          ) : (
+            <span style={{ fontSize: 18 }}>{item.icon}</span>
+          )}
           <span style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: 0.5 }}>
             {item.label}
           </span>
@@ -1697,42 +1701,34 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
         </div>
 
         <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
-          <div style={{ flex: 1, textAlign: "center", padding: "16px 8px", background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radiusSm }}>
-            <div style={{ fontFamily: F.marquee, fontSize: 28, color: T.cream }}>{movies.length}</div>
-            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted }}>SUIVIS</div>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-          <button
-            onClick={onAdd}
+          <div
             style={{
               flex: 1,
-              padding: "12px 0",
-              border: `1px solid ${T.accent}`,
-              borderRadius: 6,
-              fontFamily: F.mono,
-              fontSize: 13,
-              color: T.accent,
-              letterSpacing: 0.5,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
+              padding: "9px 8px",
+              background: T.surface,
+              border: `${T.borderWidth}px solid ${T.line}`,
+              borderRadius: T.radiusSm,
             }}
           >
-            + AJOUTER UN FILM
-          </button>
+            <span style={{ fontFamily: F.marquee, fontSize: 20, color: T.cream }}>{movies.length}</span>
+            <span style={{ fontFamily: F.mono, fontSize: 10, color: T.muted }}>SUIVIS</span>
+          </div>
           <button
             onClick={onRefresh}
             disabled={refreshing}
             style={{
-              padding: "12px 16px",
-              border: `1px solid ${T.line}`,
-              borderRadius: 6,
-              fontFamily: F.mono,
-              fontSize: 12,
-              color: T.muted,
+              padding: "0 16px",
+              border: `${T.borderWidth}px solid ${T.line}`,
+              borderRadius: T.radiusSm,
+              fontSize: 16,
               opacity: refreshing ? 0.5 : 1,
             }}
           >
-            {refreshing ? "..." : "↻"}
+            {refreshing ? "..." : "🔄"}
           </button>
         </div>
 
@@ -2550,6 +2546,16 @@ export default function App() {
     fetchMovies().finally(() => setRefreshing(false));
   };
 
+  const handleNavChange = (key) => {
+    if (key === "add") {
+      setEditingMovie(null);
+      setPreviousView(view);
+      setView("add");
+      return;
+    }
+    setView(key);
+  };
+
   if (showIntro) {
     return <RadarIntro ready={!loading} onDone={() => setShowIntro(false)} />;
   }
@@ -2624,7 +2630,7 @@ export default function App() {
         />
       )}
       {view === "settings" && <SettingsView theme={theme} onChangeTheme={changeTheme} />}
-      <BottomNav view={view} onChange={setView} />
+      <BottomNav view={view} onChange={handleNavChange} />
     </>
   );
 }
