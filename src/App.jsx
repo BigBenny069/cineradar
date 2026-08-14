@@ -637,15 +637,51 @@ function playRadarPing_() {
   }
 }
 
+// ─────────────────────────────────────────────────────────────
+// GLYPHE DU LOGO — cadre de visée + ondes radar concentriques + point
+// central. Même dessin que l'icône de l'app (voir icon-512.png), réutilisé
+// à la fois dans la révélation de l'intro (couleur bleue fixe) et dans le
+// Header présent sur tous les écrans (couleur qui suit le thème actif).
+// ─────────────────────────────────────────────────────────────
+function LogoGlyph({ size = 36, color = "#3D7DFF" }) {
+  const corners = [
+    { sx: -1, sy: -1 },
+    { sx: 1, sy: -1 },
+    { sx: -1, sy: 1 },
+    { sx: 1, sy: 1 },
+  ];
+  const half = 25.5;
+  const arm = 11.5;
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100">
+      {corners.map(({ sx, sy }, i) => {
+        const x0 = 50 + sx * half;
+        const y0 = 50 + sy * half;
+        const x1 = x0 - sx * arm;
+        const y1 = y0 - sy * arm;
+        return (
+          <g key={i}>
+            <line x1={x0} y1={y0} x2={x1} y2={y0} stroke={color} strokeWidth="3.6" strokeLinecap="round" />
+            <line x1={x0} y1={y0} x2={x0} y2={y1} stroke={color} strokeWidth="3.6" strokeLinecap="round" />
+          </g>
+        );
+      })}
+      <circle cx="50" cy="50" r="17.5" fill="none" stroke={color} strokeWidth="1.7" opacity="0.45" />
+      <circle cx="50" cy="50" r="11.5" fill="none" stroke={color} strokeWidth="1.9" opacity="0.68" />
+      <circle cx="50" cy="50" r="3.6" fill={color} />
+    </svg>
+  );
+}
+
 function RadarIntro({ ready, onDone }) {
   const [phase, setPhase] = useState("sweep"); // sweep -> lock -> reveal -> fadeout
   const [hidden, setHidden] = useState(false);
   const [showSkip, setShowSkip] = useState(false);
 
-  const LOCK_DELAY = 250;
-  const LOCK_DURATION = 650;
-  const HOLD_DURATION = 1100;
-  const FADE_OUT_DURATION = 600;
+  const LOCK_DELAY = 450;
+  const LOCK_DURATION = 900;
+  const HOLD_DURATION = 1700;
+  const FADE_OUT_DURATION = 800;
 
   // Couleurs fixes — la "vision bleue" d'origine, indépendante du thème actif.
   const BLUE = "#3D7DFF";
@@ -773,7 +809,7 @@ function RadarIntro({ ready, onDone }) {
               height: "100%",
               filter: "blur(2px)",
               background: `conic-gradient(from 0deg, transparent 0deg, transparent 250deg, ${BLUE}22 300deg, ${BLUE_LIGHT}CC 340deg, ${BLUE_LIGHT} 360deg)`,
-              animation: "cr-radar-spin 2.2s linear infinite",
+              animation: "cr-radar-spin 3.2s linear infinite",
               animationPlayState: phase === "sweep" ? "running" : "paused",
             }}
           />
@@ -810,7 +846,7 @@ function RadarIntro({ ready, onDone }) {
               height: 36,
               marginTop: -18,
               marginLeft: -18,
-              animation: "cr-radar-lock 0.6s ease-out forwards",
+              animation: `cr-radar-lock ${LOCK_DURATION}ms ease-out forwards`,
             }}
           >
             {[
@@ -870,17 +906,9 @@ function RadarIntro({ ready, onDone }) {
           transition: "opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s",
         }}
       >
-        <svg width="76" height="76" viewBox="0 0 100 100" style={{ filter: `drop-shadow(0 0 10px ${BLUE}66)` }}>
-          <circle cx="50" cy="50" r="40" fill="none" stroke={MUTED} strokeWidth="6" strokeDasharray="3 2.2" pathLength="100" transform="rotate(-90 50 50)" opacity="0.5" />
-          <circle cx="50" cy="50" r="40" fill="none" stroke={BLUE} strokeWidth="9" strokeLinecap="round" strokeDasharray="58 42" pathLength="100" transform="rotate(-90 50 50)" />
-          <circle cx="50" cy="50" r="26" fill="none" stroke={LINE} strokeWidth="1" opacity="0.7" />
-          <circle cx="38" cy="42" r="1.8" fill={CREAM} opacity="0.9" />
-          <circle cx="58" cy="34" r="1" fill={CREAM} opacity="0.6" />
-          <circle cx="62" cy="58" r="1.4" fill={CREAM} opacity="0.75" />
-          <rect x="43" y="60" width="4" height="4" fill={CREAM} opacity="0.8" transform="rotate(45 45 62)" />
-          <rect x="33" y="55" width="3" height="3" fill={CREAM} opacity="0.6" transform="rotate(45 34.5 56.5)" />
-          <circle cx="50" cy="50" r="2.3" fill={CREAM} />
-        </svg>
+        <div style={{ filter: `drop-shadow(0 0 10px ${BLUE}66)` }}>
+          <LogoGlyph size={76} color={BLUE} />
+        </div>
 
         <div style={{ textAlign: "center" }}>
           <div style={{ display: "flex", gap: 4, justifyContent: "center", marginBottom: 12 }}>
@@ -960,19 +988,7 @@ function Header({ onBack }) {
         </button>
       )}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <div
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            border: `1.5px solid ${T.accent}`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <span style={{ color: T.accent, fontSize: 16 }}>🎬</span>
-        </div>
+        <LogoGlyph size={36} color={T.accent} />
         <div>
           <div
             style={{
