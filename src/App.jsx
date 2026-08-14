@@ -600,26 +600,108 @@ function PlatformBadge({ name }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────
+// INTRO RADAR — jouée UNE FOIS au vrai lancement de l'appli, pas à
+// chaque navigation. Couleurs et polices volontairement FIXES (pas
+// liées au thème actif T/F) : la vision bleue d'origine reste la même
+// quel que soit le thème choisi ensuite dans Paramètres — même principe
+// que le rideau de CinéMaison, qui garde sa propre palette indépendamment
+// du thème actif.
+//
+// Séquence, calée sur `ready` plutôt que sur un minutage fixe : le
+// balayage tourne en boucle tant que les données ne sont pas prêtes
+// (le balayage EST l'indicateur de chargement, pas besoin d'un spinner
+// séparé), puis seulement une fois `ready` vrai la séquence de
+// verrouillage → révélation → maintien → fondu se déclenche.
+// ─────────────────────────────────────────────────────────────
+function playRadarPing_() {
+  try {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    const ctx = new Ctx();
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(1400, now);
+    osc.frequency.exponentialRampToValueAtTime(700, now + 0.35);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.28, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.5);
+  } catch {
+    // Contexte audio indisponible/bloqué — silencieux, pas grave.
+  }
+}
+
 function RadarIntro({ ready, onDone }) {
-  const [phase, setPhase] = useState("sweep"); // sweep | lock | flash
-  const [minSweepDone, setMinSweepDone] = useState(false);
+  const [phase, setPhase] = useState("sweep"); // sweep -> lock -> reveal -> fadeout
+  const [hidden, setHidden] = useState(false);
+  const [showSkip, setShowSkip] = useState(false);
+
+  const LOCK_DELAY = 250;
+  const LOCK_DURATION = 650;
+  const HOLD_DURATION = 1100;
+  const FADE_OUT_DURATION = 600;
+
+  // Couleurs fixes — la "vision bleue" d'origine, indépendante du thème actif.
+  const BLUE = "#3D7DFF";
+  const BLUE_LIGHT = "#7FB4FF";
+  const BG = "#0B0E14";
+  const SURFACE = "#131720";
+  const CREAM = "#EDEFF3";
+  const MUTED = "#7C8494";
+  const LINE = "#1F2530";
+  const MONO = "'IBM Plex Mono', monospace";
+  const MARQUEE = "'Bebas Neue', sans-serif";
 
   useEffect(() => {
-    const t = setTimeout(() => setMinSweepDone(true), 2500);
+    const t = setTimeout(() => setShowSkip(true), 1400);
     return () => clearTimeout(t);
   }, []);
 
+  // sweep -> lock : uniquement déclenché par `ready`, aucune minuterie
+  // propre à cet effet (voir la note dans le composant précédent sur le
+  // piège d'un setTimeout programmé dans le même effet que celui qui
+  // change la dépendance qui le déclenche).
   useEffect(() => {
-    if (phase === "sweep" && ready && minSweepDone) {
-      setPhase("lock");
-      const t1 = setTimeout(() => setPhase("flash"), 700);
-      const t2 = setTimeout(() => onDone?.(), 700 + 600);
-      return () => {
-        clearTimeout(t1);
-        clearTimeout(t2);
-      };
-    }
-  }, [phase, ready, minSweepDone]);
+    if (!ready) return;
+    const t = setTimeout(() => setPhase("lock"), LOCK_DELAY);
+    return () => clearTimeout(t);
+  }, [ready]);
+
+  // lock -> reveal
+  useEffect(() => {
+    if (phase !== "lock") return;
+    playRadarPing_();
+    try {
+      navigator.vibrate && navigator.vibrate([20, 30, 20]);
+    } catch {}
+    const t = setTimeout(() => setPhase("reveal"), LOCK_DURATION);
+    return () => clearTimeout(t);
+  }, [phase]);
+
+  // reveal -> fadeout (maintien du logo affiché quelques instants)
+  useEffect(() => {
+    if (phase !== "reveal") return;
+    const t = setTimeout(() => setPhase("fadeout"), HOLD_DURATION);
+    return () => clearTimeout(t);
+  }, [phase]);
+
+  // fadeout -> fin
+  useEffect(() => {
+    if (phase !== "fadeout") return;
+    const t = setTimeout(() => {
+      setHidden(true);
+      onDone?.();
+    }, FADE_OUT_DURATION);
+    return () => clearTimeout(t);
+  }, [phase]);
+
+  if (hidden) return null;
 
   const blips = [
     { top: "28%", left: "62%", delay: "0s" },
@@ -628,32 +710,44 @@ function RadarIntro({ ready, onDone }) {
     { top: "35%", left: "30%", delay: "1.3s" },
   ];
   const lockTarget = blips[0];
+  const revealed = phase === "reveal" || phase === "fadeout";
 
   return (
     <div
       style={{
         position: "fixed",
         inset: 0,
-        background: T.bg,
+        background: BG,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         zIndex: 100,
         overflow: "hidden",
+        opacity: phase === "fadeout" ? 0 : 1,
+        transition: `opacity ${FADE_OUT_DURATION}ms ease`,
       }}
     >
       {/* Écran radar */}
       <div
         style={{
           position: "relative",
-          width: 220,
-          height: 220,
-          opacity: phase === "flash" ? 0 : 1,
-          transform: phase === "flash" ? "scale(0.9)" : "scale(1)",
+          width: 230,
+          height: 230,
+          opacity: revealed ? 0 : 1,
+          transform: revealed ? "scale(0.9)" : "scale(1)",
           transition: "opacity 0.35s ease, transform 0.35s ease",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            inset: -20,
+            borderRadius: "50%",
+            background: `radial-gradient(circle, ${BLUE}14 0%, transparent 70%)`,
+          }}
+        />
+
         {[1, 0.66, 0.33].map((s) => (
           <div
             key={s}
@@ -664,26 +758,21 @@ function RadarIntro({ ready, onDone }) {
               width: `${s * 100}%`,
               height: `${s * 100}%`,
               borderRadius: "50%",
-              border: `1px solid ${T.line}`,
+              border: `1px solid ${LINE}`,
+              opacity: 0.8,
             }}
           />
         ))}
-        <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: T.line }} />
-        <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: T.line }} />
+        <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: LINE, opacity: 0.5 }} />
+        <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: LINE, opacity: 0.5 }} />
 
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "50%",
-            overflow: "hidden",
-          }}
-        >
+        <div style={{ position: "absolute", inset: 0, borderRadius: "50%", overflow: "hidden" }}>
           <div
             style={{
               width: "100%",
               height: "100%",
-              background: `conic-gradient(from 0deg, transparent 0deg, transparent 265deg, ${T.accent}55 320deg, ${T.accent} 360deg)`,
+              filter: "blur(2px)",
+              background: `conic-gradient(from 0deg, transparent 0deg, transparent 250deg, ${BLUE}22 300deg, ${BLUE_LIGHT}CC 340deg, ${BLUE_LIGHT} 360deg)`,
               animation: "cr-radar-spin 2.2s linear infinite",
               animationPlayState: phase === "sweep" ? "running" : "paused",
             }}
@@ -702,7 +791,8 @@ function RadarIntro({ ready, onDone }) {
               marginTop: -3.5,
               marginLeft: -3.5,
               borderRadius: "50%",
-              background: T.accent,
+              background: BLUE_LIGHT,
+              boxShadow: `0 0 6px 1px ${BLUE_LIGHT}99`,
               animation: phase === "sweep" ? "cr-radar-pulse 1.8s ease-in-out infinite" : "none",
               animationDelay: b.delay,
               opacity: phase === "sweep" ? undefined : 1,
@@ -710,21 +800,38 @@ function RadarIntro({ ready, onDone }) {
           />
         ))}
 
-        {phase === "lock" && (
+        {phase !== "sweep" && (
           <div
             style={{
               position: "absolute",
               top: lockTarget.top,
               left: lockTarget.left,
-              width: 34,
-              height: 34,
-              marginTop: -17,
-              marginLeft: -17,
-              borderRadius: "50%",
-              border: `2px solid ${T.accentSecondary}`,
-              animation: "cr-radar-lock 0.65s ease-out forwards",
+              width: 36,
+              height: 36,
+              marginTop: -18,
+              marginLeft: -18,
+              animation: "cr-radar-lock 0.6s ease-out forwards",
             }}
-          />
+          >
+            {[
+              { top: 0, left: 0, borderWidth: "2px 0 0 2px" },
+              { top: 0, right: 0, borderWidth: "2px 2px 0 0" },
+              { bottom: 0, left: 0, borderWidth: "0 0 2px 2px" },
+              { bottom: 0, right: 0, borderWidth: "0 2px 2px 0" },
+            ].map((corner, i) => (
+              <div
+                key={i}
+                style={{
+                  position: "absolute",
+                  width: 12,
+                  height: 12,
+                  borderStyle: "solid",
+                  borderColor: BLUE_LIGHT,
+                  ...corner,
+                }}
+              />
+            ))}
+          </div>
         )}
 
         <div
@@ -737,59 +844,104 @@ function RadarIntro({ ready, onDone }) {
             marginTop: -2,
             marginLeft: -2,
             borderRadius: "50%",
-            background: T.muted,
+            background: CREAM,
+            boxShadow: `0 0 5px 1px ${CREAM}88`,
           }}
         />
       </div>
 
-      {/* Flash + logo */}
-      {phase === "flash" && (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: T.accent,
-            animation: "cr-radar-flash 0.6s ease-out forwards",
-          }}
-        />
+      {phase === "sweep" && (
+        <p style={{ marginTop: 22, fontFamily: MONO, fontSize: 9.5, letterSpacing: 3, color: MUTED }}>
+          SCAN EN COURS…
+        </p>
       )}
+
+      {/* Révélation : badge + wordmark + tagline, maintenus affichés     */}
+      {/* jusqu'au fondu final (voir HOLD_DURATION).                      */}
       <div
         style={{
           position: "absolute",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 10,
-          opacity: phase === "flash" ? 1 : 0,
-          transform: phase === "flash" ? "scale(1)" : "scale(0.85)",
-          transition: "opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s",
+          gap: 16,
+          opacity: revealed ? 1 : 0,
+          transform: revealed ? "scale(1)" : "scale(0.85)",
+          transition: "opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s",
         }}
       >
-        <div
-          style={{
-            width: 52,
-            height: 52,
-            borderRadius: "50%",
-            border: `1.5px solid ${T.accent}`,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <span style={{ color: T.accent, fontSize: 22 }}>🎬</span>
-        </div>
+        <svg width="76" height="76" viewBox="0 0 100 100" style={{ filter: `drop-shadow(0 0 10px ${BLUE}66)` }}>
+          <circle cx="50" cy="50" r="40" fill="none" stroke={MUTED} strokeWidth="6" strokeDasharray="3 2.2" pathLength="100" transform="rotate(-90 50 50)" opacity="0.5" />
+          <circle cx="50" cy="50" r="40" fill="none" stroke={BLUE} strokeWidth="9" strokeLinecap="round" strokeDasharray="58 42" pathLength="100" transform="rotate(-90 50 50)" />
+          <circle cx="50" cy="50" r="26" fill="none" stroke={LINE} strokeWidth="1" opacity="0.7" />
+          <circle cx="38" cy="42" r="1.8" fill={CREAM} opacity="0.9" />
+          <circle cx="58" cy="34" r="1" fill={CREAM} opacity="0.6" />
+          <circle cx="62" cy="58" r="1.4" fill={CREAM} opacity="0.75" />
+          <rect x="43" y="60" width="4" height="4" fill={CREAM} opacity="0.8" transform="rotate(45 45 62)" />
+          <rect x="33" y="55" width="3" height="3" fill={CREAM} opacity="0.6" transform="rotate(45 34.5 56.5)" />
+          <circle cx="50" cy="50" r="2.3" fill={CREAM} />
+        </svg>
+
         <div style={{ textAlign: "center" }}>
-          <div style={{ fontFamily: F.marquee, fontSize: 30, letterSpacing: 1, color: T.cream, lineHeight: 1 }}>
-            CINÉ<span style={{ color: T.accent }}>RADAR</span>
+          <div style={{ display: "flex", gap: 4, justifyContent: "center", marginBottom: 12 }}>
+            {Array.from({ length: 14 }).map((_, i) => (
+              <span
+                key={i}
+                style={{
+                  width: 3,
+                  height: 3,
+                  borderRadius: "50%",
+                  background: i % 3 === 0 ? BLUE : LINE,
+                }}
+              />
+            ))}
           </div>
-          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, letterSpacing: 1, marginTop: 6 }}>
+          <div
+            style={{
+              padding: "8px 18px",
+              borderRadius: 4,
+              background: SURFACE,
+              boxShadow: `0 0 26px ${BLUE}33`,
+            }}
+          >
+            <div
+              style={{
+                fontFamily: MARQUEE,
+                fontSize: 30,
+                letterSpacing: 1,
+                color: CREAM,
+                lineHeight: 1,
+                textShadow: `0 0 16px ${BLUE}77`,
+              }}
+            >
+              CINÉ<span style={{ color: BLUE_LIGHT }}>RADAR</span>
+            </div>
+          </div>
+          <div style={{ fontFamily: MONO, fontSize: 10, color: MUTED, letterSpacing: 2, marginTop: 12 }}>
             SÉANCE PRIVÉE · 2 PLACES
           </div>
         </div>
       </div>
+
+      {showSkip && !revealed && (
+        <button
+          onClick={() => onDone?.()}
+          style={{
+            position: "absolute",
+            bottom: 36,
+            fontFamily: MONO,
+            fontSize: 11,
+            letterSpacing: 0.5,
+            color: MUTED,
+          }}
+        >
+          Passer →
+        </button>
+      )}
     </div>
   );
 }
+
 
 function Header({ onBack }) {
   return (
