@@ -60,12 +60,14 @@ function loadPreviousAbonnements() {
     const raw = fs.readFileSync("public/data/enriched.json", "utf-8");
     const parsed = JSON.parse(raw);
     const map = {};
+    const availableSinceMap = {};
     for (const m of parsed) {
       map[m.tmdbId] = new Set(m.providers?.abonnement || []);
+      if (m.availableSince) availableSinceMap[m.tmdbId] = m.availableSince;
     }
-    return map;
+    return { abonnements: map, availableSince: availableSinceMap };
   } catch (e) {
-    return {};
+    return { abonnements: {}, availableSince: {} };
   }
 }
 
@@ -285,7 +287,7 @@ async function main() {
     const providers = splitProviders(fr);
     const posterUrl = details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null;
 
-    const prevSet = previousAbonnements[details.id] || new Set();
+    const prevSet = previousAbonnements.abonnements[details.id] || new Set();
     const newProviders = providers.abonnement.filter((p) => !prevSet.has(p));
     if (newProviders.length > 0) {
       newlyAvailable.push({
@@ -294,6 +296,15 @@ async function main() {
         poster: posterUrl,
         letterboxdUrl: movie.letterboxdUrl || null,
       });
+    }
+
+    // Date à laquelle le film est devenu disponible sur un abonnement : ne change
+    // que si un nouveau fournisseur vient d'apparaître, sinon on garde la valeur
+    // précédente (pour ne pas faire "remonter" un film déjà disponible depuis longtemps).
+    let availableSinceValue = null;
+    if (providers.abonnement.length > 0) {
+      const previousValue = previousAbonnements.availableSince[details.id];
+      availableSinceValue = newProviders.length > 0 || !previousValue ? new Date().toISOString() : previousValue;
     }
 
     let letterboxdRating = null;
@@ -321,6 +332,7 @@ async function main() {
       imdbId: details.imdb_id,
       letterboxdUrl: movie.letterboxdUrl || null,
       providers,
+      availableSince: availableSinceValue,
       updatedAt: movie.updatedAt || null,
       lastChecked: new Date().toISOString(),
     });
