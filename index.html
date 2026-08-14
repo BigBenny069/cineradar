@@ -25,6 +25,24 @@
       a { text-decoration: none; color: inherit; }
       button { font-family: inherit; cursor: pointer; background: none; border: none; }
       #root { min-height: 100vh; }
+
+      @keyframes cr-radar-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes cr-radar-pulse {
+        0%, 100% { opacity: 0.25; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.15); }
+      }
+      @keyframes cr-radar-lock {
+        from { transform: scale(1.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      @keyframes cr-radar-flash {
+        0% { opacity: 0; }
+        35% { opacity: 1; }
+        100% { opacity: 0; }
+      }
     </style>
   </head>
   <body>
