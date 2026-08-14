@@ -1692,7 +1692,7 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           GUICHET
         </div>
-        <div style={{ fontFamily: F.marquee, fontSize: 32, color: T.cream, marginTop: 4, lineHeight: 1.05 }}>
+        <div style={{ fontFamily: F.marquee, fontSize: 25, color: T.cream, marginTop: 4, lineHeight: 1.05 }}>
           Où regarder votre prochain film ?
         </div>
 
