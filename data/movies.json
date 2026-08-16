@@ -153,5 +153,12 @@
     "letterboxdUrl": "https://boxd.it/14J6",
     "updatedAt": "2026-08-16T08:52:30.243Z",
     "tmdbId": 38985
+  },
+  {
+    "title": "Casablanca",
+    "year": 1942,
+    "director": "Michael Curtiz",
+    "letterboxdUrl": "https://boxd.it/2aG0",
+    "updatedAt": "2026-08-16T20:03:44.201Z"
   }
 ]
