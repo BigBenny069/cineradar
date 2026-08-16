@@ -137,5 +137,12 @@
     "letterboxdUrl": "https://letterboxd.com/film/the-raid-2/",
     "updatedAt": "2026-08-15T21:59:18.507Z",
     "tmdbId": 180299
+  },
+  {
+    "title": "Normal",
+    "year": 2025,
+    "director": "Ben Wheatley",
+    "letterboxdUrl": "https://boxd.it/LczA",
+    "updatedAt": "2026-08-16T07:05:17.637Z"
   }
 ]
