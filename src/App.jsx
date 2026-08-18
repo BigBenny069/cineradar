@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ─────────────────────────────────────────────────────────────
 // SYSTÈME DE THÈMES
@@ -1231,6 +1231,101 @@ function SectionTitle({ children }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────
+// TIRER POUR RAFRAÎCHIR — tirer vers le bas en haut d'un écran recharge
+// les données, en plus du bouton 🔄. N'agit que si le doigt part du tout
+// haut du scroll (scrollTop === 0), pour ne pas gêner le défilement normal.
+// ─────────────────────────────────────────────────────────────
+const PULL_THRESHOLD = 64;
+const PULL_MAX = 92;
+
+function PullToRefresh({ onRefresh, children }) {
+  const [pullDistance, setPullDistance] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const stateRef = useRef({ active: false, startY: 0 }).current;
+
+  const pageScrollTop = () => window.scrollY || document.documentElement.scrollTop || 0;
+
+  const handleTouchStart = (e) => {
+    if (refreshing) return;
+    if (pageScrollTop() > 0) return;
+    stateRef.active = true;
+    stateRef.startY = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!stateRef.active) return;
+    if (pageScrollTop() > 0) {
+      stateRef.active = false;
+      setPullDistance(0);
+      return;
+    }
+    const delta = e.touches[0].clientY - stateRef.startY;
+    if (delta <= 0) {
+      setPullDistance(0);
+      return;
+    }
+    setPullDistance(Math.min(delta * 0.5, PULL_MAX));
+  };
+
+  const handleTouchEnd = async () => {
+    if (!stateRef.active) return;
+    stateRef.active = false;
+    if (pullDistance >= PULL_THRESHOLD) {
+      setRefreshing(true);
+      setPullDistance(PULL_THRESHOLD);
+      try {
+        await onRefresh();
+      } finally {
+        setRefreshing(false);
+        setPullDistance(0);
+      }
+    } else {
+      setPullDistance(0);
+    }
+  };
+
+  return (
+    <div
+      style={{ position: "relative" }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {pullDistance > 0 && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: pullDistance,
+            transition: refreshing ? "none" : "height 0.2s ease",
+            zIndex: 5,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 17,
+              color: T.accent,
+              display: "inline-block",
+              transform: `rotate(${pullDistance * 3}deg)`,
+              animation: refreshing ? "cr-radar-spin 0.8s linear infinite" : "none",
+              opacity: Math.min(pullDistance / PULL_THRESHOLD, 1),
+            }}
+          >
+            🔄
+          </span>
+        </div>
+      )}
+      {children}
+    </div>
+  );
+}
+
 function BottomNav({ view, onChange }) {
   const items = [
     { key: "home", label: "Accueil", icon: "🏠" },
@@ -1824,7 +1919,7 @@ function SearchView({ movies, onOpen }) {
             borderRadius: 6,
             color: T.cream,
             fontFamily: F.serif,
-            fontSize: 15,
+            fontSize: 16,
             padding: "12px 14px",
           }}
         />
@@ -1900,7 +1995,7 @@ function LibraryView({ movies, onOpen }) {
             borderRadius: 6,
             color: T.cream,
             fontFamily: F.serif,
-            fontSize: 15,
+            fontSize: 16,
             padding: "12px 14px",
           }}
         />
@@ -2338,7 +2433,7 @@ function SettingsView({ theme, onChangeTheme }) {
                   borderRadius: 6,
                   color: T.cream,
                   fontFamily: F.serif,
-                  fontSize: 14,
+                  fontSize: 16,
                   padding: "10px 12px",
                 }}
               />
@@ -2412,7 +2507,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
     borderRadius: 6,
     color: T.cream,
     fontFamily: F.serif,
-    fontSize: 14,
+    fontSize: 16,
     padding: "10px 12px",
     width: "100%",
   };
@@ -2628,42 +2723,44 @@ export default function App() {
 
   return (
     <>
-      {view === "home" && (
-        <HomeView
-          movies={movies}
-          onOpen={setSelected}
-          loading={loading}
-          error={error}
-          onAdd={() => {
-            setEditingMovie(null);
-            setPreviousView(view);
-            setView("add");
-          }}
-          onRefresh={handleRefresh}
-          refreshing={refreshing}
-        />
-      )}
-      {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
-      {view === "library" && <LibraryView movies={movies} onOpen={setSelected} />}
-      {view === "history" && (
-        <HistoryView
-          movies={movies}
-          unmatched={unmatched}
-          onOpen={setSelected}
-          onEditUnmatched={(item) => {
-            setEditingMovie({
-              title: item.title,
-              year: item.year,
-              director: item.director,
-              letterboxdUrl: item.letterboxdUrl || null,
-              updatedAt: item.updatedAt,
-            });
-            setPreviousView(view);
-            setView("add");
-          }}
-        />
-      )}
-      {view === "settings" && <SettingsView theme={theme} onChangeTheme={changeTheme} />}
+      <PullToRefresh onRefresh={handleRefresh}>
+        {view === "home" && (
+          <HomeView
+            movies={movies}
+            onOpen={setSelected}
+            loading={loading}
+            error={error}
+            onAdd={() => {
+              setEditingMovie(null);
+              setPreviousView(view);
+              setView("add");
+            }}
+            onRefresh={handleRefresh}
+            refreshing={refreshing}
+          />
+        )}
+        {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}
+        {view === "library" && <LibraryView movies={movies} onOpen={setSelected} />}
+        {view === "history" && (
+          <HistoryView
+            movies={movies}
+            unmatched={unmatched}
+            onOpen={setSelected}
+            onEditUnmatched={(item) => {
+              setEditingMovie({
+                title: item.title,
+                year: item.year,
+                director: item.director,
+                letterboxdUrl: item.letterboxdUrl || null,
+                updatedAt: item.updatedAt,
+              });
+              setPreviousView(view);
+              setView("add");
+            }}
+          />
+        )}
+        {view === "settings" && <SettingsView theme={theme} onChangeTheme={changeTheme} />}
+      </PullToRefresh>
       <BottomNav view={view} onChange={handleNavChange} />
     </>
   );
