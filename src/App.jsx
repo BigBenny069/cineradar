@@ -502,6 +502,77 @@ async function apiWrite(url, body) {
   return { ok: true, data };
 }
 
+// ─────────────────────────────────────────────────────────────
+// PASSERELLE VERS CINÉMAISON — envoie une fiche film vers l'autre appli
+// (base Google Sheets séparée). Mot de passe propre à CinéMaison, mémorisé
+// à part de celui de CinéRadar.
+// ─────────────────────────────────────────────────────────────
+const CINEMAISON_URL = "https://cinemaison-v2.vercel.app";
+const CINEMAISON_PWD_KEY = "cineradar_cinemaison_pwd";
+
+// CinéMaison n'accepte qu'une seule plateforme parmi ces 4 valeurs exactes.
+// On fait correspondre les noms fournisseurs TMDB (souvent légèrement
+// différents) à ces 4 valeurs ; tout le reste n'est pas transférable.
+const CINEMAISON_PLATFORM_MAP = {
+  "canal+": "Canal+",
+  netflix: "Netflix",
+  "prime video": "Prime Video",
+  "amazon prime video": "Prime Video",
+  "disney+": "Disney+",
+  "disney plus": "Disney+",
+};
+
+function mapToCinemaisonPlatform(name) {
+  return CINEMAISON_PLATFORM_MAP[normalizeText(name)] || null;
+}
+
+function getCinemaisonPassword() {
+  try {
+    return localStorage.getItem(CINEMAISON_PWD_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function askCinemaisonPassword() {
+  const pwd = window.prompt("Mot de passe CinéMaison :");
+  if (pwd) {
+    try {
+      localStorage.setItem(CINEMAISON_PWD_KEY, pwd);
+    } catch {}
+  }
+  return pwd || "";
+}
+
+async function sendToCinemaison(body) {
+  let password = getCinemaisonPassword();
+  if (!password) password = askCinemaisonPassword();
+  if (!password) return { ok: false, error: "Mot de passe requis" };
+
+  try {
+    const res = await fetch(`${CINEMAISON_URL}/api/add-film`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, password }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.status === 401) {
+      try {
+        localStorage.removeItem(CINEMAISON_PWD_KEY);
+      } catch {}
+      return { ok: false, error: "Mot de passe CinéMaison incorrect (redemandé au prochain essai)" };
+    }
+    if (!res.ok) return { ok: false, error: data.error || "Erreur serveur CinéMaison" };
+    return { ok: true, data };
+  } catch (e) {
+    return {
+      ok: false,
+      error: "Impossible de contacter CinéMaison — vérifie ta connexion, ou que CinéMaison autorise bien les requêtes venant de CinéRadar (CORS).",
+    };
+  }
+}
+
 const PROVIDER_META = {
   "Canal+": { bg: "#000000", fg: "#FFFFFF", label: "CANAL+", weight: 800, category: "abonnement" },
   Netflix: { bg: "#E50914", fg: "#FFFFFF", label: "N", weight: 800, category: "abonnement" },
@@ -1419,8 +1490,43 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   const [deleteStatus, setDeleteStatus] = useState(null);
   const [deleteError, setDeleteError] = useState("");
 
+  const [showCinemaisonPanel, setShowCinemaisonPanel] = useState(false);
+  const [cinemaisonPlatform, setCinemaisonPlatform] = useState(null);
+  const [cinemaisonStatus, setCinemaisonStatus] = useState(null);
+  const [cinemaisonError, setCinemaisonError] = useState("");
+
   const abonnement = movie.providers?.abonnement || [];
   const vod = movie.providers?.vod || [];
+
+  const cinemaisonPlatformOptions = [
+    ...new Set(abonnement.map(mapToCinemaisonPlatform).filter(Boolean)),
+  ];
+
+  const openCinemaisonPanel = () => {
+    setCinemaisonPlatform(cinemaisonPlatformOptions[0] || null);
+    setCinemaisonStatus(null);
+    setCinemaisonError("");
+    setShowCinemaisonPanel(true);
+  };
+
+  const confirmSendToCinemaison = async () => {
+    if (!cinemaisonPlatform) return;
+    setCinemaisonStatus("loading");
+    setCinemaisonError("");
+    const result = await sendToCinemaison({
+      titre: movie.title,
+      annee: String(movie.year),
+      plateforme: cinemaisonPlatform,
+      type: "Film",
+      urlLetterboxd: movie.letterboxdUrl || undefined,
+    });
+    if (!result.ok) {
+      setCinemaisonStatus("error");
+      setCinemaisonError(result.error);
+      return;
+    }
+    setCinemaisonStatus("success");
+  };
 
   const confirmDelete = async () => {
     setDeleteStatus("loading");
@@ -1441,7 +1547,27 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
 
   return (
     <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
-      <Header onBack={onBack} />
+      <button
+        onClick={onBack}
+        aria-label="Retour"
+        style={{
+          position: "fixed",
+          top: "calc(14px + env(safe-area-inset-top))",
+          left: "max(16px, calc(50% - 240px + 16px))",
+          zIndex: 30,
+          width: 38,
+          height: 38,
+          borderRadius: "50%",
+          background: "rgba(0,0,0,0.45)",
+          backdropFilter: "blur(6px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <span style={{ color: "#fff", fontSize: 20 }}>←</span>
+      </button>
+      <Header />
       <div style={{ padding: "0 16px 96px" }}>
         <div style={{ background: T.surface, border: `${T.borderWidth}px solid ${T.line}`, borderRadius: T.radius, boxShadow: T.shadow, overflow: "hidden" }}>
           <div style={{ height: "42vh", background: "#000" }}>
@@ -1704,6 +1830,99 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
             )}
           </div>
         </div>
+
+        {!showCinemaisonPanel ? (
+          <button
+            onClick={openCinemaisonPanel}
+            disabled={cinemaisonPlatformOptions.length === 0}
+            style={{
+              width: "100%",
+              marginTop: 24,
+              padding: "12px 0",
+              border: `1px solid ${T.accent}`,
+              borderRadius: 6,
+              fontFamily: F.mono,
+              fontSize: 12,
+              color: T.accent,
+              letterSpacing: 0.5,
+              opacity: cinemaisonPlatformOptions.length === 0 ? 0.4 : 1,
+            }}
+          >
+            📤 ENVOYER VERS CINÉMAISON
+          </button>
+        ) : (
+          <div style={{ marginTop: 24, padding: 14, border: `1px solid ${T.accent}`, borderRadius: 6 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 12, color: T.cream, marginBottom: 10 }}>
+              Envoyer « {movie.title} » vers CinéMaison — sur quelle plateforme ?
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+              {cinemaisonPlatformOptions.map((p) => (
+                <button
+                  key={p}
+                  onClick={() => setCinemaisonPlatform(p)}
+                  style={{
+                    padding: "8px 14px",
+                    borderRadius: 20,
+                    border: `1px solid ${cinemaisonPlatform === p ? T.accent : T.line}`,
+                    background: cinemaisonPlatform === p ? T.accent : T.surface,
+                    fontFamily: F.mono,
+                    fontSize: 11,
+                    color: cinemaisonPlatform === p ? "#1A1206" : T.muted,
+                  }}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button
+                onClick={() => setShowCinemaisonPanel(false)}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: T.muted,
+                }}
+              >
+                Annuler
+              </button>
+              <button
+                onClick={confirmSendToCinemaison}
+                disabled={!cinemaisonPlatform || cinemaisonStatus === "loading"}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  background: T.accent,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: "#1A1206",
+                  opacity: !cinemaisonPlatform || cinemaisonStatus === "loading" ? 0.5 : 1,
+                }}
+              >
+                {cinemaisonStatus === "loading" ? "Envoi..." : "Envoyer"}
+              </button>
+            </div>
+            {cinemaisonStatus === "success" && (
+              <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
+                Envoyé ! Retrouve-le dans CinéMaison.
+              </div>
+            )}
+            {cinemaisonStatus === "error" && (
+              <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, lineHeight: 1.5 }}>
+                Erreur : {cinemaisonError}
+              </div>
+            )}
+          </div>
+        )}
+        {cinemaisonPlatformOptions.length === 0 && !showCinemaisonPanel && (
+          <div style={{ marginTop: 8, fontFamily: F.mono, fontSize: 10, color: T.muted, textAlign: "center" }}>
+            Aucun de tes abonnements Canal+/Netflix/Prime/Disney+ ne couvre ce film — rien à envoyer.
+          </div>
+        )}
 
         <button
           onClick={() => onEdit(movie)}
