@@ -2762,7 +2762,7 @@ function SettingsView({ theme, onChangeTheme }) {
 }
 
 
-function AddView({ onCancel, editingMovie, onSuccess }) {
+function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
   const isEditing = Boolean(editingMovie);
   const [title, setTitle] = useState(editingMovie?.title || "");
   const [year, setYear] = useState(editingMovie ? String(editingMovie.year) : "");
@@ -2770,6 +2770,8 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
   const [letterboxdUrl, setLetterboxdUrl] = useState(editingMovie?.letterboxdUrl || "");
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
+  const [duplicateMatch, setDuplicateMatch] = useState(null);
+  const [duplicateConfirmed, setDuplicateConfirmed] = useState(false);
 
   const fieldStyle = {
     background: T.surface,
@@ -2783,6 +2785,19 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
   };
 
   const canSubmit = title && director && /^\d{4}$/.test(year) && status !== "loading";
+
+  const findDuplicate = () => {
+    const normTitle = normalizeText(title);
+    const activeMatch = (movies || []).find(
+      (m) => normalizeText(m.title) === normTitle && String(m.year) === String(year)
+    );
+    if (activeMatch) return { title: activeMatch.title, year: activeMatch.year, source: "active" };
+    const historyMatch = (history || []).find(
+      (h) => normalizeText(h.title) === normTitle && String(h.year) === String(year)
+    );
+    if (historyMatch) return { title: historyMatch.title, year: historyMatch.year, source: "history" };
+    return null;
+  };
 
   const submit = async () => {
     setStatus("loading");
@@ -2807,7 +2822,20 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
     setYear("");
     setDirector("");
     setLetterboxdUrl("");
+    setDuplicateMatch(null);
+    setDuplicateConfirmed(false);
     setTimeout(() => onSuccess?.(), 1400);
+  };
+
+  const handleSubmitClick = () => {
+    if (!isEditing && !duplicateConfirmed) {
+      const match = findDuplicate();
+      if (match) {
+        setDuplicateMatch(match);
+        return;
+      }
+    }
+    submit();
   };
 
   return (
@@ -2851,7 +2879,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
         </div>
 
         <button
-          onClick={submit}
+          onClick={handleSubmitClick}
           disabled={!canSubmit}
           style={{
             width: "100%",
@@ -2868,6 +2896,50 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
         >
           {status === "loading" ? "ENVOI EN COURS..." : isEditing ? "METTRE À JOUR" : "AJOUTER À LA LISTE"}
         </button>
+
+        {duplicateMatch && (
+          <div style={{ marginTop: 14, padding: 14, border: `1px solid ${T.accentSecondary}`, borderRadius: 6 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 12, color: T.cream, lineHeight: 1.5 }}>
+              ⚠️ « {duplicateMatch.title} » ({duplicateMatch.year}) {duplicateMatch.source === "active"
+                ? "est déjà dans ta bibliothèque"
+                : "a déjà été recherché par le passé"} — déjà recherché.
+            </div>
+            <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+              <button
+                onClick={() => setDuplicateMatch(null)}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: T.muted,
+                }}
+              >
+                Annuler
+              </button>
+              <button
+                onClick={() => {
+                  setDuplicateConfirmed(true);
+                  setDuplicateMatch(null);
+                  submit();
+                }}
+                style={{
+                  flex: 1,
+                  padding: "10px 0",
+                  background: T.accentSecondary,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: T.cream,
+                }}
+              >
+                Ajouter quand même
+              </button>
+            </div>
+          </div>
+        )}
 
         {status === "success" && (
           <div style={{ marginTop: 16, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
@@ -2889,6 +2961,7 @@ function AddView({ onCancel, editingMovie, onSuccess }) {
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [unmatched, setUnmatched] = useState([]);
+  const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -2921,10 +2994,14 @@ export default function App() {
     const unmatchedPromise = fetch(`/data/unmatched.json?t=${Date.now()}`)
       .then((res) => (res.ok ? res.json() : []))
       .catch(() => []);
-    return Promise.all([moviesPromise, unmatchedPromise])
-      .then(([moviesData, unmatchedData]) => {
+    const historyPromise = fetch(`/data/history.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+    return Promise.all([moviesPromise, unmatchedPromise, historyPromise])
+      .then(([moviesData, unmatchedData, historyData]) => {
         setMovies(moviesData);
         setUnmatched(unmatchedData);
+        setHistory(historyData);
         setError(null);
       })
       .catch((err) => {
@@ -2963,6 +3040,8 @@ export default function App() {
     return (
       <AddView
         editingMovie={editingMovie}
+        movies={movies}
+        history={history}
         onCancel={() => {
           setEditingMovie(null);
           setView(previousView);
