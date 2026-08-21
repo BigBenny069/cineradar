@@ -119,29 +119,69 @@ function decodeHtmlEntities(str) {
 }
 
 function extractWatchlistTitles(html) {
-  const titles = new Set();
-
-  // Motif principal : attribut data-film-name (le plus stable historiquement)
-  let re = /data-film-name="([^"]+)"/g;
-  let m;
-  while ((m = re.exec(html))) titles.add(decodeHtmlEntities(m[1]));
-
-  // Repli : attribut data-item-name
-  if (titles.size === 0) {
-    re = /data-item-name="([^"]+)"/g;
-    while ((m = re.exec(html))) titles.add(decodeHtmlEntities(m[1]));
+  // On retourne des triplets {title, year, slug} — year peut être null si
+  // non trouvée. Le texte alt des affiches Letterboxd est généralement au
+  // format "Titre (Année)" : on sépare les deux plutôt que de chercher le
+  // titre brut sur TMDB avec l'année collée dedans (ce qui fait échouer la
+  // recherche à tous les coups). Le "slug" (ex: "dune-1984") est capturé
+  // séparément puis recollé par position d'apparition dans la page, pour
+  // reconstruire le vrai lien Letterboxd du film (plutôt que de le deviner
+  // depuis le titre, ce qui risquerait de tomber sur la mauvaise fiche).
+  function splitTitleYear(raw) {
+    const m = raw.match(/^(.*)\s\((\d{4})\)$/);
+    if (m) return { title: m[1].trim(), year: m[2] };
+    return { title: raw.trim(), year: null };
   }
 
-  // Dernier repli : texte alt des affiches
-  if (titles.size === 0) {
+  // Slugs, dans l'ordre d'apparition (ex: /film/dune-1984/ -> "dune-1984")
+  const slugs = [];
+  let slugRe = /data-target-link="\/film\/([^"\/]+)\/"/g;
+  let sm;
+  while ((sm = slugRe.exec(html))) slugs.push(sm[1]);
+
+  // Titres (+ année si dispo), dans l'ordre d'apparition — même ordre que
+  // les slugs puisque chaque affiche a les deux dans son bloc HTML.
+  const rawItems = [];
+  function pushRaw(rawTitle, rawYear) {
+    const { title, year } = rawYear ? { title: rawTitle.trim(), year: rawYear } : splitTitleYear(rawTitle);
+    if (!title || title.length < 2) return;
+    rawItems.push({ title, year });
+  }
+
+  let re = /data-film-name="([^"]+)"[^>]*data-film-release-year="(\d{4})"/g;
+  let m;
+  while ((m = re.exec(html))) pushRaw(decodeHtmlEntities(m[1]), m[2]);
+
+  if (rawItems.length === 0) {
+    re = /data-film-name="([^"]+)"/g;
+    while ((m = re.exec(html))) pushRaw(decodeHtmlEntities(m[1]), null);
+  }
+
+  if (rawItems.length === 0) {
+    re = /data-item-name="([^"]+)"/g;
+    while ((m = re.exec(html))) pushRaw(decodeHtmlEntities(m[1]), null);
+  }
+
+  if (rawItems.length === 0) {
     re = /<img[^>]+alt="([^"]+)"[^>]*class="image"/g;
     while ((m = re.exec(html))) {
       const t = decodeHtmlEntities(m[1]);
-      if (t && t.length > 1) titles.add(t);
+      if (t && t.length > 1) pushRaw(t, null);
     }
   }
 
-  return [...titles];
+  // Recolle titre/année avec le slug au même index (même ordre d'apparition
+  // dans la page). Si les décomptes ne correspondent pas (structure de page
+  // inattendue), on garde quand même les titres, juste sans lien direct.
+  const items = new Map();
+  rawItems.forEach((it, i) => {
+    const key = `${it.title}::${it.year || ""}`;
+    if (!items.has(key)) {
+      items.set(key, { ...it, slug: slugs[i] || null });
+    }
+  });
+
+  return [...items.values()];
 }
 
 async function fetchWatchlistPage(username, page) {
@@ -153,24 +193,24 @@ async function fetchWatchlistPage(username, page) {
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
       },
     });
-    if (!res.ok) return { titles: [], hasNext: false };
+    if (!res.ok) return { items: [], hasNext: false };
     const html = await res.text();
-    const titles = extractWatchlistTitles(html);
+    const items = extractWatchlistTitles(html);
     const hasNext = html.includes(`/${username}/watchlist/page/${page + 1}/`);
-    return { titles, hasNext };
+    return { items, hasNext };
   } catch (e) {
     console.log(`  Erreur en lisant la watchlist de ${username} (page ${page}) : ${e.message}`);
-    return { titles: [], hasNext: false };
+    return { items: [], hasNext: false };
   }
 }
 
 async function fetchFullWatchlist(username) {
-  const all = new Set();
+  const all = new Map();
   let page = 1;
   while (page <= 15) {
-    const { titles, hasNext } = await fetchWatchlistPage(username, page);
-    titles.forEach((t) => all.add(t));
-    if (titles.length === 0 || !hasNext) break;
+    const { items, hasNext } = await fetchWatchlistPage(username, page);
+    items.forEach((it) => all.set(`${it.title}::${it.year || ""}`, it));
+    if (items.length === 0 || !hasNext) break;
     page++;
   }
   if (all.size === 0) {
@@ -178,7 +218,7 @@ async function fetchFullWatchlist(username) {
       `  ⚠️ Aucun film trouvé sur la watchlist de ${username} — soit elle est vide, soit la structure de la page Letterboxd a changé.`
     );
   }
-  return [...all];
+  return [...all.values()];
 }
 
 async function syncWatchlists(inputMovies, history) {
@@ -198,19 +238,19 @@ async function syncWatchlists(inputMovies, history) {
 
   for (const [person, username] of people) {
     console.log(`Lecture de la watchlist Letterboxd de ${person} (${username})...`);
-    const titles = await fetchFullWatchlist(username);
-    console.log(`  ${titles.length} film(s) trouvé(s) sur la watchlist.`);
+    const items = await fetchFullWatchlist(username);
+    console.log(`  ${items.length} film(s) trouvé(s) sur la watchlist.`);
 
-    for (const title of titles) {
+    for (const { title, year, slug } of items) {
       // Repli rapide : si le titre normalisé existe déjà tel quel (n'importe
       // quelle année), pas la peine d'interroger TMDB à nouveau.
       const alreadyKnownByTitle = [...knownTitleYear].some((k) => k.startsWith(`${normalize(title)}::`));
       if (alreadyKnownByTitle) continue;
 
-      const found = await findMovieByTitleOnly(title);
+      const found = year ? await findMovie(title, year) : await findMovieByTitleOnly(title);
       if (!found) {
         review.push({
-          title,
+          title: year ? `${title} (${year})` : title,
           person,
           reason: "introuvable",
           detectedAt: new Date().toISOString(),
@@ -233,7 +273,7 @@ async function syncWatchlists(inputMovies, history) {
         title: found.title,
         year: found.release_date ? parseInt(found.release_date.slice(0, 4), 10) : null,
         director: "",
-        letterboxdUrl: null,
+        letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : null,
         tmdbId: found.id,
         wantedBy: person,
         updatedAt: new Date().toISOString(),
