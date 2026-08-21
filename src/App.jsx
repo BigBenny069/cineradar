@@ -458,12 +458,12 @@ const THEMES = {
     fonts: { marquee: "'Oswald', sans-serif", serif: "'Special Elite', monospace", mono: "'IBM Plex Mono', monospace" },
   },
 };
-let T = { ...THEMES.sombre.colors };
-let F = { ...THEMES.sombre.fonts };
+let T = { ...THEMES.ticket.colors };
+let F = { ...THEMES.ticket.fonts };
 let CURRENT_THEME = "ticket";
 
 function applyTheme_(name) {
-  const theme = THEMES[name] || THEMES.sombre;
+  const theme = THEMES[name] || THEMES.ticket;
   Object.assign(T, theme.colors);
   Object.assign(F, theme.fonts);
   CURRENT_THEME = THEMES[name] ? name : "ticket";
