@@ -1173,7 +1173,7 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
         border: `2px solid ${borderColor}`,
       }}
     >
-      <div style={{ width: 108, height: 152, background: "#000" }}>
+      <div style={{ width: 108, height: 152, background: "#000", position: "relative" }}>
         {movie.poster ? (
           <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
@@ -1190,6 +1190,28 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
             }}
           >
             —
+          </div>
+        )}
+        {movie.wantedBy && (
+          <div
+            style={{
+              position: "absolute",
+              top: 5,
+              right: 5,
+              width: 18,
+              height: 18,
+              borderRadius: "50%",
+              background: "rgba(0,0,0,0.6)",
+              backdropFilter: "blur(3px)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            title={movie.wantedBy === "romy" ? "Voulu par Romy" : "Voulu par Benoit"}
+          >
+            <span style={{ fontFamily: F.mono, fontSize: 9, color: "#fff" }}>
+              {movie.wantedBy === "romy" ? "R" : "B"}
+            </span>
           </div>
         )}
       </div>
@@ -2330,6 +2352,70 @@ function LibraryView({ movies, onOpen }) {
   );
 }
 
+const WATCHLIST_REASON_LABELS = {
+  introuvable: "Introuvable sur TMDB",
+  deja_present: "Déjà dans ta bibliothèque",
+  deja_recherche: "Déjà recherché par le passé (supprimé depuis)",
+};
+
+function WatchlistReviewItem({ item, onDismissed }) {
+  const [status, setStatus] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const dismiss = async () => {
+    setStatus("loading");
+    setErrorMsg("");
+    const result = await apiWrite("/api/dismiss-watchlist-review", {
+      title: item.title,
+      person: item.person,
+      detectedAt: item.detectedAt,
+    });
+    if (!result.ok) {
+      setStatus("error");
+      setErrorMsg(result.error);
+      return;
+    }
+    onDismissed(item);
+  };
+
+  return (
+    <div style={{ padding: 12, background: T.surface, border: `1px solid ${T.accentSecondary}`, borderRadius: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+        <div>
+          <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>{item.title}</div>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 4 }}>
+            Watchlist de {item.person === "romy" ? "Romy" : "Benoit"}
+          </div>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accentSecondary, marginTop: 6 }}>
+            {WATCHLIST_REASON_LABELS[item.reason] || item.reason}
+          </div>
+          {status === "error" && (
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accentSecondary, marginTop: 6 }}>
+              Erreur : {errorMsg}
+            </div>
+          )}
+        </div>
+        <button
+          onClick={dismiss}
+          disabled={status === "loading"}
+          style={{
+            flexShrink: 0,
+            padding: "6px 10px",
+            border: `1px solid ${T.line}`,
+            borderRadius: 6,
+            fontFamily: F.mono,
+            fontSize: 10,
+            color: T.muted,
+            opacity: status === "loading" ? 0.5 : 1,
+          }}
+        >
+          {status === "loading" ? "..." : "Ignorer"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function UnmatchedItem({ item, onDeleted, onEdit }) {
   const [showConfirm, setShowConfirm] = useState(false);
   const [status, setStatus] = useState(null);
@@ -2445,12 +2531,17 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
   );
 }
 
-function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
+function HistoryView({ movies, unmatched, watchlistReview, onOpen, onEditUnmatched }) {
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
+  const [localWatchlistReview, setLocalWatchlistReview] = useState(watchlistReview || []);
 
   useEffect(() => {
     setLocalUnmatched(unmatched || []);
   }, [unmatched]);
+
+  useEffect(() => {
+    setLocalWatchlistReview(watchlistReview || []);
+  }, [watchlistReview]);
 
   const sorted = [...movies]
     .filter((m) => m.updatedAt)
@@ -2480,6 +2571,25 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
                   onEdit={onEditUnmatched}
                   onDeleted={(deletedItem) => {
                     setLocalUnmatched((prev) => prev.filter((u) => u !== deletedItem));
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {localWatchlistReview.length > 0 && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, letterSpacing: 1, marginBottom: 10 }}>
+              WATCHLISTS À VÉRIFIER ({localWatchlistReview.length})
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {localWatchlistReview.map((item, i) => (
+                <WatchlistReviewItem
+                  key={`${item.title}-${item.person}-${i}`}
+                  item={item}
+                  onDismissed={(dismissedItem) => {
+                    setLocalWatchlistReview((prev) => prev.filter((w) => w !== dismissedItem));
                   }}
                 />
               ))}
@@ -3141,6 +3251,7 @@ export default function App() {
   const [movies, setMovies] = useState([]);
   const [unmatched, setUnmatched] = useState([]);
   const [history, setHistory] = useState([]);
+  const [watchlistReview, setWatchlistReview] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -3176,11 +3287,15 @@ export default function App() {
     const historyPromise = fetch(`/data/history.json?t=${Date.now()}`)
       .then((res) => (res.ok ? res.json() : []))
       .catch(() => []);
-    return Promise.all([moviesPromise, unmatchedPromise, historyPromise])
-      .then(([moviesData, unmatchedData, historyData]) => {
+    const watchlistReviewPromise = fetch(`/data/watchlist-review.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise])
+      .then(([moviesData, unmatchedData, historyData, watchlistReviewData]) => {
         setMovies(moviesData);
         setUnmatched(unmatchedData);
         setHistory(historyData);
+        setWatchlistReview(watchlistReviewData);
         setError(null);
       })
       .catch((err) => {
@@ -3273,6 +3388,7 @@ export default function App() {
           <HistoryView
             movies={movies}
             unmatched={unmatched}
+            watchlistReview={watchlistReview}
             onOpen={setSelected}
             onEditUnmatched={(item) => {
               setEditingMovie({
