@@ -201,5 +201,50 @@
     "letterboxdUrl": "https://letterboxd.com/film/the-irishman-2019/",
     "updatedAt": "2026-08-18T04:26:10.289Z",
     "tmdbId": 398978
+  },
+  {
+    "title": "Ghost in the Shell",
+    "year": 1995,
+    "director": "",
+    "letterboxdUrl": null,
+    "tmdbId": 9323,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:04:25.349Z"
+  },
+  {
+    "title": "1984: A personal view of Orwells Nineteen Eighty Four",
+    "year": 1983,
+    "director": "",
+    "letterboxdUrl": null,
+    "tmdbId": 368404,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:04:26.417Z"
+  },
+  {
+    "title": "Les Envahisseurs de la planète rouge",
+    "year": 1953,
+    "director": "",
+    "letterboxdUrl": null,
+    "tmdbId": 20424,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:04:27.588Z"
+  },
+  {
+    "title": "Moon",
+    "year": 2009,
+    "director": "",
+    "letterboxdUrl": null,
+    "tmdbId": 17431,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:04:27.700Z"
+  },
+  {
+    "title": "2001 : L'Odyssée de l'espace",
+    "year": 1968,
+    "director": "",
+    "letterboxdUrl": null,
+    "tmdbId": 62,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:04:29.031Z"
   }
 ]

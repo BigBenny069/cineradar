@@ -154,5 +154,35 @@
     "year": "2019",
     "tmdbId": 398978,
     "addedAt": "2026-08-18T04:26:10.289Z"
+  },
+  {
+    "title": "Ghost in the Shell",
+    "year": "1995",
+    "tmdbId": 9323,
+    "addedAt": "2026-08-21T20:04:25.349Z"
+  },
+  {
+    "title": "1984: A personal view of Orwells Nineteen Eighty Four",
+    "year": "1983",
+    "tmdbId": 368404,
+    "addedAt": "2026-08-21T20:04:26.417Z"
+  },
+  {
+    "title": "Les Envahisseurs de la planète rouge",
+    "year": "1953",
+    "tmdbId": 20424,
+    "addedAt": "2026-08-21T20:04:27.588Z"
+  },
+  {
+    "title": "Moon",
+    "year": "2009",
+    "tmdbId": 17431,
+    "addedAt": "2026-08-21T20:04:27.700Z"
+  },
+  {
+    "title": "2001 : L'Odyssée de l'espace",
+    "year": "1968",
+    "tmdbId": 62,
+    "addedAt": "2026-08-21T20:04:29.031Z"
   }
 ]
