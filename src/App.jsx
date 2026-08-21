@@ -2073,7 +2073,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
   );
 }
 
-function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing }) {
+function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing }) {
   const recentlyAvailable = [...movies]
     .filter((m) => m.availableSince)
     .sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince))
@@ -2135,6 +2135,25 @@ function HomeView({ movies, onOpen, loading, error, onAdd, onRefresh, refreshing
         {error && (
           <div style={{ fontFamily: F.mono, fontSize: 12, color: T.accentSecondary, marginTop: 20 }}>
             Erreur : {error}
+          </div>
+        )}
+        {offline && (
+          <div
+            style={{
+              fontFamily: F.mono,
+              fontSize: 11,
+              color: T.muted,
+              marginTop: 20,
+              padding: "8px 12px",
+              border: `1px solid ${T.line}`,
+              borderRadius: T.radiusSm,
+              background: T.surface,
+            }}
+          >
+            📡 Hors ligne — dernières données du{" "}
+            {lastSyncedAt
+              ? new Date(lastSyncedAt).toLocaleString("fr-FR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
+              : "dernier chargement"}
           </div>
         )}
 
@@ -3272,6 +3291,32 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────
+// CACHE LOCAL — sauvegarde la dernière version connue des données sur
+// l'appareil (localStorage), pour que l'app affiche quelque chose
+// immédiatement au lancement même sans réseau, pendant qu'elle essaie de
+// se resynchroniser discrètement en arrière-plan.
+// ─────────────────────────────────────────────────────────────
+const CACHE_KEY = "cineradar_cache_v1";
+
+function loadCache_() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveCache_(data) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+  } catch {
+    // Stockage indisponible ou quota dépassé — l'app continue de
+    // fonctionner normalement, juste sans filet de sécurité hors-ligne.
+  }
+}
+
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [unmatched, setUnmatched] = useState([]);
@@ -3279,6 +3324,9 @@ export default function App() {
   const [watchlistReview, setWatchlistReview] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [offline, setOffline] = useState(false);
+  const [lastSyncedAt, setLastSyncedAt] = useState(null);
+  const hasDataRef = useRef(false);
   const [selected, setSelected] = useState(null);
   const [view, setView] = useState("home");
   const [previousView, setPreviousView] = useState("home");
@@ -3322,13 +3370,42 @@ export default function App() {
         setHistory(historyData);
         setWatchlistReview(watchlistReviewData);
         setError(null);
+        setOffline(false);
+        hasDataRef.current = true;
+        const now = new Date().toISOString();
+        setLastSyncedAt(now);
+        saveCache_({
+          movies: moviesData,
+          unmatched: unmatchedData,
+          history: historyData,
+          watchlistReview: watchlistReviewData,
+          cachedAt: now,
+        });
       })
       .catch((err) => {
-        setError(err.message);
+        // Le réseau a coupé (ou le fichier est temporairement inaccessible).
+        // Si on a déjà quelque chose à montrer (cache ou chargement
+        // précédent), on ne casse pas l'affichage : on signale juste
+        // discrètement qu'on est hors ligne plutôt que de tout effacer.
+        if (hasDataRef.current) {
+          setOffline(true);
+        } else {
+          setError(err.message);
+        }
       });
   };
 
   useEffect(() => {
+    const cached = loadCache_();
+    if (cached) {
+      setMovies(cached.movies || []);
+      setUnmatched(cached.unmatched || []);
+      setHistory(cached.history || []);
+      setWatchlistReview(cached.watchlistReview || []);
+      setLastSyncedAt(cached.cachedAt || null);
+      hasDataRef.current = true;
+      setLoading(false);
+    }
     fetchMovies().finally(() => setLoading(false));
   }, []);
 
@@ -3398,6 +3475,8 @@ export default function App() {
             onOpen={setSelected}
             loading={loading}
             error={error}
+            offline={offline}
+            lastSyncedAt={lastSyncedAt}
             onAdd={() => {
               setEditingMovie(null);
               setPreviousView(view);
