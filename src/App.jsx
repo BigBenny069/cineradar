@@ -2819,6 +2819,45 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
   const [duplicateMatch, setDuplicateMatch] = useState(null);
   const [duplicateConfirmed, setDuplicateConfirmed] = useState(false);
 
+  const [selectedTmdbId, setSelectedTmdbId] = useState(editingMovie?.tmdbId || null);
+  const [lastPickedTitle, setLastPickedTitle] = useState(editingMovie?.title || null);
+  const [searchResults, setSearchResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const [searching, setSearching] = useState(false);
+
+  useEffect(() => {
+    if (!title.trim() || title.trim().length < 2 || title === lastPickedTitle) {
+      setSearchResults([]);
+      return;
+    }
+    setSearching(true);
+    const t = setTimeout(() => {
+      fetch(`/api/search-tmdb?q=${encodeURIComponent(title.trim())}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setSearchResults(data.results || []);
+          setShowResults(true);
+        })
+        .catch(() => setSearchResults([]))
+        .finally(() => setSearching(false));
+    }, 350);
+    return () => clearTimeout(t);
+  }, [title, lastPickedTitle]);
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+    setSelectedTmdbId(null);
+  };
+
+  const pickResult = (r) => {
+    setTitle(r.title);
+    setYear(r.year);
+    setSelectedTmdbId(r.tmdbId);
+    setLastPickedTitle(r.title);
+    setShowResults(false);
+    setSearchResults([]);
+  };
+
   const fieldStyle = {
     background: T.surface,
     border: `1px solid ${T.line}`,
@@ -2833,6 +2872,13 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
   const canSubmit = title && director && /^\d{4}$/.test(year) && status !== "loading";
 
   const findDuplicate = () => {
+    if (selectedTmdbId) {
+      const activeMatch = (movies || []).find((m) => String(m.tmdbId) === String(selectedTmdbId));
+      if (activeMatch) return { title: activeMatch.title, year: activeMatch.year, source: "active" };
+      const historyMatch = (history || []).find((h) => String(h.tmdbId) === String(selectedTmdbId));
+      if (historyMatch) return { title: historyMatch.title, year: historyMatch.year, source: "history" };
+      return null;
+    }
     const normTitle = normalizeText(title);
     const activeMatch = (movies || []).find(
       (m) => normalizeText(m.title) === normTitle && String(m.year) === String(year)
@@ -2857,6 +2903,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
       originalYear: editingMovie?.year,
       originalTmdbId: editingMovie?.tmdbId,
       originalUpdatedAt: editingMovie?.updatedAt,
+      confirmedTmdbId: !isEditing ? selectedTmdbId : undefined,
     });
     if (!result.ok) {
       setStatus("error");
@@ -2870,6 +2917,8 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
     setLetterboxdUrl("");
     setDuplicateMatch(null);
     setDuplicateConfirmed(false);
+    setSelectedTmdbId(null);
+    setLastPickedTitle(null);
     setTimeout(() => onSuccess?.(), 1400);
   };
 
@@ -2903,7 +2952,91 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <input placeholder="Titre *" value={title} onChange={(e) => setTitle(e.target.value)} style={fieldStyle} />
+          <div style={{ position: "relative" }}>
+            <input
+              placeholder="Titre *"
+              value={title}
+              onChange={handleTitleChange}
+              onFocus={() => searchResults.length > 0 && setShowResults(true)}
+              style={{
+                ...fieldStyle,
+                border: `1px solid ${selectedTmdbId ? T.accent : T.line}`,
+              }}
+            />
+            {selectedTmdbId && (
+              <span
+                style={{
+                  position: "absolute",
+                  right: 12,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  fontFamily: F.mono,
+                  fontSize: 10,
+                  color: T.accent,
+                }}
+              >
+                ✓ TMDB
+              </span>
+            )}
+            {searching && !selectedTmdbId && (
+              <span
+                style={{
+                  position: "absolute",
+                  right: 12,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  fontFamily: F.mono,
+                  fontSize: 10,
+                  color: T.muted,
+                }}
+              >
+                ...
+              </span>
+            )}
+            {showResults && searchResults.length > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "calc(100% + 4px)",
+                  left: 0,
+                  right: 0,
+                  background: T.surfaceRaised,
+                  border: `1px solid ${T.line}`,
+                  borderRadius: T.radiusSm,
+                  overflow: "hidden",
+                  zIndex: 20,
+                  maxHeight: 280,
+                  overflowY: "auto",
+                }}
+              >
+                {searchResults.map((r) => (
+                  <button
+                    key={r.tmdbId}
+                    onClick={() => pickResult(r)}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      width: "100%",
+                      padding: "8px 10px",
+                      borderBottom: `1px solid ${T.line}`,
+                      textAlign: "left",
+                    }}
+                  >
+                    <div style={{ width: 32, height: 46, flexShrink: 0, background: "#000", borderRadius: 3, overflow: "hidden" }}>
+                      {r.poster && (
+                        <img src={r.poster} alt={r.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      )}
+                    </div>
+                    <div>
+                      <div style={{ fontFamily: F.serif, fontSize: 13, color: T.cream }}>{r.title}</div>
+                      <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 2 }}>{r.year}</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <input
             placeholder="Année * (ex. 1997)"
             value={year}
