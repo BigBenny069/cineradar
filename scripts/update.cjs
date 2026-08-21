@@ -29,10 +29,14 @@ function loadSettings() {
     return {
       enabled: Array.isArray(parsed.enabled) ? parsed.enabled : DEFAULT_ENABLED,
       notifyEmail: parsed.notifyEmail || null,
+      letterboxdWatchlists: {
+        benoit: parsed.letterboxdWatchlists?.benoit || "",
+        romy: parsed.letterboxdWatchlists?.romy || "",
+      },
     };
   } catch (e) {
     console.log("  data/settings.json introuvable ou invalide, utilisation des valeurs par défaut.");
-    return { enabled: DEFAULT_ENABLED, notifyEmail: null };
+    return { enabled: DEFAULT_ENABLED, notifyEmail: null, letterboxdWatchlists: { benoit: "", romy: "" } };
   }
 }
 
@@ -86,6 +90,162 @@ async function findMovie(title, year) {
   const res = await fetch(url);
   const data = await res.json();
   return data.results?.[0] || null;
+}
+
+// Utilisée pour les titres venus d'une watchlist Letterboxd, où l'année
+// n'est pas disponible côté scraping — on prend le résultat le plus
+// populaire (tri par défaut de TMDB), qui correspond en pratique presque
+// toujours au bon film pour un titre suffisamment précis.
+async function findMovieByTitleOnly(title) {
+  const url = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&language=fr-FR`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.results?.[0] || null;
+}
+
+// ─────────────────────────────────────────────────────────────
+// WATCHLISTS LETTERBOXD — scraping "best effort" des pages publiques.
+// Comme pour les notes Letterboxd, il n'y a pas d'API officielle : on
+// extrait les titres depuis le HTML. Plusieurs motifs de repli sont
+// tentés, et un avertissement clair est loggé si rien n'est trouvé (utile
+// si Letterboxd change la structure de sa page un jour).
+// ─────────────────────────────────────────────────────────────
+function decodeHtmlEntities(str) {
+  return str
+    .replace(/&#0?39;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?34;/g, '"');
+}
+
+function extractWatchlistTitles(html) {
+  const titles = new Set();
+
+  // Motif principal : attribut data-film-name (le plus stable historiquement)
+  let re = /data-film-name="([^"]+)"/g;
+  let m;
+  while ((m = re.exec(html))) titles.add(decodeHtmlEntities(m[1]));
+
+  // Repli : attribut data-item-name
+  if (titles.size === 0) {
+    re = /data-item-name="([^"]+)"/g;
+    while ((m = re.exec(html))) titles.add(decodeHtmlEntities(m[1]));
+  }
+
+  // Dernier repli : texte alt des affiches
+  if (titles.size === 0) {
+    re = /<img[^>]+alt="([^"]+)"[^>]*class="image"/g;
+    while ((m = re.exec(html))) {
+      const t = decodeHtmlEntities(m[1]);
+      if (t && t.length > 1) titles.add(t);
+    }
+  }
+
+  return [...titles];
+}
+
+async function fetchWatchlistPage(username, page) {
+  const url = `https://letterboxd.com/${username}/watchlist/page/${page}/`;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+      },
+    });
+    if (!res.ok) return { titles: [], hasNext: false };
+    const html = await res.text();
+    const titles = extractWatchlistTitles(html);
+    const hasNext = html.includes(`/${username}/watchlist/page/${page + 1}/`);
+    return { titles, hasNext };
+  } catch (e) {
+    console.log(`  Erreur en lisant la watchlist de ${username} (page ${page}) : ${e.message}`);
+    return { titles: [], hasNext: false };
+  }
+}
+
+async function fetchFullWatchlist(username) {
+  const all = new Set();
+  let page = 1;
+  while (page <= 15) {
+    const { titles, hasNext } = await fetchWatchlistPage(username, page);
+    titles.forEach((t) => all.add(t));
+    if (titles.length === 0 || !hasNext) break;
+    page++;
+  }
+  if (all.size === 0) {
+    console.log(
+      `  ⚠️ Aucun film trouvé sur la watchlist de ${username} — soit elle est vide, soit la structure de la page Letterboxd a changé.`
+    );
+  }
+  return [...all];
+}
+
+async function syncWatchlists(inputMovies, history) {
+  const watchlists = SETTINGS.letterboxdWatchlists || {};
+  const people = Object.entries(watchlists).filter(([, username]) => username && username.trim());
+  if (people.length === 0) return { newEntries: [], review: [] };
+
+  const knownTitleYear = new Set(
+    inputMovies.map((m) => `${normalize(m.title)}::${m.year}`).concat(history.map((h) => `${normalize(h.title)}::${h.year}`))
+  );
+  const knownTmdbIds = new Set(
+    [...inputMovies.map((m) => m.tmdbId), ...history.map((h) => h.tmdbId)].filter(Boolean).map(String)
+  );
+
+  const newEntries = [];
+  const review = [];
+
+  for (const [person, username] of people) {
+    console.log(`Lecture de la watchlist Letterboxd de ${person} (${username})...`);
+    const titles = await fetchFullWatchlist(username);
+    console.log(`  ${titles.length} film(s) trouvé(s) sur la watchlist.`);
+
+    for (const title of titles) {
+      // Repli rapide : si le titre normalisé existe déjà tel quel (n'importe
+      // quelle année), pas la peine d'interroger TMDB à nouveau.
+      const alreadyKnownByTitle = [...knownTitleYear].some((k) => k.startsWith(`${normalize(title)}::`));
+      if (alreadyKnownByTitle) continue;
+
+      const found = await findMovieByTitleOnly(title);
+      if (!found) {
+        review.push({
+          title,
+          person,
+          reason: "introuvable",
+          detectedAt: new Date().toISOString(),
+        });
+        continue;
+      }
+
+      if (knownTmdbIds.has(String(found.id))) {
+        const inActive = inputMovies.some((m) => String(m.tmdbId) === String(found.id));
+        review.push({
+          title: found.title,
+          person,
+          reason: inActive ? "deja_present" : "deja_recherche",
+          detectedAt: new Date().toISOString(),
+        });
+        continue;
+      }
+
+      const newEntry = {
+        title: found.title,
+        year: found.release_date ? parseInt(found.release_date.slice(0, 4), 10) : null,
+        director: "",
+        letterboxdUrl: null,
+        tmdbId: found.id,
+        wantedBy: person,
+        updatedAt: new Date().toISOString(),
+      };
+      newEntries.push(newEntry);
+      knownTmdbIds.add(String(found.id));
+      knownTitleYear.add(`${normalize(newEntry.title)}::${newEntry.year}`);
+      console.log(`  + Nouveau film détecté : "${newEntry.title}" (${newEntry.year}) — voulu par ${person}`);
+    }
+  }
+
+  return { newEntries, review };
 }
 
 async function getDetails(id) {
@@ -274,13 +434,23 @@ async function main() {
   const previousAbonnements = loadPreviousAbonnements();
   const history = loadHistory();
   const historyIds = new Set(history.map((h) => String(h.tmdbId)));
+
+  // Watchlists Letterboxd : les nouveaux films détectés sont ajoutés à
+  // `input` avant la boucle d'enrichissement, pour être traités dans la
+  // même passe (affiche, disponibilité, etc. calculés directement).
+  const { newEntries: watchlistNewEntries, review: watchlistReview } = await syncWatchlists(input, history);
+  input.push(...watchlistNewEntries);
+
   const newlyAvailable = [];
   const unmatched = [];
   const output = [];
 
   for (const movie of input) {
     console.log(`Recherche : ${movie.title} (${movie.year})`);
-    const found = await findMovie(movie.title, movie.year);
+    // Si le tmdbId est déjà connu (film ajouté via recherche en direct ou
+    // via une watchlist), on va droit au but au lieu de re-chercher par
+    // titre/année — plus fiable, et indispensable si l'année est absente.
+    const found = movie.tmdbId ? { id: movie.tmdbId } : await findMovie(movie.title, movie.year);
     if (!found) {
       console.log(`  Introuvable sur TMDB, marqué en erreur.`);
       unmatched.push({
@@ -367,6 +537,7 @@ async function main() {
       letterboxdUrl: movie.letterboxdUrl || null,
       providers,
       availableSince: availableSinceValue,
+      wantedBy: movie.wantedBy || null,
       updatedAt: movie.updatedAt || null,
       lastChecked: new Date().toISOString(),
     });
@@ -376,10 +547,13 @@ async function main() {
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
   fs.writeFileSync("public/data/history.json", JSON.stringify(history, null, 2));
+  fs.writeFileSync("public/data/watchlist-review.json", JSON.stringify(watchlistReview, null, 2));
   // Réécrit data/movies.json avec les tmdbId mémorisés au passage (voir plus
   // haut) — sans effet si rien n'a changé, le workflow ne commitera rien.
   fs.writeFileSync("data/movies.json", JSON.stringify(input, null, 2) + "\n");
-  console.log(`Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur.`);
+  console.log(
+    `Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur, ${watchlistNewEntries.length} ajouté(s) via watchlist, ${watchlistReview.length} à vérifier.`
+  );
 
   if (newlyAvailable.length > 0) {
     console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
