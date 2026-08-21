@@ -1,194 +1,20 @@
 [
   {
-    "title": "The Rivals of Amziah King (2025)",
+    "title": "La Fureur de vivre",
     "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.131Z"
+    "reason": "deja_present",
+    "detectedAt": "2026-08-21T20:11:46.317Z"
   },
   {
-    "title": "Fireworks (1997)",
+    "title": "Les Envahisseurs de la planète rouge",
     "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.236Z"
+    "reason": "deja_present",
+    "detectedAt": "2026-08-21T20:11:47.497Z"
   },
   {
-    "title": "Akira (1988)",
+    "title": "2001 : L'Odyssée de l'espace",
     "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.507Z"
-  },
-  {
-    "title": "Moonrise Kingdom (2012)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.619Z"
-  },
-  {
-    "title": "Rebel Without a Cause (1955)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.742Z"
-  },
-  {
-    "title": "The Great Escape (1963)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.841Z"
-  },
-  {
-    "title": "Johnny Mnemonic (1995)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:25.953Z"
-  },
-  {
-    "title": "Lethal Weapon 4 (1998)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.073Z"
-  },
-  {
-    "title": "Lethal Weapon 3 (1992)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.181Z"
-  },
-  {
-    "title": "Lethal Weapon 2 (1989)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.297Z"
-  },
-  {
-    "title": "Soylent Green (1973)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.522Z"
-  },
-  {
-    "title": "Serial Mom (1994)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.621Z"
-  },
-  {
-    "title": "Citizen Kane (1941)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.720Z"
-  },
-  {
-    "title": "Bullet in the Head (1990)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.813Z"
-  },
-  {
-    "title": "Los Angeles Plays Itself (2003)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.915Z"
-  },
-  {
-    "title": "The Thing (1982)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:26.994Z"
-  },
-  {
-    "title": "Munich (2005)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.077Z"
-  },
-  {
-    "title": "Interstellar (2014)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.164Z"
-  },
-  {
-    "title": "Once Upon a Time in America (1984)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.266Z"
-  },
-  {
-    "title": "Super 8 (2011)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.482Z"
-  },
-  {
-    "title": "Bone Tomahawk (2015)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.798Z"
-  },
-  {
-    "title": "Die Hard With a Vengeance (1995)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:27.905Z"
-  },
-  {
-    "title": "Die Hard 2 (1990)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.009Z"
-  },
-  {
-    "title": "Ghostbusters: Afterlife (2021)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.108Z"
-  },
-  {
-    "title": "Honey, We Shrunk Ourselves (1997)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.212Z"
-  },
-  {
-    "title": "Honey, I Blew Up the Kid (1992)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.317Z"
-  },
-  {
-    "title": "Good Luck, Have Fun, Don't Die (2025)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.415Z"
-  },
-  {
-    "title": "The Silence of the Lambs (1991)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.519Z"
-  },
-  {
-    "title": "Marty Supreme (2025)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.615Z"
-  },
-  {
-    "title": "One Battle After Another (2025)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.720Z"
-  },
-  {
-    "title": "Weapons (2025)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.815Z"
-  },
-  {
-    "title": "Project Hail Mary (2026)",
-    "person": "benoit",
-    "reason": "introuvable",
-    "detectedAt": "2026-08-21T20:04:28.920Z"
+    "reason": "deja_present",
+    "detectedAt": "2026-08-21T20:11:48.520Z"
   }
 ]

@@ -246,5 +246,275 @@
     "tmdbId": 62,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:04:29.031Z"
+  },
+  {
+    "title": "Oklahoma Honey",
+    "year": 2026,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-rivals-of-amziah-king/",
+    "tmdbId": 1124142,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.030Z"
+  },
+  {
+    "title": "Liens secrets",
+    "year": 1997,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
+    "tmdbId": 60033,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.100Z"
+  },
+  {
+    "title": "Akira",
+    "year": 1988,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/akira/",
+    "tmdbId": 149,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.176Z"
+  },
+  {
+    "title": "Moonrise Kingdom",
+    "year": 2012,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/moonrise-kingdom/",
+    "tmdbId": 83666,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.244Z"
+  },
+  {
+    "title": "La Grande Évasion",
+    "year": 1963,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-great-escape/",
+    "tmdbId": 5925,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.387Z"
+  },
+  {
+    "title": "Johnny Mnemonic",
+    "year": 1995,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/johnny-mnemonic/",
+    "tmdbId": 9886,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.462Z"
+  },
+  {
+    "title": "L'Arme fatale 4",
+    "year": 1998,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-4/",
+    "tmdbId": 944,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.535Z"
+  },
+  {
+    "title": "L'Arme fatale 3",
+    "year": 1992,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-3/",
+    "tmdbId": 943,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.609Z"
+  },
+  {
+    "title": "L'Arme fatale 2",
+    "year": 1989,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-2/",
+    "tmdbId": 942,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.680Z"
+  },
+  {
+    "title": "1984",
+    "year": 1984,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/nineteen-eighty-four-1984/",
+    "tmdbId": 9314,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.755Z"
+  },
+  {
+    "title": "Soleil vert",
+    "year": 1973,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/soylent-green/",
+    "tmdbId": 12101,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.827Z"
+  },
+  {
+    "title": "Serial mother",
+    "year": 1994,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/serial-mom/",
+    "tmdbId": 11592,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:46.928Z"
+  },
+  {
+    "title": "A Bullet in the Head",
+    "year": 1990,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/bullet-in-the-head/",
+    "tmdbId": 31089,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.000Z"
+  },
+  {
+    "title": "Los Angeles Plays Itself",
+    "year": 2004,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/los-angeles-plays-itself/",
+    "tmdbId": 38643,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.110Z"
+  },
+  {
+    "title": "Munich",
+    "year": 2005,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/munich/",
+    "tmdbId": 612,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.180Z"
+  },
+  {
+    "title": "Interstellar",
+    "year": 2014,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/interstellar/",
+    "tmdbId": 157336,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.253Z"
+  },
+  {
+    "title": "Il était une fois en Amérique",
+    "year": 1984,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-america/",
+    "tmdbId": 311,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.327Z"
+  },
+  {
+    "title": "Super 8",
+    "year": 2011,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/super-8/",
+    "tmdbId": 37686,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.398Z"
+  },
+  {
+    "title": "Bone Tomahawk",
+    "year": 2015,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/bone-tomahawk/",
+    "tmdbId": 294963,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.566Z"
+  },
+  {
+    "title": "Une Journée en enfer",
+    "year": 1995,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/die-hard-with-a-vengeance/",
+    "tmdbId": 1572,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.657Z"
+  },
+  {
+    "title": "58 minutes pour vivre",
+    "year": 1990,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/die-hard-2/",
+    "tmdbId": 1573,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.728Z"
+  },
+  {
+    "title": "S.O.S. Fantômes : L'Héritage",
+    "year": 2021,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/ghostbusters-afterlife/",
+    "tmdbId": 425909,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.821Z"
+  },
+  {
+    "title": "Chérie, nous avons été rétrécis",
+    "year": 1997,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/honey-we-shrunk-ourselves/",
+    "tmdbId": 11425,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.892Z"
+  },
+  {
+    "title": "Chérie, j'ai agrandi le bébé",
+    "year": 1992,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/honey-i-blew-up-the-kid/",
+    "tmdbId": 11158,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:47.994Z"
+  },
+  {
+    "title": "Good Luck, Have Fun, Don't Die",
+    "year": 2026,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/good-luck-have-fun-dont-die/",
+    "tmdbId": 1119449,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.066Z"
+  },
+  {
+    "title": "Le Silence des agneaux",
+    "year": 1991,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-silence-of-the-lambs/",
+    "tmdbId": 274,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.134Z"
+  },
+  {
+    "title": "Marty Supreme",
+    "year": 2025,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/marty-supreme/",
+    "tmdbId": 1317288,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.207Z"
+  },
+  {
+    "title": "Une Bataille après l'autre",
+    "year": 2025,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/one-battle-after-another/",
+    "tmdbId": 1054867,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.279Z"
+  },
+  {
+    "title": "Évanouis",
+    "year": 2025,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/weapons-2025/",
+    "tmdbId": 1078605,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.356Z"
+  },
+  {
+    "title": "Projet Dernière Chance",
+    "year": 2026,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/project-hail-mary/",
+    "tmdbId": 687163,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-21T20:11:48.431Z"
   }
 ]
