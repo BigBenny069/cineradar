@@ -2162,6 +2162,7 @@ function LibraryView({ movies, onOpen }) {
   const [query, setQuery] = useState("");
   const [sortMode, setSortMode] = useState("az");
   const [genre, setGenre] = useState("Tous");
+  const [subsOnly, setSubsOnly] = useState(false);
 
   let filtered = movies;
   if (query.trim()) {
@@ -2170,6 +2171,9 @@ function LibraryView({ movies, onOpen }) {
   }
   if (genre !== "Tous") {
     filtered = filtered.filter((m) => (m.genres || []).includes(genre));
+  }
+  if (subsOnly) {
+    filtered = filtered.filter((m) => (m.providers?.abonnement || []).length > 0);
   }
 
   const sorted = [...filtered].sort((a, b) => {
@@ -2218,6 +2222,48 @@ function LibraryView({ movies, onOpen }) {
             padding: "12px 14px",
           }}
         />
+
+        <button
+          onClick={() => setSubsOnly((v) => !v)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            marginBottom: 14,
+            padding: "10px 12px",
+            background: T.surface,
+            border: `1px solid ${subsOnly ? T.accent : T.line}`,
+            borderRadius: T.radiusSm,
+          }}
+        >
+          <span style={{ fontFamily: F.mono, fontSize: 11, color: subsOnly ? T.accent : T.muted }}>
+            Disponible sur mes abonnements uniquement
+          </span>
+          <span
+            style={{
+              width: 36,
+              height: 20,
+              borderRadius: 10,
+              background: subsOnly ? T.accent : T.line,
+              position: "relative",
+              flexShrink: 0,
+              marginLeft: 10,
+            }}
+          >
+            <span
+              style={{
+                position: "absolute",
+                top: 2,
+                left: subsOnly ? 18 : 2,
+                width: 16,
+                height: 16,
+                borderRadius: "50%",
+                background: T.bg,
+              }}
+            />
+          </span>
+        </button>
 
         <div style={{ display: "flex", gap: 6, marginBottom: 14 }}>
           {sortOptions.map((opt) => (
