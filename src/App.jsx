@@ -2487,6 +2487,8 @@ function HistoryView({ movies, unmatched, onOpen, onEditUnmatched }) {
 function SettingsView({ theme, onChangeTheme }) {
   const [enabled, setEnabled] = useState([]);
   const [notifyEmail, setNotifyEmail] = useState("");
+  const [watchlistBenoit, setWatchlistBenoit] = useState("");
+  const [watchlistRomy, setWatchlistRomy] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState(null);
@@ -2501,6 +2503,8 @@ function SettingsView({ theme, onChangeTheme }) {
       .then((data) => {
         setEnabled(data.enabled || []);
         setNotifyEmail(data.notifyEmail || "");
+        setWatchlistBenoit(data.letterboxdWatchlists?.benoit || "");
+        setWatchlistRomy(data.letterboxdWatchlists?.romy || "");
         setLoading(false);
       })
       .catch((err) => {
@@ -2517,7 +2521,14 @@ function SettingsView({ theme, onChangeTheme }) {
   const save = async () => {
     setStatus("loading");
     setErrorMsg("");
-    const result = await apiWrite("/api/update-settings", { enabled, notifyEmail: notifyEmail.trim() });
+    const result = await apiWrite("/api/update-settings", {
+      enabled,
+      notifyEmail: notifyEmail.trim(),
+      letterboxdWatchlists: {
+        benoit: watchlistBenoit.trim(),
+        romy: watchlistRomy.trim(),
+      },
+    });
     if (!result.ok) {
       setStatus("error");
       setErrorMsg(result.error);
@@ -2645,6 +2656,46 @@ function SettingsView({ theme, onChangeTheme }) {
                 type="email"
                 value={notifyEmail}
                 onChange={(e) => setNotifyEmail(e.target.value)}
+                style={{
+                  width: "100%",
+                  background: T.surface,
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  color: T.cream,
+                  fontFamily: F.serif,
+                  fontSize: 16,
+                  padding: "10px 12px",
+                }}
+              />
+            </div>
+
+            <div style={{ marginTop: 28 }}>
+              <SectionTitle>Watchlist Letterboxd</SectionTitle>
+              <p style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginBottom: 10 }}>
+                Renseigne vos pseudos Letterboxd : tout nouveau film ajouté à l'une de vos watchlists sera
+                automatiquement suivi ici. Change juste le pseudo ici si tu changes de compte, aucun code à
+                retoucher.
+              </p>
+              <input
+                placeholder="Pseudo Letterboxd — Benoit"
+                value={watchlistBenoit}
+                onChange={(e) => setWatchlistBenoit(e.target.value)}
+                style={{
+                  width: "100%",
+                  marginBottom: 10,
+                  background: T.surface,
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  color: T.cream,
+                  fontFamily: F.serif,
+                  fontSize: 16,
+                  padding: "10px 12px",
+                }}
+              />
+              <input
+                placeholder="Pseudo Letterboxd — Romy"
+                value={watchlistRomy}
+                onChange={(e) => setWatchlistRomy(e.target.value)}
                 style={{
                   width: "100%",
                   background: T.surface,
