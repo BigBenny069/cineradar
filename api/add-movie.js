@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     originalYear,
     originalTmdbId,
     originalUpdatedAt,
+    confirmedTmdbId,
   } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
@@ -59,6 +60,14 @@ export default async function handler(req, res) {
       matchIndex = movies.findIndex((m) => String(m.tmdbId) === String(originalTmdbId));
     }
 
+    // Filet de sécurité : si le film choisi via la recherche TMDB en direct
+    // correspond déjà à une fiche existante (même tmdbId), on la met à jour
+    // au lieu de créer un vrai doublon — un tmdbId identique, c'est toujours
+    // exactement le même film.
+    if (matchIndex === -1 && confirmedTmdbId) {
+      matchIndex = movies.findIndex((m) => String(m.tmdbId) === String(confirmedTmdbId));
+    }
+
     // Dernier repli : titre + année, normalisés (sans accents, casse ignorée)
     if (matchIndex === -1 && originalTitle && originalYear) {
       matchIndex = movies.findIndex(
@@ -79,6 +88,8 @@ export default async function handler(req, res) {
       newEntry.tmdbId = originalTmdbId;
     } else if (matchIndex >= 0 && movies[matchIndex].tmdbId) {
       newEntry.tmdbId = movies[matchIndex].tmdbId;
+    } else if (confirmedTmdbId) {
+      newEntry.tmdbId = confirmedTmdbId;
     }
 
     let commitMessage;
