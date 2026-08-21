@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
-  const { enabled, notifyEmail, password } = req.body || {};
+  const { enabled, notifyEmail, letterboxdWatchlists, password } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
   }
@@ -29,7 +29,18 @@ export default async function handler(req, res) {
     }
     const fileData = await getRes.json();
     const newContentBase64 = Buffer.from(
-      JSON.stringify({ enabled, notifyEmail: notifyEmail || null }, null, 2),
+      JSON.stringify(
+        {
+          enabled,
+          notifyEmail: notifyEmail || null,
+          letterboxdWatchlists: {
+            benoit: letterboxdWatchlists?.benoit?.trim() || "",
+            romy: letterboxdWatchlists?.romy?.trim() || "",
+          },
+        },
+        null,
+        2
+      ),
       "utf-8"
     ).toString("base64");
     const putRes = await fetch(apiUrl, {
