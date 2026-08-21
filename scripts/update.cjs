@@ -71,6 +71,16 @@ function loadPreviousAbonnements() {
   }
 }
 
+function loadHistory() {
+  try {
+    const raw = fs.readFileSync("public/data/history.json", "utf-8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
 async function findMovie(title, year) {
   const url = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&year=${year}&language=fr-FR`;
   const res = await fetch(url);
@@ -262,6 +272,8 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
 async function main() {
   const input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const previousAbonnements = loadPreviousAbonnements();
+  const history = loadHistory();
+  const historyIds = new Set(history.map((h) => String(h.tmdbId)));
   const newlyAvailable = [];
   const unmatched = [];
   const output = [];
@@ -288,6 +300,19 @@ async function main() {
     // ceux que TMDB renvoie — évite les fiches en double.
     if (String(movie.tmdbId) !== String(details.id)) {
       movie.tmdbId = details.id;
+    }
+
+    // Historique permanent : mémorise ce film comme "déjà recherché" une
+    // bonne fois pour toutes, même s'il est supprimé de la bibliothèque
+    // plus tard — sert à prévenir les doublons (ajout manuel ou watchlist).
+    if (!historyIds.has(String(details.id))) {
+      historyIds.add(String(details.id));
+      history.push({
+        title: details.title,
+        year: details.release_date?.slice(0, 4) || movie.year,
+        tmdbId: details.id,
+        addedAt: movie.updatedAt || new Date().toISOString(),
+      });
     }
 
     const director = details.credits?.crew?.find((c) => c.job === "Director");
@@ -350,6 +375,7 @@ async function main() {
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
+  fs.writeFileSync("public/data/history.json", JSON.stringify(history, null, 2));
   // Réécrit data/movies.json avec les tmdbId mémorisés au passage (voir plus
   // haut) — sans effet si rien n'a changé, le workflow ne commitera rien.
   fs.writeFileSync("data/movies.json", JSON.stringify(input, null, 2) + "\n");
