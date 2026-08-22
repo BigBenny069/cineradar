@@ -516,5 +516,13 @@
     "tmdbId": 687163,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:48.431Z"
+  },
+  {
+    "title": "Shutter Island",
+    "year": 2010,
+    "director": "Martin Scorsese",
+    "letterboxdUrl": "https://boxd.it/1U82",
+    "updatedAt": "2026-08-22T20:05:56.869Z",
+    "tmdbId": 11324
   }
 ]
