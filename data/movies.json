@@ -524,5 +524,14 @@
     "letterboxdUrl": "https://boxd.it/1U82",
     "updatedAt": "2026-08-22T20:05:56.869Z",
     "tmdbId": 11324
+  },
+  {
+    "title": "Le Parrain, 3e partie",
+    "year": 1990,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-godfather-part-iii/",
+    "tmdbId": 242,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-24T08:26:07.433Z"
   }
 ]
