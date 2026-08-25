@@ -541,5 +541,13 @@
     "letterboxdUrl": "https://letterboxd.com/film/cruising/",
     "updatedAt": "2026-08-25T16:57:52.142Z",
     "tmdbId": 27958
+  },
+  {
+    "title": "Killer Joe",
+    "year": 2012,
+    "director": "William Friedkin",
+    "letterboxdUrl": "https://letterboxd.com/film/killer-joe/",
+    "updatedAt": "2026-08-25T16:58:45.279Z",
+    "tmdbId": 73567
   }
 ]
