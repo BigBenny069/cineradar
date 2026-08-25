@@ -533,5 +533,13 @@
     "letterboxdUrl": "https://letterboxd.com/film/dawn-of-the-dead/",
     "updatedAt": "2026-08-25T16:55:40.163Z",
     "tmdbId": 923
+  },
+  {
+    "title": "Cruising : La Chasse",
+    "year": 1980,
+    "director": "William Friedkin",
+    "letterboxdUrl": "https://letterboxd.com/film/cruising/",
+    "updatedAt": "2026-08-25T16:57:52.142Z",
+    "tmdbId": 27958
   }
 ]
