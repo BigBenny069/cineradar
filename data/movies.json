@@ -525,5 +525,13 @@
     "tmdbId": 242,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-24T08:26:07.433Z"
+  },
+  {
+    "title": "Zombie",
+    "year": 1978,
+    "director": "George A. Romero",
+    "letterboxdUrl": "https://letterboxd.com/film/dawn-of-the-dead/",
+    "updatedAt": "2026-08-25T16:52:14.866Z",
+    "tmdbId": 923
   }
 ]
