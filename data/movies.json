@@ -549,5 +549,13 @@
     "letterboxdUrl": "https://letterboxd.com/film/killer-joe/",
     "updatedAt": "2026-08-25T16:58:45.279Z",
     "tmdbId": 73567
+  },
+  {
+    "title": "L'affaire de la mutinerie du Caine",
+    "year": 2023,
+    "director": "William Friedkin",
+    "letterboxdUrl": "https://letterboxd.com/film/the-caine-mutiny-court-martial-2023/",
+    "updatedAt": "2026-08-25T16:59:45.097Z",
+    "tmdbId": 1018332
   }
 ]
