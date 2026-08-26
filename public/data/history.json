@@ -400,5 +400,17 @@
     "year": "2023",
     "tmdbId": 1018332,
     "addedAt": "2026-08-25T16:59:45.097Z"
+  },
+  {
+    "title": "Vol au-dessus d'un nid de coucou",
+    "year": "1975",
+    "tmdbId": 510,
+    "addedAt": "2026-08-26T18:47:19.621Z"
+  },
+  {
+    "title": "Metropolis",
+    "year": "1927",
+    "tmdbId": 19,
+    "addedAt": "2026-08-26T18:47:34.220Z"
   }
 ]

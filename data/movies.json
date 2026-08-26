@@ -557,5 +557,14 @@
     "letterboxdUrl": "https://letterboxd.com/film/vol-au-dessus-dun-nid-de-coucou/",
     "updatedAt": "2026-08-26T18:47:19.621Z",
     "tmdbId": 510
+  },
+  {
+    "title": "Metropolis",
+    "year": 1927,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/metropolis/",
+    "tmdbId": 19,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-26T18:47:34.220Z"
   }
 ]
