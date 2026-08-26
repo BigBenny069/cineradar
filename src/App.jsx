@@ -631,6 +631,17 @@ function normalizeText(str) {
     .trim();
 }
 
+// Devine un lien Letterboxd probable à partir du titre (Letterboxd n'a pas
+// d'API officielle pour confirmer le vrai lien) — reste toujours éditable
+// dans le formulaire, l'utilisateur peut corriger si la page ne correspond
+// pas exactement au bon film (cas des homonymes, remakes, etc.).
+function slugifyForLetterboxd(title) {
+  return normalizeText(title)
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 function formatRelativeDate(iso) {
   if (!iso) return "Date inconnue";
   const date = new Date(iso);
@@ -2229,6 +2240,7 @@ function LibraryView({ movies, onOpen }) {
   const [sortMode, setSortMode] = useState("az");
   const [genre, setGenre] = useState("Tous");
   const [subsOnly, setSubsOnly] = useState(false);
+  const [addedBy, setAddedBy] = useState("Tous");
 
   let filtered = movies;
   if (query.trim()) {
@@ -2240,6 +2252,9 @@ function LibraryView({ movies, onOpen }) {
   }
   if (subsOnly) {
     filtered = filtered.filter((m) => (m.providers?.abonnement || []).length > 0);
+  }
+  if (addedBy !== "Tous") {
+    filtered = filtered.filter((m) => m.wantedBy === addedBy);
   }
 
   const sorted = [...filtered].sort((a, b) => {
@@ -2253,6 +2268,12 @@ function LibraryView({ movies, onOpen }) {
   });
 
   const genreOptions = ["Tous", ...[...new Set(movies.flatMap((m) => m.genres || []))].sort((a, b) => a.localeCompare(b))];
+
+  const ADDED_BY_LABELS = { benoit: "Benoit", romy: "Romy" };
+  const addedByOptions = [
+    "Tous",
+    ...[...new Set(movies.map((m) => m.wantedBy).filter(Boolean))].sort(),
+  ];
 
   const sortOptions = [
     { key: "az", label: "A → Z" },
@@ -2351,6 +2372,30 @@ function LibraryView({ movies, onOpen }) {
             </button>
           ))}
         </div>
+
+        {addedByOptions.length > 1 && (
+          <div style={{ display: "flex", gap: 8, overflowX: "auto", margin: "0 -16px 12px", padding: "0 16px" }}>
+            {addedByOptions.map((a) => (
+              <button
+                key={a}
+                onClick={() => setAddedBy(a)}
+                style={{
+                  flexShrink: 0,
+                  padding: "6px 13px",
+                  borderRadius: 20,
+                  border: `1px solid ${addedBy === a ? T.accent : T.line}`,
+                  background: addedBy === a ? T.accent : T.surface,
+                  fontFamily: F.mono,
+                  fontSize: 10.5,
+                  color: addedBy === a ? "#1A1206" : T.muted,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {a === "Tous" ? "Tous" : ADDED_BY_LABELS[a] || a}
+              </button>
+            ))}
+          </div>
+        )}
 
         {genreOptions.length > 1 && (
           <div style={{ display: "flex", gap: 8, overflowX: "auto", margin: "0 -16px 16px", padding: "0 16px" }}>
@@ -3003,6 +3048,8 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
     setSelectedTmdbId(null);
   };
 
+  const [fetchingDetails, setFetchingDetails] = useState(false);
+
   const pickResult = (r) => {
     setTitle(r.title);
     setYear(r.year);
@@ -3010,6 +3057,20 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
     setLastPickedTitle(r.title);
     setShowResults(false);
     setSearchResults([]);
+
+    // Le lien Letterboxd est une proposition (best-effort, pas de vraie
+    // confirmation possible via TMDB) — reste éditable, à vérifier surtout
+    // en cas d'homonyme ou de remake.
+    setLetterboxdUrl(`https://letterboxd.com/film/${slugifyForLetterboxd(r.title)}/`);
+
+    setFetchingDetails(true);
+    fetch(`/api/search-tmdb?id=${r.tmdbId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.director) setDirector(data.director);
+      })
+      .catch(() => {})
+      .finally(() => setFetchingDetails(false));
   };
 
   const fieldStyle = {
@@ -3203,12 +3264,22 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
             onChange={(e) => setDirector(e.target.value)}
             style={fieldStyle}
           />
+          {fetchingDetails && (
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: -6 }}>
+              Récupération du réalisateur...
+            </div>
+          )}
           <input
             placeholder="Lien Letterboxd (optionnel)"
             value={letterboxdUrl}
             onChange={(e) => setLetterboxdUrl(e.target.value)}
             style={fieldStyle}
           />
+          {selectedTmdbId && letterboxdUrl && (
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: -6 }}>
+              Lien Letterboxd proposé automatiquement — vérifie qu'il pointe bien vers le bon film avant d'enregistrer.
+            </div>
+          )}
         </div>
 
         <button
