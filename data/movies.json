@@ -549,5 +549,13 @@
     "letterboxdUrl": "https://letterboxd.com/film/killer-joe/",
     "updatedAt": "2026-08-25T16:58:45.279Z",
     "tmdbId": 73567
+  },
+  {
+    "title": "Vol au-dessus d'un nid de coucou",
+    "year": 1975,
+    "director": "Miloš Forman",
+    "letterboxdUrl": "https://letterboxd.com/film/vol-au-dessus-dun-nid-de-coucou/",
+    "updatedAt": "2026-08-26T18:47:19.621Z",
+    "tmdbId": 510
   }
 ]
