@@ -1,12 +1,5 @@
 [
   {
-    "key": "tmdb:942:benoit",
-    "title": "L'Arme fatale 2",
-    "person": "benoit",
-    "reason": "deja_present",
-    "detectedAt": "2026-08-27T06:48:24.511Z"
-  },
-  {
     "key": "tmdb:9314:benoit",
     "title": "1984",
     "person": "benoit",
