@@ -545,6 +545,21 @@ const CINEMAISON_PLATFORM_MAP = {
   "amazon prime video": "Prime Video",
   "disney+": "Disney+",
   "disney plus": "Disney+",
+  // Toutes ces chaînes sont incluses dans la formule Canal+ (accès via la
+  // même app) — CinéMaison ne connaît que 4 plateformes, donc tout ce qui
+  // se regarde via Canal+ y est envoyé comme "Canal+", peu importe le
+  // studio d'origine du contenu.
+  "canal+ series": "Canal+",
+  "canal+ séries": "Canal+",
+  "apple tv+": "Canal+",
+  "apple tv plus": "Canal+",
+  "paramount+": "Canal+",
+  "paramount plus": "Canal+",
+  ocs: "Canal+",
+  "cine+ ocs": "Canal+",
+  "ciné+ ocs": "Canal+",
+  max: "Canal+",
+  "hbo max": "Canal+",
 };
 
 function mapToCinemaisonPlatform(name) {
