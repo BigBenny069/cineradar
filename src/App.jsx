@@ -631,17 +631,6 @@ function normalizeText(str) {
     .trim();
 }
 
-// Devine un lien Letterboxd probable à partir du titre (Letterboxd n'a pas
-// d'API officielle pour confirmer le vrai lien) — reste toujours éditable
-// dans le formulaire, l'utilisateur peut corriger si la page ne correspond
-// pas exactement au bon film (cas des homonymes, remakes, etc.).
-function slugifyForLetterboxd(title) {
-  return normalizeText(title)
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-}
-
 function formatRelativeDate(iso) {
   if (!iso) return "Date inconnue";
   const date = new Date(iso);
@@ -2455,9 +2444,9 @@ function WatchlistReviewItem({ item, onDismissed }) {
     setStatus("loading");
     setErrorMsg("");
     const result = await apiWrite("/api/dismiss-watchlist-review", {
+      key: item.key,
       title: item.title,
       person: item.person,
-      detectedAt: item.detectedAt,
     });
     if (!result.ok) {
       setStatus("error");
@@ -3058,10 +3047,11 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
     setShowResults(false);
     setSearchResults([]);
 
-    // Le lien Letterboxd est une proposition (best-effort, pas de vraie
-    // confirmation possible via TMDB) — reste éditable, à vérifier surtout
-    // en cas d'homonyme ou de remake.
-    setLetterboxdUrl(`https://letterboxd.com/film/${slugifyForLetterboxd(r.title)}/`);
+    // letterboxd.com/tmdb/{id} redirige automatiquement vers la bonne fiche
+    // — fiable à 100% puisque basé sur l'identifiant TMDB confirmé, plutôt
+    // qu'une estimation du lien à partir du titre (qui pouvait tomber sur
+    // un homonyme).
+    setLetterboxdUrl(`https://letterboxd.com/tmdb/${r.tmdbId}/`);
 
     setFetchingDetails(true);
     fetch(`/api/search-tmdb?id=${r.tmdbId}`)
@@ -3277,7 +3267,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
           />
           {selectedTmdbId && letterboxdUrl && (
             <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: -6 }}>
-              Lien Letterboxd proposé automatiquement — vérifie qu'il pointe bien vers le bon film avant d'enregistrer.
+              Lien Letterboxd rempli automatiquement à partir du film choisi.
             </div>
           )}
         </div>
