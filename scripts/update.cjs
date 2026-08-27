@@ -221,6 +221,16 @@ async function fetchFullWatchlist(username) {
   return [...all.values()];
 }
 
+function loadWatchlistDismissed() {
+  try {
+    const raw = fs.readFileSync("public/data/watchlist-dismissed.json", "utf-8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
 async function syncWatchlists(inputMovies, history) {
   const watchlists = SETTINGS.letterboxdWatchlists || {};
   const people = Object.entries(watchlists).filter(([, username]) => username && username.trim());
@@ -232,6 +242,11 @@ async function syncWatchlists(inputMovies, history) {
   const knownTmdbIds = new Set(
     [...inputMovies.map((m) => m.tmdbId), ...history.map((h) => h.tmdbId)].filter(Boolean).map(String)
   );
+
+  // Mémoire permanente des conflits déjà "Ignorés" via l'app — sans ça, le
+  // fichier de file d'attente étant régénéré à chaque passage, un film
+  // ignoré réapparaissait à la synchronisation suivante (bug signalé).
+  const dismissedKeys = new Set(loadWatchlistDismissed());
 
   const newEntries = [];
   const review = [];
@@ -249,7 +264,10 @@ async function syncWatchlists(inputMovies, history) {
 
       const found = year ? await findMovie(title, year) : await findMovieByTitleOnly(title);
       if (!found) {
+        const key = `title:${normalize(title)}:${person}`;
+        if (dismissedKeys.has(key)) continue;
         review.push({
+          key,
           title: year ? `${title} (${year})` : title,
           person,
           reason: "introuvable",
@@ -259,8 +277,11 @@ async function syncWatchlists(inputMovies, history) {
       }
 
       if (knownTmdbIds.has(String(found.id))) {
+        const key = `tmdb:${found.id}:${person}`;
+        if (dismissedKeys.has(key)) continue;
         const inActive = inputMovies.some((m) => String(m.tmdbId) === String(found.id));
         review.push({
+          key,
           title: found.title,
           person,
           reason: inActive ? "deja_present" : "deja_recherche",
@@ -273,7 +294,11 @@ async function syncWatchlists(inputMovies, history) {
         title: found.title,
         year: found.release_date ? parseInt(found.release_date.slice(0, 4), 10) : null,
         director: "",
-        letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : null,
+        // Priorité au vrai slug capturé sur la page (le plus précis) ; à
+        // défaut, letterboxd.com/tmdb/{id} redirige automatiquement vers la
+        // bonne fiche — fiable à 100%, contrairement à une estimation basée
+        // sur le titre qui pouvait tomber sur un homonyme.
+        letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : `https://letterboxd.com/tmdb/${found.id}/`,
         tmdbId: found.id,
         wantedBy: person,
         updatedAt: new Date().toISOString(),
