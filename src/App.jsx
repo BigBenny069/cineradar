@@ -1587,7 +1587,28 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
       setCinemaisonError(result.error);
       return;
     }
-    setCinemaisonStatus("success");
+    // Une fois envoyée vers CinéMaison, la fiche n'a plus besoin de rester
+    // dans CinéRadar — son rôle (repérer le film et le rendre trouvable)
+    // est rempli.
+    const deleteResult = await apiWrite("/api/delete-movie", {
+      title: movie.title,
+      year: movie.year,
+      tmdbId: movie.tmdbId,
+    });
+    if (deleteResult.ok) {
+      setCinemaisonStatus("success");
+      setTimeout(() => onDeleted?.(), 1400);
+    } else {
+      // Le retrait automatique a échoué (souci réseau ponctuel) — on place
+      // la fiche dans la file "À nettoyer" d'Historique plutôt que de la
+      // perdre de vue, pour une suppression manuelle en un tap plus tard.
+      await apiWrite("/api/mark-cinemaison-cleanup", {
+        title: movie.title,
+        year: movie.year,
+        tmdbId: movie.tmdbId,
+      });
+      setCinemaisonStatus("success_no_delete");
+    }
   };
 
   const confirmDelete = async () => {
@@ -1970,7 +1991,12 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
             </div>
             {cinemaisonStatus === "success" && (
               <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 12, color: T.accent }}>
-                Envoyé ! Retrouve-le dans CinéMaison.
+                Envoyé ! Retiré de CinéRadar — retrouve-le dans CinéMaison.
+              </div>
+            )}
+            {cinemaisonStatus === "success_no_delete" && (
+              <div style={{ marginTop: 10, fontFamily: F.mono, fontSize: 11, color: T.accent, lineHeight: 1.5 }}>
+                Envoyé vers CinéMaison ! Le retrait automatique a échoué — retrouve cette fiche dans Historique, section "À nettoyer", pour la supprimer.
               </div>
             )}
             {cinemaisonStatus === "error" && (
@@ -2451,6 +2477,61 @@ const WATCHLIST_REASON_LABELS = {
   deja_recherche: "Déjà recherché par le passé (supprimé depuis)",
 };
 
+function CinemaisonCleanupItem({ item, onDeleted }) {
+  const [status, setStatus] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const resolve = async () => {
+    setStatus("loading");
+    setErrorMsg("");
+    const result = await apiWrite("/api/resolve-cinemaison-cleanup", {
+      title: item.title,
+      year: item.year,
+      tmdbId: item.tmdbId,
+    });
+    if (!result.ok) {
+      setStatus("error");
+      setErrorMsg(result.error);
+      return;
+    }
+    onDeleted(item);
+  };
+
+  return (
+    <div style={{ padding: 12, background: T.surface, border: `1px solid ${T.accent}`, borderRadius: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+        <div>
+          <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>{item.title}</div>
+          <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 4 }}>
+            Déjà envoyé vers CinéMaison
+          </div>
+          {status === "error" && (
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accentSecondary, marginTop: 6 }}>
+              Erreur : {errorMsg}
+            </div>
+          )}
+        </div>
+        <button
+          onClick={resolve}
+          disabled={status === "loading"}
+          style={{
+            flexShrink: 0,
+            padding: "6px 10px",
+            border: `1px solid ${T.accent}`,
+            borderRadius: 6,
+            fontFamily: F.mono,
+            fontSize: 10,
+            color: T.accent,
+            opacity: status === "loading" ? 0.5 : 1,
+          }}
+        >
+          {status === "loading" ? "..." : "Supprimer"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function WatchlistReviewItem({ item, onDismissed }) {
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
@@ -2624,9 +2705,10 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
   );
 }
 
-function HistoryView({ movies, unmatched, watchlistReview, onOpen, onEditUnmatched }) {
+function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, onOpen, onEditUnmatched }) {
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
   const [localWatchlistReview, setLocalWatchlistReview] = useState(watchlistReview || []);
+  const [localCinemaisonCleanup, setLocalCinemaisonCleanup] = useState(cinemaisonCleanup || []);
 
   useEffect(() => {
     setLocalUnmatched(unmatched || []);
@@ -2635,6 +2717,10 @@ function HistoryView({ movies, unmatched, watchlistReview, onOpen, onEditUnmatch
   useEffect(() => {
     setLocalWatchlistReview(watchlistReview || []);
   }, [watchlistReview]);
+
+  useEffect(() => {
+    setLocalCinemaisonCleanup(cinemaisonCleanup || []);
+  }, [cinemaisonCleanup]);
 
   const sorted = [...movies]
     .filter((m) => m.updatedAt)
@@ -2664,6 +2750,25 @@ function HistoryView({ movies, unmatched, watchlistReview, onOpen, onEditUnmatch
                   onEdit={onEditUnmatched}
                   onDeleted={(deletedItem) => {
                     setLocalUnmatched((prev) => prev.filter((u) => u !== deletedItem));
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {localCinemaisonCleanup.length > 0 && (
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1, marginBottom: 10 }}>
+              À NETTOYER ({localCinemaisonCleanup.length})
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {localCinemaisonCleanup.map((item, i) => (
+                <CinemaisonCleanupItem
+                  key={`${item.title}-${item.year}-${i}`}
+                  item={item}
+                  onDeleted={(deletedItem) => {
+                    setLocalCinemaisonCleanup((prev) => prev.filter((c) => c !== deletedItem));
                   }}
                 />
               ))}
@@ -3398,6 +3503,7 @@ export default function App() {
   const [unmatched, setUnmatched] = useState([]);
   const [history, setHistory] = useState([]);
   const [watchlistReview, setWatchlistReview] = useState([]);
+  const [cinemaisonCleanup, setCinemaisonCleanup] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [offline, setOffline] = useState(false);
@@ -3439,12 +3545,16 @@ export default function App() {
     const watchlistReviewPromise = fetch(`/data/watchlist-review.json?t=${Date.now()}`)
       .then((res) => (res.ok ? res.json() : []))
       .catch(() => []);
-    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise])
-      .then(([moviesData, unmatchedData, historyData, watchlistReviewData]) => {
+    const cinemaisonCleanupPromise = fetch(`/data/cinemaison-cleanup.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise])
+      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData]) => {
         setMovies(moviesData);
         setUnmatched(unmatchedData);
         setHistory(historyData);
         setWatchlistReview(watchlistReviewData);
+        setCinemaisonCleanup(cinemaisonCleanupData);
         setError(null);
         setOffline(false);
         hasDataRef.current = true;
@@ -3455,6 +3565,7 @@ export default function App() {
           unmatched: unmatchedData,
           history: historyData,
           watchlistReview: watchlistReviewData,
+          cinemaisonCleanup: cinemaisonCleanupData,
           cachedAt: now,
         });
       })
@@ -3478,6 +3589,7 @@ export default function App() {
       setUnmatched(cached.unmatched || []);
       setHistory(cached.history || []);
       setWatchlistReview(cached.watchlistReview || []);
+      setCinemaisonCleanup(cached.cinemaisonCleanup || []);
       setLastSyncedAt(cached.cachedAt || null);
       hasDataRef.current = true;
       setLoading(false);
@@ -3569,6 +3681,7 @@ export default function App() {
             movies={movies}
             unmatched={unmatched}
             watchlistReview={watchlistReview}
+            cinemaisonCleanup={cinemaisonCleanup}
             onOpen={setSelected}
             onEditUnmatched={(item) => {
               setEditingMovie({
