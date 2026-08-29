@@ -2637,49 +2637,6 @@
     "lastChecked": "2026-08-29T06:03:47.437Z"
   },
   {
-    "tmdbId": 242,
-    "title": "Le Parrain, 3e partie",
-    "year": "1990",
-    "director": "Francis Ford Coppola",
-    "poster": "https://image.tmdb.org/t/p/w500/6qDyBIl9vizY5pneZ2tREaa86UC.jpg",
-    "synopsis": "Atteignant la soixantaine, Michael Corleone désire à la fois renouer avec les siens et se réhabiliter aux yeux de la société, surtout de l'Église. Il arrivera presque à ses fins, mais sa vie passée et ses anciens ennemis le rattraperont plus vite. Michael Corleone est fatigué. Il veut prendre ses distances avec les activités mafieuses de sa famille. Il veut convertir ces activités en affaires légales. Kay, son ex-femme, lui fait même accepter que leur fils devienne un chanteur d'opéra et ne reprenne pas les activités familiales. Pendant ce temps, la fille de Michael, Mary, et son neveu, le fils de Sonny, Vincent, nouent une idylle qui n'est pas la bienvenue dans la famille. Il décide d'aider le Vatican à renflouer ses caisses et reçoit en échange le contrôle d'une entreprise immobilière leur appartenant. Attisant la jalousie de ses pairs, Michael échappe de justesse à un attentat commis par l'un d'eux. Vincent se propose alors pour reprendre les affaires de la famille en main.",
-    "genres": [
-      "Crime",
-      "Drame",
-      "Thriller"
-    ],
-    "cast": [
-      "Al Pacino",
-      "Diane Keaton",
-      "Talia Shire",
-      "Andy Garcia",
-      "Eli Wallach"
-    ],
-    "tmdbRating": 7.418,
-    "tmdbVotes": 7008,
-    "letterboxdRating": 3.49,
-    "letterboxdVotes": 510850,
-    "imdbId": "tt0099674",
-    "letterboxdUrl": "https://letterboxd.com/film/the-godfather-part-iii/",
-    "providers": {
-      "abonnement": [
-        "Paramount Plus",
-        "Paramount Plus Premium"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Sooner",
-        "Pathé Home",
-        "LaCinetek"
-      ]
-    },
-    "availableSince": "2026-08-24T08:26:21.055Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-24T08:26:07.433Z",
-    "lastChecked": "2026-08-29T06:03:47.633Z"
-  },
-  {
     "tmdbId": 923,
     "title": "Zombie",
     "year": "1978",
