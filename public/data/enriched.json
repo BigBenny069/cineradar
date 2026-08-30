@@ -3010,55 +3010,5 @@
     "wantedBy": null,
     "updatedAt": "2026-08-27T16:49:28.347Z",
     "lastChecked": "2026-08-29T06:03:49.155Z"
-  },
-  {
-    "tmdbId": 496243,
-    "title": "Parasite",
-    "year": "2019",
-    "director": "Bong Joon-ho",
-    "poster": "https://image.tmdb.org/t/p/w500/7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg",
-    "synopsis": "Toute la famille de Ki-taek est au chômage. Elle s’intéresse particulièrement au train de vie de la richissime famille Park. Mais un incident se produit et les deux familles se retrouvent mêlées, sans le savoir, à une bien étrange histoire…",
-    "genres": [
-      "Comédie",
-      "Thriller",
-      "Drame"
-    ],
-    "cast": [
-      "Song Kang-ho",
-      "Sun-kyun Lee",
-      "Cho Yeo-jeong",
-      "Choi Woo-shik",
-      "Park So-dam"
-    ],
-    "tmdbRating": 8.491,
-    "tmdbVotes": 21196,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
-    "imdbId": "tt6751668",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/496243/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads"
-      ],
-      "vod": [
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique",
-        "Apple TV Store"
-      ]
-    },
-    "availableSince": "2026-08-29T14:30:05.734Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-29T14:31:14.355Z",
-    "lastChecked": "2026-08-29T14:31:15.264Z"
   }
 ]
