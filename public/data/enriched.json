@@ -3091,5 +3091,43 @@
     "wantedBy": null,
     "updatedAt": "2026-08-30T00:49:00.539Z",
     "lastChecked": "2026-08-30T00:49:01.486Z"
+  },
+  {
+    "tmdbId": 42506,
+    "title": "La Servante",
+    "year": "1960",
+    "director": "김기영",
+    "poster": "https://image.tmdb.org/t/p/w500/yZ18b65KTF3uFfMqzhPqmTruNx2.jpg",
+    "synopsis": "Professeur de piano, Kim Dong-sik enseigne la musique aux jeunes ouvrières d'un atelier de tissage. Avec sa petite famille, celui-ci ne va pas tarder à emménager dans une plus grande maison, et, pour soulager sa femme des travaux domestiques, cherche à employer une servante. Une de ses élèves lui présente alors Myeong-sook, jeune fille un peu simplette mais courageuse, qui ne tarde pas à montrer un comportement trouble et ambigu une fois intégrée dans la maison. Folle amoureuse de Kim Donk-sik, cette dernière va alors s'adonner à un petit jeu démoniaque promis à détruire cette famille banale et sans histoire.",
+    "genres": [
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "이은심",
+      "김진규",
+      "주증녀",
+      "엄앵란",
+      "고선애"
+    ],
+    "tmdbRating": 7.103,
+    "tmdbVotes": 199,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0150980",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/42506/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Amazon Video",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-08-30T00:50:09.450Z",
+    "lastChecked": "2026-08-30T00:50:10.351Z"
   }
 ]
