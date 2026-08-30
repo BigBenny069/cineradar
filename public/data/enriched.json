@@ -3010,5 +3010,50 @@
     "wantedBy": null,
     "updatedAt": "2026-08-27T16:49:28.347Z",
     "lastChecked": "2026-08-29T06:03:49.155Z"
+  },
+  {
+    "tmdbId": 399057,
+    "title": "Mise à mort du cerf sacré",
+    "year": "2017",
+    "director": "Yorgos Lanthimos",
+    "poster": "https://image.tmdb.org/t/p/w500/AmtUzPZkVz0q93kqJddkqS1eb6f.jpg",
+    "synopsis": "Un brillant chirurgien prend sous son aile un jeune adolescent. Dans un premier temps, ce dernier s’immisce au sein de cette famille et en perturbe progressivement le quotidien. Il devient de plus en plus inquiétant, menaçant. Une seule issue possible : un impensable sacrifice.",
+    "genres": [
+      "Drame",
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "Colin Farrell",
+      "Nicole Kidman",
+      "Barry Keoghan",
+      "Raffey Cassidy",
+      "Sunny Suljic"
+    ],
+    "tmdbRating": 7.001,
+    "tmdbVotes": 4547,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt5715874",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/399057/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Rakuten TV",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-08-30T00:47:18.436Z",
+    "lastChecked": "2026-08-30T00:47:19.375Z"
   }
 ]
