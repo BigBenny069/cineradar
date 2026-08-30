@@ -613,5 +613,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/622951/",
     "updatedAt": "2026-08-30T00:49:00.539Z",
     "tmdbId": 622951
+  },
+  {
+    "title": "La Servante",
+    "year": 1960,
+    "director": "김기영",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/42506/",
+    "updatedAt": "2026-08-30T00:50:09.450Z",
+    "tmdbId": 42506
   }
 ]
