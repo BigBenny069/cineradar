@@ -3057,42 +3057,6 @@
     "lastChecked": "2026-08-30T00:47:19.375Z"
   },
   {
-    "tmdbId": 622951,
-    "title": "Un Soleil",
-    "year": "2019",
-    "director": "鍾孟宏",
-    "poster": "https://image.tmdb.org/t/p/w500/dWjEkeYrmijRKwIYMVDprYG6wz8.jpg",
-    "synopsis": "Cette famille pense avoir connu le pire avec l'incarcération de son plus jeune fils, mais ses malheurs sont loin d'être terminés...",
-    "genres": [
-      "Drame",
-      "Crime"
-    ],
-    "cast": [
-      "Chen Yi-wen",
-      "柯淑勤",
-      "巫建和",
-      "吳岱凌",
-      "許光漢"
-    ],
-    "tmdbRating": 7.711,
-    "tmdbVotes": 268,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
-    "imdbId": "tt10883506",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/622951/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads"
-      ],
-      "vod": []
-    },
-    "availableSince": "2026-08-30T00:49:01.486Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-30T00:49:00.539Z",
-    "lastChecked": "2026-08-30T00:49:01.486Z"
-  },
-  {
     "tmdbId": 42506,
     "title": "La Servante",
     "year": "1960",
