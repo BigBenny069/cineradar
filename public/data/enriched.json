@@ -1260,58 +1260,6 @@
     "lastChecked": "2026-08-31T09:02:13.866Z"
   },
   {
-    "tmdbId": 944,
-    "title": "L'Arme fatale 4",
-    "year": "1998",
-    "director": "Richard Donner",
-    "poster": "https://image.tmdb.org/t/p/w500/8wUNoQ0Q92dHSXqdq7mceGudasg.jpg",
-    "synopsis": "Les flics de choc Martin Riggs et Roger Murtaugh, accompagnés de la troublante et explosive Lorna Cole et de l'encombrant Leo Getz, sont de retour pour de nouvelles aventures à tombeau ouvert. Cette fois-ci, pour avoir fourré leurs nez dans une histoire d'immigration clandestine, ils se mettent à dos toute la mafia chinoise.",
-    "genres": [
-      "Action",
-      "Crime",
-      "Thriller"
-    ],
-    "cast": [
-      "Mel Gibson",
-      "Danny Glover",
-      "Joe Pesci",
-      "Rene Russo",
-      "Chris Rock"
-    ],
-    "tmdbRating": 6.609,
-    "tmdbVotes": 3046,
-    "letterboxdRating": 3.16,
-    "letterboxdVotes": 74845,
-    "imdbId": "tt0122151",
-    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-4/",
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel ",
-        "HBO Max"
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:00.668Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.535Z",
-    "lastChecked": "2026-08-31T09:02:14.278Z"
-  },
-  {
     "tmdbId": 12101,
     "title": "Soleil vert",
     "year": "1973",
