@@ -1400,55 +1400,6 @@
     "lastChecked": "2026-08-31T09:02:16.410Z"
   },
   {
-    "tmdbId": 37686,
-    "title": "Super 8",
-    "year": "2011",
-    "director": "J.J. Abrams",
-    "poster": "https://image.tmdb.org/t/p/w500/oFD2PLUwqbmhIov6kZ2EPb3loon.jpg",
-    "synopsis": "Été 1979, une petite ville de l’Ohio. Alors qu'ils tournent un film en super 8, un groupe d’adolescents est témoin d'une spectaculaire catastrophe ferroviaire. Ils ne tardent pas à comprendre qu'il ne s'agit pas d'un accident. Peu après, des disparitions étonnantes et des événements inexplicables se produisent en ville, et la police tente de découvrir la vérité… Une vérité qu’aucun d’entre eux n’aurait pu imaginer.",
-    "genres": [
-      "Thriller",
-      "Science-Fiction",
-      "Mystère"
-    ],
-    "cast": [
-      "Joel Courtney",
-      "Elle Fanning",
-      "Riley Griffiths",
-      "Kyle Chandler",
-      "Noah Emmerich"
-    ],
-    "tmdbRating": 6.784,
-    "tmdbVotes": 7243,
-    "letterboxdRating": 3.53,
-    "letterboxdVotes": 350181,
-    "imdbId": "tt1650062",
-    "letterboxdUrl": "https://letterboxd.com/film/super-8/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "Molotov TV",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Sooner"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:04.447Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.398Z",
-    "lastChecked": "2026-08-31T09:02:16.615Z"
-  },
-  {
     "tmdbId": 294963,
     "title": "Bone Tomahawk",
     "year": "2015",
