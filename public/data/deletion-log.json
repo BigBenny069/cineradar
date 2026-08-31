@@ -91,5 +91,12 @@
     "tmdbId": 149,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:07:02.314Z"
+  },
+  {
+    "title": "Ghost in the Shell",
+    "year": 1995,
+    "tmdbId": 9323,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:08:14.728Z"
   }
 ]
