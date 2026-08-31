@@ -613,5 +613,41 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/42506/",
     "updatedAt": "2026-08-30T00:50:09.450Z",
     "tmdbId": 42506
+  },
+  {
+    "title": "Le Retour des sept",
+    "year": 1966,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/return-of-the-seven/",
+    "tmdbId": 12639,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-31T06:03:53.342Z"
+  },
+  {
+    "title": "La Horde sauvage",
+    "year": 1969,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-wild-bunch/",
+    "tmdbId": 576,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-31T06:03:53.362Z"
+  },
+  {
+    "title": "Josey Wales : hors-la-loi",
+    "year": 1976,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/the-outlaw-josey-wales/",
+    "tmdbId": 10747,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-31T06:03:53.392Z"
+  },
+  {
+    "title": "Il était une fois dans l'Ouest",
+    "year": 1968,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-the-west/",
+    "tmdbId": 335,
+    "wantedBy": "benoit",
+    "updatedAt": "2026-08-31T06:03:53.408Z"
   }
 ]

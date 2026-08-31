@@ -460,5 +460,29 @@
     "year": "1960",
     "tmdbId": 42506,
     "addedAt": "2026-08-30T00:50:09.450Z"
+  },
+  {
+    "title": "Le Retour des sept",
+    "year": "1966",
+    "tmdbId": 12639,
+    "addedAt": "2026-08-31T06:03:53.342Z"
+  },
+  {
+    "title": "La Horde sauvage",
+    "year": "1969",
+    "tmdbId": 576,
+    "addedAt": "2026-08-31T06:03:53.362Z"
+  },
+  {
+    "title": "Josey Wales : hors-la-loi",
+    "year": "1976",
+    "tmdbId": 10747,
+    "addedAt": "2026-08-31T06:03:53.392Z"
+  },
+  {
+    "title": "Il était une fois dans l'Ouest",
+    "year": "1968",
+    "tmdbId": 335,
+    "addedAt": "2026-08-31T06:03:53.408Z"
   }
 ]
