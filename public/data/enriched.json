@@ -218,53 +218,6 @@
     "lastChecked": "2026-08-31T09:02:07.873Z"
   },
   {
-    "tmdbId": 1140535,
-    "title": "Presence",
-    "year": "2025",
-    "director": "Steven Soderbergh",
-    "poster": "https://image.tmdb.org/t/p/w500/n2MH5xiSS36f8pCTbehXlZq3WP0.jpg",
-    "synopsis": "Une famille est convaincue qu'elle n'est pas seule après avoir emménagé dans sa nouvelle maison en banlieue.",
-    "genres": [
-      "Drame",
-      "Horreur",
-      "Thriller"
-    ],
-    "cast": [
-      "Callina Liang",
-      "Lucy Liu",
-      "Chris Sullivan",
-      "Eddy Maday",
-      "West Mulholland"
-    ],
-    "tmdbRating": 6.104,
-    "tmdbVotes": 796,
-    "letterboxdRating": 2.95,
-    "letterboxdVotes": 279373,
-    "imdbId": "tt28249919",
-    "letterboxdUrl": "https://letterboxd.com/film/presence-2024/",
-    "providers": {
-      "abonnement": [
-        "Paramount Plus",
-        "Paramount Plus Premium"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-08-14T09:09:49.163Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-09T16:07:38.946Z",
-    "lastChecked": "2026-08-31T09:02:08.127Z"
-  },
-  {
     "tmdbId": 399170,
     "title": "Logan Lucky",
     "year": "2017",
