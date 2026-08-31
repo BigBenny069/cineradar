@@ -1066,60 +1066,6 @@
     "lastChecked": "2026-08-31T09:02:12.602Z"
   },
   {
-    "tmdbId": 9323,
-    "title": "Ghost in the Shell",
-    "year": "1995",
-    "director": "Mamoru Oshii",
-    "poster": "https://image.tmdb.org/t/p/w500/692vdwjxZpk3ibwDqOGxZLRYgvy.jpg",
-    "synopsis": "Dans un Japon futuriste régi par l'Internet, le major Motoko Kusunagi, une femme cyborg ultra-perfectionnée, est hantée par des interrogations ontologiques. Elle appartient, malgré elle, à une cyber-police musclée dotée de moyens quasi-illimités pour lutter contre le crime informatique. Le jour où sa section retrouve la trace du « Puppet Master », un hacker mystérieux et légendaire dont l'identité reste totalement inconnue, la jeune femme se met en tète de pénétrer le corps de celui-ci et d'en analyser le ghost (élément indéfinissable de la conscience, apparenté à l'âme) dans l'espoir d'y trouver les réponses à ses propres questions existentielles…",
-    "genres": [
-      "Action",
-      "Animation",
-      "Science-Fiction"
-    ],
-    "cast": [
-      "Atsuko Tanaka",
-      "Akio Ōtsuka",
-      "家弓家正",
-      "Kōichi Yamadera",
-      "仲野裕"
-    ],
-    "tmdbRating": 7.927,
-    "tmdbVotes": 4022,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
-    "imdbId": "tt0113568",
-    "letterboxdUrl": null,
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel ",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Sooner",
-        "Molotov TV",
-        "SFR Play",
-        "Lionsgate+ Amazon Channels",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:04:34.918Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:04:25.349Z",
-    "lastChecked": "2026-08-31T09:02:12.733Z"
-  },
-  {
     "tmdbId": 20424,
     "title": "Les Envahisseurs de la planète rouge",
     "year": "1953",
