@@ -1358,51 +1358,6 @@
     "lastChecked": "2026-08-31T09:02:16.767Z"
   },
   {
-    "tmdbId": 1572,
-    "title": "Une Journée en enfer",
-    "year": "1995",
-    "director": "John McTiernan",
-    "poster": "https://image.tmdb.org/t/p/w500/5AObtYoyodZluhmJVcidvzzKfiv.jpg",
-    "synopsis": "Décidément, John McLane ne peut jamais avoir la paix ! Après avoir libéré un building des mains d’un terroriste, après avoir sauvé sa femme d’un avion en perdition, le voilà aux prises avec un psychopathe qui le fait jouer à un « Jacques a dit » meurtrier. Les règles sont simples, si il ne résout pas les énigmes posées, une bombe explose dans un lieu public.",
-    "genres": [
-      "Action",
-      "Thriller"
-    ],
-    "cast": [
-      "Bruce Willis",
-      "Jeremy Irons",
-      "Samuel L. Jackson",
-      "Larry Bryggman",
-      "Graham Greene"
-    ],
-    "tmdbRating": 7.283,
-    "tmdbVotes": 6802,
-    "letterboxdRating": 3.75,
-    "letterboxdVotes": 255765,
-    "imdbId": "tt0112864",
-    "letterboxdUrl": "https://letterboxd.com/film/die-hard-with-a-vengeance/",
-    "providers": {
-      "abonnement": [
-        "Disney Plus"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:04.721Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.657Z",
-    "lastChecked": "2026-08-31T09:02:17.046Z"
-  },
-  {
     "tmdbId": 1119449,
     "title": "Good Luck, Have Fun, Don't Die",
     "year": "2026",
