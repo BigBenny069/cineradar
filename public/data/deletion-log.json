@@ -133,5 +133,12 @@
     "tmdbId": 944,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:23:14.137Z"
+  },
+  {
+    "title": "Munich",
+    "year": 2005,
+    "tmdbId": 612,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:24:11.339Z"
   }
 ]
