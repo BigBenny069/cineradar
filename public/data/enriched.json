@@ -1993,51 +1993,6 @@
     "lastChecked": "2026-08-31T09:02:17.046Z"
   },
   {
-    "tmdbId": 1573,
-    "title": "58 minutes pour vivre",
-    "year": "1990",
-    "director": "Renny Harlin",
-    "poster": "https://image.tmdb.org/t/p/w500/1gphGfZKKnxEVJRLYT9VyyDaOaV.jpg",
-    "synopsis": "John McClane tente d'éviter le désastre alors que des agents secrets militaires dévoyés prennent le contrôle de l'Aéroport International de Dulles à Washington, D.C.",
-    "genres": [
-      "Action",
-      "Thriller"
-    ],
-    "cast": [
-      "Bruce Willis",
-      "Bonnie Bedelia",
-      "William Sadler",
-      "John Amos",
-      "Franco Nero"
-    ],
-    "tmdbRating": 6.969,
-    "tmdbVotes": 6553,
-    "letterboxdRating": 3.37,
-    "letterboxdVotes": 269777,
-    "imdbId": "tt0099423",
-    "letterboxdUrl": "https://letterboxd.com/film/die-hard-2/",
-    "providers": {
-      "abonnement": [
-        "Disney Plus"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:05.215Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.728Z",
-    "lastChecked": "2026-08-31T09:02:17.282Z"
-  },
-  {
     "tmdbId": 1119449,
     "title": "Good Luck, Have Fun, Don't Die",
     "year": "2026",
