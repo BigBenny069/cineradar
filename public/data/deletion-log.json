@@ -119,5 +119,12 @@
     "tmdbId": 942,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:22:54.628Z"
+  },
+  {
+    "title": "L'Arme fatale 3",
+    "year": 1992,
+    "tmdbId": 943,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:23:04.803Z"
   }
 ]
