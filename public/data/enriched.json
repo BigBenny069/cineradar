@@ -1616,48 +1616,6 @@
     "lastChecked": "2026-08-31T09:02:14.787Z"
   },
   {
-    "tmdbId": 9314,
-    "title": "1984",
-    "year": "1984",
-    "director": "Michael Radford",
-    "poster": "https://image.tmdb.org/t/p/w500/5knDUJ2M56BLrGMnDpAY8r6YhEW.jpg",
-    "synopsis": "Manipulant et contrôlant les moindres détails de la vie de ses sujets, Big Brother est le chef spirituel d'Oceania, l'un des trois États dont la capitale est Londres. Le bureaucrate Winston Smith travaille dans l'un des départements. Mais un jour il tombe amoureux de Julia, ce qui est un crime. Tous les deux vont tenter de s'échapper, mais dans ce monde cauchemardesque divisé en trois, tout être qui se révolte est brisé.",
-    "genres": [
-      "Drame",
-      "Science-Fiction",
-      "Thriller"
-    ],
-    "cast": [
-      "John Hurt",
-      "Richard Burton",
-      "Suzanna Hamilton",
-      "Cyril Cusack",
-      "Gregor Fisher"
-    ],
-    "tmdbRating": 6.787,
-    "tmdbVotes": 1694,
-    "letterboxdRating": 3.37,
-    "letterboxdVotes": 89908,
-    "imdbId": "tt0087803",
-    "letterboxdUrl": "https://letterboxd.com/film/nineteen-eighty-four-1984/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Amazon Video",
-        "Pathé Home"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:02.221Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.755Z",
-    "lastChecked": "2026-08-31T09:02:15.020Z"
-  },
-  {
     "tmdbId": 12101,
     "title": "Soleil vert",
     "year": "1973",
