@@ -26,6 +26,6 @@ jobs:
         run: |
           git config user.name "cineradar-bot"
           git config user.email "bot@cineradar.local"
-          git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json data/movies.json
+          git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json data/movies.json
           git commit -m "Update movie data" || echo "Rien à mettre à jour"
           git push
