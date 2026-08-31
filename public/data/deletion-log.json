@@ -168,5 +168,12 @@
     "tmdbId": 180299,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:28:25.184Z"
+  },
+  {
+    "title": "Une Journée en enfer",
+    "year": 1995,
+    "tmdbId": 1572,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:29:08.541Z"
   }
 ]
