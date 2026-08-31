@@ -2392,52 +2392,6 @@
     "lastChecked": "2026-08-31T09:02:18.530Z"
   },
   {
-    "tmdbId": 1054867,
-    "title": "Une Bataille après l'autre",
-    "year": "2025",
-    "director": "Paul Thomas Anderson",
-    "poster": "https://image.tmdb.org/t/p/w500/vfoxYHHpSOadhOFCmNbtLG2WcUy.jpg",
-    "synopsis": "Bob Ferguson est un ancien révolutionnaire paranoïaque et désabusé, qui a jadis œuvré avec son ex, Perfidia, au sein du French 75, un groupe militant voué au renversement du gouvernement américain. Seize ans plus tard, Bob vit seul avec sa fille, Willa, quand celle-ci disparaît soudainement. Bob soupçonne son vieil ennemi d’antan, le Colonel Steven J. Lockjaw, d’être responsable de sa disparition. Il décide alors de renouer avec ses anciens frères d’armes pour retrouver sa fille, quitte à confronter les fantômes de son passé.",
-    "genres": [
-      "Thriller",
-      "Crime",
-      "Comédie"
-    ],
-    "cast": [
-      "Leonardo DiCaprio",
-      "Sean Penn",
-      "Chase Infiniti",
-      "Benicio del Toro",
-      "Regina Hall"
-    ],
-    "tmdbRating": 7.335,
-    "tmdbVotes": 4160,
-    "letterboxdRating": 4.12,
-    "letterboxdVotes": 2834512,
-    "imdbId": "tt30144839",
-    "letterboxdUrl": "https://letterboxd.com/film/one-battle-after-another/",
-    "providers": {
-      "abonnement": [
-        "Canal+"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:09.193Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:48.279Z",
-    "lastChecked": "2026-08-31T09:02:18.757Z"
-  },
-  {
     "tmdbId": 687163,
     "title": "Projet Dernière Chance",
     "year": "2026",
