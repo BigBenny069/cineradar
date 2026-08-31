@@ -1260,51 +1260,6 @@
     "lastChecked": "2026-08-31T09:02:13.866Z"
   },
   {
-    "tmdbId": 9886,
-    "title": "Johnny Mnemonic",
-    "year": "1995",
-    "director": "Robert Longo",
-    "poster": "https://image.tmdb.org/t/p/w500/iH8Jgi8qvb7pnBfI8fVGaUbyRna.jpg",
-    "synopsis": "Au XXIe siècle, le piratage des réseaux faisant rage, un puissant consortium utilise des livreurs de données au cerveau aménagé afin de stocker en toute sécurité des données trop sensibles pour les réseaux informatiques classiques.. Johnny est l'un de ces coursiers.\r Lors d'une livraison, il accepte un paquet qui dépasse les limites de sécurité de l'implant et qui contient non seulement des données qui le tueront s'il ne les retire pas à temps, mais également des informations bien plus importantes et précieuses qu'il ne l'avait jamais imaginé. Il se lance alors dans une course contre la montre pour éviter les assassins envoyés pour le tuer et supprimer les données avant qu'elles ne mettent fin à sa vie.",
-    "genres": [
-      "Science-Fiction",
-      "Action",
-      "Aventure"
-    ],
-    "cast": [
-      "Keanu Reeves",
-      "Dina Meyer",
-      "Takeshi Kitano",
-      "Ice-T",
-      "Dolph Lundgren"
-    ],
-    "tmdbRating": 5.766,
-    "tmdbVotes": 1576,
-    "letterboxdRating": 2.84,
-    "letterboxdVotes": 68501,
-    "imdbId": "tt0113481",
-    "letterboxdUrl": "https://letterboxd.com/film/johnny-mnemonic/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads"
-      ],
-      "vod": [
-        "Sony Pictures Core Amazon Channel",
-        "Apple TV Store",
-        "Sooner",
-        "Amazon Video",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Canal VOD"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:00.274Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.462Z",
-    "lastChecked": "2026-08-31T09:02:14.025Z"
-  },
-  {
     "tmdbId": 944,
     "title": "L'Arme fatale 4",
     "year": "1998",
