@@ -1,12 +1,5 @@
 [
   {
-    "key": "tmdb:19:benoit",
-    "title": "Metropolis",
-    "person": "benoit",
-    "reason": "deja_present",
-    "detectedAt": "2026-08-31T09:01:57.533Z"
-  },
-  {
     "key": "tmdb:9323:benoit",
     "title": "Ghost in the Shell",
     "person": "benoit",
