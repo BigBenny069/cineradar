@@ -1223,49 +1223,6 @@
     "lastChecked": "2026-08-31T09:02:13.344Z"
   },
   {
-    "tmdbId": 149,
-    "title": "Akira",
-    "year": "1988",
-    "director": "Katsuhiro Ōtomo",
-    "poster": "https://image.tmdb.org/t/p/w500/8fCn7TwTe0Z4fTugIiLssX6UcHe.jpg",
-    "synopsis": "Tetsuo, un adolescent ayant vécu une enfance difficile, est la victime d'expériences visant à développer les capacités psychiques qui dorment en chacun de nous. Ainsi doté d'une puissance que lui-même ne peut imaginer, Tetsuo décide de partir en guerre contre le monde qui l'a opprimé. Dès lors, il se retrouve au cœur d'une légende populaire qui annonce le retour prochain d'Akira, un enfant aux pouvoirs extraordinaires censé délivrer Tokyo du chaos ...",
-    "genres": [
-      "Animation",
-      "Science-Fiction",
-      "Action"
-    ],
-    "cast": [
-      "Mitsuo Iwata",
-      "Nozomu Sasaki",
-      "Mami Koyama",
-      "石田太郎",
-      "Mizuho Suzuki"
-    ],
-    "tmdbRating": 7.939,
-    "tmdbVotes": 4937,
-    "letterboxdRating": 4.28,
-    "letterboxdVotes": 904732,
-    "imdbId": "tt0094625",
-    "letterboxdUrl": "https://letterboxd.com/film/akira/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads"
-      ],
-      "vod": [
-        "Animation Digital Network",
-        "Sooner",
-        "Molotov TV",
-        "SFR Play",
-        "Anime Digital Network Amazon Channel"
-      ]
-    },
-    "availableSince": "2026-08-21T20:11:59.610Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.176Z",
-    "lastChecked": "2026-08-31T09:02:13.566Z"
-  },
-  {
     "tmdbId": 83666,
     "title": "Moonrise Kingdom",
     "year": "2012",
