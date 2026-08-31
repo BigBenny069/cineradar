@@ -6,11 +6,42 @@ function normalize(str) {
     .trim();
 }
 
+async function logDeletion({ title, year, tmdbId, reason, repo, token }) {
+  try {
+    const logUrl = `https://api.github.com/repos/${repo}/contents/public/data/deletion-log.json`;
+    const getRes = await fetch(logUrl, {
+      headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" },
+    });
+    let log = [];
+    let sha = null;
+    if (getRes.ok) {
+      const fileData = await getRes.json();
+      log = JSON.parse(Buffer.from(fileData.content, "base64").toString("utf-8"));
+      sha = fileData.sha;
+    }
+    log.push({ title, year, tmdbId: tmdbId || null, reason: reason || "manuel", deletedAt: new Date().toISOString() });
+    // Plafonné aux 100 suppressions les plus récentes
+    const trimmed = log.slice(-100);
+    const body = {
+      message: `Journal : suppression de "${title}" (${reason || "manuel"})`,
+      content: Buffer.from(JSON.stringify(trimmed, null, 2), "utf-8").toString("base64"),
+    };
+    if (sha) body.sha = sha;
+    await fetch(logUrl, {
+      method: "PUT",
+      headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" },
+      body: JSON.stringify(body),
+    });
+  } catch (e) {
+    console.log("Journalisation de la suppression échouée (pas grave) :", e.message);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
-  const { title, year, tmdbId, password } = req.body || {};
+  const { title, year, tmdbId, reason, password } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     return res.status(401).json({ error: "Mot de passe incorrect" });
   }
@@ -99,6 +130,17 @@ export default async function handler(req, res) {
     } catch (e) {
       console.log("Retrait instantané de enriched.json échoué (pas grave) :", e.message);
     }
+
+    // Trace dans le journal de suppression, visible dans Historique — sert
+    // à repérer facilement un retrait inattendu.
+    await logDeletion({
+      title: removed.title,
+      year: removed.year,
+      tmdbId: removed.tmdbId,
+      reason: reason || "manuel",
+      repo,
+      token,
+    });
 
     return res.status(200).json({ success: true });
   } catch (e) {
