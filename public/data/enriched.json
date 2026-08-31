@@ -1945,46 +1945,6 @@
     "lastChecked": "2026-08-31T09:02:21.958Z"
   },
   {
-    "tmdbId": 12639,
-    "title": "Le Retour des sept",
-    "year": "1966",
-    "director": "Burt Kennedy",
-    "poster": "https://image.tmdb.org/t/p/w500/rMJskaZd0ePfvPrWsM76y0yvUGe.jpg",
-    "synopsis": "Chico, un ancien tueur, devenu paysan après avoir défendu naguère son village contre d'autres bandits, est enlevé avec tous les autres hommes de son village. Pour le sauver, sa femme part à la recherche des anciens compagnons d'armes de son mari...",
-    "genres": [
-      "Western",
-      "Action",
-      "Drame"
-    ],
-    "cast": [
-      "Yul Brynner",
-      "Robert Fuller",
-      "Julián Mateos",
-      "Warren Oates",
-      "Claude Akins"
-    ],
-    "tmdbRating": 6.112,
-    "tmdbVotes": 316,
-    "letterboxdRating": 2.82,
-    "letterboxdVotes": 3345,
-    "imdbId": "tt0060897",
-    "letterboxdUrl": "https://letterboxd.com/film/return-of-the-seven/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Amazon Video"
-      ]
-    },
-    "availableSince": "2026-08-31T06:04:06.976Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-31T06:03:53.342Z",
-    "lastChecked": "2026-08-31T09:02:22.179Z"
-  },
-  {
     "tmdbId": 576,
     "title": "La Horde sauvage",
     "year": "1969",
