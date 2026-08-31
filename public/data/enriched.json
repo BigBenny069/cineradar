@@ -3021,56 +3021,6 @@
     "lastChecked": "2026-08-31T09:02:22.489Z"
   },
   {
-    "tmdbId": 335,
-    "title": "Il était une fois dans l'Ouest",
-    "year": "1968",
-    "director": "Sergio Leone",
-    "poster": "https://image.tmdb.org/t/p/w500/xjXKy5b2M3fDelAQItIswcDNvwm.jpg",
-    "synopsis": "Alors que les constructeurs de chemins de fer traversent sans relâche le désert de l'Arizona en direction de la mer, Jill arrive dans la petite ville de Flagstone avec l'intention de commencer une nouvelle vie.",
-    "genres": [
-      "Drame",
-      "Western"
-    ],
-    "cast": [
-      "Claudia Cardinale",
-      "Henry Fonda",
-      "Jason Robards",
-      "Charles Bronson",
-      "Gabriele Ferzetti"
-    ],
-    "tmdbRating": 8.268,
-    "tmdbVotes": 5025,
-    "letterboxdRating": 4.39,
-    "letterboxdVotes": 304937,
-    "imdbId": "tt0064116",
-    "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-the-west/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek"
-      ]
-    },
-    "availableSince": "2026-08-31T06:04:07.374Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-31T06:03:53.408Z",
-    "lastChecked": "2026-08-31T09:02:22.644Z"
-  },
-  {
     "tmdbId": 18239,
     "title": "Twilight, chapitre 2 : Tentation",
     "year": "2009",
