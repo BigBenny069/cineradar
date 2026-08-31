@@ -87,6 +87,16 @@ export default async function handler(req, res) {
       await githubPut(cleanupUrl, token, filteredCleanup, cleanupSha, `Nettoyage : file d'attente mise à jour`);
     }
 
+    // 4. Trace dans le journal de suppression, visible dans Historique
+    try {
+      const logUrl = `https://api.github.com/repos/${repo}/contents/public/data/deletion-log.json`;
+      const { content: log, sha: logSha } = await githubGet(logUrl, token);
+      const newLog = [...(log || []), { title, year, tmdbId: tmdbId || null, reason: "cinemaison", deletedAt: new Date().toISOString() }];
+      await githubPut(logUrl, token, newLog.slice(-100), logSha, `Journal : suppression de "${title}" (cinemaison)`);
+    } catch (e) {
+      console.log("Journalisation de la suppression échouée (pas grave) :", e.message);
+    }
+
     return res.status(200).json({ success: true });
   } catch (e) {
     return res.status(500).json({ error: e.message });
