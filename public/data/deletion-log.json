@@ -182,5 +182,12 @@
     "tmdbId": 311,
     "reason": "manuel",
     "deletedAt": "2026-08-31T13:09:48.658Z"
+  },
+  {
+    "title": "Le Retour des sept",
+    "year": 1966,
+    "tmdbId": 12639,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T13:12:01.397Z"
   }
 ]
