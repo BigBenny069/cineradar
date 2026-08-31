@@ -1594,6 +1594,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
       title: movie.title,
       year: movie.year,
       tmdbId: movie.tmdbId,
+      reason: "cinemaison",
     });
     if (deleteResult.ok) {
       setCinemaisonStatus("success");
@@ -2126,29 +2127,9 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
     .slice(0, 5);
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto", position: "relative", overflow: "hidden" }}>
-      {CURRENT_THEME === "springfield" &&
-        [
-          [-30, 55, 0.9],
-          [190, 40, 0.7],
-          [-40, 145, 0.6],
-          [210, 160, 0.85],
-          [60, 230, 0.5],
-          [-20, 520, 0.65],
-          [200, 560, 0.55],
-          [40, 780, 0.6],
-          [-30, 980, 0.5],
-        ].map(([x, y, s], i) => (
-          <div key={i} style={{ position: "absolute", left: x, top: y, zIndex: 0, pointerEvents: "none" }}>
-            <div style={{ position: "absolute", background: "#fff", borderRadius: 50, width: 130 * s, height: 38 * s, left: 0, top: 26 * s }} />
-            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 55 * s, height: 55 * s, left: 5 * s, top: 0 }} />
-            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 75 * s, height: 75 * s, left: 35 * s, top: -14 * s }} />
-            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 58 * s, height: 58 * s, left: 82 * s, top: 2 * s }} />
-            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 40 * s, height: 40 * s, left: 105 * s, top: 14 * s }} />
-          </div>
-        ))}
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
       <Header />
-      <div style={{ padding: "0 16px 90px", position: "relative", zIndex: 2 }}>
+      <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           GUICHET
         </div>
@@ -2497,6 +2478,31 @@ const WATCHLIST_REASON_LABELS = {
   deja_recherche: "Déjà recherché par le passé (supprimé depuis)",
 };
 
+const DELETION_REASON_LABELS = {
+  manuel: "Suppression manuelle",
+  cinemaison: "Envoyé vers CinéMaison",
+  watchlist: "Plus sur la watchlist",
+};
+
+function DeletionLogItem({ item }) {
+  return (
+    <div style={{ padding: 10, background: T.surface, border: `1px solid ${T.line}`, borderRadius: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
+        <div style={{ fontFamily: F.serif, fontSize: 14, color: T.cream }}>
+          {item.title} {item.year ? `(${item.year})` : ""}
+        </div>
+        <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted, flexShrink: 0 }}>
+          {formatRelativeDate(item.deletedAt)}
+        </div>
+      </div>
+      <div style={{ fontFamily: F.mono, fontSize: 10, color: T.muted, marginTop: 3 }}>
+        {DELETION_REASON_LABELS[item.reason] || item.reason}
+        {item.wantedBy ? ` — ${item.wantedBy === "romy" ? "Romy" : "Benoit"}` : ""}
+      </div>
+    </div>
+  );
+}
+
 function CinemaisonCleanupItem({ item, onDeleted }) {
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
@@ -2725,7 +2731,7 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
   );
 }
 
-function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, onOpen, onEditUnmatched }) {
+function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, deletionLog, onOpen, onEditUnmatched }) {
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
   const [localWatchlistReview, setLocalWatchlistReview] = useState(watchlistReview || []);
   const [localCinemaisonCleanup, setLocalCinemaisonCleanup] = useState(cinemaisonCleanup || []);
@@ -2813,6 +2819,31 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, on
               ))}
             </div>
           </div>
+        )}
+
+        {deletionLog.length > 0 && (
+          <details style={{ marginBottom: 24 }}>
+            <summary
+              style={{
+                fontFamily: F.mono,
+                fontSize: 11,
+                color: T.muted,
+                letterSpacing: 1,
+                marginBottom: 10,
+                cursor: "pointer",
+              }}
+            >
+              SUPPRESSIONS RÉCENTES ({deletionLog.length})
+            </summary>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 10 }}>
+              {[...deletionLog]
+                .sort((a, b) => new Date(b.deletedAt) - new Date(a.deletedAt))
+                .slice(0, 30)
+                .map((item, i) => (
+                  <DeletionLogItem key={`${item.title}-${item.deletedAt}-${i}`} item={item} />
+                ))}
+            </div>
+          </details>
         )}
 
         {sorted.length === 0 ? (
@@ -3524,6 +3555,7 @@ export default function App() {
   const [history, setHistory] = useState([]);
   const [watchlistReview, setWatchlistReview] = useState([]);
   const [cinemaisonCleanup, setCinemaisonCleanup] = useState([]);
+  const [deletionLog, setDeletionLog] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [offline, setOffline] = useState(false);
@@ -3568,13 +3600,17 @@ export default function App() {
     const cinemaisonCleanupPromise = fetch(`/data/cinemaison-cleanup.json?t=${Date.now()}`)
       .then((res) => (res.ok ? res.json() : []))
       .catch(() => []);
-    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise])
-      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData]) => {
+    const deletionLogPromise = fetch(`/data/deletion-log.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise, deletionLogPromise])
+      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData, deletionLogData]) => {
         setMovies(moviesData);
         setUnmatched(unmatchedData);
         setHistory(historyData);
         setWatchlistReview(watchlistReviewData);
         setCinemaisonCleanup(cinemaisonCleanupData);
+        setDeletionLog(deletionLogData);
         setError(null);
         setOffline(false);
         hasDataRef.current = true;
@@ -3586,6 +3622,7 @@ export default function App() {
           history: historyData,
           watchlistReview: watchlistReviewData,
           cinemaisonCleanup: cinemaisonCleanupData,
+          deletionLog: deletionLogData,
           cachedAt: now,
         });
       })
@@ -3610,6 +3647,7 @@ export default function App() {
       setHistory(cached.history || []);
       setWatchlistReview(cached.watchlistReview || []);
       setCinemaisonCleanup(cached.cinemaisonCleanup || []);
+      setDeletionLog(cached.deletionLog || []);
       setLastSyncedAt(cached.cachedAt || null);
       hasDataRef.current = true;
       setLoading(false);
@@ -3702,6 +3740,7 @@ export default function App() {
             unmatched={unmatched}
             watchlistReview={watchlistReview}
             cinemaisonCleanup={cinemaisonCleanup}
+            deletionLog={deletionLog}
             onOpen={setSelected}
             onEditUnmatched={(item) => {
               setEditingMovie({
