@@ -1660,61 +1660,6 @@
     "lastChecked": "2026-08-31T09:02:16.054Z"
   },
   {
-    "tmdbId": 157336,
-    "title": "Interstellar",
-    "year": "2014",
-    "director": "Christopher Nolan",
-    "poster": "https://image.tmdb.org/t/p/w500/1pnigkWWy8W032o9TKDneBa3eVK.jpg",
-    "synopsis": "Dans un futur proche, face à une Terre exsangue, un groupe d’explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque‐là infranchissables. Leur but : trouver un nouveau foyer pour l’humanité.",
-    "genres": [
-      "Aventure",
-      "Drame",
-      "Science-Fiction"
-    ],
-    "cast": [
-      "Matthew McConaughey",
-      "Anne Hathaway",
-      "Michael Caine",
-      "Jessica Chastain",
-      "Casey Affleck"
-    ],
-    "tmdbRating": 8.486,
-    "tmdbVotes": 40969,
-    "letterboxdRating": 4.46,
-    "letterboxdVotes": 6328411,
-    "imdbId": "tt0816692",
-    "letterboxdUrl": "https://letterboxd.com/film/interstellar/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Amazon Prime Video",
-        "Netflix Standard with Ads",
-        "HBO Max",
-        "Amazon Prime Video with Ads",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:04.158Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.253Z",
-    "lastChecked": "2026-08-31T09:02:16.250Z"
-  },
-  {
     "tmdbId": 311,
     "title": "Il était une fois en Amérique",
     "year": "1984",
