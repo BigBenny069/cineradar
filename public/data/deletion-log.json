@@ -147,5 +147,12 @@
     "tmdbId": 1140535,
     "reason": "cinemaison",
     "deletedAt": "2026-08-31T12:25:45.401Z"
+  },
+  {
+    "title": "Super 8",
+    "year": 2011,
+    "tmdbId": 37686,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:27:09.527Z"
   }
 ]
