@@ -1366,59 +1366,6 @@
     "lastChecked": "2026-08-31T09:02:14.548Z"
   },
   {
-    "tmdbId": 942,
-    "title": "L'Arme fatale 2",
-    "year": "1989",
-    "director": "Richard Donner",
-    "poster": "https://image.tmdb.org/t/p/w500/z4Vd5YgIztiLOkpcmAlj7yhhD6R.jpg",
-    "synopsis": "Les explosifs Riggs et Murtaugh mettent à jour un énorme trafic de drogue dirigé par Arjen Rudd, de l'ambassade sudafricaine. Ce n'est certainement pas l'immunité diplomatique qui va les géner, mais peut-être plutôt ce bavard de Léo Getz, petit comptable magouilleur dont ils sont chargés de la protection.",
-    "genres": [
-      "Action",
-      "Thriller",
-      "Crime"
-    ],
-    "cast": [
-      "Mel Gibson",
-      "Danny Glover",
-      "Joe Pesci",
-      "Joss Ackland",
-      "Derrick O'Connor"
-    ],
-    "tmdbRating": 7.045,
-    "tmdbVotes": 3845,
-    "letterboxdRating": 3.64,
-    "letterboxdVotes": 115143,
-    "imdbId": "tt0097733",
-    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-2/",
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel ",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:01.877Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.680Z",
-    "lastChecked": "2026-08-31T09:02:14.787Z"
-  },
-  {
     "tmdbId": 12101,
     "title": "Soleil vert",
     "year": "1973",
