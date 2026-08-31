@@ -2124,5 +2124,49 @@
     "wantedBy": "benoit",
     "updatedAt": "2026-08-31T09:02:03.618Z",
     "lastChecked": "2026-08-31T09:02:22.802Z"
+  },
+  {
+    "tmdbId": 311,
+    "title": "Il était une fois en Amérique",
+    "year": "1984",
+    "director": "Sergio Leone",
+    "poster": "https://image.tmdb.org/t/p/w500/qfuO1yue5bQnocFiOUM07dwLdmo.jpg",
+    "synopsis": "À New York, à la fin de la prohibition, Noodles se réfugie dans une fumerie d'opium après un coup qui a mal tourné. Plus de trente ans plus tard, il est de retour en ville et se remémore son passé de gangster : de sa jeunesse de voyou dans les années 20, marquée par sa rencontre avec son ami Max et leurs nombreux trafics dans le ghetto juif de la ville, jusqu'à la période de prohibition où leur bande, liée par une profonde amitié, s'enrichit et marque son ascension dans la pègre grâce au commerce illégal d'alcool. Noodles se rappelle aussi de sa relation amoureuse échouée avec Deborah durant toute sa vie.",
+    "genres": [
+      "Drame",
+      "Crime"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "James Woods",
+      "Elizabeth McGovern",
+      "Joe Pesci",
+      "Burt Young"
+    ],
+    "tmdbRating": 8.375,
+    "tmdbVotes": 6176,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0087843",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/311/",
+    "providers": {
+      "abonnement": [
+        "Disney Plus"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-08-31T13:11:01.685Z",
+    "wantedBy": null,
+    "updatedAt": "2026-08-31T13:11:00.607Z",
+    "lastChecked": "2026-08-31T13:11:01.685Z"
   }
 ]
