@@ -1403,59 +1403,6 @@
     "lastChecked": "2026-08-31T09:02:15.856Z"
   },
   {
-    "tmdbId": 612,
-    "title": "Munich",
-    "year": "2005",
-    "director": "Steven Spielberg",
-    "poster": "https://image.tmdb.org/t/p/w500/mCWtxKSrdSjRWhFl4Mf3UDrkpdM.jpg",
-    "synopsis": "Jeux Olympiques de Munich, 5 septembre 1972. Un commando de terroristes palestiniens prend en otages puis exécute 11 membres de l'équipe sportive israélienne, sous l'œil des téléspectateurs du monde entier. Inspiré de faits réels, Munich retrace le parcours de 5 agents israéliens chargés de traquer les 11 palestiniens considérés comme les commanditaires de l'attentat. Pour mener à bien cette mission, les 5 hommes devront renoncer du jour au lendemain à leur identité, et s’exposer à tout moment à la vengeance de leurs cibles.",
-    "genres": [
-      "Drame",
-      "Histoire",
-      "Thriller"
-    ],
-    "cast": [
-      "Eric Bana",
-      "Daniel Craig",
-      "Ciarán Hinds",
-      "Mathieu Kassovitz",
-      "Hanns Zischler"
-    ],
-    "tmdbRating": 7.129,
-    "tmdbVotes": 3072,
-    "letterboxdRating": 3.82,
-    "letterboxdVotes": 152737,
-    "imdbId": "tt0408306",
-    "letterboxdUrl": "https://letterboxd.com/film/munich/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel ",
-        "Paramount Plus",
-        "Paramount+ Amazon Channel",
-        "Paramount Plus Premium"
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:03.681Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.180Z",
-    "lastChecked": "2026-08-31T09:02:16.054Z"
-  },
-  {
     "tmdbId": 311,
     "title": "Il était une fois en Amérique",
     "year": "1984",
