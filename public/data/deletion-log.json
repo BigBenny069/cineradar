@@ -154,5 +154,12 @@
     "tmdbId": 37686,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:27:09.527Z"
+  },
+  {
+    "title": "The Irishman",
+    "year": 2019,
+    "tmdbId": 398978,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:27:48.653Z"
   }
 ]
