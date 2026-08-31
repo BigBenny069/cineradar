@@ -1312,60 +1312,6 @@
     "lastChecked": "2026-08-31T09:02:14.278Z"
   },
   {
-    "tmdbId": 943,
-    "title": "L'Arme fatale 3",
-    "year": "1992",
-    "director": "Richard Donner",
-    "poster": "https://image.tmdb.org/t/p/w500/zsrpmK8H9LokswJYJaUKLL6yHEB.jpg",
-    "synopsis": "Le sergent Murtaugh est à deux doigts de la retraite, mais une imprudence de son partenaire Riggs leur vaut d'être rétrogradés au rang de simple flic. Ils n'en décident pas moins de continuer à leur compte l'enquête commencée sur un trafic d'armes volées dans leur commissariat, en compagnie de Lorna Cole, énergique inspectrice de l'IGS.",
-    "genres": [
-      "Action",
-      "Thriller",
-      "Crime"
-    ],
-    "cast": [
-      "Mel Gibson",
-      "Danny Glover",
-      "Joe Pesci",
-      "Rene Russo",
-      "Stuart Wilson"
-    ],
-    "tmdbRating": 6.727,
-    "tmdbVotes": 3341,
-    "letterboxdRating": 3.26,
-    "letterboxdVotes": 86043,
-    "imdbId": "tt0104714",
-    "letterboxdUrl": "https://letterboxd.com/film/lethal-weapon-3/",
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel ",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:01.507Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:46.609Z",
-    "lastChecked": "2026-08-31T09:02:14.548Z"
-  },
-  {
     "tmdbId": 12101,
     "title": "Soleil vert",
     "year": "1973",
