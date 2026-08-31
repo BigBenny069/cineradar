@@ -56,5 +56,12 @@
     "tmdbId": 425909,
     "reason": "cinemaison",
     "deletedAt": "2026-08-31T12:03:55.789Z"
+  },
+  {
+    "title": "Chérie, j'ai agrandi le bébé",
+    "year": 1992,
+    "tmdbId": 11158,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:04:13.157Z"
   }
 ]
