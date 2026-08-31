@@ -2859,43 +2859,6 @@
     "lastChecked": "2026-08-31T09:02:21.293Z"
   },
   {
-    "tmdbId": 1018332,
-    "title": "L'affaire de la mutinerie du Caine",
-    "year": "2023",
-    "director": "William Friedkin",
-    "poster": "https://image.tmdb.org/t/p/w500/6hQg8uZW0TyHlm1uKeMZRXrgKVy.jpg",
-    "synopsis": "Un avocat défend à contrecœur un officier de marine qui a pris le contrôle de l'USS Caine pendant une violente tempête. Cependant, au fur et à mesure que la cour martiale avance, il se demande de plus en plus s'il s'agit vraiment d'une mutinerie.",
-    "genres": [
-      "Drame",
-      "Guerre"
-    ],
-    "cast": [
-      "Kiefer Sutherland",
-      "Jason Clarke",
-      "Jake Lacy",
-      "Monica Raymund",
-      "Lance Reddick"
-    ],
-    "tmdbRating": 6.704,
-    "tmdbVotes": 142,
-    "letterboxdRating": 3.58,
-    "letterboxdVotes": 15424,
-    "imdbId": "tt24249946",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/1018332/",
-    "providers": {
-      "abonnement": [
-        "Paramount Plus",
-        "Paramount+ Amazon Channel",
-        "Paramount Plus Premium"
-      ],
-      "vod": []
-    },
-    "availableSince": "2026-08-27T16:50:03.797Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-27T16:49:28.347Z",
-    "lastChecked": "2026-08-31T09:02:21.547Z"
-  },
-  {
     "tmdbId": 399057,
     "title": "Mise à mort du cerf sacré",
     "year": "2017",
