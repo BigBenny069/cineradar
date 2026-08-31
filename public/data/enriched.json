@@ -1153,61 +1153,6 @@
     "lastChecked": "2026-08-31T09:02:12.842Z"
   },
   {
-    "tmdbId": 62,
-    "title": "2001 : L'Odyssée de l'espace",
-    "year": "1968",
-    "director": "Stanley Kubrick",
-    "poster": "https://image.tmdb.org/t/p/w500/uwd79G32FPIL5B9UkRgSZvS0gbe.jpg",
-    "synopsis": "Aux temps préhistoriques, une petite tribu d’hommes‐singes installée au milieu de rochers arides lutte difficilement pour la vie. Un matin, ils trouvent devant eux une mystérieuse dalle noire monolithique. L’un des singes touche la pierre et apprend alors à se servir d’un os de quadrupède pour tuer ses ennemis. Quatre millions d’années plus tard, en 2001, un savant de l’espace, le Dr Heywood Floyd, débarque sur la lune pour examiner une dalle noire semblable à celle des singes, qui était enterrée sous la surface de l’astre. Selon les premières observations, l’objet émettrait un signal mystérieux…",
-    "genres": [
-      "Science-Fiction",
-      "Mystère",
-      "Aventure"
-    ],
-    "cast": [
-      "Keir Dullea",
-      "Gary Lockwood",
-      "William Sylvester",
-      "Douglas Rain",
-      "Daniel Richter"
-    ],
-    "tmdbRating": 8.045,
-    "tmdbVotes": 12878,
-    "letterboxdRating": null,
-    "letterboxdVotes": null,
-    "imdbId": "tt0062622",
-    "letterboxdUrl": null,
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel ",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Sooner",
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-08-21T20:04:35.282Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:04:29.031Z",
-    "lastChecked": "2026-08-31T09:02:12.938Z"
-  },
-  {
     "tmdbId": 1124142,
     "title": "Oklahoma Honey",
     "year": "2026",
