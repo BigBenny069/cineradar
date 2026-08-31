@@ -982,43 +982,6 @@
     "lastChecked": "2026-08-31T09:02:12.318Z"
   },
   {
-    "tmdbId": 398978,
-    "title": "The Irishman",
-    "year": "2019",
-    "director": "Martin Scorsese",
-    "poster": "https://image.tmdb.org/t/p/w500/W9xPACmHuhFC0xHwpyFvGbapUT.jpg",
-    "synopsis": "Cette saga sur le crime organisé dans l'Amérique de l'après-guerre est racontée du point de vue de Frank Sheeran, un ancien soldat de la Seconde Guerre mondiale devenu escroc et tueur à gages ayant travaillé aux côtés de quelques-unes des plus grandes figures du 20e siècle. Couvrant plusieurs décennies, le film relate l'un des mystères insondables de l'histoire des États-Unis : la disparition du légendaire dirigeant syndicaliste Jimmy Hoffa. Il offre également une plongée monumentale dans les arcanes de la mafia en révélant ses rouages, ses luttes internes et ses liens avec le monde politique.",
-    "genres": [
-      "Crime",
-      "Drame",
-      "Histoire"
-    ],
-    "cast": [
-      "Robert De Niro",
-      "Al Pacino",
-      "Joe Pesci",
-      "Harvey Keitel",
-      "Ray Romano"
-    ],
-    "tmdbRating": 7.571,
-    "tmdbVotes": 7675,
-    "letterboxdRating": 3.92,
-    "letterboxdVotes": 973511,
-    "imdbId": "tt1302006",
-    "letterboxdUrl": "https://letterboxd.com/film/the-irishman-2019/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads"
-      ],
-      "vod": []
-    },
-    "availableSince": "2026-08-18T04:26:32.278Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-18T04:26:10.289Z",
-    "lastChecked": "2026-08-31T09:02:12.602Z"
-  },
-  {
     "tmdbId": 20424,
     "title": "Les Envahisseurs de la planète rouge",
     "year": "1953",
