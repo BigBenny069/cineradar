@@ -112,5 +112,12 @@
     "tmdbId": 9886,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:21:21.382Z"
+  },
+  {
+    "title": "L'Arme fatale 2",
+    "year": 1989,
+    "tmdbId": 942,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T12:22:54.628Z"
   }
 ]
