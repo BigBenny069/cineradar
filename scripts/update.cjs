@@ -85,9 +85,27 @@ function loadHistory() {
   }
 }
 
+// Journal des suppressions — trace visible dans Historique de toute fiche
+// retirée de CinéRadar (manuellement, après envoi vers CinéMaison, ou
+// automatiquement car sortie d'une watchlist), pour repérer facilement un
+// souci éventuel (ex: retrait automatique inattendu).
+function loadDeletionLog() {
+  try {
+    const raw = fs.readFileSync("public/data/deletion-log.json", "utf-8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
 async function findMovie(title, year) {
   const url = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&year=${year}&language=fr-FR`;
   const res = await fetch(url);
+  if (!res.ok) {
+    console.log(`  ⚠️ TMDB a répondu ${res.status} pour la recherche de "${title}" — ignoré pour cette fois.`);
+    return null;
+  }
   const data = await res.json();
   return data.results?.[0] || null;
 }
@@ -99,6 +117,10 @@ async function findMovie(title, year) {
 async function findMovieByTitleOnly(title) {
   const url = `${BASE}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}&language=fr-FR`;
   const res = await fetch(url);
+  if (!res.ok) {
+    console.log(`  ⚠️ TMDB a répondu ${res.status} pour la recherche de "${title}" — ignoré pour cette fois.`);
+    return null;
+  }
   const data = await res.json();
   return data.results?.[0] || null;
 }
@@ -234,7 +256,7 @@ function loadWatchlistDismissed() {
 async function syncWatchlists(inputMovies, history) {
   const watchlists = SETTINGS.letterboxdWatchlists || {};
   const people = Object.entries(watchlists).filter(([, username]) => username && username.trim());
-  if (people.length === 0) return { newEntries: [], review: [] };
+  if (people.length === 0) return { newEntries: [], review: [], removedTmdbIds: [] };
 
   const knownTitleYear = new Set(
     inputMovies.map((m) => `${normalize(m.title)}::${m.year}`).concat(history.map((h) => `${normalize(h.title)}::${h.year}`))
@@ -251,71 +273,106 @@ async function syncWatchlists(inputMovies, history) {
   const newEntries = [];
   const review = [];
 
+  // Utilisés pour détecter les retraits (film plus sur la watchlist) —
+  // seules les personnes dont le scan a trouvé AU MOINS un film comptent
+  // comme "fiables" ce coup-ci. Si le scan d'une watchlist ne trouve rien
+  // du tout, on ne supprime rien pour elle par sécurité (mieux vaut garder
+  // un film en trop qu'en perdre par erreur suite à un scan raté).
+  const currentWatchlistTmdbIds = new Set();
+  const reliableScanPeople = new Set();
+
   for (const [person, username] of people) {
     console.log(`Lecture de la watchlist Letterboxd de ${person} (${username})...`);
     const items = await fetchFullWatchlist(username);
     console.log(`  ${items.length} film(s) trouvé(s) sur la watchlist.`);
+    if (items.length === 0) continue;
+    reliableScanPeople.add(person);
 
     for (const { title, year, slug } of items) {
-      // Repli rapide : si le titre normalisé existe déjà tel quel (n'importe
-      // quelle année), pas la peine d'interroger TMDB à nouveau.
-      const alreadyKnownByTitle = [...knownTitleYear].some((k) => k.startsWith(`${normalize(title)}::`));
-      if (alreadyKnownByTitle) continue;
+      try {
+        // Petite pause entre chaque appel TMDB — une watchlist peut
+        // contenir plusieurs dizaines de titres à vérifier d'affilée, sans
+        // throttle on risque de se faire limiter (429) par TMDB en rafale.
+        await new Promise((resolve) => setTimeout(resolve, 150));
 
-      const found = year ? await findMovie(title, year) : await findMovieByTitleOnly(title);
-      if (!found) {
-        const key = `title:${normalize(title)}:${person}`;
-        if (dismissedKeys.has(key)) continue;
-        review.push({
-          key,
-          title: year ? `${title} (${year})` : title,
-          person,
-          reason: "introuvable",
-          detectedAt: new Date().toISOString(),
-        });
-        continue;
-      }
+        const found = year ? await findMovie(title, year) : await findMovieByTitleOnly(title);
+        if (!found) {
+          const key = `title:${normalize(title)}:${person}`;
+          if (dismissedKeys.has(key)) continue;
+          review.push({
+            key,
+            title: year ? `${title} (${year})` : title,
+            person,
+            reason: "introuvable",
+            detectedAt: new Date().toISOString(),
+          });
+          continue;
+        }
 
-      if (knownTmdbIds.has(String(found.id))) {
-        const key = `tmdb:${found.id}:${person}`;
-        if (dismissedKeys.has(key)) continue;
-        const inActive = inputMovies.some((m) => String(m.tmdbId) === String(found.id));
-        review.push({
-          key,
+        // Toujours enregistré, même pour un film déjà connu — sert à la
+        // détection des retraits ci-dessous.
+        currentWatchlistTmdbIds.add(String(found.id));
+
+        if (knownTmdbIds.has(String(found.id))) {
+          const key = `tmdb:${found.id}:${person}`;
+          if (dismissedKeys.has(key)) continue;
+          const inActive = inputMovies.some((m) => String(m.tmdbId) === String(found.id));
+          review.push({
+            key,
+            title: found.title,
+            person,
+            reason: inActive ? "deja_present" : "deja_recherche",
+            detectedAt: new Date().toISOString(),
+          });
+          continue;
+        }
+
+        const newEntry = {
           title: found.title,
-          person,
-          reason: inActive ? "deja_present" : "deja_recherche",
-          detectedAt: new Date().toISOString(),
-        });
-        continue;
+          year: found.release_date ? parseInt(found.release_date.slice(0, 4), 10) : null,
+          director: "",
+          // Priorité au vrai slug capturé sur la page (le plus précis) ; à
+          // défaut, letterboxd.com/tmdb/{id} redirige automatiquement vers la
+          // bonne fiche — fiable à 100%, contrairement à une estimation basée
+          // sur le titre qui pouvait tomber sur un homonyme.
+          letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : `https://letterboxd.com/tmdb/${found.id}/`,
+          tmdbId: found.id,
+          wantedBy: person,
+          updatedAt: new Date().toISOString(),
+        };
+        newEntries.push(newEntry);
+        knownTmdbIds.add(String(found.id));
+        knownTitleYear.add(`${normalize(newEntry.title)}::${newEntry.year}`);
+        console.log(`  + Nouveau film détecté : "${newEntry.title}" (${newEntry.year}) — voulu par ${person}`);
+      } catch (e) {
+        console.log(`  ⚠️ Erreur en traitant "${title}" (watchlist de ${person}) : ${e.message} — ignoré pour cette fois.`);
       }
-
-      const newEntry = {
-        title: found.title,
-        year: found.release_date ? parseInt(found.release_date.slice(0, 4), 10) : null,
-        director: "",
-        // Priorité au vrai slug capturé sur la page (le plus précis) ; à
-        // défaut, letterboxd.com/tmdb/{id} redirige automatiquement vers la
-        // bonne fiche — fiable à 100%, contrairement à une estimation basée
-        // sur le titre qui pouvait tomber sur un homonyme.
-        letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : `https://letterboxd.com/tmdb/${found.id}/`,
-        tmdbId: found.id,
-        wantedBy: person,
-        updatedAt: new Date().toISOString(),
-      };
-      newEntries.push(newEntry);
-      knownTmdbIds.add(String(found.id));
-      knownTitleYear.add(`${normalize(newEntry.title)}::${newEntry.year}`);
-      console.log(`  + Nouveau film détecté : "${newEntry.title}" (${newEntry.year}) — voulu par ${person}`);
     }
   }
 
-  return { newEntries, review };
+  // Retrait : tout film "voulu par" quelqu'un dont le scan a réussi ce
+  // coup-ci, mais qui n'apparaît plus sur AUCUNE watchlist actuellement
+  // scannée avec succès (peu importe pourquoi il en est sorti — vu,
+  // changement d'avis, etc.).
+  const removedTmdbIds = [];
+  for (const movie of inputMovies) {
+    if (!movie.wantedBy || !movie.tmdbId) continue;
+    if (!reliableScanPeople.has(movie.wantedBy)) continue;
+    if (!currentWatchlistTmdbIds.has(String(movie.tmdbId))) {
+      removedTmdbIds.push(String(movie.tmdbId));
+      console.log(`  - "${movie.title}" n'est plus sur la watchlist de ${movie.wantedBy} — retiré de CinéRadar.`);
+    }
+  }
+
+  return { newEntries, review, removedTmdbIds };
 }
 
 async function getDetails(id) {
   const url = `${BASE}/movie/${id}?api_key=${API_KEY}&language=fr-FR&append_to_response=credits,watch/providers`;
   const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`TMDB a répondu ${res.status} pour le film ${id}`);
+  }
   return res.json();
 }
 
@@ -337,7 +394,7 @@ function splitProviders(fr) {
   };
 }
 
-async function getLetterboxdRating(url) {
+async function getLetterboxdRating(url, attempt = 1) {
   try {
     const res = await fetch(url, {
       headers: {
@@ -345,8 +402,20 @@ async function getLetterboxdRating(url) {
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
       },
     });
-    if (!res.ok) return { rating: null, votes: null };
+    if (!res.ok) {
+      console.log(`  ⚠️ Letterboxd a répondu ${res.status} pour ${url}`);
+      return { rating: null, votes: null };
+    }
     const html = await res.text();
+
+    // Diagnostic : le lien /tmdb/{id} est censé rediriger automatiquement
+    // (HTTP 301/302) vers la vraie fiche /film/{slug}/ — fetch() suit ces
+    // redirections tout seul, donc res.url doit refléter l'URL finale. Si
+    // ce n'est pas le cas (toujours /tmdb/...), la redirection n'a pas eu
+    // lieu comme attendu, ce qui explique une note introuvable.
+    if (attempt === 1 && url.includes("/tmdb/")) {
+      console.log(`  Lien tmdb → URL finale après redirection : ${res.url}`);
+    }
 
     const ldJsonMatch = html.match(/"ratingValue"\s*:\s*"?([\d.]+)"?[\s\S]{0,200}?"ratingCount"\s*:\s*"?([\d,]+)"?/);
     if (ldJsonMatch) {
@@ -374,6 +443,21 @@ async function getLetterboxdRating(url) {
       }
     }
 
+    // Repli : si res.url n'a pas changé (redirection non suivie par
+    // fetch, ex: redirection faite en JavaScript côté client plutôt qu'en
+    // HTTP), on cherche l'URL réelle dans le HTML lui-même (balise
+    // canonique ou meta-refresh) et on retente une seule fois dessus.
+    if (attempt === 1 && url.includes("/tmdb/")) {
+      const canonicalMatch = html.match(/<link rel="canonical" href="(https:\/\/letterboxd\.com\/film\/[^"]+)"/);
+      const refreshMatch = html.match(/http-equiv="refresh" content="[^"]*url=(https:\/\/letterboxd\.com\/film\/[^"]+)"/i);
+      const realUrl = canonicalMatch?.[1] || refreshMatch?.[1];
+      if (realUrl && realUrl !== url) {
+        console.log(`  Repli : nouvelle tentative sur l'URL réelle trouvée dans la page (${realUrl})`);
+        return getLetterboxdRating(realUrl, 2);
+      }
+    }
+
+    console.log(`  ⚠️ Aucune note trouvée sur la page Letterboxd (${res.url}) — structure inattendue ou fiche vide.`);
     return { rating: null, votes: null };
   } catch (e) {
     console.log(`  Letterboxd indisponible (${e.message})`);
@@ -495,16 +579,41 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
 }
 
 async function main() {
-  const input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
+  let input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const previousAbonnements = loadPreviousAbonnements();
-  const history = loadHistory();
+  let history = loadHistory();
   const historyIds = new Set(history.map((h) => String(h.tmdbId)));
+  let deletionLog = loadDeletionLog();
 
   // Watchlists Letterboxd : les nouveaux films détectés sont ajoutés à
   // `input` avant la boucle d'enrichissement, pour être traités dans la
   // même passe (affiche, disponibilité, etc. calculés directement).
-  const { newEntries: watchlistNewEntries, review: watchlistReview } = await syncWatchlists(input, history);
+  const { newEntries: watchlistNewEntries, review: watchlistReview, removedTmdbIds } = await syncWatchlists(input, history);
   input.push(...watchlistNewEntries);
+
+  // Retire les films qui ne sont plus sur leur watchlist d'origine — et
+  // retire aussi leur trace de la mémoire permanente (history.json), pour
+  // qu'un retour ultérieur sur la même watchlist soit traité comme un
+  // ajout normal plutôt que d'être bloqué par la protection anti-doublon.
+  if (removedTmdbIds.length > 0) {
+    const removedSet = new Set(removedTmdbIds);
+    const removedMovies = input.filter((m) => removedSet.has(String(m.tmdbId)));
+    removedMovies.forEach((m) => {
+      deletionLog.push({
+        title: m.title,
+        year: m.year,
+        tmdbId: m.tmdbId,
+        reason: "watchlist",
+        wantedBy: m.wantedBy || null,
+        deletedAt: new Date().toISOString(),
+      });
+    });
+    input = input.filter((m) => !removedSet.has(String(m.tmdbId)));
+    history = history.filter((h) => !removedSet.has(String(h.tmdbId)));
+    historyIds.clear();
+    history.forEach((h) => historyIds.add(String(h.tmdbId)));
+    console.log(`${removedTmdbIds.length} film(s) retiré(s) de CinéRadar (plus sur leur watchlist d'origine).`);
+  }
 
   const newlyAvailable = [];
   const unmatched = [];
@@ -512,6 +621,7 @@ async function main() {
 
   for (const movie of input) {
     console.log(`Recherche : ${movie.title} (${movie.year})`);
+    try {
     // Si le tmdbId est déjà connu (film ajouté via recherche en direct ou
     // via une watchlist), on va droit au but au lieu de re-chercher par
     // titre/année — plus fiable, et indispensable si l'année est absente.
@@ -606,6 +716,22 @@ async function main() {
       updatedAt: movie.updatedAt || null,
       lastChecked: new Date().toISOString(),
     });
+    } catch (e) {
+      // Un souci ponctuel (TMDB en erreur, réseau, etc.) sur CE film ne
+      // doit jamais faire échouer tout le passage — on le signale, on le
+      // marque en erreur, et on continue avec les films suivants. Avant ce
+      // correctif, une seule panne isolée faisait échouer "All jobs" sur
+      // GitHub Actions, empêchant même les films sans souci d'être
+      // rafraîchis ce jour-là.
+      console.log(`  ⚠️ Erreur en traitant "${movie.title}" : ${e.message} — ignoré pour cette fois.`);
+      unmatched.push({
+        title: movie.title,
+        year: movie.year,
+        director: movie.director,
+        letterboxdUrl: movie.letterboxdUrl || null,
+        updatedAt: movie.updatedAt || null,
+      });
+    }
   }
 
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
@@ -613,11 +739,13 @@ async function main() {
   fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
   fs.writeFileSync("public/data/history.json", JSON.stringify(history, null, 2));
   fs.writeFileSync("public/data/watchlist-review.json", JSON.stringify(watchlistReview, null, 2));
+  // Plafonné aux 100 suppressions les plus récentes, pour ne pas grossir indéfiniment
+  fs.writeFileSync("public/data/deletion-log.json", JSON.stringify(deletionLog.slice(-100), null, 2));
   // Réécrit data/movies.json avec les tmdbId mémorisés au passage (voir plus
   // haut) — sans effet si rien n'a changé, le workflow ne commitera rien.
   fs.writeFileSync("data/movies.json", JSON.stringify(input, null, 2) + "\n");
   console.log(
-    `Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur, ${watchlistNewEntries.length} ajouté(s) via watchlist, ${watchlistReview.length} à vérifier.`
+    `Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur, ${watchlistNewEntries.length} ajouté(s) via watchlist, ${removedTmdbIds.length} retiré(s) (plus sur leur watchlist), ${watchlistReview.length} à vérifier.`
   );
 
   if (newlyAvailable.length > 0) {
@@ -628,4 +756,7 @@ async function main() {
   }
 }
 
-main();
+main().catch((e) => {
+  console.error("Le passage a échoué :", e);
+  process.exit(1);
+});
