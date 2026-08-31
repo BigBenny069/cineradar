@@ -63,5 +63,12 @@
     "tmdbId": 11158,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:04:13.157Z"
+  },
+  {
+    "title": "1984",
+    "year": 1984,
+    "tmdbId": 9314,
+    "reason": "cinemaison",
+    "deletedAt": "2026-08-31T12:05:17.273Z"
   }
 ]
