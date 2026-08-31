@@ -1,12 +1,5 @@
 [
   {
-    "key": "tmdb:15:benoit",
-    "title": "Citizen Kane",
-    "person": "benoit",
-    "reason": "deja_present",
-    "detectedAt": "2026-08-31T09:02:01.406Z"
-  },
-  {
     "key": "tmdb:38643:benoit",
     "title": "Los Angeles Plays Itself",
     "person": "benoit",
