@@ -1271,50 +1271,6 @@
     "lastChecked": "2026-08-31T09:02:15.856Z"
   },
   {
-    "tmdbId": 311,
-    "title": "Il était une fois en Amérique",
-    "year": "1984",
-    "director": "Sergio Leone",
-    "poster": "https://image.tmdb.org/t/p/w500/qfuO1yue5bQnocFiOUM07dwLdmo.jpg",
-    "synopsis": "À New York, à la fin de la prohibition, Noodles se réfugie dans une fumerie d'opium après un coup qui a mal tourné. Plus de trente ans plus tard, il est de retour en ville et se remémore son passé de gangster : de sa jeunesse de voyou dans les années 20, marquée par sa rencontre avec son ami Max et leurs nombreux trafics dans le ghetto juif de la ville, jusqu'à la période de prohibition où leur bande, liée par une profonde amitié, s'enrichit et marque son ascension dans la pègre grâce au commerce illégal d'alcool. Noodles se rappelle aussi de sa relation amoureuse échouée avec Deborah durant toute sa vie.",
-    "genres": [
-      "Drame",
-      "Crime"
-    ],
-    "cast": [
-      "Robert De Niro",
-      "James Woods",
-      "Elizabeth McGovern",
-      "Joe Pesci",
-      "Burt Young"
-    ],
-    "tmdbRating": 8.375,
-    "tmdbVotes": 6176,
-    "letterboxdRating": 4.22,
-    "letterboxdVotes": 328469,
-    "imdbId": "tt0087843",
-    "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-america/",
-    "providers": {
-      "abonnement": [
-        "Disney Plus"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:04.307Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-31T12:33:54.134Z",
-    "lastChecked": "2026-08-31T12:33:55.261Z"
-  },
-  {
     "tmdbId": 294963,
     "title": "Bone Tomahawk",
     "year": "2015",
