@@ -21,5 +21,12 @@
     "tmdbId": 1078605,
     "reason": "manuel",
     "deletedAt": "2026-08-31T11:55:34.113Z"
+  },
+  {
+    "title": "L'affaire de la mutinerie du Caine",
+    "year": 2023,
+    "tmdbId": 1018332,
+    "reason": "manuel",
+    "deletedAt": "2026-08-31T11:56:39.593Z"
   }
 ]
