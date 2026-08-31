@@ -49,5 +49,12 @@
     "tmdbId": 11425,
     "reason": "manuel",
     "deletedAt": "2026-08-31T12:01:41.364Z"
+  },
+  {
+    "title": "S.O.S. Fantômes : L'Héritage",
+    "year": 2021,
+    "tmdbId": 425909,
+    "reason": "cinemaison",
+    "deletedAt": "2026-08-31T12:03:55.789Z"
   }
 ]
