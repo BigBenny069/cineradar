@@ -2135,58 +2135,6 @@
     "lastChecked": "2026-08-31T09:02:17.282Z"
   },
   {
-    "tmdbId": 425909,
-    "title": "S.O.S. Fantômes : L'Héritage",
-    "year": "2021",
-    "director": "Jason Reitman",
-    "poster": "https://image.tmdb.org/t/p/w500/w1cmavTc0IwISr9ypI1XkBtxhVK.jpg",
-    "synopsis": "Une mère célibataire et ses deux enfants s'installent dans une petite ville et découvrent peu à peu leur relation avec les chasseurs de fantômes et l'héritage légué par leur grand-père.",
-    "genres": [
-      "Fantastique",
-      "Comédie",
-      "Aventure"
-    ],
-    "cast": [
-      "Mckenna Grace",
-      "Finn Wolfhard",
-      "Carrie Coon",
-      "Paul Rudd",
-      "Logan Kim"
-    ],
-    "tmdbRating": 7.31,
-    "tmdbVotes": 5292,
-    "letterboxdRating": 3.01,
-    "letterboxdVotes": 397031,
-    "imdbId": "tt4513678",
-    "letterboxdUrl": "https://letterboxd.com/film/ghostbusters-afterlife/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "HBO Max",
-        "Amazon Prime Video with Ads",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Sony Pictures Core Amazon Channel",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-21T20:12:05.339Z",
-    "wantedBy": "benoit",
-    "updatedAt": "2026-08-21T20:11:47.821Z",
-    "lastChecked": "2026-08-31T09:02:17.526Z"
-  },
-  {
     "tmdbId": 11158,
     "title": "Chérie, j'ai agrandi le bébé",
     "year": "1992",
