@@ -683,54 +683,6 @@
     "lastChecked": "2026-08-31T09:02:10.325Z"
   },
   {
-    "tmdbId": 180299,
-    "title": "The Raid 2",
-    "year": "2014",
-    "director": "Gareth Evans",
-    "poster": "https://image.tmdb.org/t/p/w500/lg1BAePpvPJc8VnPx3XPS44X3OU.jpg",
-    "synopsis": "Après un combat sans merci pour s’extirper d’un immeuble rempli de criminels et de fous furieux, laissant derrière lui des monceaux de cadavres de policiers et de dangereux truands, Rama, jeune flic de Jakarta, pensait retrouver une vie normale, avec sa femme et son tout jeune fils… Mais il se trompait. On lui impose en effet une nouvelle mission : Rama devra infiltrer le syndicat du crime, où coexistent dans une sorte de statu quo mafia indonésienne et yakusas. Sous l’identité de « Yuda », un tueur sans pitié, il se laisse jeter en prison afin d’y gagner la confiance d'Uco, le fils d'un magnat du crime indonésien - son ticket d’entrée pour intégrer l’organisation. Sur fond de guerre des gangs, il risquera sa vie dans un dangereux jeu de rôle destiné à porter un coup fatal à l’empire du crime.",
-    "genres": [
-      "Action",
-      "Crime",
-      "Thriller"
-    ],
-    "cast": [
-      "Iko Uwais",
-      "Arifin Putra",
-      "Tio Pakusadewo",
-      "Oka Antara",
-      "Alex Abbad"
-    ],
-    "tmdbRating": 7.614,
-    "tmdbVotes": 2678,
-    "letterboxdRating": 4.05,
-    "letterboxdVotes": 150158,
-    "imdbId": "tt2265171",
-    "letterboxdUrl": "https://letterboxd.com/film/the-raid-2/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Canal VOD",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Sooner",
-        "Amazon Video",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-08-15T21:59:35.345Z",
-    "wantedBy": null,
-    "updatedAt": "2026-08-15T21:59:18.507Z",
-    "lastChecked": "2026-08-31T09:02:10.581Z"
-  },
-  {
     "tmdbId": 1242332,
     "title": "Normal",
     "year": "2026",
