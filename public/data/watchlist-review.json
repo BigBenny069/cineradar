@@ -1,12 +1,5 @@
 [
   {
-    "key": "tmdb:9323:benoit",
-    "title": "Ghost in the Shell",
-    "person": "benoit",
-    "reason": "deja_present",
-    "detectedAt": "2026-08-31T09:01:58.507Z"
-  },
-  {
     "key": "tmdb:149:benoit",
     "title": "Akira",
     "person": "benoit",
