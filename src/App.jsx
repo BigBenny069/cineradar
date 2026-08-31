@@ -2126,9 +2126,29 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
     .slice(0, 5);
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto", position: "relative", overflow: "hidden" }}>
+      {CURRENT_THEME === "springfield" &&
+        [
+          [-30, 55, 0.9],
+          [190, 40, 0.7],
+          [-40, 145, 0.6],
+          [210, 160, 0.85],
+          [60, 230, 0.5],
+          [-20, 520, 0.65],
+          [200, 560, 0.55],
+          [40, 780, 0.6],
+          [-30, 980, 0.5],
+        ].map(([x, y, s], i) => (
+          <div key={i} style={{ position: "absolute", left: x, top: y, zIndex: 0, pointerEvents: "none" }}>
+            <div style={{ position: "absolute", background: "#fff", borderRadius: 50, width: 130 * s, height: 38 * s, left: 0, top: 26 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 55 * s, height: 55 * s, left: 5 * s, top: 0 }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 75 * s, height: 75 * s, left: 35 * s, top: -14 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 58 * s, height: 58 * s, left: 82 * s, top: 2 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 40 * s, height: 40 * s, left: 105 * s, top: 14 * s }} />
+          </div>
+        ))}
       <Header />
-      <div style={{ padding: "0 16px 90px" }}>
+      <div style={{ padding: "0 16px 90px", position: "relative", zIndex: 2 }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
           GUICHET
         </div>
