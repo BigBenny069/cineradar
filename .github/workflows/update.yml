@@ -10,6 +10,14 @@ on:
 permissions:
   contents: write
 
+# Empêche deux passages du robot de tourner en même temps (ex: plusieurs
+# suppressions rapprochées déclenchent chacune un nouveau passage) — les
+# déclenchements successifs sont mis en file d'attente plutôt que de
+# s'exécuter en parallèle et de se marcher dessus.
+concurrency:
+  group: update-movie-data
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -28,4 +36,20 @@ jobs:
           git config user.email "bot@cineradar.local"
           git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json data/movies.json
           git commit -m "Update movie data" || echo "Rien à mettre à jour"
-          git push
+
+          # Réessaie le push en cas de collision avec un commit fait entre
+          # temps depuis l'app (ajout/suppression/modification côté
+          # utilisateur) — sans ça, le travail du robot était calculé
+          # correctement puis silencieusement perdu à chaque collision.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Push réussi (tentative $i)."
+              exit 0
+            fi
+            echo "Push rejeté (tentative $i/5) — un commit a été fait entre-temps, récupération et nouvel essai..."
+            git fetch origin main
+            git rebase origin/main
+            sleep 3
+          done
+          echo "Échec du push après 5 tentatives."
+          exit 1
