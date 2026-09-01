@@ -2126,16 +2126,56 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
     .slice(0, 5);
 
+  const isSpringfield = CURRENT_THEME === "springfield";
+
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: isSpringfield ? "linear-gradient(180deg, #3F9BDB 0%, #6EC0EA 45%, #A9DCF2 100%)" : T.bg,
+        maxWidth: 480,
+        margin: "0 auto",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {isSpringfield &&
+        [
+          [-30, 55, 0.9],
+          [190, 40, 0.7],
+          [-40, 145, 0.6],
+          [210, 160, 0.85],
+          [60, 230, 0.5],
+          [-20, 520, 0.65],
+          [200, 560, 0.55],
+          [40, 780, 0.6],
+          [-30, 980, 0.5],
+        ].map(([x, y, s], i) => (
+          <div key={i} style={{ position: "absolute", left: x, top: y, zIndex: 0, pointerEvents: "none" }}>
+            <div style={{ position: "absolute", background: "#fff", borderRadius: 50, width: 130 * s, height: 38 * s, left: 0, top: 26 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 55 * s, height: 55 * s, left: 5 * s, top: 0 }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 75 * s, height: 75 * s, left: 35 * s, top: -14 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 58 * s, height: 58 * s, left: 82 * s, top: 2 * s }} />
+            <div style={{ position: "absolute", background: "#fff", borderRadius: "50%", width: 40 * s, height: 40 * s, left: 105 * s, top: 14 * s }} />
+          </div>
+        ))}
       <Header />
-      <div style={{ padding: "0 16px 90px" }}>
-        <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
+      <div style={{ padding: "0 16px 90px", position: "relative", zIndex: 2 }}>
+        <div style={{ fontFamily: F.mono, fontSize: 11, color: isSpringfield ? "#1A1400" : T.accent, letterSpacing: 1 }}>
           GUICHET
         </div>
-        <div style={{ fontFamily: F.marquee, fontSize: 25, color: T.cream, marginTop: 4, lineHeight: 1.05 }}>
-          Où regarder votre prochain film ?
-        </div>
+        {isSpringfield ? (
+          <p style={{ fontFamily: F.marquee, fontSize: 26, letterSpacing: 1, position: "relative", margin: "4px 0 0" }}>
+            <span aria-hidden="true" style={{ position: "absolute", top: 0, left: 0, color: "transparent", WebkitTextStroke: "6px #2E5EAA" }}>
+              Où regarder votre prochain film ?
+            </span>
+            <span style={{ position: "relative", color: "#FFD23F" }}>Où regarder votre prochain film ?</span>
+          </p>
+        ) : (
+          <div style={{ fontFamily: F.marquee, fontSize: 25, color: T.cream, marginTop: 4, lineHeight: 1.05 }}>
+            Où regarder votre prochain film ?
+          </div>
+        )}
 
         <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
           <div
