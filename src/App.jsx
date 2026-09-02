@@ -1284,12 +1284,22 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
 }
 
 function HorizontalRow({ icon, label, movies, onOpen, emptyText }) {
+  const isSpringfield = CURRENT_THEME === "springfield";
   return (
     <div style={{ marginTop: 22 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
         <span style={{ fontSize: 14 }}>{icon}</span>
-        <span style={{ fontFamily: F.marquee, fontSize: 17, color: T.cream, whiteSpace: "nowrap" }}>{label}</span>
-        <span style={{ flex: 1, height: 1, background: T.line }} />
+        {isSpringfield ? (
+          <span style={{ position: "relative", whiteSpace: "nowrap" }}>
+            <span aria-hidden="true" style={{ position: "absolute", top: 0, left: 0, fontFamily: F.marquee, fontSize: 17, color: "transparent", WebkitTextStroke: "4px #2E5EAA" }}>
+              {label}
+            </span>
+            <span style={{ position: "relative", fontFamily: F.marquee, fontSize: 17, color: "#FFD23F" }}>{label}</span>
+          </span>
+        ) : (
+          <span style={{ fontFamily: F.marquee, fontSize: 17, color: T.cream, whiteSpace: "nowrap" }}>{label}</span>
+        )}
+        <span style={{ flex: 1, height: 1, background: isSpringfield ? "#2E5EAA" : T.line }} />
       </div>
       {movies.length === 0 ? (
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.muted }}>{emptyText}</div>
