@@ -2118,5 +2118,50 @@
     "wantedBy": null,
     "updatedAt": "2026-09-02T16:01:20.610Z",
     "lastChecked": "2026-09-02T16:02:43.053Z"
+  },
+  {
+    "tmdbId": 756999,
+    "title": "Black Phone",
+    "year": "2022",
+    "director": "Scott Derrickson",
+    "poster": "https://image.tmdb.org/t/p/w500/1rVNiPMAHOyxjkdwyTtqUQs0i61.jpg",
+    "synopsis": "Finney Shaw, un adolescent de 13 ans, timide mais intelligent, est enlevé par un tueur sadique qui l’enferme dans un sous-sol insonorisé où s’époumoner n’est pas d’une grande utilité. Quand un téléphone accroché au mur, pourtant hors d’usage, se met à sonner, Finney va découvrir qu’il est en contact avec les voix des précédentes victimes de son ravisseur. Ils sont aussi morts que bien résolus à ce que leur triste sort ne devienne pas celui de Finney.",
+    "genres": [
+      "Horreur",
+      "Thriller"
+    ],
+    "cast": [
+      "Mason Thames",
+      "Madeleine McGraw",
+      "Ethan Hawke",
+      "Jeremy Davies",
+      "E. Roger Mitchell"
+    ],
+    "tmdbRating": 7.5,
+    "tmdbVotes": 6035,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt7144666",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/756999/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-02T21:31:18.494Z",
+    "lastChecked": "2026-09-02T21:31:19.922Z"
   }
 ]
