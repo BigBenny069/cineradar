@@ -426,5 +426,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/882059/",
     "updatedAt": "2026-09-02T16:01:20.610Z",
     "tmdbId": 882059
+  },
+  {
+    "title": "Black Phone",
+    "year": 2022,
+    "director": "Scott Derrickson",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/756999/",
+    "updatedAt": "2026-09-02T21:31:18.494Z",
+    "tmdbId": 756999
   }
 ]
