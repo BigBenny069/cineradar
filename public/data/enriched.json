@@ -2076,5 +2076,47 @@
     "wantedBy": null,
     "updatedAt": "2026-09-02T08:21:20.557Z",
     "lastChecked": "2026-09-02T15:03:14.688Z"
+  },
+  {
+    "tmdbId": 882059,
+    "title": "Boy Kills World",
+    "year": "2024",
+    "director": "Moritz Mohr",
+    "poster": "https://image.tmdb.org/t/p/w500/yvvwmcn5xJm5BOo81XGuUtDbxq1.jpg",
+    "synopsis": "Devenu la cible d’un régime totalitaire cruel et violent, un orphelin sourd et muet est sauvé par un mystérieux chaman qui l'entraîne pour devenir l’ultime machine à tuer. Enfin prêt, il rejoint un groupe de résistants déterminés à éradiquer la dictature, une bonne fois pour toutes.",
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Action"
+    ],
+    "cast": [
+      "Bill Skarsgård",
+      "Jessica Rothe",
+      "H. Jon Benjamin",
+      "Michelle Dockery",
+      "Brett Gelman"
+    ],
+    "tmdbRating": 6.671,
+    "tmdbVotes": 871,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt13923084",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/882059/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Orange VOD",
+        "Sooner",
+        "Amazon Video",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-02T16:01:20.610Z",
+    "lastChecked": "2026-09-02T16:01:22.675Z"
   }
 ]
