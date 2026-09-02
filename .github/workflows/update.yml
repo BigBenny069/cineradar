@@ -26,30 +26,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/update.cjs
+      - name: Calcul puis envoi (avec nouveau calcul complet en cas de collision)
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-      - name: Commit changes
         run: |
           git config user.name "cineradar-bot"
           git config user.email "bot@cineradar.local"
-          git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json data/movies.json
-          git commit -m "Update movie data" || echo "Rien à mettre à jour"
 
-          # Réessaie le push en cas de collision avec un commit fait entre
-          # temps depuis l'app (ajout/suppression/modification côté
-          # utilisateur) — sans ça, le travail du robot était calculé
-          # correctement puis silencieusement perdu à chaque collision.
           for i in 1 2 3 4 5; do
+            echo "=== Tentative $i/5 ==="
+            node scripts/update.cjs
+
+            git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json data/movies.json
+            git commit -m "Update movie data" || { echo "Rien à mettre à jour."; exit 0; }
+
             if git push; then
               echo "Push réussi (tentative $i)."
               exit 0
             fi
-            echo "Push rejeté (tentative $i/5) — un commit a été fait entre-temps, récupération et nouvel essai..."
+
+            echo "Push rejeté (tentative $i/5) — un commit a été fait entre-temps (ex: modification via l'app)."
+            echo "Plutôt que de fusionner deux versions calculées séparément (risque de conflit sur enriched.json),"
+            echo "on repart de la toute dernière version et on refait le calcul en entier."
             git fetch origin main
-            git rebase origin/main
+            git reset --hard origin/main
             sleep 3
           done
-          echo "Échec du push après 5 tentatives."
+
+          echo "Échec après 5 tentatives."
           exit 1
