@@ -1555,12 +1555,28 @@ function BottomNav({ view, onChange }) {
   );
 }
 
-function DetailView({ movie, onBack, onEdit, onDeleted }) {
+function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
   const [showLinks, setShowLinks] = useState(false);
   const [showVod, setShowVod] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleteStatus, setDeleteStatus] = useState(null);
   const [deleteError, setDeleteError] = useState("");
+  const [reverifyStatus, setReverifyStatus] = useState(null);
+  const [reverifyError, setReverifyError] = useState("");
+
+  const handleReverify = async () => {
+    setReverifyStatus("loading");
+    setReverifyError("");
+    const result = await apiWrite("/api/reverify-movie", { tmdbId: movie.tmdbId });
+    if (!result.ok) {
+      setReverifyStatus("error");
+      setReverifyError(result.error);
+      return;
+    }
+    setReverifyStatus("success");
+    onUpdated?.(result.data.movie);
+    setTimeout(() => setReverifyStatus(null), 2500);
+  };
 
   const [showCinemaisonPanel, setShowCinemaisonPanel] = useState(false);
   const [cinemaisonPlatform, setCinemaisonPlatform] = useState(null);
@@ -2039,6 +2055,35 @@ function DetailView({ movie, onBack, onEdit, onDeleted }) {
         >
           MODIFIER CETTE FICHE
         </button>
+
+        <button
+          onClick={handleReverify}
+          disabled={reverifyStatus === "loading"}
+          style={{
+            width: "100%",
+            marginTop: 10,
+            padding: "12px 0",
+            border: `1px solid ${T.line}`,
+            borderRadius: 6,
+            fontFamily: F.mono,
+            fontSize: 12,
+            color: T.muted,
+            letterSpacing: 0.5,
+            opacity: reverifyStatus === "loading" ? 0.6 : 1,
+          }}
+        >
+          {reverifyStatus === "loading" ? "VÉRIFICATION EN COURS..." : "🔄 REDEMANDER UNE VÉRIFICATION"}
+        </button>
+        {reverifyStatus === "success" && (
+          <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, marginTop: 6, textAlign: "center" }}>
+            Fiche remise à jour depuis TMDB.
+          </div>
+        )}
+        {reverifyStatus === "error" && (
+          <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, marginTop: 6, textAlign: "center" }}>
+            Erreur : {reverifyError}
+          </div>
+        )}
 
         {!showDeleteConfirm ? (
           <button
@@ -3758,6 +3803,10 @@ export default function App() {
           setView("add");
         }}
         onDeleted={() => setSelected(null)}
+        onUpdated={(updatedMovie) => {
+          setSelected(updatedMovie);
+          handleRefresh();
+        }}
       />
     );
   }
