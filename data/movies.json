@@ -418,5 +418,13 @@
     "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-america/",
     "updatedAt": "2026-09-02T08:21:20.557Z",
     "tmdbId": 311
+  },
+  {
+    "title": "Boy Kills World",
+    "year": 2024,
+    "director": "Moritz Mohr",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/882059/",
+    "updatedAt": "2026-09-02T16:01:20.610Z",
+    "tmdbId": 882059
   }
 ]
