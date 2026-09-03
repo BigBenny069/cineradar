@@ -2163,5 +2163,38 @@
     "wantedBy": null,
     "updatedAt": "2026-09-02T21:31:18.494Z",
     "lastChecked": "2026-09-03T06:09:33.401Z"
+  },
+  {
+    "tmdbId": 8740,
+    "title": "L'homme qui voulait savoir",
+    "year": "1988",
+    "director": "George Sluizer",
+    "poster": "https://image.tmdb.org/t/p/w500/vya5W3o3iUZDLYb5W9pM8CyQeru.jpg",
+    "synopsis": "Sur la route des vacances, Rex et Saskia s'arrêtent sur une aire d'autoroute. L'homme s'éloigne du véhicule pendant quelques minutes. À son retour, sa compagne a disparu. Fou de douleur, il renonce à sa vie professionnelle et sociale pour se consacrer exclusivement à la recherche de la disparue. Après trois années d'une quête infructueuse, il reçoit une étrange carte postale, dont l'auteur prétend connaître la vérité sur la disparition…",
+    "genres": [
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "Bernard-Pierre Donnadieu",
+      "Gene Bervoets",
+      "Johanna ter Steege",
+      "Gwen Eckhaus",
+      "Pierre Forget"
+    ],
+    "tmdbRating": 7.407,
+    "tmdbVotes": 863,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0096163",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8740/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-03T11:33:00.677Z",
+    "lastChecked": "2026-09-03T11:33:01.861Z"
   }
 ]
