@@ -1101,6 +1101,8 @@ function Header({ onBack }) {
         gap: 12,
         padding: "14px 16px 16px",
         paddingTop: "calc(14px + env(safe-area-inset-top))",
+        position: "relative",
+        zIndex: 2,
       }}
     >
       {onBack && (
