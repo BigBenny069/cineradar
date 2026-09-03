@@ -434,5 +434,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/756999/",
     "updatedAt": "2026-09-02T21:31:18.494Z",
     "tmdbId": 756999
+  },
+  {
+    "title": "L'homme qui voulait savoir",
+    "year": 1988,
+    "director": "George Sluizer",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8740/",
+    "updatedAt": "2026-09-03T11:33:00.677Z",
+    "tmdbId": 8740
   }
 ]
