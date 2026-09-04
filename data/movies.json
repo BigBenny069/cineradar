@@ -474,5 +474,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/27302/",
     "updatedAt": "2026-09-04T07:30:32.812Z",
     "tmdbId": 27302
+  },
+  {
+    "title": "Sacré Robin des bois",
+    "year": 1993,
+    "director": "Mel Brooks",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8005/",
+    "updatedAt": "2026-09-04T15:05:56.590Z",
+    "tmdbId": 8005
   }
 ]
