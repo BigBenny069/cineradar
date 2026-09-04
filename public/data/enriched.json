@@ -2196,5 +2196,41 @@
     "wantedBy": null,
     "updatedAt": "2026-09-03T11:33:00.677Z",
     "lastChecked": "2026-09-03T11:34:13.250Z"
+  },
+  {
+    "tmdbId": 15050,
+    "title": "Brainstorm",
+    "year": "1983",
+    "director": "Douglas Trumbull",
+    "poster": "https://image.tmdb.org/t/p/w500/1kj1erhBOcrtnaLNAvFSBrblxie.jpg",
+    "synopsis": "Lillian Reynolds et «Mike» Brace, réussissent à mettre au point un système qui permet d'enregistrer les émotions et les sensations ressenties par un être humain. La bande enregistrée permet à une tierce personne de revivre ces mêmes sensations et même au-delà de ce que les savants ont imaginé.  Un soir où Lilian, chercheuse inlassable, travaille solitairement et tardivement dans son laboratoire, elle est soudainement victime d’une crise cardiaque. Submergée par la douleur, elle n’arrive pas à composer le numéro de téléphone de Mike, mais, en savante forcenée, a le réflexe de déclencher l’enregistrement de sa mort...",
+    "genres": [
+      "Science-Fiction",
+      "Thriller"
+    ],
+    "cast": [
+      "Christopher Walken",
+      "Natalie Wood",
+      "Louise Fletcher",
+      "Cliff Robertson",
+      "Jordan Christopher"
+    ],
+    "tmdbRating": 6.24,
+    "tmdbVotes": 285,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0085271",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/15050/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-04T07:27:43.641Z",
+    "lastChecked": "2026-09-04T07:27:44.700Z"
   }
 ]
