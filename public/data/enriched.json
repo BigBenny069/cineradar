@@ -2232,5 +2232,39 @@
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:27:43.641Z",
     "lastChecked": "2026-09-04T07:27:44.700Z"
+  },
+  {
+    "tmdbId": 30959,
+    "title": "Kwaïdan",
+    "year": "1965",
+    "director": "Masaki Kobayashi",
+    "poster": "https://image.tmdb.org/t/p/w500/xUy8WpmKGyGCliskCwrC1a5KE4I.jpg",
+    "synopsis": "Une collection de quatre contes populaires japonais aux thèmes surnaturels : Les Cheveux noirs, La Femme des neiges, Hoïchi sans oreilles, Dans un bol de thé.",
+    "genres": [
+      "Horreur",
+      "Fantastique",
+      "Drame"
+    ],
+    "cast": [
+      "新珠三千代",
+      "Rentarō Mikuni",
+      "Misako Watanabe",
+      "石山健二郎",
+      "赤木蘭子"
+    ],
+    "tmdbRating": 7.723,
+    "tmdbVotes": 471,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0058279",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/30959/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-04T07:28:26.440Z",
+    "lastChecked": "2026-09-04T07:28:27.394Z"
   }
 ]
