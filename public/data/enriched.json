@@ -2299,5 +2299,40 @@
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:29:51.345Z",
     "lastChecked": "2026-09-04T07:29:52.500Z"
+  },
+  {
+    "tmdbId": 27302,
+    "title": "Zeiramu - Le Film",
+    "year": "1991",
+    "director": "雨宮慶太",
+    "poster": "https://image.tmdb.org/t/p/w500/799PBCkdt8WLblGbMBAFXXAchUT.jpg",
+    "synopsis": "Les chasseurs de primes Iria et Bob voyagent sur Terre pour capturer une machine de combat biopharmaceutique échappée appelée Zeiram.",
+    "genres": [
+      "Aventure",
+      "Action",
+      "Comédie",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "森山ゆうこ",
+      "井田國彦",
+      "Yukijirō Hotaru",
+      "Masakazu Handa",
+      "吉田瑞穂"
+    ],
+    "tmdbRating": 6.2,
+    "tmdbVotes": 33,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0103327",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/27302/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-04T07:30:32.812Z",
+    "lastChecked": "2026-09-04T07:30:33.924Z"
   }
 ]
