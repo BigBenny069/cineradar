@@ -442,5 +442,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/8740/",
     "updatedAt": "2026-09-03T11:33:00.677Z",
     "tmdbId": 8740
+  },
+  {
+    "title": "Brainstorm",
+    "year": 1983,
+    "director": "Douglas Trumbull",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/15050/",
+    "updatedAt": "2026-09-04T07:27:43.641Z",
+    "tmdbId": 15050
   }
 ]
