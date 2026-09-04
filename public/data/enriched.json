@@ -2266,5 +2266,38 @@
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:28:26.440Z",
     "lastChecked": "2026-09-04T07:29:48.580Z"
+  },
+  {
+    "tmdbId": 28155,
+    "title": "Les Monstres sont toujours vivants",
+    "year": "1978",
+    "director": "Larry Cohen",
+    "poster": "https://image.tmdb.org/t/p/w500/2xvxKt7bHpnGEbSD7NXCcND9ena.jpg",
+    "synopsis": "Frank Davis n’a pas oublié le drame au cours duquel la police a tué son enfant monstrueux. Avec l’aide de quelques personnalités médicales, persuadées que l’apparition de ces êtres nouveaux annonce la venue d’une nouvelle race surdouée, il a construit un centre susceptible de les accueillir et de les apprivoiser.\r En compagnie du docteur Forrest, il sillonne les villes américaines au volant d’une ambulance, essayant d’empêcher les autorités de mettre à mort les bébés vampires.\r Car l’épidémie s’est étendue de façon considérable…",
+    "genres": [
+      "Horreur",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Frederic Forrest",
+      "Kathleen Lloyd",
+      "John P. Ryan",
+      "John Marley",
+      "Eddie Constantine"
+    ],
+    "tmdbRating": 5.448,
+    "tmdbVotes": 86,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0077756",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/28155/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-04T07:29:51.345Z",
+    "lastChecked": "2026-09-04T07:29:52.500Z"
   }
 ]
