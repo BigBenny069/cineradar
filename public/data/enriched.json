@@ -2334,5 +2334,47 @@
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:30:32.812Z",
     "lastChecked": "2026-09-04T10:18:43.042Z"
+  },
+  {
+    "tmdbId": 8005,
+    "title": "Sacré Robin des bois",
+    "year": "1993",
+    "director": "Mel Brooks",
+    "poster": "https://image.tmdb.org/t/p/w500/a2zVlgn1AvVjfT6GLsCpFN9T5kj.jpg",
+    "synopsis": "Pendant que le peuple subit l'oppression du prince Jean, Robin des Bois vole aux riches pour donner aux pauvres dans cette parodie du célèbre conte signée Mel Brooks.",
+    "genres": [
+      "Comédie"
+    ],
+    "cast": [
+      "Cary Elwes",
+      "Richard Lewis",
+      "Roger Rees",
+      "Amy Yasbeck",
+      "Dave Chappelle"
+    ],
+    "tmdbRating": 6.609,
+    "tmdbVotes": 2367,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0107977",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8005/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "Orange VOD",
+        "YouTube",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-04T15:05:56.590Z",
+    "lastChecked": "2026-09-04T15:05:57.792Z"
   }
 ]
