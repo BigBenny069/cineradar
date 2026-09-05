@@ -482,5 +482,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/8005/",
     "updatedAt": "2026-09-04T15:05:56.590Z",
     "tmdbId": 8005
+  },
+  {
+    "title": "Coyote vs. Acme",
+    "year": 2026,
+    "director": "Dave Green",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1204680/",
+    "updatedAt": "2026-09-05T17:13:07.348Z",
+    "tmdbId": 1204680
   }
 ]
