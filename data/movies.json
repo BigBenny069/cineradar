@@ -490,5 +490,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/1204680/",
     "updatedAt": "2026-09-05T17:13:07.348Z",
     "tmdbId": 1204680
+  },
+  {
+    "title": "Buddy",
+    "year": 2026,
+    "director": "Casper Kelly",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1514026/",
+    "updatedAt": "2026-09-05T17:13:52.460Z",
+    "tmdbId": 1514026
   }
 ]
