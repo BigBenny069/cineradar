@@ -2409,5 +2409,38 @@
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:13:07.348Z",
     "lastChecked": "2026-09-05T17:13:08.455Z"
+  },
+  {
+    "tmdbId": 1514026,
+    "title": "Buddy",
+    "year": "2026",
+    "director": "Casper Kelly",
+    "poster": "https://image.tmdb.org/t/p/w500/6Lh4ZlsAISFQFVfLZ90sE9ycVnN.jpg",
+    "synopsis": "Une fille et ses amis doivent s’échapper d’une émission de télévision pour enfants.",
+    "genres": [
+      "Horreur",
+      "Comédie"
+    ],
+    "cast": [
+      "Cristin Milioti",
+      "Delaney Quinn",
+      "Topher Grace",
+      "Keegan-Michael Key",
+      "Michael Shannon"
+    ],
+    "tmdbRating": 8.467,
+    "tmdbVotes": 30,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt37281055",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1514026/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-05T17:13:52.460Z",
+    "lastChecked": "2026-09-05T17:13:53.400Z"
   }
 ]
