@@ -506,5 +506,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/1329016/",
     "updatedAt": "2026-09-05T17:15:42.034Z",
     "tmdbId": 1329016
+  },
+  {
+    "title": "L'Invitation",
+    "year": 2026,
+    "director": "Olivia Wilde",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/950028/",
+    "updatedAt": "2026-09-05T17:16:15.302Z",
+    "tmdbId": 950028
   }
 ]
