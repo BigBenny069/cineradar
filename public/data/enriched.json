@@ -2476,5 +2476,39 @@
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:15:42.034Z",
     "lastChecked": "2026-09-05T17:15:43.042Z"
+  },
+  {
+    "tmdbId": 950028,
+    "title": "L'Invitation",
+    "year": "2026",
+    "director": "Olivia Wilde",
+    "poster": "https://image.tmdb.org/t/p/w500/vpMsWT25ITYeYLiUb2HFU9rfzy4.jpg",
+    "synopsis": "Le mariage de Joe et Angela ne tient plus qu’à un fil. Lorsqu’ils invitent leurs énigmatiques voisins à souper, la soirée prend une tournure inattendue. Est-ce que ce sera l’étincelle qui ravivera la flamme de leur couple, ou le feu qui le réduira en cendres?",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Romance"
+    ],
+    "cast": [
+      "Seth Rogen",
+      "Olivia Wilde",
+      "Penélope Cruz",
+      "Edward Norton",
+      "Skip Howland"
+    ],
+    "tmdbRating": 7.266,
+    "tmdbVotes": 429,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt14173636",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/950028/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-05T17:16:15.302Z",
+    "lastChecked": "2026-09-05T17:16:16.321Z"
   }
 ]
