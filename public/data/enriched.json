@@ -2509,5 +2509,50 @@
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:16:15.302Z",
     "lastChecked": "2026-09-07T11:15:22.183Z"
+  },
+  {
+    "tmdbId": 11123,
+    "title": "Tremblement de terre",
+    "year": "1974",
+    "director": "Mark Robson",
+    "poster": "https://image.tmdb.org/t/p/w500/dH7ZepDVpozk3gpMivBRaVxUtTj.jpg",
+    "synopsis": "Los Angeles. L'ingénieur Stuart Graff qui vient de se séparer de sa femme Remy, entretient une liaison avec la veuve d'un collègue, Denise Marshall. Mais Remy tente de convaincre son père, Sam Royce (qui est également l'employeur de Stuart) de mettre fin à cette relation. Dans un autre coin de la ville le sergent de police Lew Slade est suspendu pour avoir frappé un autre policier, et Jody, tenant d'une épicerie générale, ne pense qu'à séduire Rosa, sœur de Sal, l'assistant de Miles Quade, un casse-cou de la moto. Leurs vies vont être bouleversées par un terrible tremblement de terre...",
+    "genres": [
+      "Action",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Charlton Heston",
+      "Ava Gardner",
+      "George Kennedy",
+      "Lorne Greene",
+      "Geneviève Bujold"
+    ],
+    "tmdbRating": 6.156,
+    "tmdbVotes": 381,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0071455",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11123/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Canal VOD",
+        "Orange VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-09-07T14:24:54.395Z",
+    "wantedBy": null,
+    "updatedAt": "2026-09-07T14:24:53.307Z",
+    "lastChecked": "2026-09-07T14:24:54.395Z"
   }
 ]
