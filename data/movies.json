@@ -514,5 +514,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/950028/",
     "updatedAt": "2026-09-05T17:16:15.302Z",
     "tmdbId": 950028
+  },
+  {
+    "title": "Tremblement de terre",
+    "year": 1974,
+    "director": "Mark Robson",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11123/",
+    "updatedAt": "2026-09-07T14:24:53.307Z",
+    "tmdbId": 11123
   }
 ]
