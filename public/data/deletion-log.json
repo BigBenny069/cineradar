@@ -196,5 +196,12 @@
     "tmdbId": 18239,
     "reason": "manuel",
     "deletedAt": "2026-08-31T21:40:12.293Z"
+  },
+  {
+    "title": "Tremblement de terre",
+    "year": 1974,
+    "tmdbId": 11123,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-07T14:43:06.103Z"
   }
 ]
