@@ -522,5 +522,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/7227/",
     "updatedAt": "2026-09-07T14:26:17.347Z",
     "tmdbId": 7227
+  },
+  {
+    "title": "Simetierre",
+    "year": 1989,
+    "director": "Mary Lambert",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8913/",
+    "updatedAt": "2026-09-07T17:40:03.357Z",
+    "tmdbId": 8913
   }
 ]
