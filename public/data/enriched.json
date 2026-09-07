@@ -2555,5 +2555,42 @@
     "wantedBy": null,
     "updatedAt": "2026-09-07T14:24:53.307Z",
     "lastChecked": "2026-09-07T14:25:45.855Z"
+  },
+  {
+    "tmdbId": 7227,
+    "title": "Les Naufragés du 747",
+    "year": "1977",
+    "director": "Jerry Jameson",
+    "poster": "https://image.tmdb.org/t/p/w500/2es1vOm5VYpzFCbm5UPeXGZncpO.jpg",
+    "synopsis": "Le richissime américain Philip Stevens a décidé d’exposer sa collection d’œuvres d’art dans sa résidence de Palm Beach et d’en faire un musée. Son avion privé, un Boeing 747, transporte toute sa collection, ainsi que de nombreuses personnalités amateurs d’art, sa fille et son petit-fils, qu'il n'a encore jamais vu. Mais quand l’avion est détourné par des pirates de l’air, qui convoitent les trésors contenus dans les cales, c’est le drame, le Boeing 747 tombe en mer au milieu du triangle des Bermudes. L’avion coule lentement et échoue sur un banc de sable, à plusieurs mètres de profondeur. Une course contre la montre s'engage pour tenter de secourir les éventuels survivants.",
+    "genres": [
+      "Action",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Jack Lemmon",
+      "Lee Grant",
+      "Brenda Vaccaro",
+      "Joseph Cotten",
+      "Olivia de Havilland"
+    ],
+    "tmdbRating": 5.603,
+    "tmdbVotes": 341,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0075648",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/7227/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-07T14:26:17.347Z",
+    "lastChecked": "2026-09-07T14:26:18.755Z"
   }
 ]
