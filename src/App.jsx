@@ -537,33 +537,36 @@ const CINEMAISON_PWD_KEY = "cineradar_cinemaison_pwd";
 
 // CinéMaison n'accepte qu'une seule plateforme parmi ces 4 valeurs exactes.
 // On fait correspondre les noms fournisseurs TMDB (souvent légèrement
-// différents) à ces 4 valeurs ; tout le reste n'est pas transférable.
-const CINEMAISON_PLATFORM_MAP = {
-  "canal+": "Canal+",
-  netflix: "Netflix",
-  "prime video": "Prime Video",
-  "amazon prime video": "Prime Video",
-  "disney+": "Disney+",
-  "disney plus": "Disney+",
-  // Toutes ces chaînes sont incluses dans la formule Canal+ (accès via la
-  // même app) — CinéMaison ne connaît que 4 plateformes, donc tout ce qui
-  // se regarde via Canal+ y est envoyé comme "Canal+", peu importe le
-  // studio d'origine du contenu.
-  "canal+ series": "Canal+",
-  "canal+ séries": "Canal+",
-  "apple tv+": "Canal+",
-  "apple tv plus": "Canal+",
-  "paramount+": "Canal+",
-  "paramount plus": "Canal+",
-  ocs: "Canal+",
-  "cine+ ocs": "Canal+",
-  "ciné+ ocs": "Canal+",
-  max: "Canal+",
-  "hbo max": "Canal+",
-};
+// différents, avec des suffixes du type "Amazon Channel" ou "Apple TV
+// Channel" ajoutés par TMDB selon le mode de souscription) à ces 4 valeurs ;
+// tout le reste n'est pas transférable.
+// Correspondance par mot-clé (et non plus par égalité stricte) pour absorber
+// ces variantes : ex. "Cine+ OCS Amazon Channel" doit quand même matcher OCS.
+const CINEMAISON_PLATFORM_RULES = [
+  { platform: "Netflix", match: (n) => n.includes("netflix") },
+  { platform: "Disney+", match: (n) => n.includes("disney") },
+  { platform: "Prime Video", match: (n) => n.includes("prime video") },
+  {
+    // Toutes ces chaînes sont incluses dans la formule Canal+ (accès via la
+    // même app) — CinéMaison ne connaît que 4 plateformes, donc tout ce qui
+    // se regarde via Canal+ y est envoyé comme "Canal+", peu importe le
+    // studio d'origine du contenu.
+    platform: "Canal+",
+    match: (n) =>
+      n.includes("canal+") ||
+      n.includes("canal plus") ||
+      n.includes("apple tv") ||
+      n.includes("paramount") ||
+      n.includes("ocs") ||
+      n.includes("max"),
+  },
+];
 
 function mapToCinemaisonPlatform(name) {
-  return CINEMAISON_PLATFORM_MAP[normalizeText(name)] || null;
+  const n = normalizeText(name);
+  if (!n) return null;
+  const rule = CINEMAISON_PLATFORM_RULES.find((r) => r.match(n));
+  return rule ? rule.platform : null;
 }
 
 function getCinemaisonPassword() {
