@@ -2547,5 +2547,47 @@
     "wantedBy": null,
     "updatedAt": "2026-09-07T14:26:17.347Z",
     "lastChecked": "2026-09-07T14:43:55.784Z"
+  },
+  {
+    "tmdbId": 8913,
+    "title": "Simetierre",
+    "year": "1989",
+    "director": "Mary Lambert",
+    "poster": "https://image.tmdb.org/t/p/w500/iLKoucSBI1IoPu0kTPUOfy2v7fl.jpg",
+    "synopsis": "Lorsque le Docteur Louis Creed et sa petite famille quittent Chicago pour s’installer dans une bourgade tranquille de la Nouvelle Angleterre, ils s’imaginent que le cimetière des animaux situé juste derrière leur maison n’est rien d’autre qu’un endroit paisible dédié à leurs compagnons familiers… Ils découvriront bientôt que ce cimetière détient un TERRIBLE SECRET… le pouvoir de résurrection des morts qui, une fois de retour dans le monde des vivants, sont en proie à des forces maléfiques d’une incroyable violence et possédés par un désir de destruction sans limite !",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Dale Midkiff",
+      "Fred Gwynne",
+      "Denise Crosby",
+      "Brad Greenquist",
+      "Michael Lombard"
+    ],
+    "tmdbRating": 6.656,
+    "tmdbVotes": 2452,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0098084",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8913/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Canal VOD",
+        "Orange VOD",
+        "YouTube",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-07T17:40:03.357Z",
+    "lastChecked": "2026-09-07T17:40:04.475Z"
   }
 ]
