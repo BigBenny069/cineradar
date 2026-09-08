@@ -530,5 +530,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/8913/",
     "updatedAt": "2026-09-07T17:40:03.357Z",
     "tmdbId": 8913
+  },
+  {
+    "title": "L'École fantastique",
+    "year": 2005,
+    "director": "Mike Mitchell",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11459/",
+    "updatedAt": "2026-09-08T20:36:28.421Z",
+    "tmdbId": 11459
   }
 ]
