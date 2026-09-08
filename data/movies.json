@@ -538,5 +538,13 @@
     "letterboxdUrl": "https://letterboxd.com/tmdb/11459/",
     "updatedAt": "2026-09-08T20:36:28.421Z",
     "tmdbId": 11459
+  },
+  {
+    "title": "Kick-Ass",
+    "year": 2010,
+    "director": "Matthew Vaughn",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/23483/",
+    "updatedAt": "2026-09-08T20:37:38.850Z",
+    "tmdbId": 23483
   }
 ]
