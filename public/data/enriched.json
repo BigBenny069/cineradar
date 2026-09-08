@@ -2633,5 +2633,49 @@
     "wantedBy": null,
     "updatedAt": "2026-09-08T20:36:28.421Z",
     "lastChecked": "2026-09-08T20:37:25.861Z"
+  },
+  {
+    "tmdbId": 23483,
+    "title": "Kick-Ass",
+    "year": "2010",
+    "director": "Matthew Vaughn",
+    "poster": "https://image.tmdb.org/t/p/w500/nHg8x8eSkf802zzXTsAPNww2XZn.jpg",
+    "synopsis": "Dave Lizewski est un adolescent gavé de comics qui ne vit que pour ce monde de super‐héros et d’incroyables aventures. Décidé à vivre son obsession jusque dans la réalité, il se choisit un nom – Kick‐Ass – se fabrique lui‐même un costume, et se lance dans une bataille effrénée contre le crime. Dans son délire, il n’a qu’un seul problème : Kick‐Ass n’a pas le moindre superpouvoir… Le voilà pourchassé par toutes les brutes de la ville. Mais Kick‐Ass s’associe bientôt à d’autres délirants copycats décidés eux aussi à faire régner la justice. Parmi eux, une enfant de 11 ans, Hit Girl et son père Big Daddy, mais aussi Red Mist. Le parrain de la mafia locale, Frank D’Amico, va leur donner l’occasion de montrer ce dont ils sont capables…",
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "cast": [
+      "Aaron Taylor-Johnson",
+      "Chloë Grace Moretz",
+      "Nicolas Cage",
+      "Lyndsy Fonseca",
+      "Mark Strong"
+    ],
+    "tmdbRating": 7.123,
+    "tmdbVotes": 12613,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1250777",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/23483/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Orange VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "updatedAt": "2026-09-08T20:37:38.850Z",
+    "lastChecked": "2026-09-08T20:37:40.060Z"
   }
 ]
