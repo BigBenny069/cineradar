@@ -20,7 +20,7 @@
     "tmdbRating": 7.673,
     "tmdbVotes": 802,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 87597,
+    "letterboxdVotes": 87631,
     "imdbId": "tt0119250",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -32,7 +32,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": null,
-    "lastChecked": "2026-09-07T17:40:47.156Z"
+    "lastChecked": "2026-09-08T10:23:34.931Z"
   },
   {
     "tmdbId": 1091,
@@ -53,10 +53,10 @@
       "David Clennon",
       "Keith David"
     ],
-    "tmdbRating": 8.1,
-    "tmdbVotes": 8223,
+    "tmdbRating": 8.073,
+    "tmdbVotes": 8226,
     "letterboxdRating": 4.35,
-    "letterboxdVotes": 1409000,
+    "letterboxdVotes": 1410127,
     "imdbId": "tt0084787",
     "letterboxdUrl": "https://letterboxd.com/film/the-thing/",
     "providers": {
@@ -79,7 +79,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": null,
-    "lastChecked": "2026-09-07T17:40:47.262Z"
+    "lastChecked": "2026-09-08T10:23:35.118Z"
   },
   {
     "tmdbId": 440161,
@@ -100,10 +100,10 @@
       "Riz Ahmed",
       "Rebecca Root"
     ],
-    "tmdbRating": 6.832,
-    "tmdbVotes": 2135,
+    "tmdbRating": 6.833,
+    "tmdbVotes": 2136,
     "letterboxdRating": 3.57,
-    "letterboxdVotes": 95421,
+    "letterboxdVotes": 95439,
     "imdbId": "tt4971344",
     "letterboxdUrl": "https://letterboxd.com/film/the-sisters-brothers/",
     "providers": {
@@ -126,7 +126,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": null,
-    "lastChecked": "2026-09-07T17:40:47.361Z"
+    "lastChecked": "2026-09-08T10:23:35.356Z"
   },
   {
     "tmdbId": 1092,
@@ -146,10 +146,10 @@
       "Orson Welles",
       "Paul Hörbiger"
     ],
-    "tmdbRating": 7.885,
+    "tmdbRating": 7.9,
     "tmdbVotes": 2169,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 205828,
+    "letterboxdVotes": 205913,
     "imdbId": "tt0041959",
     "letterboxdUrl": "https://letterboxd.com/film/the-third-man/",
     "providers": {
@@ -174,7 +174,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": null,
-    "lastChecked": "2026-09-07T17:40:47.461Z"
+    "lastChecked": "2026-09-08T10:23:35.492Z"
   },
   {
     "tmdbId": 11547,
@@ -196,7 +196,7 @@
     "tmdbRating": 5.691,
     "tmdbVotes": 1480,
     "letterboxdRating": 2.72,
-    "letterboxdVotes": 101839,
+    "letterboxdVotes": 101894,
     "imdbId": "tt0303816",
     "letterboxdUrl": "https://letterboxd.com/film/cabin-fever/",
     "providers": {
@@ -215,7 +215,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": null,
-    "lastChecked": "2026-09-07T17:40:47.559Z"
+    "lastChecked": "2026-09-08T10:23:35.703Z"
   },
   {
     "tmdbId": 399170,
@@ -240,7 +240,7 @@
     "tmdbRating": 6.734,
     "tmdbVotes": 3933,
     "letterboxdRating": 3.56,
-    "letterboxdVotes": 306446,
+    "letterboxdVotes": 306503,
     "imdbId": "tt5439796",
     "letterboxdUrl": "https://letterboxd.com/film/logan-lucky/",
     "providers": {
@@ -262,7 +262,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T16:08:52.772Z",
-    "lastChecked": "2026-09-07T17:40:47.657Z"
+    "lastChecked": "2026-09-08T10:23:35.992Z"
   },
   {
     "tmdbId": 221,
@@ -284,7 +284,7 @@
     "tmdbRating": 7.5,
     "tmdbVotes": 1814,
     "letterboxdRating": 3.83,
-    "letterboxdVotes": 195828,
+    "letterboxdVotes": 195897,
     "imdbId": "tt0048545",
     "letterboxdUrl": "https://letterboxd.com/film/rebel-without-a-cause/",
     "providers": {
@@ -310,7 +310,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T16:10:02.797Z",
-    "lastChecked": "2026-09-07T17:40:47.806Z"
+    "lastChecked": "2026-09-08T10:23:36.135Z"
   },
   {
     "tmdbId": 28260,
@@ -333,7 +333,7 @@
     "tmdbRating": 6.572,
     "tmdbVotes": 922,
     "letterboxdRating": 3.09,
-    "letterboxdVotes": 22187,
+    "letterboxdVotes": 22195,
     "imdbId": "tt0107953",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-iii/",
     "providers": {
@@ -348,7 +348,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T16:12:20.239Z",
-    "lastChecked": "2026-09-07T17:40:48.085Z"
+    "lastChecked": "2026-09-08T10:23:36.320Z"
   },
   {
     "tmdbId": 2614,
@@ -370,9 +370,9 @@
       "Fiona Lewis"
     ],
     "tmdbRating": 6.827,
-    "tmdbVotes": 1450,
+    "tmdbVotes": 1451,
     "letterboxdRating": 3.49,
-    "letterboxdVotes": 43953,
+    "letterboxdVotes": 43962,
     "imdbId": "tt0093260",
     "letterboxdUrl": "https://letterboxd.com/film/innerspace/",
     "providers": {
@@ -394,7 +394,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T16:34:02.844Z",
-    "lastChecked": "2026-09-07T17:40:48.256Z"
+    "lastChecked": "2026-09-08T10:23:36.582Z"
   },
   {
     "tmdbId": 551,
@@ -416,9 +416,9 @@
       "Jack Albertson"
     ],
     "tmdbRating": 7.157,
-    "tmdbVotes": 1054,
+    "tmdbVotes": 1055,
     "letterboxdRating": 3.52,
-    "letterboxdVotes": 33720,
+    "letterboxdVotes": 33727,
     "imdbId": "tt0069113",
     "letterboxdUrl": "https://letterboxd.com/film/the-poseidon-adventure/",
     "providers": {
@@ -436,7 +436,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T19:30:27.136Z",
-    "lastChecked": "2026-09-07T17:40:48.350Z"
+    "lastChecked": "2026-09-08T10:23:36.828Z"
   },
   {
     "tmdbId": 27932,
@@ -474,7 +474,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-09T19:38:27.239Z",
-    "lastChecked": "2026-09-07T17:40:48.463Z"
+    "lastChecked": "2026-09-08T10:23:37.058Z"
   },
   {
     "tmdbId": 24929,
@@ -497,7 +497,7 @@
     "tmdbRating": 6.356,
     "tmdbVotes": 708,
     "letterboxdRating": 2.82,
-    "letterboxdVotes": 24629,
+    "letterboxdVotes": 24635,
     "imdbId": "tt0095990",
     "letterboxdUrl": "https://letterboxd.com/film/return-of-the-living-dead-part-ii/",
     "providers": {
@@ -511,7 +511,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-13T21:55:35.358Z",
-    "lastChecked": "2026-09-07T17:40:48.634Z"
+    "lastChecked": "2026-09-08T10:23:37.259Z"
   },
   {
     "tmdbId": 109428,
@@ -530,10 +530,10 @@
       "Jessica Lucas",
       "Elizabeth Blackmore"
     ],
-    "tmdbRating": 6.7,
-    "tmdbVotes": 5333,
+    "tmdbRating": 6.661,
+    "tmdbVotes": 5334,
     "letterboxdRating": 3.41,
-    "letterboxdVotes": 496044,
+    "letterboxdVotes": 496365,
     "imdbId": "tt1288558",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead/",
     "providers": {
@@ -554,7 +554,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-13T21:59:08.036Z",
-    "lastChecked": "2026-09-07T17:40:48.773Z"
+    "lastChecked": "2026-09-08T10:23:37.441Z"
   },
   {
     "tmdbId": 713704,
@@ -574,10 +574,10 @@
       "Gabrielle Echols",
       "Nell Fisher"
     ],
-    "tmdbRating": 6.961,
+    "tmdbRating": 6.96,
     "tmdbVotes": 3969,
     "letterboxdRating": 3.15,
-    "letterboxdVotes": 935452,
+    "letterboxdVotes": 935933,
     "imdbId": "tt13345606",
     "letterboxdUrl": "https://letterboxd.com/film/evil-dead-rise/",
     "providers": {
@@ -598,7 +598,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-13T22:00:03.051Z",
-    "lastChecked": "2026-09-07T17:40:48.870Z"
+    "lastChecked": "2026-09-08T10:23:37.699Z"
   },
   {
     "tmdbId": 270303,
@@ -619,9 +619,9 @@
       "Olivia Luccardi"
     ],
     "tmdbRating": 6.581,
-    "tmdbVotes": 7123,
+    "tmdbVotes": 7124,
     "letterboxdRating": 3.39,
-    "letterboxdVotes": 913601,
+    "letterboxdVotes": 914017,
     "imdbId": "tt3235888",
     "letterboxdUrl": "https://letterboxd.com/film/it-follows/",
     "providers": {
@@ -641,7 +641,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-14T17:23:35.231Z",
-    "lastChecked": "2026-09-07T17:40:49.020Z"
+    "lastChecked": "2026-09-08T10:23:37.917Z"
   },
   {
     "tmdbId": 11533,
@@ -665,7 +665,7 @@
     "tmdbRating": 7.171,
     "tmdbVotes": 723,
     "letterboxdRating": 3.65,
-    "letterboxdVotes": 52938,
+    "letterboxdVotes": 52977,
     "imdbId": "tt0057197",
     "letterboxdUrl": "https://letterboxd.com/film/jason-and-the-argonauts/",
     "providers": {
@@ -680,7 +680,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-14T22:10:28.023Z",
-    "lastChecked": "2026-09-07T17:40:49.116Z"
+    "lastChecked": "2026-09-08T10:23:38.096Z"
   },
   {
     "tmdbId": 1242332,
@@ -701,10 +701,10 @@
       "Billy MacLellan",
       "Ryan Allen"
     ],
-    "tmdbRating": 7.26,
-    "tmdbVotes": 561,
+    "tmdbRating": 7.266,
+    "tmdbVotes": 564,
     "letterboxdRating": 2.96,
-    "letterboxdVotes": 83585,
+    "letterboxdVotes": 84108,
     "imdbId": "tt31195136",
     "letterboxdUrl": "https://boxd.it/LczA",
     "providers": {
@@ -714,7 +714,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-16T07:05:17.637Z",
-    "lastChecked": "2026-09-07T17:40:49.324Z"
+    "lastChecked": "2026-09-08T10:23:38.478Z"
   },
   {
     "tmdbId": 38985,
@@ -737,7 +737,7 @@
     "tmdbRating": 7.47,
     "tmdbVotes": 687,
     "letterboxdRating": 4.27,
-    "letterboxdVotes": 167698,
+    "letterboxdVotes": 167847,
     "imdbId": "tt0076740",
     "letterboxdUrl": "https://boxd.it/14J6",
     "providers": {
@@ -747,7 +747,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-16T08:52:30.243Z",
-    "lastChecked": "2026-09-07T17:40:49.499Z"
+    "lastChecked": "2026-09-08T10:23:38.635Z"
   },
   {
     "tmdbId": 289,
@@ -767,10 +767,10 @@
       "Claude Rains",
       "Conrad Veidt"
     ],
-    "tmdbRating": 8.139,
-    "tmdbVotes": 6201,
+    "tmdbRating": 8.1,
+    "tmdbVotes": 6204,
     "letterboxdRating": 4.28,
-    "letterboxdVotes": 875971,
+    "letterboxdVotes": 876397,
     "imdbId": "tt0034583",
     "letterboxdUrl": "https://boxd.it/2aG0",
     "providers": {
@@ -794,7 +794,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-16T20:03:44.201Z",
-    "lastChecked": "2026-09-07T17:40:49.680Z"
+    "lastChecked": "2026-09-08T10:23:38.851Z"
   },
   {
     "tmdbId": 15,
@@ -814,10 +814,10 @@
       "Ray Collins",
       "George Coulouris"
     ],
-    "tmdbRating": 7.969,
-    "tmdbVotes": 6209,
+    "tmdbRating": 8,
+    "tmdbVotes": 6211,
     "letterboxdRating": 4.19,
-    "letterboxdVotes": 680113,
+    "letterboxdVotes": 680450,
     "imdbId": "tt0033467",
     "letterboxdUrl": "https://boxd.it/71O",
     "providers": {
@@ -843,7 +843,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-16T20:05:21.291Z",
-    "lastChecked": "2026-09-07T17:40:49.855Z"
+    "lastChecked": "2026-09-08T10:23:39.002Z"
   },
   {
     "tmdbId": 916,
@@ -867,7 +867,7 @@
     "tmdbRating": 7.15,
     "tmdbVotes": 1328,
     "letterboxdRating": 3.74,
-    "letterboxdVotes": 85346,
+    "letterboxdVotes": 85373,
     "imdbId": "tt0062765",
     "letterboxdUrl": "https://boxd.it/29i2",
     "providers": {
@@ -888,7 +888,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-17T20:18:42.224Z",
-    "lastChecked": "2026-09-07T17:40:50.024Z"
+    "lastChecked": "2026-09-08T10:23:39.221Z"
   },
   {
     "tmdbId": 438674,
@@ -909,10 +909,10 @@
       "Michael Jai White",
       "Jennifer Carpenter"
     ],
-    "tmdbRating": 6.595,
-    "tmdbVotes": 1162,
+    "tmdbRating": 6.596,
+    "tmdbVotes": 1163,
     "letterboxdRating": 3.71,
-    "letterboxdVotes": 73195,
+    "letterboxdVotes": 73221,
     "imdbId": "tt6491178",
     "letterboxdUrl": "https://letterboxd.com/film/dragged-across-concrete/",
     "providers": {
@@ -930,7 +930,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-18T04:27:32.650Z",
-    "lastChecked": "2026-09-07T17:40:50.120Z"
+    "lastChecked": "2026-09-08T10:23:39.426Z"
   },
   {
     "tmdbId": 20424,
@@ -963,7 +963,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:04:27.588Z",
-    "lastChecked": "2026-09-07T17:40:50.126Z"
+    "lastChecked": "2026-09-08T10:23:39.513Z"
   },
   {
     "tmdbId": 1124142,
@@ -987,7 +987,7 @@
     "tmdbRating": 6.5,
     "tmdbVotes": 33,
     "letterboxdRating": 3.45,
-    "letterboxdVotes": 21907,
+    "letterboxdVotes": 22132,
     "imdbId": "tt27706593",
     "letterboxdUrl": "https://letterboxd.com/film/the-rivals-of-amziah-king/",
     "providers": {
@@ -997,7 +997,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.030Z",
-    "lastChecked": "2026-09-07T17:40:50.293Z"
+    "lastChecked": "2026-09-08T10:23:39.641Z"
   },
   {
     "tmdbId": 60033,
@@ -1021,7 +1021,7 @@
     "tmdbRating": 5.25,
     "tmdbVotes": 32,
     "letterboxdRating": 4.23,
-    "letterboxdVotes": 87597,
+    "letterboxdVotes": 87631,
     "imdbId": "tt0117898",
     "letterboxdUrl": "https://letterboxd.com/film/fireworks-1997/",
     "providers": {
@@ -1033,7 +1033,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.100Z",
-    "lastChecked": "2026-09-07T17:40:50.387Z"
+    "lastChecked": "2026-09-08T10:23:39.782Z"
   },
   {
     "tmdbId": 83666,
@@ -1057,7 +1057,7 @@
     "tmdbRating": 7.678,
     "tmdbVotes": 6459,
     "letterboxdRating": 4.03,
-    "letterboxdVotes": 1119100,
+    "letterboxdVotes": 1119440,
     "imdbId": "tt1748122",
     "letterboxdUrl": "https://letterboxd.com/film/moonrise-kingdom/",
     "providers": {
@@ -1082,7 +1082,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.244Z",
-    "lastChecked": "2026-09-07T17:40:50.482Z"
+    "lastChecked": "2026-09-08T10:23:39.919Z"
   },
   {
     "tmdbId": 5925,
@@ -1104,9 +1104,9 @@
       "Charles Bronson"
     ],
     "tmdbRating": 7.927,
-    "tmdbVotes": 2932,
+    "tmdbVotes": 2933,
     "letterboxdRating": 4.17,
-    "letterboxdVotes": 164969,
+    "letterboxdVotes": 165044,
     "imdbId": "tt0057115",
     "letterboxdUrl": "https://letterboxd.com/film/the-great-escape/",
     "providers": {
@@ -1126,7 +1126,7 @@
     "availableSince": "2026-09-01T21:40:31.868Z",
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.387Z",
-    "lastChecked": "2026-09-07T17:40:50.665Z"
+    "lastChecked": "2026-09-08T10:23:40.057Z"
   },
   {
     "tmdbId": 12101,
@@ -1150,7 +1150,7 @@
     "tmdbRating": 6.923,
     "tmdbVotes": 1476,
     "letterboxdRating": 3.5,
-    "letterboxdVotes": 69827,
+    "letterboxdVotes": 69856,
     "imdbId": "tt0070723",
     "letterboxdUrl": "https://letterboxd.com/film/soylent-green/",
     "providers": {
@@ -1173,7 +1173,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.827Z",
-    "lastChecked": "2026-09-07T17:40:50.767Z"
+    "lastChecked": "2026-09-08T10:23:40.181Z"
   },
   {
     "tmdbId": 11592,
@@ -1193,10 +1193,10 @@
       "Matthew Lillard",
       "Scott Morgan"
     ],
-    "tmdbRating": 6.733,
-    "tmdbVotes": 782,
+    "tmdbRating": 6.734,
+    "tmdbVotes": 784,
     "letterboxdRating": 3.83,
-    "letterboxdVotes": 111544,
+    "letterboxdVotes": 111588,
     "imdbId": "tt0111127",
     "letterboxdUrl": "https://letterboxd.com/film/serial-mom/",
     "providers": {
@@ -1206,7 +1206,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:46.928Z",
-    "lastChecked": "2026-09-07T17:40:50.872Z"
+    "lastChecked": "2026-09-08T10:23:40.442Z"
   },
   {
     "tmdbId": 31089,
@@ -1228,7 +1228,7 @@
     "tmdbRating": 8,
     "tmdbVotes": 4,
     "letterboxdRating": 4.07,
-    "letterboxdVotes": 28714,
+    "letterboxdVotes": 28728,
     "imdbId": "tt0125680",
     "letterboxdUrl": "https://letterboxd.com/film/bullet-in-the-head/",
     "providers": {
@@ -1238,7 +1238,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:47.000Z",
-    "lastChecked": "2026-09-07T17:40:50.962Z"
+    "lastChecked": "2026-09-08T10:23:40.652Z"
   },
   {
     "tmdbId": 38643,
@@ -1269,7 +1269,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:47.110Z",
-    "lastChecked": "2026-09-07T17:40:51.052Z"
+    "lastChecked": "2026-09-08T10:23:40.836Z"
   },
   {
     "tmdbId": 294963,
@@ -1290,10 +1290,10 @@
       "Matthew Fox",
       "Lili Simmons"
     ],
-    "tmdbRating": 6.891,
-    "tmdbVotes": 2624,
+    "tmdbRating": 6.9,
+    "tmdbVotes": 2625,
     "letterboxdRating": 3.62,
-    "letterboxdVotes": 209172,
+    "letterboxdVotes": 209255,
     "imdbId": "tt2494362",
     "letterboxdUrl": "https://letterboxd.com/film/bone-tomahawk/",
     "providers": {
@@ -1312,7 +1312,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:47.566Z",
-    "lastChecked": "2026-09-07T17:40:51.218Z"
+    "lastChecked": "2026-09-08T10:23:41.028Z"
   },
   {
     "tmdbId": 1119449,
@@ -1333,10 +1333,10 @@
       "Michael Peña",
       "Zazie Beetz"
     ],
-    "tmdbRating": 7.115,
-    "tmdbVotes": 974,
+    "tmdbRating": 7.113,
+    "tmdbVotes": 977,
     "letterboxdRating": 3.38,
-    "letterboxdVotes": 299797,
+    "letterboxdVotes": 300418,
     "imdbId": "tt1341338",
     "letterboxdUrl": "https://letterboxd.com/film/good-luck-have-fun-dont-die/",
     "providers": {
@@ -1355,7 +1355,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:48.066Z",
-    "lastChecked": "2026-09-07T17:40:51.384Z"
+    "lastChecked": "2026-09-08T10:23:41.208Z"
   },
   {
     "tmdbId": 274,
@@ -1376,10 +1376,10 @@
       "Ted Levine",
       "Anthony Heald"
     ],
-    "tmdbRating": 8.345,
-    "tmdbVotes": 18447,
+    "tmdbRating": 8.3,
+    "tmdbVotes": 18450,
     "letterboxdRating": 4.34,
-    "letterboxdVotes": 3319456,
+    "letterboxdVotes": 3321716,
     "imdbId": "tt0102926",
     "letterboxdUrl": "https://letterboxd.com/film/the-silence-of-the-lambs/",
     "providers": {
@@ -1399,7 +1399,7 @@
     "availableSince": "2026-09-01T21:40:32.939Z",
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:48.134Z",
-    "lastChecked": "2026-09-07T17:40:51.488Z"
+    "lastChecked": "2026-09-08T10:23:41.333Z"
   },
   {
     "tmdbId": 1317288,
@@ -1422,7 +1422,7 @@
     "tmdbRating": 7.365,
     "tmdbVotes": 2164,
     "letterboxdRating": 4.02,
-    "letterboxdVotes": 3084574,
+    "letterboxdVotes": 3086572,
     "imdbId": "tt32916440",
     "letterboxdUrl": "https://letterboxd.com/film/marty-supreme/",
     "providers": {
@@ -1441,7 +1441,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:48.207Z",
-    "lastChecked": "2026-09-07T17:40:51.588Z"
+    "lastChecked": "2026-09-08T10:23:41.542Z"
   },
   {
     "tmdbId": 687163,
@@ -1461,10 +1461,10 @@
       "Lionel Boyce",
       "Milana Vayntrub"
     ],
-    "tmdbRating": 8.645,
-    "tmdbVotes": 7598,
+    "tmdbRating": 8.644,
+    "tmdbVotes": 7607,
     "letterboxdRating": 4.31,
-    "letterboxdVotes": 4384104,
+    "letterboxdVotes": 4390480,
     "imdbId": "tt12042730",
     "letterboxdUrl": "https://letterboxd.com/film/project-hail-mary/",
     "providers": {
@@ -1480,7 +1480,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-21T20:11:48.431Z",
-    "lastChecked": "2026-09-07T17:40:51.692Z"
+    "lastChecked": "2026-09-08T10:23:41.760Z"
   },
   {
     "tmdbId": 11324,
@@ -1501,10 +1501,10 @@
       "Max von Sydow",
       "Michelle Williams"
     ],
-    "tmdbRating": 8.2,
-    "tmdbVotes": 26370,
+    "tmdbRating": 8.197,
+    "tmdbVotes": 26374,
     "letterboxdRating": 4.2,
-    "letterboxdVotes": 3750181,
+    "letterboxdVotes": 3752608,
     "imdbId": "tt1130884",
     "letterboxdUrl": "https://boxd.it/1U82",
     "providers": {
@@ -1524,7 +1524,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-22T20:05:56.869Z",
-    "lastChecked": "2026-09-07T17:40:51.865Z"
+    "lastChecked": "2026-09-08T10:23:41.930Z"
   },
   {
     "tmdbId": 923,
@@ -1544,10 +1544,10 @@
       "Gaylen Ross",
       "David Crawford"
     ],
-    "tmdbRating": 7.485,
-    "tmdbVotes": 2366,
+    "tmdbRating": 7.484,
+    "tmdbVotes": 2368,
     "letterboxdRating": 3.95,
-    "letterboxdVotes": 203585,
+    "letterboxdVotes": 203663,
     "imdbId": "tt0077402",
     "letterboxdUrl": "https://letterboxd.com/film/dawn-of-the-dead/",
     "providers": {
@@ -1560,7 +1560,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-25T16:55:40.163Z",
-    "lastChecked": "2026-09-07T17:40:51.963Z"
+    "lastChecked": "2026-09-08T10:23:42.057Z"
   },
   {
     "tmdbId": 27958,
@@ -1584,7 +1584,7 @@
     "tmdbRating": 6.586,
     "tmdbVotes": 646,
     "letterboxdRating": 3.59,
-    "letterboxdVotes": 106741,
+    "letterboxdVotes": 106791,
     "imdbId": "tt0080569",
     "letterboxdUrl": "https://letterboxd.com/film/cruising/",
     "providers": {
@@ -1603,7 +1603,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-25T16:57:52.142Z",
-    "lastChecked": "2026-09-07T17:40:52.057Z"
+    "lastChecked": "2026-09-08T10:23:42.181Z"
   },
   {
     "tmdbId": 73567,
@@ -1624,10 +1624,10 @@
       "Thomas Haden Church",
       "Gina Gershon"
     ],
-    "tmdbRating": 6.5,
-    "tmdbVotes": 1619,
+    "tmdbRating": 6.528,
+    "tmdbVotes": 1620,
     "letterboxdRating": 3.51,
-    "letterboxdVotes": 76354,
+    "letterboxdVotes": 76432,
     "imdbId": "tt1726669",
     "letterboxdUrl": "https://letterboxd.com/film/killer-joe/",
     "providers": {
@@ -1646,7 +1646,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-25T16:58:45.279Z",
-    "lastChecked": "2026-09-07T17:40:52.204Z"
+    "lastChecked": "2026-09-08T10:23:42.366Z"
   },
   {
     "tmdbId": 510,
@@ -1666,9 +1666,9 @@
       "William Redfield"
     ],
     "tmdbRating": 8.406,
-    "tmdbVotes": 11715,
+    "tmdbVotes": 11716,
     "letterboxdRating": 4.37,
-    "letterboxdVotes": 1036004,
+    "letterboxdVotes": 1036477,
     "imdbId": "tt0073486",
     "letterboxdUrl": "https://letterboxd.com/film/one-flew-over-the-cuckoos-nest/",
     "providers": {
@@ -1691,7 +1691,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-27T06:53:21.443Z",
-    "lastChecked": "2026-09-07T17:40:52.300Z"
+    "lastChecked": "2026-09-08T10:23:42.534Z"
   },
   {
     "tmdbId": 19,
@@ -1712,9 +1712,9 @@
       "Theodor Loos"
     ],
     "tmdbRating": 8.086,
-    "tmdbVotes": 3181,
+    "tmdbVotes": 3184,
     "letterboxdRating": 4.24,
-    "letterboxdVotes": 280975,
+    "letterboxdVotes": 281084,
     "imdbId": "tt0017136",
     "letterboxdUrl": "https://letterboxd.com/film/metropolis/",
     "providers": {
@@ -1733,7 +1733,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-26T18:47:34.220Z",
-    "lastChecked": "2026-09-07T17:40:52.396Z"
+    "lastChecked": "2026-09-08T10:23:42.663Z"
   },
   {
     "tmdbId": 1240889,
@@ -1754,10 +1754,10 @@
       "Arthur Conti",
       "Eva Victor"
     ],
-    "tmdbRating": 6.662,
-    "tmdbVotes": 99,
+    "tmdbRating": 6.7,
+    "tmdbVotes": 100,
     "letterboxdRating": 3.78,
-    "letterboxdVotes": 264624,
+    "letterboxdVotes": 268312,
     "imdbId": "tt35298123",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1240889/",
     "providers": {
@@ -1767,7 +1767,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-27T09:43:15.489Z",
-    "lastChecked": "2026-09-07T17:40:52.627Z"
+    "lastChecked": "2026-09-08T10:23:42.835Z"
   },
   {
     "tmdbId": 1191818,
@@ -1789,7 +1789,7 @@
     "tmdbRating": 0,
     "tmdbVotes": 0,
     "letterboxdRating": 3.06,
-    "letterboxdVotes": 2531,
+    "letterboxdVotes": 2658,
     "imdbId": "tt30495381",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1191818/",
     "providers": {
@@ -1799,7 +1799,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-27T09:06:23.466Z",
-    "lastChecked": "2026-09-07T17:40:52.854Z"
+    "lastChecked": "2026-09-08T10:23:43.031Z"
   },
   {
     "tmdbId": 1666700,
@@ -1818,7 +1818,7 @@
     "tmdbRating": 0,
     "tmdbVotes": 0,
     "letterboxdRating": 3.55,
-    "letterboxdVotes": 292,
+    "letterboxdVotes": 308,
     "imdbId": "tt1864268",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1666700/",
     "providers": {
@@ -1828,7 +1828,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-27T09:07:43.464Z",
-    "lastChecked": "2026-09-07T17:40:53.016Z"
+    "lastChecked": "2026-09-08T10:23:43.224Z"
   },
   {
     "tmdbId": 1182935,
@@ -1852,7 +1852,7 @@
     "tmdbRating": 6.2,
     "tmdbVotes": 10,
     "letterboxdRating": 3.18,
-    "letterboxdVotes": 9824,
+    "letterboxdVotes": 10033,
     "imdbId": "tt32359586",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1182935/",
     "providers": {
@@ -1862,7 +1862,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-27T09:08:23.366Z",
-    "lastChecked": "2026-09-07T17:40:53.240Z"
+    "lastChecked": "2026-09-08T10:23:43.415Z"
   },
   {
     "tmdbId": 399057,
@@ -1884,9 +1884,9 @@
       "Sunny Suljic"
     ],
     "tmdbRating": 7.002,
-    "tmdbVotes": 4558,
+    "tmdbVotes": 4562,
     "letterboxdRating": 3.7,
-    "letterboxdVotes": 846386,
+    "letterboxdVotes": 846667,
     "imdbId": "tt5715874",
     "letterboxdUrl": "https://letterboxd.com/tmdb/399057/",
     "providers": {
@@ -1907,7 +1907,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-30T00:47:18.436Z",
-    "lastChecked": "2026-09-07T17:40:53.411Z"
+    "lastChecked": "2026-09-08T10:23:43.567Z"
   },
   {
     "tmdbId": 42506,
@@ -1930,7 +1930,7 @@
     "tmdbRating": 7.108,
     "tmdbVotes": 200,
     "letterboxdRating": 3.75,
-    "letterboxdVotes": 27431,
+    "letterboxdVotes": 27444,
     "imdbId": "tt0150980",
     "letterboxdUrl": "https://letterboxd.com/tmdb/42506/",
     "providers": {
@@ -1945,7 +1945,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-08-30T00:50:09.450Z",
-    "lastChecked": "2026-09-07T17:40:53.652Z"
+    "lastChecked": "2026-09-08T10:23:43.714Z"
   },
   {
     "tmdbId": 576,
@@ -1967,7 +1967,7 @@
     "tmdbRating": 7.592,
     "tmdbVotes": 1375,
     "letterboxdRating": 4.1,
-    "letterboxdVotes": 79793,
+    "letterboxdVotes": 79818,
     "imdbId": "tt0065214",
     "letterboxdUrl": "https://letterboxd.com/film/the-wild-bunch/",
     "providers": {
@@ -1988,7 +1988,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-31T06:03:53.362Z",
-    "lastChecked": "2026-09-07T17:40:53.744Z"
+    "lastChecked": "2026-09-08T10:23:43.924Z"
   },
   {
     "tmdbId": 10747,
@@ -2007,10 +2007,10 @@
       "Bill McKinney",
       "John Vernon"
     ],
-    "tmdbRating": 7.456,
-    "tmdbVotes": 1338,
+    "tmdbRating": 7.455,
+    "tmdbVotes": 1339,
     "letterboxdRating": 3.89,
-    "letterboxdVotes": 69286,
+    "letterboxdVotes": 69318,
     "imdbId": "tt0075029",
     "letterboxdUrl": "https://letterboxd.com/film/the-outlaw-josey-wales/",
     "providers": {
@@ -2030,7 +2030,7 @@
     "availableSince": null,
     "wantedBy": "benoit",
     "updatedAt": "2026-08-31T06:03:53.392Z",
-    "lastChecked": "2026-09-07T17:40:53.835Z"
+    "lastChecked": "2026-09-08T10:23:44.051Z"
   },
   {
     "tmdbId": 311,
@@ -2050,10 +2050,10 @@
       "Joe Pesci",
       "Burt Young"
     ],
-    "tmdbRating": 8.375,
-    "tmdbVotes": 6191,
+    "tmdbRating": 8.374,
+    "tmdbVotes": 6192,
     "letterboxdRating": 4.22,
-    "letterboxdVotes": 329967,
+    "letterboxdVotes": 330088,
     "imdbId": "tt0087843",
     "letterboxdUrl": "https://letterboxd.com/film/once-upon-a-time-in-america/",
     "providers": {
@@ -2074,7 +2074,7 @@
     "availableSince": "2026-08-31T13:11:01.685Z",
     "wantedBy": null,
     "updatedAt": "2026-09-02T08:21:20.557Z",
-    "lastChecked": "2026-09-07T17:40:53.930Z"
+    "lastChecked": "2026-09-08T10:23:44.188Z"
   },
   {
     "tmdbId": 882059,
@@ -2095,10 +2095,10 @@
       "Michelle Dockery",
       "Brett Gelman"
     ],
-    "tmdbRating": 6.67,
-    "tmdbVotes": 874,
+    "tmdbRating": 6.669,
+    "tmdbVotes": 875,
     "letterboxdRating": 3.06,
-    "letterboxdVotes": 98314,
+    "letterboxdVotes": 98328,
     "imdbId": "tt13923084",
     "letterboxdUrl": "https://letterboxd.com/tmdb/882059/",
     "providers": {
@@ -2116,7 +2116,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-02T16:01:20.610Z",
-    "lastChecked": "2026-09-07T17:40:54.118Z"
+    "lastChecked": "2026-09-08T10:23:44.441Z"
   },
   {
     "tmdbId": 756999,
@@ -2136,10 +2136,10 @@
       "Jeremy Davies",
       "E. Roger Mitchell"
     ],
-    "tmdbRating": 7.514,
-    "tmdbVotes": 6048,
+    "tmdbRating": 7.513,
+    "tmdbVotes": 6050,
     "letterboxdRating": 3.33,
-    "letterboxdVotes": 1631374,
+    "letterboxdVotes": 1632137,
     "imdbId": "tt7144666",
     "letterboxdUrl": "https://letterboxd.com/tmdb/756999/",
     "providers": {
@@ -2161,7 +2161,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-02T21:31:18.494Z",
-    "lastChecked": "2026-09-07T17:40:54.340Z"
+    "lastChecked": "2026-09-08T10:23:44.707Z"
   },
   {
     "tmdbId": 8740,
@@ -2184,7 +2184,7 @@
     "tmdbRating": 7.404,
     "tmdbVotes": 865,
     "letterboxdRating": 4.01,
-    "letterboxdVotes": 186372,
+    "letterboxdVotes": 186512,
     "imdbId": "tt0096163",
     "letterboxdUrl": "https://letterboxd.com/tmdb/8740/",
     "providers": {
@@ -2194,7 +2194,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-03T11:33:00.677Z",
-    "lastChecked": "2026-09-07T17:40:54.505Z"
+    "lastChecked": "2026-09-08T10:23:44.945Z"
   },
   {
     "tmdbId": 15050,
@@ -2217,7 +2217,7 @@
     "tmdbRating": 6.24,
     "tmdbVotes": 285,
     "letterboxdRating": 3.17,
-    "letterboxdVotes": 8977,
+    "letterboxdVotes": 8980,
     "imdbId": "tt0085271",
     "letterboxdUrl": "https://letterboxd.com/tmdb/15050/",
     "providers": {
@@ -2230,7 +2230,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:27:43.641Z",
-    "lastChecked": "2026-09-07T17:40:54.671Z"
+    "lastChecked": "2026-09-08T10:23:45.136Z"
   },
   {
     "tmdbId": 30959,
@@ -2254,7 +2254,7 @@
     "tmdbRating": 7.723,
     "tmdbVotes": 471,
     "letterboxdRating": 4.22,
-    "letterboxdVotes": 66075,
+    "letterboxdVotes": 66099,
     "imdbId": "tt0058279",
     "letterboxdUrl": "https://letterboxd.com/tmdb/30959/",
     "providers": {
@@ -2264,7 +2264,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:28:26.440Z",
-    "lastChecked": "2026-09-07T17:40:54.840Z"
+    "lastChecked": "2026-09-08T10:23:45.292Z"
   },
   {
     "tmdbId": 28155,
@@ -2287,7 +2287,7 @@
     "tmdbRating": 5.4,
     "tmdbVotes": 86,
     "letterboxdRating": 2.84,
-    "letterboxdVotes": 3940,
+    "letterboxdVotes": 3941,
     "imdbId": "tt0077756",
     "letterboxdUrl": "https://letterboxd.com/tmdb/28155/",
     "providers": {
@@ -2297,7 +2297,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:29:51.345Z",
-    "lastChecked": "2026-09-07T17:40:55.067Z"
+    "lastChecked": "2026-09-08T10:23:45.500Z"
   },
   {
     "tmdbId": 27302,
@@ -2332,7 +2332,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-04T07:30:32.812Z",
-    "lastChecked": "2026-09-07T17:40:55.289Z"
+    "lastChecked": "2026-09-08T10:23:45.705Z"
   },
   {
     "tmdbId": 8005,
@@ -2354,7 +2354,7 @@
     "tmdbRating": 6.609,
     "tmdbVotes": 2368,
     "letterboxdRating": 3.29,
-    "letterboxdVotes": 124901,
+    "letterboxdVotes": 124956,
     "imdbId": "tt0107977",
     "letterboxdUrl": "https://letterboxd.com/tmdb/8005/",
     "providers": {
@@ -2374,7 +2374,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-04T15:05:56.590Z",
-    "lastChecked": "2026-09-07T17:40:55.510Z"
+    "lastChecked": "2026-09-08T10:23:45.954Z"
   },
   {
     "tmdbId": 1204680,
@@ -2395,10 +2395,10 @@
       "Tone Bell",
       "Martha Kelly"
     ],
-    "tmdbRating": 7.6,
-    "tmdbVotes": 195,
+    "tmdbRating": 7.671,
+    "tmdbVotes": 217,
     "letterboxdRating": 3.86,
-    "letterboxdVotes": 277004,
+    "letterboxdVotes": 297573,
     "imdbId": "tt1756855",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1204680/",
     "providers": {
@@ -2408,7 +2408,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:13:07.348Z",
-    "lastChecked": "2026-09-07T17:40:55.685Z"
+    "lastChecked": "2026-09-08T10:23:46.102Z"
   },
   {
     "tmdbId": 1514026,
@@ -2429,10 +2429,10 @@
       "Keegan-Michael Key",
       "Michael Shannon"
     ],
-    "tmdbRating": 8.385,
-    "tmdbVotes": 39,
-    "letterboxdRating": 3.17,
-    "letterboxdVotes": 121924,
+    "tmdbRating": 8.22,
+    "tmdbVotes": 42,
+    "letterboxdRating": 3.16,
+    "letterboxdVotes": 132395,
     "imdbId": "tt37281055",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1514026/",
     "providers": {
@@ -2442,7 +2442,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:13:52.460Z",
-    "lastChecked": "2026-09-07T17:40:55.849Z"
+    "lastChecked": "2026-09-08T10:23:46.250Z"
   },
   {
     "tmdbId": 1329016,
@@ -2462,10 +2462,10 @@
       "Leo Woodall",
       "Stavros Halkias"
     ],
-    "tmdbRating": 7.5,
-    "tmdbVotes": 42,
+    "tmdbRating": 7.535,
+    "tmdbVotes": 43,
     "letterboxdRating": 3.85,
-    "letterboxdVotes": 232261,
+    "letterboxdVotes": 236573,
     "imdbId": "tt33095251",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1329016/",
     "providers": {
@@ -2475,7 +2475,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:15:42.034Z",
-    "lastChecked": "2026-09-07T17:40:56.020Z"
+    "lastChecked": "2026-09-08T10:23:46.437Z"
   },
   {
     "tmdbId": 950028,
@@ -2496,10 +2496,10 @@
       "Edward Norton",
       "Skip Howland"
     ],
-    "tmdbRating": 7.271,
-    "tmdbVotes": 444,
+    "tmdbRating": 7.261,
+    "tmdbVotes": 452,
     "letterboxdRating": 3.98,
-    "letterboxdVotes": 798214,
+    "letterboxdVotes": 804703,
     "imdbId": "tt14173636",
     "letterboxdUrl": "https://letterboxd.com/tmdb/950028/",
     "providers": {
@@ -2509,7 +2509,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-05T17:16:15.302Z",
-    "lastChecked": "2026-09-07T17:40:56.193Z"
+    "lastChecked": "2026-09-08T10:23:46.597Z"
   },
   {
     "tmdbId": 7227,
@@ -2533,7 +2533,7 @@
     "tmdbRating": 5.604,
     "tmdbVotes": 342,
     "letterboxdRating": 2.91,
-    "letterboxdVotes": 8464,
+    "letterboxdVotes": 8466,
     "imdbId": "tt0075648",
     "letterboxdUrl": "https://letterboxd.com/tmdb/7227/",
     "providers": {
@@ -2546,7 +2546,7 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-07T14:26:17.347Z",
-    "lastChecked": "2026-09-07T17:40:56.437Z"
+    "lastChecked": "2026-09-08T10:23:46.855Z"
   },
   {
     "tmdbId": 8913,
@@ -2565,10 +2565,10 @@
       "Brad Greenquist",
       "Michael Lombard"
     ],
-    "tmdbRating": 6.656,
-    "tmdbVotes": 2452,
+    "tmdbRating": 6.654,
+    "tmdbVotes": 2454,
     "letterboxdRating": 3.26,
-    "letterboxdVotes": 184912,
+    "letterboxdVotes": 184991,
     "imdbId": "tt0098084",
     "letterboxdUrl": "https://letterboxd.com/tmdb/8913/",
     "providers": {
@@ -2588,6 +2588,6 @@
     "availableSince": null,
     "wantedBy": null,
     "updatedAt": "2026-09-07T17:40:03.357Z",
-    "lastChecked": "2026-09-07T17:40:56.606Z"
+    "lastChecked": "2026-09-08T10:23:47.041Z"
   }
 ]
