@@ -2589,5 +2589,49 @@
     "wantedBy": null,
     "updatedAt": "2026-09-07T17:40:03.357Z",
     "lastChecked": "2026-09-08T10:23:47.041Z"
+  },
+  {
+    "tmdbId": 11459,
+    "title": "L'École fantastique",
+    "year": "2005",
+    "director": "Mike Mitchell",
+    "poster": "https://image.tmdb.org/t/p/w500/ghIyMNAQRkhkHgdwkPgl2gyrlcw.jpg",
+    "synopsis": "Will est un jeune garçon tout à fait normal si ce n'est qu'il doit intégrer la prestigieuse école de super-héros appelée Sky High et qu'il n'a pour le moment, aucune idée des super-pouvoirs qui le caractérisent... Il devra jongler entre les super-moqueries de ses camarades et la déception de ses parents, un couple de super-héros légendaires...",
+    "genres": [
+      "Aventure",
+      "Comédie",
+      "Familial"
+    ],
+    "cast": [
+      "Kurt Russell",
+      "Michael Angarano",
+      "Kelly Preston",
+      "Danielle Panabaker",
+      "Mary Elizabeth Winstead"
+    ],
+    "tmdbRating": 6.266,
+    "tmdbVotes": 2528,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0405325",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11459/",
+    "providers": {
+      "abonnement": [
+        "Disney Plus"
+      ],
+      "vod": [
+        "Google Play Movies",
+        "YouTube",
+        "Rakuten TV",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Apple TV Store"
+      ]
+    },
+    "availableSince": "2026-09-08T20:36:29.449Z",
+    "wantedBy": null,
+    "updatedAt": "2026-09-08T20:36:28.421Z",
+    "lastChecked": "2026-09-08T20:36:29.449Z"
   }
 ]
