@@ -338,6 +338,7 @@ async function syncWatchlists(inputMovies, history) {
           letterboxdUrl: slug ? `https://letterboxd.com/film/${slug}/` : `https://letterboxd.com/tmdb/${found.id}/`,
           tmdbId: found.id,
           wantedBy: person,
+          addedAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         };
         newEntries.push(newEntry);
@@ -633,6 +634,7 @@ async function main() {
         year: movie.year,
         director: movie.director,
         letterboxdUrl: movie.letterboxdUrl || null,
+        addedAt: movie.addedAt || movie.updatedAt || null,
         updatedAt: movie.updatedAt || null,
       });
       continue;
@@ -713,6 +715,10 @@ async function main() {
       providers,
       availableSince: availableSinceValue,
       wantedBy: movie.wantedBy || null,
+      // "addedAt" ne change jamais après la création (contrairement à
+      // "updatedAt", qui avance à chaque modification via l'app) — repli
+      // sur updatedAt pour les fiches créées avant l'introduction de ce champ.
+      addedAt: movie.addedAt || movie.updatedAt || null,
       updatedAt: movie.updatedAt || null,
       lastChecked: new Date().toISOString(),
     });
@@ -729,6 +735,7 @@ async function main() {
         year: movie.year,
         director: movie.director,
         letterboxdUrl: movie.letterboxdUrl || null,
+        addedAt: movie.addedAt || movie.updatedAt || null,
         updatedAt: movie.updatedAt || null,
       });
     }
