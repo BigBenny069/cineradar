@@ -555,5 +555,14 @@
     "tmdbId": 17431,
     "wantedBy": "benoit",
     "updatedAt": "2026-09-11T10:22:36.354Z"
+  },
+  {
+    "title": "L'Innocence",
+    "year": 2023,
+    "director": "Hirokazu Kore-eda",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1050035/",
+    "addedAt": "2026-09-11T18:20:45.287Z",
+    "updatedAt": "2026-09-11T18:20:45.287Z",
+    "tmdbId": 1050035
   }
 ]
