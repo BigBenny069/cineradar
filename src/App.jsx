@@ -2167,8 +2167,14 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
           </div>
         )}
 
-        <div style={{ marginTop: 16, textAlign: "center", fontFamily: F.mono, fontSize: 10, color: T.muted }}>
-          Dernière vérification · {new Date(movie.lastChecked).toLocaleString("fr-FR")}
+        <div style={{ marginTop: 16, textAlign: "center", fontFamily: F.mono, fontSize: 10, color: T.muted, lineHeight: 1.8 }}>
+          {(movie.addedAt || movie.updatedAt) && (
+            <div>Ajoutée le · {new Date(movie.addedAt || movie.updatedAt).toLocaleString("fr-FR")}</div>
+          )}
+          {movie.updatedAt && (
+            <div>Dernière modification · {new Date(movie.updatedAt).toLocaleString("fr-FR")}</div>
+          )}
+          <div>Dernière vérification · {new Date(movie.lastChecked).toLocaleString("fr-FR")}</div>
         </div>
       </div>
     </div>
