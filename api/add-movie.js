@@ -135,6 +135,9 @@ async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
     providers: { abonnement, vod },
     availableSince: abonnement.length > 0 ? existing?.availableSince || new Date().toISOString() : null,
     wantedBy: movieEntry.wantedBy || existing?.wantedBy || null,
+    // Même repli que côté movies.json : les fiches enrichies avant
+    // l'introduction du champ n'ont pas encore d'addedAt.
+    addedAt: movieEntry.addedAt || existing?.addedAt || movieEntry.updatedAt,
     updatedAt: movieEntry.updatedAt,
     lastChecked: new Date().toISOString(),
   };
@@ -243,6 +246,13 @@ export default async function handler(req, res) {
       year: parseInt(year, 10),
       director: director.trim(),
       letterboxdUrl: letterboxdUrl?.trim() || null,
+      // "addedAt" ne change jamais après la création — c'est ce qui permet
+      // d'afficher une vraie date d'ajout, distincte de "updatedAt" qui lui
+      // avance à chaque modification. Pour une fiche déjà existante avant
+      // l'introduction de ce champ (qui n'a donc pas encore d'addedAt), on
+      // se rabat une seule fois sur son updatedAt existant — après quoi
+      // cette valeur est figée pour de bon.
+      addedAt: matchIndex >= 0 ? movies[matchIndex].addedAt || movies[matchIndex].updatedAt || new Date().toISOString() : new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
 
