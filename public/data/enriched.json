@@ -2724,5 +2724,52 @@
     "wantedBy": "benoit",
     "updatedAt": "2026-09-11T10:22:36.354Z",
     "lastChecked": "2026-09-11T10:22:48.803Z"
+  },
+  {
+    "tmdbId": 1050035,
+    "title": "L'Innocence",
+    "year": "2023",
+    "director": "Hirokazu Kore-eda",
+    "poster": "https://image.tmdb.org/t/p/w500/lQ9A2hcgczlUYEYxwGMFkSxnCtw.jpg",
+    "synopsis": "Le comportement du jeune Minato est de plus en plus préoccupant. Sa mère, qui l’élève seule depuis la mort de son époux, décide de confronter l’équipe éducative de l’école de son fils. Tout semble désigner le professeur de Minato comme responsable des problèmes rencontrés par le jeune garçon. Mais au fur et à mesure que l’histoire se déroule à travers les yeux de la mère, du professeur et de l’enfant, la vérité se révèle bien plus complexe et nuancée que ce que chacun avait anticipé au départ…",
+    "genres": [
+      "Mystère",
+      "Thriller",
+      "Drame"
+    ],
+    "cast": [
+      "Sakura Ando",
+      "黒川想矢",
+      "柊木陽太",
+      "永山瑛太",
+      "田中裕子"
+    ],
+    "tmdbRating": 7.93,
+    "tmdbVotes": 954,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt23736044",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1050035/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-11T18:20:45.287Z",
+    "updatedAt": "2026-09-11T18:20:45.287Z",
+    "lastChecked": "2026-09-11T18:20:46.711Z"
   }
 ]
