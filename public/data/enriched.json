@@ -2931,5 +2931,48 @@
     "addedAt": "2026-09-12T19:16:47.408Z",
     "updatedAt": "2026-09-12T19:16:47.408Z",
     "lastChecked": "2026-09-12T19:18:12.501Z"
+  },
+  {
+    "tmdbId": 319,
+    "title": "True Romance",
+    "year": "1993",
+    "director": "Tony Scott",
+    "poster": "https://image.tmdb.org/t/p/w500/e5B8YvuUrFTtaBOcPbFGBqTgWsx.jpg",
+    "synopsis": "Le jour de son anniversaire, Clarence Worley rencontre la splendide Alabama dans un cinéma miteux. Coup de foudre immédiat. Après une nuit d’amour, Alabama avoue à Clarence qu’elle a été en fait engagée par le patron de Clarence comme cadeau d’anniversaire. De là va commencer une folle aventure.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Romance"
+    ],
+    "cast": [
+      "Christian Slater",
+      "Patricia Arquette",
+      "Dennis Hopper",
+      "Val Kilmer",
+      "Gary Oldman"
+    ],
+    "tmdbRating": 7.54,
+    "tmdbVotes": 3166,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0108399",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/319/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-12T19:21:44.291Z",
+    "updatedAt": "2026-09-12T19:21:44.291Z",
+    "lastChecked": "2026-09-12T19:21:45.162Z"
   }
 ]
