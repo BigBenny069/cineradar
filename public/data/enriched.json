@@ -2838,5 +2838,51 @@
     "addedAt": "2026-09-11T18:20:45.287Z",
     "updatedAt": "2026-09-11T18:20:45.287Z",
     "lastChecked": "2026-09-12T09:54:12.948Z"
+  },
+  {
+    "tmdbId": 1547,
+    "title": "Génération perdue",
+    "year": "1987",
+    "director": "Joel Schumacher",
+    "poster": "https://image.tmdb.org/t/p/w500/enFBXzn8xs5rdtSMC83AVWQ80FP.jpg",
+    "synopsis": "Lucy, qui vient de divorcer, arrive chez son père à Santa Carla avec ses jeunes fils, Michael et Sam. En pleine crise d'adolescence, les deux garçons passent leur temps entre les concerts, les stands de tirs et les jolies filles. Ainsi, Michael s'éprend-il de Star, qui appartient à la bande des Lost Boys. David, leur chef, ne tarde pas à le provoquer. Un peu plus tard, le jeune homme est accepté dans le groupe. En guise d'initiation, on lui donne à boire un étrange breuvage couleur sang. Lorsque Michael est de retour à la maison, Sam s'aperçoit de l'étrange transformation de son frère, dont le reflet dans les miroirs disparaît peu à peu...",
+    "genres": [
+      "Horreur",
+      "Comédie",
+      "Thriller"
+    ],
+    "cast": [
+      "Jason Patric",
+      "Corey Haim",
+      "Dianne Wiest",
+      "Barnard Hughes",
+      "Edward Herrmann"
+    ],
+    "tmdbRating": 7.117,
+    "tmdbVotes": 2387,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0093437",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1547/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Rakuten TV",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-12T19:15:49.539Z",
+    "updatedAt": "2026-09-12T19:15:49.539Z",
+    "lastChecked": "2026-09-12T19:15:50.644Z"
   }
 ]
