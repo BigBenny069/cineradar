@@ -2884,5 +2884,52 @@
     "addedAt": "2026-09-12T19:15:49.539Z",
     "updatedAt": "2026-09-12T19:15:49.539Z",
     "lastChecked": "2026-09-12T19:15:50.644Z"
+  },
+  {
+    "tmdbId": 37094,
+    "title": "Chute libre",
+    "year": "1993",
+    "director": "Joel Schumacher",
+    "poster": "https://image.tmdb.org/t/p/w500/11Ar6C286Uw7iYaSuMXb73iPCLB.jpg",
+    "synopsis": "Il a suffi d’un rien : une chaleur oppressante, l’éternel embouteillage aux abords de Los Angeles et un sentiment d’oppression insupportable, pour qu’un homme ordinaire abandonne sa voiture en plein trafic et sombre dans la folie. Devenu incontrôlable, sera-t-il arrêté avant qu’il ne commette l’irréparable ?",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Michael Douglas",
+      "Robert Duvall",
+      "Barbara Hershey",
+      "Rachel Ticotin",
+      "Tuesday Weld"
+    ],
+    "tmdbRating": 7.399,
+    "tmdbVotes": 4239,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0106856",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/37094/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-12T19:16:47.408Z",
+    "updatedAt": "2026-09-12T19:16:47.408Z",
+    "lastChecked": "2026-09-12T19:16:48.345Z"
   }
 ]
