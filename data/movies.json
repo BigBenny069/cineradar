@@ -627,5 +627,14 @@
     "addedAt": "2026-09-13T06:23:21.245Z",
     "updatedAt": "2026-09-13T06:23:21.245Z",
     "tmdbId": 9013
+  },
+  {
+    "title": "New York - Miami",
+    "year": 1934,
+    "director": "Frank Capra",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/3078/",
+    "addedAt": "2026-09-13T06:26:10.120Z",
+    "updatedAt": "2026-09-13T06:26:10.120Z",
+    "tmdbId": 3078
   }
 ]
