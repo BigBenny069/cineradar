@@ -3387,5 +3387,44 @@
     "addedAt": "2026-09-13T06:30:52.654Z",
     "updatedAt": "2026-09-13T06:30:52.654Z",
     "lastChecked": "2026-09-13T06:31:36.261Z"
+  },
+  {
+    "tmdbId": 220289,
+    "title": "Coherence",
+    "year": "2014",
+    "director": "James Ward Byrkit",
+    "poster": "https://image.tmdb.org/t/p/w500/ao4DDBeRceCHOSy6VYEWkzfR7I5.jpg",
+    "synopsis": "Des choses étranges commencent à arriver lorsqu'un groupe d'amis se réunit pour un repas et qu'une comète traverse le ciel au-dessus d'eux.",
+    "genres": [
+      "Thriller",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Emily Baldoni",
+      "Maury Sterling",
+      "Nicholas Brendon",
+      "Lorene Scafaria",
+      "Elizabeth Gracen"
+    ],
+    "tmdbRating": 7.207,
+    "tmdbVotes": 3591,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2866360",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/220289/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Outbuster Amazon Channel",
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T08:02:39.578Z",
+    "updatedAt": "2026-09-13T08:02:39.578Z",
+    "lastChecked": "2026-09-13T08:02:40.516Z"
   }
 ]
