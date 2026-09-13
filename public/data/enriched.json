@@ -3053,5 +3053,40 @@
     "addedAt": "2026-09-13T05:43:28.969Z",
     "updatedAt": "2026-09-13T05:43:28.969Z",
     "lastChecked": "2026-09-13T05:43:29.872Z"
+  },
+  {
+    "tmdbId": 31767,
+    "title": "Les Diables",
+    "year": "1971",
+    "director": "Ken Russell",
+    "poster": "https://image.tmdb.org/t/p/w500/m3EZBMHaB7VJ9pjJJ71fPb70dAR.jpg",
+    "synopsis": "Le film retrace les grandes lignes de l'affaire des possédées de Loudun. Au 17ème siècle, en France, Richelieu veut convaincre Louis XIII d'en finir avec les gouvernements autonomes des petites villes de province. Loudun est une ville fortifiée du Poitou, dans laquelle catholiques et protestants vivent en bonne entente sous l'autorité bienveillante de l'abbé Grandier, un curé catholique charismatique et progressiste. Sa popularité, ainsi que sa réputation de prêtre libertin et séducteur, lui vaut des inimitiés parmi les notables locaux. La mère supérieure du couvent tout proche développe une attirance obsessionnelle pour le personnage. Les sœurs ursulines sombrent dans une forme d'hystérie collective, se disant possédées par des démons et par l'esprit de Grandier qu'elles accusent d'être en commerce avec le Diable. Ce sera le point de départ d'une cabale, menée par les autorités religieuses et civiles, contre le prêtre qui s'était ouvertement opposé aux projets de Richelieu.",
+    "genres": [
+      "Drame",
+      "Histoire",
+      "Horreur"
+    ],
+    "cast": [
+      "Vanessa Redgrave",
+      "Oliver Reed",
+      "Dudley Sutton",
+      "Max Adrian",
+      "Gemma Jones"
+    ],
+    "tmdbRating": 7.5,
+    "tmdbVotes": 455,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0066993",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/31767/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T05:43:59.244Z",
+    "updatedAt": "2026-09-13T05:43:59.244Z",
+    "lastChecked": "2026-09-13T05:44:00.095Z"
   }
 ]
