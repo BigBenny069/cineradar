@@ -3352,5 +3352,40 @@
     "addedAt": "2026-09-13T06:29:51.529Z",
     "updatedAt": "2026-09-13T06:29:51.529Z",
     "lastChecked": "2026-09-13T06:30:46.875Z"
+  },
+  {
+    "tmdbId": 2517,
+    "title": "Nobody Knows",
+    "year": "2004",
+    "director": "Hirokazu Kore-eda",
+    "poster": "https://image.tmdb.org/t/p/w500/wTogch5mkGjrK9qnx1C22JwiE66.jpg",
+    "synopsis": "Quatre frères et soeurs vivent avec leur mère. L'ainé, Akira, s'occupe de ses jeunes frères et soeurs, chacun d'un père différent. Un matin d'hiver, leur mère disparaît et les enfants commencent à vivre seuls.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "柳楽優弥",
+      "北浦愛",
+      "木村飛影",
+      "清水萌々子",
+      "韓英恵"
+    ],
+    "tmdbRating": 8.013,
+    "tmdbVotes": 673,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0408664",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/2517/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:30:52.654Z",
+    "updatedAt": "2026-09-13T06:30:52.654Z",
+    "lastChecked": "2026-09-13T06:30:53.502Z"
   }
 ]
