@@ -3468,5 +3468,50 @@
     "addedAt": "2026-09-13T08:31:32.899Z",
     "updatedAt": "2026-09-13T08:31:32.899Z",
     "lastChecked": "2026-09-13T10:54:05.467Z"
+  },
+  {
+    "tmdbId": 22970,
+    "title": "La Cabane dans les bois",
+    "year": "2012",
+    "director": "Drew Goddard",
+    "poster": "https://image.tmdb.org/t/p/w500/8L9d3rU1eVeIoxdJvprz5A5OXXo.jpg",
+    "synopsis": "Cinq étudiants et amis partent passer le week-end dans une cabane perdue au fond des bois. Ils ne savent pas qu'ils font partie d'une expérience scientifique qui se déroule dans plusieurs pays simultanément. Sur place, ils découvrent une cave remplie d'objets étranges dont un journal qui contient des incantations. Commence alors un séjour cauchemardesque pour le groupe d'amis.",
+    "genres": [
+      "Horreur",
+      "Mystère",
+      "Comédie"
+    ],
+    "cast": [
+      "Kristen Connolly",
+      "Fran Kranz",
+      "Chris Hemsworth",
+      "Jesse Williams",
+      "Anna Hutchison"
+    ],
+    "tmdbRating": 6.657,
+    "tmdbVotes": 8797,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1259521",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/22970/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T12:43:36.866Z",
+    "updatedAt": "2026-09-13T12:43:36.866Z",
+    "lastChecked": "2026-09-13T12:43:37.810Z"
   }
 ]
