@@ -3595,5 +3595,55 @@
     "addedAt": "2026-09-13T17:01:40.120Z",
     "updatedAt": "2026-09-13T17:01:40.120Z",
     "lastChecked": "2026-09-13T17:04:03.146Z"
+  },
+  {
+    "tmdbId": 1052,
+    "title": "Blow-Up",
+    "year": "1966",
+    "director": "Michelangelo Antonioni",
+    "poster": "https://image.tmdb.org/t/p/w500/ru7XGZEDmFY1GNAhUOprEBHbTIN.jpg",
+    "synopsis": "Thomas, un célèbre photographe de mode, prépare un reportage photo sur Londres. Il passe ainsi une nuit dans un asile de clochards, puis reçoit dans son atelier un groupe de cover-girls. Pour compléter son éventail de clichés, il prend ensuite discrètement en photo un couple d'amoureux dans un parc. À sa grande surprise, la femme se précipite vers lui pour lui arracher son appareil. Elle le poursuit jusqu'à son domicile et s'offre même à lui dans l'espoir de récupérer les négatifs. Intrigué, Thomas lui remet une autre pellicule. Une fois le précieux film développé, il découvre sur les agrandissements un corps inerte, caché derrière un buisson, et une main tenant un revolver…\r Palme d'Or à Cannes 1967",
+    "genres": [
+      "Drame",
+      "Mystère",
+      "Thriller"
+    ],
+    "cast": [
+      "David Hemmings",
+      "Vanessa Redgrave",
+      "Sarah Miles",
+      "John Castle",
+      "Veruschka von Lehndorff"
+    ],
+    "tmdbRating": 7.31,
+    "tmdbVotes": 1410,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0060176",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1052/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T19:18:15.211Z",
+    "updatedAt": "2026-09-13T19:18:15.211Z",
+    "lastChecked": "2026-09-13T19:18:16.251Z"
   }
 ]
