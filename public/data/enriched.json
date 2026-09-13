@@ -3088,5 +3088,50 @@
     "addedAt": "2026-09-13T05:43:59.244Z",
     "updatedAt": "2026-09-13T05:43:59.244Z",
     "lastChecked": "2026-09-13T05:45:18.773Z"
+  },
+  {
+    "tmdbId": 9013,
+    "title": "Midnight Run",
+    "year": "1988",
+    "director": "Martin Brest",
+    "poster": "https://image.tmdb.org/t/p/w500/vNm45cDA3xsV5x6cHMxYNJxrAPe.jpg",
+    "synopsis": "Jack Walsh, flic intègre, a quitté la police parce qu'il refusait de se laisser acheter par un caïd de la drogue. Il est maintenant chasseur de primes pour le compte d'Eddie Moscone à Los Angeles. Il doit retrouver le comptable qui a réussi à escroquer le fameux caïd, responsable de son changement d'orientation professionnelle.",
+    "genres": [
+      "Comédie",
+      "Crime",
+      "Thriller"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "Charles Grodin",
+      "Yaphet Kotto",
+      "John Ashton",
+      "Dennis Farina"
+    ],
+    "tmdbRating": 7.186,
+    "tmdbVotes": 1335,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0095631",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/9013/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:23:21.245Z",
+    "updatedAt": "2026-09-13T06:23:21.245Z",
+    "lastChecked": "2026-09-13T06:23:22.132Z"
   }
 ]
