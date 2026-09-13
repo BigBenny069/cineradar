@@ -3696,5 +3696,50 @@
     "addedAt": "2026-09-13T19:18:59.881Z",
     "updatedAt": "2026-09-13T19:18:59.881Z",
     "lastChecked": "2026-09-13T19:19:21.775Z"
+  },
+  {
+    "tmdbId": 850165,
+    "title": "Iron Claw",
+    "year": "2023",
+    "director": "Sean Durkin",
+    "poster": "https://image.tmdb.org/t/p/w500/7MvqaSsnthX9xTDkDr3eZiftzp.jpg",
+    "synopsis": "L'histoire vraie des inséparables frères Von Erich, qui ont marqué l'histoire du monde extrêmement compétitif de la lutte professionnelle au début des années 1980. À travers la tragédie et le triomphe, sous l'ombre de leur père et entraîneur tyrannique, les frères recherchent une immortalité plus grande que nature sur la plus grande scène sportive.",
+    "genres": [
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Zac Efron",
+      "Jeremy Allen White",
+      "Harris Dickinson",
+      "Stanley Simons",
+      "Holt McCallany"
+    ],
+    "tmdbRating": 7.517,
+    "tmdbVotes": 1340,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt21064584",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/850165/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T19:33:24.347Z",
+    "updatedAt": "2026-09-13T19:33:24.347Z",
+    "lastChecked": "2026-09-13T19:33:25.232Z"
   }
 ]
