@@ -726,5 +726,14 @@
     "addedAt": "2026-09-13T17:01:40.120Z",
     "updatedAt": "2026-09-13T17:01:40.120Z",
     "tmdbId": 20770
+  },
+  {
+    "title": "Blow-Up",
+    "year": 1966,
+    "director": "Michelangelo Antonioni",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1052/",
+    "addedAt": "2026-09-13T19:18:15.211Z",
+    "updatedAt": "2026-09-13T19:18:15.211Z",
+    "tmdbId": 1052
   }
 ]
