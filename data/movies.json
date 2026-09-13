@@ -636,5 +636,14 @@
     "addedAt": "2026-09-13T06:26:10.120Z",
     "updatedAt": "2026-09-13T06:26:10.120Z",
     "tmdbId": 3078
+  },
+  {
+    "title": "La vie est belle",
+    "year": 1946,
+    "director": "Frank Capra",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1585/",
+    "addedAt": "2026-09-13T06:26:34.765Z",
+    "updatedAt": "2026-09-13T06:26:34.765Z",
+    "tmdbId": 1585
   }
 ]
