@@ -663,5 +663,14 @@
     "addedAt": "2026-09-13T06:28:40.348Z",
     "updatedAt": "2026-09-13T06:28:40.348Z",
     "tmdbId": 12493
+  },
+  {
+    "title": "Le Trou",
+    "year": 1960,
+    "director": "Jacques Becker",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/29259/",
+    "addedAt": "2026-09-13T06:29:51.529Z",
+    "updatedAt": "2026-09-13T06:29:51.529Z",
+    "tmdbId": 29259
   }
 ]
