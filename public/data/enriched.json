@@ -3426,5 +3426,47 @@
     "addedAt": "2026-09-13T08:02:39.578Z",
     "updatedAt": "2026-09-13T08:02:39.578Z",
     "lastChecked": "2026-09-13T08:03:31.333Z"
+  },
+  {
+    "tmdbId": 293670,
+    "title": "The Strangers",
+    "year": "2016",
+    "director": "Na Hong-jin",
+    "poster": "https://image.tmdb.org/t/p/w500/qmWlSdvzGp4tyJpI76JrEEmU0F2.jpg",
+    "synopsis": "La vie d’un village coréen est bouleversée par une série de meurtres, aussi sauvages qu’inexpliqués, qui frappe au hasard la petite communauté rurale.  La présence, récente, d’un vieil étranger qui vit en ermite dans les bois attise rumeurs et superstitions.  Face à l’incompétence de la police pour trouver l’assassin ou une explication sensée, certains villageois demandent l’aide d’un chaman.  Pour Jong-gu aussi , un policier dont la famille est directement menacée, il est de plus en plus évident que ces crimes ont un fondement surnaturel…",
+    "genres": [
+      "Horreur",
+      "Mystère"
+    ],
+    "cast": [
+      "Kwak Do-won",
+      "Hwang Jung-min",
+      "Chun Woo-hee",
+      "Jun Kunimura",
+      "Kim Hwan-hee"
+    ],
+    "tmdbRating": 7.38,
+    "tmdbVotes": 2150,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt5215952",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/293670/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T08:31:32.899Z",
+    "updatedAt": "2026-09-13T08:31:32.899Z",
+    "lastChecked": "2026-09-13T08:31:33.763Z"
   }
 ]
