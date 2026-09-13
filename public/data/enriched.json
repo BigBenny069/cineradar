@@ -3178,5 +3178,53 @@
     "addedAt": "2026-09-13T06:26:10.120Z",
     "updatedAt": "2026-09-13T06:26:10.120Z",
     "lastChecked": "2026-09-13T06:26:10.957Z"
+  },
+  {
+    "tmdbId": 1585,
+    "title": "La vie est belle",
+    "year": "1946",
+    "director": "Frank Capra",
+    "poster": "https://image.tmdb.org/t/p/w500/niniH26VfSTF7fefLWwipvNFGbL.jpg",
+    "synopsis": "Bedford Falls, petite ville de l'État de New York, la veille de Noël. De chaque foyer s'élève une prière. Les paroles murmurées avec ferveur concernent toutes le même homme – George Bailey –, qu'elles proviennent de la bouche de son épouse, de ses enfants, de ses amis et collègues… et de manière générale de tous ceux qui tiennent à lui. Les prières vont être exaucées et Clarence, un ange sans ailes est envoyé au secours de George afin de gagner ses ailes. Avec lui, nous revivons les années écoulées dans la vie de George. Ayant renoncé à son rêve d'enfant de devenir explorateur, pour reprendre la banque de son père, il a toujours consacré son énergie et son argent à l'amélioration des conditions de vie des habitants de la ville, en luttant contre le désir de puissance d'un homme d'affaires sans scrupules.",
+    "genres": [
+      "Drame",
+      "Familial",
+      "Fantastique"
+    ],
+    "cast": [
+      "James Stewart",
+      "Donna Reed",
+      "Lionel Barrymore",
+      "Thomas Mitchell",
+      "Henry Travers"
+    ],
+    "tmdbRating": 8.3,
+    "tmdbVotes": 5051,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0038650",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1585/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:26:34.765Z",
+    "updatedAt": "2026-09-13T06:26:34.765Z",
+    "lastChecked": "2026-09-13T06:26:35.679Z"
   }
 ]
