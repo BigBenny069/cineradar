@@ -3133,5 +3133,50 @@
     "addedAt": "2026-09-13T06:23:21.245Z",
     "updatedAt": "2026-09-13T06:23:21.245Z",
     "lastChecked": "2026-09-13T06:24:07.845Z"
+  },
+  {
+    "tmdbId": 3078,
+    "title": "New York - Miami",
+    "year": "1934",
+    "director": "Frank Capra",
+    "poster": "https://image.tmdb.org/t/p/w500/mjMgTY1RkcPD9O62WXIf7icO3NK.jpg",
+    "synopsis": "Ellie Andrews, jeune fille gâtée, échappe à l'emprise de son père millionnaire qui veut à tout prix l'empêcher d'épouser un play boy sans avenir. En route pour New York, elle rencontre Peter Warner, journaliste au chômage. Mais le bus tombe en panne et le couple impromptu se lance dans une folle randonnée improvisée.",
+    "genres": [
+      "Comédie",
+      "Romance"
+    ],
+    "cast": [
+      "Clark Gable",
+      "Claudette Colbert",
+      "Walter Connolly",
+      "Roscoe Karns",
+      "Jameson Thomas"
+    ],
+    "tmdbRating": 7.8,
+    "tmdbVotes": 1450,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0025316",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/3078/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:26:10.120Z",
+    "updatedAt": "2026-09-13T06:26:10.120Z",
+    "lastChecked": "2026-09-13T06:26:10.957Z"
   }
 ]
