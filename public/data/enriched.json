@@ -3513,5 +3513,49 @@
     "addedAt": "2026-09-13T12:43:36.866Z",
     "updatedAt": "2026-09-13T12:43:36.866Z",
     "lastChecked": "2026-09-13T12:44:30.411Z"
+  },
+  {
+    "tmdbId": 1317149,
+    "title": "Plus fort que moi",
+    "year": "2025",
+    "director": "Kirk Jones",
+    "poster": "https://image.tmdb.org/t/p/w500/tHu3sZLLDuNOFo9UjFGl1ejnUJM.jpg",
+    "synopsis": "Dans les années 1980, John Davidson grandit avec le syndrome de Gilles de la Tourette, une pathologie encore largement méconnue. Entre incompréhension, stigmatisation et détermination, son parcours d’abord semé d'embûches se transforme en combat pour être reconnu tel qu’il est, au-delà des préjugés.",
+    "genres": [
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Robert Aramayo",
+      "Maxine Peake",
+      "Peter Mullan",
+      "Shirley Henderson",
+      "Scott Ellis Watson"
+    ],
+    "tmdbRating": 8.251,
+    "tmdbVotes": 559,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt31514146",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1317149/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T17:01:27.081Z",
+    "updatedAt": "2026-09-13T17:01:27.081Z",
+    "lastChecked": "2026-09-13T17:01:28.370Z"
   }
 ]
