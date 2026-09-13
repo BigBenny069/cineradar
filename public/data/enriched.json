@@ -3011,5 +3011,47 @@
     "addedAt": "2026-09-13T05:42:57.714Z",
     "updatedAt": "2026-09-13T05:42:57.714Z",
     "lastChecked": "2026-09-13T05:42:58.726Z"
+  },
+  {
+    "tmdbId": 49797,
+    "title": "J'ai rencontré le Diable",
+    "year": "2010",
+    "director": "Kim Jee-woon",
+    "poster": "https://image.tmdb.org/t/p/w500/i3x5Fck0BoAoLRbgPKzSESsrcOR.jpg",
+    "synopsis": "Kyung-chul est un dangereux psychopathe qui tue pour le plaisir. Il commet des meurtres en série de manière que l’on ne peut même pas imaginer. Ses victimes sont aussi bien des femmes que des enfants. La police le traque depuis un long moment, mais est incapable de l’attraper. Un jour, Joo-yeon, la fille d’un chef de police à la retraite devient sa proie et est retrouvé morte atrocement mutilée. Son fiancé Dae-hoon, un agent secret, décide de traquer le meurtrier lui-même. Il promet de tout faire pour se venger, même si cela signifie qu’il doit devenir un monstre lui-même.",
+    "genres": [
+      "Thriller",
+      "Horreur"
+    ],
+    "cast": [
+      "Lee Byung-hun",
+      "Choi Min-sik",
+      "Jeon Kuk-hwan",
+      "Cheon Ho-Jin",
+      "Oh San-ha"
+    ],
+    "tmdbRating": 7.807,
+    "tmdbVotes": 3146,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1588170",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/49797/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T05:43:28.969Z",
+    "updatedAt": "2026-09-13T05:43:28.969Z",
+    "lastChecked": "2026-09-13T05:43:29.872Z"
   }
 ]
