@@ -618,5 +618,14 @@
     "addedAt": "2026-09-13T05:43:59.244Z",
     "updatedAt": "2026-09-13T05:43:59.244Z",
     "tmdbId": 31767
+  },
+  {
+    "title": "Midnight Run",
+    "year": 1988,
+    "director": "Martin Brest",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/9013/",
+    "addedAt": "2026-09-13T06:23:21.245Z",
+    "updatedAt": "2026-09-13T06:23:21.245Z",
+    "tmdbId": 9013
   }
 ]
