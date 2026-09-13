@@ -2974,5 +2974,42 @@
     "addedAt": "2026-09-12T19:21:44.291Z",
     "updatedAt": "2026-09-12T19:21:44.291Z",
     "lastChecked": "2026-09-12T19:22:52.595Z"
+  },
+  {
+    "tmdbId": 36095,
+    "title": "Cure",
+    "year": "1997",
+    "director": "Kiyoshi Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/g8NvuhgqBD6LShECh20TPMSNMgC.jpg",
+    "synopsis": "Un officier de police, Takabe, enquête sur une série de meurtres dont les victimes sont retrouvées avec une croix gravée dans le cou. Un jour, un jeune vagabond est arrêté près de l'endroit ou a été retrouvé le dernier corps. Il est vite identifié comme un ancien étudiant en psychologie, devenu fou et ayant d'inquiétants pouvoirs hypnotiques, lui permettant de pousser des gens à commettre des actes criminels…",
+    "genres": [
+      "Crime",
+      "Horreur",
+      "Mystère"
+    ],
+    "cast": [
+      "Kôji Yakusho",
+      "Masato Hagiwara",
+      "うじきつよし",
+      "中川安奈",
+      "Yukijirō Hotaru"
+    ],
+    "tmdbRating": 7.577,
+    "tmdbVotes": 861,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0123948",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/36095/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T05:42:57.714Z",
+    "updatedAt": "2026-09-13T05:42:57.714Z",
+    "lastChecked": "2026-09-13T05:42:58.726Z"
   }
 ]
