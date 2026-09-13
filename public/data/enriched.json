@@ -3306,5 +3306,51 @@
     "addedAt": "2026-09-13T06:28:40.348Z",
     "updatedAt": "2026-09-13T06:28:40.348Z",
     "lastChecked": "2026-09-13T06:29:47.711Z"
+  },
+  {
+    "tmdbId": 29259,
+    "title": "Le Trou",
+    "year": "1960",
+    "director": "Jacques Becker",
+    "poster": "https://image.tmdb.org/t/p/w500/pyCMEIAtMPpWTVwZTajcbCIBI3u.jpg",
+    "synopsis": "Accusé de tentative de meurtre sur la personne de sa femme, Claude Gaspard est enfermé à la prison de la Santé. Ses quatre compagnons de cellule lui font part de leur désir d'évasion et creusent, avec une énergie farouche, un tunnel qui les mènera à la liberté. Leur plan aboutira-t-il ?",
+    "genres": [
+      "Drame",
+      "Thriller",
+      "Crime"
+    ],
+    "cast": [
+      "Michel Constantin",
+      "Jean Keraudy",
+      "Philippe Leroy",
+      "Raymond Meunier",
+      "Marc Michel"
+    ],
+    "tmdbRating": 8.246,
+    "tmdbVotes": 598,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0054407",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/29259/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:29:51.529Z",
+    "updatedAt": "2026-09-13T06:29:51.529Z",
+    "lastChecked": "2026-09-13T06:29:52.443Z"
   }
 ]
