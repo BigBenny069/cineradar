@@ -3266,5 +3266,45 @@
     "addedAt": "2026-09-13T06:27:39.167Z",
     "updatedAt": "2026-09-13T06:27:39.167Z",
     "lastChecked": "2026-09-13T06:28:04.263Z"
+  },
+  {
+    "tmdbId": 12493,
+    "title": "Entre le ciel et l'enfer",
+    "year": "1963",
+    "director": "Akira Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/6uyLsTcEubEEJud3AhnYm4S9XuV.jpg",
+    "synopsis": "À Yokohama, un malfaiteur kidnappe un enfant, qu'il prend pour le fils d'un industriel japonais. Il s'agit en fait du fils de son chauffeur. Le commissaire Tokura est chargé de l'affaire.",
+    "genres": [
+      "Drame",
+      "Crime",
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "Toshirō Mifune",
+      "Tatsuya Nakadai",
+      "香川京子",
+      "三橋達也",
+      "Isao Kimura"
+    ],
+    "tmdbRating": 8.4,
+    "tmdbVotes": 1191,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0057565",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/12493/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Canal VOD",
+        "Pathé Home",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:28:40.348Z",
+    "updatedAt": "2026-09-13T06:28:40.348Z",
+    "lastChecked": "2026-09-13T06:28:41.248Z"
   }
 ]
