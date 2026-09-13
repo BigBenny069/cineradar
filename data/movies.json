@@ -745,5 +745,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-09-13T19:18:59.881Z",
     "updatedAt": "2026-09-13T19:18:59.881Z"
+  },
+  {
+    "title": "Iron Claw",
+    "year": 2023,
+    "director": "Sean Durkin",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/850165/",
+    "addedAt": "2026-09-13T19:33:24.347Z",
+    "updatedAt": "2026-09-13T19:33:24.347Z",
+    "tmdbId": 850165
   }
 ]
