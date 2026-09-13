@@ -3557,5 +3557,43 @@
     "addedAt": "2026-09-13T17:01:27.081Z",
     "updatedAt": "2026-09-13T17:01:27.081Z",
     "lastChecked": "2026-09-13T17:01:28.370Z"
+  },
+  {
+    "tmdbId": 20770,
+    "title": "But I'm a Cheerleader",
+    "year": "2000",
+    "director": "Jamie Babbit",
+    "poster": "https://image.tmdb.org/t/p/w500/8huDg3Q0EmcWuN9HgYsO8ylAp9f.jpg",
+    "synopsis": "Megan est pom-pom girl et a un petit ami. Seulement voilà, il se pourrait bien qu'elle soit lesbienne. Ses parents décident donc de l'envoyer en école de « réorientation sexuelle » afin qu'elle réapprenne l'hétérosexualité. Là-bas, elle rencontre la belle Graham...",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Romance"
+    ],
+    "cast": [
+      "Natasha Lyonne",
+      "Clea DuVall",
+      "Cathy Moriarty",
+      "RuPaul",
+      "Melanie Lynskey"
+    ],
+    "tmdbRating": 7.092,
+    "tmdbVotes": 885,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0179116",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/20770/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Lionsgate+ Amazon Channels",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T17:01:40.120Z",
+    "updatedAt": "2026-09-13T17:01:40.120Z",
+    "lastChecked": "2026-09-13T17:01:40.999Z"
   }
 ]
