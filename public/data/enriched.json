@@ -3226,5 +3226,45 @@
     "addedAt": "2026-09-13T06:26:34.765Z",
     "updatedAt": "2026-09-13T06:26:34.765Z",
     "lastChecked": "2026-09-13T06:26:58.056Z"
+  },
+  {
+    "tmdbId": 14537,
+    "title": "Harakiri",
+    "year": "1962",
+    "director": "Masaki Kobayashi",
+    "poster": "https://image.tmdb.org/t/p/w500/y1bgzJiMVTNY4RoNc29eCebio57.jpg",
+    "synopsis": "Au XVIIe siècle, le Japon n'est plus en guerre et le pays est dirigé avec fermeté. Hanshirô Tsugumo, un rônin (samouraï errant) sans travail parmi tant d'autres, décide de frapper à la porte du puissant clan des Ii. Reçu par Kageyu Saitô, l'intendant du clan, il lui demande la permission d'accomplir le suicide par harakiri dans la résidence. Tentant de l'en dissuader, Saitô commence alors à lui raconter l'histoire de Motome Chijiwa, un ancien rônin qui souhaitait accomplir, lui aussi, le même rituel.",
+    "genres": [
+      "Action",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Tatsuya Nakadai",
+      "石濱朗",
+      "岩下志麻",
+      "Tetsurō Tanba",
+      "三島雅夫"
+    ],
+    "tmdbRating": 8.5,
+    "tmdbVotes": 1274,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0056058",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/14537/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Sooner",
+        "Amazon Video",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-13T06:27:39.167Z",
+    "updatedAt": "2026-09-13T06:27:39.167Z",
+    "lastChecked": "2026-09-13T06:27:40.145Z"
   }
 ]
