@@ -3741,5 +3741,40 @@
     "addedAt": "2026-09-13T19:33:24.347Z",
     "updatedAt": "2026-09-13T19:33:24.347Z",
     "lastChecked": "2026-09-13T19:34:34.434Z"
+  },
+  {
+    "tmdbId": 27324,
+    "title": "Kaïro",
+    "year": "2001",
+    "director": "Kiyoshi Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/lnl8PKUWSXUHTMw17IPMeyk3xnL.jpg",
+    "synopsis": "Taguchi, un jeune informaticien, est retrouvé pendu dans son appartement. Sous le choc, ses collègues cherchent à en savoir plus sur ce suicide inexplicable.La victime a laissé un mystérieux message contenu dans une simple disquette. De toute évidence, celle-ci recèle un virus qui contamine ses utilisateurs et a de graves répercussions sur leur comportement.A Tokyo, l'inquiétude grandit au fur et à mesure que le virus se propage à travers les réseaux informatiques. Des petits groupes de jeunes gens tentent de résister, tandis que les disparitions se multiplient.",
+    "genres": [
+      "Horreur",
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "麻生久美子",
+      "加藤晴彦",
+      "小雪",
+      "有坂来瞳",
+      "松尾政寿"
+    ],
+    "tmdbRating": 6.708,
+    "tmdbVotes": 715,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0286751",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/27324/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-14T06:49:32.953Z",
+    "updatedAt": "2026-09-14T06:49:32.953Z",
+    "lastChecked": "2026-09-14T06:49:33.942Z"
   }
 ]
