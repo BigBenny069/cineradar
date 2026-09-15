@@ -3005,6 +3005,8 @@ function SettingsView({ theme, onChangeTheme }) {
   const [error, setError] = useState(null);
   const [status, setStatus] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
+  const [fullCheckStatus, setFullCheckStatus] = useState(null);
+  const [fullCheckError, setFullCheckError] = useState("");
 
   useEffect(() => {
     fetch("/api/get-settings")
@@ -3051,6 +3053,19 @@ function SettingsView({ theme, onChangeTheme }) {
       return;
     }
     setStatus("success");
+  };
+
+  const handleFullCheck = async () => {
+    setFullCheckStatus("loading");
+    setFullCheckError("");
+    const result = await apiWrite("/api/trigger-full-check", {});
+    if (!result.ok) {
+      setFullCheckStatus("error");
+      setFullCheckError(result.error);
+      return;
+    }
+    setFullCheckStatus("success");
+    setTimeout(() => setFullCheckStatus(null), 4000);
   };
 
   const forgetPassword = () => {
@@ -3160,6 +3175,43 @@ function SettingsView({ theme, onChangeTheme }) {
                   </button>
                 );
               })}
+            </div>
+
+            <div style={{ marginTop: 28 }}>
+              <SectionTitle>Maintenance</SectionTitle>
+              <p style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginBottom: 10 }}>
+                Relance immédiatement le robot pour recontrôler toutes les fiches (affiche, plateformes,
+                notes...) sans attendre le passage automatique de 6h. Le robot tourne en arrière-plan sur
+                GitHub Actions — ça prend en général quelques minutes selon le nombre de films, pas
+                instantané.
+              </p>
+              <button
+                onClick={handleFullCheck}
+                disabled={fullCheckStatus === "loading"}
+                style={{
+                  width: "100%",
+                  padding: "12px 0",
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: T.muted,
+                  letterSpacing: 0.5,
+                  opacity: fullCheckStatus === "loading" ? 0.6 : 1,
+                }}
+              >
+                {fullCheckStatus === "loading" ? "DÉCLENCHEMENT..." : "🔄 DEMANDE CONTRÔLE DE TOUTES LES FICHES"}
+              </button>
+              {fullCheckStatus === "success" && (
+                <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, marginTop: 6, textAlign: "center" }}>
+                  Robot lancé — les fiches se mettront à jour dans les prochaines minutes.
+                </div>
+              )}
+              {fullCheckStatus === "error" && (
+                <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, marginTop: 6, textAlign: "center" }}>
+                  Erreur : {fullCheckError}
+                </div>
+              )}
             </div>
 
             <div style={{ marginTop: 28 }}>
