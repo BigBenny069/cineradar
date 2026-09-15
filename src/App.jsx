@@ -2998,6 +2998,7 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, de
 function SettingsView({ theme, onChangeTheme }) {
   const [enabled, setEnabled] = useState([]);
   const [notifyEmail, setNotifyEmail] = useState("");
+  const [notifyEmail2, setNotifyEmail2] = useState("");
   const [watchlistBenoit, setWatchlistBenoit] = useState("");
   const [watchlistRomy, setWatchlistRomy] = useState("");
   const [loading, setLoading] = useState(true);
@@ -3013,7 +3014,11 @@ function SettingsView({ theme, onChangeTheme }) {
       })
       .then((data) => {
         setEnabled(data.enabled || []);
-        setNotifyEmail(data.notifyEmail || "");
+        // Repli sur l'ancien champ "notifyEmail" (une seule adresse) tant que
+        // les paramètres n'ont pas encore été resauvegardés au nouveau format.
+        const emails = Array.isArray(data.notifyEmails) ? data.notifyEmails : data.notifyEmail ? [data.notifyEmail] : [];
+        setNotifyEmail(emails[0] || "");
+        setNotifyEmail2(emails[1] || "");
         setWatchlistBenoit(data.letterboxdWatchlists?.benoit || "");
         setWatchlistRomy(data.letterboxdWatchlists?.romy || "");
         setLoading(false);
@@ -3034,7 +3039,7 @@ function SettingsView({ theme, onChangeTheme }) {
     setErrorMsg("");
     const result = await apiWrite("/api/update-settings", {
       enabled,
-      notifyEmail: notifyEmail.trim(),
+      notifyEmails: [notifyEmail.trim(), notifyEmail2.trim()].filter(Boolean),
       letterboxdWatchlists: {
         benoit: watchlistBenoit.trim(),
         romy: watchlistRomy.trim(),
@@ -3167,6 +3172,23 @@ function SettingsView({ theme, onChangeTheme }) {
                 type="email"
                 value={notifyEmail}
                 onChange={(e) => setNotifyEmail(e.target.value)}
+                style={{
+                  width: "100%",
+                  marginBottom: 10,
+                  background: T.surface,
+                  border: `1px solid ${T.line}`,
+                  borderRadius: 6,
+                  color: T.cream,
+                  fontFamily: F.serif,
+                  fontSize: 16,
+                  padding: "10px 12px",
+                }}
+              />
+              <input
+                placeholder="deuxième email (optionnel)"
+                type="email"
+                value={notifyEmail2}
+                onChange={(e) => setNotifyEmail2(e.target.value)}
                 style={{
                   width: "100%",
                   background: T.surface,
