@@ -11,7 +11,10 @@ const CANONICAL_SUBSCRIPTIONS = {
   netflix: ["Netflix"],
   prime: ["Amazon Prime Video", "Prime Video"],
   disney: ["Disney Plus", "Disney+"],
-  canal: ["Canal+"],
+  // Toutes les chaînes/services du bouquet Ciné+ inclus dans la formule
+  // Canal+ (Pack Ciné Séries+) sont regroupées ici avec "Canal+" lui-même,
+  // puisqu'ils sont tous couverts par le même abonnement.
+  canal: ["Canal+", "Canal+ Cinéma", "Insomnia", "Polar+", "Ciné+ Frisson", "Ciné+ Émotion", "Ciné+ Family", "Ciné+ Festival", "Ciné+ Classic"],
   canalseries: ["Canal+ Séries"],
   appletv: ["Apple TV+", "Apple TV Plus"],
   paramount: ["Paramount Plus", "Paramount+"],
@@ -28,7 +31,14 @@ function loadSettings() {
     const parsed = JSON.parse(raw);
     return {
       enabled: Array.isArray(parsed.enabled) ? parsed.enabled : DEFAULT_ENABLED,
-      notifyEmail: parsed.notifyEmail || null,
+      // Repli sur l'ancien champ "notifyEmail" (une seule adresse) pour les
+      // settings.json enregistrés avant l'introduction du champ "notifyEmails" —
+      // une fois resauvegardé depuis l'app, le nouveau format prend le relais.
+      notifyEmails: Array.isArray(parsed.notifyEmails)
+        ? parsed.notifyEmails.filter(Boolean)
+        : parsed.notifyEmail
+        ? [parsed.notifyEmail]
+        : [],
       letterboxdWatchlists: {
         benoit: parsed.letterboxdWatchlists?.benoit || "",
         romy: parsed.letterboxdWatchlists?.romy || "",
@@ -36,7 +46,7 @@ function loadSettings() {
     };
   } catch (e) {
     console.log("  data/settings.json introuvable ou invalide, utilisation des valeurs par défaut.");
-    return { enabled: DEFAULT_ENABLED, notifyEmail: null, letterboxdWatchlists: { benoit: "", romy: "" } };
+    return { enabled: DEFAULT_ENABLED, notifyEmails: [], letterboxdWatchlists: { benoit: "", romy: "" } };
   }
 }
 
@@ -541,8 +551,8 @@ function buildEmailHtml(newlyAvailable) {
   `;
 }
 
-async function sendNotificationEmail(newlyAvailable, notifyEmail) {
-  if (!notifyEmail) {
+async function sendNotificationEmail(newlyAvailable, notifyEmails) {
+  if (!notifyEmails || notifyEmails.length === 0) {
     console.log("Aucune adresse email configurée dans Paramètres, notification ignorée.");
     return;
   }
@@ -562,7 +572,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
       },
       body: JSON.stringify({
         from: "CinéRadar <onboarding@resend.dev>",
-        to: [notifyEmail],
+        to: notifyEmails,
         subject: `CinéRadar : ${newlyAvailable.length} film(s) disponible(s) sur vos abonnements`,
         html: buildEmailHtml(newlyAvailable),
         text: textVersion,
@@ -573,7 +583,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmail) {
       console.log(`Erreur d'envoi d'email (${res.status}) : ${details}`);
       return;
     }
-    console.log(`Email envoyé à ${notifyEmail} (${newlyAvailable.length} film(s)).`);
+    console.log(`Email envoyé à ${notifyEmails.join(", ")} (${newlyAvailable.length} film(s)).`);
   } catch (e) {
     console.log(`Erreur d'envoi d'email : ${e.message}`);
   }
@@ -757,7 +767,7 @@ async function main() {
 
   if (newlyAvailable.length > 0) {
     console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
-    await sendNotificationEmail(newlyAvailable, SETTINGS.notifyEmail);
+    await sendNotificationEmail(newlyAvailable, SETTINGS.notifyEmails);
   } else {
     console.log("Aucune nouvelle disponibilité à notifier.");
   }
