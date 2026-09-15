@@ -2837,7 +2837,7 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
   );
 }
 
-function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, deletionLog, onOpen, onEditUnmatched }) {
+function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, deletionLog, lastRun, onOpen, onEditUnmatched }) {
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
   const [localWatchlistReview, setLocalWatchlistReview] = useState(watchlistReview || []);
   const [localCinemaisonCleanup, setLocalCinemaisonCleanup] = useState(cinemaisonCleanup || []);
@@ -2868,6 +2868,40 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, de
         <div style={{ fontFamily: F.marquee, fontSize: 26, color: T.cream, marginTop: 4, marginBottom: 16 }}>
           Activité récente
         </div>
+
+        {lastRun && (
+          <div
+            style={{
+              marginBottom: 24,
+              padding: "12px 14px",
+              background: T.surface,
+              border: `1px solid ${lastRun.status === "success" ? T.line : T.accentSecondary}`,
+              borderRadius: T.radiusSm,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+              <span style={{ fontSize: 14 }}>{lastRun.status === "success" ? "✅" : "⚠️"}</span>
+              <span style={{ fontFamily: F.mono, fontSize: 11, letterSpacing: 0.5, color: lastRun.status === "success" ? T.cream : T.accentSecondary }}>
+                DERNIER CONTRÔLE DU ROBOT
+              </span>
+            </div>
+            <div style={{ fontFamily: F.serif, fontSize: 13, color: T.muted }}>
+              {new Date(lastRun.finishedAt).toLocaleString("fr-FR")} · déclenchement {lastRun.trigger}
+            </div>
+            <div style={{ fontFamily: F.serif, fontSize: 13, color: T.muted, marginTop: 2 }}>
+              {lastRun.status === "fatal"
+                ? "Le passage a échoué avant d'aboutir."
+                : `${lastRun.moviesChecked} fiche(s) vérifiée(s)${lastRun.unmatchedCount > 0 ? `, ${lastRun.unmatchedCount} introuvable(s) sur TMDB` : ""}${lastRun.newlyAvailableCount > 0 ? `, ${lastRun.newlyAvailableCount} nouvelle(s) disponibilité(s)` : ""}.`}
+            </div>
+            {lastRun.errors?.length > 0 && (
+              <div style={{ marginTop: 6, fontFamily: F.mono, fontSize: 11, color: T.accentSecondary }}>
+                {lastRun.errors.map((err, i) => (
+                  <div key={i}>⚠️ {err.title ? `${err.title} : ` : ""}{err.message}</div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {localUnmatched.length > 0 && (
           <div style={{ marginBottom: 24 }}>
@@ -3736,6 +3770,7 @@ export default function App() {
   const [watchlistReview, setWatchlistReview] = useState([]);
   const [cinemaisonCleanup, setCinemaisonCleanup] = useState([]);
   const [deletionLog, setDeletionLog] = useState([]);
+  const [lastRun, setLastRun] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [offline, setOffline] = useState(false);
@@ -3783,14 +3818,18 @@ export default function App() {
     const deletionLogPromise = fetch(`/data/deletion-log.json?t=${Date.now()}`)
       .then((res) => (res.ok ? res.json() : []))
       .catch(() => []);
-    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise, deletionLogPromise])
-      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData, deletionLogData]) => {
+    const lastRunPromise = fetch(`/data/last-run.json?t=${Date.now()}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .catch(() => null);
+    return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise, deletionLogPromise, lastRunPromise])
+      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData, deletionLogData, lastRunData]) => {
         setMovies(moviesData);
         setUnmatched(unmatchedData);
         setHistory(historyData);
         setWatchlistReview(watchlistReviewData);
         setCinemaisonCleanup(cinemaisonCleanupData);
         setDeletionLog(deletionLogData);
+        setLastRun(lastRunData);
         setError(null);
         setOffline(false);
         hasDataRef.current = true;
@@ -3803,6 +3842,7 @@ export default function App() {
           watchlistReview: watchlistReviewData,
           cinemaisonCleanup: cinemaisonCleanupData,
           deletionLog: deletionLogData,
+          lastRun: lastRunData,
           cachedAt: now,
         });
       })
@@ -3828,6 +3868,7 @@ export default function App() {
       setWatchlistReview(cached.watchlistReview || []);
       setCinemaisonCleanup(cached.cinemaisonCleanup || []);
       setDeletionLog(cached.deletionLog || []);
+      setLastRun(cached.lastRun || null);
       setLastSyncedAt(cached.cachedAt || null);
       hasDataRef.current = true;
       setLoading(false);
@@ -3925,6 +3966,7 @@ export default function App() {
             watchlistReview={watchlistReview}
             cinemaisonCleanup={cinemaisonCleanup}
             deletionLog={deletionLog}
+            lastRun={lastRun}
             onOpen={setSelected}
             onEditUnmatched={(item) => {
               setEditingMovie({
