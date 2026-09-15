@@ -1,0 +1,10 @@
+{
+  "startedAt": "2026-09-15T16:03:40.317Z",
+  "finishedAt": "2026-09-15T16:04:09.086Z",
+  "trigger": "manuel (bouton dans l'app)",
+  "status": "success",
+  "moviesChecked": 92,
+  "unmatchedCount": 0,
+  "newlyAvailableCount": 0,
+  "errors": []
+}
