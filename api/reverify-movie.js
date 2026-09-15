@@ -14,7 +14,7 @@ const CANONICAL_SUBSCRIPTIONS = {
   netflix: ["Netflix"],
   prime: ["Amazon Prime Video", "Prime Video"],
   disney: ["Disney Plus", "Disney+"],
-  canal: ["Canal+"],
+  canal: ["Canal+", "Canal+ Cinéma", "Insomnia", "Polar+", "Ciné+ Frisson", "Ciné+ Émotion", "Ciné+ Family", "Ciné+ Festival", "Ciné+ Classic"],
   canalseries: ["Canal+ Séries"],
   appletv: ["Apple TV+", "Apple TV Plus"],
   paramount: ["Paramount Plus", "Paramount+"],
