@@ -14,7 +14,10 @@ const CANONICAL_SUBSCRIPTIONS = {
   netflix: ["Netflix"],
   prime: ["Amazon Prime Video", "Prime Video"],
   disney: ["Disney Plus", "Disney+"],
-  canal: ["Canal+"],
+  // Toutes les chaînes/services du bouquet Ciné+ inclus dans la formule
+  // Canal+ (Pack Ciné Séries+) sont regroupées ici avec "Canal+" lui-même,
+  // puisqu'ils sont tous couverts par le même abonnement.
+  canal: ["Canal+", "Canal+ Cinéma", "Insomnia", "Polar+", "Ciné+ Frisson", "Ciné+ Émotion", "Ciné+ Family", "Ciné+ Festival", "Ciné+ Classic"],
   canalseries: ["Canal+ Séries"],
   appletv: ["Apple TV+", "Apple TV Plus"],
   paramount: ["Paramount Plus", "Paramount+"],
