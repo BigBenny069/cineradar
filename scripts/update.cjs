@@ -590,6 +590,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmails) {
 }
 
 async function main() {
+  const startedAt = new Date().toISOString();
   let input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const previousAbonnements = loadPreviousAbonnements();
   let history = loadHistory();
@@ -628,6 +629,10 @@ async function main() {
 
   const newlyAvailable = [];
   const unmatched = [];
+  // Vraies erreurs (panne TMDB, réseau...) distinctes des "introuvables sur
+  // TMDB" (cas normal, déjà visible dans l'onglet Historique via unmatched) —
+  // celles-ci sont ce qu'on veut signaler comme un vrai souci du passage.
+  const runErrors = [];
   const output = [];
 
   for (const movie of input) {
@@ -740,6 +745,7 @@ async function main() {
       // GitHub Actions, empêchant même les films sans souci d'être
       // rafraîchis ce jour-là.
       console.log(`  ⚠️ Erreur en traitant "${movie.title}" : ${e.message} — ignoré pour cette fois.`);
+      runErrors.push({ title: movie.title, message: e.message });
       unmatched.push({
         title: movie.title,
         year: movie.year,
@@ -761,6 +767,34 @@ async function main() {
   // Réécrit data/movies.json avec les tmdbId mémorisés au passage (voir plus
   // haut) — sans effet si rien n'a changé, le workflow ne commitera rien.
   fs.writeFileSync("data/movies.json", JSON.stringify(input, null, 2) + "\n");
+
+  // Trace du passage — lue par l'app (onglet Historique) pour savoir quand
+  // le robot est passé pour la dernière fois, ce qui l'a déclenché, et s'il
+  // y a eu un souci. GITHUB_EVENT_NAME est fourni automatiquement par
+  // GitHub Actions ; absent en local (juste "local" dans ce cas).
+  const triggerLabels = {
+    workflow_dispatch: "manuel (bouton dans l'app)",
+    schedule: "automatique (6h)",
+    push: "push sur movies.json",
+  };
+  fs.writeFileSync(
+    "public/data/last-run.json",
+    JSON.stringify(
+      {
+        startedAt,
+        finishedAt: new Date().toISOString(),
+        trigger: triggerLabels[process.env.GITHUB_EVENT_NAME] || "local",
+        status: runErrors.length > 0 ? "error" : "success",
+        moviesChecked: output.length,
+        unmatchedCount: unmatched.length,
+        newlyAvailableCount: newlyAvailable.length,
+        errors: runErrors,
+      },
+      null,
+      2
+    )
+  );
+
   console.log(
     `Terminé : ${output.length} film(s) mis à jour, ${unmatched.length} en erreur, ${watchlistNewEntries.length} ajouté(s) via watchlist, ${removedTmdbIds.length} retiré(s) (plus sur leur watchlist), ${watchlistReview.length} à vérifier.`
   );
@@ -775,5 +809,31 @@ async function main() {
 
 main().catch((e) => {
   console.error("Le passage a échoué :", e);
+  // Erreur fatale (ex: movies.json illisible) — le passage n'a même pas pu
+  // aller au bout, donc pas de compteurs détaillés disponibles, mais on
+  // laisse quand même une trace claire plutôt que rien du tout.
+  try {
+    fs.mkdirSync("public/data", { recursive: true });
+    fs.writeFileSync(
+      "public/data/last-run.json",
+      JSON.stringify(
+        {
+          startedAt: new Date().toISOString(),
+          finishedAt: new Date().toISOString(),
+          trigger:
+            { workflow_dispatch: "manuel (bouton dans l'app)", schedule: "automatique (6h)", push: "push sur movies.json" }[
+              process.env.GITHUB_EVENT_NAME
+            ] || "local",
+          status: "fatal",
+          moviesChecked: 0,
+          unmatchedCount: 0,
+          newlyAvailableCount: 0,
+          errors: [{ title: null, message: e.message }],
+        },
+        null,
+        2
+      )
+    );
+  } catch {}
   process.exit(1);
 });
