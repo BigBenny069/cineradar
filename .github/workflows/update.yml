@@ -36,14 +36,19 @@ jobs:
 
           for i in 1 2 3 4 5; do
             echo "=== Tentative $i/5 ==="
-            node scripts/update.cjs
+            # "|| node_exit=$?" empêche le -e implicite de GitHub Actions de
+            # tuer le step immédiatement en cas d'échec du script : on veut
+            # quand même committer la trace laissée dans last-run.json avant
+            # de faire échouer le job.
+            node_exit=0
+            node scripts/update.cjs || node_exit=$?
 
-            git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json data/movies.json
-            git commit -m "Update movie data" || { echo "Rien à mettre à jour."; exit 0; }
+            git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json public/data/last-run.json data/movies.json
+            git commit -m "Update movie data" || { echo "Rien à mettre à jour."; exit $node_exit; }
 
             if git push; then
               echo "Push réussi (tentative $i)."
-              exit 0
+              exit $node_exit
             fi
 
             echo "Push rejeté (tentative $i/5) — un commit a été fait entre-temps (ex: modification via l'app)."
