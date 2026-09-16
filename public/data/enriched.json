@@ -3777,56 +3777,5 @@
     "addedAt": "2026-09-14T06:49:32.953Z",
     "updatedAt": "2026-09-14T06:49:32.953Z",
     "lastChecked": "2026-09-15T16:07:49.931Z"
-  },
-  {
-    "tmdbId": 1433,
-    "title": "L'Échine du diable",
-    "year": "2001",
-    "director": "Guillermo del Toro",
-    "poster": "https://image.tmdb.org/t/p/w500/2hu2S9KPs08HeK9HMXieIFFoSar.jpg",
-    "synopsis": "Alors que la guerre civile déchire l'Espagne, le jeune Carlos trouve refuge à Santa Lucia, un orphelinat perdu dans la campagne dirigé par Mme Carmen. À la nuit tombée, le garçon est mis au défi par ses camarades : il doit traverser la cour de l'établissement pour se rendre à la cuisine, l'obligeant à passer devant la maison du gardien, l'antipathique Jacinto. Une fois sur place, Carlos entend d'étranges soupirs et découvre dans le sous-sol de la bâtisse le fantôme d'un enfant mutilé…",
-    "genres": [
-      "Fantastique",
-      "Drame",
-      "Horreur",
-      "Thriller"
-    ],
-    "cast": [
-      "Marisa Paredes",
-      "Eduardo Noriega",
-      "Federico Luppi",
-      "Fernando Tielve",
-      "Íñigo Garcés"
-    ],
-    "tmdbRating": 7.298,
-    "tmdbVotes": 1416,
-    "letterboxdRating": 3.83,
-    "letterboxdVotes": 94918,
-    "imdbId": "tt0256009",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/1433/",
-    "providers": {
-      "abonnement": [
-        "Insomnia Amazon Channel"
-      ],
-      "vod": [
-        "Sooner",
-        "Molotov TV",
-        "SFR Play",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Canal VOD",
-        "Amazon Video",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-09-15T14:47:28.862Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-14T06:59:06.876Z",
-    "updatedAt": "2026-09-14T06:59:06.876Z",
-    "lastChecked": "2026-09-15T16:07:50.096Z"
   }
 ]
