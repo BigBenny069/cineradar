@@ -203,5 +203,12 @@
     "tmdbId": 11123,
     "reason": "cinemaison",
     "deletedAt": "2026-09-07T14:43:06.103Z"
+  },
+  {
+    "title": "L'Échine du diable",
+    "year": 2001,
+    "tmdbId": 1433,
+    "reason": "manuel",
+    "deletedAt": "2026-09-16T07:49:02.085Z"
   }
 ]
