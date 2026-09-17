@@ -2182,10 +2182,10 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
 }
 
 function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing }) {
-  const recentlyAvailable = [...movies]
-    .filter((m) => m.availableSince)
-    .sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince))
-    .slice(0, 5);
+  // Toutes les fiches disponibles sur un abonnement, par ordre chronologique
+  // (plus récente disponibilité en premier) — plus de limite à 5, sur
+  // demande explicite : on veut voir toute la liste, pas juste un aperçu.
+  const recentlyAvailable = [...movies].filter((m) => m.availableSince).sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince));
 
   const lastAdded = [...movies]
     .filter((m) => m.updatedAt)
@@ -2307,7 +2307,7 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
 
         <HorizontalRow
           icon="✨"
-          label="Récemment disponibles"
+          label="Disponible"
           movies={recentlyAvailable}
           onOpen={onOpen}
           emptyText="Rien de nouveau sur tes abonnements pour l'instant."
