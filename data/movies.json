@@ -781,5 +781,14 @@
     "addedAt": "2026-09-18T18:02:26.364Z",
     "updatedAt": "2026-09-18T18:02:26.364Z",
     "tmdbId": 47620
+  },
+  {
+    "title": "Safe",
+    "year": 1995,
+    "director": "Todd Haynes",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/32646/",
+    "addedAt": "2026-09-18T18:02:59.050Z",
+    "updatedAt": "2026-09-18T18:02:59.050Z",
+    "tmdbId": 32646
   }
 ]
