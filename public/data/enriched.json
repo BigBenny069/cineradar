@@ -3832,5 +3832,40 @@
     "addedAt": "2026-09-18T13:19:08.182Z",
     "updatedAt": "2026-09-18T13:19:08.182Z",
     "lastChecked": "2026-09-18T13:20:55.631Z"
+  },
+  {
+    "tmdbId": 47620,
+    "title": "Poison",
+    "year": "1991",
+    "director": "Todd Haynes",
+    "poster": "https://image.tmdb.org/t/p/w500/MW47kViKJcFtt8hQV3EYaOw6zI.jpg",
+    "synopsis": "Un essai en forme d'hommage à Jean Genet, contant en trois volets, trois petites histoires sur la déviance sous toutes ses formes : \"Héros\", ou comment un garçon de 7 ans en arrive à tuer son beau-père ; \"Horror\" ou comment un scientifique désireux de percer le mystère de la libido devient accidentellement un meurtrier ; \"Homo\", ou l'histoire d'amour entre deux prisonniers.",
+    "genres": [
+      "Drame",
+      "Horreur",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Edith Meeks",
+      "Millie White",
+      "Buck Smith",
+      "Anne Giotta ",
+      "Lydia Lafleur"
+    ],
+    "tmdbRating": 6,
+    "tmdbVotes": 97,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0102687",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/47620/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-18T18:02:26.364Z",
+    "updatedAt": "2026-09-18T18:02:26.364Z",
+    "lastChecked": "2026-09-18T18:02:27.515Z"
   }
 ]
