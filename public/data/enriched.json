@@ -3777,5 +3777,60 @@
     "addedAt": "2026-09-14T06:49:32.953Z",
     "updatedAt": "2026-09-14T06:49:32.953Z",
     "lastChecked": "2026-09-18T10:22:01.005Z"
+  },
+  {
+    "tmdbId": 524,
+    "title": "Casino",
+    "year": "1995",
+    "director": "Martin Scorsese",
+    "poster": "https://image.tmdb.org/t/p/w500/4a0I37pYcdFY6HeutalHQTGs0sl.jpg",
+    "synopsis": "Dans les années soixante-dix à Las Vegas, Ace Rothstein dirige d'une main de fer l'hôtel-casino Tangiers, financé en sous-main par le puissant syndicat des camionneurs. Le Tangiers est l'un des casinos les plus prospères de la ville et Ace est devenu le grand manitou de Las Vegas, secondé par son ami d'enfance, Nicky Santoro. Impitoyable avec les tricheurs, Rothstein se laisse un jour séduire par une virtuose de l'arnaque d'une insolente beauté, Ginger McKenna. Amoureux, il lui ouvre les portes de son paradis et l'épouse. Ses ennuis commencent alors.",
+    "genres": [
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "Sharon Stone",
+      "Joe Pesci",
+      "James Woods",
+      "Don Rickles"
+    ],
+    "tmdbRating": 8,
+    "tmdbVotes": 6728,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0112641",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/524/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": [
+        "MUBI",
+        "Sooner",
+        "Molotov TV",
+        "MUBI Amazon Channel",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": "2026-09-18T13:19:09.334Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-18T13:19:08.182Z",
+    "updatedAt": "2026-09-18T13:19:08.182Z",
+    "lastChecked": "2026-09-18T13:19:09.334Z"
   }
 ]
