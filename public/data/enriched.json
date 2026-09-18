@@ -3903,57 +3903,5 @@
     "addedAt": "2026-09-18T18:02:59.050Z",
     "updatedAt": "2026-09-18T18:02:59.050Z",
     "lastChecked": "2026-09-18T18:05:52.369Z"
-  },
-  {
-    "tmdbId": 3902,
-    "title": "I'm Not There",
-    "year": "2007",
-    "director": "Todd Haynes",
-    "poster": "https://image.tmdb.org/t/p/w500/bucgvB7gQqcl1m71efHkenfIMTj.jpg",
-    "synopsis": "Un voyage à travers les âges de la vie de Bob Dylan. Six acteurs incarnent Dylan tel un kaléïdoscope de personnages changeants : poète, prophète, hors-la-loi, imposteur, comédien, martyr et \"Born Again\". Ils participent tous à l'esquisse d'un portrait de cette icône américaine définitivement insaisissable.",
-    "genres": [
-      "Drame",
-      "Musique"
-    ],
-    "cast": [
-      "Christian Bale",
-      "Cate Blanchett",
-      "Marcus Carl Franklin",
-      "Richard Gere",
-      "Heath Ledger"
-    ],
-    "tmdbRating": 6.494,
-    "tmdbVotes": 798,
-    "letterboxdRating": 3.7,
-    "letterboxdVotes": 62171,
-    "imdbId": "tt0368794",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/3902/",
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "MUBI",
-        "Molotov TV",
-        "MUBI Amazon Channel",
-        "SFR Play",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek",
-        "Apple TV Store"
-      ]
-    },
-    "availableSince": "2026-09-18T18:04:46.130Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-18T18:04:45.169Z",
-    "updatedAt": "2026-09-18T18:04:45.169Z",
-    "lastChecked": "2026-09-18T18:05:52.699Z"
   }
 ]
