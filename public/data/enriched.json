@@ -3957,5 +3957,50 @@
     "addedAt": "2026-09-20T16:06:33.587Z",
     "updatedAt": "2026-09-20T16:06:33.587Z",
     "lastChecked": "2026-09-20T16:06:34.585Z"
+  },
+  {
+    "tmdbId": 262,
+    "title": "La Valse des pantins",
+    "year": "1982",
+    "director": "Martin Scorsese",
+    "poster": "https://image.tmdb.org/t/p/w500/zmb3PE0GEepF7wGHoCuazh4r90.jpg",
+    "synopsis": "Un comique méconnu, pour se faire reconnaître, enlève le présentateur d'un show télévisé et n'accepte de le libérer qu'à la condition de participer à son spectacle.",
+    "genres": [
+      "Drame",
+      "Comédie"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "Jerry Lewis",
+      "Diahnne Abbott",
+      "Sandra Bernhard",
+      "Shelley Hack"
+    ],
+    "tmdbRating": 7.773,
+    "tmdbVotes": 2662,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0085794",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/262/",
+    "providers": {
+      "abonnement": [
+        "Disney Plus"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-09-20T16:06:55.071Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-20T16:06:54.091Z",
+    "updatedAt": "2026-09-20T16:06:54.091Z",
+    "lastChecked": "2026-09-20T16:06:55.071Z"
   }
 ]
