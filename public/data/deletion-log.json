@@ -217,5 +217,12 @@
     "tmdbId": 3902,
     "reason": "cinemaison",
     "deletedAt": "2026-09-18T18:07:56.886Z"
+  },
+  {
+    "title": "Il était une fois en Amérique",
+    "year": 1984,
+    "tmdbId": 311,
+    "reason": "manuel",
+    "deletedAt": "2026-09-20T12:40:39.202Z"
   }
 ]
