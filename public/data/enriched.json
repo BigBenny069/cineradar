@@ -3906,5 +3906,56 @@
     "addedAt": "2026-09-20T12:41:45.175Z",
     "updatedAt": "2026-09-20T12:41:45.175Z",
     "lastChecked": "2026-09-20T12:42:48.675Z"
+  },
+  {
+    "tmdbId": 117,
+    "title": "Les Incorruptibles",
+    "year": "1987",
+    "director": "Brian De Palma",
+    "poster": "https://image.tmdb.org/t/p/w500/xrdMy48NrJSJYRplKfuQT0sDfSI.jpg",
+    "synopsis": "À Chicago en 1930, à l’époque de la prohibition, le trafic d’alcool bat son plein et permet à des truands de bâtir des fortunes colossales. Eliot Ness, jeune policier frais émoulu du FBI, est chargé de démanteler un réseau de contrebande d’alcool. L’ennemi est facilement identifiable : Al Capone, inattaquable officiellement, est pourtant impliqué dans les affaires les plus sordides. La première mission de Ness, maladroitement conduite, se solde par un échec humiliant. Loin de se laisser décourager par ce premier affront, Ness décide de s’entourer de personnes de confiance. Il recrute ainsi Jim Malone, un flic qui connaît bien le monde des truands…",
+    "genres": [
+      "Crime",
+      "Histoire",
+      "Thriller"
+    ],
+    "cast": [
+      "Kevin Costner",
+      "Sean Connery",
+      "Robert De Niro",
+      "Charles Martin Smith",
+      "Andy Garcia"
+    ],
+    "tmdbRating": 7.753,
+    "tmdbVotes": 6322,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0094226",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/117/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount+ Amazon Channel",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-09-20T16:06:34.585Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-20T16:06:33.587Z",
+    "updatedAt": "2026-09-20T16:06:33.587Z",
+    "lastChecked": "2026-09-20T16:06:34.585Z"
   }
 ]
