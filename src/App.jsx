@@ -629,6 +629,52 @@ const PROVIDER_META = {
   YouTube: { bg: "#FF0000", fg: "#FFFFFF", label: "▶", weight: 700, category: "vod" },
 };
 
+// TMDB ne fournit pas d'identifiant de fiche propre à chaque plateforme,
+// seulement le titre/l'année — donc pas de lien profond garanti vers LA
+// fiche exacte. À la place : un lien de recherche (titre + année) qui ouvre
+// l'appli native si elle est installée (lien universel) et tombe en général
+// directement sur le bon film. Fonctions plutôt que chaînes, pour construire
+// l'URL avec le titre/l'année du film au moment du clic.
+const PROVIDER_SEARCH_URL = {
+  netflix: (q) => `https://www.netflix.com/search?q=${q}`,
+  // app.primevideo.com (et non amazon.fr) est le domaine qui déclenche le
+  // lien universel vers l'appli Prime Video plutôt que le site Amazon —
+  // couvre aussi les chaînes vendues "en Amazon Channel" (ex. Insomnia),
+  // qui se regardent de toute façon depuis l'appli Prime Video.
+  prime: (q) => `https://app.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=${q}`,
+  "prime video": (q) => `https://app.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=${q}`,
+  "amazon prime video": (q) => `https://app.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=${q}`,
+  "amazon video": (q) => `https://app.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=${q}`,
+  "amazon channel": (q) => `https://app.primevideo.com/search/ref=atv_nb_sug?ie=UTF8&phrase=${q}`,
+  "disney+": (q) => `https://www.disneyplus.com/search?q=${q}`,
+  "disney plus": (q) => `https://www.disneyplus.com/search?q=${q}`,
+  // myCANAL regroupe Canal+, Canal VOD et tout le bouquet Ciné+/Insomnia/Polar+
+  // dans une seule et même appli — on y renvoie donc tout ce groupe.
+  "canal+": (q) => `https://www.canalplus.com/recherche/?q=${q}`,
+  "canal vod": (q) => `https://www.canalplus.com/recherche/?q=${q}`,
+  insomnia: (q) => `https://www.canalplus.com/recherche/?q=${q}`,
+  "polar+": (q) => `https://www.canalplus.com/recherche/?q=${q}`,
+  ocs: (q) => `https://www.ocs.fr/recherche?q=${q}`,
+  "apple tv": (q) => `https://tv.apple.com/search?term=${q}`,
+  paramount: (q) => `https://www.paramountplus.com/search/?q=${q}`,
+  max: (q) => `https://play.max.com/search?q=${q}`,
+  "hbo max": (q) => `https://play.max.com/search?q=${q}`,
+  youtube: (q) => `https://www.youtube.com/results?search_query=${q}`,
+  "google play": (q) => `https://play.google.com/store/search?q=${q}&c=movies`,
+  arte: (q) => `https://www.arte.tv/fr/search/?q=${q}`,
+};
+
+function getPlatformSearchUrl(providerName, movieTitle, movieYear) {
+  const n = normalizeText(providerName);
+  const key = Object.keys(PROVIDER_SEARCH_URL).find((k) => n.includes(k));
+  const q = encodeURIComponent(movieYear ? `${movieTitle} ${movieYear}` : movieTitle);
+  if (key) return PROVIDER_SEARCH_URL[key](q);
+  // Repli : plateforme non reconnue (petite offre régionale, appli sans
+  // recherche par URL connue...) — une recherche Google reste plus utile
+  // que ne rien faire du tout.
+  return `https://www.google.com/search?q=${encodeURIComponent(`regarder ${movieTitle}${movieYear ? ` ${movieYear}` : ""} streaming ${providerName}`)}`;
+}
+
 const SUBSCRIPTION_OPTIONS = [
   { key: "netflix", label: "Netflix" },
   { key: "prime", label: "Prime Video" },
@@ -1889,9 +1935,14 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
                     }}
                   >
                     <PlatformBadge name={p} />
-                    <span style={{ fontFamily: F.mono, fontSize: 11, color: T.accent }}>
+                    <a
+                      href={getPlatformSearchUrl(p, movie.title, movie.year)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, textDecoration: "none" }}
+                    >
                       Voir →
-                    </span>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -1929,9 +1980,14 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
                         }}
                       >
                         <PlatformBadge name={p} />
-                        <span style={{ fontFamily: F.mono, fontSize: 11, color: T.accent }}>
+                        <a
+                          href={getPlatformSearchUrl(p, movie.title, movie.year)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, textDecoration: "none" }}
+                        >
                           Voir →
-                        </span>
+                        </a>
                       </div>
                     ))}
                   </div>
