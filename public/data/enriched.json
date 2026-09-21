@@ -4524,5 +4524,49 @@
     "addedAt": "2026-09-21T19:17:44.780Z",
     "updatedAt": "2026-09-21T19:17:44.781Z",
     "lastChecked": "2026-09-21T19:17:45.775Z"
+  },
+  {
+    "tmdbId": 20246,
+    "title": "Le Criminel",
+    "year": "1946",
+    "director": "Orson Welles",
+    "poster": "https://image.tmdb.org/t/p/w500/ee3F8CvNMSJZvYiwW2DKSvU9rQj.jpg",
+    "synopsis": "Charles Rankin mène une vie quasiment parfaite : une jolie épouse, un poste respectable dans une université prestigieuse et une maison charmante dans une petite ville du Connecticut. Son univers tranquille va basculer avec l'arrivée de Wilson, un détective de la commission des crimes de guerre qui traque l'ancien criminel nazi Franz Kindler. Wilson est accompagné de Meinike, un ancien compagnon de Kindler qui est le seul à pouvoir l'identifier. Mais le meurtre soudain de Meinike va compliquer l'enquête…",
+    "genres": [
+      "Thriller",
+      "Crime"
+    ],
+    "cast": [
+      "Edward G. Robinson",
+      "Loretta Young",
+      "Orson Welles",
+      "Philip Merivale",
+      "Richard Long"
+    ],
+    "tmdbRating": 7.212,
+    "tmdbVotes": 660,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0038991",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/20246/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Bloodstream",
+        "Artiflix",
+        "Apple TV Store",
+        "Orange VOD",
+        "Amazon Video",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:18:04.793Z",
+    "updatedAt": "2026-09-21T19:18:04.793Z",
+    "lastChecked": "2026-09-21T19:18:06.125Z"
   }
 ]
