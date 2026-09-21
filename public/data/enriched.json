@@ -4291,5 +4291,55 @@
     "addedAt": "2026-09-21T19:14:49.378Z",
     "updatedAt": "2026-09-21T19:14:49.378Z",
     "lastChecked": "2026-09-21T19:14:50.438Z"
+  },
+  {
+    "tmdbId": 424,
+    "title": "La Liste de Schindler",
+    "year": "1993",
+    "director": "Steven Spielberg",
+    "poster": "https://image.tmdb.org/t/p/w500/fLRbv1fGQD0OCPWkFy7PI2sESLj.jpg",
+    "synopsis": "Évocation des années de guerre d’Oskar Schindler, fils d’industriel d’origine autrichienne rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique et en 1944 sauver 800 hommes et 300 femmes du camp d’extermination d’Auschwitz‐Birkenau.",
+    "genres": [
+      "Drame",
+      "Histoire",
+      "Guerre"
+    ],
+    "cast": [
+      "Liam Neeson",
+      "Ben Kingsley",
+      "Ralph Fiennes",
+      "Caroline Goodall",
+      "Jonathan Sagall"
+    ],
+    "tmdbRating": 8.57,
+    "tmdbVotes": 17921,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0108052",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/424/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "TF1+",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:15:17.821Z",
+    "updatedAt": "2026-09-21T19:15:17.821Z",
+    "lastChecked": "2026-09-21T19:15:18.919Z"
   }
 ]
