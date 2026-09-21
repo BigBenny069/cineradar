@@ -827,5 +827,14 @@
     "addedAt": "2026-09-21T13:09:08.223Z",
     "updatedAt": "2026-09-21T13:09:08.223Z",
     "tmdbId": 1110358
+  },
+  {
+    "title": "Rubber",
+    "year": 2010,
+    "director": "Quentin Dupieux",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/45649/",
+    "addedAt": "2026-09-21T13:09:32.421Z",
+    "updatedAt": "2026-09-21T13:09:32.421Z",
+    "tmdbId": 45649
   }
 ]
