@@ -4331,5 +4331,55 @@
     "addedAt": "2026-09-21T21:27:04.546Z",
     "updatedAt": "2026-09-21T21:27:04.546Z",
     "lastChecked": "2026-09-21T21:27:05.544Z"
+  },
+  {
+    "tmdbId": 7345,
+    "title": "There Will Be Blood",
+    "year": "2007",
+    "director": "Paul Thomas Anderson",
+    "poster": "https://image.tmdb.org/t/p/w500/fa0RDkAlCec0STeMNAhPaF89q6U.jpg",
+    "synopsis": "Lorsque Daniel Plainview entend parler d’une petite ville de Californie où l’on dit qu’un océan de pétrole coulerait littéralement du sol, il décide d’aller tenter sa chance et part avec son fils H.W. à Little Boston. Dans cet endroit perdu où chacun lutte pour survivre et où l’unique distraction est l’église animée par le charismatique prêtre Eli Sunday, Plainview et son fils voient le sort leur sourire. Même si le pétrole comble leurs attentes et fait leur fortune, plus rien ne sera comme avant : les tensions s’intensifient, les conflits éclatent et les valeurs humaines comme l’amour, l’espoir, le sens de la communauté, les croyances, l’ambition et même les liens entre père et fils sont mis en péril par la corruption, la trahison… et le pétrole.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Daniel Day-Lewis",
+      "Paul Dano",
+      "Kevin J. O'Connor",
+      "Ciarán Hinds",
+      "Dillon Freasier"
+    ],
+    "tmdbRating": 8.063,
+    "tmdbVotes": 7713,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0469494",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/7345/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount+ Amazon Channel",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": "2026-09-21T21:28:17.748Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-21T21:28:16.608Z",
+    "updatedAt": "2026-09-21T21:28:16.608Z",
+    "lastChecked": "2026-09-21T21:28:17.748Z"
   }
 ]
