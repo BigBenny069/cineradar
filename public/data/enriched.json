@@ -3561,57 +3561,6 @@
     "lastChecked": "2026-09-21T19:44:39.022Z"
   },
   {
-    "tmdbId": 213,
-    "title": "La Mort aux trousses",
-    "year": "1959",
-    "director": "Alfred Hitchcock",
-    "poster": "https://image.tmdb.org/t/p/w500/fxwVitOtjxw2M2lz9SRmAgJNQMz.jpg",
-    "synopsis": "Patron d’une société de publicité new-yorkaise, Roger Thornhill a un rendez-vous d'affaires au Plaza Hotel. Mais il y est enlevé à la suite d'un malentendu : ses ravisseurs le prennent pour un certain George Kaplan. Il se retrouve malgré lui dans la peau de ce Kaplan, un espion que tout désigne comme tel. Pris entre une mystérieuse organisation qui cherche à le supprimer et la police qui le poursuit, Tornhill est dans une situation bien inconfortable. Il fuit à travers les États-Unis, pourchassé par ses ravisseurs, et part à la recherche d'une vérité à laquelle il devra faire face…",
-    "genres": [
-      "Thriller",
-      "Aventure"
-    ],
-    "cast": [
-      "Cary Grant",
-      "Eva Marie Saint",
-      "James Mason",
-      "Jessie Royce Landis",
-      "Leo G. Carroll"
-    ],
-    "tmdbRating": 7.961,
-    "tmdbVotes": 4640,
-    "letterboxdRating": 4.2,
-    "letterboxdVotes": 360564,
-    "imdbId": "tt0053125",
-    "letterboxdUrl": "https://letterboxd.com/film/north-by-northwest/",
-    "providers": {
-      "abonnement": [
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-09-13T19:19:21.694Z",
-    "wantedBy": "benoit",
-    "addedAt": "2026-09-13T19:18:59.881Z",
-    "updatedAt": "2026-09-13T19:18:59.881Z",
-    "lastChecked": "2026-09-21T19:44:39.099Z"
-  },
-  {
     "tmdbId": 850165,
     "title": "Iron Claw",
     "year": "2023",
