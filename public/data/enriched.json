@@ -4221,5 +4221,40 @@
     "addedAt": "2026-09-21T16:29:33.256Z",
     "updatedAt": "2026-09-21T16:29:33.256Z",
     "lastChecked": "2026-09-21T16:30:07.695Z"
+  },
+  {
+    "tmdbId": 1255,
+    "title": "The Host",
+    "year": "2006",
+    "director": "Bong Joon-ho",
+    "poster": "https://image.tmdb.org/t/p/w500/wnxiMrfqfiTwuWrFfAzNNkuHN1L.jpg",
+    "synopsis": "À Séoul, Park Hee-bong tient un petit snack au bord de la rivière Han où il vit avec les siens. Il y a son fils aîné, l'immature Gang-du, sa fille Nam-joo, une championne malchanceuse de tir à l'arc, et Nam-il, son fils cadet éternellement au chômage. Tous idolâtrent la petite Hyun-seo, la fille unique de Gang-du. Un jour, un monstre géant et inconnu jusqu'à présent, surgit des profondeurs de la rivière. Quand la créature atteint les berges, elle se met à piétiner et attaquer la foule sauvagement, détruisant tout sur son passage. Le snack démoli, Gang-du tente de s'enfuir avec sa fille, mais il la perd dans la foule paniquée. Quand il l'aperçoit enfin, Hyun-seo est en train de se faire enlever par le monstre qui disparaît, en emportant la fillette au fond de la rivière. La famille Park décide alors de partir en croisade contre le monstre, pour retrouver Hyun-seo...",
+    "genres": [
+      "Horreur",
+      "Drame",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Song Kang-ho",
+      "Byun Hee-bong",
+      "Park Hae-il",
+      "Bae Doo-na",
+      "Go Ah-seong"
+    ],
+    "tmdbRating": 6.982,
+    "tmdbVotes": 3242,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0468492",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1255/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T16:30:25.848Z",
+    "updatedAt": "2026-09-21T16:30:25.848Z",
+    "lastChecked": "2026-09-21T16:30:27.148Z"
   }
 ]
