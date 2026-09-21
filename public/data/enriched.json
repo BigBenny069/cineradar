@@ -4388,5 +4388,48 @@
     "addedAt": "2026-09-21T19:15:47.329Z",
     "updatedAt": "2026-09-21T19:15:47.329Z",
     "lastChecked": "2026-09-21T19:15:48.784Z"
+  },
+  {
+    "tmdbId": 44256,
+    "title": "Razzia sur la Chnouf",
+    "year": "1955",
+    "director": "Henri Decoin",
+    "poster": "https://image.tmdb.org/t/p/w500/kPyFhBxaYaAFRPs2DQ2WBZY40n.jpg",
+    "synopsis": "Henri Ferré, dit « Le Nantais », arrive à Paris. Envoyé par un chef de la pègre américaine, il est chargé d'aider Paul Liski, un truand français, à reprendre le contrôle d'un important trafic de drogue. Celui-ci confie à Ferré la direction d'un bar, « Le Troquet », qui doit lui servir de couverture. Petit à petit, Ferré se fait expliquer tout le circuit de distribution de la drogue. Les hommes de main du caïd demeurent néanmoins méfiants…",
+    "genres": [
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Jean Gabin",
+      "Magali Noël",
+      "Lino Ventura",
+      "Albert Rémy",
+      "Paul Frankeur"
+    ],
+    "tmdbRating": 6.687,
+    "tmdbVotes": 99,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0048543",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/44256/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Gaumont Amazon Channel",
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:16:31.731Z",
+    "updatedAt": "2026-09-21T19:16:31.731Z",
+    "lastChecked": "2026-09-21T19:16:32.751Z"
   }
 ]
