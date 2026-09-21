@@ -881,5 +881,14 @@
     "addedAt": "2026-09-21T19:15:17.821Z",
     "updatedAt": "2026-09-21T19:15:17.821Z",
     "tmdbId": 424
+  },
+  {
+    "title": "John Rambo",
+    "year": 2008,
+    "director": "Sylvester Stallone",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/7555/",
+    "addedAt": "2026-09-21T19:15:47.329Z",
+    "updatedAt": "2026-09-21T19:15:47.329Z",
+    "tmdbId": 7555
   }
 ]
