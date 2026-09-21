@@ -287,5 +287,12 @@
     "tmdbId": 11459,
     "reason": "manuel",
     "deletedAt": "2026-09-21T19:47:35.092Z"
+  },
+  {
+    "title": "Vivarium",
+    "year": 2019,
+    "tmdbId": 458305,
+    "reason": "manuel",
+    "deletedAt": "2026-09-21T21:33:36.228Z"
   }
 ]
