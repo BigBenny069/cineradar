@@ -44,10 +44,33 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: `Erreur TMDB (${r.status})`, details });
     }
     const data = await r.json();
+    // TMDB trie par pertinence mêlée à la popularité, pas par correspondance
+    // exacte : un film confidentiel dont le titre est un mot isolé (ex.
+    // "Wrong") peut se retrouver noyé sous des franchises plus populaires
+    // dont le titre original contient le même mot (ex. "Wrong Turn"). On fait
+    // donc remonter les correspondances exactes du titre en tête, avant de
+    // repasser à l'ordre TMDB pour le reste — tri stable, donc à rang égal
+    // l'ordre de popularité TMDB est conservé.
+    const norm = (s) =>
+      String(s || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    const q = norm(query);
     const results = (data.results || [])
       .filter((m) => m.release_date)
-      .slice(0, 8)
-      .map((m) => ({
+      .map((m) => {
+        const t = norm(m.title);
+        const ot = norm(m.original_title);
+        let rank = 2;
+        if (t === q || ot === q) rank = 0;
+        else if (t.startsWith(q) || ot.startsWith(q)) rank = 1;
+        return { m, rank };
+      })
+      .sort((a, b) => a.rank - b.rank)
+      .slice(0, 10)
+      .map(({ m }) => ({
         tmdbId: m.id,
         title: m.title,
         year: m.release_date.slice(0, 4),
