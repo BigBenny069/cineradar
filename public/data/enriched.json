@@ -4256,5 +4256,57 @@
     "addedAt": "2026-09-21T16:30:25.848Z",
     "updatedAt": "2026-09-21T16:30:25.848Z",
     "lastChecked": "2026-09-21T16:31:06.830Z"
+  },
+  {
+    "tmdbId": 1018,
+    "title": "Mulholland Drive",
+    "year": "2001",
+    "director": "David Lynch",
+    "poster": "https://image.tmdb.org/t/p/w500/d5gefer4mHnL5kOmlOP5rGumdM7.jpg",
+    "synopsis": "À Hollywood, durant la nuit, Rita, une jeune femme, devient amnésique suite à un accident de voiture sur la route de Mulholland Drive. Elle fait la rencontre de Betty Elms, une actrice en devenir qui vient juste de débarquer à Los Angeles. Aidée par celle-ci, Rita tente de retrouver la mémoire ainsi que son identité.",
+    "genres": [
+      "Thriller",
+      "Drame",
+      "Mystère"
+    ],
+    "cast": [
+      "Naomi Watts",
+      "Laura Harring",
+      "Justin Theroux",
+      "Ann Miller",
+      "Mark Pellegrino"
+    ],
+    "tmdbRating": 7.8,
+    "tmdbVotes": 7293,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0166924",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1018/",
+    "providers": {
+      "abonnement": [
+        "HBO Max"
+      ],
+      "vod": [
+        "MUBI",
+        "Sooner",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": "2026-09-21T16:31:21.263Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-21T16:31:19.991Z",
+    "updatedAt": "2026-09-21T16:31:19.991Z",
+    "lastChecked": "2026-09-21T16:31:21.263Z"
   }
 ]
