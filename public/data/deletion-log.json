@@ -238,5 +238,12 @@
     "tmdbId": 1110358,
     "reason": "cinemaison",
     "deletedAt": "2026-09-21T13:16:33.554Z"
+  },
+  {
+    "title": "Mulholland Drive",
+    "year": 2001,
+    "tmdbId": 1018,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-21T16:34:23.969Z"
   }
 ]
