@@ -4097,5 +4097,57 @@
     "addedAt": "2026-09-21T13:09:08.223Z",
     "updatedAt": "2026-09-21T13:09:08.223Z",
     "lastChecked": "2026-09-21T13:09:09.379Z"
+  },
+  {
+    "tmdbId": 45649,
+    "title": "Rubber",
+    "year": "2010",
+    "director": "Quentin Dupieux",
+    "poster": "https://image.tmdb.org/t/p/w500/qo353Eg6vCoibKfIYc2geL1tP3P.jpg",
+    "synopsis": "Dans le désert californien, des spectateurs incrédules assistent aux aventures d’un pneu tueur et télépathe, mystérieusement attiré par une jolie jeune fille. Une enquête commence.",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Fantastique",
+      "Horreur",
+      "Mystère"
+    ],
+    "cast": [
+      "Thomas F. Duffy",
+      "David Bowe",
+      "Stephen Spinella",
+      "Roxane Mesquida",
+      "Jack Plotnick"
+    ],
+    "tmdbRating": 5.925,
+    "tmdbVotes": 1150,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1612774",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/45649/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": "2026-09-21T13:09:33.494Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-21T13:09:32.421Z",
+    "updatedAt": "2026-09-21T13:09:32.421Z",
+    "lastChecked": "2026-09-21T13:09:33.494Z"
   }
 ]
