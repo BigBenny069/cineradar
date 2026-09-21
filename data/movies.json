@@ -882,5 +882,14 @@
     "addedAt": "2026-09-21T21:27:04.546Z",
     "updatedAt": "2026-09-21T21:27:04.546Z",
     "tmdbId": 1933
+  },
+  {
+    "title": "There Will Be Blood",
+    "year": 2007,
+    "director": "Paul Thomas Anderson",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/7345/",
+    "addedAt": "2026-09-21T21:28:16.608Z",
+    "updatedAt": "2026-09-21T21:28:16.608Z",
+    "tmdbId": 7345
   }
 ]
