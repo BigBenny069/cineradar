@@ -4177,5 +4177,48 @@
     "addedAt": "2026-09-21T16:29:06.127Z",
     "updatedAt": "2026-09-21T16:29:06.127Z",
     "lastChecked": "2026-09-21T16:29:07.152Z"
+  },
+  {
+    "tmdbId": 398,
+    "title": "Truman Capote",
+    "year": "2005",
+    "director": "Bennett Miller",
+    "poster": "https://image.tmdb.org/t/p/w500/v3MX2wxgdwSRPeFt99Y1E9PigOW.jpg",
+    "synopsis": "En novembre 1959, Truman Capote, auteur de Breakfast at Tiffany's et personnalité très en vue, apprend dans le New York Times le meurtre de quatre membres d'une famille de fermiers du Kansas. Ce genre de fait divers n'est pas rare, mais celui-ci l'intrigue. En précurseur, il pense qu'une histoire vraie peut être aussi passionnante qu'une fiction si elle est bien racontée. Il voit là l'occasion de vérifier sa théorie et persuade le magazine The New Yorker de l'envoyer au Kansas. Il part avec une amie d'enfance, Harper Lee. À son arrivée, son apparence et ses manières provoquent d'abord l'hostilité de ces gens modestes qui se considèrent encore comme une part du Vieil Ouest, mais il gagne rapidement leur confiance, et notamment celle d'Alvin Dewey, l'agent du Bureau d'Investigation qui dirige l'enquête...",
+    "genres": [
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Philip Seymour Hoffman",
+      "Catherine Keener",
+      "Clifton Collins Jr.",
+      "Bruce Greenwood",
+      "Bob Balaban"
+    ],
+    "tmdbRating": 6.972,
+    "tmdbVotes": 1700,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0379725",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/398/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "MGM Amazon Channel",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T16:29:33.256Z",
+    "updatedAt": "2026-09-21T16:29:33.256Z",
+    "lastChecked": "2026-09-21T16:29:34.283Z"
   }
 ]
