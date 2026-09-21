@@ -1349,51 +1349,6 @@
     "lastChecked": "2026-09-21T19:46:41.231Z"
   },
   {
-    "tmdbId": 274,
-    "title": "Le Silence des agneaux",
-    "year": "1991",
-    "director": "Jonathan Demme",
-    "poster": "https://image.tmdb.org/t/p/w500/sSQDxwm4r28YpJSQVyVOtpYVs0E.jpg",
-    "synopsis": "Un psychopathe connu sous le nom de Buffalo Bill sème la terreur dans le Middle West en kidnappant et en assassinant de jeunes femmes. Clarice Starling, une jeune stagiaire du FBI, est chargée d’interroger l’ex‐psychiatre Hannibal Lecter. Psychopathe redoutablement intelligent et porté sur le cannibalisme, Lecter est capable de lui fournir des informations concernant Buffalo Bill ainsi que son portrait psychologique. Mais il n’accepte de l’aider qu’en échange d’informations sur la vie privée de la jeune femme. Entre eux s’établit un lien de fascination et de répulsion.",
-    "genres": [
-      "Crime",
-      "Thriller",
-      "Drame"
-    ],
-    "cast": [
-      "Jodie Foster",
-      "Anthony Hopkins",
-      "Scott Glenn",
-      "Ted Levine",
-      "Anthony Heald"
-    ],
-    "tmdbRating": 8.345,
-    "tmdbVotes": 18524,
-    "letterboxdRating": 4.34,
-    "letterboxdVotes": 3356379,
-    "imdbId": "tt0102926",
-    "letterboxdUrl": "https://letterboxd.com/film/the-silence-of-the-lambs/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "Rakuten TV",
-        "Canal VOD",
-        "Amazon Video",
-        "Pathé Home"
-      ]
-    },
-    "availableSince": "2026-09-01T21:40:32.939Z",
-    "wantedBy": "benoit",
-    "addedAt": "2026-08-21T20:11:48.134Z",
-    "updatedAt": "2026-08-21T20:11:48.134Z",
-    "lastChecked": "2026-09-21T19:46:41.318Z"
-  },
-  {
     "tmdbId": 1317288,
     "title": "Marty Supreme",
     "year": "2025",
