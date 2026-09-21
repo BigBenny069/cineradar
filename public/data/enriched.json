@@ -1113,51 +1113,6 @@
     "lastChecked": "2026-09-21T19:44:30.132Z"
   },
   {
-    "tmdbId": 5925,
-    "title": "La Grande Évasion",
-    "year": "1963",
-    "director": "John Sturges",
-    "poster": "https://image.tmdb.org/t/p/w500/dmPdOT16mqABMO6JTcsdc9WkaUM.jpg",
-    "synopsis": "En Allemagne, durant la Seconde Guerre mondiale. Des officiers alliés, connus pour leur goût de l'évasion, mais ayant toujours échoué jusqu'ici, sont transférés dans un camp de prisonniers dirigé par von Luger. Leur capitaine, Ramsey, prévient celui-ci qu'il est de leur devoir d'essayer sans cesse de s'évader, afin que l'ennemi n'ait point de répit. Incorrigible, Hilts tente la belle aussitôt et se retrouve au cachot.",
-    "genres": [
-      "Aventure",
-      "Drame",
-      "Guerre"
-    ],
-    "cast": [
-      "Steve McQueen",
-      "James Garner",
-      "Richard Attenborough",
-      "James Donald",
-      "Charles Bronson"
-    ],
-    "tmdbRating": 7.924,
-    "tmdbVotes": 2944,
-    "letterboxdRating": 4.17,
-    "letterboxdVotes": 166613,
-    "imdbId": "tt0057115",
-    "letterboxdUrl": "https://letterboxd.com/film/the-great-escape/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "Rakuten TV",
-        "Canal VOD",
-        "Amazon Video",
-        "Pathé Home"
-      ]
-    },
-    "availableSince": "2026-09-01T21:40:31.868Z",
-    "wantedBy": "benoit",
-    "addedAt": "2026-08-21T20:11:46.387Z",
-    "updatedAt": "2026-08-21T20:11:46.387Z",
-    "lastChecked": "2026-09-21T19:44:30.288Z"
-  },
-  {
     "tmdbId": 12101,
     "title": "Soleil vert",
     "year": "1973",
