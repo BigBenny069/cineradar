@@ -245,5 +245,12 @@
     "tmdbId": 1018,
     "reason": "cinemaison",
     "deletedAt": "2026-09-21T16:34:23.969Z"
+  },
+  {
+    "title": "Vol au-dessus d'un nid de coucou",
+    "year": 1975,
+    "tmdbId": 510,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-21T19:43:33.832Z"
   }
 ]
