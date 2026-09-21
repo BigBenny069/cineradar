@@ -4381,5 +4381,51 @@
     "addedAt": "2026-09-21T21:28:16.608Z",
     "updatedAt": "2026-09-21T21:28:16.608Z",
     "lastChecked": "2026-09-21T21:29:01.880Z"
+  },
+  {
+    "tmdbId": 636835,
+    "title": "Sympathie pour le diable",
+    "year": "2019",
+    "director": "Guillaume de Fontenay",
+    "poster": "https://image.tmdb.org/t/p/w500/d49QjbkCH4O14QKKBJaHHle6dYx.jpg",
+    "synopsis": "Dans une zone de guerre urbaine où tout ce qui bouge est une cible, Paul tente de vivre, d'aimer et d'informer :  Après le Liban, Paul Marchand durant 18 mois, fut grand reporter pour toutes les radios francophones durant le siège de Sarajevo. Une chronique que bon nombre de journalistes de cette « génération Sarajevo » évoquent encore comme leurs plus belles années.",
+    "genres": [
+      "Guerre",
+      "Drame"
+    ],
+    "cast": [
+      "Niels Schneider",
+      "Ella Rumpf",
+      "Izudin Bajrović",
+      "Adnan Omerović",
+      "Mirsad Ibišević"
+    ],
+    "tmdbRating": 7.639,
+    "tmdbVotes": 72,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt7710486",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/636835/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T21:29:17.689Z",
+    "updatedAt": "2026-09-21T21:29:17.689Z",
+    "lastChecked": "2026-09-21T21:29:18.899Z"
   }
 ]
