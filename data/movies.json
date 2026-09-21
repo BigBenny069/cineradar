@@ -909,5 +909,14 @@
     "addedAt": "2026-09-21T21:30:01.329Z",
     "updatedAt": "2026-09-21T21:30:01.329Z",
     "tmdbId": 8197
+  },
+  {
+    "title": "Vivarium",
+    "year": 2019,
+    "director": "Lorcan Finnegan",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/458305/",
+    "addedAt": "2026-09-21T21:30:13.847Z",
+    "updatedAt": "2026-09-21T21:30:13.847Z",
+    "tmdbId": 458305
   }
 ]
