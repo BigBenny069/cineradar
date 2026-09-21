@@ -231,5 +231,12 @@
     "tmdbId": 45649,
     "reason": "cinemaison",
     "deletedAt": "2026-09-21T13:16:13.422Z"
+  },
+  {
+    "title": "Yannick",
+    "year": 2023,
+    "tmdbId": 1110358,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-21T13:16:33.554Z"
   }
 ]
