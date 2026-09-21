@@ -1692,56 +1692,6 @@
     "lastChecked": "2026-09-21T19:19:27.263Z"
   },
   {
-    "tmdbId": 510,
-    "title": "Vol au-dessus d'un nid de coucou",
-    "year": "1975",
-    "director": "Miloš Forman",
-    "poster": "https://image.tmdb.org/t/p/w500/r5b2ub7GMawCWDP5vHR1MXpV7vU.jpg",
-    "synopsis": "Randle P. McMurphy se fait interner pour échapper à la prison. Il va être touché par la détresse et la solitude des patients. Très rapidement, il comprend que l’infirmière en chef, Mlle Ratched, a imposé des règles strictes et entend bien les faire respecter. Il décide alors de révolutionner ce petit monde, plutôt au départ par jeu.",
-    "genres": [
-      "Drame"
-    ],
-    "cast": [
-      "Jack Nicholson",
-      "Brad Dourif",
-      "Louise Fletcher",
-      "Danny DeVito",
-      "William Redfield"
-    ],
-    "tmdbRating": 8.405,
-    "tmdbVotes": 11772,
-    "letterboxdRating": 4.37,
-    "letterboxdVotes": 1044443,
-    "imdbId": "tt0073486",
-    "letterboxdUrl": "https://letterboxd.com/film/one-flew-over-the-cuckoos-nest/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Canal VOD",
-        "Sooner",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique",
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video"
-      ]
-    },
-    "availableSince": "2026-09-21T19:16:50.128Z",
-    "wantedBy": null,
-    "addedAt": "2026-08-27T06:53:21.443Z",
-    "updatedAt": "2026-08-27T06:53:21.443Z",
-    "lastChecked": "2026-09-21T19:19:27.426Z"
-  },
-  {
     "tmdbId": 19,
     "title": "Metropolis",
     "year": "1927",
