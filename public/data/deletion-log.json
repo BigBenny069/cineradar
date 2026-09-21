@@ -224,5 +224,12 @@
     "tmdbId": 311,
     "reason": "manuel",
     "deletedAt": "2026-09-20T12:40:39.202Z"
+  },
+  {
+    "title": "Rubber",
+    "year": 2010,
+    "tmdbId": 45649,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-21T13:16:13.422Z"
   }
 ]
