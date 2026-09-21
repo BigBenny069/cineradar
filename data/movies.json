@@ -872,5 +872,14 @@
     "addedAt": "2026-09-21T19:14:49.378Z",
     "updatedAt": "2026-09-21T19:14:49.378Z",
     "tmdbId": 16061
+  },
+  {
+    "title": "La Liste de Schindler",
+    "year": 1993,
+    "director": "Steven Spielberg",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/424/",
+    "addedAt": "2026-09-21T19:15:17.821Z",
+    "updatedAt": "2026-09-21T19:15:17.821Z",
+    "tmdbId": 424
   }
 ]
