@@ -818,5 +818,14 @@
     "addedAt": "2026-09-21T12:04:36.407Z",
     "updatedAt": "2026-09-21T12:04:36.407Z",
     "tmdbId": 11700
+  },
+  {
+    "title": "Yannick",
+    "year": 2023,
+    "director": "Quentin Dupieux",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1110358/",
+    "addedAt": "2026-09-21T13:09:08.223Z",
+    "updatedAt": "2026-09-21T13:09:08.223Z",
+    "tmdbId": 1110358
   }
 ]
