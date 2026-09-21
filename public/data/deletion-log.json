@@ -280,5 +280,12 @@
     "tmdbId": 274,
     "reason": "manuel",
     "deletedAt": "2026-09-21T19:47:13.175Z"
+  },
+  {
+    "title": "L'École fantastique",
+    "year": 2005,
+    "tmdbId": 11459,
+    "reason": "manuel",
+    "deletedAt": "2026-09-21T19:47:35.092Z"
   }
 ]
