@@ -4427,5 +4427,52 @@
     "addedAt": "2026-09-21T21:29:17.689Z",
     "updatedAt": "2026-09-21T21:29:17.689Z",
     "lastChecked": "2026-09-21T21:29:18.899Z"
+  },
+  {
+    "tmdbId": 8197,
+    "title": "Minuit dans le jardin du bien et du mal",
+    "year": "1997",
+    "director": "Clint Eastwood",
+    "poster": "https://image.tmdb.org/t/p/w500/5qmc4C6uaxs7tS0LOhDGJcZnnNC.jpg",
+    "synopsis": "John Kelso est envoyé par le magazine \"Town and Country\" à Savannah pour couvrir la grande fête qu'organise chaque Noël John Williams, antiquaire et collectionneur d'art dans sa résidence légendaire, Mercer House, située au coeur historique de la ville. C'est l'occasion pour le journaliste de rencontrer tout le gratin local et de s'imprégner de l'atmosphère raffinée de Savannah. Mais durant la nuit, John Williams est arrêté et inculpé du meurtre de son jeune compagnon, Billy Hanson, un gigolo. Flairant un scandale mondain, John Kelso décide de rester.",
+    "genres": [
+      "Mystère",
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "John Cusack",
+      "Kevin Spacey",
+      "Jude Law",
+      "Alison Eastwood",
+      "Jack Thompson"
+    ],
+    "tmdbRating": 6.351,
+    "tmdbVotes": 648,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0119668",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8197/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T21:30:01.329Z",
+    "updatedAt": "2026-09-21T21:30:01.329Z",
+    "lastChecked": "2026-09-21T21:30:02.324Z"
   }
 ]
