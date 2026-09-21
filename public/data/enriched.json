@@ -4484,5 +4484,45 @@
     "addedAt": "2026-09-21T19:17:06.944Z",
     "updatedAt": "2026-09-21T19:17:06.944Z",
     "lastChecked": "2026-09-21T19:17:07.978Z"
+  },
+  {
+    "tmdbId": 28696,
+    "title": "L'Équipée sauvage",
+    "year": "1953",
+    "director": "László Benedek",
+    "poster": "https://image.tmdb.org/t/p/w500/s52W3KEqPhVMMxPie4pwzjWSd5K.jpg",
+    "synopsis": "Les Rebelles noirs, une quarantaine d'adolescents casques et bottes, revêtus de blousons de cuir marqués d'une tête de mort, prennent la route sur leurs motos. Ils assistent à une course de motos, envahissent la piste et volent un prix. Ils disparaissent jusqu'à la petite ville voisine qu'ils vont occuper peu à peu jusqu'à la mettre complètement à sac.",
+    "genres": [
+      "Drame",
+      "Crime",
+      "Romance"
+    ],
+    "cast": [
+      "Marlon Brando",
+      "Mary Murphy",
+      "Robert Keith",
+      "Lee Marvin",
+      "Jay C. Flippen"
+    ],
+    "tmdbRating": 6.543,
+    "tmdbVotes": 345,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0047677",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/28696/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Sooner",
+        "Amazon Video",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:17:44.780Z",
+    "updatedAt": "2026-09-21T19:17:44.781Z",
+    "lastChecked": "2026-09-21T19:17:45.775Z"
   }
 ]
