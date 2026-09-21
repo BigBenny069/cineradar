@@ -4135,5 +4135,47 @@
     "addedAt": "2026-09-21T16:28:10.871Z",
     "updatedAt": "2026-09-21T16:28:10.871Z",
     "lastChecked": "2026-09-21T16:28:11.913Z"
+  },
+  {
+    "tmdbId": 103328,
+    "title": "Holy Motors",
+    "year": "2012",
+    "director": "Leos Carax",
+    "poster": "https://image.tmdb.org/t/p/w500/htqJeUz86S2sowWpnQX4LK0Nlcm.jpg",
+    "synopsis": "De l'aube à la nuit, quelques heures dans l'existence de Monsieur Oscar, un être qui voyage de vie en vie. Tour à tour grand patron, meurtrier, mendiante, créature monstrueuse, père de famille… M. Oscar semble jouer des rôles, plongeant en chacun tout entier — mais où sont les caméras ? Il est seul, uniquement accompagné de Céline, longue dame blonde aux commandes de l'immense machine qui le transporte dans Paris et autour. Tel un tueur consciencieux allant de gage en gage. À la poursuite de la beauté du geste. Du moteur de l'action. Des femmes et des fantômes de sa vie. Mais où est sa maison, sa famille, son repos ?",
+    "genres": [
+      "Drame",
+      "Fantastique"
+    ],
+    "cast": [
+      "Denis Lavant",
+      "Édith Scob",
+      "Eva Mendes",
+      "Kylie Minogue",
+      "Élise Lhomeau"
+    ],
+    "tmdbRating": 6.985,
+    "tmdbVotes": 1300,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2076220",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/103328/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Canal VOD",
+        "Sooner",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T16:29:06.127Z",
+    "updatedAt": "2026-09-21T16:29:06.127Z",
+    "lastChecked": "2026-09-21T16:29:07.152Z"
   }
 ]
