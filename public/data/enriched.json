@@ -4256,5 +4256,40 @@
     "addedAt": "2026-09-21T16:30:25.848Z",
     "updatedAt": "2026-09-21T16:30:25.848Z",
     "lastChecked": "2026-09-21T16:35:17.815Z"
+  },
+  {
+    "tmdbId": 16061,
+    "title": "Tokyo Gore Police",
+    "year": "2008",
+    "director": "西村喜廣",
+    "poster": "https://image.tmdb.org/t/p/w500/i2InzY5n3jcJ2Hl0WLBMi6jBGv9.jpg",
+    "synopsis": "Une flic intégrée à un groupe de barjots traque les pires mutants qui pullulent sur terre. Derrière ce phénomène se cache un savant fou fanatique d'expériences en tout genre.",
+    "genres": [
+      "Horreur",
+      "Action",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "椎名英姫",
+      "板尾創路",
+      "Yukihide Benny",
+      "ジジ・ぶぅ",
+      "澤田育子"
+    ],
+    "tmdbRating": 6.027,
+    "tmdbVotes": 383,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1183732",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/16061/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:14:49.378Z",
+    "updatedAt": "2026-09-21T19:14:49.378Z",
+    "lastChecked": "2026-09-21T19:14:50.438Z"
   }
 ]
