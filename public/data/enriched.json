@@ -2479,51 +2479,6 @@
     "lastChecked": "2026-09-21T19:46:45.480Z"
   },
   {
-    "tmdbId": 11459,
-    "title": "L'École fantastique",
-    "year": "2005",
-    "director": "Mike Mitchell",
-    "poster": "https://image.tmdb.org/t/p/w500/ghIyMNAQRkhkHgdwkPgl2gyrlcw.jpg",
-    "synopsis": "Will est un jeune garçon tout à fait normal si ce n'est qu'il doit intégrer la prestigieuse école de super-héros appelée Sky High et qu'il n'a pour le moment, aucune idée des super-pouvoirs qui le caractérisent... Il devra jongler entre les super-moqueries de ses camarades et la déception de ses parents, un couple de super-héros légendaires...",
-    "genres": [
-      "Aventure",
-      "Comédie",
-      "Familial"
-    ],
-    "cast": [
-      "Michael Angarano",
-      "Kurt Russell",
-      "Kelly Preston",
-      "Danielle Panabaker",
-      "Mary Elizabeth Winstead"
-    ],
-    "tmdbRating": 6.267,
-    "tmdbVotes": 2536,
-    "letterboxdRating": 3.19,
-    "letterboxdVotes": 281375,
-    "imdbId": "tt0405325",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/11459/",
-    "providers": {
-      "abonnement": [
-        "Disney Plus"
-      ],
-      "vod": [
-        "Google Play Movies",
-        "YouTube",
-        "Rakuten TV",
-        "Amazon Video",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Apple TV Store"
-      ]
-    },
-    "availableSince": "2026-09-08T20:36:29.449Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-08T20:36:28.421Z",
-    "updatedAt": "2026-09-08T20:36:28.421Z",
-    "lastChecked": "2026-09-21T19:46:45.627Z"
-  },
-  {
     "tmdbId": 23483,
     "title": "Kick-Ass",
     "year": "2010",
