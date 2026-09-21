@@ -845,5 +845,14 @@
     "addedAt": "2026-09-21T16:29:06.127Z",
     "updatedAt": "2026-09-21T16:29:06.127Z",
     "tmdbId": 103328
+  },
+  {
+    "title": "Truman Capote",
+    "year": 2005,
+    "director": "Bennett Miller",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/398/",
+    "addedAt": "2026-09-21T16:29:33.256Z",
+    "updatedAt": "2026-09-21T16:29:33.256Z",
+    "tmdbId": 398
   }
 ]
