@@ -4284,5 +4284,52 @@
     "addedAt": "2026-09-21T19:18:04.793Z",
     "updatedAt": "2026-09-21T19:18:04.793Z",
     "lastChecked": "2026-09-21T19:49:32.443Z"
+  },
+  {
+    "tmdbId": 1933,
+    "title": "Les Autres",
+    "year": "2001",
+    "director": "Alejandro Amenábar",
+    "poster": "https://image.tmdb.org/t/p/w500/avGVh36bjnw88tDFV41N6Hodybl.jpg",
+    "synopsis": "En 1945, la Seconde Guerre mondiale est terminée mais le mari de Grace, parti combattre, n'est pas revenu du front. Dans une immense demeure victorienne isolée sur l'île de Jersey, cette jeune femme pieuse élève seule ses deux enfants, Anne et Nicholas, selon les principes stricts de sa religion. Atteints d'un mal étrange, ces derniers ne peuvent être exposés à la lumière du jour. Ils vivent donc reclus dans ce manoir qui doit constamment rester dans l'obscurité. Lorsque trois nouveaux domestiques viennent habiter avec Grace et ses enfants, ils doivent se plier à une règle vitale : aucune porte ne doit être ouverte avant que la précédente n'ait été fermée. Pourtant, quelqu'un va désobéir à cet ordre. Dès lors, Grace, ses enfants et tous ceux qui les entourent devront en subir les conséquences.",
+    "genres": [
+      "Horreur",
+      "Mystère",
+      "Thriller"
+    ],
+    "cast": [
+      "Nicole Kidman",
+      "Alakina Mann",
+      "James Bentley",
+      "Fionnula Flanagan",
+      "Christopher Eccleston"
+    ],
+    "tmdbRating": 7.618,
+    "tmdbVotes": 7417,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0230600",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1933/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T21:27:04.546Z",
+    "updatedAt": "2026-09-21T21:27:04.546Z",
+    "lastChecked": "2026-09-21T21:27:05.544Z"
   }
 ]
