@@ -4434,5 +4434,55 @@
     "addedAt": "2026-09-21T19:16:31.731Z",
     "updatedAt": "2026-09-21T19:16:31.731Z",
     "lastChecked": "2026-09-21T19:17:02.589Z"
+  },
+  {
+    "tmdbId": 3009,
+    "title": "Le Procès",
+    "year": "1962",
+    "director": "Orson Welles",
+    "poster": "https://image.tmdb.org/t/p/w500/7MGZEGKrBHbXTQOcG5P9H2fnNXE.jpg",
+    "synopsis": "Joseph K, petit fonctionnaire besogneux et sûr de son bon droit, suit sans se poser de questions une vie dont les lignes sont déjà toutes tracées. Un matin, il est mis en « état d'arrestation », selon la formule consacrée, et ce sans raison apparente. Cherchant à comprendre, Joseph K, plongé dans le labyrinthe de l'appareil judiciaire, se heurte à la bureaucratie, où l'absurde le guette à chaque instant. Peu à peu, il entrevoit la terrible vérité : on lui reproche simplement sa qualité d'homme. Mais Joseph K ne se résigne pas à être broyé par une société inhumaine…",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Mystère"
+    ],
+    "cast": [
+      "Anthony Perkins",
+      "Romy Schneider",
+      "Orson Welles",
+      "Akim Tamiroff",
+      "Jeanne Moreau"
+    ],
+    "tmdbRating": 7.398,
+    "tmdbVotes": 587,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0057427",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/3009/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Artiflix",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:17:06.944Z",
+    "updatedAt": "2026-09-21T19:17:06.944Z",
+    "lastChecked": "2026-09-21T19:17:07.978Z"
   }
 ]
