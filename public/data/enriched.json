@@ -4003,5 +4003,48 @@
     "addedAt": "2026-09-20T16:06:54.091Z",
     "updatedAt": "2026-09-20T16:06:54.091Z",
     "lastChecked": "2026-09-21T11:39:54.777Z"
+  },
+  {
+    "tmdbId": 11700,
+    "title": "Sourires d'une nuit d'été",
+    "year": "1955",
+    "director": "Ingmar Bergman",
+    "poster": "https://image.tmdb.org/t/p/w500/6CodKe1B8gEE1rJQjmiUZygXtpr.jpg",
+    "synopsis": "Séduisant quadragénaire, Frederik Egerman a épousé en secondes noces Anne, qui a l’âge de son fils Henrik. Épouse insatisfaite, Anne a pour confidente et complice Petra, la soubrette, dont les charmes ne laissent pas Henrik indifférent. Frederik retrouve son ancienne maîtresse, la comédienne Désirée Armfeldt. Celle-ci décide de le reconquérir. Avec la complicité de sa vieille mère amorale, Désirée organise un grand souper aphrodisiaque. Au cours d'une folle nuit, les couples se font et se défont…",
+    "genres": [
+      "Comédie",
+      "Romance"
+    ],
+    "cast": [
+      "Gunnar Björnstrand",
+      "Ulla Jacobsson",
+      "Eva Dahlbeck",
+      "Harriet Andersson",
+      "Margit Carlqvist"
+    ],
+    "tmdbRating": 7.414,
+    "tmdbVotes": 280,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0048641",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11700/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T12:04:36.407Z",
+    "updatedAt": "2026-09-21T12:04:36.407Z",
+    "lastChecked": "2026-09-21T12:04:37.567Z"
   }
 ]
