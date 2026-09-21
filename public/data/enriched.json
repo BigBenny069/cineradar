@@ -4341,5 +4341,52 @@
     "addedAt": "2026-09-21T19:15:17.821Z",
     "updatedAt": "2026-09-21T19:15:17.821Z",
     "lastChecked": "2026-09-21T19:15:18.919Z"
+  },
+  {
+    "tmdbId": 7555,
+    "title": "John Rambo",
+    "year": "2008",
+    "director": "Sylvester Stallone",
+    "poster": "https://image.tmdb.org/t/p/w500/eH4KkHYHA7CkWnHb0qoFbsOIV6V.jpg",
+    "synopsis": "John Rambo s'est retiré dans le nord de la Thaïlande, où il mène une existence simple dans les montagnes et se tient à l'écart de la guerre civile qui fait rage non loin de là, sur la frontière entre la Thaïlande et le Myanmar. Il pêche et capture des serpents venimeux pour les vendre. La violence du monde le rattrape lorsqu'un groupe de volontaires humanitaires mené par Sarah et Michael Bennett vient le trouver pour qu'il les guide jusqu'à un camp de réfugiés auquel ils veulent apporter une aide médicale et de la nourriture. Rambo finit par accepter et leur fait remonter la rivière, vers l'autre côté de la frontière. Deux semaines plus tard, le pasteur Arthur Marsh lui apprend que les volontaires ne sont pas revenus et que les ambassades refusent de l'aider à les retrouver. Rambo sait mieux que personne ce qu'il faut faire dans ce genre de situation…",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Guerre"
+    ],
+    "cast": [
+      "Sylvester Stallone",
+      "Julie Benz",
+      "Matthew Marsden",
+      "Graham McTavish",
+      "Reynaldo Gallegos"
+    ],
+    "tmdbRating": 6.705,
+    "tmdbVotes": 4411,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0462499",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/7555/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T19:15:47.329Z",
+    "updatedAt": "2026-09-21T19:15:47.329Z",
+    "lastChecked": "2026-09-21T19:15:48.784Z"
   }
 ]
