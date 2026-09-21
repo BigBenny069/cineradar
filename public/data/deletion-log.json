@@ -273,5 +273,12 @@
     "tmdbId": 5925,
     "reason": "manuel",
     "deletedAt": "2026-09-21T19:46:20.413Z"
+  },
+  {
+    "title": "Le Silence des agneaux",
+    "year": 1991,
+    "tmdbId": 274,
+    "reason": "manuel",
+    "deletedAt": "2026-09-21T19:47:13.175Z"
   }
 ]
