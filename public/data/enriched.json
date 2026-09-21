@@ -4474,5 +4474,54 @@
     "addedAt": "2026-09-21T21:30:01.329Z",
     "updatedAt": "2026-09-21T21:30:01.329Z",
     "lastChecked": "2026-09-21T21:30:02.324Z"
+  },
+  {
+    "tmdbId": 458305,
+    "title": "Vivarium",
+    "year": "2019",
+    "director": "Lorcan Finnegan",
+    "poster": "https://image.tmdb.org/t/p/w500/2SAH6napkUWibaAJ4oXr8dAVTIm.jpg",
+    "synopsis": "À la recherche de leur première maison, un jeune couple effectue une visite en compagnie d’un mystérieux agent immobilier et se retrouve pris au piège dans un étrange lotissement…",
+    "genres": [
+      "Science-Fiction",
+      "Mystère",
+      "Horreur"
+    ],
+    "cast": [
+      "Imogen Poots",
+      "Jesse Eisenberg",
+      "Senan Jennings",
+      "Éanna Hardwicke",
+      "Jonathan Aris"
+    ],
+    "tmdbRating": 6.077,
+    "tmdbVotes": 2751,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt8368406",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/458305/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Apple TV Store"
+      ]
+    },
+    "availableSince": "2026-09-21T21:30:14.919Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-21T21:30:13.847Z",
+    "updatedAt": "2026-09-21T21:30:13.847Z",
+    "lastChecked": "2026-09-21T21:30:14.919Z"
   }
 ]
