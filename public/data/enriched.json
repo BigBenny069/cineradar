@@ -4091,5 +4091,49 @@
     "addedAt": "2026-09-21T13:09:56.945Z",
     "updatedAt": "2026-09-21T13:09:56.945Z",
     "lastChecked": "2026-09-21T13:18:22.041Z"
+  },
+  {
+    "tmdbId": 1264349,
+    "title": "Le Joueur de Go",
+    "year": "2024",
+    "director": "Kazuya Shiraishi",
+    "poster": "https://image.tmdb.org/t/p/w500/6u33l1vT17k7foZhSxUsW1BejRY.jpg",
+    "synopsis": "Ancien samouraï, Yanagida mène une vie modeste avec sa fille à Edo et dédie ses journées au jeu de go avec une dignité qui force le respect. Quand son honneur est bafoué par des accusations calomnieuses, il décide d’utiliser ses talents de stratège pour mener combat et obtenir réparation…",
+    "genres": [
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "草彅剛",
+      "清原果耶",
+      "Jun Kunimura",
+      "中川大志",
+      "Eita Okuno"
+    ],
+    "tmdbRating": 7.4,
+    "tmdbVotes": 53,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt31522349",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1264349/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-21T16:28:10.871Z",
+    "updatedAt": "2026-09-21T16:28:10.871Z",
+    "lastChecked": "2026-09-21T16:28:11.913Z"
   }
 ]
