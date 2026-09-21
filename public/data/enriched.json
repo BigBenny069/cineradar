@@ -2659,54 +2659,6 @@
     "lastChecked": "2026-09-21T19:44:35.674Z"
   },
   {
-    "tmdbId": 17431,
-    "title": "Moon",
-    "year": "2009",
-    "director": "Duncan Jones",
-    "poster": "https://image.tmdb.org/t/p/w500/jkGDfyzDVB0vsESBLX7w5F6Jgeu.jpg",
-    "synopsis": "Sam Bell vit depuis plus de trois ans dans la station lunaire de Sarang, où il gère l'extraction de l'hélium 3, seule solution à la crise de l'énergie sur Terre. Souffrant en silence de son isolement et de la distance le séparant de sa femme et de sa fille, il passe son temps à imaginer leurs retrouvailles. Mais quelques semaines avant la fin de son contrat pour l'entreprise Lunar, Sam se met à voir et à entendre des choses étranges...",
-    "genres": [
-      "Science-Fiction",
-      "Drame"
-    ],
-    "cast": [
-      "Sam Rockwell",
-      "Kevin Spacey",
-      "Dominique McElligott",
-      "Rosie Shaw",
-      "Adrienne Shaw"
-    ],
-    "tmdbRating": 7.562,
-    "tmdbVotes": 6517,
-    "letterboxdRating": 3.83,
-    "letterboxdVotes": 342448,
-    "imdbId": "tt1182345",
-    "letterboxdUrl": "https://letterboxd.com/film/moon/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Sony Pictures Core Amazon Channel",
-        "Apple TV Store",
-        "Orange VOD",
-        "Rakuten TV",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max"
-      ]
-    },
-    "availableSince": "2026-09-11T10:22:48.660Z",
-    "wantedBy": "benoit",
-    "addedAt": "2026-09-11T10:22:36.354Z",
-    "updatedAt": "2026-09-11T10:22:36.354Z",
-    "lastChecked": "2026-09-21T19:44:35.877Z"
-  },
-  {
     "tmdbId": 1050035,
     "title": "L'Innocence",
     "year": "2023",
