@@ -909,5 +909,14 @@
     "addedAt": "2026-09-21T21:30:01.329Z",
     "updatedAt": "2026-09-21T21:30:01.329Z",
     "tmdbId": 8197
+  },
+  {
+    "title": "Rocky Balboa",
+    "year": 2006,
+    "director": "Sylvester Stallone",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1246/",
+    "addedAt": "2026-09-23T19:33:02.476Z",
+    "updatedAt": "2026-09-23T19:33:02.476Z",
+    "tmdbId": 1246
   }
 ]
