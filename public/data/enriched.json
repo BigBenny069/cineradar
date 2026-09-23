@@ -4469,5 +4469,51 @@
     "addedAt": "2026-09-21T21:30:01.329Z",
     "updatedAt": "2026-09-21T21:30:01.329Z",
     "lastChecked": "2026-09-23T10:34:52.394Z"
+  },
+  {
+    "tmdbId": 1246,
+    "title": "Rocky Balboa",
+    "year": "2006",
+    "director": "Sylvester Stallone",
+    "poster": "https://image.tmdb.org/t/p/w500/rLVONJ36L506dePEXYnNkgxvyAM.jpg",
+    "synopsis": "Rocky Balboa, le légendaire boxeur, a depuis longtemps quitté le ring. De ses succès, il ne reste plus que des histoires qu'il raconte aux clients de son restaurant. La mort de son épouse lui pèse chaque jour et son fils ne vient jamais le voir. Le champion d'aujourd'hui s'appelle Mason Dixon, et tout le monde s'accorde à le définir comme un tueur sans élégance ni cœur. Alors que les promoteurs lui cherchent désespérément un adversaire à sa taille, la légende de Rocky refait surface. L'idée d'opposer deux écoles, deux époques et deux titans aussi différents enflamme tout le monde. Pour Balboa, c'est l'occasion de ranimer les braises d'une passion qui ne l'a jamais quitté. L'esprit d'un champion ne meurt jamais...",
+    "genres": [
+      "Drame",
+      "Action"
+    ],
+    "cast": [
+      "Sylvester Stallone",
+      "Burt Young",
+      "Antonio Tarver",
+      "Geraldine Hughes",
+      "Milo Ventimiglia"
+    ],
+    "tmdbRating": 6.886,
+    "tmdbVotes": 3921,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0479143",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1246/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": "2026-09-23T19:33:03.634Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-23T19:33:02.476Z",
+    "updatedAt": "2026-09-23T19:33:02.476Z",
+    "lastChecked": "2026-09-23T19:33:03.634Z"
   }
 ]
