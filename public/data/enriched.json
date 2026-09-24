@@ -4516,5 +4516,39 @@
     "addedAt": "2026-09-23T19:33:02.476Z",
     "updatedAt": "2026-09-23T19:33:02.476Z",
     "lastChecked": "2026-09-24T10:53:46.973Z"
+  },
+  {
+    "tmdbId": 1061798,
+    "title": "Jim Queen",
+    "year": "2026",
+    "director": "Marco Nguyen",
+    "poster": "https://image.tmdb.org/t/p/w500/jw8vwfyKOf509Zj1cu27waGFZLB.jpg",
+    "synopsis": "Jim, icône sexy de la scène gay parisienne, voit sa vie basculer lorsqu’il contracte l’Hétérose, un étrange virus qui transforme les hommes gays… en hétérosexuels ! Il voit alors tout le monde lui tourner le dos à l’exception de son dernier follower (et premier admirateur), Lucien, un jeune homme qui peine à s’assumer. Ensemble, ils partiront en quête d’un mystérieux remède capable de guérir Jim et d’empêcher l’extinction de l’homosexualité…",
+    "genres": [
+      "Animation",
+      "Comédie"
+    ],
+    "cast": [
+      "Alex Ramirès",
+      "Jéremy Gillet",
+      "Shirley Souagnon",
+      "François Sagat",
+      "Elisabeth Wiener"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 86,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt36955518",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1061798/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-24T13:55:54.785Z",
+    "updatedAt": "2026-09-24T13:55:54.785Z",
+    "lastChecked": "2026-09-24T13:55:56.126Z"
   }
 ]
