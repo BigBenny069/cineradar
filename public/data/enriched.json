@@ -4595,5 +4595,50 @@
     "addedAt": "2026-09-24T17:03:24.408Z",
     "updatedAt": "2026-09-24T17:03:24.408Z",
     "lastChecked": "2026-09-24T17:03:25.888Z"
+  },
+  {
+    "tmdbId": 11216,
+    "title": "Cinema Paradiso",
+    "year": "1988",
+    "director": "Giuseppe Tornatore",
+    "poster": "https://image.tmdb.org/t/p/w500/ywJsnH7BmM6GmugCvN6ZjIfgSHv.jpg",
+    "synopsis": "Alfredo vient de mourir. Pour Salvatore, cinéaste en vogue, c’est tout un pan de son passé qui s’écroule. On l’appelait Toto a l’époque. Il partageait son temps libre entre l’office où il était enfant de chœur et la salle de cinéma paroissiale, en particulier la cabine de projection où régnait Alfredo.",
+    "genres": [
+      "Drame",
+      "Romance"
+    ],
+    "cast": [
+      "Philippe Noiret",
+      "Jacques Perrin",
+      "Marco Leonardi",
+      "Salvatore Cascio",
+      "Agnese Nano"
+    ],
+    "tmdbRating": 8.433,
+    "tmdbVotes": 4986,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0095765",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11216/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-24T17:04:28.152Z",
+    "updatedAt": "2026-09-24T17:04:28.152Z",
+    "lastChecked": "2026-09-24T17:04:29.270Z"
   }
 ]
