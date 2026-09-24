@@ -294,5 +294,12 @@
     "tmdbId": 458305,
     "reason": "manuel",
     "deletedAt": "2026-09-21T21:33:36.228Z"
+  },
+  {
+    "title": "Wrong",
+    "year": 2012,
+    "tmdbId": 83186,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-24T17:28:55.207Z"
   }
 ]
