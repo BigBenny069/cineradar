@@ -695,6 +695,32 @@ function normalizeText(str) {
     .trim();
 }
 
+// Largeur maximale du conteneur principal, adaptée à la taille de l'écran —
+// équivalent du pattern Tailwind max-w-[460px] lg:max-w-[900px]
+// xl:max-w-[1100px] 2xl:max-w-[1700px] utilisé sur CinéMaison (même paliers,
+// mêmes valeurs). CinéRadar n'utilise pas Tailwind (tout est en style
+// inline), donc on obtient le même résultat via un hook qui suit la largeur
+// de la fenêtre. Au-delà de 1700px le contenu perdrait en lisibilité étalé
+// sur toute la largeur de l'écran — mieux vaut garder de la marge de chaque
+// côté sur les grands écrans.
+function useResponsiveMaxWidth() {
+  const getMaxWidth = () => {
+    if (typeof window === "undefined") return 460;
+    const w = window.innerWidth;
+    if (w >= 1536) return 1700;
+    if (w >= 1280) return 1100;
+    if (w >= 1024) return 900;
+    return 460;
+  };
+  const [maxWidth, setMaxWidth] = useState(getMaxWidth);
+  useEffect(() => {
+    const onResize = () => setMaxWidth(getMaxWidth());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  return maxWidth;
+}
+
 function formatRelativeDate(iso) {
   if (!iso) return "Date inconnue";
   const date = new Date(iso);
@@ -1521,6 +1547,7 @@ function PullToRefresh({ onRefresh, children }) {
 }
 
 function BottomNav({ view, onChange }) {
+  const maxWidth = useResponsiveMaxWidth();
   const items = [
     { key: "home", label: "Accueil", icon: "🏠" },
     { key: "add", label: "Ajouter", isAdd: true },
@@ -1536,7 +1563,7 @@ function BottomNav({ view, onChange }) {
         left: "50%",
         transform: "translateX(-50%)",
         width: "100%",
-        maxWidth: 480,
+        maxWidth,
         display: "flex",
         background: T.surface,
         borderTop: `1px solid ${T.line}`,
@@ -1607,6 +1634,7 @@ function BottomNav({ view, onChange }) {
 }
 
 function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
+  const maxWidth = useResponsiveMaxWidth();
   const [showLinks, setShowLinks] = useState(false);
   const [showVod, setShowVod] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -1707,7 +1735,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <button
         onClick={onBack}
         aria-label="Retour"
@@ -2238,6 +2266,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
 }
 
 function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing }) {
+  const maxWidth = useResponsiveMaxWidth();
   // Toutes les fiches disponibles sur un abonnement, par ordre chronologique
   // (plus récente disponibilité en premier) — plus de limite à 5, sur
   // demande explicite : on veut voir toute la liste, pas juste un aperçu.
@@ -2255,7 +2284,7 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
       style={{
         minHeight: "100vh",
         background: isSpringfield ? "linear-gradient(180deg, #3F9BDB 0%, #6EC0EA 45%, #A9DCF2 100%)" : T.bg,
-        maxWidth: 480,
+        maxWidth,
         margin: "0 auto",
         position: "relative",
         overflow: "hidden",
@@ -2382,12 +2411,13 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
 }
 
 function SearchView({ movies, onOpen }) {
+  const maxWidth = useResponsiveMaxWidth();
   const [query, setQuery] = useState("");
   const normalizedQuery = normalizeText(query);
   const filtered = query.trim() ? movies.filter((m) => normalizeText(m.title).includes(normalizedQuery)) : movies;
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
@@ -2417,7 +2447,7 @@ function SearchView({ movies, onOpen }) {
             Aucun film ne correspond à cette recherche.
           </div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 12 }}>
             {filtered.map((m) => (
               <MovieCard key={m.tmdbId} movie={m} onOpen={onOpen} />
             ))}
@@ -2429,6 +2459,7 @@ function SearchView({ movies, onOpen }) {
 }
 
 function LibraryView({ movies, onOpen }) {
+  const maxWidth = useResponsiveMaxWidth();
   const [query, setQuery] = useState("");
   const [sortMode, setSortMode] = useState("az");
   const [genre, setGenre] = useState("Tous");
@@ -2476,7 +2507,7 @@ function LibraryView({ movies, onOpen }) {
   ];
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
@@ -2894,6 +2925,7 @@ function UnmatchedItem({ item, onDeleted, onEdit }) {
 }
 
 function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, deletionLog, lastRun, onOpen, onEditUnmatched }) {
+  const maxWidth = useResponsiveMaxWidth();
   const [localUnmatched, setLocalUnmatched] = useState(unmatched || []);
   const [localWatchlistReview, setLocalWatchlistReview] = useState(watchlistReview || []);
   const [localCinemaisonCleanup, setLocalCinemaisonCleanup] = useState(cinemaisonCleanup || []);
@@ -2915,7 +2947,7 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, de
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
@@ -3086,6 +3118,7 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, de
 }
 
 function SettingsView({ theme, onChangeTheme }) {
+  const maxWidth = useResponsiveMaxWidth();
   const [enabled, setEnabled] = useState([]);
   const [notifyEmail, setNotifyEmail] = useState("");
   const [notifyEmail2, setNotifyEmail2] = useState("");
@@ -3166,7 +3199,7 @@ function SettingsView({ theme, onChangeTheme }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <Header />
       <div style={{ padding: "0 16px 90px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>PARAMÈTRES</div>
@@ -3438,6 +3471,7 @@ function SettingsView({ theme, onChangeTheme }) {
 
 
 function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
+  const maxWidth = useResponsiveMaxWidth();
   const isEditing = Boolean(editingMovie);
   const [title, setTitle] = useState(editingMovie?.title || "");
   const [year, setYear] = useState(editingMovie ? String(editingMovie.year) : "");
@@ -3580,7 +3614,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, maxWidth: 480, margin: "0 auto" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, maxWidth, margin: "0 auto" }}>
       <Header onBack={onCancel} />
       <div style={{ padding: "0 16px 60px" }}>
         <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, letterSpacing: 1 }}>
