@@ -4550,5 +4550,50 @@
     "addedAt": "2026-09-24T13:55:54.785Z",
     "updatedAt": "2026-09-24T13:55:54.785Z",
     "lastChecked": "2026-09-24T13:57:21.517Z"
+  },
+  {
+    "tmdbId": 83186,
+    "title": "Wrong",
+    "year": "2012",
+    "director": "Quentin Dupieux",
+    "poster": "https://image.tmdb.org/t/p/w500/j3dkb0o5wPoDmAG4Rqeo1S6p7EN.jpg",
+    "synopsis": "Dolph a perdu son chien, Paul. Le mystérieux Master Chang pourrait en être la cause. Le détective Ronnie, la solution. Emma, la vendeuse de pizza, serait un remède, et son jardinier Victor, une diversion ? Ou le contraire. Car Paul est parti, et Dolph a perdu la tête.",
+    "genres": [
+      "Comédie",
+      "Mystère"
+    ],
+    "cast": [
+      "Jack Plotnick",
+      "Éric Judor",
+      "Alexis Dziena",
+      "Steve Little",
+      "Bob Jennings"
+    ],
+    "tmdbRating": 6.248,
+    "tmdbVotes": 395,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1901040",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/83186/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": "2026-09-24T17:03:25.888Z",
+    "wantedBy": null,
+    "addedAt": "2026-09-24T17:03:24.408Z",
+    "updatedAt": "2026-09-24T17:03:24.408Z",
+    "lastChecked": "2026-09-24T17:03:25.888Z"
   }
 ]
