@@ -5309,5 +5309,39 @@
     "addedAt": "2026-09-28T13:56:09.254Z",
     "updatedAt": "2026-09-28T13:56:09.254Z",
     "lastChecked": "2026-09-28T13:56:11.008Z"
+  },
+  {
+    "tmdbId": 16672,
+    "title": "La Femme des sables",
+    "year": "1964",
+    "director": "Hiroshi Teshigahara",
+    "poster": "https://image.tmdb.org/t/p/w500/3kNdWblkUGJW5g7TvDe7ftJJbfb.jpg",
+    "synopsis": "Un homme marche dans le désert. Il observe les insectes, les photographie, les ramasse. S'étant arrêté pour se reposer, il est accosté par trois villageois qui lui proposent de passer la nuit dans leur village. L'homme est escorté jusqu'à une fosse au fond de laquelle une femme l'accueille et lui offre repas et couche. Pendant la nuit, la femme sort et ramasse le sable qui s'écoule des parois. Au petit matin, l'échelle de corde a disparu et l'homme se rend compte qu'il a été fait prisonnier.",
+    "genres": [
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "岡田英次",
+      "Kyôko Kishida",
+      "三井弘次",
+      "伊藤弘子",
+      "矢野宣"
+    ],
+    "tmdbRating": 8.2,
+    "tmdbVotes": 546,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0058625",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/16672/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:56:21.873Z",
+    "updatedAt": "2026-09-28T13:56:21.873Z",
+    "lastChecked": "2026-09-28T13:56:23.484Z"
   }
 ]
