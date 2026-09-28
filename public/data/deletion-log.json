@@ -301,5 +301,12 @@
     "tmdbId": 83186,
     "reason": "cinemaison",
     "deletedAt": "2026-09-24T17:28:55.207Z"
+  },
+  {
+    "title": "Les Évadés",
+    "year": 1994,
+    "tmdbId": 278,
+    "reason": "cinemaison",
+    "deletedAt": "2026-09-28T13:57:45.947Z"
   }
 ]
