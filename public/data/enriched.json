@@ -4884,5 +4884,43 @@
     "addedAt": "2026-09-28T13:49:31.476Z",
     "updatedAt": "2026-09-28T13:49:31.476Z",
     "lastChecked": "2026-09-28T13:49:32.937Z"
+  },
+  {
+    "tmdbId": 25237,
+    "title": "Requiem pour un massacre",
+    "year": "1985",
+    "director": "Elem Klimov",
+    "poster": "https://image.tmdb.org/t/p/w500/aT7fV0q7mbsN0HCrcC41NeYQoCU.jpg",
+    "synopsis": "Pendant la Seconde Guerre mondiale, Fliora, jeune garçon d'un village de Biélorussie occupé par les troupes nazies, s'engage, bien que trop jeune, chez les partisans. Il va découvrir l'amour, la fraternité, la souffrance, la guerre.",
+    "genres": [
+      "Drame",
+      "Guerre",
+      "Horreur",
+      "Histoire"
+    ],
+    "cast": [
+      "Алексей Кравченко",
+      "Ольга Миронова",
+      "Liubomiras Laucevičius",
+      "Vladas Bagdonas",
+      "Jüri Lumiste"
+    ],
+    "tmdbRating": 8.2,
+    "tmdbVotes": 1970,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0091251",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/25237/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:50:06.177Z",
+    "updatedAt": "2026-09-28T13:50:06.177Z",
+    "lastChecked": "2026-09-28T13:50:07.472Z"
   }
 ]
