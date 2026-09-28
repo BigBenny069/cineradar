@@ -4732,5 +4732,42 @@
     "addedAt": "2026-09-28T10:52:23.870Z",
     "updatedAt": "2026-09-28T10:52:23.870Z",
     "lastChecked": "2026-09-28T12:34:47.599Z"
+  },
+  {
+    "tmdbId": 34530,
+    "title": "La Condition de l’homme III",
+    "year": "1961",
+    "director": "Masaki Kobayashi",
+    "poster": "https://image.tmdb.org/t/p/w500/vXOepk4VzDuX8d5mlFp5wsjBhk1.jpg",
+    "synopsis": "Partie 3 : La Prière du soldat — Tandis que l’armée japonaise est en déroute, Kaji parvient à survivre aux assauts de l’armée soviétique et tente, avec un groupe de rescapés, de regagner le Sud de la Mandchourie dans l’espoir de retrouver Michiko. En cours de route, il est arrêté par les soldats soviétiques et fait prisonnier dans un camp militaire. Alors qu’il risque d’être envoyé en Sibérie, Kaji parvient à s’évader et, seul, s’enfonce dans les étendues neigeuses de Mandchourie.",
+    "genres": [
+      "Guerre",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Tatsuya Nakadai",
+      "新珠三千代",
+      "中村玉緒",
+      "川津祐介",
+      "Chishū Ryū"
+    ],
+    "tmdbRating": 8.4,
+    "tmdbVotes": 227,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0055233",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/34530/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:48:36.723Z",
+    "updatedAt": "2026-09-28T13:48:36.723Z",
+    "lastChecked": "2026-09-28T13:48:38.352Z"
   }
 ]
