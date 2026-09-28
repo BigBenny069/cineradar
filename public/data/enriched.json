@@ -5211,55 +5211,6 @@
     "lastChecked": "2026-09-28T14:01:25.892Z"
   },
   {
-    "tmdbId": 46738,
-    "title": "Incendies",
-    "year": "2010",
-    "director": "Denis Villeneuve",
-    "poster": "https://image.tmdb.org/t/p/w500/i5GsLIII66LubmOai65cWiB4kZq.jpg",
-    "synopsis": "À la lecture du testament de leur mère, Jeanne et Simon Marwan se voient remettre deux enveloppes : l’une destinée à un père qu’ils croyaient mort et l‘autre à un frère dont ils ignoraient l’existence. Jeanne voit dans cet énigmatique legs la clé du silence de sa mère, enfermée dans un mutisme inexpliqué les dernières semaines précédant sa mort. Elle décide immédiatement de partir au Moyen Orient exhumer le passé de cette famille dont elle ne sait presque rien… Simon, lui, n’a que faire des caprices posthumes de cette mère qui s’est toujours montrée distante. Mais son amour pour sa sœur jumelle le poussera bientôt à rejoindre Jeanne et à sillonner avec elle le pays de leurs ancêtres sur la piste d’une mère bien loin de celle qu’ils ont connue.",
-    "genres": [
-      "Drame",
-      "Guerre",
-      "Mystère"
-    ],
-    "cast": [
-      "Lubna Azabal",
-      "Mélissa Désormeaux-Poulin",
-      "Maxim Gaudette",
-      "Rémy Girard",
-      "Allen Altman"
-    ],
-    "tmdbRating": 8.103,
-    "tmdbVotes": 3488,
-    "letterboxdRating": 4.45,
-    "letterboxdVotes": 673256,
-    "imdbId": "tt1255953",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/46738/",
-    "providers": {
-      "abonnement": [
-        "Paramount Plus",
-        "Paramount+ Amazon Channel",
-        "Paramount Plus Premium"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "Rakuten TV",
-        "Canal VOD",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-09-28T13:56:11.008Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-28T13:56:09.254Z",
-    "updatedAt": "2026-09-28T13:56:09.254Z",
-    "lastChecked": "2026-09-28T14:01:26.327Z"
-  },
-  {
     "tmdbId": 16672,
     "title": "La Femme des sables",
     "year": "1964",
