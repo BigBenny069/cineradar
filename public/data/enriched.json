@@ -4683,5 +4683,54 @@
     "addedAt": "2026-09-28T10:52:08.627Z",
     "updatedAt": "2026-09-28T10:52:08.627Z",
     "lastChecked": "2026-09-28T10:52:09.881Z"
+  },
+  {
+    "tmdbId": 968,
+    "title": "Un après-midi de chien",
+    "year": "1975",
+    "director": "Sidney Lumet",
+    "poster": "https://image.tmdb.org/t/p/w500/wx54osROfinN2F522AD8ppFwR77.jpg",
+    "synopsis": "Des gangsters débutants braquent une banque et se retrouvent cernés par la police et les médias. Ils prennent en otage les employés de la banque. Débute alors un cauchemar qui va durer des heures…",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Al Pacino",
+      "John Cazale",
+      "Charles Durning",
+      "Chris Sarandon",
+      "James Broderick"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 3514,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0072890",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/968/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T10:52:23.870Z",
+    "updatedAt": "2026-09-28T10:52:23.870Z",
+    "lastChecked": "2026-09-28T10:52:24.906Z"
   }
 ]
