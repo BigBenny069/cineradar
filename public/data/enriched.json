@@ -4922,5 +4922,50 @@
     "addedAt": "2026-09-28T13:50:06.177Z",
     "updatedAt": "2026-09-28T13:50:06.177Z",
     "lastChecked": "2026-09-28T13:52:01.980Z"
+  },
+  {
+    "tmdbId": 346,
+    "title": "Les Sept Samouraïs",
+    "year": "1954",
+    "director": "Akira Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/4y5AUH8oN9iRP1oRymxIgXkvWqy.jpg",
+    "synopsis": "Au XVIe siècle, au Japon, des paysans décident d'embaucher des samouraïs pour protéger leur village, et en trouvent sept. Ces hommes organisent la défense du village contre quarante brigands.",
+    "genres": [
+      "Action",
+      "Drame"
+    ],
+    "cast": [
+      "Toshirō Mifune",
+      "Takashi Shimura",
+      "稲葉義男",
+      "Seiji Miyaguchi",
+      "Minoru Chiaki"
+    ],
+    "tmdbRating": 8.5,
+    "tmdbVotes": 4383,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0047478",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/346/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique",
+        "Apple TV Store"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:52:42.429Z",
+    "updatedAt": "2026-09-28T13:52:42.429Z",
+    "lastChecked": "2026-09-28T13:52:43.441Z"
   }
 ]
