@@ -4638,5 +4638,50 @@
     "addedAt": "2026-09-26T10:21:28.464Z",
     "updatedAt": "2026-09-26T10:21:28.464Z",
     "lastChecked": "2026-09-27T11:09:11.947Z"
+  },
+  {
+    "tmdbId": 27554,
+    "title": "Panique à Needle Park",
+    "year": "1971",
+    "director": "Jerry Schatzberg",
+    "poster": "https://image.tmdb.org/t/p/w500/jLkwh3M3msgIUt23p5DGPraT87n.jpg",
+    "synopsis": "Helen traverse une passe douloureuse de son existence. Elle rencontre Bobby et s'éprend de lui, un jeune drogué qui lui redonne un goût de la vie qu'elle ne possédait plus. Mais Needle Park, haut lieu du trafic de drogue new-yorkais, n'engendre que détresse ou désespoir...",
+    "genres": [
+      "Drame",
+      "Romance",
+      "Crime"
+    ],
+    "cast": [
+      "Al Pacino",
+      "Kitty Winn",
+      "Alan Vint",
+      "Richard Bright",
+      "Kiel Martin"
+    ],
+    "tmdbRating": 6.8,
+    "tmdbVotes": 380,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0067549",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/27554/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T10:52:08.627Z",
+    "updatedAt": "2026-09-28T10:52:08.627Z",
+    "lastChecked": "2026-09-28T10:52:09.881Z"
   }
 ]
