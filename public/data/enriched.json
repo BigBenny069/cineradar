@@ -5343,5 +5343,47 @@
     "addedAt": "2026-09-28T13:56:21.873Z",
     "updatedAt": "2026-09-28T13:56:21.873Z",
     "lastChecked": "2026-09-28T13:56:23.484Z"
+  },
+  {
+    "tmdbId": 975,
+    "title": "Les Sentiers de la gloire",
+    "year": "1957",
+    "director": "Stanley Kubrick",
+    "poster": "https://image.tmdb.org/t/p/w500/nLGw5N5VLmQR8bPbRMt772FWzCz.jpg",
+    "synopsis": "En 1916, durant la Première Guerre mondiale, le général français Broulard ordonne au général Mireau de lancer une offensive suicidaire contre une position allemande imprenable, surnommée la « Fourmilière ». Au moment de l'attaque, les soldats tombent par dizaines et leurs compagnons, épuisés, refusent d'avancer…",
+    "genres": [
+      "Guerre",
+      "Drame"
+    ],
+    "cast": [
+      "Kirk Douglas",
+      "Ralph Meeker",
+      "Adolphe Menjou",
+      "George Macready",
+      "Wayne Morris"
+    ],
+    "tmdbRating": 8.3,
+    "tmdbVotes": 3388,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0050825",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/975/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "MGM Amazon Channel",
+        "Apple TV Store",
+        "Orange VOD",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:56:36.526Z",
+    "updatedAt": "2026-09-28T13:56:36.526Z",
+    "lastChecked": "2026-09-28T13:56:37.882Z"
   }
 ]
