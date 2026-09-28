@@ -4841,5 +4841,48 @@
     "addedAt": "2026-09-28T13:49:16.020Z",
     "updatedAt": "2026-09-28T13:49:16.020Z",
     "lastChecked": "2026-09-28T13:49:17.212Z"
+  },
+  {
+    "tmdbId": 389,
+    "title": "Douze hommes en colère",
+    "year": "1957",
+    "director": "Sidney Lumet",
+    "poster": "https://image.tmdb.org/t/p/w500/fFXrCl7nBFFaQU3IgTlinvk6vTi.jpg",
+    "synopsis": "Un jeune homme d'origine modeste est accusé du meurtre de son père et risque la peine de mort. Le jury composé de douze hommes se retire pour délibérer et procède immédiatement à un vote : onze votent coupable, or la décision doit être prise à l'unanimité. Le juré qui a voté non-coupable, sommé de se justifier, explique qu'il a un doute et que la vie d'un homme mérite quelques heures de discussion. Il s'emploie alors à les convaincre un par un.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Martin Balsam",
+      "John Fiedler",
+      "Lee J. Cobb",
+      "E.G. Marshall",
+      "Jack Klugman"
+    ],
+    "tmdbRating": 8.573,
+    "tmdbVotes": 10411,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0050083",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/389/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "MUBI",
+        "MGM Amazon Channel",
+        "MUBI Amazon Channel",
+        "Apple TV Store",
+        "Orange VOD",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:49:31.476Z",
+    "updatedAt": "2026-09-28T13:49:31.476Z",
+    "lastChecked": "2026-09-28T13:49:32.937Z"
   }
 ]
