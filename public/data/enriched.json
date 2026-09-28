@@ -4969,57 +4969,6 @@
     "lastChecked": "2026-09-28T13:57:34.559Z"
   },
   {
-    "tmdbId": 278,
-    "title": "Les Évadés",
-    "year": "1994",
-    "director": "Frank Darabont",
-    "poster": "https://image.tmdb.org/t/p/w500/t30GjttOdb5At1sYy8b3TOwFgWV.jpg",
-    "synopsis": "En 1947, Andy Dufresne, un jeune banquier, est condamné à la prison à vie pour le meurtre de sa femme et de son amant. Ayant beau clamer son innocence, il est emprisonné à Shawshank, le pénitencier le plus sévère de l'État du Maine. Il y fait la rencontre de Red, un noir désabusé, détenu depuis vingt ans. Commence alors une grande histoire d'amitié entre les deux hommes…",
-    "genres": [
-      "Drame",
-      "Crime"
-    ],
-    "cast": [
-      "Tim Robbins",
-      "Morgan Freeman",
-      "Bob Gunton",
-      "William Sadler",
-      "Clancy Brown"
-    ],
-    "tmdbRating": 8.731,
-    "tmdbVotes": 31436,
-    "letterboxdRating": 4.6,
-    "letterboxdVotes": 3142099,
-    "imdbId": "tt0111161",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/278/",
-    "providers": {
-      "abonnement": [
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "LaCinetek",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-09-28T13:53:26.234Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-28T13:53:24.890Z",
-    "updatedAt": "2026-09-28T13:53:24.890Z",
-    "lastChecked": "2026-09-28T13:57:34.747Z"
-  },
-  {
     "tmdbId": 25538,
     "title": "Yi Yi",
     "year": "2000",
