@@ -5225,5 +5225,40 @@
     "addedAt": "2026-09-28T13:55:35.083Z",
     "updatedAt": "2026-09-28T13:55:35.083Z",
     "lastChecked": "2026-09-28T13:55:36.801Z"
+  },
+  {
+    "tmdbId": 32015,
+    "title": "Soy Cuba",
+    "year": "1964",
+    "director": "Mikheil Kalatozishvili",
+    "poster": "https://image.tmdb.org/t/p/w500/aomVKav178BF4L4IC9gppUJjHMa.jpg",
+    "synopsis": "À Cuba, sous le régime de Batista. Maria, qui vit à La Havane, sombre dans la honte lorsque l'homme qui l'aime apprend comment elle gagne sa vie. Pedro, un vieux paysan, doit quitter ses terres, qui viennent d'être arbitrairement vendues à la firme United Fruit. Un étudiant est le témoin des brutalités de la police à l'égard des opposants. Et un paysan rejoint la guérilla castriste…",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Sergio Corrieri",
+      "Salvador Wood",
+      "José Gallardo",
+      "Raúl García",
+      "Luz María Collazo"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 261,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0058604",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/32015/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:55:51.807Z",
+    "updatedAt": "2026-09-28T13:55:51.807Z",
+    "lastChecked": "2026-09-28T13:55:52.963Z"
   }
 ]
