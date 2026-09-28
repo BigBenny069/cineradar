@@ -5018,5 +5018,40 @@
     "addedAt": "2026-09-28T13:53:24.890Z",
     "updatedAt": "2026-09-28T13:53:24.890Z",
     "lastChecked": "2026-09-28T13:53:26.234Z"
+  },
+  {
+    "tmdbId": 25538,
+    "title": "Yi Yi",
+    "year": "2000",
+    "director": "Edward Yang",
+    "poster": "https://image.tmdb.org/t/p/w500/fRmKe3M69gkAy3UPobRqVSqrDD1.jpg",
+    "synopsis": "À quarante ans, NJ se demande si sa vie n'aurait pas pu être différente. La rencontre fortuite avec un amour de jeunesse, Sherry, lui donne envie de tout laisser tomber et de repartir de zéro. Mais avec une famille à charge, il ne peut réaliser ce séduisant projet. Le jour du mariage de son beau-frère, sa belle-mère tombe dans le coma. Pour les enfants de NJ, Ting-Ting et Yang-Yang, parler à leur grand-mère inanimée est une épreuve. NJ décide de partir au Japon, officiellement pour des raisons professionnelles. Il a en fait décidé de renouer avec son passé amoureux.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Wu Nien-jen",
+      "Issey Ogata",
+      "Elaine Jin Yan-Ling",
+      "Kelly Lee",
+      "Jonathan Chang"
+    ],
+    "tmdbRating": 8,
+    "tmdbVotes": 708,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0244316",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/25538/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:53:42.550Z",
+    "updatedAt": "2026-09-28T13:53:42.550Z",
+    "lastChecked": "2026-09-28T13:53:44.299Z"
   }
 ]
