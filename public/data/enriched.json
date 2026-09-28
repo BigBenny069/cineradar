@@ -5090,5 +5090,54 @@
     "addedAt": "2026-09-28T13:54:15.016Z",
     "updatedAt": "2026-09-28T13:54:15.016Z",
     "lastChecked": "2026-09-28T13:54:16.157Z"
+  },
+  {
+    "tmdbId": 11645,
+    "title": "Ran",
+    "year": "1985",
+    "director": "Akira Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/oEYHiurGitubeMjspRZ16H3hyoe.jpg",
+    "synopsis": "Dans le Japon du XVIème siècle, le seigneur Hidetora Ichimonji décide de se retirer et de partager son domaine entre ses trois fils, Taro, Jiro et Saburo. Mais la répartition de cet héritage va déchirer la famille.",
+    "genres": [
+      "Action",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Tatsuya Nakadai",
+      "寺尾聰",
+      "Jinpachi Nezu",
+      "隆大介",
+      "原田美枝子"
+    ],
+    "tmdbRating": 8,
+    "tmdbVotes": 1922,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0089881",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11645/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE Boutique"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:54:36.168Z",
+    "updatedAt": "2026-09-28T13:54:36.168Z",
+    "lastChecked": "2026-09-28T13:54:37.207Z"
   }
 ]
