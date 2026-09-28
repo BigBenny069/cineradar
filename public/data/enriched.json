@@ -4769,5 +4769,42 @@
     "addedAt": "2026-09-28T13:48:36.723Z",
     "updatedAt": "2026-09-28T13:48:36.723Z",
     "lastChecked": "2026-09-28T13:48:38.352Z"
+  },
+  {
+    "tmdbId": 31217,
+    "title": "La Condition de l’homme I",
+    "year": "1959",
+    "director": "Masaki Kobayashi",
+    "poster": "https://image.tmdb.org/t/p/w500/sLJkVfze1RrFDdCYvZHqonytep0.jpg",
+    "synopsis": "Partie 1 : Il n’y a pas de plus grand amour — 1943. Kaji (Tatsuya Nakadai) travaille pour une compagnie qui exploite des gisements de minerai. Il est envoyé à Lo Hu liang, dans le sud de la Mandchourie (état du Mandchoukouo), pour s’occuper des ouvriers chinois travaillant dans les mines de fer, qui sont bientôt rejoints par des hordes de prisonniers. Horrifié par les conditions inhumaines de travail, il tente de se battre pour améliorer leur sort mais rencontre l’hostilité de ses collègues et de sa hiérarchie. Alors qu’il s’oppose à l’exécution d’un prisonnier, Kaji est arrêté par la police, séparé de sa femme Michiko, torturé et mobilisé dans l’armée japonaise.",
+    "genres": [
+      "Guerre",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Tatsuya Nakadai",
+      "新珠三千代",
+      "Chikage Awashima",
+      "有馬稲子",
+      "Sō Yamamura"
+    ],
+    "tmdbRating": 8.1,
+    "tmdbVotes": 299,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0053114",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/31217/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:48:54.975Z",
+    "updatedAt": "2026-09-28T13:48:54.975Z",
+    "lastChecked": "2026-09-28T13:48:55.968Z"
   }
 ]
