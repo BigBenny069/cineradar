@@ -5139,5 +5139,44 @@
     "addedAt": "2026-09-28T13:54:36.168Z",
     "updatedAt": "2026-09-28T13:54:36.168Z",
     "lastChecked": "2026-09-28T13:54:37.207Z"
+  },
+  {
+    "tmdbId": 15804,
+    "title": "A Brighter Summer Day",
+    "year": "1991",
+    "director": "Edward Yang",
+    "poster": "https://image.tmdb.org/t/p/w500/o30uX8dJUNpfQGzQLVXe2urr2F6.jpg",
+    "synopsis": "L'histoire dans les années soixante de Xiao Si'r, jeune adolescent, fils d'un réfugié politique chinois qui vit à Taïwan. Comme tous les jeunes gens de sa condition il fréquente les gangs qui se mènent une guerre sans merci.",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Romance"
+    ],
+    "cast": [
+      "張震",
+      "楊靜怡",
+      "張國柱",
+      "Elaine Jin Yan-Ling",
+      "王琄"
+    ],
+    "tmdbRating": 8.2,
+    "tmdbVotes": 407,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0101985",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/15804/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:55:14.626Z",
+    "updatedAt": "2026-09-28T13:55:14.626Z",
+    "lastChecked": "2026-09-28T13:55:15.677Z"
   }
 ]
