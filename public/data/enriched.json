@@ -4806,5 +4806,40 @@
     "addedAt": "2026-09-28T13:48:54.975Z",
     "updatedAt": "2026-09-28T13:48:54.975Z",
     "lastChecked": "2026-09-28T13:48:55.968Z"
+  },
+  {
+    "tmdbId": 34528,
+    "title": "La Condition de l’homme II",
+    "year": "1959",
+    "director": "Masaki Kobayashi",
+    "poster": "https://image.tmdb.org/t/p/w500/685qZknoJZ4E9xQ027KCyDzwhnM.jpg",
+    "synopsis": "Partie 2 : Le Chemin de l’éternité — Nord de la Mandchourie. Kaji est incorporé à l’armée impériale du Kwantung. Simple soldat, il découvre que les jeunes recrues connaissent des traitements aussi inhumains que les prisonniers chinois de Lo Hu liang.. Il s’élève de nouveau contre cette barbarie. Le suicide d’un de ses camarades lui permet de porter plus haut et plus fort la voix des soldats. Pour se débarrasser de lui, ses supérieurs l’envoient au front. L’armée japonaise subit alors défaite sur défaite, et la débâcle s’annonce inéluctable.",
+    "genres": [
+      "Guerre",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Tatsuya Nakadai",
+      "新珠三千代",
+      "桂小金治",
+      "Jun Tatara",
+      "南道郎"
+    ],
+    "tmdbRating": 8.2,
+    "tmdbVotes": 234,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0053115",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/34528/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:49:16.020Z",
+    "updatedAt": "2026-09-28T13:49:16.020Z",
+    "lastChecked": "2026-09-28T13:49:17.212Z"
   }
 ]
