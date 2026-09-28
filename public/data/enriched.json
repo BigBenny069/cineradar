@@ -5053,5 +5053,42 @@
     "addedAt": "2026-09-28T13:53:42.550Z",
     "updatedAt": "2026-09-28T13:53:42.550Z",
     "lastChecked": "2026-09-28T13:53:44.299Z"
+  },
+  {
+    "tmdbId": 3782,
+    "title": "Vivre",
+    "year": "1952",
+    "director": "Akira Kurosawa",
+    "poster": "https://image.tmdb.org/t/p/w500/nVIRVbY0X1QiWtNKPLGwsTHNZtT.jpg",
+    "synopsis": "Atteint d'un cancer, Watanabe, chef de service du génie civil, décide de réaliser le projet qu'il avait tout d'abord repoussé : celui d'assainir un terrain vague du quartier de Hureocho pour que les enfants puissent jouer dans un véritable jardin.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Takashi Shimura",
+      "Haruo Tanaka",
+      "Nobuo Kaneko",
+      "Bokuzen Hidari",
+      "小田切みき"
+    ],
+    "tmdbRating": 8.3,
+    "tmdbVotes": 1398,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0044741",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/3782/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Canal VOD",
+        "Pathé Home",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-28T13:54:15.016Z",
+    "updatedAt": "2026-09-28T13:54:15.016Z",
+    "lastChecked": "2026-09-28T13:54:16.157Z"
   }
 ]
