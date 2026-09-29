@@ -5285,5 +5285,44 @@
     "addedAt": "2026-09-28T13:56:36.526Z",
     "updatedAt": "2026-09-28T13:56:36.526Z",
     "lastChecked": "2026-09-29T11:55:44.506Z"
+  },
+  {
+    "tmdbId": 11020,
+    "title": "Pique-nique à Hanging Rock",
+    "year": "1975",
+    "director": "Peter Weir",
+    "poster": "https://image.tmdb.org/t/p/w500/e5myKEaZHh506KekQv0DECddflz.jpg",
+    "synopsis": "En 1900, en Australie. Les élèves d'une école privée pour jeunes filles partent en pique-nique au pied d'un immense rocher qui fut naguère utilisé pour un culte aborigène, Hanging Rock. Le soleil réchauffe et alanguit les demoiselles qui s'adonnent à leurs rêveries. Mais quatre d'entre elles décident de s'aventurer dans un étroit défilé rocailleux, répondant ainsi à une sorte d'appel émis par le rocher. Prise de panique, une des jeunes filles s'enfuit tandis que les trois autres pénètrent dans une cavité avant de disparaître corps et biens en même temps qu'une de leurs enseignantes. Des recherches et des battues sont organisées pour les retrouver, mais en vain…",
+    "genres": [
+      "Drame",
+      "Mystère"
+    ],
+    "cast": [
+      "Rachel Roberts",
+      "Vivean Gray",
+      "Helen Morse",
+      "Kirsty Child",
+      "Tony Llewellyn-Jones"
+    ],
+    "tmdbRating": 7.234,
+    "tmdbVotes": 919,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0073540",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/11020/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "LaCinetek",
+        "ARTE Boutique",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-09-29T21:25:39.885Z",
+    "updatedAt": "2026-09-29T21:25:39.885Z",
+    "lastChecked": "2026-09-29T21:25:40.970Z"
   }
 ]
