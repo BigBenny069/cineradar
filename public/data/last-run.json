@@ -1,9 +1,9 @@
 {
-  "startedAt": "2026-09-30T11:42:50.206Z",
-  "finishedAt": "2026-09-30T11:43:25.025Z",
-  "trigger": "automatique (6h)",
+  "startedAt": "2026-10-01T11:18:22.450Z",
+  "finishedAt": "2026-10-01T11:19:04.964Z",
+  "trigger": "manuel (bouton dans l'app)",
   "status": "success",
-  "moviesChecked": 128,
+  "moviesChecked": 129,
   "unmatchedCount": 0,
   "newlyAvailableCount": 0,
   "errors": []
