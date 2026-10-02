@@ -9,8 +9,15 @@
 // Stratégie : "réseau d'abord, cache en secours" (network-first). Chaque
 // requête réussie est mise en cache au passage ; si le réseau échoue, on
 // ressert la dernière version connue depuis le cache.
+//
+// Les fichiers /data/*.json sont volontairement exclus de ce cache : App.jsx
+// les appelle avec un paramètre `?t=` (horodatage) différent à chaque fois
+// pour forcer une lecture fraîche, donc leur URL change en permanence — le
+// cache ne retrouverait jamais une correspondance exacte en mode hors-ligne
+// et ne ferait qu'accumuler des copies inutilisables. Ces fichiers ont déjà
+// leur propre filet de secours hors-ligne, via localStorage, dans App.jsx.
 // ─────────────────────────────────────────────────────────────
-const CACHE_NAME = "cineradar-shell-v1";
+const CACHE_NAME = "cineradar-shell-v2";
 const PRECACHE_URLS = ["/", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -39,6 +46,15 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  if (url.pathname.startsWith("/data/")) {
+    // Pas de mise en cache pour ces fichiers (voir le commentaire en tête de
+    // fichier) — simple passe-plat réseau, App.jsx gère déjà son propre
+    // repli hors-ligne pour ces données via localStorage.
+    event.respondWith(fetch(request));
+    return;
+  }
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
