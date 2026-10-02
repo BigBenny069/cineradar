@@ -4,26 +4,7 @@ const path = require("path");
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE = "https://api.themoviedb.org/3";
 
-// Table de correspondance entre les clés utilisées dans data/settings.json (pilotées
-// depuis l'écran Paramètres de l'app) et les noms de fournisseurs tels que TMDB les renvoie.
-// Si un film affiche un mauvais fournisseur, ajoute son nom exact dans le tableau correspondant.
-const CANONICAL_SUBSCRIPTIONS = {
-  netflix: ["Netflix"],
-  prime: ["Amazon Prime Video", "Prime Video"],
-  disney: ["Disney Plus", "Disney+"],
-  // Toutes les chaînes/services du bouquet Ciné+ inclus dans la formule
-  // Canal+ (Pack Ciné Séries+) sont regroupées ici avec "Canal+" lui-même,
-  // puisqu'ils sont tous couverts par le même abonnement.
-  canal: ["Canal+", "Canal+ Cinéma", "Insomnia", "Polar+", "Ciné+ Frisson", "Ciné+ Émotion", "Ciné+ Family", "Ciné+ Festival", "Ciné+ Classic"],
-  canalseries: ["Canal+ Séries"],
-  appletv: ["Apple TV+", "Apple TV Plus"],
-  paramount: ["Paramount Plus", "Paramount+"],
-  ocs: ["OCS", "Cine+ OCS", "Ciné+ OCS"],
-  max: ["Max", "HBO Max"],
-};
-
-// Valeurs par défaut utilisées si data/settings.json est absent ou illisible.
-const DEFAULT_ENABLED = ["netflix", "prime", "disney", "canal", "canalseries", "appletv", "paramount", "ocs"];
+const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_shared/subscriptions.cjs");
 
 function loadSettings() {
   try {
@@ -52,22 +33,7 @@ function loadSettings() {
 
 const SETTINGS = loadSettings();
 const ENABLED_KEYS = SETTINGS.enabled;
-const MY_SUBSCRIPTIONS = ENABLED_KEYS.flatMap((key) => CANONICAL_SUBSCRIPTIONS[key] || []);
-
-function normalize(str) {
-  return String(str)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-const NORMALIZED_SUBSCRIPTIONS = MY_SUBSCRIPTIONS.map(normalize);
-
-function isMySubscription(providerName) {
-  const n = normalize(providerName);
-  return NORMALIZED_SUBSCRIPTIONS.some((sub) => n === sub || n.includes(sub) || sub.includes(n));
-}
+const isMySubscription = createIsMySubscription(ENABLED_KEYS);
 
 function loadPreviousAbonnements() {
   try {
