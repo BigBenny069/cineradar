@@ -1,27 +1,4 @@
-function normalize(str) {
-  return String(str)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-// ─────────────────────────────────────────────────────────────
-// Même table de correspondance que scripts/update.cjs et api/add-movie.js
-// — à garder synchro si l'une des trois est modifiée.
-// ─────────────────────────────────────────────────────────────
-const CANONICAL_SUBSCRIPTIONS = {
-  netflix: ["Netflix"],
-  prime: ["Amazon Prime Video", "Prime Video"],
-  disney: ["Disney Plus", "Disney+"],
-  canal: ["Canal+", "Canal+ Cinéma", "Insomnia", "Polar+", "Ciné+ Frisson", "Ciné+ Émotion", "Ciné+ Family", "Ciné+ Festival", "Ciné+ Classic"],
-  canalseries: ["Canal+ Séries"],
-  appletv: ["Apple TV+", "Apple TV Plus"],
-  paramount: ["Paramount Plus", "Paramount+"],
-  ocs: ["OCS", "Cine+ OCS", "Ciné+ OCS"],
-  max: ["Max", "HBO Max"],
-};
-const DEFAULT_ENABLED = ["netflix", "prime", "disney", "canal", "canalseries", "appletv", "paramount", "ocs"];
+import { normalize, DEFAULT_ENABLED, createIsMySubscription } from "./_shared/subscriptions.cjs";
 
 async function githubGet(apiUrl, token) {
   const res = await fetch(apiUrl, {
@@ -84,11 +61,7 @@ export default async function handler(req, res) {
       const { content } = await githubGet(settingsUrl, token);
       if (content?.enabled) enabledKeys = content.enabled;
     } catch {}
-    const mySubscriptions = enabledKeys.flatMap((key) => CANONICAL_SUBSCRIPTIONS[key] || []).map(normalize);
-    const isMySubscription = (name) => {
-      const n = normalize(name);
-      return mySubscriptions.some((sub) => n === sub || n.includes(sub) || sub.includes(n));
-    };
+    const isMySubscription = createIsMySubscription(enabledKeys);
 
     const fr = details["watch/providers"]?.results?.FR;
     const allFlatrate = (fr?.flatrate || []).map((p) => p.provider_name);
