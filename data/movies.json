@@ -1090,5 +1090,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-10-01T11:18:23.177Z",
     "updatedAt": "2026-10-01T11:18:23.177Z"
+  },
+  {
+    "title": "Nowhere",
+    "year": 1997,
+    "director": "Gregg Araki",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1811/",
+    "addedAt": "2026-10-02T06:06:21.667Z",
+    "updatedAt": "2026-10-02T06:06:21.667Z",
+    "tmdbId": 1811
   }
 ]
