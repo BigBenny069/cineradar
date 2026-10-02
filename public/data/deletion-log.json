@@ -322,5 +322,12 @@
     "tmdbId": 117,
     "reason": "manuel",
     "deletedAt": "2026-10-02T05:44:55.272Z"
+  },
+  {
+    "title": "Rocky Balboa",
+    "year": 2006,
+    "tmdbId": 1246,
+    "reason": "manuel",
+    "deletedAt": "2026-10-02T05:45:09.815Z"
   }
 ]
