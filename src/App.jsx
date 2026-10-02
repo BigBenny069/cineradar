@@ -687,6 +687,19 @@ const SUBSCRIPTION_OPTIONS = [
   { key: "max", label: "Max (HBO)" },
 ];
 
+// Les affiches sont stockées en w500 (grand format, pour la fiche détail),
+// mais affichées à peine plus grandes qu'une vignette dans les listes et
+// carrousels (~110-150px) — télécharger du w500 à cet endroit, c'est
+// imprimer une affiche grand format pour la glisser dans une boîte
+// d'allumettes. Les URLs TMDB sont prévisibles (toujours
+// https://image.tmdb.org/t/p/{taille}{chemin}), donc un simple remplacement
+// de texte suffit à demander une taille plus légère, sans toucher aux
+// données stockées ni devoir les régénérer.
+function toPosterSize(url, size) {
+  if (!url) return url;
+  return url.replace("/t/p/w500", `/t/p/${size}`);
+}
+
 function normalizeText(str) {
   return String(str || "")
     .normalize("NFD")
@@ -1292,7 +1305,7 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
     >
       <div style={{ width: 108, height: 152, background: "#000", position: "relative" }}>
         {movie.poster ? (
-          <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src={toPosterSize(movie.poster, "w185")} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
           <div
             style={{
@@ -1408,7 +1421,7 @@ function MovieCard({ movie, onOpen }) {
     >
       <div style={{ aspectRatio: "2 / 3", position: "relative", background: "#000" }}>
         {movie.poster ? (
-          <img src={movie.poster} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src={toPosterSize(movie.poster, "w185")} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
           <div
             style={{
@@ -3097,7 +3110,7 @@ function HistoryView({ movies, unmatched, watchlistReview, cinemaisonCleanup, de
               >
                 <div style={{ width: 44, height: 66, borderRadius: 4, overflow: "hidden", background: "#000", flexShrink: 0 }}>
                   {m.poster && (
-                    <img src={m.poster} alt={m.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <img src={toPosterSize(m.poster, "w185")} alt={m.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   )}
                 </div>
                 <div style={{ flex: 1 }}>
