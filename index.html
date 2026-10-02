@@ -6,6 +6,14 @@
     <title>CinéRadar</title>
 
     <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Prévient le navigateur qu'il va bientôt devoir parler à ces deux
+         adresses (polices Google, affiches TMDB) pour qu'il commence la
+         prise de contact dès maintenant, plutôt que d'attendre le moment où
+         la ressource est réellement demandée. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://image.tmdb.org" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
 
