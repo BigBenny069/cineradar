@@ -1,3 +1,5 @@
+import { checkRateLimit, recordFailedAttempt, recordSuccess, getClientIdentifier } from "./_shared/rateLimiter.cjs";
+
 import { normalize, DEFAULT_ENABLED, createIsMySubscription } from "./_shared/subscriptions.cjs";
 
 async function githubGet(apiUrl, token) {
@@ -33,10 +35,20 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
+
+  // Anti brute-force : bloque les tentatives répétées avant même de lire
+  // le corps de la requête.
+  const identifier = getClientIdentifier(req);
+  const rateLimit = checkRateLimit(identifier);
+  if (!rateLimit.allowed) {
+    return res.status(429).json({ error: `Trop de tentatives. Réessaie dans ${rateLimit.retryAfterSeconds}s.` });
+  }
   const { tmdbId, password } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
+    recordFailedAttempt(identifier);
     return res.status(401).json({ error: "Mot de passe incorrect" });
   }
+  recordSuccess(identifier);
   if (!tmdbId) {
     return res.status(400).json({ error: "tmdbId manquant" });
   }
