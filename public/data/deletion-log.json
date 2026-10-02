@@ -329,5 +329,12 @@
     "tmdbId": 1246,
     "reason": "manuel",
     "deletedAt": "2026-10-02T05:45:09.815Z"
+  },
+  {
+    "title": "Le Criminel",
+    "year": 1946,
+    "tmdbId": 20246,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-02T14:02:05.450Z"
   }
 ]
