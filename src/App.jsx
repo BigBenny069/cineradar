@@ -562,7 +562,7 @@ const CINEMAISON_PLATFORM_RULES = [
   },
 ];
 
-function mapToCinemaisonPlatform(name) {
+export function mapToCinemaisonPlatform(name) {
   const n = normalizeText(name);
   if (!n) return null;
   const rule = CINEMAISON_PLATFORM_RULES.find((r) => r.match(n));
@@ -664,7 +664,7 @@ const PROVIDER_SEARCH_URL = {
   arte: (q) => `https://www.arte.tv/fr/search/?q=${q}`,
 };
 
-function getPlatformSearchUrl(providerName, movieTitle, movieYear) {
+export function getPlatformSearchUrl(providerName, movieTitle, movieYear) {
   const n = normalizeText(providerName);
   const key = Object.keys(PROVIDER_SEARCH_URL).find((k) => n.includes(k));
   const q = encodeURIComponent(movieYear ? `${movieTitle} ${movieYear}` : movieTitle);
@@ -695,12 +695,12 @@ const SUBSCRIPTION_OPTIONS = [
 // https://image.tmdb.org/t/p/{taille}{chemin}), donc un simple remplacement
 // de texte suffit à demander une taille plus légère, sans toucher aux
 // données stockées ni devoir les régénérer.
-function toPosterSize(url, size) {
+export function toPosterSize(url, size) {
   if (!url) return url;
   return url.replace("/t/p/w500", `/t/p/${size}`);
 }
 
-function normalizeText(str) {
+export function normalizeText(str) {
   return String(str || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -734,7 +734,7 @@ function useResponsiveMaxWidth() {
   return maxWidth;
 }
 
-function formatRelativeDate(iso) {
+export function formatRelativeDate(iso) {
   if (!iso) return "Date inconnue";
   const date = new Date(iso);
   const now = new Date();
