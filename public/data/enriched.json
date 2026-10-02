@@ -5261,5 +5261,43 @@
     "addedAt": "2026-10-01T11:18:23.177Z",
     "updatedAt": "2026-10-01T11:18:23.177Z",
     "lastChecked": "2026-10-02T05:47:29.914Z"
+  },
+  {
+    "tmdbId": 1811,
+    "title": "Nowhere",
+    "year": "1997",
+    "director": "Gregg Araki",
+    "poster": "https://image.tmdb.org/t/p/w500/c1TZKfzvATep5x5DthqWjjWtU2l.jpg",
+    "synopsis": "L'histoire d'un voyage en apnée dans la journée banale d'un adolescent de Los Angeles âgé de dix-huit ans, Dark Smith, hanté par la fin du monde et la quête de l'amour pur.",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "James Duval",
+      "Rachel True",
+      "Nathan Bexton",
+      "Chiara Mastroianni",
+      "Debi Mazar"
+    ],
+    "tmdbRating": 6.7,
+    "tmdbVotes": 237,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0119809",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1811/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-02T06:06:21.667Z",
+    "updatedAt": "2026-10-02T06:06:21.667Z",
+    "lastChecked": "2026-10-02T06:06:22.635Z"
   }
 ]
