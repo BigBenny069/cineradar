@@ -336,5 +336,12 @@
     "tmdbId": 20246,
     "reason": "cinemaison",
     "deletedAt": "2026-10-02T14:02:05.450Z"
+  },
+  {
+    "title": "Training Day",
+    "year": 2001,
+    "tmdbId": 2034,
+    "reason": "manuel",
+    "deletedAt": "2026-10-04T13:32:57.252Z"
   }
 ]
