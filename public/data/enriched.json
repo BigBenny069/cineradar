@@ -5302,58 +5302,5 @@
     "addedAt": "2026-10-04T13:29:10.328Z",
     "updatedAt": "2026-10-04T13:29:10.328Z",
     "lastChecked": "2026-10-04T13:32:20.338Z"
-  },
-  {
-    "tmdbId": 2034,
-    "title": "Training Day",
-    "year": "2001",
-    "director": "Antoine Fuqua",
-    "poster": "https://image.tmdb.org/t/p/w500/pDctIlugIuDZivzihCAEs7Ofymx.jpg",
-    "synopsis": "Jake Hoyt est une nouvelle recrue de la police de Los Angeles. Décidé à devenir inspecteur, il sollicite une mise à l'essai de 24 heures auprès du sergent chef Alonzo Harris, un vétéran de la lutte antidrogue qui opère depuis douze ans dans les quartiers les plus chauds de la ville. D'emblée, Harris fait monter la pression, considérant Jake comme un gamin, raillant sa candeur et son inexpérience. Commencent alors une longue et périlleuse tournée à travers les bas-quartiers, les premiers contacts rudes avec les dealers et les informateurs, la découverte d'un monde trouble où Harris se meut en grand seigneur. Peu à peu, Jake apprend à connaître le policier : son cynisme et son jusqu'au-boutisme fanatique, qui les entraîneront dans des situations de plus en plus dangereuses.",
-    "genres": [
-      "Action",
-      "Crime",
-      "Drame"
-    ],
-    "cast": [
-      "Denzel Washington",
-      "Ethan Hawke",
-      "Scott Glenn",
-      "Tom Berenger",
-      "Harris Yulin"
-    ],
-    "tmdbRating": 7.533,
-    "tmdbVotes": 6880,
-    "letterboxdRating": 4.06,
-    "letterboxdVotes": 665199,
-    "imdbId": "tt0139654",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/2034/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Google Play Movies",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE Boutique"
-      ]
-    },
-    "availableSince": "2026-10-04T13:29:48.775Z",
-    "wantedBy": null,
-    "addedAt": "2026-10-04T13:29:47.395Z",
-    "updatedAt": "2026-10-04T13:29:47.395Z",
-    "lastChecked": "2026-10-04T13:32:20.447Z"
   }
 ]
