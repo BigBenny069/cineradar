@@ -5264,5 +5264,43 @@
     "addedAt": "2026-10-02T06:06:21.667Z",
     "updatedAt": "2026-10-02T06:06:21.667Z",
     "lastChecked": "2026-10-04T11:37:37.089Z"
+  },
+  {
+    "tmdbId": 4911,
+    "title": "Dark Blue",
+    "year": "2002",
+    "director": "Ron Shelton",
+    "poster": "https://image.tmdb.org/t/p/w500/vex3Z8hZ0NVuAXipGnWPUFGhmic.jpg",
+    "synopsis": "Au sein de la section d'élite de la police de Los Angeles, Eldon Perry est réputé pour son tempérament explosif et sa façon très personnelle de faire régner la loi. Flanqué de Bobby Keough, une jeune recrue, il est chargé d'enquêter sur une difficile affaire de quadruple meurtre. Keough découvre rapidement la dure réalité de la rue, l'intimidation policière et la corruption. Arthur Holland, le directeur adjoint de la police, est le seul homme du département à s'élever contre cette section et son redoutable patron, Jack Van Meter.",
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Drame"
+    ],
+    "cast": [
+      "Kurt Russell",
+      "Scott Speedman",
+      "Michael Michele",
+      "Brendan Gleeson",
+      "Ving Rhames"
+    ],
+    "tmdbRating": 6.24,
+    "tmdbVotes": 400,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0279331",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/4911/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-04T13:29:10.328Z",
+    "updatedAt": "2026-10-04T13:29:10.328Z",
+    "lastChecked": "2026-10-04T13:29:11.359Z"
   }
 ]
