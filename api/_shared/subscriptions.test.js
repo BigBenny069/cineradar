@@ -25,6 +25,17 @@ describe("createIsMySubscription", () => {
     expect(isMySub("Ciné+ OCS")).toBe(true);
   });
 
+  it("reconnaît Shadowz Amazon Channel comme couvert par l'abonnement Shadowz", () => {
+    const isMySub = createIsMySubscription(["shadowz"]);
+    expect(isMySub("Shadowz Amazon Channel")).toBe(true);
+    expect(isMySub("Shadowz")).toBe(true);
+  });
+
+  it("ne classe pas Shadowz en abonnement si l'interrupteur est désactivé", () => {
+    const isMySub = createIsMySubscription(["netflix"]);
+    expect(isMySub("Shadowz Amazon Channel")).toBe(false);
+  });
+
   it("ne reconnaît pas une plateforme non activée", () => {
     const isMySub = createIsMySubscription(["netflix"]);
     expect(isMySub("Canal+")).toBe(false);
