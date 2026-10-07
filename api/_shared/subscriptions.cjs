@@ -31,6 +31,10 @@ const CANONICAL_SUBSCRIPTIONS = {
   paramount: ["Paramount Plus", "Paramount+"],
   ocs: ["OCS", "Cine+ OCS", "Ciné+ OCS"],
   max: ["Max", "HBO Max"],
+  // Shadowz (horreur/thriller). TMDB le renvoie le plus souvent sous la forme
+  // "Shadowz Amazon Channel" : la correspondance par inclusion de
+  // isMySubscription couvre déjà ce suffixe.
+  shadowz: ["Shadowz"],
 };
 
 // Valeurs par défaut utilisées si data/settings.json est absent ou illisible.
