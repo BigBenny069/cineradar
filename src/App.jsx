@@ -685,6 +685,7 @@ const SUBSCRIPTION_OPTIONS = [
   { key: "paramount", label: "Paramount+" },
   { key: "ocs", label: "OCS" },
   { key: "max", label: "Max (HBO)" },
+  { key: "shadowz", label: "Shadowz" },
 ];
 
 // Les affiches sont stockées en w500 (grand format, pour la fiche détail),
