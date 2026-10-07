@@ -8,9 +8,12 @@
     "paramount",
     "ocs",
     "max",
-    "netflix"
+    "netflix",
+    "shadowz"
   ],
-  "notifyEmail": "benoitmillet.69@gmail.com",
+  "notifyEmails": [
+    "benoitmillet.69@gmail.com"
+  ],
   "letterboxdWatchlists": {
     "benoit": "ben_benny",
     "romy": ""
