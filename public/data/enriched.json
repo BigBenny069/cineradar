@@ -5957,5 +5957,44 @@
     "addedAt": "2026-10-09T09:19:21.467Z",
     "updatedAt": "2026-10-09T09:19:21.467Z",
     "lastChecked": "2026-10-09T09:19:22.698Z"
+  },
+  {
+    "tmdbId": 10489,
+    "title": "Cujo",
+    "year": "1983",
+    "director": "Lewis Teague",
+    "poster": "https://image.tmdb.org/t/p/w500/7h60gIyuve7HP2NuV7RCtirTmpe.jpg",
+    "synopsis": "Le jour où Cujo, un magnifique saint-bernard, est mordu par une chauve-souris, il devient une bête furieuse et féroce. Après avoir attaqué et tué son maître, le garagiste du coin, il agresse une mère et son fils venus au garage pour une réparation. Pendant plusieurs jours il harcèlera les malheureux coincés dans leur voiture, rôdant et hurlant autour d'eux, les terrorisant et les affamant …",
+    "genres": [
+      "Drame",
+      "Horreur"
+    ],
+    "cast": [
+      "Dee Wallace",
+      "Danny Pintauro",
+      "Daniel Hugh Kelly",
+      "Christopher Stone",
+      "Ed Lauter"
+    ],
+    "tmdbRating": 6.2,
+    "tmdbVotes": 1179,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0085382",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/10489/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:20:02.284Z",
+    "updatedAt": "2026-10-09T09:20:02.284Z",
+    "lastChecked": "2026-10-09T09:20:04.066Z"
   }
 ]
