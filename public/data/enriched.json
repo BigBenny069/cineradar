@@ -5446,5 +5446,43 @@
     "addedAt": "2026-10-09T07:49:48.248Z",
     "updatedAt": "2026-10-09T07:49:48.248Z",
     "lastChecked": "2026-10-09T09:02:57.476Z"
+  },
+  {
+    "tmdbId": 830,
+    "title": "Planète interdite",
+    "year": "1956",
+    "director": "Fred M. Wilcox",
+    "poster": "https://image.tmdb.org/t/p/w500/5qe2nO02PSr5zwn7YmTIHWmQVmE.jpg",
+    "synopsis": "Au XXIIe siècle, le vaisseau spatial C 57 D se pose sur la lointaine planète Altaïr 4. Une expédition dirigée par le commandant Adams vient enquêter sur la disparition, vingt années plus tôt, du navire spatial Bellérophon et de son équipage. Les explorateurs sont accueillis par Robby, un robot ultra perfectionné qui les conduit jusqu'à la formidable demeure de l'énigmatique Docteur Morbius. Celui-ci, avec sa fille Altaira est le seul survivant de l'expédition précédente qui a été décimée par une force inconnue... Le Docteur Morbius explique qu'il a découvert qu'il y a plusieurs milliers d'années, la planète était habitée par des êtres à l'intelligence exceptionnelle, les Krells, qui ont mystérieusement disparu, laissant derrière eux des traces de leur civilisation : un cube gigantesque de plusieurs kilomètres de côté capable de fournir une énergie incommensurable.",
+    "genres": [
+      "Science-Fiction",
+      "Aventure"
+    ],
+    "cast": [
+      "Walter Pidgeon",
+      "Anne Francis",
+      "Leslie Nielsen",
+      "Warren Stevens",
+      "Jack Kelly"
+    ],
+    "tmdbRating": 7.3,
+    "tmdbVotes": 1106,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0049223",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/830/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:07:39.871Z",
+    "updatedAt": "2026-10-09T09:07:39.871Z",
+    "lastChecked": "2026-10-09T09:07:41.428Z"
   }
 ]
