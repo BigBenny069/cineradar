@@ -5832,5 +5832,51 @@
     "addedAt": "2026-10-09T09:14:22.589Z",
     "updatedAt": "2026-10-09T09:14:22.589Z",
     "lastChecked": "2026-10-09T09:15:08.146Z"
+  },
+  {
+    "tmdbId": 1580,
+    "title": "La Corde",
+    "year": "1948",
+    "director": "Alfred Hitchcock",
+    "poster": "https://image.tmdb.org/t/p/w500/3RPGC82EQVY3syzvD6ECeZCg39w.jpg",
+    "synopsis": "Deux étudiants en suppriment un troisième, pour la seule beauté du geste. Défi suprême, le meurtre précède de peu une soirée où ils reçoivent les parents de la victime et leur ancien professeur.",
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "James Stewart",
+      "John Dall",
+      "Farley Granger",
+      "Cedric Hardwicke",
+      "Constance Collier"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 3106,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0040746",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1580/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "LaCinetek",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:15:29.494Z",
+    "updatedAt": "2026-10-09T09:15:29.494Z",
+    "lastChecked": "2026-10-09T09:15:30.656Z"
   }
 ]
