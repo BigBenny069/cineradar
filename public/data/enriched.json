@@ -5398,5 +5398,53 @@
     "addedAt": "2026-10-09T07:40:50.027Z",
     "updatedAt": "2026-10-09T07:40:50.027Z",
     "lastChecked": "2026-10-09T07:41:58.572Z"
+  },
+  {
+    "tmdbId": 535581,
+    "title": "The Dead Don't Die",
+    "year": "2019",
+    "director": "Jim Jarmusch",
+    "poster": "https://image.tmdb.org/t/p/w500/3pMGBEu4RR0RIumjG8bQOdTj9zA.jpg",
+    "synopsis": "Dans la sereine petite ville de Centerville, quelque chose cloche. La lune est omniprésente dans le ciel, la lumière du jour se manifeste à des horaires imprévisibles et les animaux commencent à avoir des comportements inhabituels. Personne ne sait vraiment pourquoi. Les nouvelles sont effrayantes et les scientifiques sont inquiets. Mais personne ne pouvait prévoir l'évènement le plus étrange et dangereux qui allait s'abattre sur Centerville : The Dead Don't Die — les morts sortent de leurs tombes et s'attaquent sauvagement aux vivants pour s'en nourrir. La bataille pour la survie commence pour les habitants de la ville.",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Horreur"
+    ],
+    "cast": [
+      "Bill Murray",
+      "Adam Driver",
+      "Chloë Sevigny",
+      "Tilda Swinton",
+      "Caleb Landry Jones"
+    ],
+    "tmdbRating": 5.4,
+    "tmdbVotes": 2958,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt8695030",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/535581/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T07:49:48.248Z",
+    "updatedAt": "2026-10-09T07:49:48.248Z",
+    "lastChecked": "2026-10-09T07:49:49.312Z"
   }
 ]
