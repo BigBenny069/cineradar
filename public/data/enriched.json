@@ -5622,5 +5622,43 @@
     "addedAt": "2026-10-09T09:10:27.842Z",
     "updatedAt": "2026-10-09T09:10:27.842Z",
     "lastChecked": "2026-10-09T09:11:14.906Z"
+  },
+  {
+    "tmdbId": 19185,
+    "title": "La Nuit des morts-vivants",
+    "year": "1990",
+    "director": "Tom Savini",
+    "poster": "https://image.tmdb.org/t/p/w500/rHOZK8efB36Vx9vnKacYIa86wOJ.jpg",
+    "synopsis": "Venus pour fleurir la tombe de leur mère, Barbara et son frère son attaqués par des morts-vivants. Alors que le frère de Barbara est tué, cette dernière prend la fuite et trouve refuge dans une maison abandonnée.",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Patricia Tallman",
+      "Tony Todd",
+      "McKee Anderson",
+      "Bill Moseley",
+      "Heather Mazur"
+    ],
+    "tmdbRating": 6.881,
+    "tmdbVotes": 1025,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0100258",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/19185/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Artiflix",
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:11:42.864Z",
+    "updatedAt": "2026-10-09T09:11:42.864Z",
+    "lastChecked": "2026-10-09T09:11:44.037Z"
   }
 ]
