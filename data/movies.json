@@ -1109,5 +1109,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-10-05T13:14:41.543Z",
     "updatedAt": "2026-10-05T13:14:41.543Z"
+  },
+  {
+    "title": "La Tour infernale",
+    "year": 1974,
+    "director": "John Guillermin",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/5919/",
+    "addedAt": "2026-10-09T07:40:50.027Z",
+    "updatedAt": "2026-10-09T07:40:50.027Z",
+    "tmdbId": 5919
   }
 ]
