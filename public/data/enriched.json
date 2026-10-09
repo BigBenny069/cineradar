@@ -6040,5 +6040,52 @@
     "addedAt": "2026-10-09T09:20:21.870Z",
     "updatedAt": "2026-10-09T09:20:21.870Z",
     "lastChecked": "2026-10-09T09:21:14.970Z"
+  },
+  {
+    "tmdbId": 1375,
+    "title": "Rocky V",
+    "year": "1990",
+    "director": "John G. Avildsen",
+    "poster": "https://image.tmdb.org/t/p/w500/829CIMdIhYgXWUSq7OjrpgtNAR7.jpg",
+    "synopsis": "Des séquelles physiques irréversibles amènent Rocky Balboa à prendre sa retraite. Ruiné, il devient l'entraîneur d'un champion en devenir, Tommy Gunn. Mais celui-ci ne va pas rester insensible à l'appât du gain et va quitter Rocky pour rejoindre les rangs d'un coach plus fortuné.",
+    "genres": [
+      "Drame",
+      "Action"
+    ],
+    "cast": [
+      "Sylvester Stallone",
+      "Talia Shire",
+      "Burt Young",
+      "Richard Gant",
+      "Tommy Morrison"
+    ],
+    "tmdbRating": 5.775,
+    "tmdbVotes": 3594,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0100507",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1375/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": "2026-10-09T09:21:20.795Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:21:19.266Z",
+    "updatedAt": "2026-10-09T09:21:19.266Z",
+    "lastChecked": "2026-10-09T09:21:20.795Z"
   }
 ]
