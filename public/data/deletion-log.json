@@ -343,5 +343,12 @@
     "tmdbId": 2034,
     "reason": "manuel",
     "deletedAt": "2026-10-04T13:32:57.252Z"
+  },
+  {
+    "title": "Raging Bull",
+    "year": 1980,
+    "tmdbId": 1578,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-09T09:01:53.787Z"
   }
 ]
