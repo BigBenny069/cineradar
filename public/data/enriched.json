@@ -5702,5 +5702,48 @@
     "addedAt": "2026-10-09T09:12:35.135Z",
     "updatedAt": "2026-10-09T09:12:35.135Z",
     "lastChecked": "2026-10-09T09:12:36.419Z"
+  },
+  {
+    "tmdbId": 10576,
+    "title": "Psychose II",
+    "year": "1983",
+    "director": "Richard Franklin",
+    "poster": "https://image.tmdb.org/t/p/w500/5UvtEV8tTSTbC3ooWICKE2tlsRr.jpg",
+    "synopsis": "Après 22 ans passés dans un asile psychiatrique, Norman Bates retrouve enfin le motel familial contre l'avis de Lila, la sœur de Marion Crane, qui s'oppose à sa remise en liberté. Mais une jeune femme assez troublante interviendra dans la vie de Norman juste avant que celui-ci se retrouve dans la même situation que 22 ans auparavant. Et si Mme Bates était encore vivante ?",
+    "genres": [
+      "Horreur",
+      "Mystère",
+      "Thriller"
+    ],
+    "cast": [
+      "Anthony Perkins",
+      "Meg Tilly",
+      "Vera Miles",
+      "Robert Loggia",
+      "Dennis Franz"
+    ],
+    "tmdbRating": 6.5,
+    "tmdbVotes": 773,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0086154",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/10576/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Canal VOD",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:13:13.272Z",
+    "updatedAt": "2026-10-09T09:13:13.272Z",
+    "lastChecked": "2026-10-09T09:13:14.443Z"
   }
 ]
