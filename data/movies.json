@@ -1235,5 +1235,14 @@
     "addedAt": "2026-10-09T09:19:21.467Z",
     "updatedAt": "2026-10-09T09:19:21.467Z",
     "tmdbId": 8208
+  },
+  {
+    "title": "Cujo",
+    "year": 1983,
+    "director": "Lewis Teague",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/10489/",
+    "addedAt": "2026-10-09T09:20:02.284Z",
+    "updatedAt": "2026-10-09T09:20:02.284Z",
+    "tmdbId": 10489
   }
 ]
