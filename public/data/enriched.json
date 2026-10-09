@@ -5745,5 +5745,50 @@
     "addedAt": "2026-10-09T09:13:13.272Z",
     "updatedAt": "2026-10-09T09:13:13.272Z",
     "lastChecked": "2026-10-09T09:13:14.443Z"
+  },
+  {
+    "tmdbId": 380623,
+    "title": "Nocturama",
+    "year": "2016",
+    "director": "Bertrand Bonello",
+    "poster": "https://image.tmdb.org/t/p/w500/u3jrjyPffLludqDtZE7li3JAQ0R.jpg",
+    "synopsis": "Paris, un matin. Une poignée de jeunes, de milieux différents. Chacun de leur côté, ils entament un ballet étrange dans les dédales du métro et les rues de la capitale. Ils semblent suivre un plan. Leurs gestes sont précis, presque dangereux. Ils convergent vers un même point, un Grand Magasin, au moment où il ferme ses portes. La nuit commence.",
+    "genres": [
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Finnegan Oldfield",
+      "Vincent Rottiers",
+      "Hamza Meziani",
+      "Manal Issa",
+      "Laure Valentinelli"
+    ],
+    "tmdbRating": 6.4,
+    "tmdbVotes": 253,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt4795546",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/380623/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:13:43.347Z",
+    "updatedAt": "2026-10-09T09:13:43.347Z",
+    "lastChecked": "2026-10-09T09:13:44.529Z"
   }
 ]
