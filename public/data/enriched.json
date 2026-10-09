@@ -5348,5 +5348,55 @@
     "addedAt": "2026-10-05T13:14:41.543Z",
     "updatedAt": "2026-10-05T13:14:41.543Z",
     "lastChecked": "2026-10-08T12:36:43.778Z"
+  },
+  {
+    "tmdbId": 5919,
+    "title": "La Tour infernale",
+    "year": "1974",
+    "director": "John Guillermin",
+    "poster": "https://image.tmdb.org/t/p/w500/q4TwFQApPReDK4JNYb8O4kYebTv.jpg",
+    "synopsis": "San Francisco ne vit plus que pour son nouveau building construit tout récemment au cœur de la ville. Un soir alors que la fête bat son plein pour l'inauguration de ce plus grand gratte-ciel du monde, un incident notable vient à se produire. Un simple court-circuit va transformer la somptueuse soirée d'inauguration en un terrible cauchemar : quand le feu commence à se propager, il est trop tard pour s'échapper.",
+    "genres": [
+      "Action",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Steve McQueen",
+      "Paul Newman",
+      "William Holden",
+      "Faye Dunaway",
+      "Fred Astaire"
+    ],
+    "tmdbRating": 7,
+    "tmdbVotes": 1090,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0072308",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/5919/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T07:40:50.027Z",
+    "updatedAt": "2026-10-09T07:40:50.027Z",
+    "lastChecked": "2026-10-09T07:40:51.147Z"
   }
 ]
