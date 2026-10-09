@@ -1244,5 +1244,14 @@
     "addedAt": "2026-10-09T09:20:02.284Z",
     "updatedAt": "2026-10-09T09:20:02.284Z",
     "tmdbId": 10489
+  },
+  {
+    "title": "Les Griffes de la nuit",
+    "year": 1984,
+    "director": "Wes Craven",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/377/",
+    "addedAt": "2026-10-09T09:20:21.870Z",
+    "updatedAt": "2026-10-09T09:20:21.870Z",
+    "tmdbId": 377
   }
 ]
