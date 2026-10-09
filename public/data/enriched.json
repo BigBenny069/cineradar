@@ -5923,5 +5923,39 @@
     "addedAt": "2026-10-09T09:18:26.109Z",
     "updatedAt": "2026-10-09T09:18:26.109Z",
     "lastChecked": "2026-10-09T09:18:27.312Z"
+  },
+  {
+    "tmdbId": 8208,
+    "title": "L'homme qui en savait trop",
+    "year": "1934",
+    "director": "Alfred Hitchcock",
+    "poster": "https://image.tmdb.org/t/p/w500/5UkLomrFOJze5HcZzuTmq3HoND7.jpg",
+    "synopsis": "En vacances en Suisse avec leur fille, Bob et Jill Lawrence se lient d'amitié avec un Français qui est assassiné. Avant de mourir, il prévient Bob qu'un diplomate va également être assassiné. Pour empêcher le couple de parler, les futurs meurtriers enlèvent leur fille. Jill se rend a l'Albert Hall ou un tueur doit abattre le diplomate et tente de faire échouer l'attentat.",
+    "genres": [
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "Leslie Banks",
+      "Edna Best",
+      "Peter Lorre",
+      "Frank Vosper",
+      "Hugh Wakefield"
+    ],
+    "tmdbRating": 6.5,
+    "tmdbVotes": 469,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0025452",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/8208/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:19:21.467Z",
+    "updatedAt": "2026-10-09T09:19:21.467Z",
+    "lastChecked": "2026-10-09T09:19:22.698Z"
   }
 ]
