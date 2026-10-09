@@ -5790,5 +5790,47 @@
     "addedAt": "2026-10-09T09:13:43.347Z",
     "updatedAt": "2026-10-09T09:13:43.347Z",
     "lastChecked": "2026-10-09T09:13:44.529Z"
+  },
+  {
+    "tmdbId": 1809,
+    "title": "Les Lois de l'attraction",
+    "year": "2002",
+    "director": "Roger Avary",
+    "poster": "https://image.tmdb.org/t/p/w500/eU1Pmi8ViTKhpvKvPKZPHs5DXb6.jpg",
+    "synopsis": "Au Camden College, l'essentiel de la vie des étudiants ne se déroule pas pendant les cours. Dans cet univers de fêtes et de débauche, Sean Bateman n'a pas usurpé sa réputation de tombeur. Une bonne partie des jeunes filles du campus peuvent en témoigner personnellement. Paul Denton, lui, affiche au grand jour son homosexualité, mais il a du mal à se trouver des partenaires. Lauren Hynde, pour sa part, est sublime. Elle n'en abuse pas encore. Elle est trop occupée à chercher sa place dans ce monde libertaire qui obéit tout entier aux lois de l'attraction…",
+    "genres": [
+      "Drame",
+      "Romance",
+      "Comédie"
+    ],
+    "cast": [
+      "James Van Der Beek",
+      "Shannyn Sossamon",
+      "Ian Somerhalder",
+      "Jessica Biel",
+      "Kate Bosworth"
+    ],
+    "tmdbRating": 6.2,
+    "tmdbVotes": 639,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0292644",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1809/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:14:22.589Z",
+    "updatedAt": "2026-10-09T09:14:22.589Z",
+    "lastChecked": "2026-10-09T09:14:23.666Z"
   }
 ]
