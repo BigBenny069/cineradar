@@ -1136,5 +1136,14 @@
     "addedAt": "2026-10-09T09:07:39.871Z",
     "updatedAt": "2026-10-09T09:07:39.871Z",
     "tmdbId": 830
+  },
+  {
+    "title": "Ex Machina",
+    "year": 2015,
+    "director": "Alex Garland",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/264660/",
+    "addedAt": "2026-10-09T09:08:44.725Z",
+    "updatedAt": "2026-10-09T09:08:44.725Z",
+    "tmdbId": 264660
   }
 ]
