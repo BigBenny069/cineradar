@@ -5446,5 +5446,53 @@
     "addedAt": "2026-10-09T07:49:48.248Z",
     "updatedAt": "2026-10-09T07:49:48.248Z",
     "lastChecked": "2026-10-09T07:51:09.627Z"
+  },
+  {
+    "tmdbId": 1578,
+    "title": "Raging Bull",
+    "year": "1980",
+    "director": "Martin Scorsese",
+    "poster": "https://image.tmdb.org/t/p/w500/vFFnU6apYbeAv4h3HypHx7bAYfg.jpg",
+    "synopsis": "Raging Bull retrace les moments forts de la carrière flamboyante de Jack La Motta, champion de boxe poids moyen. Issu d'un milieu modeste, il fut le héros de combats mythiques, notamment contre Robinson et Cerdan. Autodestructeur, paranoïaque, déchiré entre le désir du salut personnel et la damnation, il termine son existence, bouffi, en tant que gérant de boîte de nuit et amuseur. Quand l'ascension et le déclin d'une vie deviennent une épopée...",
+    "genres": [
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "Cathy Moriarty",
+      "Joe Pesci",
+      "Frank Vincent",
+      "Nicholas Colasanto"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 4924,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0081398",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1578/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home"
+      ]
+    },
+    "availableSince": "2026-10-09T07:51:54.987Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-09T07:51:53.957Z",
+    "updatedAt": "2026-10-09T07:51:53.957Z",
+    "lastChecked": "2026-10-09T07:51:54.987Z"
   }
 ]
