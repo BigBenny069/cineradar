@@ -1253,5 +1253,14 @@
     "addedAt": "2026-10-09T09:20:21.870Z",
     "updatedAt": "2026-10-09T09:20:21.870Z",
     "tmdbId": 377
+  },
+  {
+    "title": "Rocky V",
+    "year": 1990,
+    "director": "John G. Avildsen",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1375/",
+    "addedAt": "2026-10-09T09:21:19.266Z",
+    "updatedAt": "2026-10-09T09:21:19.266Z",
+    "tmdbId": 1375
   }
 ]
