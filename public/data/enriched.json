@@ -5531,5 +5531,49 @@
     "addedAt": "2026-10-09T09:08:44.725Z",
     "updatedAt": "2026-10-09T09:08:44.725Z",
     "lastChecked": "2026-10-09T09:08:45.999Z"
+  },
+  {
+    "tmdbId": 17654,
+    "title": "District 9",
+    "year": "2009",
+    "director": "Neill Blomkamp",
+    "poster": "https://image.tmdb.org/t/p/w500/gW7H7GPIWSEG7Ma7KKRCx9BfJQm.jpg",
+    "synopsis": "Il y a vingt-huit ans, des extraterrestres entrèrent en contact avec la Terre... Ces visiteurs d'au-delà des étoiles étaient des réfugiés et furent installés dans le District 9, en Afrique du Sud, pendant que les nations du monde se querellaient pour savoir quoi en faire... Depuis, la gestion de la situation a été transférée au MNU (Multi-National United), une société privée qui n'a pas grand-chose à faire du sort de ces créatures, mais qui fera d'énormes bénéfices si elle arrive à faire fonctionner leur extraordinaire armement. Jusqu'à présent, toutes les tentatives ont échoué: pour que les armes marchent, il faut de l'ADN extraterrestre. La tension entre extraterrestres et humains atteint son maximum lorsque le MNU commence à évacuer les non-humains du District 9 vers un nouveau camp.",
+    "genres": [
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Sharlto Copley",
+      "Jason Cope",
+      "Nathalie Boltt",
+      "Sylvaine Strike",
+      "Elizabeth Mkandawie"
+    ],
+    "tmdbRating": 7.48,
+    "tmdbVotes": 10714,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1136608",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/17654/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:09:13.993Z",
+    "updatedAt": "2026-10-09T09:09:13.993Z",
+    "lastChecked": "2026-10-09T09:09:15.233Z"
   }
 ]
