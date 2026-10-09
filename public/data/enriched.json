@@ -5660,5 +5660,47 @@
     "addedAt": "2026-10-09T09:11:42.864Z",
     "updatedAt": "2026-10-09T09:11:42.864Z",
     "lastChecked": "2026-10-09T09:12:29.503Z"
+  },
+  {
+    "tmdbId": 29425,
+    "title": "La Nuit des fous vivants",
+    "year": "1973",
+    "director": "George A. Romero",
+    "poster": "https://image.tmdb.org/t/p/w500/6qCDX7dVmMp9bDLHlrE3xpXF3Jt.jpg",
+    "synopsis": "La paisible ville d'Evans City est envahie par l'armée après qu'une arme biologique contenant le virus Trixie s'y soit répandue. Les personnes infectées sombrent peu à peu dans la folie.",
+    "genres": [
+      "Science-Fiction",
+      "Horreur",
+      "Action"
+    ],
+    "cast": [
+      "Lane Carroll",
+      "Will MacMillan",
+      "Harold Wayne Jones",
+      "Lynn Lowry",
+      "Lloyd Hollar"
+    ],
+    "tmdbRating": 6.1,
+    "tmdbVotes": 429,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0069895",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/29425/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Orange VOD",
+        "Amazon Video",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:12:35.135Z",
+    "updatedAt": "2026-10-09T09:12:35.135Z",
+    "lastChecked": "2026-10-09T09:12:36.419Z"
   }
 ]
