@@ -5575,5 +5575,52 @@
     "addedAt": "2026-10-09T09:09:13.993Z",
     "updatedAt": "2026-10-09T09:09:13.993Z",
     "lastChecked": "2026-10-09T09:09:40.970Z"
+  },
+  {
+    "tmdbId": 440021,
+    "title": "Happy Birthdead",
+    "year": "2017",
+    "director": "Christopher Landon",
+    "poster": "https://image.tmdb.org/t/p/w500/3T1ZkYURrIbUSVQ1d0m1vEsizg3.jpg",
+    "synopsis": "Prisonnière d’une boucle temporelle, Tree, étudiante, revit sans cesse le jour de son meurtre. Une journée apparemment banale qui s’achève systématiquement par sa mort atroce. Finira-t-elle par découvrir l’identité de son tueur ?",
+    "genres": [
+      "Comédie",
+      "Horreur",
+      "Mystère"
+    ],
+    "cast": [
+      "Jessica Rothe",
+      "Israel Broussard",
+      "Charles Aitken",
+      "Ruby Modine",
+      "Blaine Kern III"
+    ],
+    "tmdbRating": 6.7,
+    "tmdbVotes": 6732,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt5308322",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/440021/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:10:27.842Z",
+    "updatedAt": "2026-10-09T09:10:27.842Z",
+    "lastChecked": "2026-10-09T09:10:28.946Z"
   }
 ]
