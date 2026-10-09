@@ -5484,5 +5484,52 @@
     "addedAt": "2026-10-09T09:07:39.871Z",
     "updatedAt": "2026-10-09T09:07:39.871Z",
     "lastChecked": "2026-10-09T09:07:41.428Z"
+  },
+  {
+    "tmdbId": 264660,
+    "title": "Ex Machina",
+    "year": "2015",
+    "director": "Alex Garland",
+    "poster": "https://image.tmdb.org/t/p/w500/gXUnFIZdLsGnZp2AxKjQIVm5jEM.jpg",
+    "synopsis": "Caleb, 24 ans, est programmeur de l'une des plus importantes entreprise d'informatique au monde. Lorsqu'il gagne un concours pour passer une semaine dans un lieu retiré en montagne appartenant à Nathan, le PDG solitaire de son entreprise, il découvre qu'il va en fait devoir participer à une étrange et fascinante expérience dans laquelle il devra interagir avec la première intelligence artificielle au monde qui prend la forme d'un superbe robot féminin.",
+    "genres": [
+      "Drame",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Domhnall Gleeson",
+      "Alicia Vikander",
+      "Oscar Isaac",
+      "Sonoya Mizuno",
+      "Corey Johnson"
+    ],
+    "tmdbRating": 7.571,
+    "tmdbVotes": 14665,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0470752",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/264660/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:08:44.725Z",
+    "updatedAt": "2026-10-09T09:08:44.725Z",
+    "lastChecked": "2026-10-09T09:08:45.999Z"
   }
 ]
