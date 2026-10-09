@@ -5996,5 +5996,49 @@
     "addedAt": "2026-10-09T09:20:02.284Z",
     "updatedAt": "2026-10-09T09:20:02.284Z",
     "lastChecked": "2026-10-09T09:20:04.066Z"
+  },
+  {
+    "tmdbId": 377,
+    "title": "Les Griffes de la nuit",
+    "year": "1984",
+    "director": "Wes Craven",
+    "poster": "https://image.tmdb.org/t/p/w500/Aqj5iaJYbgUWaBxpLhgydrkKri5.jpg",
+    "synopsis": "Avec son gant aux griffes aiguisées, un assassin défiguré du nom de Freddy Krueger rôde dans la nuit, et transforme les pires cauchemars de ses victimes en réalité. Pour rester en vie, il faut rester éveillé…",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Heather Langenkamp",
+      "Johnny Depp",
+      "Robert Englund",
+      "Amanda Wyss",
+      "Jsu Garcia"
+    ],
+    "tmdbRating": 7.355,
+    "tmdbVotes": 5988,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0087800",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/377/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD",
+        "Google Play Movies",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-09T09:20:21.870Z",
+    "updatedAt": "2026-10-09T09:20:21.870Z",
+    "lastChecked": "2026-10-09T09:20:23.026Z"
   }
 ]
