@@ -1127,5 +1127,14 @@
     "addedAt": "2026-10-09T07:49:48.248Z",
     "updatedAt": "2026-10-09T07:49:48.248Z",
     "tmdbId": 535581
+  },
+  {
+    "title": "Raging Bull",
+    "year": 1980,
+    "director": "Martin Scorsese",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1578/",
+    "addedAt": "2026-10-09T07:51:53.957Z",
+    "updatedAt": "2026-10-09T07:51:53.957Z",
+    "tmdbId": 1578
   }
 ]
