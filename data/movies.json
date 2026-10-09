@@ -1208,5 +1208,14 @@
     "addedAt": "2026-10-09T09:14:22.589Z",
     "updatedAt": "2026-10-09T09:14:22.589Z",
     "tmdbId": 1809
+  },
+  {
+    "title": "La Corde",
+    "year": 1948,
+    "director": "Alfred Hitchcock",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1580/",
+    "addedAt": "2026-10-09T09:15:29.494Z",
+    "updatedAt": "2026-10-09T09:15:29.494Z",
+    "tmdbId": 1580
   }
 ]
