@@ -350,5 +350,12 @@
     "tmdbId": 1578,
     "reason": "cinemaison",
     "deletedAt": "2026-10-09T09:01:53.787Z"
+  },
+  {
+    "title": "Normal",
+    "year": 2025,
+    "tmdbId": 1242332,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-10T14:56:30.849Z"
   }
 ]
