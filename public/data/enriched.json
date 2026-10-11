@@ -6073,11 +6073,10 @@
     "imdbId": "tt28015403",
     "letterboxdUrl": "https://letterboxd.com/tmdb/1138194/",
     "providers": {
-      "abonnement": [
-        "Shadowz Amazon Channel",
-        "Shadowz"
-      ],
+      "abonnement": [],
       "vod": [
+        "Shadowz Amazon Channel",
+        "Shadowz",
         "Apple TV Store",
         "Google Play Movies",
         "YouTube",
@@ -6091,10 +6090,10 @@
         "ARTE VOD"
       ]
     },
-    "availableSince": "2026-10-11T14:15:33.652Z",
+    "availableSince": null,
     "wantedBy": null,
     "addedAt": "2026-10-11T14:15:32.340Z",
     "updatedAt": "2026-10-11T14:15:32.341Z",
-    "lastChecked": "2026-10-11T14:15:33.652Z"
+    "lastChecked": "2026-10-11T14:16:40.266Z"
   }
 ]
