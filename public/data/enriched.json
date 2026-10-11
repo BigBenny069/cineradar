@@ -6047,5 +6047,54 @@
     "addedAt": "2026-10-09T09:21:19.266Z",
     "updatedAt": "2026-10-09T09:21:19.266Z",
     "lastChecked": "2026-10-11T11:55:37.848Z"
+  },
+  {
+    "tmdbId": 1138194,
+    "title": "Heretic",
+    "year": "2024",
+    "director": "Scott Beck",
+    "poster": "https://image.tmdb.org/t/p/w500/qcRQkVjP6Zdr4EkHevfqjVEk9KQ.jpg",
+    "synopsis": "Deux jeunes missionnaires mormones se rendent chez M. Reed, un homme excentrique, pour prêcher et tenter de le convertir. Ce dernier va cependant s'avérer bien plus dangereux qu'elles n'auraient pu l'imaginer.",
+    "genres": [
+      "Thriller",
+      "Horreur"
+    ],
+    "cast": [
+      "Hugh Grant",
+      "Sophie Thatcher",
+      "Chloe East",
+      "Topher Grace",
+      "Elle Young"
+    ],
+    "tmdbRating": 6.963,
+    "tmdbVotes": 2948,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt28015403",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1138194/",
+    "providers": {
+      "abonnement": [
+        "Shadowz Amazon Channel",
+        "Shadowz"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-10-11T14:15:33.652Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-11T14:15:32.340Z",
+    "updatedAt": "2026-10-11T14:15:32.341Z",
+    "lastChecked": "2026-10-11T14:15:33.652Z"
   }
 ]
