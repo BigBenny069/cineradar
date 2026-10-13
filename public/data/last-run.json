@@ -1,10 +1,10 @@
 {
-  "startedAt": "2026-10-12T14:05:02.231Z",
-  "finishedAt": "2026-10-12T14:05:41.448Z",
+  "startedAt": "2026-10-13T13:18:17.518Z",
+  "finishedAt": "2026-10-13T13:19:02.044Z",
   "trigger": "automatique (6h)",
   "status": "success",
   "moviesChecked": 146,
   "unmatchedCount": 0,
-  "newlyAvailableCount": 2,
+  "newlyAvailableCount": 0,
   "errors": []
 }
