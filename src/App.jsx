@@ -548,10 +548,13 @@ const CINEMAISON_PLATFORM_RULES = [
   { platform: "Shadowz", match: (n) => n.includes("shadowz") },
   { platform: "Netflix", match: (n) => n.includes("netflix") },
   { platform: "Disney+", match: (n) => n.includes("disney") },
+  // Paramount+ est désormais une plateforme à part entière côté CinéMaison :
+  // cette règle doit rester avant celle de Canal+ (qui l'englobait avant).
+  { platform: "Paramount+", match: (n) => n.includes("paramount") },
   { platform: "Prime Video", match: (n) => n.includes("prime video") },
   {
     // Toutes ces chaînes sont incluses dans la formule Canal+ (accès via la
-    // même app) — CinéMaison ne connaît que 4 plateformes, donc tout ce qui
+    // même app) — CinéMaison n'a pas de plateforme dédiée pour le reste, donc tout ce qui
     // se regarde via Canal+ y est envoyé comme "Canal+", peu importe le
     // studio d'origine du contenu.
     platform: "Canal+",
@@ -559,7 +562,6 @@ const CINEMAISON_PLATFORM_RULES = [
       n.includes("canal+") ||
       n.includes("canal plus") ||
       n.includes("apple tv") ||
-      n.includes("paramount") ||
       n.includes("ocs") ||
       n.includes("max"),
   },
@@ -2141,7 +2143,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
         )}
         {cinemaisonPlatformOptions.length === 0 && !showCinemaisonPanel && (
           <div style={{ marginTop: 8, fontFamily: F.mono, fontSize: 10, color: T.muted, textAlign: "center" }}>
-            Aucun de tes abonnements Canal+/Netflix/Prime/Disney+ ne couvre ce film — rien à envoyer.
+            Aucun de tes abonnements (Canal+, Netflix, Prime, Disney+, Paramount+, Shadowz) ne couvre ce film — rien à envoyer.
           </div>
         )}
 
