@@ -6045,5 +6045,53 @@
     "addedAt": "2026-10-09T09:21:19.266Z",
     "updatedAt": "2026-10-09T09:21:19.266Z",
     "lastChecked": "2026-10-14T11:20:04.108Z"
+  },
+  {
+    "tmdbId": 771536,
+    "title": "Samhain",
+    "year": "2022",
+    "director": "Kate Dolan",
+    "poster": "https://image.tmdb.org/t/p/w500/2PnmMDVzLQ2wCLsifgV2VvUrpwK.jpg",
+    "synopsis": "C'est la semaine précédant Halloween et Angela, la mère de Char, a inexplicablement disparu. Tout ce qui reste, c'est sa voiture abandonnée. Lorsqu'elle revient chez elle sans explication le soir suivant, Char et sa grand-mère comprennent que quelque chose ne va pas. Elle a beau avoir la même apparence et la même voix, le comportement d'Angela est de plus en plus effrayant, comme si elle avait été remplacée par une force malveillante. Lorsqu'arrive Halloween, une nuit imprégnée de mythes et de légendes anciennes, Char réalise qu'elle est la seule à pouvoir la sauver, même si elle risque de la perdre à jamais.",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Hazel Doupe",
+      "Carolyn Bracken",
+      "Jordanne Jones",
+      "Florence Adebamo",
+      "Katie White"
+    ],
+    "tmdbRating": 5.604,
+    "tmdbVotes": 149,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt10406596",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/771536/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount+ Amazon Channel",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Google Play Movies",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-10-14T14:05:53.428Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-14T14:05:51.424Z",
+    "updatedAt": "2026-10-14T14:05:51.424Z",
+    "lastChecked": "2026-10-14T14:05:53.429Z"
   }
 ]
