@@ -543,6 +543,9 @@ const CINEMAISON_PWD_KEY = "cineradar_cinemaison_pwd";
 // Correspondance par mot-clé (et non plus par égalité stricte) pour absorber
 // ces variantes : ex. "Cine+ OCS Amazon Channel" doit quand même matcher OCS.
 const CINEMAISON_PLATFORM_RULES = [
+  // Shadowz en premier : TMDB le renvoie souvent sous la forme
+  // "Shadowz Amazon Channel", qui ne doit surtout pas être pris pour Prime Video.
+  { platform: "Shadowz", match: (n) => n.includes("shadowz") },
   { platform: "Netflix", match: (n) => n.includes("netflix") },
   { platform: "Disney+", match: (n) => n.includes("disney") },
   { platform: "Prime Video", match: (n) => n.includes("prime video") },
