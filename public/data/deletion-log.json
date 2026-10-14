@@ -364,5 +364,12 @@
     "tmdbId": 1138194,
     "reason": "cinemaison",
     "deletedAt": "2026-10-14T11:18:41.183Z"
+  },
+  {
+    "title": "Samhain",
+    "year": 2022,
+    "tmdbId": 771536,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-14T14:16:34.778Z"
   }
 ]
