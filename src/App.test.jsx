@@ -50,6 +50,10 @@ describe("mapToCinemaisonPlatform", () => {
     expect(mapToCinemaisonPlatform("Disney Plus")).toBe("Disney+");
     expect(mapToCinemaisonPlatform("Amazon Prime Video")).toBe("Prime Video");
   });
+  it("mappe Shadowz (et Shadowz Amazon Channel) vers 'Shadowz', pas Prime Video", () => {
+    expect(mapToCinemaisonPlatform("Shadowz")).toBe("Shadowz");
+    expect(mapToCinemaisonPlatform("Shadowz Amazon Channel")).toBe("Shadowz");
+  });
   it("retourne null pour une plateforme non transférable vers CinéMaison", () => {
     expect(mapToCinemaisonPlatform("Google Play Movies")).toBe(null);
   });
