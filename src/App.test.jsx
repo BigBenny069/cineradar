@@ -54,6 +54,11 @@ describe("mapToCinemaisonPlatform", () => {
     expect(mapToCinemaisonPlatform("Shadowz")).toBe("Shadowz");
     expect(mapToCinemaisonPlatform("Shadowz Amazon Channel")).toBe("Shadowz");
   });
+  it("mappe Paramount+ (et Paramount Plus Amazon Channel) vers 'Paramount+', plus vers Canal+", () => {
+    expect(mapToCinemaisonPlatform("Paramount Plus")).toBe("Paramount+");
+    expect(mapToCinemaisonPlatform("Paramount+")).toBe("Paramount+");
+    expect(mapToCinemaisonPlatform("Paramount Plus Amazon Channel")).toBe("Paramount+");
+  });
   it("retourne null pour une plateforme non transférable vers CinéMaison", () => {
     expect(mapToCinemaisonPlatform("Google Play Movies")).toBe(null);
   });
