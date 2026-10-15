@@ -1186,5 +1186,17 @@
     "year": "2022",
     "tmdbId": 771536,
     "addedAt": "2026-10-14T14:05:51.424Z"
+  },
+  {
+    "title": "Fahrenheit 451",
+    "year": "1966",
+    "tmdbId": 1714,
+    "addedAt": "2026-10-15T10:39:43.099Z"
+  },
+  {
+    "title": "Metropolis",
+    "year": "2001",
+    "tmdbId": 9606,
+    "addedAt": "2026-10-15T10:39:43.344Z"
   }
 ]

@@ -1254,5 +1254,25 @@
     "addedAt": "2026-10-09T09:21:19.266Z",
     "updatedAt": "2026-10-09T09:21:19.266Z",
     "tmdbId": 1375
+  },
+  {
+    "title": "Fahrenheit 451",
+    "year": 1966,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/fahrenheit-451/",
+    "tmdbId": 1714,
+    "wantedBy": "benoit",
+    "addedAt": "2026-10-15T10:39:43.099Z",
+    "updatedAt": "2026-10-15T10:39:43.099Z"
+  },
+  {
+    "title": "Metropolis",
+    "year": 2001,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/metropolis-2001/",
+    "tmdbId": 9606,
+    "wantedBy": "benoit",
+    "addedAt": "2026-10-15T10:39:43.344Z",
+    "updatedAt": "2026-10-15T10:39:43.344Z"
   }
 ]
