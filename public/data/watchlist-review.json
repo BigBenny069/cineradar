@@ -5,12 +5,5 @@
     "person": "benoit",
     "reason": "deja_present",
     "detectedAt": "2026-10-16T10:26:30.478Z"
-  },
-  {
-    "key": "tmdb:9593:benoit",
-    "title": "Last Action Hero",
-    "person": "benoit",
-    "reason": "deja_present",
-    "detectedAt": "2026-10-16T10:26:30.689Z"
   }
 ]
