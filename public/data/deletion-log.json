@@ -371,5 +371,13 @@
     "tmdbId": 771536,
     "reason": "cinemaison",
     "deletedAt": "2026-10-14T14:16:34.778Z"
+  },
+  {
+    "title": "Metropolis",
+    "year": 1927,
+    "tmdbId": 19,
+    "reason": "watchlist",
+    "wantedBy": "benoit",
+    "deletedAt": "2026-10-16T10:26:39.880Z"
   }
 ]

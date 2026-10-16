@@ -1,9 +1,23 @@
 [
   {
+    "key": "tmdb:1714:benoit",
+    "title": "Fahrenheit 451",
+    "person": "benoit",
+    "reason": "deja_present",
+    "detectedAt": "2026-10-16T10:26:30.257Z"
+  },
+  {
+    "key": "tmdb:9606:benoit",
+    "title": "Metropolis",
+    "person": "benoit",
+    "reason": "deja_present",
+    "detectedAt": "2026-10-16T10:26:30.478Z"
+  },
+  {
     "key": "tmdb:9593:benoit",
     "title": "Last Action Hero",
     "person": "benoit",
     "reason": "deja_present",
-    "detectedAt": "2026-10-15T10:39:43.586Z"
+    "detectedAt": "2026-10-16T10:26:30.689Z"
   }
 ]
