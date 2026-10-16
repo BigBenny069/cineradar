@@ -6062,5 +6062,54 @@
     "addedAt": "2026-10-16T13:03:08.161Z",
     "updatedAt": "2026-10-16T13:03:08.161Z",
     "lastChecked": "2026-10-16T13:03:09.918Z"
+  },
+  {
+    "tmdbId": 507076,
+    "title": "Climax",
+    "year": "2018",
+    "director": "Gaspar Noé",
+    "poster": "https://image.tmdb.org/t/p/w500/j594woyeGeEGvlSZ95sZuA5uCot.jpg",
+    "synopsis": "Une troupe de danseurs décide de célébrer le dernier jour de répétition avant d'entamer une tournée en France et aux États-Unis. L'atmosphère est festive, mais bientôt certains commencent à se sentir mal et à se comporter de manière étrange. Quelqu'un a versé de la drogue dans la sangria. La fête tourne rapidement au cauchemar.",
+    "genres": [
+      "Drame",
+      "Horreur",
+      "Musique"
+    ],
+    "cast": [
+      "Sofia Boutella",
+      "Romain Guillermic",
+      "Souheila Yacoub",
+      "Kiddy Smile",
+      "Claude-Emmanuelle Gajan-Maull"
+    ],
+    "tmdbRating": 7.03,
+    "tmdbVotes": 2423,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt8359848",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/507076/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-10-16T13:03:26.902Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-16T13:03:25.759Z",
+    "updatedAt": "2026-10-16T13:03:25.759Z",
+    "lastChecked": "2026-10-16T13:03:26.902Z"
   }
 ]
