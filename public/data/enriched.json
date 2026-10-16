@@ -6017,5 +6017,50 @@
     "addedAt": "2026-10-15T10:39:43.344Z",
     "updatedAt": "2026-10-15T10:39:43.344Z",
     "lastChecked": "2026-10-16T10:27:15.404Z"
+  },
+  {
+    "tmdbId": 34647,
+    "title": "Enter the Void",
+    "year": "2010",
+    "director": "Gaspar Noé",
+    "poster": "https://image.tmdb.org/t/p/w500/li3Jrxo6s1gXX0zRhvgtbLfAwIl.jpg",
+    "synopsis": "Oscar et sa sœur Linda habitent depuis peu à Tokyo. Oscar survit de petits deals de drogue alors que Linda est stripteaseuse dans une boite de nuit. Un soir, lors d'une descente de police, Oscar est touché par une balle. Tandis qu'il agonise, son esprit, fidèle à la promesse faite à sa sœur de ne jamais l'abandonner, refuse de quitter le monde des vivants. Son esprit erre alors dans la ville et ses visions deviennent de plus en plus chaotiques et cauchemardesques. Passé, présent et futur se mélangent dans un maelstrom hallucinatoire.",
+    "genres": [
+      "Fantastique",
+      "Drame"
+    ],
+    "cast": [
+      "Paz de la Huerta",
+      "Nathaniel Brown",
+      "Cyril Roy",
+      "Olly Alexander",
+      "丹野雅仁"
+    ],
+    "tmdbRating": 7.275,
+    "tmdbVotes": 2069,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1191111",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/34647/",
+    "providers": {
+      "abonnement": [
+        "Paramount Plus",
+        "Paramount Plus Premium"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-10-16T13:03:09.918Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-16T13:03:08.161Z",
+    "updatedAt": "2026-10-16T13:03:08.161Z",
+    "lastChecked": "2026-10-16T13:03:09.918Z"
   }
 ]
