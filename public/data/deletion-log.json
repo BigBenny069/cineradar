@@ -386,5 +386,12 @@
     "tmdbId": 457335,
     "reason": "cinemaison",
     "deletedAt": "2026-10-17T16:39:22.072Z"
+  },
+  {
+    "title": "La Cité de l'ombre",
+    "year": 2008,
+    "tmdbId": 13600,
+    "reason": "manuel",
+    "deletedAt": "2026-10-17T16:40:59.801Z"
   }
 ]
