@@ -379,5 +379,12 @@
     "reason": "watchlist",
     "wantedBy": "benoit",
     "deletedAt": "2026-10-16T10:26:39.880Z"
+  },
+  {
+    "title": "Guns Akimbo",
+    "year": 2020,
+    "tmdbId": 457335,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-17T16:39:22.072Z"
   }
 ]
