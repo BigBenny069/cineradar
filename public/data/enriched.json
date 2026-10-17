@@ -6113,50 +6113,5 @@
     "addedAt": "2026-10-16T13:03:25.759Z",
     "updatedAt": "2026-10-16T13:03:25.759Z",
     "lastChecked": "2026-10-17T16:37:47.162Z"
-  },
-  {
-    "tmdbId": 13600,
-    "title": "La Cité de l'ombre",
-    "year": "2008",
-    "director": "Gil Kenan",
-    "poster": "https://image.tmdb.org/t/p/w500/wsdRqONlw3NBGrDa6wfVj6TSwaQ.jpg",
-    "synopsis": "Depuis des générations, les habitants de la cité d'Ember mènent une vie harmonieuse sous les millions de lumières qui illuminent leur cité souterraine. Pourtant, depuis quelque temps, les coupures se multiplient et face à la nuit qui menace, tous commencent à s'inquiéter. Leur survie est en jeu...",
-    "genres": [
-      "Aventure",
-      "Familial",
-      "Fantastique"
-    ],
-    "cast": [
-      "Saoirse Ronan",
-      "Harry Treadaway",
-      "Bill Murray",
-      "David Ryall",
-      "Tim Robbins"
-    ],
-    "tmdbRating": 6.377,
-    "tmdbVotes": 1971,
-    "letterboxdRating": 3.02,
-    "letterboxdVotes": 42187,
-    "imdbId": "tt0970411",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/13600/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "YouTube"
-      ]
-    },
-    "availableSince": "2026-10-17T08:16:56.083Z",
-    "wantedBy": null,
-    "addedAt": "2026-10-17T08:16:55.001Z",
-    "updatedAt": "2026-10-17T08:16:55.001Z",
-    "lastChecked": "2026-10-17T16:37:47.378Z"
   }
 ]
