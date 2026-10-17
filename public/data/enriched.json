@@ -6158,43 +6158,5 @@
     "addedAt": "2026-10-17T08:16:55.001Z",
     "updatedAt": "2026-10-17T08:16:55.001Z",
     "lastChecked": "2026-10-17T16:37:47.378Z"
-  },
-  {
-    "tmdbId": 457335,
-    "title": "Guns Akimbo",
-    "year": "2020",
-    "director": "Jason Lei Howden",
-    "poster": "https://image.tmdb.org/t/p/w500/2kNnf7BwRCEm4bcFkdiE0T4U25s.jpg",
-    "synopsis": "Dans une réalité alternative pas très éloignée de la nôtre, une émission clandestine hyper-violente, Skizm, cartonne sur le dark web. Retransmise en direct, elle consiste en un jeu mortel diffusé en direct où des inconnus et des criminels s'entre-tuent. Le meurtre est devenu un concept de divertissement, ce qui ne choque personne sauf un développeur de jeux vidéos raté, Miles, qui, sur le forum de l'émission, insulte violemment ses nombreux spectateurs. Mais ses critiques ne sont pas passées inaperçues et, chez lui, il est aussitôt agressé et drogué par les organisateurs du jeu de massacre...",
-    "genres": [
-      "Action",
-      "Comédie",
-      "Thriller"
-    ],
-    "cast": [
-      "Daniel Radcliffe",
-      "Samara Weaving",
-      "Natasha Liu Bordizzo",
-      "Ned Dennehy",
-      "Rhys Darby"
-    ],
-    "tmdbRating": 6.437,
-    "tmdbVotes": 2677,
-    "letterboxdRating": 2.8,
-    "letterboxdVotes": 160483,
-    "imdbId": "tt6902676",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/457335/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": []
-    },
-    "availableSince": "2026-10-17T16:35:50.593Z",
-    "wantedBy": null,
-    "addedAt": "2026-10-17T16:35:49.460Z",
-    "updatedAt": "2026-10-17T16:35:49.460Z",
-    "lastChecked": "2026-10-17T16:37:47.496Z"
   }
 ]
