@@ -6152,5 +6152,39 @@
     "addedAt": "2026-10-18T15:29:10.772Z",
     "updatedAt": "2026-10-18T15:29:10.772Z",
     "lastChecked": "2026-10-18T15:29:11.997Z"
+  },
+  {
+    "tmdbId": 27818,
+    "title": "Skeleton Key",
+    "year": "2006",
+    "director": "John Johnson",
+    "poster": "https://image.tmdb.org/t/p/w500/xTufIGTJWNFsAMx0XpMvWI9DPZt.jpg",
+    "synopsis": "",
+    "genres": [
+      "Comédie",
+      "Horreur"
+    ],
+    "cast": [
+      "Debbie Rochon",
+      "Brinke Stevens",
+      "Conrad Brooks",
+      "John Johnson",
+      "Karthik Srinivasan"
+    ],
+    "tmdbRating": 4.4,
+    "tmdbVotes": 5,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0960844",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/27818/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-18T15:29:33.691Z",
+    "updatedAt": "2026-10-18T15:29:33.691Z",
+    "lastChecked": "2026-10-18T15:29:34.783Z"
   }
 ]
