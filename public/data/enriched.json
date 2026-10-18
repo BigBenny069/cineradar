@@ -6117,5 +6117,40 @@
     "addedAt": "2026-10-16T13:03:25.759Z",
     "updatedAt": "2026-10-16T13:03:25.759Z",
     "lastChecked": "2026-10-18T10:11:47.747Z"
+  },
+  {
+    "tmdbId": 12149,
+    "title": "Emprise",
+    "year": "2002",
+    "director": "Bill Paxton",
+    "poster": "https://image.tmdb.org/t/p/w500/i7Cu0CJuIoHtAvG0FX0yteGMcF.jpg",
+    "synopsis": "Le Texas vit sous la terreur d'un tueur en série qui se fait appeler \"La Main de Dieu\". Un soir, un homme sans histoire, Fenton Meiks, se présente au QG du FBI et déclare connaître l'identité du coupable. Ce dangereux criminel ne serait autre que son frère, Adam, qui vient de se suicider.Alors qu'ils roulent en direction du \"Jardin des roses\", où les corps des victimes d'Adam sont enterrées, Fenton raconte aux agents fédéraux comment tout a commencé vingt ans plus tôt, en 1979. A l'époque, il était âgé de douze ans et son frère de neuf. Tous deux vivaient une enfance heureuse avec leur père, veuf depuis la naissance d'Adam. Pourtant, une nuit, leur vie bascula lorsque leur père leur annonça qu'un \"ange\" lui était apparu et qu'ils devaient accomplir une mission. Alors que l'un des deux fils accepte sans réserve cette vision divine, l'autre pense que son père sombre dans la démence.",
+    "genres": [
+      "Drame",
+      "Thriller",
+      "Crime"
+    ],
+    "cast": [
+      "Bill Paxton",
+      "Matthew McConaughey",
+      "Powers Boothe",
+      "Matt O'Leary",
+      "Jeremy Sumpter"
+    ],
+    "tmdbRating": 6.951,
+    "tmdbVotes": 1422,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0264616",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/12149/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-18T15:29:10.772Z",
+    "updatedAt": "2026-10-18T15:29:10.772Z",
+    "lastChecked": "2026-10-18T15:29:11.997Z"
   }
 ]
