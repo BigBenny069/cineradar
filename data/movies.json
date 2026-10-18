@@ -1292,5 +1292,14 @@
     "addedAt": "2026-10-18T15:29:10.772Z",
     "updatedAt": "2026-10-18T15:29:10.772Z",
     "tmdbId": 12149
+  },
+  {
+    "title": "Skeleton Key",
+    "year": 2006,
+    "director": "John Johnson",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/27818/",
+    "addedAt": "2026-10-18T15:29:33.691Z",
+    "updatedAt": "2026-10-18T15:29:33.691Z",
+    "tmdbId": 27818
   }
 ]
