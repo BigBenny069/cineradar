@@ -6276,5 +6276,38 @@
     "addedAt": "2026-10-21T04:25:08.428Z",
     "updatedAt": "2026-10-21T04:25:08.428Z",
     "lastChecked": "2026-10-21T04:26:37.779Z"
+  },
+  {
+    "tmdbId": 411003,
+    "title": "Lumière ! L'aventure commence",
+    "year": "2016",
+    "director": "Thierry Frémaux",
+    "poster": "https://image.tmdb.org/t/p/w500/1HM3oWIjC6W5bViy69uEfQHsTv.jpg",
+    "synopsis": "En 1895, les frères Lumière inventent le Cinématographe et tournent parmi les tout-premiers films de l’histoire du cinéma. Mise en scène, travelling, trucage ou remake, ils inventent aussi l’art de filmer. Chefs-d’œuvre mondialement célèbres ou pépites méconnues, cette sélection de films restaurés offre un voyage aux origines du cinéma.  Ces images inoubliables sont un regard unique sur la France et le Monde qui s’ouvrent au 20e siècle.  Lumière, l’aventure du cinéma commence !",
+    "genres": [
+      "Documentaire",
+      "Histoire"
+    ],
+    "cast": [
+      "Thierry Frémaux",
+      "Martin Scorsese"
+    ],
+    "tmdbRating": 7.8,
+    "tmdbVotes": 78,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt5954462",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/411003/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Rakuten TV"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-21T04:29:02.397Z",
+    "updatedAt": "2026-10-21T04:29:02.397Z",
+    "lastChecked": "2026-10-21T04:29:03.514Z"
   }
 ]
