@@ -1311,5 +1311,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-10-18T15:30:15.590Z",
     "updatedAt": "2026-10-18T15:30:15.590Z"
+  },
+  {
+    "title": "Ip Man",
+    "year": 2008,
+    "director": "葉偉信",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/14756/",
+    "addedAt": "2026-10-21T04:25:08.428Z",
+    "updatedAt": "2026-10-21T04:25:08.428Z",
+    "tmdbId": 14756
   }
 ]
