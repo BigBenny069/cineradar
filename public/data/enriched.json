@@ -6231,5 +6231,50 @@
     "addedAt": "2026-10-18T15:30:15.590Z",
     "updatedAt": "2026-10-18T15:30:15.590Z",
     "lastChecked": "2026-10-20T10:46:32.875Z"
+  },
+  {
+    "tmdbId": 14756,
+    "title": "Ip Man",
+    "year": "2008",
+    "director": "葉偉信",
+    "poster": "https://image.tmdb.org/t/p/w500/7fHSYpgGgPBQKUrvDlhJDPfGZQg.jpg",
+    "synopsis": "Film biographique sur la vie de Ip Man, un maître de Kung-Fu spécialisé dans le style Wing Chun et qui fut le maître de Bruce Lee. Dans les années 30, Ip Man vit à Foshan dans le sud de la Chine, lors de l'occupation japonaise. Face à ses indéniables talents en matière d'arts martiaux, les Japonais lui demandent d'entraîner les soldats, ce qu'il refuse catégoriquement. Il va alors devoir lutter pour sa survie.",
+    "genres": [
+      "Drame",
+      "Action",
+      "Histoire"
+    ],
+    "cast": [
+      "Donnie Yen",
+      "Simon Yam",
+      "熊黛林",
+      "池内博之",
+      "林家棟"
+    ],
+    "tmdbRating": 7.765,
+    "tmdbVotes": 4292,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1220719",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/14756/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-21T04:25:08.428Z",
+    "updatedAt": "2026-10-21T04:25:08.428Z",
+    "lastChecked": "2026-10-21T04:25:09.691Z"
   }
 ]
