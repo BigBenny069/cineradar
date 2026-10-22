@@ -6276,54 +6276,5 @@
     "addedAt": "2026-10-21T04:25:08.428Z",
     "updatedAt": "2026-10-21T04:25:08.428Z",
     "lastChecked": "2026-10-22T17:03:10.397Z"
-  },
-  {
-    "tmdbId": 55721,
-    "title": "Mes meilleures amies",
-    "year": "2011",
-    "director": "Paul Feig",
-    "poster": "https://image.tmdb.org/t/p/w500/gXH6ADCdYVDmLChIsh47WU6L4Cc.jpg",
-    "synopsis": "Annie a la poisse. Son fiancé l'a quittée et son nouvel amant est un goujat. Lillian, sa meilleure amie, file quant à elle le parfait amour. Lorsqu'elle lui annonce son futur mariage, Annie oublie ses soucis pour se consacrer à son rôle de témoin et transformer les préparatifs en un moment magique et privilégié. Mais c'est sans compter sur les autres amies de Lillian, l'insatiable et athlétique dragueuse Megan, la candide Becca, l'ex-beauté Rita et l'ultra-snob Helen... toutes incontrôlables et décidées à donner de la voix pour imposer leurs choix dans l'organisation de l'enterrement de vie de jeune fille. Débute alors une délirante aventure...",
-    "genres": [
-      "Comédie",
-      "Romance"
-    ],
-    "cast": [
-      "Kristen Wiig",
-      "Maya Rudolph",
-      "Rose Byrne",
-      "Chris O'Dowd",
-      "Melissa McCarthy"
-    ],
-    "tmdbRating": 6.51,
-    "tmdbVotes": 4812,
-    "letterboxdRating": 3.43,
-    "letterboxdVotes": 746988,
-    "imdbId": "tt1478338",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/55721/",
-    "providers": {
-      "abonnement": [
-        "Disney Plus",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "YouTube",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Rakuten TV"
-      ]
-    },
-    "availableSince": "2026-10-22T17:01:07.434Z",
-    "wantedBy": null,
-    "addedAt": "2026-10-22T17:01:05.671Z",
-    "updatedAt": "2026-10-22T17:01:05.672Z",
-    "lastChecked": "2026-10-22T17:03:11.042Z"
   }
 ]
