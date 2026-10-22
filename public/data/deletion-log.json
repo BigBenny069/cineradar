@@ -393,5 +393,12 @@
     "tmdbId": 13600,
     "reason": "manuel",
     "deletedAt": "2026-10-17T16:40:59.801Z"
+  },
+  {
+    "title": "Lumière!",
+    "year": 2016,
+    "tmdbId": 411003,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-22T16:57:25.361Z"
   }
 ]
