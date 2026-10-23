@@ -6358,5 +6358,41 @@
     "addedAt": "2026-10-23T18:09:18.955Z",
     "updatedAt": "2026-10-23T18:09:18.955Z",
     "lastChecked": "2026-10-23T18:11:33.871Z"
+  },
+  {
+    "tmdbId": 14284,
+    "title": "Dans l'ombre de la Lune",
+    "year": "2007",
+    "director": "David Sington",
+    "poster": "https://image.tmdb.org/t/p/w500/2ZrP8PNOQcqeu3YdJtbpQY7hKLE.jpg",
+    "synopsis": "Entre 1968 et 1972, les USA ont envoyé 24 astronautes dans l'espace. Leur but : se poser sur la Lune. À travers des archives inédites, les survivants des missions Apollo racontent leurs aventures, dans leurs propres mots…",
+    "genres": [
+      "Documentaire",
+      "Histoire"
+    ],
+    "cast": [
+      "Buzz Aldrin",
+      "Michael Collins",
+      "Alan Bean",
+      "Eugene Cernan",
+      "Charlie Duke"
+    ],
+    "tmdbRating": 7.6,
+    "tmdbVotes": 117,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0925248",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/14284/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-23T18:24:05.658Z",
+    "updatedAt": "2026-10-23T18:24:05.658Z",
+    "lastChecked": "2026-10-23T18:24:06.977Z"
   }
 ]
