@@ -1329,5 +1329,14 @@
     "addedAt": "2026-10-23T13:30:00.867Z",
     "updatedAt": "2026-10-23T13:30:00.867Z",
     "tmdbId": 1437396
+  },
+  {
+    "title": "Cobra",
+    "year": 1986,
+    "director": "George P. Cosmatos",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/9874/",
+    "addedAt": "2026-10-23T18:09:18.955Z",
+    "updatedAt": "2026-10-23T18:09:18.955Z",
+    "tmdbId": 9874
   }
 ]
