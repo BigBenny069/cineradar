@@ -6276,5 +6276,40 @@
     "addedAt": "2026-10-21T04:25:08.428Z",
     "updatedAt": "2026-10-21T04:25:08.428Z",
     "lastChecked": "2026-10-23T10:50:09.955Z"
+  },
+  {
+    "tmdbId": 1437396,
+    "title": "Your Mother Your Mother Your Mother",
+    "year": "2026",
+    "director": "Bassam Tariq",
+    "poster": "https://image.tmdb.org/t/p/w500/4KaPZSKnInnArErTTgy9Oy14leR.jpg",
+    "synopsis": "Latif, un tueur à gages profondément religieux, a du mal à équilibrer travail, foi et paternité. Lorsque sa femme décède, il se lance dans un voyage désespéré à travers Houston pour protéger ses enfants, affrontant les forces qui se rapprochent de lui – et les croyances qui menacent de s'effondrer à l'intérieur.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Mahershala Ali",
+      "John Cho",
+      "Giancarlo Esposito",
+      "Abubakr Ali",
+      "Laith Nakli"
+    ],
+    "tmdbRating": 7.6,
+    "tmdbVotes": 10,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt35856037",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/1437396/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-23T13:30:00.867Z",
+    "updatedAt": "2026-10-23T13:30:00.867Z",
+    "lastChecked": "2026-10-23T13:30:02.321Z"
   }
 ]
