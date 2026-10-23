@@ -6311,5 +6311,50 @@
     "addedAt": "2026-10-23T13:30:00.867Z",
     "updatedAt": "2026-10-23T13:30:00.867Z",
     "lastChecked": "2026-10-23T13:31:42.451Z"
+  },
+  {
+    "tmdbId": 9874,
+    "title": "Cobra",
+    "year": "1986",
+    "director": "George P. Cosmatos",
+    "poster": "https://image.tmdb.org/t/p/w500/3yg2PalQpGQOROAO4iiQtKg1Dpt.jpg",
+    "synopsis": "Depuis plusieurs mois, une mystérieuse série d’assassinats d’une sauvagerie sans précédent est commise dans la ville. La police à bout de ressources fait appel au lieutenant Marion Cobretti, dit Cobra, un flic de choc qui vient de mettre fin à une prise d’otages dans un supermarché…",
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "cast": [
+      "Sylvester Stallone",
+      "Brigitte Nielsen",
+      "Reni Santoni",
+      "Brian Thompson",
+      "Lee Garlington"
+    ],
+    "tmdbRating": 6.165,
+    "tmdbVotes": 2070,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0090859",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/9874/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-23T18:09:18.955Z",
+    "updatedAt": "2026-10-23T18:09:18.955Z",
+    "lastChecked": "2026-10-23T18:09:20.156Z"
   }
 ]
