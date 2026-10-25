@@ -495,6 +495,32 @@ export function getInitialView(search) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────
+// AJOUT PAR LIEN LETTERBOXD
+// ─────────────────────────────────────────────────────────────
+// Le texte collé ressemble-t-il à un lien Letterboxd (court ou complet) ?
+export function looksLikeLetterboxdLink(text) {
+  return /(?:^|[\s/])(?:www\.)?(?:boxd\.it|letterboxd\.com)\/\S+/i.test(String(text || ""));
+}
+
+// Parmi les résultats d'une recherche TMDB, retrouve le film désigné par un
+// titre et une année Letterboxd. Titre identique exigé ; année identique
+// préférée, à un an près acceptée (la date de sortie diffère parfois d'un an
+// entre Letterboxd et TMDB, ex. première en festival). Retourne null en cas de
+// doute : mieux vaut laisser choisir dans la liste que se tromper de film.
+export function pickBestTmdbMatch(results, title, year) {
+  const wanted = normalizeText(title);
+  if (!wanted) return null;
+  const sameTitle = (results || []).filter((r) => normalizeText(r.title) === wanted);
+  if (sameTitle.length === 0) return null;
+  const y = Number(year);
+  if (!y) return sameTitle.length === 1 ? sameTitle[0] : null;
+  const exact = sameTitle.find((r) => Number(r.year) === y);
+  if (exact) return exact;
+  const close = sameTitle.filter((r) => Math.abs(Number(r.year) - y) <= 1);
+  return close.length === 1 ? close[0] : null;
+}
+
 function getStoredTheme_() {
   try {
     return localStorage.getItem("cineradar_theme") || "ticket";
@@ -3580,6 +3606,78 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
       .finally(() => setFetchingDetails(false));
   };
 
+  // Ajout par lien Letterboxd : colle un lien partagé (boxd.it/xxxx), le
+  // serveur retrouve le film, puis les champs se remplissent comme si tu
+  // avais choisi le film dans la liste de recherche.
+  const [lbStatus, setLbStatus] = useState(null); // null | "loading" | "ok" | "error"
+  const [lbMessage, setLbMessage] = useState("");
+
+  const resolveLetterboxdLink = async (text) => {
+    if (!looksLikeLetterboxdLink(text)) {
+      setLbStatus("error");
+      setLbMessage("Ce texte ne ressemble pas à un lien Letterboxd (boxd.it/… ou letterboxd.com/film/…).");
+      return;
+    }
+    setLbStatus("loading");
+    setLbMessage("");
+    const result = await apiWrite("/api/resolve-letterboxd", { link: text });
+    if (!result.ok) {
+      setLbStatus("error");
+      setLbMessage(result.error);
+      return;
+    }
+    const { tmdbId, title: foundTitle, year: foundYear, letterboxdUrl: foundUrl } = result.data;
+    try {
+      let match = null;
+      if (tmdbId) {
+        const details = await fetch(`/api/search-tmdb?id=${tmdbId}`).then((r) => r.json());
+        if (details?.title) match = { tmdbId: details.tmdbId, title: details.title, year: details.year };
+      }
+      if (!match && foundTitle) {
+        const found = await fetch(`/api/search-tmdb?q=${encodeURIComponent(foundTitle)}`).then((r) => r.json());
+        match = pickBestTmdbMatch(found.results, foundTitle, foundYear);
+      }
+      if (match) {
+        pickResult(match);
+        if (foundUrl) setLetterboxdUrl(foundUrl);
+        setLbStatus("ok");
+        setLbMessage(`✓ Film retrouvé : ${match.title} (${match.year}). Vérifie puis ajoute.`);
+        return;
+      }
+      // Pas de certitude : on pré-remplit la recherche, tu choisis dans la liste.
+      if (foundTitle) {
+        setLastPickedTitle(null);
+        setSelectedTmdbId(null);
+        setTitle(foundTitle);
+        if (foundYear) setYear(String(foundYear));
+        if (foundUrl) setLetterboxdUrl(foundUrl);
+        setLbStatus("ok");
+        setLbMessage("Film pas identifié avec certitude : choisis le bon dans la liste qui s'affiche sous « Titre ».");
+        return;
+      }
+      setLbStatus("error");
+      setLbMessage("Lien lu, mais le film n'a pas pu être identifié. Saisis le titre à la main.");
+    } catch {
+      setLbStatus("error");
+      setLbMessage("Le lien est valide mais la recherche du film a échoué. Réessaie dans un instant.");
+    }
+  };
+
+  const pasteLetterboxdLink = async () => {
+    let text = "";
+    try {
+      text = await navigator.clipboard.readText();
+    } catch {
+      // Presse-papiers non accessible (refus, navigateur) : voir message ci-dessous.
+    }
+    if (!text) {
+      setLbStatus("error");
+      setLbMessage("Presse-papiers inaccessible. Colle le lien dans le champ « Lien Letterboxd » plus bas : le film sera retrouvé automatiquement.");
+      return;
+    }
+    resolveLetterboxdLink(text);
+  };
+
   const fieldStyle = {
     background: T.surface,
     border: `1px solid ${T.line}`,
@@ -3674,6 +3772,40 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {!isEditing && (
+            <div>
+              <button
+                onClick={pasteLetterboxdLink}
+                disabled={lbStatus === "loading"}
+                style={{
+                  width: "100%",
+                  padding: "12px 0",
+                  border: `1px solid ${T.accent}`,
+                  borderRadius: 6,
+                  fontFamily: F.mono,
+                  fontSize: 12,
+                  color: T.accent,
+                  letterSpacing: 0.5,
+                  opacity: lbStatus === "loading" ? 0.6 : 1,
+                }}
+              >
+                {lbStatus === "loading" ? "RECHERCHE DU FILM..." : "📋 COLLER UN LIEN LETTERBOXD"}
+              </button>
+              {lbMessage && (
+                <div
+                  style={{
+                    marginTop: 8,
+                    fontFamily: F.mono,
+                    fontSize: 11,
+                    lineHeight: 1.5,
+                    color: lbStatus === "error" ? T.accentSecondary : T.accent,
+                  }}
+                >
+                  {lbMessage}
+                </div>
+              )}
+            </div>
+          )}
           <div style={{ position: "relative" }}>
             <input
               placeholder="Titre *"
@@ -3780,6 +3912,15 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
             placeholder="Lien Letterboxd (optionnel)"
             value={letterboxdUrl}
             onChange={(e) => setLetterboxdUrl(e.target.value)}
+            onPaste={(e) => {
+              if (isEditing) return;
+              const pasted = e.clipboardData?.getData("text") || "";
+              if (looksLikeLetterboxdLink(pasted)) {
+                e.preventDefault();
+                setLetterboxdUrl(pasted.trim());
+                resolveLetterboxdLink(pasted);
+              }
+            }}
             style={fieldStyle}
           />
           {selectedTmdbId && letterboxdUrl && (
