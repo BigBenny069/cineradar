@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -85,5 +85,40 @@ describe("getInitialView", () => {
     expect(getInitialView("?view=<script>")).toBe("home");
     expect(getInitialView("")).toBe("home");
     expect(getInitialView(undefined)).toBe("home");
+  });
+});
+
+describe("looksLikeLetterboxdLink", () => {
+  it("reconnaît les liens courts et complets, seuls ou dans un texte", () => {
+    expect(looksLikeLetterboxdLink("https://boxd.it/RTVm")).toBe(true);
+    expect(looksLikeLetterboxdLink("boxd.it/RTVm")).toBe(true);
+    expect(looksLikeLetterboxdLink("Clayface https://letterboxd.com/film/clayface/")).toBe(true);
+  });
+  it("refuse le reste", () => {
+    expect(looksLikeLetterboxdLink("https://exemple.com/film/clayface")).toBe(false);
+    expect(looksLikeLetterboxdLink("Clayface")).toBe(false);
+    expect(looksLikeLetterboxdLink("")).toBe(false);
+    expect(looksLikeLetterboxdLink(null)).toBe(false);
+  });
+});
+
+describe("pickBestTmdbMatch", () => {
+  const results = [
+    { tmdbId: 1, title: "Dune", year: "1984" },
+    { tmdbId: 2, title: "Dune", year: "2021" },
+    { tmdbId: 3, title: "Dune : Deuxième partie", year: "2024" },
+  ];
+  it("choisit le film au titre et à l'année identiques parmi des homonymes", () => {
+    expect(pickBestTmdbMatch(results, "Dune", 2021).tmdbId).toBe(2);
+    expect(pickBestTmdbMatch(results, "dune", 1984).tmdbId).toBe(1);
+  });
+  it("accepte un an d'écart quand un seul film correspond", () => {
+    expect(pickBestTmdbMatch([{ tmdbId: 9, title: "Climax", year: "2018" }], "Climax", 2019).tmdbId).toBe(9);
+  });
+  it("renvoie null en cas de doute plutôt que de se tromper de film", () => {
+    expect(pickBestTmdbMatch(results, "Dune", 2000)).toBe(null);
+    expect(pickBestTmdbMatch(results, "Dune", null)).toBe(null);
+    expect(pickBestTmdbMatch(results, "Inconnu", 2021)).toBe(null);
+    expect(pickBestTmdbMatch([], "Dune", 2021)).toBe(null);
   });
 });
