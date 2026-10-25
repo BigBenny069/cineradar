@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -71,5 +71,19 @@ describe("formatRelativeDate", () => {
   it("reconnaît une date d'aujourd'hui", () => {
     const now = new Date().toISOString();
     expect(formatRelativeDate(now)).toContain("Aujourd'hui");
+  });
+});
+
+describe("getInitialView", () => {
+  it("ouvre l'écran demandé par un raccourci connu", () => {
+    expect(getInitialView("?view=add")).toBe("add");
+    expect(getInitialView("?view=search")).toBe("search");
+    expect(getInitialView("?view=history")).toBe("history");
+  });
+  it("retombe sur l'accueil pour une valeur inconnue, absente ou vide", () => {
+    expect(getInitialView("?view=settings")).toBe("home");
+    expect(getInitialView("?view=<script>")).toBe("home");
+    expect(getInitialView("")).toBe("home");
+    expect(getInitialView(undefined)).toBe("home");
   });
 });

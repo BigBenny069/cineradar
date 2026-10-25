@@ -83,12 +83,44 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // Rend l'app elle-même disponible hors-ligne (voir sw.js) — sans ça, le
 // cache des données dans App.jsx ne sert à rien si le téléphone ne peut
 // même pas re-télécharger l'app en premier lieu.
+//
+// Mises à jour : une app installée sur téléphone reste souvent "endormie"
+// en arrière-plan pendant des jours, sans jamais être relancée. Pour éviter
+// qu'elle reste bloquée sur une vieille version :
+//  • à chaque retour au premier plan, on demande au navigateur de chercher
+//    une nouvelle version du service worker ;
+//  • si une nouvelle version a été activée entre-temps et que l'app était
+//    cachée depuis au moins 10 minutes, on recharge la page au retour
+//    (jamais en pleine utilisation, pour ne pas perdre une saisie en cours).
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {
-      // Pas grave si l'enregistrement échoue (navigateur non compatible,
-      // contexte non sécurisé, etc.) — l'app fonctionne simplement sans
-      // ce filet de sécurité hors-ligne dans ce cas.
-    });
+    navigator.serviceWorker
+      .register("/sw.js", { updateViaCache: "none" })
+      .then((registration) => {
+        let hiddenSince = null;
+        let updateReady = false;
+        const hadController = !!navigator.serviceWorker.controller;
+
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          // Le tout premier contrôle (première installation) n'est pas une
+          // mise à jour : il n'y avait pas d'ancienne version à remplacer.
+          if (hadController) updateReady = true;
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") {
+            hiddenSince = Date.now();
+            return;
+          }
+          registration.update().catch(() => {});
+          const hiddenLongEnough = hiddenSince !== null && Date.now() - hiddenSince >= 10 * 60 * 1000;
+          if (updateReady && hiddenLongEnough) window.location.reload();
+        });
+      })
+      .catch(() => {
+        // Pas grave si l'enregistrement échoue (navigateur non compatible,
+        // contexte non sécurisé, etc.) — l'app fonctionne simplement sans
+        // ce filet de sécurité hors-ligne dans ce cas.
+      });
   });
 }

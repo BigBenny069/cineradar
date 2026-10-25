@@ -470,6 +470,29 @@ function applyTheme_(name) {
   try {
     localStorage.setItem("cineradar_theme", name);
   } catch {}
+  // Aligne la barre d'état du téléphone et le fond visible au-delà des
+  // bords de l'écran (effet de rebond) sur la couleur du thème choisi, au
+  // lieu de rester figés sur la couleur du thème par défaut.
+  if (typeof document !== "undefined") {
+    const bg = theme.colors.bg;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", bg);
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+  }
+}
+
+// Écrans accessibles directement par adresse (raccourcis de l'icône de
+// l'app : appui long sur Android). Liste fermée : toute autre valeur est
+// ignorée. L'adresse est nettoyée aussitôt pour ne pas rester collée.
+const DEEP_LINK_VIEWS = ["add", "search", "history"];
+
+export function getInitialView(search) {
+  try {
+    const value = new URLSearchParams(search || "").get("view");
+    return DEEP_LINK_VIEWS.includes(value) ? value : "home";
+  } catch {
+    return "home";
+  }
 }
 
 function getStoredTheme_() {
@@ -3886,13 +3909,23 @@ export default function App() {
   const [lastSyncedAt, setLastSyncedAt] = useState(null);
   const hasDataRef = useRef(false);
   const [selected, setSelected] = useState(null);
-  const [view, setView] = useState("home");
+  const [view, setView] = useState(() =>
+    typeof window !== "undefined" ? getInitialView(window.location.search) : "home"
+  );
   const [previousView, setPreviousView] = useState("home");
   const [editingMovie, setEditingMovie] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
   const [theme, setTheme] = useState("ticket");
   const [, setThemeTick] = useState(0);
   const [showIntro, setShowIntro] = useState(true);
+
+  // Nettoie l'adresse après un raccourci (/?view=add → /) pour qu'un
+  // rechargement ou une mise en favori ne rouvre pas ce même écran.
+  useEffect(() => {
+    if (window.location.search.includes("view=")) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
 
   useEffect(() => {
     const stored = getStoredTheme_();
