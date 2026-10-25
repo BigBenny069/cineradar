@@ -6437,5 +6437,41 @@
     "addedAt": "2026-10-25T16:18:36.006Z",
     "updatedAt": "2026-10-25T16:18:36.006Z",
     "lastChecked": "2026-10-25T16:20:32.692Z"
+  },
+  {
+    "tmdbId": 864370,
+    "title": "Incantation",
+    "year": "2022",
+    "director": "Kevin Ko",
+    "poster": "https://image.tmdb.org/t/p/w500/3XelC4CgBR5SswygZ1PcClpoZVu.jpg",
+    "synopsis": "Il y a six ans, Lee Jo-nan était frappée d'une malédiction après avoir brisé un tabou religieux. Aujourd'hui, elle doit protéger sa fille des répercussions de ses actes.",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "蔡亘晏",
+      "高英軒",
+      "黃歆庭",
+      "林敬倫",
+      "Wen Ching-Yu"
+    ],
+    "tmdbRating": 6.86,
+    "tmdbVotes": 904,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt18968540",
+    "letterboxdUrl": "https://letterboxd.com/film/incantation-2022/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": []
+    },
+    "availableSince": "2026-10-25T18:42:17.017Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-25T18:42:15.774Z",
+    "updatedAt": "2026-10-25T18:42:15.774Z",
+    "lastChecked": "2026-10-25T18:42:17.017Z"
   }
 ]
