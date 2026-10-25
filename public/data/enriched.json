@@ -6396,5 +6396,45 @@
     "addedAt": "2026-10-23T18:24:05.658Z",
     "updatedAt": "2026-10-23T18:29:54.714Z",
     "lastChecked": "2026-10-25T10:30:33.694Z"
+  },
+  {
+    "tmdbId": 17609,
+    "title": "Antichrist",
+    "year": "2009",
+    "director": "Lars von Trier",
+    "poster": "https://image.tmdb.org/t/p/w500/ge7zbYvpfsDP3luKi0iSpzOgncM.jpg",
+    "synopsis": "Un couple en deuil se retire à Eden, un chalet isolé dans la forêt, où ils espèrent guérir leurs cœurs et sauver leur mariage. Mais la nature reprend ses droits et les choses vont de mal en pis…",
+    "genres": [
+      "Drame",
+      "Horreur",
+      "Thriller"
+    ],
+    "cast": [
+      "Willem Dafoe",
+      "Charlotte Gainsbourg",
+      "Storm Acheche Sahlstrøm"
+    ],
+    "tmdbRating": 6.608,
+    "tmdbVotes": 2952,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0870984",
+    "letterboxdUrl": "https://letterboxd.com/film/antichrist/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Rakuten TV",
+        "Sooner",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-25T16:18:36.006Z",
+    "updatedAt": "2026-10-25T16:18:36.006Z",
+    "lastChecked": "2026-10-25T16:18:37.292Z"
   }
 ]
