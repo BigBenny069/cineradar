@@ -1365,5 +1365,14 @@
     "addedAt": "2026-10-25T18:42:15.774Z",
     "updatedAt": "2026-10-25T18:42:15.774Z",
     "tmdbId": 864370
+  },
+  {
+    "title": "Braveheart",
+    "year": 1995,
+    "director": "Mel Gibson",
+    "letterboxdUrl": "https://letterboxd.com/film/braveheart/",
+    "addedAt": "2026-10-26T22:44:20.913Z",
+    "updatedAt": "2026-10-26T22:44:20.913Z",
+    "tmdbId": 197
   }
 ]
