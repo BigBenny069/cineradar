@@ -414,5 +414,12 @@
     "tmdbId": 864370,
     "reason": "cinemaison",
     "deletedAt": "2026-10-26T22:46:44.600Z"
+  },
+  {
+    "title": "Braveheart",
+    "year": 1995,
+    "tmdbId": 197,
+    "reason": "cinemaison",
+    "deletedAt": "2026-10-26T22:48:50.104Z"
   }
 ]
