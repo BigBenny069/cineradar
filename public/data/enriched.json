@@ -6473,5 +6473,52 @@
     "addedAt": "2026-10-25T18:42:15.774Z",
     "updatedAt": "2026-10-25T18:42:15.774Z",
     "lastChecked": "2026-10-26T12:03:23.025Z"
+  },
+  {
+    "tmdbId": 197,
+    "title": "Braveheart",
+    "year": "1995",
+    "director": "Mel Gibson",
+    "poster": "https://image.tmdb.org/t/p/w500/jMDUKicyulag7KeTWVrblElCMZq.jpg",
+    "synopsis": "À la fin du XIIIe siècle, le roi Edward 1er d'Angleterre s'empare du trône d’Écosse, réduisant son peuple à la misère. William Wallace donne le signe de la révolte et, à la tête d'une armée de gueux, parvient à reconquérir plusieurs places fortes. Mais les nobles écossais sont lâchés et par deux fois trahissent le héros de leur peuple…",
+    "genres": [
+      "Drame",
+      "Histoire",
+      "Guerre"
+    ],
+    "cast": [
+      "Mel Gibson",
+      "Catherine McCormack",
+      "Sophie Marceau",
+      "Patrick McGoohan",
+      "Angus Macfadyen"
+    ],
+    "tmdbRating": 7.9,
+    "tmdbVotes": 11559,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0112573",
+    "letterboxdUrl": "https://letterboxd.com/film/braveheart/",
+    "providers": {
+      "abonnement": [
+        "Disney Plus"
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-10-26T22:44:22.148Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-26T22:44:20.913Z",
+    "updatedAt": "2026-10-26T22:44:20.913Z",
+    "lastChecked": "2026-10-26T22:44:22.148Z"
   }
 ]
