@@ -1374,5 +1374,14 @@
     "addedAt": "2026-10-26T22:44:20.913Z",
     "updatedAt": "2026-10-26T22:44:20.913Z",
     "tmdbId": 197
+  },
+  {
+    "title": "Apocalypto",
+    "year": 2006,
+    "director": "Mel Gibson",
+    "letterboxdUrl": "https://letterboxd.com/film/apocalypto/",
+    "addedAt": "2026-10-26T22:44:52.530Z",
+    "updatedAt": "2026-10-26T22:44:52.530Z",
+    "tmdbId": 1579
   }
 ]
