@@ -6520,5 +6520,50 @@
     "addedAt": "2026-10-26T22:44:20.913Z",
     "updatedAt": "2026-10-26T22:44:20.913Z",
     "lastChecked": "2026-10-26T22:44:22.148Z"
+  },
+  {
+    "tmdbId": 1579,
+    "title": "Apocalypto",
+    "year": "2006",
+    "director": "Mel Gibson",
+    "poster": "https://image.tmdb.org/t/p/w500/5xR5OjvGQfaRZNL7GTuPAZy8tdr.jpg",
+    "synopsis": "Dans les temps turbulents précédant la chute de la légendaire civilisation Maya. Jeune père porteur de grandes espérances, chef de son petit village, Patte de Jaguar vit une existence idyllique brusquement perturbée par une violente invasion. Capturé et emmené lors d'un périlleux voyage à travers la jungle pour être offert en sacrifice aux Dieux de la Cité Maya, il découvre un monde régi par la peur et l'oppression, dans lequel une fin déchirante l'attend inéluctablement. Poussé par l'amour qu'il porte à sa femme, à sa famille et à son peuple, il devra affronter ses plus grandes peurs en une tentative désespérée pour retourner chez lui et tenter de sauver ce qui lui tient le plus à cœur.",
+    "genres": [
+      "Action",
+      "Drame",
+      "Histoire"
+    ],
+    "cast": [
+      "Rudy Youngblood",
+      "Raoul Max Trujillo",
+      "Gerardo Taracena",
+      "Iazua Larios",
+      "Antonio Monroy"
+    ],
+    "tmdbRating": 7.7,
+    "tmdbVotes": 6758,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0472043",
+    "letterboxdUrl": "https://letterboxd.com/film/apocalypto/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-26T22:44:52.530Z",
+    "updatedAt": "2026-10-26T22:44:52.530Z",
+    "lastChecked": "2026-10-26T22:44:53.932Z"
   }
 ]
