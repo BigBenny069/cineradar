@@ -2239,43 +2239,6 @@
     "lastChecked": "2026-10-27T20:51:10.048Z"
   },
   {
-    "tmdbId": 1329016,
-    "title": "Tony",
-    "year": "2026",
-    "director": "Matt Johnson",
-    "poster": "https://image.tmdb.org/t/p/w500/zsisvReIrSIUPS3JXawt1ib9JDS.jpg",
-    "synopsis": "Le jeune Anthony Bourdain débarque un jour par hasard dans l'univers chaotique de la cuisine d'un restaurant, au cours d'un été qui marquera le début de sa légende.",
-    "genres": [
-      "Drame",
-      "Comédie"
-    ],
-    "cast": [
-      "Dominic Sessa",
-      "Antonio Banderas",
-      "Emilia Jones",
-      "Leo Woodall",
-      "Stavros Halkias"
-    ],
-    "tmdbRating": 7.462,
-    "tmdbVotes": 146,
-    "letterboxdRating": 3.81,
-    "letterboxdVotes": 370376,
-    "imdbId": "tt33095251",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/1329016/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": []
-    },
-    "availableSince": "2026-10-27T20:46:48.824Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-05T17:15:42.034Z",
-    "updatedAt": "2026-09-05T17:15:42.034Z",
-    "lastChecked": "2026-10-27T20:51:10.202Z"
-  },
-  {
     "tmdbId": 950028,
     "title": "L'Invitation",
     "year": "2026",
