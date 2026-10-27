@@ -428,5 +428,12 @@
     "tmdbId": 144,
     "reason": "cinemaison",
     "deletedAt": "2026-10-27T20:49:57.093Z"
+  },
+  {
+    "title": "Tony",
+    "year": 2026,
+    "tmdbId": 1329016,
+    "reason": "manuel",
+    "deletedAt": "2026-10-27T20:55:20.755Z"
   }
 ]
