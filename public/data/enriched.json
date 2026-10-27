@@ -6487,52 +6487,5 @@
     "addedAt": "2026-10-26T22:44:52.530Z",
     "updatedAt": "2026-10-26T22:44:52.530Z",
     "lastChecked": "2026-10-27T20:47:09.075Z"
-  },
-  {
-    "tmdbId": 144,
-    "title": "Les Ailes du désir",
-    "year": "1987",
-    "director": "Wim Wenders",
-    "poster": "https://image.tmdb.org/t/p/w500/8KTySufrJYqfQk6D7KCWrLLBfGo.jpg",
-    "synopsis": "Deux anges, Daniel et Cassiel, descendent du ciel à Berlin. Ils peuvent côtoyer les humains sans être vus... Ils rencontrent un ancien ange devenu humain qui peut sentir leur présence et leur communique sa foi dans l'humanité. Daniel fait une autre rencontre qui sera pour lui décisive puisqu'il tombe amoureux...",
-    "genres": [
-      "Drame",
-      "Fantastique",
-      "Romance"
-    ],
-    "cast": [
-      "Bruno Ganz",
-      "Solveig Dommartin",
-      "Otto Sander",
-      "Curt Bois",
-      "Peter Falk"
-    ],
-    "tmdbRating": 7.8,
-    "tmdbVotes": 1559,
-    "letterboxdRating": 4.3,
-    "letterboxdVotes": 206521,
-    "imdbId": "tt0093191",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/144/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "MUBI",
-        "Molotov TV",
-        "MUBI Amazon Channel",
-        "SFR Play",
-        "Orange VOD",
-        "Sooner",
-        "LaCinetek",
-        "ARTE VOD",
-        "Apple TV Store"
-      ]
-    },
-    "availableSince": "2026-10-27T20:45:16.210Z",
-    "wantedBy": null,
-    "addedAt": "2026-10-27T20:45:14.897Z",
-    "updatedAt": "2026-10-27T20:45:14.897Z",
-    "lastChecked": "2026-10-27T20:47:09.242Z"
   }
 ]
