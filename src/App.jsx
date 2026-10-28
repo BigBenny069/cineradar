@@ -2333,8 +2333,26 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
   );
 }
 
-function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing }) {
+// Recherche de la barre de l'accueil : sans accents ni casse, et tous les mots
+// tapés doivent se trouver dans le titre, dans n'importe quel ordre (ex.
+// "retour morts" trouve "Le Retour des morts-vivants 3"). Les titres qui
+// commencent par la recherche passent en premier, puis ordre alphabétique.
+export function filterMoviesByTitle(movies, query) {
+  const tokens = normalizeText(query).split(/\s+/).filter(Boolean);
+  if (tokens.length === 0) return [];
+  const joined = tokens.join(" ");
+  const rank = (title) => (title.startsWith(joined) ? 0 : 1);
+  return (movies || [])
+    .map((m) => ({ m, title: normalizeText(m.title) }))
+    .filter(({ title }) => tokens.every((t) => title.includes(t)))
+    .sort((a, b) => rank(a.title) - rank(b.title) || a.title.localeCompare(b.title))
+    .map(({ m }) => m);
+}
+
+function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing, query, onQueryChange }) {
   const maxWidth = useResponsiveMaxWidth();
+  const searchActive = (query || "").trim().length > 0;
+  const searchResults = searchActive ? filterMoviesByTitle(movies, query) : [];
   // Toutes les fiches disponibles sur un abonnement, par ordre chronologique
   // (plus récente disponibilité en premier) — plus de limite à 5, sur
   // demande explicite : on veut voir toute la liste, pas juste un aperçu.
@@ -2428,6 +2446,68 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
           </button>
         </div>
 
+        <div style={{ position: "relative", marginTop: 12 }}>
+          <input
+            placeholder="Rechercher dans ta bibliothèque..."
+            aria-label="Rechercher un film dans la bibliothèque"
+            value={query || ""}
+            onChange={(e) => onQueryChange(e.target.value)}
+            enterKeyHint="search"
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+            style={{
+              width: "100%",
+              background: T.surface,
+              border: `${T.borderWidth}px solid ${T.line}`,
+              borderRadius: T.radiusSm,
+              color: T.cream,
+              fontFamily: F.serif,
+              fontSize: 16,
+              padding: "11px 40px 11px 14px",
+            }}
+          />
+          {searchActive && (
+            <button
+              onClick={() => onQueryChange("")}
+              aria-label="Effacer la recherche"
+              style={{
+                position: "absolute",
+                right: 4,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 36,
+                height: 36,
+                fontSize: 16,
+                color: T.muted,
+              }}
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
+        {searchActive && (
+          <div style={{ marginTop: 16 }}>
+            {searchResults.length === 0 ? (
+              <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted }}>
+                Aucun film de ta bibliothèque ne correspond.
+              </div>
+            ) : (
+              <>
+                <div style={{ fontFamily: F.mono, fontSize: 11, color: T.muted, marginBottom: 10 }}>
+                  {searchResults.length} film{searchResults.length > 1 ? "s" : ""} trouvé{searchResults.length > 1 ? "s" : ""}
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 12 }}>
+                  {searchResults.map((m) => (
+                    <MovieCard key={m.tmdbId} movie={m} onOpen={onOpen} />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
         {loading && (
           <div style={{ fontFamily: F.mono, fontSize: 12, color: T.muted, marginTop: 20 }}>
             Chargement des données...
@@ -2458,21 +2538,25 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
           </div>
         )}
 
-        <HorizontalRow
-          icon="✨"
-          label="Disponible"
-          movies={recentlyAvailable}
-          onOpen={onOpen}
-          emptyText="Rien de nouveau sur tes abonnements pour l'instant."
-        />
+        {!searchActive && (
+          <>
+            <HorizontalRow
+              icon="✨"
+              label="Disponible"
+              movies={recentlyAvailable}
+              onOpen={onOpen}
+              emptyText="Rien de nouveau sur tes abonnements pour l'instant."
+            />
 
-        <HorizontalRow
-          icon="🎬"
-          label="Derniers ajouts"
-          movies={lastAdded}
-          onOpen={onOpen}
-          emptyText="Aucun film ajouté récemment."
-        />
+            <HorizontalRow
+              icon="🎬"
+              label="Derniers ajouts"
+              movies={lastAdded}
+              onOpen={onOpen}
+              emptyText="Aucun film ajouté récemment."
+            />
+          </>
+        )}
       </div>
     </div>
   );
@@ -4050,6 +4134,9 @@ export default function App() {
   const [lastSyncedAt, setLastSyncedAt] = useState(null);
   const hasDataRef = useRef(false);
   const [selected, setSelected] = useState(null);
+  // Recherche de l'accueil gardée ici (et non dans HomeView) : ouvrir une
+  // fiche remplace l'accueil, donc son état local serait perdu au retour.
+  const [homeQuery, setHomeQuery] = useState("");
   const [view, setView] = useState(() =>
     typeof window !== "undefined" ? getInitialView(window.location.search) : "home"
   );
@@ -4238,6 +4325,8 @@ export default function App() {
             }}
             onRefresh={handleRefresh}
             refreshing={refreshing}
+            query={homeQuery}
+            onQueryChange={setHomeQuery}
           />
         )}
         {view === "search" && <SearchView movies={movies} onOpen={setSelected} />}

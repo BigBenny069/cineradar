@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -120,5 +120,33 @@ describe("pickBestTmdbMatch", () => {
     expect(pickBestTmdbMatch(results, "Dune", null)).toBe(null);
     expect(pickBestTmdbMatch(results, "Inconnu", 2021)).toBe(null);
     expect(pickBestTmdbMatch([], "Dune", 2021)).toBe(null);
+  });
+});
+
+describe("filterMoviesByTitle", () => {
+  const movies = [
+    { tmdbId: 1, title: "Le Retour des morts-vivants 3" },
+    { tmdbId: 2, title: "L'Évadé d'Alcatraz" },
+    { tmdbId: 3, title: "La Nuit des morts-vivants" },
+    { tmdbId: 4, title: "Dune" },
+    { tmdbId: 5, title: "Dune : Deuxième partie" },
+  ];
+  it("ignore les accents et la casse", () => {
+    expect(filterMoviesByTitle(movies, "evade").map((m) => m.tmdbId)).toEqual([2]);
+    expect(filterMoviesByTitle(movies, "ÉVADÉ").map((m) => m.tmdbId)).toEqual([2]);
+  });
+  it("accepte plusieurs mots dans n'importe quel ordre", () => {
+    expect(filterMoviesByTitle(movies, "morts retour").map((m) => m.tmdbId)).toEqual([1]);
+    expect(filterMoviesByTitle(movies, "morts").map((m) => m.tmdbId)).toEqual([3, 1]);
+  });
+  it("met en premier les titres qui commencent par la recherche", () => {
+    expect(filterMoviesByTitle(movies, "dune").map((m) => m.tmdbId)).toEqual([4, 5]);
+    expect(filterMoviesByTitle([{ tmdbId: 8, title: "Avant Dune" }, ...movies], "dune").map((m) => m.tmdbId)).toEqual([4, 5, 8]);
+  });
+  it("renvoie une liste vide pour une recherche vide ou sans résultat", () => {
+    expect(filterMoviesByTitle(movies, "")).toEqual([]);
+    expect(filterMoviesByTitle(movies, "   ")).toEqual([]);
+    expect(filterMoviesByTitle(movies, "zzz")).toEqual([]);
+    expect(filterMoviesByTitle(undefined, "dune")).toEqual([]);
   });
 });
