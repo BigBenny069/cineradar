@@ -6525,5 +6525,40 @@
     "addedAt": "2026-10-28T11:55:23.067Z",
     "updatedAt": "2026-10-28T11:55:23.067Z",
     "lastChecked": "2026-10-28T11:56:13.458Z"
+  },
+  {
+    "tmdbId": 1400940,
+    "title": "Clayface",
+    "year": "2026",
+    "director": "James Watkins",
+    "poster": "https://image.tmdb.org/t/p/w500/5RzUMLAYw2xHsd98UKcMC9s0ZQ.jpg",
+    "synopsis": "L'ascension fulgurante de Matt Hagen, de gamin des rues de Gotham à star hollywoodienne, est brutalement interrompue lorsqu'un baron du crime le laisse atrocement défiguré. Abandonné de tous et n'ayant plus rien à perdre, Matt se tourne vers un traitement expérimental qui lui rend miraculeusement son apparence... mais altère profondément sa perception de la réalité. Il sombre alors dans une spirale destructrice, consumé par un irrépressible désir de vengeance.",
+    "genres": [
+      "Horreur",
+      "Thriller",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Tom Rhys Harries",
+      "Naomi Ackie",
+      "Eddie Marsan",
+      "Max Minghella",
+      "David Dencik"
+    ],
+    "tmdbRating": 7.463,
+    "tmdbVotes": 241,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt34890576",
+    "letterboxdUrl": "https://letterboxd.com/film/clayface/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-28T16:03:11.837Z",
+    "updatedAt": "2026-10-28T16:03:11.837Z",
+    "lastChecked": "2026-10-28T16:03:13.302Z"
   }
 ]
