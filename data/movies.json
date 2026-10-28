@@ -1377,5 +1377,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-10-28T11:55:23.067Z",
     "updatedAt": "2026-10-28T11:55:23.067Z"
+  },
+  {
+    "title": "Clayface",
+    "year": 2026,
+    "director": "James Watkins",
+    "letterboxdUrl": "https://letterboxd.com/film/clayface/",
+    "addedAt": "2026-10-28T16:03:11.837Z",
+    "updatedAt": "2026-10-28T16:03:11.837Z",
+    "tmdbId": 1400940
   }
 ]
