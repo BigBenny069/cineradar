@@ -508,6 +508,16 @@ export function looksLikeLetterboxdLink(text) {
 // préférée, à un an près acceptée (la date de sortie diffère parfois d'un an
 // entre Letterboxd et TMDB, ex. première en festival). Retourne null en cas de
 // doute : mieux vaut laisser choisir dans la liste que se tromper de film.
+// Indique comment le serveur a retrouvé le film (champ "source" de
+// /api/resolve-letterboxd) : page Letterboxd lue, repli sur le nom dans le
+// lien, ou identifiant TMDB direct. Affiché dans le message d'ajout.
+export function describeLetterboxdSource(source) {
+  if (source === "page") return "Lecture : page Letterboxd lue.";
+  if (source === "slug") return "Lecture : page Letterboxd refusée, titre déduit du lien.";
+  if (source === "tmdb") return "Lecture : identifiant TMDB lu dans le lien.";
+  return "";
+}
+
 export function pickBestTmdbMatch(results, title, year) {
   const wanted = normalizeText(title);
   if (!wanted) return null;
@@ -3710,7 +3720,8 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
       setLbMessage(result.error);
       return;
     }
-    const { tmdbId, title: foundTitle, year: foundYear, letterboxdUrl: foundUrl } = result.data;
+    const { tmdbId, title: foundTitle, year: foundYear, letterboxdUrl: foundUrl, source: foundSource } = result.data;
+    const sourceNote = describeLetterboxdSource(foundSource);
     try {
       let match = null;
       if (tmdbId) {
@@ -3725,7 +3736,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
         pickResult(match);
         if (foundUrl) setLetterboxdUrl(foundUrl);
         setLbStatus("ok");
-        setLbMessage(`✓ Film retrouvé : ${match.title} (${match.year}). Vérifie puis ajoute.`);
+        setLbMessage(`✓ Film retrouvé : ${match.title} (${match.year}). Vérifie puis ajoute. ${sourceNote}`.trim());
         return;
       }
       // Pas de certitude : on pré-remplit la recherche, tu choisis dans la liste.
@@ -3736,7 +3747,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
         if (foundYear) setYear(String(foundYear));
         if (foundUrl) setLetterboxdUrl(foundUrl);
         setLbStatus("ok");
-        setLbMessage("Film pas identifié avec certitude : choisis le bon dans la liste qui s'affiche sous « Titre ».");
+        setLbMessage(`Film pas identifié avec certitude : choisis le bon dans la liste qui s'affiche sous « Titre ». ${sourceNote}`.trim());
         return;
       }
       setLbStatus("error");
