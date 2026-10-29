@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -148,5 +148,20 @@ describe("filterMoviesByTitle", () => {
     expect(filterMoviesByTitle(movies, "   ")).toEqual([]);
     expect(filterMoviesByTitle(movies, "zzz")).toEqual([]);
     expect(filterMoviesByTitle(undefined, "dune")).toEqual([]);
+  });
+});
+
+describe("describeLetterboxdSource", () => {
+  it("indique si la page Letterboxd a été lue", () => {
+    expect(describeLetterboxdSource("page")).toContain("page Letterboxd lue");
+  });
+  it("indique le repli sur le titre déduit du lien", () => {
+    expect(describeLetterboxdSource("slug")).toContain("déduit du lien");
+  });
+  it("indique l'identifiant TMDB direct", () => {
+    expect(describeLetterboxdSource("tmdb")).toContain("TMDB");
+  });
+  it("renvoie une chaîne vide si la source est inconnue", () => {
+    expect(describeLetterboxdSource(undefined)).toBe("");
   });
 });
