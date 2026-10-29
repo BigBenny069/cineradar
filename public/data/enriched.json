@@ -6567,5 +6567,48 @@
     "addedAt": "2026-10-28T16:03:11.837Z",
     "updatedAt": "2026-10-28T16:03:11.837Z",
     "lastChecked": "2026-10-29T12:04:26.666Z"
+  },
+  {
+    "tmdbId": 924,
+    "title": "L'Armée des Morts",
+    "year": "2004",
+    "director": "Zack Snyder",
+    "poster": "https://image.tmdb.org/t/p/w500/oatykAWUZ0g2EaiNPjfZTDks8Tj.jpg",
+    "synopsis": "Personne ne peut expliquer comment tout cela est arrivé, mais ce matin, le monde n'est plus qu'un immense cauchemar. La population de la planète se résume désormais à une horde de morts vivants assoiffés de sang et lancés à la poursuite des derniers êtres humains encore en vie. Après avoir miraculeusement réussi à s'échapper de son quartier, Ana Clark se barricade avec un petit groupe de survivants dans un centre commercial. André et sa femme enceinte, Michael et Kenneth, officiers de police, vont tout faire pour rester vivants. Alors que dehors, la situation est de pire en pire, à l'intérieur, il faut aussi faire face aux peurs et aux démons de chacun.",
+    "genres": [
+      "Horreur",
+      "Action"
+    ],
+    "cast": [
+      "Sarah Polley",
+      "Ving Rhames",
+      "Jake Weber",
+      "Michael Kelly",
+      "Mekhi Phifer"
+    ],
+    "tmdbRating": 7.093,
+    "tmdbVotes": 4795,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0363547",
+    "letterboxdUrl": "https://letterboxd.com/film/dawn-of-the-dead-2004/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-29T17:44:24.225Z",
+    "updatedAt": "2026-10-29T17:44:24.225Z",
+    "lastChecked": "2026-10-29T17:44:25.872Z"
   }
 ]
