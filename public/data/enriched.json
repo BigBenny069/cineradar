@@ -6610,5 +6610,55 @@
     "addedAt": "2026-10-29T17:44:24.225Z",
     "updatedAt": "2026-10-29T17:44:24.225Z",
     "lastChecked": "2026-10-29T17:45:54.177Z"
+  },
+  {
+    "tmdbId": 335,
+    "title": "Il était une fois dans l'Ouest",
+    "year": "1968",
+    "director": "Sergio Leone",
+    "poster": "https://image.tmdb.org/t/p/w500/xjXKy5b2M3fDelAQItIswcDNvwm.jpg",
+    "synopsis": "Alors que les constructeurs de chemins de fer traversent sans relâche le désert de l'Arizona en direction de la mer, Jill arrive dans la petite ville de Flagstone avec l'intention de commencer une nouvelle vie.",
+    "genres": [
+      "Drame",
+      "Western"
+    ],
+    "cast": [
+      "Claudia Cardinale",
+      "Henry Fonda",
+      "Jason Robards",
+      "Charles Bronson",
+      "Gabriele Ferzetti"
+    ],
+    "tmdbRating": 8.26,
+    "tmdbVotes": 5111,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0064116",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/335/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": "2026-10-29T23:13:42.756Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-29T23:13:41.414Z",
+    "updatedAt": "2026-10-29T23:13:41.414Z",
+    "lastChecked": "2026-10-29T23:13:42.756Z"
   }
 ]
