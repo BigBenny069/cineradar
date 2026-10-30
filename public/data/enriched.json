@@ -6873,5 +6873,55 @@
     "addedAt": "2026-10-30T20:53:10.604Z",
     "updatedAt": "2026-10-30T20:53:10.604Z",
     "lastChecked": "2026-10-30T20:53:11.893Z"
+  },
+  {
+    "tmdbId": 423,
+    "title": "Le Pianiste",
+    "year": "2002",
+    "director": "Roman Polanski",
+    "poster": "https://image.tmdb.org/t/p/w500/vI05JxU356MciaQeYHjXlqfjQe0.jpg",
+    "synopsis": "Varsovie, au mois d’octobre 1939. Un jeune pianiste juif, Wladyslaw Szpilman, est enfermé dans le ghetto avec sa famille. Il assiste, impuissant, aux humiliations que subissent quotidiennement les siens. Grâce à une aide extérieure, il échappe de justesse à la déportation mais voit partir toute sa famille. Le jeune homme se cache alors dans les maisons vides et observe passivement les derniers habitants se révolter contre l’occupation allemande. Après avoir réussi à s’échapper miraculeusement, il se terre dans des quartiers détruits et tente de survivre, ce qui s’avère de plus en plus dur. C’est alors qu’il rencontre un nazi mélomane…",
+    "genres": [
+      "Drame",
+      "Guerre"
+    ],
+    "cast": [
+      "Adrien Brody",
+      "Thomas Kretschmann",
+      "Frank Finlay",
+      "Maureen Lipman",
+      "Emilia Fox"
+    ],
+    "tmdbRating": 8.369,
+    "tmdbVotes": 10581,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0253474",
+    "letterboxdUrl": "https://letterboxd.com/film/the-pianist/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-10-30T20:53:45.269Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:53:44.041Z",
+    "updatedAt": "2026-10-30T20:53:44.041Z",
+    "lastChecked": "2026-10-30T20:53:45.269Z"
   }
 ]
