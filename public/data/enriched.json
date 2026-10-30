@@ -6660,5 +6660,41 @@
     "addedAt": "2026-10-29T23:13:41.414Z",
     "updatedAt": "2026-10-29T23:13:41.414Z",
     "lastChecked": "2026-10-30T11:57:42.540Z"
+  },
+  {
+    "tmdbId": 1066313,
+    "title": "Setan Alas!",
+    "year": "2026",
+    "director": "Yusron Fuadi",
+    "poster": "https://image.tmdb.org/t/p/w500/iqr2HSY0NC3U0x5t9M5RRAnmr3i.jpg",
+    "synopsis": "Cinq étudiants décident de passer le week-end dans une vieille villa en Indonésie, mais ce qui devait être un moment de détente se transforme en cauchemar : ils doivent affronter une entité terrifiante, toute-puissante et apparemment invincible, dans un jeu de stratégie et de survie. Le combat pour leur destin commence !",
+    "genres": [
+      "Science-Fiction",
+      "Horreur"
+    ],
+    "cast": [
+      "Anastasia Herzigova",
+      "Winner Wijaya",
+      "Putri Anggie",
+      "Adhin Abdul Hakim",
+      "Ernanta Kusuma"
+    ],
+    "tmdbRating": 6.2,
+    "tmdbVotes": 4,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt29941083",
+    "letterboxdUrl": "https://letterboxd.com/film/the-draft-2023/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:50:48.528Z",
+    "updatedAt": "2026-10-30T20:50:48.528Z",
+    "lastChecked": "2026-10-30T20:50:49.984Z"
   }
 ]
