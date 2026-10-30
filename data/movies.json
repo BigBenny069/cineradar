@@ -1422,5 +1422,14 @@
     "addedAt": "2026-10-30T20:51:30.318Z",
     "updatedAt": "2026-10-30T20:51:30.318Z",
     "tmdbId": 550845
+  },
+  {
+    "title": "Boogie Nights",
+    "year": 1997,
+    "director": "Paul Thomas Anderson",
+    "letterboxdUrl": "https://letterboxd.com/film/boogie-nights/",
+    "addedAt": "2026-10-30T20:52:02.436Z",
+    "updatedAt": "2026-10-30T20:52:02.436Z",
+    "tmdbId": 4995
   }
 ]
