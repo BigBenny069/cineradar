@@ -6696,5 +6696,38 @@
     "addedAt": "2026-10-30T20:50:48.528Z",
     "updatedAt": "2026-10-30T20:50:48.528Z",
     "lastChecked": "2026-10-30T20:50:49.984Z"
+  },
+  {
+    "tmdbId": 550845,
+    "title": "Blood Clots",
+    "year": "2018",
+    "director": "Sid Zanforlin",
+    "poster": "https://image.tmdb.org/t/p/w500/kivIEYirqRrgAo47QJnVEpHqXgf.jpg",
+    "synopsis": "Avec des cannibales, des zombies et d'autres créatures amusantes, Blood Clots se compose de sept histoires d'horreur sanglantes soigneusement sélectionnées par sept cinéastes différents.",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Evan Arnold",
+      "Mădălina Bellariu Ion",
+      "Alexandra Octavia",
+      "Brooke Smith",
+      "Lillian Masie"
+    ],
+    "tmdbRating": 6,
+    "tmdbVotes": 6,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt8833552",
+    "letterboxdUrl": "https://letterboxd.com/film/blood-clots/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:51:30.318Z",
+    "updatedAt": "2026-10-30T20:51:30.318Z",
+    "lastChecked": "2026-10-30T20:51:31.501Z"
   }
 ]
