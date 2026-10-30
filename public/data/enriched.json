@@ -6729,5 +6729,53 @@
     "addedAt": "2026-10-30T20:51:30.318Z",
     "updatedAt": "2026-10-30T20:51:30.318Z",
     "lastChecked": "2026-10-30T20:51:31.501Z"
+  },
+  {
+    "tmdbId": 4995,
+    "title": "Boogie Nights",
+    "year": "1997",
+    "director": "Paul Thomas Anderson",
+    "poster": "https://image.tmdb.org/t/p/w500/qkgnK7CcefeqIThLyNjQasANGRt.jpg",
+    "synopsis": "En 1977, le jeune Eddie Adams est plongeur dans une boîte de nuit à la mode de San Fernando Valley, banlieue de Los Angeles. Sa vie de famille n'est pas rose entre un père muet et une mère hystérique qui lui reproche d'être un raté. C'est alors qu'il fait la connaissance de Jack Horner, qui va le propulser dans le monde du cinéma porno. À une époque où le sexe est un plaisir sans danger et le plaisir une industrie, Eddie devient une star internationale sous le nom de Dirk Diggler.",
+    "genres": [
+      "Drame",
+      "Comédie"
+    ],
+    "cast": [
+      "Mark Wahlberg",
+      "Burt Reynolds",
+      "Julianne Moore",
+      "John C. Reilly",
+      "Heather Graham"
+    ],
+    "tmdbRating": 7.636,
+    "tmdbVotes": 3759,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0118749",
+    "letterboxdUrl": "https://letterboxd.com/film/boogie-nights/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD",
+        "YouTube"
+      ]
+    },
+    "availableSince": "2026-10-30T20:52:03.604Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:52:02.436Z",
+    "updatedAt": "2026-10-30T20:52:02.436Z",
+    "lastChecked": "2026-10-30T20:52:03.604Z"
   }
 ]
