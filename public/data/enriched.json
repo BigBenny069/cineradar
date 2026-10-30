@@ -6972,5 +6972,54 @@
     "addedAt": "2026-10-30T20:54:54.504Z",
     "updatedAt": "2026-10-30T20:54:54.504Z",
     "lastChecked": "2026-10-30T20:54:55.718Z"
+  },
+  {
+    "tmdbId": 87492,
+    "title": "Foxcatcher",
+    "year": "2014",
+    "director": "Bennett Miller",
+    "poster": "https://image.tmdb.org/t/p/w500/lW1oJevcyyQnkNLsZPT2KqFLzgk.jpg",
+    "synopsis": "Inspiré d’une histoire vraie, Foxcatcher raconte l’histoire tragique et fascinante de la relation improbable entre un milliardaire excentrique et deux champions de lutte.  Lorsque le médaillé d’or olympique Mark Schultz est invité par le riche héritier John du Pont à emménager dans sa magnifique propriété familiale pour aider à mettre en place un camp d’entraînement haut de gamme, dans l’optique des JO de Séoul de 1988, Schultz saute sur l’occasion : il espère pouvoir concentrer toute son attention sur son entraînement et ne plus souffrir d’être constamment éclipsé par son frère, Dave. Obnubilé par d’obscurs besoins, du Pont entend bien profiter de son soutien à Schultz et de son opportunité de « coacher » des lutteurs de réputation mondiale pour obtenir – enfin – le respect de ses pairs et, surtout, de sa mère qui le juge très durement.",
+    "genres": [
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Steve Carell",
+      "Channing Tatum",
+      "Mark Ruffalo",
+      "Sienna Miller",
+      "Vanessa Redgrave"
+    ],
+    "tmdbRating": 6.655,
+    "tmdbVotes": 2561,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1100089",
+    "letterboxdUrl": "https://letterboxd.com/film/foxcatcher/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Apple TV Store",
+        "Orange VOD",
+        "Rakuten TV",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD",
+        "YouTube",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": "2026-10-30T20:55:37.385Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:55:36.163Z",
+    "updatedAt": "2026-10-30T20:55:36.163Z",
+    "lastChecked": "2026-10-30T20:55:37.385Z"
   }
 ]
