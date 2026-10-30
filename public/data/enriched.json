@@ -6927,5 +6927,50 @@
     "addedAt": "2026-10-30T20:53:44.041Z",
     "updatedAt": "2026-10-30T20:53:44.041Z",
     "lastChecked": "2026-10-30T20:54:23.634Z"
+  },
+  {
+    "tmdbId": 621151,
+    "title": "Sortilège",
+    "year": "2020",
+    "director": "Mark Tonderai",
+    "poster": "https://image.tmdb.org/t/p/w500/wl6hNE9V3ogHOmEp5vymfXgGY5P.jpg",
+    "synopsis": "Un homme s'écrase dans les Appalaches rurales et se réveille dans le grenier d'un pratiquant traditionnel de Hoodoo. Il essaie désespérément de se libérer de sa magie noire et de sauver sa famille d'un sinistre rituel avant la lune de sang.",
+    "genres": [
+      "Thriller",
+      "Horreur",
+      "Fantastique"
+    ],
+    "cast": [
+      "Omari Hardwick",
+      "Loretta Devine",
+      "John Beasley",
+      "Peter Butler",
+      "Lorraine Burroughs"
+    ],
+    "tmdbRating": 6.361,
+    "tmdbVotes": 476,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt10736580",
+    "letterboxdUrl": "https://letterboxd.com/film/spell-2020/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-10-30T20:54:55.718Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:54:54.504Z",
+    "updatedAt": "2026-10-30T20:54:54.504Z",
+    "lastChecked": "2026-10-30T20:54:55.718Z"
   }
 ]
