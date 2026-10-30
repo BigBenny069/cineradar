@@ -6777,5 +6777,49 @@
     "addedAt": "2026-10-30T20:52:02.436Z",
     "updatedAt": "2026-10-30T20:52:02.436Z",
     "lastChecked": "2026-10-30T20:52:03.604Z"
+  },
+  {
+    "tmdbId": 2666,
+    "title": "Dark City",
+    "year": "1998",
+    "director": "Alex Proyas",
+    "poster": "https://image.tmdb.org/t/p/w500/ep2lq8hSsf1nCpwPAAd5Ujb76kK.jpg",
+    "synopsis": "Se réveillant sans aucun souvenir dans une chambre d'hôtel impersonnelle, John Murdoch découvre bientôt qu'il est recherché pour une série de meurtres sadiques. Traqué par l'inspecteur Bumstead, il cherche à retrouver la mémoire et ainsi comprendre qui il est. Il s'enfonce dans un labyrinthe mystérieux où il croise des créatures douées de pouvoirs effrayants. Grâce au docteur Schreber, Murdoch réussit à se remémorer certains détails de son passé trouble.",
+    "genres": [
+      "Mystère",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Rufus Sewell",
+      "William Hurt",
+      "Kiefer Sutherland",
+      "Jennifer Connelly",
+      "Richard O'Brien"
+    ],
+    "tmdbRating": 7.336,
+    "tmdbVotes": 3415,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0118929",
+    "letterboxdUrl": "https://letterboxd.com/film/dark-city-1998/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "YouTube"
+      ]
+    },
+    "availableSince": "2026-10-30T20:52:32.579Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:52:31.340Z",
+    "updatedAt": "2026-10-30T20:52:31.340Z",
+    "lastChecked": "2026-10-30T20:52:32.579Z"
   }
 ]
