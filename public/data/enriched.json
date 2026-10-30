@@ -7021,5 +7021,55 @@
     "addedAt": "2026-10-30T20:55:36.163Z",
     "updatedAt": "2026-10-30T20:55:36.163Z",
     "lastChecked": "2026-10-30T20:56:30.727Z"
+  },
+  {
+    "tmdbId": 1110358,
+    "title": "Yannick",
+    "year": "2023",
+    "director": "Quentin Dupieux",
+    "poster": "https://image.tmdb.org/t/p/w500/azwfHg1QCOWZha7uAbYIwTdSs2L.jpg",
+    "synopsis": "En pleine représentation de la pièce « Le Cocu », un très mauvais boulevard, Yannick se lève et interrompt le spectacle pour reprendre la soirée en main.",
+    "genres": [
+      "Comédie",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Raphaël Quenard",
+      "Pio Marmaï",
+      "Blanche Gardin",
+      "Sébastien Chassagne",
+      "Agnès Hurstel"
+    ],
+    "tmdbRating": 7.1,
+    "tmdbVotes": 754,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt28236368",
+    "letterboxdUrl": "https://letterboxd.com/film/yannick-2023/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "SFR Play",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-10-30T20:56:52.414Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:56:50.903Z",
+    "updatedAt": "2026-10-30T20:56:50.903Z",
+    "lastChecked": "2026-10-30T20:56:52.414Z"
   }
 ]
