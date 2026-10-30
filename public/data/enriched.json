@@ -6821,5 +6821,57 @@
     "addedAt": "2026-10-30T20:52:31.340Z",
     "updatedAt": "2026-10-30T20:52:31.340Z",
     "lastChecked": "2026-10-30T20:52:32.579Z"
+  },
+  {
+    "tmdbId": 329865,
+    "title": "Premier Contact",
+    "year": "2016",
+    "director": "Denis Villeneuve",
+    "poster": "https://image.tmdb.org/t/p/w500/mSgYBWMybY9Ug4ZnCGsttPIjUx7.jpg",
+    "synopsis": "Lorsque de mystérieux vaisseaux venus du fond de l’espace surgissent un peu partout sur Terre, une équipe d’experts est rassemblée sous la direction de la linguiste Louise Banks afin de tenter de comprendre leurs intentions.  Face à l’énigme que constituent leur présence et leurs messages mystérieux, les réactions dans le monde sont extrêmes et l’humanité se retrouve bientôt au bord d’une guerre absolue. Louise Banks et son équipe n’ont que très peu de temps pour trouver des réponses. Pour les obtenir, la jeune femme va prendre un risque qui pourrait non seulement lui coûter la vie, mais détruire le genre humain…",
+    "genres": [
+      "Drame",
+      "Science-Fiction",
+      "Mystère"
+    ],
+    "cast": [
+      "Amy Adams",
+      "Jeremy Renner",
+      "Forest Whitaker",
+      "Michael Stuhlbarg",
+      "Mark O'Brien"
+    ],
+    "tmdbRating": 7.638,
+    "tmdbVotes": 20100,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2543164",
+    "letterboxdUrl": "https://letterboxd.com/film/arrival-2016/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Molotov TV",
+        "Sony Pictures Core Amazon Channel",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": "2026-10-30T20:53:11.893Z",
+    "wantedBy": null,
+    "addedAt": "2026-10-30T20:53:10.604Z",
+    "updatedAt": "2026-10-30T20:53:10.604Z",
+    "lastChecked": "2026-10-30T20:53:11.893Z"
   }
 ]
