@@ -1302,12 +1302,6 @@
     "addedAt": "2026-10-27T20:45:14.897Z"
   },
   {
-    "title": "Suspiria",
-    "year": "1977",
-    "tmdbId": 11906,
-    "addedAt": "2026-10-28T11:55:22.868Z"
-  },
-  {
     "title": "Adaptation.",
     "year": "2002",
     "tmdbId": 2757,
@@ -1372,5 +1366,11 @@
     "year": "2014",
     "tmdbId": 87492,
     "addedAt": "2026-10-30T20:55:36.163Z"
+  },
+  {
+    "title": "Suspiria",
+    "year": "2018",
+    "tmdbId": 361292,
+    "addedAt": "2026-10-31T11:30:16.826Z"
   }
 ]

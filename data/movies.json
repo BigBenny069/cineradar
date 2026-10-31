@@ -1359,16 +1359,6 @@
     "tmdbId": 1579
   },
   {
-    "title": "Suspiria",
-    "year": 1977,
-    "director": "",
-    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
-    "tmdbId": 11906,
-    "wantedBy": "benoit",
-    "addedAt": "2026-10-28T11:55:22.868Z",
-    "updatedAt": "2026-10-28T11:55:22.868Z"
-  },
-  {
     "title": "Adaptation.",
     "year": 2002,
     "director": "",
@@ -1476,5 +1466,15 @@
     "addedAt": "2026-10-30T20:56:50.903Z",
     "updatedAt": "2026-10-30T20:56:50.903Z",
     "tmdbId": 1110358
+  },
+  {
+    "title": "Suspiria",
+    "year": 2018,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
+    "tmdbId": 361292,
+    "wantedBy": "benoit",
+    "addedAt": "2026-10-31T11:30:16.826Z",
+    "updatedAt": "2026-10-31T11:30:16.826Z"
   }
 ]
