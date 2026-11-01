@@ -7019,5 +7019,47 @@
     "addedAt": "2026-10-31T11:30:16.826Z",
     "updatedAt": "2026-10-31T11:30:16.826Z",
     "lastChecked": "2026-11-01T12:28:57.412Z"
+  },
+  {
+    "tmdbId": 10072,
+    "title": "Les Griffes du cauchemar",
+    "year": "1987",
+    "director": "Chuck Russell",
+    "poster": "https://image.tmdb.org/t/p/w500/5N7hLcjqnevAi3m6cF14tVtMVWr.jpg",
+    "synopsis": "Une épidemie de suicides se répand à Springwood. Kristen, qui s'est ouvert les veines, a été admise à l'hôpital où six autres adolescents souffrents des mêmes pulsions et avouent partager le même cauchemar. Le Dr. Nancy Thompson, spécialiste des rêves, connaît l'origine du mal : Freddy Krueger, le redoutable tueur aux griffes acérées qui hante les nuits pour assouvir une bien cruelle vengeance…",
+    "genres": [
+      "Horreur",
+      "Thriller",
+      "Fantastique"
+    ],
+    "cast": [
+      "Patricia Arquette",
+      "Robert Englund",
+      "Heather Langenkamp",
+      "Craig Wasson",
+      "Ken Sagoes"
+    ],
+    "tmdbRating": 6.729,
+    "tmdbVotes": 2156,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0093629",
+    "letterboxdUrl": "https://letterboxd.com/film/a-nightmare-on-elm-street-3-dream-warriors/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-01T20:21:12.908Z",
+    "updatedAt": "2026-11-01T20:21:12.908Z",
+    "lastChecked": "2026-11-01T20:21:14.140Z"
   }
 ]
