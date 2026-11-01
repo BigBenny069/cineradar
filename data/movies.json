@@ -1476,5 +1476,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-10-31T11:30:16.826Z",
     "updatedAt": "2026-10-31T11:30:16.826Z"
+  },
+  {
+    "title": "Les Griffes du cauchemar",
+    "year": 1987,
+    "director": "Chuck Russell",
+    "letterboxdUrl": "https://letterboxd.com/film/a-nightmare-on-elm-street-3-dream-warriors/",
+    "addedAt": "2026-11-01T20:21:12.908Z",
+    "updatedAt": "2026-11-01T20:21:12.908Z",
+    "tmdbId": 10072
   }
 ]
