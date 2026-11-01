@@ -450,5 +450,12 @@
     "reason": "watchlist",
     "wantedBy": "benoit",
     "deletedAt": "2026-10-31T11:30:27.017Z"
+  },
+  {
+    "title": "Le retour des morts vivants 3",
+    "year": 1993,
+    "tmdbId": 28260,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-01T22:13:56.846Z"
   }
 ]
