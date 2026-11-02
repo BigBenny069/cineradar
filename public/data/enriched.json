@@ -7100,5 +7100,40 @@
     "addedAt": "2026-11-02T17:44:52.577Z",
     "updatedAt": "2026-11-02T17:44:52.577Z",
     "lastChecked": "2026-11-02T17:46:34.578Z"
+  },
+  {
+    "tmdbId": 1058424,
+    "title": "Hope",
+    "year": "2026",
+    "director": "Na Hong-jin",
+    "poster": "https://image.tmdb.org/t/p/w500/tGdFDoA9qyt0t6Qr9MFnOl8Z2Jz.jpg",
+    "synopsis": "Le chef de la police de Hope Harbor, un petit village situé près de la zone coréenne démilitarisée, enquêtee sur le cas d'une vache morte portant des blessures béantes. Des chasseurs affirment qu'un tigre errant serait responsable de l'attaque, mais ils découvrent plus tard d'autres bovins morts ainsi que le corps du propriétaire de la ferme voisine...",
+    "genres": [
+      "Science-Fiction",
+      "Mystère",
+      "Action"
+    ],
+    "cast": [
+      "Hwang Jung-min",
+      "조인성",
+      "Jung Ho-Yeon",
+      "Alicia Vikander",
+      "Michael Fassbender"
+    ],
+    "tmdbRating": 6.793,
+    "tmdbVotes": 434,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt27369017",
+    "letterboxdUrl": "https://letterboxd.com/film/hope-2026/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-02T17:50:13.272Z",
+    "updatedAt": "2026-11-02T17:50:13.272Z",
+    "lastChecked": "2026-11-02T17:50:14.641Z"
   }
 ]
