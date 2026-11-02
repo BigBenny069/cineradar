@@ -7065,5 +7065,40 @@
     "addedAt": "2026-11-02T17:35:49.814Z",
     "updatedAt": "2026-11-02T17:35:49.814Z",
     "lastChecked": "2026-11-02T17:37:47.903Z"
+  },
+  {
+    "tmdbId": 1290418,
+    "title": "The Cycle",
+    "year": "2026",
+    "director": "Jordan Downey",
+    "poster": "https://image.tmdb.org/t/p/w500/n5gSNf55KWfDc9hqP4H1KCCSutE.jpg",
+    "synopsis": "Une fille découvre le sombre passé de son père après la découverte de son corps, disparu depuis 36 ans, sur une scène de crime horrible.",
+    "genres": [
+      "Horreur",
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "Deborah Ann Woll",
+      "Jeffrey Donovan",
+      "Gretchen Corbett",
+      "Jack Doolan",
+      "Will Hochman"
+    ],
+    "tmdbRating": 6.813,
+    "tmdbVotes": 107,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt32358390",
+    "letterboxdUrl": "https://letterboxd.com/film/the-cycle-2026-2/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-02T17:44:52.577Z",
+    "updatedAt": "2026-11-02T17:44:52.577Z",
+    "lastChecked": "2026-11-02T17:44:53.897Z"
   }
 ]
