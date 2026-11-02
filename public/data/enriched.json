@@ -7020,5 +7020,50 @@
     "addedAt": "2026-11-01T20:21:12.908Z",
     "updatedAt": "2026-11-01T20:21:12.908Z",
     "lastChecked": "2026-11-02T14:26:53.207Z"
+  },
+  {
+    "tmdbId": 455236,
+    "title": "Profession Tueur",
+    "year": "2018",
+    "director": "Jesse V. Johnson",
+    "poster": "https://image.tmdb.org/t/p/w500/jh83YKEIUBPeGiz2QlgY8xSbUOf.jpg",
+    "synopsis": "Mike Fallon est un tueur de sang-froid et le meilleur dans la profession. Mais, lorsqu’une personne chère à son coeur est assassinée par sa propre bande, Fallon est forcé de détruire sa vie pour venger la seule personne qui faisait sens dans son existence.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller",
+      "Aventure",
+      "Comédie"
+    ],
+    "cast": [
+      "Scott Adkins",
+      "Ray Stevenson",
+      "Ashley Greene",
+      "Michael Jai White",
+      "Ray Park"
+    ],
+    "tmdbRating": 6.342,
+    "tmdbVotes": 628,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt6237612",
+    "letterboxdUrl": "https://letterboxd.com/film/accident-man/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-02T17:35:49.814Z",
+    "updatedAt": "2026-11-02T17:35:49.814Z",
+    "lastChecked": "2026-11-02T17:35:51.560Z"
   }
 ]
