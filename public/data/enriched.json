@@ -7261,5 +7261,48 @@
     "addedAt": "2026-11-03T11:56:05.358Z",
     "updatedAt": "2026-11-03T11:56:05.358Z",
     "lastChecked": "2026-11-03T13:25:10.997Z"
+  },
+  {
+    "tmdbId": 1645,
+    "title": "Le Droit de tuer ?",
+    "year": "1996",
+    "director": "Joel Schumacher",
+    "poster": "https://image.tmdb.org/t/p/w500/re4C9X5a3obaaqikCGpGx9FbCRq.jpg",
+    "synopsis": "Dans une bourgade du Mississippi marquée par les violences racistes, Carl Lee Hailey, après le viol de sa fille de dix ans par deux Blancs, engage un jeune avocat, Jake Brigance. Il lui confie sa crainte de voir l'affaire finir en non-lieu. Quelques heures plus tard, Carl Lee se fait justice en abattant les deux violeurs. Bien décidé à sauver la tête de son client, Jake Brigance va être entrainé dans la terrible spirale de la violence.",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Matthew McConaughey",
+      "Sandra Bullock",
+      "Samuel L. Jackson",
+      "Kevin Spacey",
+      "Ashley Judd"
+    ],
+    "tmdbRating": 7.393,
+    "tmdbVotes": 3152,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0117913",
+    "letterboxdUrl": "https://letterboxd.com/film/a-time-to-kill-1996/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "YouTube",
+        "Canal VOD",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": "2026-11-03T17:14:21.007Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-03T17:14:19.266Z",
+    "updatedAt": "2026-11-03T17:14:19.266Z",
+    "lastChecked": "2026-11-03T17:14:21.007Z"
   }
 ]
