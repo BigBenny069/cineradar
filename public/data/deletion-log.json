@@ -457,5 +457,12 @@
     "tmdbId": 28260,
     "reason": "cinemaison",
     "deletedAt": "2026-11-01T22:13:56.846Z"
+  },
+  {
+    "title": "Jeu d'enfant",
+    "year": 1988,
+    "tmdbId": 10585,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-03T11:14:57.138Z"
   }
 ]
