@@ -7179,5 +7179,45 @@
     "addedAt": "2026-11-03T11:12:40.474Z",
     "updatedAt": "2026-11-03T11:12:40.474Z",
     "lastChecked": "2026-11-03T11:17:10.431Z"
+  },
+  {
+    "tmdbId": 48855,
+    "title": "4 de l'apocalypse",
+    "year": "1975",
+    "director": "Lucio Fulci",
+    "poster": "https://image.tmdb.org/t/p/w500/wqHcjr8MRRfOur9Ascjn2e4e3dT.jpg",
+    "synopsis": "Utah, 1873. Un joueur professionnel, une prostituée, un ivrogne et un mystique se retrouvent par hasard dans la même cellule, dans une ville dont le shérif collabore avec des milices appréciant la justice expéditive. Les quatre prisonniers parviennent à échapper au lynchage et s’enfuient à bord d’un chariot à travers le désert. Ils y feront diverses rencontres, donc celle avec le bandit de grand chemin Chaco, qui coûtera cher aux quatre proscrits.",
+    "genres": [
+      "Western"
+    ],
+    "cast": [
+      "Fabio Testi",
+      "Lynne Frederick",
+      "Michael J. Pollard",
+      "Harry Baird",
+      "Tomas Milian"
+    ],
+    "tmdbRating": 6.4,
+    "tmdbVotes": 97,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0073594",
+    "letterboxdUrl": "https://letterboxd.com/film/four-of-the-apocalypse/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-03T11:55:47.062Z",
+    "updatedAt": "2026-11-03T11:55:47.062Z",
+    "lastChecked": "2026-11-03T11:55:48.270Z"
   }
 ]
