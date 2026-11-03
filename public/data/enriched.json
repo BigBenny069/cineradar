@@ -7219,5 +7219,47 @@
     "addedAt": "2026-11-03T11:55:47.062Z",
     "updatedAt": "2026-11-03T11:55:47.062Z",
     "lastChecked": "2026-11-03T11:55:48.270Z"
+  },
+  {
+    "tmdbId": 2163,
+    "title": "Breakdown : Point de rupture",
+    "year": "1997",
+    "director": "Jonathan Mostow",
+    "poster": "https://image.tmdb.org/t/p/w500/y5Aau3aaoJ3xK0lNcauWUMSCr3t.jpg",
+    "synopsis": "Jeff et Amy ont décidé de changer de vie et laissent Boston derrière eux pour aller s'installer à San Diego. Leur voiture tombe en panne, en plein désert. Par chance un camionneur propose à Amy de l'amener au restaurant le plus proche pour chercher du secours. Ayant finalement réussi à localiser la panne, Jeff pense retrouver sa femme dans ce bar au milieu de nulle part. Mais personne ne semble avoir vu ni Amy ni le mystérieux camion…",
+    "genres": [
+      "Crime",
+      "Mystère",
+      "Thriller",
+      "Action",
+      "Drame"
+    ],
+    "cast": [
+      "Kurt Russell",
+      "J.T. Walsh",
+      "Kathleen Quinlan",
+      "Michael Connor Gainey",
+      "Jack Noseworthy"
+    ],
+    "tmdbRating": 6.955,
+    "tmdbVotes": 1185,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0118771",
+    "letterboxdUrl": "https://letterboxd.com/film/breakdown/",
+    "providers": {
+      "abonnement": [
+        "Paramount+ Amazon Channel"
+      ],
+      "vod": [
+        "Orange VOD",
+        "Sooner"
+      ]
+    },
+    "availableSince": "2026-11-03T11:56:07.000Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-03T11:56:05.358Z",
+    "updatedAt": "2026-11-03T11:56:05.358Z",
+    "lastChecked": "2026-11-03T11:56:07.000Z"
   }
 ]
