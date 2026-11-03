@@ -7139,46 +7139,6 @@
     "lastChecked": "2026-11-03T11:13:45.625Z"
   },
   {
-    "tmdbId": 10585,
-    "title": "Jeu d'enfant",
-    "year": "1988",
-    "director": "Tom Holland",
-    "poster": "https://image.tmdb.org/t/p/w500/nTKpgvWmv1k7KJL4PqswikOAJ3w.jpg",
-    "synopsis": "Pour ses six ans, Andy Barclay est comblé, sa mère lui fait cadeau d'une poupee parlante, joufflue à souhait nommée Chucky. Andy est fou de sa poupée et lui seul connait son secret. Chucky sait faire bien des choses, elle est même capable de tuer...",
-    "genres": [
-      "Horreur"
-    ],
-    "cast": [
-      "Alex Vincent",
-      "Catherine Hicks",
-      "Brad Dourif",
-      "Chris Sarandon",
-      "Dinah Manoff"
-    ],
-    "tmdbRating": 6.784,
-    "tmdbVotes": 3555,
-    "letterboxdRating": 3.33,
-    "letterboxdVotes": 485874,
-    "imdbId": "tt0094862",
-    "letterboxdUrl": "https://letterboxd.com/film/childs-play/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Canal VOD",
-        "Amazon Video"
-      ]
-    },
-    "availableSince": "2026-11-03T11:12:04.273Z",
-    "wantedBy": null,
-    "addedAt": "2026-11-03T11:12:02.941Z",
-    "updatedAt": "2026-11-03T11:12:02.941Z",
-    "lastChecked": "2026-11-03T11:13:45.727Z"
-  },
-  {
     "tmdbId": 4977,
     "title": "Paprika",
     "year": "2006",
