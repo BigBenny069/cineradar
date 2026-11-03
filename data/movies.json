@@ -1513,5 +1513,14 @@
     "addedAt": "2026-11-03T11:12:02.941Z",
     "updatedAt": "2026-11-03T11:12:02.941Z",
     "tmdbId": 10585
+  },
+  {
+    "title": "Paprika",
+    "year": 2006,
+    "director": "Satoshi Kon",
+    "letterboxdUrl": "https://letterboxd.com/film/paprika-2006/",
+    "addedAt": "2026-11-03T11:12:40.474Z",
+    "updatedAt": "2026-11-03T11:12:40.474Z",
+    "tmdbId": 4977
   }
 ]
