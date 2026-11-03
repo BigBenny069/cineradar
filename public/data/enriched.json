@@ -7175,5 +7175,47 @@
     "addedAt": "2026-11-03T11:12:02.941Z",
     "updatedAt": "2026-11-03T11:12:02.941Z",
     "lastChecked": "2026-11-03T11:12:04.273Z"
+  },
+  {
+    "tmdbId": 4977,
+    "title": "Paprika",
+    "year": "2006",
+    "director": "Satoshi Kon",
+    "poster": "https://image.tmdb.org/t/p/w500/kjOuNoHNy8IF6v6BHzfEbli1G3W.jpg",
+    "synopsis": "Dans un futur très proche, un groupe de brillants scientifiques ont créé une machine capable de contrôler nos rêves. Mais cette merveille technologique a été dérobée. Pour éviter le chaos et sauver l'humanité, Paprika doit découvrir qui sont les coupables et empêcher ces terroristes du rêve de contrôler nos esprits.",
+    "genres": [
+      "Animation",
+      "Science-Fiction",
+      "Thriller"
+    ],
+    "cast": [
+      "Megumi Hayashibara",
+      "Tohru Emori",
+      "Katsunosuke Hori",
+      "Tōru Furuya",
+      "Akio Ōtsuka"
+    ],
+    "tmdbRating": 7.812,
+    "tmdbVotes": 3051,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0851578",
+    "letterboxdUrl": "https://letterboxd.com/film/paprika-2006/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-03T11:12:40.474Z",
+    "updatedAt": "2026-11-03T11:12:40.474Z",
+    "lastChecked": "2026-11-03T11:12:41.858Z"
   }
 ]
