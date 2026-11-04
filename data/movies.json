@@ -1460,16 +1460,6 @@
     "tmdbId": 1110358
   },
   {
-    "title": "Suspiria",
-    "year": 2018,
-    "director": "",
-    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
-    "tmdbId": 361292,
-    "wantedBy": "benoit",
-    "addedAt": "2026-10-31T11:30:16.826Z",
-    "updatedAt": "2026-10-31T11:30:16.826Z"
-  },
-  {
     "title": "Les Griffes du cauchemar",
     "year": 1987,
     "director": "Chuck Russell",
@@ -1558,5 +1548,15 @@
     "addedAt": "2026-11-04T22:47:22.370Z",
     "updatedAt": "2026-11-04T22:47:22.370Z",
     "tmdbId": 11033
+  },
+  {
+    "title": "Suspiria",
+    "year": 1977,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
+    "tmdbId": 11906,
+    "wantedBy": "benoit",
+    "addedAt": "2026-11-04T22:48:25.178Z",
+    "updatedAt": "2026-11-04T22:48:25.178Z"
   }
 ]
