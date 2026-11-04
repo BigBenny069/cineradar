@@ -7304,5 +7304,48 @@
     "addedAt": "2026-11-03T17:14:19.266Z",
     "updatedAt": "2026-11-03T17:14:19.266Z",
     "lastChecked": "2026-11-03T17:16:59.161Z"
+  },
+  {
+    "tmdbId": 482,
+    "title": "Shaft, les nuits rouges de Harlem",
+    "year": "1971",
+    "director": "Gordon Parks",
+    "poster": "https://image.tmdb.org/t/p/w500/barTCUTqkp5qXqf0jfHpri5jCfV.jpg",
+    "synopsis": "John Shaft, détective noir-américain, opère à Harlem. Il est implacable et téméraire. Il marche seul et ne fait confiance à personne. Il est engagé par un des gros bonnets de la drogue dont la fille a été enlevée. Mais cet enlèvement n'est qu'un des épisodes que se livrent les deux mafias, la blanche et la noire.",
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Drame",
+      "Action"
+    ],
+    "cast": [
+      "Richard Roundtree",
+      "Moses Gunn",
+      "Charles Cioffi",
+      "Christopher St. John",
+      "Gwenn Mitchell"
+    ],
+    "tmdbRating": 6.4,
+    "tmdbVotes": 444,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0067741",
+    "letterboxdUrl": "https://letterboxd.com/film/shaft/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "YouTube",
+        "Sooner",
+        "Amazon Video",
+        "LaCinetek",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-04T10:07:17.825Z",
+    "updatedAt": "2026-11-04T10:07:17.825Z",
+    "lastChecked": "2026-11-04T10:07:19.541Z"
   }
 ]
