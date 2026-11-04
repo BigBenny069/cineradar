@@ -472,5 +472,12 @@
     "reason": "watchlist",
     "wantedBy": "benoit",
     "deletedAt": "2026-11-04T22:48:32.691Z"
+  },
+  {
+    "title": "Pulsions",
+    "year": 1980,
+    "tmdbId": 11033,
+    "reason": "manuel",
+    "deletedAt": "2026-11-04T22:50:10.691Z"
   }
 ]
