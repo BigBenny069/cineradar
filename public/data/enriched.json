@@ -7481,5 +7481,43 @@
     "addedAt": "2026-11-05T13:21:37.798Z",
     "updatedAt": "2026-11-05T13:21:37.798Z",
     "lastChecked": "2026-11-05T13:21:39.684Z"
+  },
+  {
+    "tmdbId": 101744,
+    "title": "Avec Django ça va saigner",
+    "year": "1968",
+    "director": "Paolo Bianchini",
+    "poster": "https://image.tmdb.org/t/p/w500/8P5d2acFgFY8LNgBj2vxe8A4vxK.jpg",
+    "synopsis": "Alors que la Guerre de Sécession fait rage, un ingénieur vient en aide à l'armée nordiste en mettant au point une mitrailleuse d'une puissance de feu encore inégalée. Un commando est mis en place pour la récupérer mais un guet-apens les attend : les hommes sont tous abattus et l'arme volée. Seul survivant de ce traquenard, le général Tanaire, responsable de la mission et accusé d'être l'auteur de cette tragédie par ses pairs, doit retrouver les responsables de ce massacre pour prouver son innocence.",
+    "genres": [
+      "Action",
+      "Histoire",
+      "Western"
+    ],
+    "cast": [
+      "Robert Woods",
+      "John Ireland",
+      "Ida Galli",
+      "Claudie Lange",
+      "George Rigaud"
+    ],
+    "tmdbRating": 5.1,
+    "tmdbVotes": 9,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0064013",
+    "letterboxdUrl": "https://letterboxd.com/film/gatling-gun/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-05T13:22:54.600Z",
+    "updatedAt": "2026-11-05T13:22:54.600Z",
+    "lastChecked": "2026-11-05T13:22:56.562Z"
   }
 ]
