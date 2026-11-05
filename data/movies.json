@@ -1549,5 +1549,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-11-04T22:48:25.178Z",
     "updatedAt": "2026-11-04T22:48:25.178Z"
+  },
+  {
+    "title": "Scarface",
+    "year": 1983,
+    "director": "Brian De Palma",
+    "letterboxdUrl": "https://letterboxd.com/film/scarface-1983/",
+    "addedAt": "2026-11-05T10:04:02.202Z",
+    "updatedAt": "2026-11-05T10:04:02.202Z",
+    "tmdbId": 111
   }
 ]
