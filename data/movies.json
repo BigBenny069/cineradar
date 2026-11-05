@@ -1576,5 +1576,14 @@
     "addedAt": "2026-11-05T13:21:37.798Z",
     "updatedAt": "2026-11-05T13:21:37.798Z",
     "tmdbId": 961
+  },
+  {
+    "title": "Avec Django ça va saigner",
+    "year": 1968,
+    "director": "Paolo Bianchini",
+    "letterboxdUrl": "https://letterboxd.com/film/gatling-gun/",
+    "addedAt": "2026-11-05T13:22:54.600Z",
+    "updatedAt": "2026-11-05T13:22:54.600Z",
+    "tmdbId": 101744
   }
 ]
