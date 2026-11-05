@@ -7433,5 +7433,53 @@
     "addedAt": "2026-11-05T10:04:49.793Z",
     "updatedAt": "2026-11-05T10:05:40.020Z",
     "lastChecked": "2026-11-05T10:08:20.768Z"
+  },
+  {
+    "tmdbId": 961,
+    "title": "Le Mécano de la Générale",
+    "year": "1926",
+    "director": "Clyde Bruckman",
+    "poster": "https://image.tmdb.org/t/p/w500/ex8MlNRaariy2gRBFpMbLAoLwWT.jpg",
+    "synopsis": "En 1861, en Géorgie à Marietta, Johnnie Gray à deux amours : sa locomotive, la « Générale », qu'il conduit pour la compagnie ferroviaire « Western et Atlantique » et sa fiancée, Annabelle Lee. Mais la guerre de Sécession éclate. Le père et le frère d'Annabelle s'enrôlent dans l'armée des Sudistes. Sur les demande et pression de sa fiancée, Johnnie, se présente au bureau de recrutement. Mais il jugé plus utile pour le Sud à son poste de conducteur. Ce refus militaire entache la réputation de Johnnie et dépose un soupçon de couardise de la part de sa fiancée et de sa belle-famille. Un an plus tard, pour répondre à un plan militaire établi, des soldats yankees volent sa « Générale » et enlèvent dans la foulée sa fiancée, Annabelle, qui était également dans le train. Johnnie part à la poursuite de ses deux amours et devra relever bien des défis...",
+    "genres": [
+      "Comédie",
+      "Guerre",
+      "Romance"
+    ],
+    "cast": [
+      "Buster Keaton",
+      "Marion Mack",
+      "Glen Cavender",
+      "Jim Farley",
+      "Frederick Vroom"
+    ],
+    "tmdbRating": 7.913,
+    "tmdbVotes": 1489,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0017925",
+    "letterboxdUrl": "https://letterboxd.com/film/the-general/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Artiflix",
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "LaCinetek",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-05T13:21:37.798Z",
+    "updatedAt": "2026-11-05T13:21:37.798Z",
+    "lastChecked": "2026-11-05T13:21:39.684Z"
   }
 ]
