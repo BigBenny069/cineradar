@@ -7396,5 +7396,41 @@
     "addedAt": "2026-11-05T10:04:02.202Z",
     "updatedAt": "2026-11-05T10:04:02.202Z",
     "lastChecked": "2026-11-05T10:04:03.503Z"
+  },
+  {
+    "tmdbId": 81481,
+    "title": "Silenced",
+    "year": "2011",
+    "director": "Hwang Dong-hyeok",
+    "poster": "https://image.tmdb.org/t/p/w500/pUfuy7mSXw0dohRPeWnrhoIJdOU.jpg",
+    "synopsis": "\"Silenced\" est un film tiré de faits réels. L'histoire narre la vie de jeunes écoliers malentendants qui endurent des souffrances physiques et des abus sexuels provoqués par leurs propres professeurs. L'acteur principal interprète le rôle d'un enseignant qui va tenter de révéler les secrets de l'école et sauver ces enfants. Ce film a choqué la nation entière, provoquant même la révision de lois nationales.",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Gong Yoo",
+      "Jung Yu-mi",
+      "Kim Hyeon-soo",
+      "정인서",
+      "백승환"
+    ],
+    "tmdbRating": 8.157,
+    "tmdbVotes": 830,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2070649",
+    "letterboxdUrl": "https://letterboxd.com/film/silenced/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": []
+    },
+    "availableSince": "2026-11-05T10:04:51.005Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-05T10:04:49.793Z",
+    "updatedAt": "2026-11-05T10:04:49.793Z",
+    "lastChecked": "2026-11-05T10:04:51.005Z"
   }
 ]
