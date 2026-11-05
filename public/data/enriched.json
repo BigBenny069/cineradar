@@ -7346,5 +7346,55 @@
     "addedAt": "2026-11-04T22:48:25.178Z",
     "updatedAt": "2026-11-04T22:48:25.178Z",
     "lastChecked": "2026-11-04T22:51:30.943Z"
+  },
+  {
+    "tmdbId": 111,
+    "title": "Scarface",
+    "year": "1983",
+    "director": "Brian De Palma",
+    "poster": "https://image.tmdb.org/t/p/w500/9gp0H9EG8XVFtDk3s6IJZd97bEY.jpg",
+    "synopsis": "En 1980, le gouvernement cubain expulse plusieurs centaines de prisonniers dangereux vers la Floride. Parmi eux, Tony Montana : ambitieux et sans scrupules, il élabore un plan pour prendre la place d'un caïd de la drogue.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drame"
+    ],
+    "cast": [
+      "Al Pacino",
+      "Steven Bauer",
+      "Michelle Pfeiffer",
+      "Mary Elizabeth Mastrantonio",
+      "Robert Loggia"
+    ],
+    "tmdbRating": 8.154,
+    "tmdbVotes": 13648,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0086250",
+    "letterboxdUrl": "https://letterboxd.com/film/scarface-1983/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD",
+        "Rakuten TV"
+      ]
+    },
+    "availableSince": "2026-11-05T10:04:03.503Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-05T10:04:02.202Z",
+    "updatedAt": "2026-11-05T10:04:02.202Z",
+    "lastChecked": "2026-11-05T10:04:03.503Z"
   }
 ]
