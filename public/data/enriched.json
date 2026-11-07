@@ -7521,5 +7521,53 @@
     "addedAt": "2026-11-05T13:22:54.600Z",
     "updatedAt": "2026-11-05T13:22:54.600Z",
     "lastChecked": "2026-11-07T13:28:09.139Z"
+  },
+  {
+    "tmdbId": 1158416,
+    "title": "En attendant la nuit",
+    "year": "2024",
+    "director": "Céline Rouzet",
+    "poster": "https://image.tmdb.org/t/p/w500/nnB7xexhid4AVMIxYn66R6smtV3.jpg",
+    "synopsis": "Philémon est un adolescent pas comme les autres : pour survivre, il a besoin de sang humain. Dans la banlieue pavillonnaire un peu trop tranquille où il emménage avec sa famille, il fait tout pour se fondre dans le décor. Jusqu'au jour où il tombe amoureux de sa voisine Camila et attire l’attention sur eux…",
+    "genres": [
+      "Drame",
+      "Horreur"
+    ],
+    "cast": [
+      "Mathias Legoût Hammond",
+      "Élodie Bouchez",
+      "Jean-Charles Clichet",
+      "Céleste Brunnquell",
+      "Laly Mercier"
+    ],
+    "tmdbRating": 5.3,
+    "tmdbVotes": 50,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt22986716",
+    "letterboxdUrl": "https://letterboxd.com/film/for-night-will-come/",
+    "providers": {
+      "abonnement": [
+        "Disney Plus"
+      ],
+      "vod": [
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD",
+        "Apple TV Store"
+      ]
+    },
+    "availableSince": "2026-11-07T17:49:57.666Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-07T17:49:56.516Z",
+    "updatedAt": "2026-11-07T17:49:56.516Z",
+    "lastChecked": "2026-11-07T17:49:57.666Z"
   }
 ]
