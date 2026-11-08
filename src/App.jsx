@@ -1711,7 +1711,7 @@ function BottomNav({ view, onChange }) {
   );
 }
 
-function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
+function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) {
   const maxWidth = useResponsiveMaxWidth();
   const [showLinks, setShowLinks] = useState(false);
   const [showVod, setShowVod] = useState(false);
@@ -1781,7 +1781,8 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
     });
     if (deleteResult.ok) {
       setCinemaisonStatus("success");
-      setTimeout(() => onDeleted?.(), 1400);
+      onRemoved?.(movie);
+      setTimeout(() => onDeleted?.(), 1000);
     } else {
       // Le retrait automatique a échoué (souci réseau ponctuel) — on place
       // la fiche dans la file "À nettoyer" d'Historique plutôt que de la
@@ -1809,7 +1810,8 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onUpdated }) {
       return;
     }
     setDeleteStatus("success");
-    setTimeout(() => onDeleted?.(), 1200);
+    onRemoved?.(movie);
+    setTimeout(() => onDeleted?.(), 800);
   };
 
   return (
@@ -3632,7 +3634,7 @@ function SettingsView({ theme, onChangeTheme }) {
 }
 
 
-function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
+function AddView({ onCancel, editingMovie, movies, history, onSuccess, onSaved }) {
   const maxWidth = useResponsiveMaxWidth();
   const isEditing = Boolean(editingMovie);
   const [title, setTitle] = useState(editingMovie?.title || "");
@@ -3826,6 +3828,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
       return;
     }
     setStatus("success");
+    onSaved?.(result.data?.movie, editingMovie?.tmdbId);
     setTitle("");
     setYear("");
     setDirector("");
@@ -3834,7 +3837,7 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
     setDuplicateConfirmed(false);
     setSelectedTmdbId(null);
     setLastPickedTitle(null);
-    setTimeout(() => onSuccess?.(), 1400);
+    setTimeout(() => onSuccess?.(), 900);
   };
 
   const handleSubmitClick = () => {
@@ -4106,6 +4109,58 @@ function AddView({ onCancel, editingMovie, movies, history, onSuccess }) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// CHANGEMENTS RÉCENTS — quand tu ajoutes, modifies ou supprimes un film,
+// la fiche apparaît ou disparaît tout de suite à l'écran. Les fichiers de
+// données publiés sur Vercel, eux, ne changent qu'après le redéploiement du
+// site (30 à 60 s) : sans cette mémoire, une relecture trop rapide
+// ramènerait l'ancienne liste et la fiche réapparaîtrait ou disparaîtrait
+// à nouveau. Chaque changement est retenu 5 minutes, puis oublié.
+// ─────────────────────────────────────────────────────────────
+const PENDING_KEY = "cineradar_pending_v1";
+const PENDING_TTL_MS = 5 * 60 * 1000;
+
+export function applyPendingChanges(list, pending, now = Date.now()) {
+  const active = (pending || []).filter((p) => p && p.tmdbId && p.until > now);
+  if (active.length === 0) return list;
+  const result = [...(list || [])];
+  for (const p of active) {
+    const idx = result.findIndex((m) => String(m.tmdbId) === String(p.tmdbId));
+    if (p.type === "removed") {
+      if (idx >= 0) result.splice(idx, 1);
+    } else if (p.type === "upserted" && p.movie) {
+      if (idx < 0) result.push(p.movie);
+      // On ne remplace que par une version plus récente : si le site a déjà
+      // les vraies données à jour, ce sont elles qui l'emportent.
+      else if (String(result[idx].updatedAt || "") < String(p.movie.updatedAt || "")) result[idx] = p.movie;
+    }
+  }
+  return result;
+}
+
+function loadPending_() {
+  try {
+    const raw = localStorage.getItem(PENDING_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((p) => p && p.until > Date.now()) : [];
+  } catch {
+    return [];
+  }
+}
+
+function registerPending_(entry) {
+  if (!entry || !entry.tmdbId) return;
+  const now = Date.now();
+  const list = loadPending_().filter((p) => String(p.tmdbId) !== String(entry.tmdbId));
+  list.push({ ...entry, until: now + PENDING_TTL_MS });
+  try {
+    localStorage.setItem(PENDING_KEY, JSON.stringify(list));
+  } catch {
+    // Stockage indisponible : pas grave, l'écran sera simplement mis à jour
+    // à la prochaine synchronisation.
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
 // CACHE LOCAL — sauvegarde la dernière version connue des données sur
 // l'appareil (localStorage), pour que l'app affiche quelque chose
 // immédiatement au lancement même sans réseau, pendant qu'elle essaie de
@@ -4203,7 +4258,10 @@ export default function App() {
       .then((res) => (res.ok ? res.json() : null))
       .catch(() => null);
     return Promise.all([moviesPromise, unmatchedPromise, historyPromise, watchlistReviewPromise, cinemaisonCleanupPromise, deletionLogPromise, lastRunPromise])
-      .then(([moviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData, deletionLogData, lastRunData]) => {
+      .then(([rawMoviesData, unmatchedData, historyData, watchlistReviewData, cinemaisonCleanupData, deletionLogData, lastRunData]) => {
+        // Réapplique les ajouts/suppressions des dernières minutes, que le
+        // site publié ne reflète peut-être pas encore.
+        const moviesData = applyPendingChanges(rawMoviesData, loadPending_());
         setMovies(moviesData);
         setUnmatched(unmatchedData);
         setHistory(historyData);
@@ -4243,7 +4301,7 @@ export default function App() {
   useEffect(() => {
     const cached = loadCache_();
     if (cached) {
-      setMovies(cached.movies || []);
+      setMovies(applyPendingChanges(cached.movies || [], loadPending_()));
       setUnmatched(cached.unmatched || []);
       setHistory(cached.history || []);
       setWatchlistReview(cached.watchlistReview || []);
@@ -4266,6 +4324,23 @@ export default function App() {
     fetchMovies().finally(() => setRefreshing(false));
   };
 
+  // Mise à jour immédiate de l'écran après une suppression ou un ajout.
+  const handleMovieRemoved = (movie) => {
+    if (!movie?.tmdbId) return;
+    registerPending_({ type: "removed", tmdbId: movie.tmdbId });
+    setMovies((prev) => applyPendingChanges(prev, loadPending_()));
+  };
+
+  const handleMovieSaved = (savedMovie, originalTmdbId) => {
+    if (!savedMovie?.tmdbId) return;
+    // Modification qui change de film : l'ancienne fiche disparaît.
+    if (originalTmdbId && String(originalTmdbId) !== String(savedMovie.tmdbId)) {
+      registerPending_({ type: "removed", tmdbId: originalTmdbId });
+    }
+    registerPending_({ type: "upserted", tmdbId: savedMovie.tmdbId, movie: savedMovie });
+    setMovies((prev) => applyPendingChanges(prev, loadPending_()));
+  };
+
   const handleNavChange = (key) => {
     if (key === "add") {
       setEditingMovie(null);
@@ -4284,6 +4359,7 @@ export default function App() {
     return (
       <AddView
         editingMovie={editingMovie}
+        onSaved={handleMovieSaved}
         movies={movies}
         history={history}
         onCancel={() => {
@@ -4309,6 +4385,7 @@ export default function App() {
           setPreviousView(view);
           setView("add");
         }}
+        onRemoved={handleMovieRemoved}
         onDeleted={() => setSelected(null)}
         onUpdated={(updatedMovie) => {
           setSelected(updatedMovie);
