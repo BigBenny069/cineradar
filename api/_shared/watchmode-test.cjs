@@ -1,4 +1,5 @@
-// TEMPORAIRE — comparaison Watchmode / TMDB (JustWatch) sur les films en erreur.
+// TEMPORAIRE (branché sur /api/search-tmdb?watchmodeTest=1&token=…, car le plan
+// Vercel gratuit limite à 12 fonctions) — comparaison Watchmode / TMDB (JustWatch) sur les films en erreur.
 // Protégé par un jeton jetable (WATCHMODE_TEST_TOKEN). À supprimer après le test.
 
 const FILMS = [
@@ -28,7 +29,7 @@ async function getJson(url) {
   }
 }
 
-export default async function handler(req, res) {
+async function handleWatchmodeTest(req, res) {
   const expected = process.env.WATCHMODE_TEST_TOKEN;
   const token = String((req.query && req.query.token) || "");
   if (!expected || token.length !== expected.length || token !== expected) {
@@ -77,3 +78,5 @@ export default async function handler(req, res) {
   }));
   return res.status(200).json(out);
 }
+
+module.exports = { handleWatchmodeTest };
