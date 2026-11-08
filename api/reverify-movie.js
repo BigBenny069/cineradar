@@ -27,6 +27,46 @@ async function githubPut(apiUrl, token, data, sha, message) {
   }
 }
 
+// Signalement « pas disponible sur cette plateforme » : pose (ou retire) le
+// champ "reported" sur la fiche, dans enriched.json uniquement. Le robot
+// recopie ce champ d'un passage à l'autre (scripts/update.cjs). Ajouté ici
+// plutôt que dans une nouvelle fonction : le plan Vercel gratuit limite à 12
+// fonctions et la limite est atteinte.
+// Deux essais : si le robot écrit enriched.json au même moment, le premier
+// envoi est refusé par GitHub et on repart de la version la plus récente.
+async function setReported({ tmdbId, report, repo, token }) {
+  const enrichedUrl = `https://api.github.com/repos/${repo}/contents/public/data/enriched.json`;
+  let lastError = null;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { content: enrichedList, sha } = await githubGet(enrichedUrl, token);
+    const list = enrichedList || [];
+    const index = list.findIndex((m) => String(m.tmdbId) === String(tmdbId));
+    if (index < 0) return { status: 404, error: "Cette fiche n'existe pas dans enriched.json" };
+
+    const updated = { ...list[index] };
+    if (report) {
+      updated.reported = { platforms: [...(updated.providers?.abonnement || [])], at: new Date().toISOString() };
+    } else {
+      delete updated.reported;
+    }
+    const newList = [...list];
+    newList[index] = updated;
+    try {
+      await githubPut(
+        enrichedUrl,
+        token,
+        newList,
+        sha,
+        report ? `Signalé non disponible : "${updated.title}"` : `Signalement retiré : "${updated.title}"`
+      );
+      return { status: 200, movie: updated };
+    } catch (e) {
+      lastError = e;
+    }
+  }
+  return { status: 500, error: lastError ? lastError.message : "Écriture impossible" };
+}
+
 // Redemande une vérification immédiate auprès de TMDB pour un film précis
 // (affiche, synopsis, casting, plateformes, note TMDB) — sans attendre le
 // prochain passage du robot. La note Letterboxd n'est pas retouchée ici
@@ -43,7 +83,7 @@ export default async function handler(req, res) {
   if (!rateLimit.allowed) {
     return res.status(429).json({ error: `Trop de tentatives. Réessaie dans ${rateLimit.retryAfterSeconds}s.` });
   }
-  const { tmdbId, password } = req.body || {};
+  const { tmdbId, password, action } = req.body || {};
   if (password !== process.env.ADD_MOVIE_PASSWORD) {
     recordFailedAttempt(identifier);
     return res.status(401).json({ error: "Mot de passe incorrect" });
@@ -51,6 +91,23 @@ export default async function handler(req, res) {
   recordSuccess(identifier);
   if (!tmdbId) {
     return res.status(400).json({ error: "tmdbId manquant" });
+  }
+  if (action === "report-unavailable" || action === "clear-report") {
+    try {
+      const outcome = await setReported({
+        tmdbId,
+        report: action === "report-unavailable",
+        repo: process.env.GITHUB_REPO,
+        token: process.env.GITHUB_TOKEN,
+      });
+      if (outcome.status !== 200) return res.status(outcome.status).json({ error: outcome.error });
+      return res.status(200).json({ success: true, movie: outcome.movie });
+    } catch (e) {
+      return res.status(500).json({ error: e.message });
+    }
+  }
+  if (action !== undefined && action !== "reverify") {
+    return res.status(400).json({ error: "Action inconnue" });
   }
   const apiKey = process.env.TMDB_API_KEY;
   if (!apiKey) {
