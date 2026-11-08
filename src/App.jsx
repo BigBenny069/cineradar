@@ -520,8 +520,11 @@ export function describeLetterboxdSource(source) {
 
 // Un film signalé « pas disponible sur cette plateforme » (champ "reported")
 // quitte la liste « Disponible » pour la section « Disponibilité douteuse ».
+// Quand TMDB a lui-même retiré la plateforme (reported.dropped, noté par le
+// robot), le film n'est plus « douteux » : il n'est simplement plus
+// disponible, et le signalement attend en silence un éventuel retour.
 export function isReportedUnavailable(movie) {
-  return Boolean(movie && movie.reported);
+  return Boolean(movie && movie.reported && !movie.reported.dropped);
 }
 
 // Découpe des fiches pour l'accueil : films disponibles (hors signalés),
