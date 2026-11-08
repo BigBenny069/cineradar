@@ -5,6 +5,7 @@ const API_KEY = process.env.TMDB_API_KEY;
 const BASE = "https://api.themoviedb.org/3";
 
 const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_shared/subscriptions.cjs");
+const { applyWatchmodeChecks } = require("../api/_shared/watchmode.cjs");
 
 function loadSettings() {
   try {
@@ -34,6 +35,19 @@ function loadSettings() {
 const SETTINGS = loadSettings();
 const ENABLED_KEYS = SETTINGS.enabled;
 const isMySubscription = createIsMySubscription(ENABLED_KEYS);
+
+// Résultats du second avis Watchmode du passage précédent (champ "wm" des
+// fiches), pour ne pas refaire d'appels inutiles.
+function loadPreviousWm() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync("public/data/enriched.json", "utf-8"));
+    const map = {};
+    for (const m of parsed) if (m.wm) map[m.tmdbId] = m.wm;
+    return map;
+  } catch (e) {
+    return {};
+  }
+}
 
 function loadPreviousAbonnements() {
   try {
@@ -721,6 +735,23 @@ async function main() {
         updatedAt: movie.updatedAt || null,
       });
     }
+  }
+
+  // Second avis Watchmode sur la disponibilité (voir api/_shared/watchmode.cjs).
+  // Jamais bloquant : sans clé, en cas de quota atteint ou de panne, le
+  // passage continue normalement et les anciens résultats sont conservés.
+  try {
+    const wmStats = await applyWatchmodeChecks(output, loadPreviousWm(), {
+      apiKey: process.env.WATCHMODE_API_KEY,
+      log: console.log,
+    });
+    if (wmStats.skippedNoKey) {
+      console.log("Watchmode : pas de clé configurée, second avis ignoré.");
+    } else {
+      console.log(`Watchmode : ${wmStats.checked} film(s) contrôlé(s), ${wmStats.mismatches} désaccord(s)${wmStats.stoppedEarly ? " (contrôle interrompu : plafond ou quota)" : ""}.`);
+    }
+  } catch (e) {
+    console.log(`Watchmode : second avis ignoré (${e.message}).`);
   }
 
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
