@@ -1,4 +1,8 @@
+import { handleWatchmodeTest } from "./_shared/watchmode-test.cjs"; // TEMPORAIRE : test Watchmode, à retirer
+
 export default async function handler(req, res) {
+  // TEMPORAIRE : test Watchmode (protégé par un jeton jetable), à retirer.
+  if (req.query && req.query.watchmodeTest !== undefined) return handleWatchmodeTest(req, res);
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Méthode non autorisée" });
   }
