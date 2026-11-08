@@ -46,18 +46,18 @@ async function findMovieOnTmdb(title, year, apiKey) {
 // comme s'il était neuf.
 async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
   const apiKey = process.env.TMDB_API_KEY;
-  if (!apiKey) return; // pas grave, le robot GitHub Actions prendra le relais
+  if (!apiKey) return null; // pas grave, le robot GitHub Actions prendra le relais
 
   let effectiveTmdbId = tmdbId;
   if (!effectiveTmdbId) {
     const found = await findMovieOnTmdb(movieEntry.title, movieEntry.year, apiKey);
-    if (!found) return; // le robot réessaiera plus tard
+    if (!found) return null; // le robot réessaiera plus tard
     effectiveTmdbId = found.id;
   }
 
   const detailsUrl = `https://api.themoviedb.org/3/movie/${effectiveTmdbId}?api_key=${apiKey}&language=fr-FR&append_to_response=credits,watch/providers`;
   const detailsRes = await fetch(detailsUrl);
-  if (!detailsRes.ok) return;
+  if (!detailsRes.ok) return null;
   const details = await detailsRes.json();
 
   const settingsUrl = `https://api.github.com/repos/${repo}/contents/data/settings.json`;
@@ -145,6 +145,10 @@ async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
   } catch (e) {
     console.log("Mise à jour de history.json échouée (pas grave) :", e.message);
   }
+
+  // Renvoyée à l'app pour qu'elle affiche la fiche tout de suite, sans
+  // attendre le redéploiement du site.
+  return newEntry;
 }
 
 export default async function handler(req, res) {
@@ -287,13 +291,14 @@ export default async function handler(req, res) {
     // raison ou une autre, ce n'est pas grave, le film est déjà bien
     // enregistré ci-dessus et le robot GitHub Actions le complètera à son
     // prochain passage, comme avant cette amélioration.
+    let enrichedMovie = null;
     try {
-      await quickEnrich({ tmdbId: newEntry.tmdbId, movieEntry: newEntry, repo, token });
+      enrichedMovie = await quickEnrich({ tmdbId: newEntry.tmdbId, movieEntry: newEntry, repo, token });
     } catch (e) {
       console.log("Enrichissement instantané échoué (pas grave) :", e.message);
     }
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, ...(enrichedMovie ? { movie: enrichedMovie } : {}) });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }

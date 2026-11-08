@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -163,5 +163,51 @@ describe("describeLetterboxdSource", () => {
   });
   it("renvoie une chaîne vide si la source est inconnue", () => {
     expect(describeLetterboxdSource(undefined)).toBe("");
+  });
+});
+
+describe("applyPendingChanges", () => {
+  const now = 1_000_000;
+  const list = [
+    { tmdbId: 1, title: "A", updatedAt: "2026-01-01T00:00:00Z" },
+    { tmdbId: 2, title: "B", updatedAt: "2026-01-01T00:00:00Z" },
+  ];
+
+  it("ne change rien sans changement récent", () => {
+    expect(applyPendingChanges(list, [], now)).toBe(list);
+    expect(applyPendingChanges(list, undefined, now)).toBe(list);
+  });
+
+  it("retire une fiche supprimée que le site affiche encore", () => {
+    const out = applyPendingChanges(list, [{ type: "removed", tmdbId: 1, until: now + 1000 }], now);
+    expect(out.map((m) => m.tmdbId)).toEqual([2]);
+  });
+
+  it("ajoute une fiche que le site ne contient pas encore", () => {
+    const movie = { tmdbId: 3, title: "C", updatedAt: "2026-02-01T00:00:00Z" };
+    const out = applyPendingChanges(list, [{ type: "upserted", tmdbId: 3, movie, until: now + 1000 }], now);
+    expect(out.map((m) => m.tmdbId)).toEqual([1, 2, 3]);
+  });
+
+  it("remplace une fiche modifiée si la version du site est plus ancienne", () => {
+    const movie = { tmdbId: 2, title: "B modifié", updatedAt: "2026-03-01T00:00:00Z" };
+    const out = applyPendingChanges(list, [{ type: "upserted", tmdbId: 2, movie, until: now + 1000 }], now);
+    expect(out.find((m) => m.tmdbId === 2).title).toBe("B modifié");
+  });
+
+  it("garde la version du site quand elle est aussi récente (vraies données à jour)", () => {
+    const movie = { tmdbId: 2, title: "B provisoire", updatedAt: "2026-01-01T00:00:00Z" };
+    const out = applyPendingChanges(list, [{ type: "upserted", tmdbId: 2, movie, until: now + 1000 }], now);
+    expect(out.find((m) => m.tmdbId === 2).title).toBe("B");
+  });
+
+  it("ignore un changement expiré", () => {
+    const out = applyPendingChanges(list, [{ type: "removed", tmdbId: 1, until: now - 1 }], now);
+    expect(out.map((m) => m.tmdbId)).toEqual([1, 2]);
+  });
+
+  it("ne modifie pas la liste d'origine", () => {
+    applyPendingChanges(list, [{ type: "removed", tmdbId: 1, until: now + 1000 }], now);
+    expect(list).toHaveLength(2);
   });
 });
