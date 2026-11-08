@@ -500,5 +500,12 @@
     "tmdbId": 1375,
     "reason": "cinemaison",
     "deletedAt": "2026-11-08T06:58:52.334Z"
+  },
+  {
+    "title": "District 9",
+    "year": 2009,
+    "tmdbId": 17654,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-08T06:59:58.745Z"
   }
 ]
