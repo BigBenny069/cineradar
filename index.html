@@ -60,6 +60,35 @@
         35% { opacity: 1; }
         100% { opacity: 0; }
       }
+      /* Intro « billet de cinéma » */
+      @keyframes cr-ticket-up {
+        from { transform: translateY(110%) rotate(-4deg); opacity: 0; }
+        to { transform: none; opacity: 1; }
+      }
+      @keyframes cr-ticket-scan {
+        0% { top: 0; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+      @keyframes cr-stamp {
+        to { opacity: 0.92; transform: rotate(-12deg) scale(1); }
+      }
+      @keyframes cr-stamp-out {
+        from { opacity: 0.92; transform: rotate(-12deg) scale(1); }
+        to { opacity: 0; transform: rotate(-12deg) scale(1.1); }
+      }
+      @keyframes cr-tear-top {
+        from { transform: none; opacity: 1; }
+        to { transform: translate(-30px, -170px) rotate(-14deg); opacity: 0; }
+      }
+      @keyframes cr-tear-bot {
+        from { transform: none; opacity: 1; }
+        to { transform: translate(34px, 190px) rotate(10deg); opacity: 0; }
+      }
+      @keyframes cr-fade-gone {
+        to { opacity: 0; }
+      }
     </style>
   </head>
   <body>
