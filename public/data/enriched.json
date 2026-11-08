@@ -7523,5 +7523,41 @@
     "addedAt": "2026-11-08T17:35:14.357Z",
     "updatedAt": "2026-11-08T17:35:14.357Z",
     "lastChecked": "2026-11-08T17:35:15.495Z"
+  },
+  {
+    "tmdbId": 46420,
+    "title": "The Loved Ones",
+    "year": "2010",
+    "director": "Sean Byrne",
+    "poster": "https://image.tmdb.org/t/p/w500/ydsLYdSiPSIL1LOWWYu7VCvDTT8.jpg",
+    "synopsis": "Lola, la fille la plus timide du lycée propose à Brent de l'accompagner au bal de fin d'année.Comme il avait prévu d'y aller avec Holly, sa petite amie, il décline poliment l'invitation.Mais Lola n'aime pas qu'on lui dise non…",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Xavier Samuel",
+      "Robin McLeavy",
+      "John Brumpton",
+      "Richard Wilson",
+      "Victoria Thaine"
+    ],
+    "tmdbRating": 6.731,
+    "tmdbVotes": 892,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1316536",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/46420/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Sooner"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-08T17:36:19.712Z",
+    "updatedAt": "2026-11-08T17:36:19.712Z",
+    "lastChecked": "2026-11-08T17:36:20.874Z"
   }
 ]
