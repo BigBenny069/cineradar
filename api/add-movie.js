@@ -116,6 +116,8 @@ async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
     updatedAt: movieEntry.updatedAt,
     lastChecked: new Date().toISOString(),
   };
+  // Conserve le second avis Watchmode déjà obtenu (modification d'une fiche).
+  if (existing?.wm) newEntry.wm = existing.wm;
 
   const newList = [...list];
   if (existingIndex >= 0) newList[existingIndex] = newEntry;

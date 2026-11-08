@@ -518,6 +518,29 @@ export function describeLetterboxdSource(source) {
   return "";
 }
 
+// Second avis Watchmode (champ "wm" posé par le robot) : badge à afficher
+// sur la fiche. null = pas de badge (plateforme non couverte, film inconnu de
+// Watchmode, ou pas encore contrôlé).
+export function getWatchmodeBadge(movie) {
+  const wm = movie?.wm;
+  if (!wm || !(movie.providers?.abonnement?.length > 0)) return null;
+  if (wm.status === "ok") return { kind: "ok", label: "✓ 2 sources" };
+  if (wm.status === "mismatch") return { kind: "warn", label: "⚠️ À vérifier" };
+  return null;
+}
+
+const WATCHMODE_FAMILY_NAMES = { netflix: "Netflix", disney: "Disney+", paramount: "Paramount+", prime: "Prime Video" };
+
+// Phrase d'explication affichée sur la fiche quand les deux sources ne sont
+// pas d'accord. Chaîne vide s'il n'y a pas de désaccord.
+export function describeWatchmodeMismatch(movie) {
+  const wm = movie?.wm;
+  if (!wm || wm.status !== "mismatch") return "";
+  const names = (wm.missing || []).map((f) => WATCHMODE_FAMILY_NAMES[f] || f);
+  if (names.length === 0) return "";
+  return `TMDB annonce le film sur ${names.join(" et ")}, mais Watchmode ne le confirme pas. Vérifie sur la plateforme avant de t'y fier.`;
+}
+
 export function pickBestTmdbMatch(results, title, year) {
   const wanted = normalizeText(title);
   if (!wanted) return null;
@@ -1409,6 +1432,7 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
             </span>
           </div>
         )}
+        <WatchmodeChip movie={movie} compact />
       </div>
       <div style={{ padding: "7px 8px 9px" }}>
         <div
@@ -1469,6 +1493,35 @@ function HorizontalRow({ icon, label, movies, onOpen, emptyText }) {
   );
 }
 
+// Petit badge "second avis Watchmode" posé en bas à gauche d'une affiche
+// (le parent doit être en position: relative). Rien si pas de second avis.
+function WatchmodeChip({ movie, compact = false }) {
+  const badge = getWatchmodeBadge(movie);
+  if (!badge) return null;
+  const color = badge.kind === "warn" ? T.accentSecondary : T.cream;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 5,
+        bottom: 5,
+        padding: compact ? "1px 5px" : "2px 6px",
+        borderRadius: 3,
+        background: "rgba(19,16,12,0.82)",
+        border: `1px solid ${color}`,
+        color,
+        fontFamily: F.mono,
+        fontSize: compact ? 8 : 9,
+        fontWeight: 600,
+        letterSpacing: 0.3,
+        whiteSpace: "nowrap",
+      }}
+    >
+      {badge.label}
+    </div>
+  );
+}
+
 function MovieCard({ movie, onOpen }) {
   return (
     <button
@@ -1508,6 +1561,7 @@ function MovieCard({ movie, onOpen }) {
             <StampBadge size="small">Abonné</StampBadge>
           </div>
         )}
+        <WatchmodeChip movie={movie} />
       </div>
       <div style={{ padding: "8px 10px" }}>
         <div style={{ fontFamily: F.marquee, fontSize: 16, color: T.cream, lineHeight: 1 }}>
@@ -1846,8 +1900,28 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
           </div>
           <div style={{ padding: "14px 16px 18px" }}>
             {abonnement.length > 0 && (
-              <div style={{ marginBottom: 10 }}>
+              <div style={{ marginBottom: 10, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                 <StampBadge>Abonné</StampBadge>
+                {(() => {
+                  const wmBadge = getWatchmodeBadge(movie);
+                  if (!wmBadge) return null;
+                  const color = wmBadge.kind === "warn" ? T.accentSecondary : T.cream;
+                  return (
+                    <span
+                      style={{
+                        padding: "3px 8px",
+                        borderRadius: 3,
+                        border: `1px solid ${color}`,
+                        color,
+                        fontFamily: F.mono,
+                        fontSize: 11,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {wmBadge.label}
+                    </span>
+                  );
+                })()}
               </div>
             )}
             <div style={{ fontFamily: F.marquee, fontSize: 32, color: T.cream, lineHeight: 1 }}>
@@ -2031,6 +2105,11 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
                 <div style={{ fontFamily: F.mono, fontSize: 10, color: T.accent, marginBottom: 8 }}>
                   MES ABONNEMENTS
                 </div>
+                {describeWatchmodeMismatch(movie) && (
+                  <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, marginBottom: 10, lineHeight: 1.5 }}>
+                    {describeWatchmodeMismatch(movie)}
+                  </div>
+                )}
                 {abonnement.map((p) => (
                   <div
                     key={p}
@@ -2053,6 +2132,14 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
                     </a>
                   </div>
                 ))}
+                {getWatchmodeBadge(movie) && (
+                  <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted, marginTop: 8, borderTop: `1px solid ${T.line}`, paddingTop: 8 }}>
+                    Second avis :{" "}
+                    <a href="https://api.watchmode.com/" target="_blank" rel="noopener noreferrer" style={{ color: T.muted }}>
+                      données Watchmode
+                    </a>
+                  </div>
+                )}
               </div>
             )}
             {vod.length > 0 && (

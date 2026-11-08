@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -209,5 +209,35 @@ describe("applyPendingChanges", () => {
   it("ne modifie pas la liste d'origine", () => {
     applyPendingChanges(list, [{ type: "removed", tmdbId: 1, until: now + 1000 }], now);
     expect(list).toHaveLength(2);
+  });
+});
+
+describe("getWatchmodeBadge", () => {
+  const base = { providers: { abonnement: ["Netflix"], vod: [] } };
+
+  it("✓ 2 sources quand Watchmode confirme", () => {
+    expect(getWatchmodeBadge({ ...base, wm: { status: "ok" } })).toEqual({ kind: "ok", label: "✓ 2 sources" });
+  });
+  it("⚠️ À vérifier en cas de désaccord", () => {
+    expect(getWatchmodeBadge({ ...base, wm: { status: "mismatch" } })).toEqual({ kind: "warn", label: "⚠️ À vérifier" });
+  });
+  it("pas de badge sans second avis, ou quand Watchmode ne connaît pas le film", () => {
+    expect(getWatchmodeBadge(base)).toBeNull();
+    expect(getWatchmodeBadge({ ...base, wm: { status: "unknown" } })).toBeNull();
+    expect(getWatchmodeBadge(null)).toBeNull();
+  });
+  it("pas de badge si le film n'est sur aucun de mes abonnements", () => {
+    expect(getWatchmodeBadge({ providers: { abonnement: [], vod: ["AppleTV"] }, wm: { status: "mismatch" } })).toBeNull();
+  });
+});
+
+describe("describeWatchmodeMismatch", () => {
+  it("nomme les plateformes non confirmées", () => {
+    expect(describeWatchmodeMismatch({ wm: { status: "mismatch", missing: ["disney"] } })).toContain("Disney+");
+    expect(describeWatchmodeMismatch({ wm: { status: "mismatch", missing: ["netflix", "prime"] } })).toContain("Netflix et Prime Video");
+  });
+  it("chaîne vide sans désaccord", () => {
+    expect(describeWatchmodeMismatch({ wm: { status: "ok" } })).toBe("");
+    expect(describeWatchmodeMismatch({})).toBe("");
   });
 });
