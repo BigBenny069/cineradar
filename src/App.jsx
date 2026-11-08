@@ -992,11 +992,11 @@ function RadarIntro({ ready, onDone }) {
   const [hidden, setHidden] = useState(false);
   const [showSkip, setShowSkip] = useState(false);
 
-  const MIN_SWEEP_DURATION = 3000;
-  const LOCK_DELAY = 450;
-  const LOCK_DURATION = 900;
-  const HOLD_DURATION = 2000;
-  const FADE_OUT_DURATION = 1000;
+  const MIN_SWEEP_DURATION = 2200;
+  const LOCK_DELAY = 300;
+  const LOCK_DURATION = 800;
+  const HOLD_DURATION = 1700;
+  const FADE_OUT_DURATION = 800;
 
   const [minSweepDone, setMinSweepDone] = useState(false);
 
@@ -1063,14 +1063,14 @@ function RadarIntro({ ready, onDone }) {
 
   if (hidden) return null;
 
-  const blips = [
-    { top: "28%", left: "62%", delay: "0s" },
-    { top: "58%", left: "72%", delay: "0.4s" },
-    { top: "70%", left: "38%", delay: "0.9s" },
-    { top: "35%", left: "30%", delay: "1.3s" },
-  ];
-  const lockTarget = blips[0];
   const revealed = phase === "reveal" || phase === "fadeout";
+  const stamped = phase !== "sweep";
+  const PAPER = "#E9E4D8";
+  const INK = "#14161C";
+  const INK_SOFT = "#14161CAA";
+
+  const tag = { fontFamily: MONO, fontSize: 9.5, letterSpacing: 2.2, textTransform: "uppercase", color: INK_SOFT };
+  const big = { fontFamily: MARQUEE, fontSize: 28, lineHeight: 1, letterSpacing: 1, color: INK };
 
   return (
     <div
@@ -1088,130 +1088,141 @@ function RadarIntro({ ready, onDone }) {
         transition: `opacity ${FADE_OUT_DURATION}ms ease`,
       }}
     >
-      {/* Écran radar */}
+      {/* Le billet : monte du bas, est scanné (en boucle tant que les      */}
+      {/* données ne sont pas prêtes), validé, puis se déchire en deux.     */}
       <div
         style={{
           position: "relative",
-          width: 230,
-          height: 230,
-          opacity: revealed ? 0 : 1,
-          transform: revealed ? "scale(0.9)" : "scale(1)",
-          transition: "opacity 0.35s ease, transform 0.35s ease",
+          width: 200,
+          height: 340,
+          animation: "cr-ticket-up 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) both",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: -20,
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${BLUE}14 0%, transparent 70%)`,
-          }}
-        />
-
-        {[1, 0.66, 0.33].map((s) => (
-          <div
-            key={s}
-            style={{
-              position: "absolute",
-              top: `${(1 - s) * 50}%`,
-              left: `${(1 - s) * 50}%`,
-              width: `${s * 100}%`,
-              height: `${s * 100}%`,
-              borderRadius: "50%",
-              border: `1px solid ${LINE}`,
-              opacity: 0.8,
-            }}
-          />
-        ))}
-        <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 1, background: LINE, opacity: 0.5 }} />
-        <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: LINE, opacity: 0.5 }} />
-
-        <div style={{ position: "absolute", inset: 0, borderRadius: "50%", overflow: "hidden" }}>
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              filter: "blur(2px)",
-              background: `conic-gradient(from 0deg, transparent 0deg, transparent 250deg, ${BLUE}22 300deg, ${BLUE_LIGHT}CC 340deg, ${BLUE_LIGHT} 360deg)`,
-              animation: "cr-radar-spin 3.2s linear infinite",
-              animationPlayState: phase === "sweep" ? "running" : "paused",
-            }}
-          />
-        </div>
-
-        {blips.map((b, i) => (
+        {[{ left: -11 }, { right: -11 }].map((side, i) => (
           <div
             key={i}
             style={{
               position: "absolute",
-              top: b.top,
-              left: b.left,
-              width: 7,
-              height: 7,
-              marginTop: -3.5,
-              marginLeft: -3.5,
+              top: 110,
+              width: 22,
+              height: 22,
               borderRadius: "50%",
-              background: BLUE_LIGHT,
-              boxShadow: `0 0 6px 1px ${BLUE_LIGHT}99`,
-              animation: phase === "sweep" ? "cr-radar-pulse 1.8s ease-in-out infinite" : "none",
-              animationDelay: b.delay,
-              opacity: phase === "sweep" ? undefined : 1,
+              background: BG,
+              zIndex: 2,
+              animation: revealed ? "cr-fade-gone 0.2s linear forwards" : "none",
+              ...side,
             }}
           />
         ))}
 
-        {phase !== "sweep" && (
-          <div
-            style={{
-              position: "absolute",
-              top: lockTarget.top,
-              left: lockTarget.left,
-              width: 36,
-              height: 36,
-              marginTop: -18,
-              marginLeft: -18,
-              animation: `cr-radar-lock ${LOCK_DURATION}ms ease-out forwards`,
-            }}
-          >
-            {[
-              { top: 0, left: 0, borderWidth: "2px 0 0 2px" },
-              { top: 0, right: 0, borderWidth: "2px 2px 0 0" },
-              { bottom: 0, left: 0, borderWidth: "0 0 2px 2px" },
-              { bottom: 0, right: 0, borderWidth: "0 2px 2px 0" },
-            ].map((corner, i) => (
-              <div
-                key={i}
-                style={{
-                  position: "absolute",
-                  width: 12,
-                  height: 12,
-                  borderStyle: "solid",
-                  borderColor: BLUE_LIGHT,
-                  ...corner,
-                }}
-              />
-            ))}
-          </div>
-        )}
+        <div
+          style={{
+            position: "absolute",
+            left: -6,
+            right: -6,
+            top: 0,
+            height: 3,
+            background: BLUE,
+            boxShadow: `0 0 14px 4px ${BLUE}AA, 0 -26px 26px 0 ${BLUE}33`,
+            zIndex: 3,
+            opacity: 0,
+            animation: phase === "sweep" ? "cr-ticket-scan 1.1s ease-in-out infinite" : "none",
+          }}
+        />
 
         <div
           style={{
             position: "absolute",
-            top: "50%",
+            zIndex: 4,
             left: "50%",
-            width: 4,
-            height: 4,
-            marginTop: -2,
-            marginLeft: -2,
-            borderRadius: "50%",
-            background: CREAM,
-            boxShadow: `0 0 5px 1px ${CREAM}88`,
+            top: "56%",
+            width: 120,
+            marginLeft: -60,
+            textAlign: "center",
+            fontFamily: MARQUEE,
+            fontSize: 32,
+            letterSpacing: 3,
+            color: "#2D63E0",
+            border: "3px solid #2D63E0",
+            borderRadius: 6,
+            paddingTop: 2,
+            opacity: 0,
+            transform: "rotate(-12deg) scale(1.7)",
+            animation: revealed
+              ? "cr-stamp-out 0.3s ease-in forwards"
+              : stamped
+                ? "cr-stamp 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards"
+                : "none",
           }}
-        />
+        >
+          VALIDÉ
+        </div>
+
+        {/* Moitié haute (talon) */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 120,
+            padding: "18px 18px 0",
+            background: PAPER,
+            borderRadius: "10px 10px 0 0",
+            borderBottom: `2px dashed ${INK}55`,
+            transformOrigin: "0 100%",
+            animation: revealed ? "cr-tear-top 0.75s cubic-bezier(0.5, 0, 0.8, 0.4) forwards" : "none",
+          }}
+        >
+          <div style={tag}>Guichet</div>
+          <div style={{ fontFamily: MARQUEE, fontSize: 29, lineHeight: 1, letterSpacing: 1, color: INK, marginTop: 12, whiteSpace: "nowrap" }}>
+            CINÉ<span style={{ color: "#2D63E0" }}>RADAR</span>
+          </div>
+        </div>
+
+        {/* Moitié basse */}
+        <div
+          style={{
+            position: "absolute",
+            top: 120,
+            left: 0,
+            right: 0,
+            height: 220,
+            padding: "16px 18px 0",
+            background: PAPER,
+            borderRadius: "0 0 10px 10px",
+            transformOrigin: "100% 0",
+            animation: revealed ? "cr-tear-bot 0.75s cubic-bezier(0.5, 0, 0.8, 0.4) forwards" : "none",
+          }}
+        >
+          <div style={tag}>Séance privée</div>
+          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 12 }}>
+            {[
+              ["Places", "2"],
+              ["Salle", "1"],
+              ["Rangs", "7 · 8"],
+            ].map(([label, value]) => (
+              <div key={label} style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                <span style={tag}>{label}</span>
+                <span style={big}>{value}</span>
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              left: 18,
+              right: 18,
+              bottom: 16,
+              height: 42,
+              background: `repeating-linear-gradient(90deg, ${INK} 0 2px, transparent 2px 4px, ${INK} 4px 5px, transparent 5px 9px, ${INK} 9px 12px, transparent 12px 14px)`,
+            }}
+          />
+        </div>
       </div>
 
       {phase === "sweep" && (
-        <p style={{ marginTop: 22, fontFamily: MONO, fontSize: 9.5, letterSpacing: 3, color: MUTED }}>
+        <p style={{ position: "absolute", bottom: 74, margin: 0, fontFamily: MONO, fontSize: 9.5, letterSpacing: 3, color: MUTED }}>
           SCAN EN COURS…
         </p>
       )}
@@ -1227,7 +1238,7 @@ function RadarIntro({ ready, onDone }) {
           gap: 16,
           opacity: revealed ? 1 : 0,
           transform: revealed ? "scale(1)" : "scale(0.85)",
-          transition: "opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s",
+          transition: "opacity 0.5s ease 0.35s, transform 0.5s ease 0.35s",
         }}
       >
         <div style={{ filter: `drop-shadow(0 0 10px ${BLUE}66)` }}>
@@ -1293,7 +1304,6 @@ function RadarIntro({ ready, onDone }) {
     </div>
   );
 }
-
 
 function Header({ onBack }) {
   return (
