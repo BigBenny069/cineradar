@@ -256,6 +256,8 @@ describe("isReportedUnavailable / splitHomeSections", () => {
     expect(isReportedUnavailable(films[1])).toBe(true);
     expect(isReportedUnavailable(films[0])).toBe(false);
     expect(isReportedUnavailable({ reported: null })).toBe(false);
+    // TMDB a retiré la plateforme : plus « douteux », juste plus disponible.
+    expect(isReportedUnavailable({ reported: { platforms: ["Netflix"], dropped: true } })).toBe(false);
     expect(isReportedUnavailable(undefined)).toBe(false);
   });
 

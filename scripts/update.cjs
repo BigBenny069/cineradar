@@ -6,6 +6,7 @@ const BASE = "https://api.themoviedb.org/3";
 
 const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_shared/subscriptions.cjs");
 const { applyWatchmodeChecks } = require("../api/_shared/watchmode.cjs");
+const { applyReportEvaluation } = require("../api/_shared/reports.cjs");
 
 function loadSettings() {
   try {
@@ -754,6 +755,18 @@ async function main() {
   const previousReported = loadPreviousReported();
   for (const entry of output) {
     if (previousReported[entry.tmdbId]) entry.reported = previousReported[entry.tmdbId];
+  }
+  // Retour automatique des films signalés « pas disponible » (voir
+  // api/_shared/reports.cjs). Jamais bloquant.
+  try {
+    const reportStats = applyReportEvaluation(output, new Date().toISOString());
+    if (reportStats.dropped || reportStats.returned || reportStats.newPlatform) {
+      console.log(
+        `Signalements : ${reportStats.returned} retour(s) effacé(s), ${reportStats.newPlatform} nouvelle(s) plateforme(s) effacée(s), ${reportStats.dropped} disparition(s) notée(s).`
+      );
+    }
+  } catch (e) {
+    console.log(`Signalements : évaluation ignorée (${e.message}).`);
   }
 
   // Second avis Watchmode sur la disponibilité (voir api/_shared/watchmode.cjs).
