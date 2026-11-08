@@ -479,5 +479,12 @@
     "tmdbId": 11033,
     "reason": "manuel",
     "deletedAt": "2026-11-04T22:50:10.691Z"
+  },
+  {
+    "title": "There Will Be Blood",
+    "year": 2007,
+    "tmdbId": 7345,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-08T06:56:47.044Z"
   }
 ]
