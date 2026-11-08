@@ -7487,5 +7487,41 @@
       "id": 1731364,
       "checkedAt": "2026-11-08T08:38:01.410Z"
     }
+  },
+  {
+    "tmdbId": 26466,
+    "title": "Triangle",
+    "year": "2009",
+    "director": "Christopher Smith",
+    "poster": "https://image.tmdb.org/t/p/w500/orJXc0yAZ8PMvlwVorBq2Syj9bD.jpg",
+    "synopsis": "Perdus dans le Triangle des Bermudes, les passagers d'un bateau chavirent et rejoignent un mystérieux navire abandonné. À bord, ils devront combattre leur côté sombre.",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Melissa George",
+      "Liam Hemsworth",
+      "Emma Lung",
+      "Rachael Carpani",
+      "Michael Dorman"
+    ],
+    "tmdbRating": 6.917,
+    "tmdbVotes": 3203,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1187064",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/26466/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-08T17:35:14.357Z",
+    "updatedAt": "2026-11-08T17:35:14.357Z",
+    "lastChecked": "2026-11-08T17:35:15.495Z"
   }
 ]
