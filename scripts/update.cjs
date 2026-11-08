@@ -49,6 +49,20 @@ function loadPreviousWm() {
   }
 }
 
+// Signalements « pas disponible sur cette plateforme » posés depuis l'app
+// (champ "reported" de enriched.json) : le robot reconstruit les fiches à
+// chaque passage, il doit donc les recopier pour ne pas les perdre.
+function loadPreviousReported() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync("public/data/enriched.json", "utf-8"));
+    const map = {};
+    for (const m of parsed) if (m.reported) map[m.tmdbId] = m.reported;
+    return map;
+  } catch (e) {
+    return {};
+  }
+}
+
 function loadPreviousAbonnements() {
   try {
     const raw = fs.readFileSync("public/data/enriched.json", "utf-8");
@@ -735,6 +749,11 @@ async function main() {
         updatedAt: movie.updatedAt || null,
       });
     }
+  }
+
+  const previousReported = loadPreviousReported();
+  for (const entry of output) {
+    if (previousReported[entry.tmdbId]) entry.reported = previousReported[entry.tmdbId];
   }
 
   // Second avis Watchmode sur la disponibilité (voir api/_shared/watchmode.cjs).

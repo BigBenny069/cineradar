@@ -518,12 +518,36 @@ export function describeLetterboxdSource(source) {
   return "";
 }
 
+// Un film signalé « pas disponible sur cette plateforme » (champ "reported")
+// quitte la liste « Disponible » pour la section « Disponibilité douteuse ».
+export function isReportedUnavailable(movie) {
+  return Boolean(movie && movie.reported);
+}
+
+// Découpe des fiches pour l'accueil : films disponibles (hors signalés),
+// films à disponibilité douteuse (signalés, du plus récent signalement au
+// plus ancien) et derniers ajouts.
+export function splitHomeSections(movies) {
+  const list = movies || [];
+  const available = list
+    .filter((m) => m.availableSince && !isReportedUnavailable(m))
+    .sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince));
+  const doubtful = list
+    .filter(isReportedUnavailable)
+    .sort((a, b) => String(b.reported.at || "").localeCompare(String(a.reported.at || "")));
+  const lastAdded = list
+    .filter((m) => m.updatedAt)
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .slice(0, 5);
+  return { available, doubtful, lastAdded };
+}
+
 // Second avis Watchmode (champ "wm" posé par le robot) : badge à afficher
 // sur la fiche. null = pas de badge (plateforme non couverte, film inconnu de
 // Watchmode, ou pas encore contrôlé).
 export function getWatchmodeBadge(movie) {
   const wm = movie?.wm;
-  if (!wm || !(movie.providers?.abonnement?.length > 0)) return null;
+  if (!wm || !(movie.providers?.abonnement?.length > 0) || isReportedUnavailable(movie)) return null;
   if (wm.status === "ok") return { kind: "ok", label: "✓ 2 sources" };
   if (wm.status === "mismatch") return { kind: "warn", label: "⚠️ À vérifier" };
   return null;
@@ -1556,7 +1580,7 @@ function MovieCard({ movie, onOpen }) {
             Affiche indisponible
           </div>
         )}
-        {movie.providers?.abonnement?.length > 0 && (
+        {movie.providers?.abonnement?.length > 0 && !isReportedUnavailable(movie) && (
           <div style={{ position: "absolute", top: 6, right: 6 }}>
             <StampBadge size="small">Abonné</StampBadge>
           </div>
@@ -1765,7 +1789,7 @@ function BottomNav({ view, onChange }) {
   );
 }
 
-function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) {
+function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated, onPatched }) {
   const maxWidth = useResponsiveMaxWidth();
   const [showLinks, setShowLinks] = useState(false);
   const [showVod, setShowVod] = useState(false);
@@ -1774,6 +1798,26 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
   const [deleteError, setDeleteError] = useState("");
   const [reverifyStatus, setReverifyStatus] = useState(null);
   const [reverifyError, setReverifyError] = useState("");
+  const [reportStatus, setReportStatus] = useState(null);
+  const [reportError, setReportError] = useState("");
+
+  // « Pas disponible sur cette plateforme » (ou retour en arrière) : le film
+  // quitte / réintègre la liste « Disponible » tout de suite.
+  const handleReport = async (clear) => {
+    setReportStatus("loading");
+    setReportError("");
+    const result = await apiWrite("/api/reverify-movie", {
+      tmdbId: movie.tmdbId,
+      action: clear ? "clear-report" : "report-unavailable",
+    });
+    if (!result.ok) {
+      setReportStatus("error");
+      setReportError(result.error);
+      return;
+    }
+    setReportStatus(null);
+    onPatched?.(result.data.movie, { reported: result.data.movie?.reported ?? null });
+  };
 
   const handleReverify = async () => {
     setReverifyStatus("loading");
@@ -1899,7 +1943,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
             )}
           </div>
           <div style={{ padding: "14px 16px 18px" }}>
-            {abonnement.length > 0 && (
+            {abonnement.length > 0 && !isReportedUnavailable(movie) && (
               <div style={{ marginBottom: 10, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                 <StampBadge>Abonné</StampBadge>
                 {(() => {
@@ -2132,6 +2176,55 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated }) 
                     </a>
                   </div>
                 ))}
+                {isReportedUnavailable(movie) ? (
+                  <div style={{ marginTop: 10, borderTop: `1px solid ${T.line}`, paddingTop: 10 }}>
+                    <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, lineHeight: 1.5 }}>
+                      🤔 Tu as signalé ce film comme absent de cette plateforme
+                      {movie.reported.at ? ` le ${new Date(movie.reported.at).toLocaleDateString("fr-FR")}` : ""}. Il est classé dans « Disponibilité douteuse ».
+                    </div>
+                    <button
+                      onClick={() => handleReport(true)}
+                      disabled={reportStatus === "loading"}
+                      style={{
+                        width: "100%",
+                        marginTop: 8,
+                        padding: "10px 0",
+                        border: `1px solid ${T.line}`,
+                        borderRadius: 6,
+                        fontFamily: F.mono,
+                        fontSize: 11,
+                        color: T.muted,
+                        letterSpacing: 0.5,
+                        opacity: reportStatus === "loading" ? 0.6 : 1,
+                      }}
+                    >
+                      {reportStatus === "loading" ? "..." : "↩︎ REMETTRE DANS « DISPONIBLE »"}
+                    </button>
+                  </div>
+                ) : (
+                  <div style={{ marginTop: 10, borderTop: `1px solid ${T.line}`, paddingTop: 10 }}>
+                    <button
+                      onClick={() => handleReport(false)}
+                      disabled={reportStatus === "loading"}
+                      style={{
+                        width: "100%",
+                        padding: "10px 0",
+                        border: `1px solid ${T.line}`,
+                        borderRadius: 6,
+                        fontFamily: F.mono,
+                        fontSize: 11,
+                        color: T.muted,
+                        letterSpacing: 0.5,
+                        opacity: reportStatus === "loading" ? 0.6 : 1,
+                      }}
+                    >
+                      {reportStatus === "loading" ? "..." : "🚫 PAS DISPONIBLE SUR CETTE PLATEFORME"}
+                    </button>
+                  </div>
+                )}
+                {reportStatus === "error" && (
+                  <div style={{ fontFamily: F.mono, fontSize: 11, color: T.accentSecondary, marginTop: 6 }}>Erreur : {reportError}</div>
+                )}
                 {getWatchmodeBadge(movie) && (
                   <div style={{ fontFamily: F.mono, fontSize: 9, color: T.muted, marginTop: 8, borderTop: `1px solid ${T.line}`, paddingTop: 8 }}>
                     Second avis :{" "}
@@ -2455,12 +2548,7 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
   // Toutes les fiches disponibles sur un abonnement, par ordre chronologique
   // (plus récente disponibilité en premier) — plus de limite à 5, sur
   // demande explicite : on veut voir toute la liste, pas juste un aperçu.
-  const recentlyAvailable = [...movies].filter((m) => m.availableSince).sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince));
-
-  const lastAdded = [...movies]
-    .filter((m) => m.updatedAt)
-    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
-    .slice(0, 5);
+  const { available: recentlyAvailable, doubtful, lastAdded } = splitHomeSections(movies);
 
   const isSpringfield = CURRENT_THEME === "springfield";
 
@@ -2647,6 +2735,16 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
               emptyText="Rien de nouveau sur tes abonnements pour l'instant."
             />
 
+            {doubtful.length > 0 && (
+              <HorizontalRow
+                icon="🤔"
+                label="Disponibilité douteuse"
+                movies={doubtful}
+                onOpen={onOpen}
+                emptyText=""
+              />
+            )}
+
             <HorizontalRow
               icon="🎬"
               label="Derniers ajouts"
@@ -2726,7 +2824,7 @@ function LibraryView({ movies, onOpen }) {
     filtered = filtered.filter((m) => (m.genres || []).includes(genre));
   }
   if (subsOnly) {
-    filtered = filtered.filter((m) => (m.providers?.abonnement || []).length > 0);
+    filtered = filtered.filter((m) => (m.providers?.abonnement || []).length > 0 && !isReportedUnavailable(m));
   }
   if (addedBy !== "Tous") {
     filtered = filtered.filter((m) => m.wantedBy === addedBy);
@@ -4214,6 +4312,9 @@ export function applyPendingChanges(list, pending, now = Date.now()) {
     const idx = result.findIndex((m) => String(m.tmdbId) === String(p.tmdbId));
     if (p.type === "removed") {
       if (idx >= 0) result.splice(idx, 1);
+    } else if (p.type === "patched" && p.patch) {
+      // Petite modification d'une fiche (ex. signalement « pas disponible »).
+      if (idx >= 0) result[idx] = { ...result[idx], ...p.patch };
     } else if (p.type === "upserted" && p.movie) {
       if (idx < 0) result.push(p.movie);
       // On ne remplace que par une version plus récente : si le site a déjà
@@ -4237,7 +4338,10 @@ function loadPending_() {
 function registerPending_(entry) {
   if (!entry || !entry.tmdbId) return;
   const now = Date.now();
-  const list = loadPending_().filter((p) => String(p.tmdbId) !== String(entry.tmdbId));
+  // Une suppression ou un ajout remplace tout ce qui était retenu pour ce
+  // film ; une simple modification ne remplace que la précédente modification.
+  const sameFilm = (p) => String(p.tmdbId) === String(entry.tmdbId);
+  const list = loadPending_().filter((p) => (entry.type === "patched" ? !(sameFilm(p) && p.type === "patched") : !sameFilm(p)));
   list.push({ ...entry, until: now + PENDING_TTL_MS });
   try {
     localStorage.setItem(PENDING_KEY, JSON.stringify(list));
@@ -4428,6 +4532,14 @@ export default function App() {
     setMovies((prev) => applyPendingChanges(prev, loadPending_()));
   };
 
+  // Petite modification d'une fiche (signalement « pas disponible »).
+  const handleMoviePatched = (updatedMovie, patch) => {
+    if (!updatedMovie?.tmdbId) return;
+    registerPending_({ type: "patched", tmdbId: updatedMovie.tmdbId, patch });
+    setMovies((prev) => applyPendingChanges(prev, loadPending_()));
+    setSelected(updatedMovie);
+  };
+
   const handleNavChange = (key) => {
     if (key === "add") {
       setEditingMovie(null);
@@ -4473,6 +4585,7 @@ export default function App() {
           setView("add");
         }}
         onRemoved={handleMovieRemoved}
+        onPatched={handleMoviePatched}
         onDeleted={() => setSelected(null)}
         onUpdated={(updatedMovie) => {
           setSelected(updatedMovie);

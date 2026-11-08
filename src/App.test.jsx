@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch, isReportedUnavailable, splitHomeSections } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -239,5 +239,65 @@ describe("describeWatchmodeMismatch", () => {
   it("chaîne vide sans désaccord", () => {
     expect(describeWatchmodeMismatch({ wm: { status: "ok" } })).toBe("");
     expect(describeWatchmodeMismatch({})).toBe("");
+  });
+});
+
+describe("isReportedUnavailable / splitHomeSections", () => {
+  const abo = { abonnement: ["Netflix"], vod: [] };
+  const films = [
+    { tmdbId: 1, title: "A", providers: abo, availableSince: "2026-11-01T00:00:00Z", updatedAt: "2026-10-01T00:00:00Z" },
+    { tmdbId: 2, title: "B", providers: abo, availableSince: "2026-11-05T00:00:00Z", updatedAt: "2026-10-02T00:00:00Z", reported: { platforms: ["Netflix"], at: "2026-11-06T00:00:00Z" } },
+    { tmdbId: 3, title: "C", providers: abo, availableSince: "2026-11-03T00:00:00Z", updatedAt: "2026-10-03T00:00:00Z" },
+    { tmdbId: 4, title: "D", providers: abo, availableSince: "2026-11-02T00:00:00Z", updatedAt: "2026-10-04T00:00:00Z", reported: { platforms: ["Netflix"], at: "2026-11-07T00:00:00Z" } },
+    { tmdbId: 5, title: "E", providers: { abonnement: [], vod: [] }, availableSince: null, updatedAt: "2026-10-05T00:00:00Z" },
+  ];
+
+  it("reconnaît un film signalé", () => {
+    expect(isReportedUnavailable(films[1])).toBe(true);
+    expect(isReportedUnavailable(films[0])).toBe(false);
+    expect(isReportedUnavailable({ reported: null })).toBe(false);
+    expect(isReportedUnavailable(undefined)).toBe(false);
+  });
+
+  it("« Disponible » ne contient que les films vraiment disponibles, du plus récent au plus ancien", () => {
+    expect(splitHomeSections(films).available.map((m) => m.tmdbId)).toEqual([3, 1]);
+  });
+
+  it("« Disponibilité douteuse » contient les films signalés, le plus récent signalement d'abord", () => {
+    expect(splitHomeSections(films).doubtful.map((m) => m.tmdbId)).toEqual([4, 2]);
+  });
+
+  it("« Derniers ajouts » garde tous les films, signalés ou non", () => {
+    expect(splitHomeSections(films).lastAdded.map((m) => m.tmdbId)).toEqual([5, 4, 3, 2, 1]);
+  });
+
+  it("aucun film : trois listes vides, sans erreur", () => {
+    expect(splitHomeSections(undefined)).toEqual({ available: [], doubtful: [], lastAdded: [] });
+  });
+
+  it("pas de badge Watchmode sur un film signalé", () => {
+    expect(getWatchmodeBadge({ providers: { abonnement: ["Netflix"] }, wm: { status: "mismatch" }, reported: { at: "x" } })).toBeNull();
+  });
+});
+
+describe("applyPendingChanges — modification légère (patched)", () => {
+  const now = 1_000_000;
+  const list = [{ tmdbId: 1, title: "A" }, { tmdbId: 2, title: "B" }];
+
+  it("applique le signalement même si le site publié ne l'a pas encore", () => {
+    const out = applyPendingChanges(list, [{ type: "patched", tmdbId: 1, patch: { reported: { at: "x" } }, until: now + 1000 }], now);
+    expect(out[0].reported).toEqual({ at: "x" });
+    expect(out[1]).toEqual(list[1]);
+  });
+
+  it("retire le signalement quand le patch le remet à null", () => {
+    const withReport = [{ tmdbId: 1, title: "A", reported: { at: "x" } }];
+    const out = applyPendingChanges(withReport, [{ type: "patched", tmdbId: 1, patch: { reported: null }, until: now + 1000 }], now);
+    expect(isReportedUnavailable(out[0])).toBe(false);
+  });
+
+  it("ne fait rien si la fiche n'est plus dans la liste", () => {
+    const out = applyPendingChanges(list, [{ type: "patched", tmdbId: 99, patch: { reported: { at: "x" } }, until: now + 1000 }], now);
+    expect(out).toHaveLength(2);
   });
 });
