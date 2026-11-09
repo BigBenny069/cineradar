@@ -4861,52 +4861,6 @@
     "lastChecked": "2026-11-09T14:52:19.242Z"
   },
   {
-    "tmdbId": 975,
-    "title": "Les Sentiers de la gloire",
-    "year": "1957",
-    "director": "Stanley Kubrick",
-    "poster": "https://image.tmdb.org/t/p/w500/nLGw5N5VLmQR8bPbRMt772FWzCz.jpg",
-    "synopsis": "En 1916, durant la Première Guerre mondiale, le général français Broulard ordonne au général Mireau de lancer une offensive suicidaire contre une position allemande imprenable, surnommée la « Fourmilière ». Au moment de l'attaque, les soldats tombent par dizaines et leurs compagnons, épuisés, refusent d'avancer…",
-    "genres": [
-      "Guerre",
-      "Drame"
-    ],
-    "cast": [
-      "Kirk Douglas",
-      "Ralph Meeker",
-      "Adolphe Menjou",
-      "George Macready",
-      "Wayne Morris"
-    ],
-    "tmdbRating": 8.254,
-    "tmdbVotes": 3433,
-    "letterboxdRating": 4.45,
-    "letterboxdVotes": 350945,
-    "imdbId": "tt0050825",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/975/",
-    "providers": {
-      "abonnement": [
-        "Cine+ OCS Amazon Channel "
-      ],
-      "vod": [
-        "Molotov TV",
-        "MGM Amazon Channel",
-        "SFR Play",
-        "Apple TV Store",
-        "Orange VOD",
-        "Rakuten TV",
-        "Canal VOD",
-        "Amazon Video",
-        "Pathé Home"
-      ]
-    },
-    "availableSince": "2026-11-09T14:52:19.332Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-28T13:56:36.526Z",
-    "updatedAt": "2026-09-28T13:56:36.526Z",
-    "lastChecked": "2026-11-09T14:52:19.406Z"
-  },
-  {
     "tmdbId": 11020,
     "title": "Pique-nique à Hanging Rock",
     "year": "1975",
