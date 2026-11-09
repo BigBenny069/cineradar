@@ -1594,5 +1594,14 @@
     "letterboxdUrl": "https://letterboxd.com/film/milk-serial/",
     "addedAt": "2026-11-09T18:10:56.693Z",
     "updatedAt": "2026-11-09T18:10:56.693Z"
+  },
+  {
+    "title": "3h10 pour Yuma",
+    "year": 1957,
+    "director": "Delmer Daves",
+    "letterboxdUrl": "https://letterboxd.com/film/310-to-yuma/",
+    "addedAt": "2026-11-09T20:17:31.745Z",
+    "updatedAt": "2026-11-09T20:17:31.745Z",
+    "tmdbId": 14168
   }
 ]
