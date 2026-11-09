@@ -7501,5 +7501,38 @@
     "addedAt": "2026-11-09T14:51:43.340Z",
     "updatedAt": "2026-11-09T14:51:43.340Z",
     "lastChecked": "2026-11-09T16:00:58.115Z"
+  },
+  {
+    "tmdbId": 1118403,
+    "title": "The Chair",
+    "year": "2022",
+    "director": "Curry Barker",
+    "poster": "https://image.tmdb.org/t/p/w500/1amnNMQoEqqSCgJiMlT3cptAe2u.jpg",
+    "synopsis": "",
+    "genres": [
+      "Horreur"
+    ],
+    "cast": [
+      "Anthony Pavone",
+      "Haley Schwartz",
+      "David Alan Graf",
+      "Seth Goodfellow",
+      "Jonnathon Cripple"
+    ],
+    "tmdbRating": 6.8,
+    "tmdbVotes": 61,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt15408560",
+    "letterboxdUrl": "https://letterboxd.com/film/the-chair-2022-1/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-09T17:56:03.544Z",
+    "updatedAt": "2026-11-09T17:56:03.544Z",
+    "lastChecked": "2026-11-09T17:56:06.388Z"
   }
 ]
