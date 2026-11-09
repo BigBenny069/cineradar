@@ -507,5 +507,12 @@
     "tmdbId": 17654,
     "reason": "cinemaison",
     "deletedAt": "2026-11-08T06:59:58.745Z"
+  },
+  {
+    "title": "Les Sentiers de la gloire",
+    "year": 1957,
+    "tmdbId": 975,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-09T15:59:16.944Z"
   }
 ]
