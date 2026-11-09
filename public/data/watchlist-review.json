@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "key": "tmdb:1567605:benoit",
+    "title": "Scrooge",
+    "person": "benoit",
+    "reason": "deja_present",
+    "detectedAt": "2026-11-09T16:00:20.329Z"
+  }
+]
