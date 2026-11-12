@@ -528,5 +528,12 @@
     "tmdbId": 14168,
     "reason": "manuel",
     "deletedAt": "2026-11-12T05:35:30.629Z"
+  },
+  {
+    "title": "Harakiri",
+    "year": 1962,
+    "tmdbId": 14537,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-12T16:42:49.307Z"
   }
 ]
