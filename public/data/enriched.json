@@ -2749,58 +2749,6 @@
     "lastChecked": "2026-11-12T14:26:03.803Z"
   },
   {
-    "tmdbId": 14537,
-    "title": "Harakiri",
-    "year": "1962",
-    "director": "Masaki Kobayashi",
-    "poster": "https://image.tmdb.org/t/p/w500/y1bgzJiMVTNY4RoNc29eCebio57.jpg",
-    "synopsis": "Au XVIIe siècle, le Japon n'est plus en guerre et le pays est dirigé avec fermeté. Hanshirô Tsugumo, un rônin (samouraï errant) sans travail parmi tant d'autres, décide de frapper à la porte du puissant clan des Ii. Reçu par Kageyu Saitô, l'intendant du clan, il lui demande la permission d'accomplir le suicide par harakiri dans la résidence. Tentant de l'en dissuader, Saitô commence alors à lui raconter l'histoire de Motome Chijiwa, un ancien rônin qui souhaitait accomplir, lui aussi, le même rituel.",
-    "genres": [
-      "Action",
-      "Drame",
-      "Histoire"
-    ],
-    "cast": [
-      "Tatsuya Nakadai",
-      "Akira Ishihama",
-      "Shima Iwashita",
-      "Tetsurō Tanba",
-      "Masao Mishima"
-    ],
-    "tmdbRating": 8.474,
-    "tmdbVotes": 1324,
-    "letterboxdRating": 4.68,
-    "letterboxdVotes": 278524,
-    "imdbId": "tt0056058",
-    "letterboxdUrl": "https://letterboxd.com/tmdb/14537/",
-    "providers": {
-      "abonnement": [
-        "Amazon Prime Video",
-        "Amazon Prime Video with Ads"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Sooner",
-        "Amazon Video",
-        "LaCinetek"
-      ]
-    },
-    "availableSince": "2026-11-12T14:26:03.871Z",
-    "wantedBy": null,
-    "addedAt": "2026-09-13T06:27:39.167Z",
-    "updatedAt": "2026-09-13T06:27:39.167Z",
-    "lastChecked": "2026-11-12T14:26:03.944Z",
-    "wm": {
-      "status": "ok",
-      "families": [
-        "prime"
-      ],
-      "missing": [],
-      "id": 1158864,
-      "checkedAt": "2026-11-12T14:26:25.913Z"
-    }
-  },
-  {
     "tmdbId": 12493,
     "title": "Entre le ciel et l'enfer",
     "year": "1963",
