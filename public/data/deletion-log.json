@@ -535,5 +535,12 @@
     "tmdbId": 14537,
     "reason": "cinemaison",
     "deletedAt": "2026-11-12T16:42:49.307Z"
+  },
+  {
+    "title": "Avec Django ça va saigner",
+    "year": 1968,
+    "tmdbId": 101744,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-12T16:48:00.902Z"
   }
 ]
