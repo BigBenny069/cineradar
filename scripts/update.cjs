@@ -7,6 +7,7 @@ const BASE = "https://api.themoviedb.org/3";
 const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_shared/subscriptions.cjs");
 const { applyWatchmodeChecks } = require("../api/_shared/watchmode.cjs");
 const { applyReportEvaluation } = require("../api/_shared/reports.cjs");
+const { savePending, loadPending, clearPending } = require("../api/_shared/pending-notification.cjs");
 
 function loadSettings() {
   try {
@@ -586,6 +587,7 @@ async function sendNotificationEmail(newlyAvailable, notifyEmails) {
 
 async function main() {
   const startedAt = new Date().toISOString();
+  clearPending();
   let input = JSON.parse(fs.readFileSync("data/movies.json", "utf-8"));
   const previousAbonnements = loadPreviousAbonnements();
   let history = loadHistory();
@@ -829,14 +831,42 @@ async function main() {
   );
 
   if (newlyAvailable.length > 0) {
-    console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
-    await sendNotificationEmail(newlyAvailable, SETTINGS.notifyEmails);
+    if (process.env.DEFER_EMAIL === "1") {
+      // Workflow GitHub : l'e-mail part après l'enregistrement réussi (voir
+      // sendPendingNotification), pour ne pas être renvoyé à chaque nouvelle
+      // tentative de calcul en cas de collision.
+      console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), notification mise en attente (envoyée après l'enregistrement).`);
+      savePending(newlyAvailable);
+    } else {
+      console.log(`${newlyAvailable.length} film(s) nouvellement disponible(s), envoi de la notification...`);
+      await sendNotificationEmail(newlyAvailable, SETTINGS.notifyEmails);
+    }
   } else {
     console.log("Aucune nouvelle disponibilité à notifier.");
+    clearPending();
   }
 }
 
-main().catch((e) => {
+// Appelé par le workflow une fois l'enregistrement réussi : envoie l'e-mail
+// mis en attente (une seule fois), puis retire le fichier. Ne fait jamais
+// échouer le passage.
+async function sendPendingNotification() {
+  try {
+    const pending = loadPending();
+    if (pending.length === 0) {
+      console.log("Aucune notification en attente.");
+      return;
+    }
+    console.log(`${pending.length} film(s) nouvellement disponible(s), envoi de la notification...`);
+    await sendNotificationEmail(pending, SETTINGS.notifyEmails);
+    clearPending();
+  } catch (e) {
+    console.log(`Notification en attente non envoyée : ${e.message}`);
+  }
+}
+
+const entry = process.argv.includes("--send-pending") ? sendPendingNotification() : main();
+entry.catch((e) => {
   console.error("Le passage a échoué :", e);
   // Erreur fatale (ex: movies.json illisible) — le passage n'a même pas pu
   // aller au bout, donc pas de compteurs détaillés disponibles, mais on
