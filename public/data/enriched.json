@@ -7493,48 +7493,5 @@
     "addedAt": "2026-11-09T17:56:03.544Z",
     "updatedAt": "2026-11-09T17:56:03.544Z",
     "lastChecked": "2026-11-11T13:21:41.849Z"
-  },
-  {
-    "tmdbId": 14168,
-    "title": "3h10 pour Yuma",
-    "year": "1957",
-    "director": "Delmer Daves",
-    "poster": "https://image.tmdb.org/t/p/w500/ziKewkYqEPeuVzjv4quo3ZWe21Z.jpg",
-    "synopsis": "Le criminel Ben Wade est capturé dans une petite ville. Cela n’empêche pas son gang de sévir, mais on persuade Dan Evans, un éleveur, de convoyer en secret le dangereux hors-la-loi (et désormais prisonnier), par le train de Yuma pour une prime et l'estime de son fils. Très vite se met en place une guerre des nerfs alors que les deux attendent le train dans un hôtel.",
-    "genres": [
-      "Western",
-      "Drame",
-      "Thriller"
-    ],
-    "cast": [
-      "Glenn Ford",
-      "Van Heflin",
-      "Felicia Farr",
-      "Leora Dana",
-      "Henry Jones"
-    ],
-    "tmdbRating": 7.3,
-    "tmdbVotes": 449,
-    "letterboxdRating": 3.92,
-    "letterboxdVotes": 27278,
-    "imdbId": "tt0050086",
-    "letterboxdUrl": "https://letterboxd.com/film/310-to-yuma/",
-    "providers": {
-      "abonnement": [],
-      "vod": [
-        "Apple TV Store",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "Canal VOD"
-      ]
-    },
-    "availableSince": null,
-    "wantedBy": null,
-    "addedAt": "2026-11-09T20:17:31.745Z",
-    "updatedAt": "2026-11-09T20:17:31.745Z",
-    "lastChecked": "2026-11-11T13:21:42.068Z"
   }
 ]
