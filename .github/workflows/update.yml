@@ -31,6 +31,9 @@ jobs:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           WATCHMODE_API_KEY: ${{ secrets.WATCHMODE_API_KEY }}
+          # L'e-mail de nouvelle disponibilité part après l'enregistrement réussi
+          # (une seule fois), pas pendant chaque tentative de calcul.
+          DEFER_EMAIL: "1"
         run: |
           git config user.name "cineradar-bot"
           git config user.email "bot@cineradar.local"
@@ -45,10 +48,11 @@ jobs:
             node scripts/update.cjs || node_exit=$?
 
             git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json public/data/last-run.json data/movies.json
-            git commit -m "Update movie data" || { echo "Rien à mettre à jour."; exit $node_exit; }
+            git commit -m "Update movie data" || { echo "Rien à mettre à jour."; node scripts/update.cjs --send-pending || true; exit $node_exit; }
 
             if git push; then
               echo "Push réussi (tentative $i)."
+              node scripts/update.cjs --send-pending || true
               exit $node_exit
             fi
 
