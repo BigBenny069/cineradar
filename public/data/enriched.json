@@ -7417,5 +7417,40 @@
     "addedAt": "2026-11-09T17:56:03.544Z",
     "updatedAt": "2026-11-09T17:56:03.544Z",
     "lastChecked": "2026-11-13T13:45:46.320Z"
+  },
+  {
+    "tmdbId": 15384,
+    "title": "Les 3 Royaumes, 2ème partie",
+    "year": "2009",
+    "director": "John Woo",
+    "poster": "https://image.tmdb.org/t/p/w500/9R1fuFUEOxwZIk1U0avBG1NYLGA.jpg",
+    "synopsis": "Suite de l'épopée la plus célèbre de Chine dans un partage malin entre attente tactique et combat décisif épique.",
+    "genres": [
+      "Action",
+      "Histoire",
+      "Guerre"
+    ],
+    "cast": [
+      "Tony Leung Chiu-Wai",
+      "金城武",
+      "张丰毅",
+      "張震",
+      "Zhao Wei"
+    ],
+    "tmdbRating": 7.3,
+    "tmdbVotes": 518,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1326972",
+    "letterboxdUrl": "https://letterboxd.com/film/red-cliff-ii/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-14T11:09:37.100Z",
+    "updatedAt": "2026-11-14T11:09:37.100Z",
+    "lastChecked": "2026-11-14T11:09:38.705Z"
   }
 ]
