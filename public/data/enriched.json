@@ -7451,5 +7451,40 @@
     "addedAt": "2026-11-14T11:09:37.100Z",
     "updatedAt": "2026-11-14T11:09:37.100Z",
     "lastChecked": "2026-11-15T13:16:22.026Z"
+  },
+  {
+    "tmdbId": 1417,
+    "title": "Le Labyrinthe de Pan",
+    "year": "2006",
+    "director": "Guillermo del Toro",
+    "poster": "https://image.tmdb.org/t/p/w500/hV2WDaJ4l6VPipM08AkmhLFDWqE.jpg",
+    "synopsis": "Espagne 1944. Ofelia s’installe avec sa mère dans une garnison dirigée par Vidal, son beau‐père, capitaine autoritaire de l’armée franquiste. À proximité de la grande maison familiale, la jeune fille découvre un étrange labyrinthe gardé par une créature nommée Pan. Le monstre lui révèle qu’elle n’est autre que la princesse d’un royaume enchanté. Afin de découvrir la vérité, Ofelia devra se soumettre à trois épreuves que rien ne l’a préparée à affronter…",
+    "genres": [
+      "Fantastique",
+      "Drame",
+      "Guerre"
+    ],
+    "cast": [
+      "Ivana Baquero",
+      "Sergi López",
+      "Maribel Verdú",
+      "Doug Jones",
+      "Ariadna Gil"
+    ],
+    "tmdbRating": 7.77,
+    "tmdbVotes": 11921,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0457430",
+    "letterboxdUrl": "https://letterboxd.com/film/pans-labyrinth/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-15T19:48:55.505Z",
+    "updatedAt": "2026-11-15T19:48:55.505Z",
+    "lastChecked": "2026-11-15T19:48:56.817Z"
   }
 ]
