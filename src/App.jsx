@@ -1468,6 +1468,8 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
   const borderColor = borderColors[colorIndex % borderColors.length];
   const rating = movie.letterboxdRating ?? movie.tmdbRating;
   const providerLabel = movie.providers?.abonnement?.[0] || movie.providers?.vod?.[0] || null;
+  const providerLogos = useProviderLogos();
+  const providerLogoUrl = providerLabel ? getProviderLogoUrl(providerLogos, providerLabel) : null;
 
   return (
     <button
@@ -1543,7 +1545,24 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
           {movie.title}
         </div>
         <div style={{ fontFamily: F.mono, fontSize: 8.5, color: T.muted, marginTop: 4, lineHeight: 1.4 }}>
-          {providerLabel && <span style={{ color: T.accent }}>{providerLabel}</span>}
+          {providerLabel && (
+            <span style={{ color: T.accent }}>
+              {providerLogoUrl && (
+                <img
+                  src={providerLogoUrl}
+                  alt=""
+                  width={16}
+                  height={16}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                  style={{ width: 16, height: 16, borderRadius: 4, objectFit: "cover", verticalAlign: "-4px", marginRight: 5, display: "inline-block" }}
+                />
+              )}
+              {providerLabel}
+            </span>
+          )}
           {providerLabel ? " · " : ""}
           {movie.year}
           {rating != null ? ` · ★ ${rating}` : ""}
