@@ -48,6 +48,8 @@ jobs:
             node scripts/update.cjs || node_exit=$?
 
             git add public/data/enriched.json public/data/unmatched.json public/data/history.json public/data/watchlist-review.json public/data/deletion-log.json public/data/last-run.json data/movies.json
+            # Logos des plateformes : absent tant que le robot n'a pas tourné une fois.
+            if [ -f public/data/provider-logos.json ]; then git add public/data/provider-logos.json; fi
             git commit -m "Update movie data" || { echo "Rien à mettre à jour."; node scripts/update.cjs --send-pending || true; exit $node_exit; }
 
             if git push; then

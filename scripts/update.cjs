@@ -8,6 +8,7 @@ const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_
 const { applyWatchmodeChecks } = require("../api/_shared/watchmode.cjs");
 const { applyReportEvaluation } = require("../api/_shared/reports.cjs");
 const { savePending, loadPending, clearPending } = require("../api/_shared/pending-notification.cjs");
+const { collectProviderLogos, sortedLogoMap } = require("../api/_shared/provider-logos.cjs");
 
 function loadSettings() {
   try {
@@ -593,6 +594,13 @@ async function main() {
   let history = loadHistory();
   const historyIds = new Set(history.map((h) => String(h.tmdbId)));
   let deletionLog = loadDeletionLog();
+  // Logos des plateformes : on repart du fichier précédent pour ne rien perdre.
+  let providerLogos = {};
+  try {
+    providerLogos = JSON.parse(fs.readFileSync("public/data/provider-logos.json", "utf-8")) || {};
+  } catch {
+    providerLogos = {};
+  }
 
   // Watchlists Letterboxd : les nouveaux films détectés sont ajoutés à
   // `input` avant la boucle d'enrichissement, pour être traités dans la
@@ -678,6 +686,11 @@ async function main() {
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
+    try {
+      collectProviderLogos(fr, providerLogos);
+    } catch {
+      // les logos ne doivent jamais faire échouer le passage
+    }
     const posterUrl = details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null;
 
     const prevSet = previousAbonnements.abonnements[details.id] || new Set();
@@ -791,6 +804,11 @@ async function main() {
   fs.mkdirSync(path.dirname("public/data/enriched.json"), { recursive: true });
   fs.writeFileSync("public/data/enriched.json", JSON.stringify(output, null, 2));
   fs.writeFileSync("public/data/unmatched.json", JSON.stringify(unmatched, null, 2));
+  try {
+    fs.writeFileSync("public/data/provider-logos.json", JSON.stringify(sortedLogoMap(providerLogos), null, 2));
+  } catch (e) {
+    console.log(`Logos des plateformes non enregistrés (${e.message}).`);
+  }
   fs.writeFileSync("public/data/history.json", JSON.stringify(history, null, 2));
   fs.writeFileSync("public/data/watchlist-review.json", JSON.stringify(watchlistReview, null, 2));
   // Plafonné aux 100 suppressions les plus récentes, pour ne pas grossir indéfiniment
