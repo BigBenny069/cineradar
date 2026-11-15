@@ -876,7 +876,49 @@ function LetterboxdMark({ size = 34 }) {
   );
 }
 
+// Logos officiels des plateformes (fournis par TMDB), récoltés par le robot
+// dans /data/provider-logos.json : { "Netflix": "/abc.jpg", ... }. Chargé une
+// seule fois pour toute l'appli ; absent ou en échec = on garde les pastilles
+// de lettres, rien ne casse.
+let providerLogosPromise = null;
+function loadProviderLogos() {
+  if (!providerLogosPromise) {
+    try {
+      providerLogosPromise = fetch(`/data/provider-logos.json?t=${Date.now()}`)
+        .then((res) => (res.ok ? res.json() : {}))
+        .then((data) => (data && typeof data === "object" && !Array.isArray(data) ? data : {}))
+        .catch(() => ({}));
+    } catch {
+      providerLogosPromise = Promise.resolve({});
+    }
+  }
+  return providerLogosPromise;
+}
+
+function useProviderLogos() {
+  const [logos, setLogos] = useState({});
+  useEffect(() => {
+    let alive = true;
+    loadProviderLogos().then((data) => {
+      if (alive) setLogos(data);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+  return logos;
+}
+
+export function getProviderLogoUrl(logos, name, size = "w92") {
+  const path = logos && logos[name];
+  if (typeof path !== "string" || !path.startsWith("/")) return null;
+  return `https://image.tmdb.org/t/p/${size}${path}`;
+}
+
 function PlatformBadge({ name }) {
+  const logos = useProviderLogos();
+  const [logoFailed, setLogoFailed] = useState(false);
+  const logoUrl = logoFailed ? null : getProviderLogoUrl(logos, name);
   const meta = PROVIDER_META[name] || {
     bg: T.surfaceRaised,
     fg: T.cream,
@@ -885,30 +927,42 @@ function PlatformBadge({ name }) {
   };
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <div
-        style={{
-          width: 32,
-          height: 32,
-          borderRadius: 8,
-          background: meta.bg,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-          border: meta.bg === "#FFFFFF" ? `1px solid ${T.line}` : "none",
-        }}
-      >
-        <span
+      {logoUrl ? (
+        <img
+          src={logoUrl}
+          alt=""
+          width={32}
+          height={32}
+          loading="lazy"
+          onError={() => setLogoFailed(true)}
+          style={{ width: 32, height: 32, borderRadius: 8, objectFit: "cover", flexShrink: 0, display: "block" }}
+        />
+      ) : (
+        <div
           style={{
-            color: meta.fg,
-            fontWeight: meta.weight,
-            fontStyle: meta.italic ? "italic" : "normal",
-            fontSize: meta.label.length > 2 ? 8 : 13,
+            width: 32,
+            height: 32,
+            borderRadius: 8,
+            background: meta.bg,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            border: meta.bg === "#FFFFFF" ? `1px solid ${T.line}` : "none",
           }}
         >
-          {meta.label}
-        </span>
-      </div>
+          <span
+            style={{
+              color: meta.fg,
+              fontWeight: meta.weight,
+              fontStyle: meta.italic ? "italic" : "normal",
+              fontSize: meta.label.length > 2 ? 8 : 13,
+            }}
+          >
+            {meta.label}
+          </span>
+        </div>
+      )}
       <span style={{ fontFamily: F.serif, fontSize: 14, color: T.cream }}>{name}</span>
     </div>
   );

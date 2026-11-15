@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch, isReportedUnavailable, splitHomeSections } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch, isReportedUnavailable, splitHomeSections, getProviderLogoUrl } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -301,5 +301,20 @@ describe("applyPendingChanges — modification légère (patched)", () => {
   it("ne fait rien si la fiche n'est plus dans la liste", () => {
     const out = applyPendingChanges(list, [{ type: "patched", tmdbId: 99, patch: { reported: { at: "x" } }, until: now + 1000 }], now);
     expect(out).toHaveLength(2);
+  });
+});
+
+describe("getProviderLogoUrl", () => {
+  const logos = { Netflix: "/n.jpg" };
+  it("construit l'adresse du logo TMDB quand il est connu", () => {
+    expect(getProviderLogoUrl(logos, "Netflix")).toBe("https://image.tmdb.org/t/p/w92/n.jpg");
+    expect(getProviderLogoUrl(logos, "Netflix", "w185")).toBe("https://image.tmdb.org/t/p/w185/n.jpg");
+  });
+  it("renvoie null (pastille de repli) si le logo est inconnu ou invalide", () => {
+    expect(getProviderLogoUrl(logos, "Shadowz")).toBeNull();
+    expect(getProviderLogoUrl({}, "Netflix")).toBeNull();
+    expect(getProviderLogoUrl(undefined, "Netflix")).toBeNull();
+    expect(getProviderLogoUrl({ X: "https://evil.example/x.png" }, "X")).toBeNull();
+    expect(getProviderLogoUrl({ X: 42 }, "X")).toBeNull();
   });
 });
