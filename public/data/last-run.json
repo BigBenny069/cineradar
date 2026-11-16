@@ -1,9 +1,9 @@
 {
-  "startedAt": "2026-11-16T20:52:02.754Z",
-  "finishedAt": "2026-11-16T20:52:37.164Z",
+  "startedAt": "2026-11-16T20:54:20.284Z",
+  "finishedAt": "2026-11-16T20:54:54.418Z",
   "trigger": "push sur movies.json",
   "status": "success",
-  "moviesChecked": 184,
+  "moviesChecked": 183,
   "unmatchedCount": 1,
   "newlyAvailableCount": 0,
   "errors": []
