@@ -7523,5 +7523,56 @@
     "addedAt": "2026-11-16T20:47:04.672Z",
     "updatedAt": "2026-11-16T20:47:04.672Z",
     "lastChecked": "2026-11-16T20:47:05.991Z"
+  },
+  {
+    "tmdbId": 340666,
+    "title": "Nocturnal Animals",
+    "year": "2016",
+    "director": "Tom Ford",
+    "poster": "https://image.tmdb.org/t/p/w500/hc9hYvwAvB0u4WdBrtkJ05VsuSi.jpg",
+    "synopsis": "Susan Morrow est une riche galeriste d'art contemporain de Los Angeles. Un colis inattendu vient troubler la routine millimétrée de son existence. Il contient un manuscrit signé de son ex-mari Edward Sheffield, qu'elle a quitté brutalement des années plus tôt et dont elle est sans nouvelles.",
+    "genres": [
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Amy Adams",
+      "Jake Gyllenhaal",
+      "Michael Shannon",
+      "Aaron Taylor-Johnson",
+      "Isla Fisher"
+    ],
+    "tmdbRating": 7.397,
+    "tmdbVotes": 8591,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt4550098",
+    "letterboxdUrl": "https://letterboxd.com/film/nocturnal-animals/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads",
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-11-16T20:47:32.892Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-16T20:47:31.623Z",
+    "updatedAt": "2026-11-16T20:47:31.623Z",
+    "lastChecked": "2026-11-16T20:47:32.892Z"
   }
 ]
