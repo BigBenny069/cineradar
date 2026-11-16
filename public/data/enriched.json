@@ -7486,5 +7486,42 @@
     "addedAt": "2026-11-15T19:48:55.505Z",
     "updatedAt": "2026-11-15T19:48:55.505Z",
     "lastChecked": "2026-11-16T14:28:17.867Z"
+  },
+  {
+    "tmdbId": 123377,
+    "title": "Pieta",
+    "year": "2012",
+    "director": "Kim Ki-duk",
+    "poster": "https://image.tmdb.org/t/p/w500/lZJMlD4GNvzJL0GxvaL4JFYvDKU.jpg",
+    "synopsis": "Abandonné à sa naissance, Kang-do est un homme seul qui n’a ni famille, ni ami. Recouvreur de dettes sans pitié et sans compassion, il menace ou mutile les personnes endettées dans un quartier destiné à être rasé. Un jour, Kang-do reçoit la visite d’une femme qu’il ne connaît pas et qui lui dit être sa mère. Pour la première fois de sa vie, le doute s’installe en lui…",
+    "genres": [
+      "Drame"
+    ],
+    "cast": [
+      "Cho Min-soo",
+      "Lee Jung-jin",
+      "Woo Ki-hong",
+      "Kang Eun-jin",
+      "Heo Joon-seok"
+    ],
+    "tmdbRating": 6.983,
+    "tmdbVotes": 441,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2299842",
+    "letterboxdUrl": "https://letterboxd.com/film/pieta/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-16T20:47:04.672Z",
+    "updatedAt": "2026-11-16T20:47:04.672Z",
+    "lastChecked": "2026-11-16T20:47:05.991Z"
   }
 ]
