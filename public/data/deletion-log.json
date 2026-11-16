@@ -542,5 +542,12 @@
     "tmdbId": 101744,
     "reason": "cinemaison",
     "deletedAt": "2026-11-12T16:48:00.902Z"
+  },
+  {
+    "title": "Nocturnal Animals",
+    "year": 2016,
+    "tmdbId": 340666,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-16T20:53:36.294Z"
   }
 ]
