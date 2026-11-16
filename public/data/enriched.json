@@ -7585,5 +7585,43 @@
       "id": 1277607,
       "checkedAt": "2026-11-16T20:48:59.899Z"
     }
+  },
+  {
+    "tmdbId": 22171,
+    "title": "L'Ange de la vengeance",
+    "year": "1981",
+    "director": "Abel Ferrara",
+    "poster": "https://image.tmdb.org/t/p/w500/hakNxIKvONSx3efEQDBJW2qVpKH.jpg",
+    "synopsis": "Thana est muette et travaille dans un atelier de confection en compagnie d'autres jeunes femmes. Elle est très jolie et son handicap n'empêche pas son patron de la draguer. En rentrant chez elle, elle est attirée par un braqueur avec un masque de clown dans une ruelle. Il la viole. Thana retourne chez elle. Un cambrioleur est en train de visiter son appartement. Il la viole à son tour. Elle le tue puis le découpe en morceaux. Thana se met alors à assassiner les hommes qui tentent de l'approcher tout en affichant une sexualité agressive...",
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Action"
+    ],
+    "cast": [
+      "Zoë Lund",
+      "Albert Sinkys",
+      "Darlene Stuto",
+      "Abel Ferrara",
+      "Helen McGara"
+    ],
+    "tmdbRating": 6.7,
+    "tmdbVotes": 424,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0082776",
+    "letterboxdUrl": "https://letterboxd.com/film/ms-45/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Sooner",
+        "LaCinetek"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-16T20:51:00.061Z",
+    "updatedAt": "2026-11-16T20:51:00.061Z",
+    "lastChecked": "2026-11-16T20:51:01.284Z"
   }
 ]
