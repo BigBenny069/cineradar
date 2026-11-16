@@ -7525,68 +7525,6 @@
     "lastChecked": "2026-11-16T20:52:36.790Z"
   },
   {
-    "tmdbId": 340666,
-    "title": "Nocturnal Animals",
-    "year": "2016",
-    "director": "Tom Ford",
-    "poster": "https://image.tmdb.org/t/p/w500/hc9hYvwAvB0u4WdBrtkJ05VsuSi.jpg",
-    "synopsis": "Susan Morrow est une riche galeriste d'art contemporain de Los Angeles. Un colis inattendu vient troubler la routine millimétrée de son existence. Il contient un manuscrit signé de son ex-mari Edward Sheffield, qu'elle a quitté brutalement des années plus tôt et dont elle est sans nouvelles.",
-    "genres": [
-      "Drame",
-      "Thriller"
-    ],
-    "cast": [
-      "Amy Adams",
-      "Jake Gyllenhaal",
-      "Michael Shannon",
-      "Aaron Taylor-Johnson",
-      "Isla Fisher"
-    ],
-    "tmdbRating": 7.397,
-    "tmdbVotes": 8591,
-    "letterboxdRating": 3.7,
-    "letterboxdVotes": 721650,
-    "imdbId": "tt4550098",
-    "letterboxdUrl": "https://letterboxd.com/film/nocturnal-animals/",
-    "providers": {
-      "abonnement": [
-        "Netflix",
-        "Netflix Standard with Ads",
-        "HBO Max",
-        "HBO Max Amazon Channel"
-      ],
-      "vod": [
-        "Apple TV Store",
-        "Orange VOD",
-        "YouTube",
-        "Rakuten TV",
-        "Canal VOD",
-        "Sooner",
-        "Amazon Video",
-        "Pathé Home",
-        "VIVA by videofutur",
-        "Premiere Max",
-        "ARTE VOD"
-      ]
-    },
-    "availableSince": "2026-11-16T20:47:32.892Z",
-    "wantedBy": null,
-    "addedAt": "2026-11-16T20:47:31.623Z",
-    "updatedAt": "2026-11-16T20:47:31.623Z",
-    "lastChecked": "2026-11-16T20:52:36.865Z",
-    "wm": {
-      "status": "mismatch",
-      "families": [
-        "netflix"
-      ],
-      "missing": [
-        "netflix"
-      ],
-      "id": 1277607,
-      "checkedAt": "2026-11-16T20:48:59.899Z"
-    }
-  },
-  {
     "tmdbId": 22171,
     "title": "L'Ange de la vengeance",
     "year": "1981",
