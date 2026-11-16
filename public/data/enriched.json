@@ -7623,5 +7623,40 @@
     "addedAt": "2026-11-16T20:51:00.061Z",
     "updatedAt": "2026-11-16T20:51:00.061Z",
     "lastChecked": "2026-11-16T20:51:01.284Z"
+  },
+  {
+    "tmdbId": 54186,
+    "title": "Confessions",
+    "year": "2010",
+    "director": "中島哲也",
+    "poster": "https://image.tmdb.org/t/p/w500/p8vr7jVwflsSqAq91nWcOPZ2RIv.jpg",
+    "synopsis": "Yuko Moriguchi a arrêté de vivre depuis que sa petite fille de quatre ans, Manami, a été retrouvée noyée dans la piscine de L'école où elle enseigne. D'après le rapport de police, il s'agirait d'une mort accidentelle. Mais l'institutrice n'est pas dupe et suspecte deux de ses jeunes élèves d'être les responsables...",
+    "genres": [
+      "Drame",
+      "Thriller",
+      "Mystère"
+    ],
+    "cast": [
+      "松たか子",
+      "Masaki Okada",
+      "Yoshino Kimura",
+      "西井幸人",
+      "Kaoru Fujiwara"
+    ],
+    "tmdbRating": 7.584,
+    "tmdbVotes": 1049,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1590089",
+    "letterboxdUrl": "https://letterboxd.com/film/confessions/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-16T20:51:26.678Z",
+    "updatedAt": "2026-11-16T20:51:26.678Z",
+    "lastChecked": "2026-11-16T20:51:27.750Z"
   }
 ]
