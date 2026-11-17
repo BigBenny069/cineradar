@@ -7691,5 +7691,42 @@
     "addedAt": "2026-11-17T14:17:06.563Z",
     "updatedAt": "2026-11-17T14:17:06.563Z",
     "lastChecked": "2026-11-17T15:19:57.572Z"
+  },
+  {
+    "tmdbId": 4916,
+    "title": "L'Avocat du diable",
+    "year": "1993",
+    "director": "Sidney Lumet",
+    "poster": "https://image.tmdb.org/t/p/w500/uBDYBnfLynK7OUmN8T0ZuDcvCpd.jpg",
+    "synopsis": "Jennifer Haines, avocate spécialisée dans les grandes affaires criminelles, accepte de défendre David Greenhill, accusé du meurtre de sa riche épouse. Libéré sous caution, David s’immisce dans la vie privée de Jennifer et dévoile son vrai visage en lui avouant les meurtres non élucidés de plusieurs femmes.",
+    "genres": [
+      "Thriller",
+      "Drame"
+    ],
+    "cast": [
+      "Rebecca De Mornay",
+      "Don Johnson",
+      "Stephen Lang",
+      "Jack Warden",
+      "Dana Ivey"
+    ],
+    "tmdbRating": 5.685,
+    "tmdbVotes": 154,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0107057",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/4916/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "YouTube",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-17T19:18:45.400Z",
+    "updatedAt": "2026-11-17T19:18:45.400Z",
+    "lastChecked": "2026-11-17T19:18:46.759Z"
   }
 ]
