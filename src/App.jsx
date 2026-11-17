@@ -1482,9 +1482,16 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
         borderRadius: T.radiusSm,
         overflow: "hidden",
         border: `2px solid ${borderColor}`,
+        // Un <button> centre son contenu à la verticale : une carte plus courte
+        // (sans nom de plateforme) voyait son affiche décalée vers le bas dans
+        // la rangée. On aligne tout en haut : affiches toutes au même endroit.
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "stretch",
       }}
     >
-      <div style={{ width: 108, height: 152, background: "#000", position: "relative" }}>
+      <div style={{ width: 108, height: 152, flexShrink: 0, background: "#000", position: "relative" }}>
         {movie.poster ? (
           <img src={toPosterSize(movie.poster, "w185")} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
@@ -1608,7 +1615,11 @@ function HorizontalRow({ icon, label, movies, onOpen, emptyText }) {
 function WatchmodeChip({ movie, compact = false }) {
   const badge = getWatchmodeBadge(movie);
   if (!badge) return null;
-  const color = badge.kind === "warn" ? T.accentSecondary : T.cream;
+  // Couleurs fixes, indépendantes du thème : le badge est posé sur une affiche
+  // (image sombre ou claire), il doit rester lisible avec les thèmes clairs
+  // comme sombres. (Avant, le texte prenait la couleur du thème et devenait
+  // invisible sur fond sombre avec un thème clair.)
+  const color = badge.kind === "warn" ? "#FFC857" : "#F6F2EA";
   return (
     <div
       style={{
@@ -1617,7 +1628,8 @@ function WatchmodeChip({ movie, compact = false }) {
         bottom: 5,
         padding: compact ? "1px 5px" : "2px 6px",
         borderRadius: 3,
-        background: "rgba(19,16,12,0.82)",
+        background: "rgba(14,12,10,0.88)",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.45)",
         border: `1px solid ${color}`,
         color,
         fontFamily: F.mono,
