@@ -1482,9 +1482,16 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
         borderRadius: T.radiusSm,
         overflow: "hidden",
         border: `2px solid ${borderColor}`,
+        // Un <button> centre son contenu à la verticale : une carte plus courte
+        // (sans nom de plateforme) voyait son affiche décalée vers le bas dans
+        // la rangée. On aligne tout en haut : affiches toutes au même endroit.
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "stretch",
       }}
     >
-      <div style={{ width: 108, height: 152, background: "#000", position: "relative" }}>
+      <div style={{ width: 108, height: 152, flexShrink: 0, background: "#000", position: "relative" }}>
         {movie.poster ? (
           <img src={toPosterSize(movie.poster, "w185")} alt={movie.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
