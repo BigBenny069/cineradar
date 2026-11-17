@@ -7773,5 +7773,45 @@
     "addedAt": "2026-11-17T19:19:59.084Z",
     "updatedAt": "2026-11-17T19:19:59.084Z",
     "lastChecked": "2026-11-17T19:23:02.583Z"
+  },
+  {
+    "tmdbId": 7299,
+    "title": "Equilibrium",
+    "year": "2002",
+    "director": "Kurt Wimmer",
+    "poster": "https://image.tmdb.org/t/p/w500/lGPfzFFnOirJgJriYmn2XZaZ4f1.jpg",
+    "synopsis": "Dans les années 2070, dans la citadelle de Libria, les émotions n'existent plus, supprimées par l'absorption quotidienne de Prozium. Cette drogue anti-anxiété rend les gens plus heureux et plus productifs. Les individus ont ainsi accepté de mettre de côté leur liberté pour vivre en harmonie avec leur dirigeant spirituel connu sous le nom de Père. Les personnes qui refusent de prendre leur dose sont considérées comme des rebelles et vivent en retrait de la ville. S'ils sont pris à jeun, c'est la peine de mort assurée. John Preston travaille au service de Père et applique la loi à la lettre. Un jour, celui-ci brise le flacon de sa dose et n'a pas le temps de s'en procurer une de rechange. Il est alors submergé par toute une gamme d'émotions. Victime d'un revirement spirituel qui le confronte à ses supérieurs hiérarchiques, il mène l'enquête sur ce nouvel état de vie.",
+    "genres": [
+      "Action",
+      "Science-Fiction",
+      "Thriller"
+    ],
+    "cast": [
+      "Christian Bale",
+      "Emily Watson",
+      "Taye Diggs",
+      "Angus Macfadyen",
+      "Sean Bean"
+    ],
+    "tmdbRating": 7.06,
+    "tmdbVotes": 5336,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0238380",
+    "letterboxdUrl": "https://letterboxd.com/film/equilibrium/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-17T19:34:36.645Z",
+    "updatedAt": "2026-11-17T19:34:36.645Z",
+    "lastChecked": "2026-11-17T19:34:37.984Z"
   }
 ]
