@@ -7656,5 +7656,40 @@
       "id": 1301959,
       "checkedAt": "2026-11-17T08:55:24.017Z"
     }
+  },
+  {
+    "tmdbId": 49427,
+    "title": "Heartland",
+    "year": "1981",
+    "director": "Richard Pearce",
+    "poster": "https://image.tmdb.org/t/p/w500/cNLBqiPJE5jpo6PPHKuTFDFfxtj.jpg",
+    "synopsis": "En 1910, dans la petite ville de Burnt Fork au Wyoming, arrive par le train une veuve, embauchée comme gouvernante chez un petit éleveur local. Elle est accompagnée de sa fille de 7 ans. Elle ne tarde pas à envisager de s'installer dans une cabane proche de la maison de son employeur mais doit y renoncer à la suite d'un hiver particulièrement rude...",
+    "genres": [
+      "Drame",
+      "Romance",
+      "Western"
+    ],
+    "cast": [
+      "Rip Torn",
+      "Conchata Ferrell",
+      "Barry Primus",
+      "Megan Folsom",
+      "Lilia Skala"
+    ],
+    "tmdbRating": 6.4,
+    "tmdbVotes": 21,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0082508",
+    "letterboxdUrl": "https://letterboxd.com/film/heartland/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-17T14:17:06.563Z",
+    "updatedAt": "2026-11-17T14:17:06.563Z",
+    "lastChecked": "2026-11-17T14:17:07.900Z"
   }
 ]
