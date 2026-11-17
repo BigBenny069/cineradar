@@ -7728,5 +7728,50 @@
     "addedAt": "2026-11-17T19:18:45.400Z",
     "updatedAt": "2026-11-17T19:18:45.400Z",
     "lastChecked": "2026-11-17T19:18:46.759Z"
+  },
+  {
+    "tmdbId": 1813,
+    "title": "L'Associé du diable",
+    "year": "1997",
+    "director": "Taylor Hackford",
+    "poster": "https://image.tmdb.org/t/p/w500/dwRco8u0IrVfiWzSH8HLUjgRdNR.jpg",
+    "synopsis": "Kevin Lomax, jeune et brillant avocat, est approché par l'un des plus puissants cabinets New-Yorkais dirigé par l'étrange John Milton. Assoiffé de pouvoir et d'argent, poussé par une ambition dévorante, prêt à tout pour réussir, il accepte l'offre et gravit les marches de la réussite de façon fulgurante. Mais l'ambition a un prix : sans le savoir, Kevin vient de vendre son âme au diable...",
+    "genres": [
+      "Horreur",
+      "Drame",
+      "Mystère"
+    ],
+    "cast": [
+      "Keanu Reeves",
+      "Al Pacino",
+      "Charlize Theron",
+      "Jeffrey Jones",
+      "Judith Ivey"
+    ],
+    "tmdbRating": 7.482,
+    "tmdbVotes": 7198,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0118971",
+    "letterboxdUrl": "https://letterboxd.com/film/the-devils-advocate/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-17T19:19:59.084Z",
+    "updatedAt": "2026-11-17T19:19:59.084Z",
+    "lastChecked": "2026-11-17T19:20:00.284Z"
   }
 ]
