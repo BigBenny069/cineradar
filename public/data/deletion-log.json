@@ -549,5 +549,12 @@
     "tmdbId": 340666,
     "reason": "cinemaison",
     "deletedAt": "2026-11-16T20:53:36.294Z"
+  },
+  {
+    "title": "4 de l'apocalypse",
+    "year": 1975,
+    "tmdbId": 48855,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-19T15:20:53.860Z"
   }
 ]
