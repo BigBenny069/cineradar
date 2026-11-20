@@ -7775,5 +7775,53 @@
     "addedAt": "2026-11-17T19:34:36.645Z",
     "updatedAt": "2026-11-17T19:34:36.645Z",
     "lastChecked": "2026-11-20T11:00:38.933Z"
+  },
+  {
+    "tmdbId": 11479,
+    "title": "Un Indien dans la ville",
+    "year": "1994",
+    "director": "Hervé Palud",
+    "poster": "https://image.tmdb.org/t/p/w500/qysVy8is0no4YFadX0bUB71GpVc.jpg",
+    "synopsis": "Sur le point d'épouser la belle Charlotte, Stéphane Marchado part à la recherche de sa première femme, partie depuis treize ans dans une tribu d'Amazonie pour régulariser son divorce.",
+    "genres": [
+      "Aventure",
+      "Drame",
+      "Familial",
+      "Comédie"
+    ],
+    "cast": [
+      "Thierry Lhermitte",
+      "Patrick Timsit",
+      "Ludwig Briand",
+      "Miou-Miou",
+      "Arielle Dombasle"
+    ],
+    "tmdbRating": 5.956,
+    "tmdbVotes": 663,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0111543",
+    "letterboxdUrl": "https://letterboxd.com/film/little-indian-big-city/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": [
+        "YouTube",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "Apple TV Store"
+      ]
+    },
+    "availableSince": "2026-11-20T11:04:48.379Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-20T11:04:47.168Z",
+    "updatedAt": "2026-11-20T11:04:47.168Z",
+    "lastChecked": "2026-11-20T11:04:48.379Z"
   }
 ]
