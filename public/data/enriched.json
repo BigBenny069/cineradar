@@ -7775,5 +7775,50 @@
     "addedAt": "2026-11-17T19:34:36.645Z",
     "updatedAt": "2026-11-17T19:34:36.645Z",
     "lastChecked": "2026-11-20T14:43:41.661Z"
+  },
+  {
+    "tmdbId": 9696,
+    "title": "Ichi the Killer",
+    "year": "2001",
+    "director": "Takashi Miike",
+    "poster": "https://image.tmdb.org/t/p/w500/x6M7uB7DFxsBaNRr2bJFHQi9yLZ.jpg",
+    "synopsis": "Un chef de gang a disparu, ainsi qu'une énorme somme d'argent qu'il avait en sa possession. Ses hommes se mettent à sa recherche, pensant d'abord à un coup d'une bande rivale. Mais ils découvrent rapidement que c'est un tueur professionnel qui se cache derrière toute cette affaire.",
+    "genres": [
+      "Action",
+      "Crime",
+      "Horreur"
+    ],
+    "cast": [
+      "Tadanobu Asano",
+      "Nao Omori",
+      "Shinya Tsukamoto",
+      "SABU",
+      "孫佳君"
+    ],
+    "tmdbRating": 6.992,
+    "tmdbVotes": 1170,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0296042",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/9696/",
+    "providers": {
+      "abonnement": [
+        "Shadowz"
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Canal VOD",
+        "Sooner",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-11-21T07:09:03.409Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-21T07:09:02.086Z",
+    "updatedAt": "2026-11-21T07:09:02.086Z",
+    "lastChecked": "2026-11-21T07:09:03.409Z"
   }
 ]
