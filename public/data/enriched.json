@@ -7820,5 +7820,54 @@
     "addedAt": "2026-11-21T07:09:02.086Z",
     "updatedAt": "2026-11-21T07:09:02.086Z",
     "lastChecked": "2026-11-21T07:09:03.409Z"
+  },
+  {
+    "tmdbId": 776797,
+    "title": "The Sadness",
+    "year": "2021",
+    "director": "Rob Jabbaz",
+    "poster": "https://image.tmdb.org/t/p/w500/bC34TLKRjg7OHhADXhUaSORaARf.jpg",
+    "synopsis": "Après un an de lutte contre une pandémie aux symptômes bénins, une nation finit par baisser sa garde. C'est alors que le virus mute spontanément, donnant naissance à un fléau qui altère l'esprit. Les rues se déchaînent dans la violence et la dépravation, les personnes infectées étant poussées à commettre les actes les plus cruels et les plus horribles qu'elles n'auraient jamais pu imaginer...",
+    "genres": [
+      "Horreur",
+      "Thriller"
+    ],
+    "cast": [
+      "朱軒洋",
+      "雷嘉汭",
+      "王自強",
+      "陳映如",
+      "藍葦華"
+    ],
+    "tmdbRating": 6.846,
+    "tmdbVotes": 1289,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt13872248",
+    "letterboxdUrl": "https://letterboxd.com/tmdb/776797/",
+    "providers": {
+      "abonnement": [
+        "Amazon Prime Video",
+        "Amazon Prime Video with Ads",
+        "Shadowz"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max"
+      ]
+    },
+    "availableSince": "2026-11-21T07:10:20.359Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-21T07:10:19.253Z",
+    "updatedAt": "2026-11-21T07:10:19.253Z",
+    "lastChecked": "2026-11-21T07:10:20.359Z"
   }
 ]
