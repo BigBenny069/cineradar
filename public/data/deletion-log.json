@@ -556,5 +556,12 @@
     "tmdbId": 48855,
     "reason": "cinemaison",
     "deletedAt": "2026-11-19T15:20:53.860Z"
+  },
+  {
+    "title": "Un Indien dans la ville",
+    "year": 1994,
+    "tmdbId": 11479,
+    "reason": "manuel",
+    "deletedAt": "2026-11-21T07:08:34.565Z"
   }
 ]
