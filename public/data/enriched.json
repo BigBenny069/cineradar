@@ -8264,5 +8264,40 @@
     "addedAt": "2026-11-23T14:44:38.877Z",
     "updatedAt": "2026-11-23T14:44:38.877Z",
     "lastChecked": "2026-11-23T14:44:41.322Z"
+  },
+  {
+    "tmdbId": 242090,
+    "title": "The One I Love",
+    "year": "2014",
+    "director": "Charlie McDowell",
+    "poster": "https://image.tmdb.org/t/p/w500/ewsYTI6KKQw3IDPFmVVbHq89kxv.jpg",
+    "synopsis": "Alors qu'il s'offre un week-end pour se retrouver, un couple en crise doit faire face à un dilemme auquel il ne s'attendait pas.",
+    "genres": [
+      "Romance",
+      "Comédie",
+      "Drame"
+    ],
+    "cast": [
+      "Mark Duplass",
+      "Elisabeth Moss",
+      "Ted Danson",
+      "Kiana Cason",
+      "Kaitlyn Dodson"
+    ],
+    "tmdbRating": 6.845,
+    "tmdbVotes": 835,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt2756032",
+    "letterboxdUrl": "https://letterboxd.com/film/the-one-i-love-2014/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-23T14:44:59.477Z",
+    "updatedAt": "2026-11-23T14:44:59.477Z",
+    "lastChecked": "2026-11-23T14:45:01.177Z"
   }
 ]
