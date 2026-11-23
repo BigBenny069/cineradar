@@ -741,6 +741,7 @@ const PROVIDER_META = {
   "Google Play Movies": { bg: "#FFFFFF", fg: "#5F6368", label: "▶", weight: 700, category: "vod" },
   "Canal VOD": { bg: "#000000", fg: "#FFFFFF", label: "CANAL+", weight: 800, category: "vod" },
   YouTube: { bg: "#FF0000", fg: "#FFFFFF", label: "▶", weight: 700, category: "vod" },
+  "Médiathèque numérique": { bg: "#1F3A5F", fg: "#FFFFFF", label: "MN", weight: 800, category: "abonnement" },
 };
 
 // TMDB ne fournit pas d'identifiant de fiche propre à chaque plateforme,
@@ -776,10 +777,15 @@ const PROVIDER_SEARCH_URL = {
   youtube: (q) => `https://www.youtube.com/results?search_query=${q}`,
   "google play": (q) => `https://play.google.com/store/search?q=${q}&c=movies`,
   arte: (q) => `https://www.arte.tv/fr/search/?q=${q}`,
+  // Médiathèque numérique : recherche du catalogue (la fiche exacte, quand elle
+  // est connue, est passée en 4e argument de getPlatformSearchUrl).
+  "mediatheque numerique": (q) => `https://vod.mediatheque-numerique.com/products?q=${q}&sortType=SCORE`,
 };
 
-export function getPlatformSearchUrl(providerName, movieTitle, movieYear) {
+export function getPlatformSearchUrl(providerName, movieTitle, movieYear, directUrl) {
   const n = normalizeText(providerName);
+  // Lien direct vers la fiche quand le robot l'a trouvée (Médiathèque numérique)
+  if (directUrl && n.includes("mediatheque numerique")) return directUrl;
   const key = Object.keys(PROVIDER_SEARCH_URL).find((k) => n.includes(k));
   const q = encodeURIComponent(movieYear ? `${movieTitle} ${movieYear}` : movieTitle);
   if (key) return PROVIDER_SEARCH_URL[key](q);
@@ -800,6 +806,7 @@ const SUBSCRIPTION_OPTIONS = [
   { key: "ocs", label: "OCS" },
   { key: "max", label: "Max (HBO)" },
   { key: "shadowz", label: "Shadowz" },
+  { key: "mediatheque", label: "Médiathèque numérique" },
 ];
 
 // Les affiches sont stockées en w500 (grand format, pour la fiche détail),
@@ -2265,7 +2272,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated, on
                   >
                     <PlatformBadge name={p} />
                     <a
-                      href={getPlatformSearchUrl(p, movie.title, movie.year)}
+                      href={getPlatformSearchUrl(p, movie.title, movie.year, movie.mn?.url)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, textDecoration: "none" }}
@@ -2367,7 +2374,7 @@ function DetailView({ movie, onBack, onEdit, onDeleted, onRemoved, onUpdated, on
                       >
                         <PlatformBadge name={p} />
                         <a
-                          href={getPlatformSearchUrl(p, movie.title, movie.year)}
+                          href={getPlatformSearchUrl(p, movie.title, movie.year, movie.mn?.url)}
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ fontFamily: F.mono, fontSize: 11, color: T.accent, textDecoration: "none" }}

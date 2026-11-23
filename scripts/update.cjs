@@ -8,6 +8,7 @@ const { normalize, DEFAULT_ENABLED, createIsMySubscription } = require("../api/_
 const { applyWatchmodeChecks } = require("../api/_shared/watchmode.cjs");
 const { applyReportEvaluation } = require("../api/_shared/reports.cjs");
 const { savePending, loadPending, clearPending } = require("../api/_shared/pending-notification.cjs");
+const { checkMediatheque, PLATFORM_NAME: MN_PLATFORM } = require("../api/_shared/mediatheque.cjs");
 const { collectProviderLogos, sortedLogoMap } = require("../api/_shared/provider-logos.cjs");
 
 function loadSettings() {
@@ -46,6 +47,19 @@ function loadPreviousWm() {
     const parsed = JSON.parse(fs.readFileSync("public/data/enriched.json", "utf-8"));
     const map = {};
     for (const m of parsed) if (m.wm) map[m.tmdbId] = m.wm;
+    return map;
+  } catch (e) {
+    return {};
+  }
+}
+
+// Résultat Médiathèque numérique du passage précédent (champ "mn" des fiches) :
+// conservé quand la recherche échoue ponctuellement.
+function loadPreviousMn() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync("public/data/enriched.json", "utf-8"));
+    const map = {};
+    for (const m of parsed) if (m.mn) map[m.tmdbId] = m.mn;
     return map;
   } catch (e) {
     return {};
@@ -639,6 +653,10 @@ async function main() {
   // celles-ci sont ce qu'on veut signaler comme un vrai souci du passage.
   const runErrors = [];
   const output = [];
+  const MN_ENABLED = ENABLED_KEYS.includes("mediatheque");
+  const previousMn = MN_ENABLED ? loadPreviousMn() : {};
+  let mnFound = 0;
+  let mnKept = 0;
 
   for (const movie of input) {
     console.log(`Recherche : ${movie.title} (${movie.year})`);
@@ -686,6 +704,24 @@ async function main() {
     const cast = (details.credits?.cast || []).slice(0, 5).map((c) => c.name);
     const fr = details["watch/providers"]?.results?.FR;
     const providers = splitProviders(fr);
+
+    // Médiathèque numérique : absente de TMDB, détectée via la fonction Paris
+    // de CinéRadar (voir api/_shared/mediatheque.cjs). Jamais bloquant, et en
+    // cas d'échec on garde le résultat précédent.
+    let mn = null;
+    if (MN_ENABLED) {
+      const res = await checkMediatheque(
+        { title: details.title, altTitle: movie.title, year: details.release_date?.slice(0, 4) || movie.year, director: director?.name || movie.director },
+        previousMn[details.id],
+        { baseUrl: process.env.CINERADAR_BASE_URL || undefined }
+      );
+      mn = res.mn;
+      if (res.kept) mnKept++;
+      if (mn) {
+        mnFound++;
+        if (!providers.abonnement.includes(MN_PLATFORM)) providers.abonnement.push(MN_PLATFORM);
+      }
+    }
     try {
       collectProviderLogos(fr, providerLogos);
     } catch {
@@ -738,6 +774,7 @@ async function main() {
       imdbId: details.imdb_id,
       letterboxdUrl: movie.letterboxdUrl || null,
       providers,
+      ...(mn ? { mn } : {}),
       availableSince: availableSinceValue,
       wantedBy: movie.wantedBy || null,
       // "addedAt" ne change jamais après la création (contrairement à
@@ -765,6 +802,10 @@ async function main() {
         updatedAt: movie.updatedAt || null,
       });
     }
+  }
+
+  if (MN_ENABLED) {
+    console.log(`Médiathèque numérique : ${mnFound} film(s) disponible(s)${mnKept ? `, ${mnKept} recherche(s) en échec (résultat précédent conservé)` : ""}.`);
   }
 
   const previousReported = loadPreviousReported();

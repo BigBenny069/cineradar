@@ -1,6 +1,7 @@
 import { checkRateLimit, recordFailedAttempt, recordSuccess, getClientIdentifier } from "./_shared/rateLimiter.cjs";
 
 import { normalize, DEFAULT_ENABLED, createIsMySubscription } from "./_shared/subscriptions.cjs";
+import { withMediathequeProvider } from "./_shared/mediatheque.cjs";
 
 async function githubGet(apiUrl, token) {
   const res = await fetch(apiUrl, {
@@ -159,7 +160,7 @@ export default async function handler(req, res) {
     // On préserve la disponibilité connue si elle existait déjà et reste
     // valable, sinon on marque une nouvelle disponibilité à partir de
     // maintenant — même logique que le robot.
-    const availableSince = abonnement.length > 0 ? existing.availableSince || new Date().toISOString() : null;
+    const availableSince = abonnement.length > 0 || existing.mn ? existing.availableSince || new Date().toISOString() : null;
 
     const updatedEntry = {
       ...existing,
@@ -173,7 +174,7 @@ export default async function handler(req, res) {
       tmdbRating: details.vote_average,
       tmdbVotes: details.vote_count,
       imdbId: details.imdb_id,
-      providers: { abonnement, vod },
+      providers: { abonnement: withMediathequeProvider(abonnement, existing), vod },
       availableSince,
       lastChecked: new Date().toISOString(),
     };

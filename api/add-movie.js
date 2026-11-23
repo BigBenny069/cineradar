@@ -1,6 +1,7 @@
 import { checkRateLimit, recordFailedAttempt, recordSuccess, getClientIdentifier } from "./_shared/rateLimiter.cjs";
 
 import { normalize, DEFAULT_ENABLED, createIsMySubscription } from "./_shared/subscriptions.cjs";
+import { withMediathequeProvider } from "./_shared/mediatheque.cjs";
 
 async function githubGet(apiUrl, token) {
   const res = await fetch(apiUrl, {
@@ -107,8 +108,8 @@ async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
     letterboxdVotes: existing?.letterboxdVotes ?? null,
     imdbId: details.imdb_id,
     letterboxdUrl: movieEntry.letterboxdUrl || null,
-    providers: { abonnement, vod },
-    availableSince: abonnement.length > 0 ? existing?.availableSince || new Date().toISOString() : null,
+    providers: { abonnement: withMediathequeProvider(abonnement, existing), vod },
+    availableSince: abonnement.length > 0 || existing?.mn ? existing?.availableSince || new Date().toISOString() : null,
     wantedBy: movieEntry.wantedBy || existing?.wantedBy || null,
     // Même repli que côté movies.json : les fiches enrichies avant
     // l'introduction du champ n'ont pas encore d'addedAt.
@@ -118,6 +119,7 @@ async function quickEnrich({ tmdbId, movieEntry, repo, token }) {
   };
   // Conserve le second avis Watchmode déjà obtenu (modification d'une fiche).
   if (existing?.wm) newEntry.wm = existing.wm;
+  if (existing?.mn) newEntry.mn = existing.mn;
   // Idem pour un éventuel signalement « pas disponible ».
   if (existing?.reported) newEntry.reported = existing.reported;
 

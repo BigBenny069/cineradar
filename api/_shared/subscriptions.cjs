@@ -35,6 +35,9 @@ const CANONICAL_SUBSCRIPTIONS = {
   // "Shadowz Amazon Channel" : la correspondance par inclusion de
   // isMySubscription couvre déjà ce suffixe.
   shadowz: ["Shadowz"],
+  // Médiathèque numérique (ARTE / UniversCiné, via ta bibliothèque) : absente
+  // de TMDB, détectée par le robot (voir api/_shared/mediatheque.cjs).
+  mediatheque: ["Médiathèque numérique"],
 };
 
 // Valeurs par défaut utilisées si data/settings.json est absent ou illisible.

@@ -23,6 +23,18 @@ describe("toPosterSize", () => {
   });
 });
 
+describe("getPlatformSearchUrl — Médiathèque numérique", () => {
+  it("utilise le lien direct de la fiche quand il est connu", () => {
+    expect(getPlatformSearchUrl("Médiathèque numérique", "Parasite", 2019, "https://vod.mediatheque-numerique.com/films/parasite")).toBe("https://vod.mediatheque-numerique.com/films/parasite");
+  });
+  it("sinon, renvoie vers la recherche du catalogue", () => {
+    expect(getPlatformSearchUrl("Médiathèque numérique", "Parasite", 2019)).toContain("vod.mediatheque-numerique.com/products?q=");
+  });
+  it("n'applique pas le lien direct aux autres plateformes", () => {
+    expect(getPlatformSearchUrl("Netflix", "Parasite", 2019, "https://vod.mediatheque-numerique.com/films/parasite")).toContain("netflix.com");
+  });
+});
+
 describe("getPlatformSearchUrl", () => {
   it("route les chaînes 'X Amazon Channel' (quel que soit X) vers l'appli Prime Video", () => {
     const url = getPlatformSearchUrl("Insomnia Amazon Channel", "Bone Tomahawk", 2015);
