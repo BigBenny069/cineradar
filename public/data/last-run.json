@@ -1,10 +1,10 @@
 {
-  "startedAt": "2026-11-23T08:37:39.660Z",
-  "finishedAt": "2026-11-23T08:39:24.700Z",
-  "trigger": "manuel (bouton dans l'app)",
+  "startedAt": "2026-11-23T13:42:36.411Z",
+  "finishedAt": "2026-11-23T13:44:15.514Z",
+  "trigger": "push sur movies.json",
   "status": "success",
-  "moviesChecked": 191,
+  "moviesChecked": 192,
   "unmatchedCount": 0,
-  "newlyAvailableCount": 26,
+  "newlyAvailableCount": 0,
   "errors": []
 }
