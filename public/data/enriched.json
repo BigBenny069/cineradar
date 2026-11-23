@@ -8133,5 +8133,40 @@
     "addedAt": "2026-11-23T13:40:14.055Z",
     "updatedAt": "2026-11-23T13:40:14.055Z",
     "lastChecked": "2026-11-23T13:44:15.505Z"
+  },
+  {
+    "tmdbId": 14337,
+    "title": "Primer",
+    "year": "2004",
+    "director": "Shane Carruth",
+    "poster": "https://image.tmdb.org/t/p/w500/92XglEsC6pnhBt1pxJYRFNRgs4F.jpg",
+    "synopsis": "Dans un garage de banlieue, quatre ingénieurs passent leur temps libre à travailler sur des brevets qu'ils espèrent commercialiser pour leur propre compte. Deux d'entre eux, Abe et Aaron, développent en secret une machine capable de réduire la masse des objets. Ils vont alors découvrir une capacité inattendue de ce qu'ils appellent « la boîte ». L'échelle temporelle ne serait pas la même à l'intérieur et à l'extérieur. Ils s'empressent d'en construire un modèle suffisamment grand pour en expérimenter les effets sur eux-mêmes. Il leur suffirait, ont-ils calculé, de « reculer » chaque jour de quelques heures pour manipuler leurs placements boursiers selon les données déjà publiées avant l'expérience. Très vite, ils se sentiront dépassés par ce qui leur arrive.",
+    "genres": [
+      "Science-Fiction",
+      "Drame",
+      "Thriller"
+    ],
+    "cast": [
+      "Shane Carruth",
+      "David Sullivan",
+      "Casey Gooden",
+      "Anand Upadhyaya",
+      "Carrie Crawford"
+    ],
+    "tmdbRating": 6.743,
+    "tmdbVotes": 2608,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0390384",
+    "letterboxdUrl": "https://letterboxd.com/film/primer/",
+    "providers": {
+      "abonnement": [],
+      "vod": []
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-23T14:43:14.664Z",
+    "updatedAt": "2026-11-23T14:43:14.664Z",
+    "lastChecked": "2026-11-23T14:43:16.974Z"
   }
 ]
