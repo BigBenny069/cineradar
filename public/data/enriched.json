@@ -7875,5 +7875,46 @@
       "id": 1629946,
       "checkedAt": "2026-11-21T07:11:00.144Z"
     }
+  },
+  {
+    "tmdbId": 22414,
+    "title": "Bons baisers d'Hollywood",
+    "year": "1990",
+    "director": "Mike Nichols",
+    "poster": "https://image.tmdb.org/t/p/w500/eOrj7GkJDeoZHtO9SBFHb0D6qHa.jpg",
+    "synopsis": "Suzanne Vale, star du grand écran est devenu dépendante de la drogue. Après une brève tentative de désintoxication, sa maison de production la pousse à vivre avec sa mère, elle-même star déchue ayant sombré dans l'alcoolisme. C'est le début des ennuis et des conflits pour les deux femmes.",
+    "genres": [
+      "Comédie",
+      "Drame"
+    ],
+    "cast": [
+      "Meryl Streep",
+      "Shirley MacLaine",
+      "Dennis Quaid",
+      "Gene Hackman",
+      "Richard Dreyfuss"
+    ],
+    "tmdbRating": 6.6,
+    "tmdbVotes": 318,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0100395",
+    "letterboxdUrl": "https://letterboxd.com/film/postcards-from-the-edge/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Amazon Video"
+      ]
+    },
+    "availableSince": "2026-11-23T07:01:52.149Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-23T07:01:50.836Z",
+    "updatedAt": "2026-11-23T07:01:50.836Z",
+    "lastChecked": "2026-11-23T07:01:52.149Z"
   }
 ]
