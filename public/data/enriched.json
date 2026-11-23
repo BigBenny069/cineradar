@@ -8213,5 +8213,56 @@
     "addedAt": "2026-11-23T14:43:54.075Z",
     "updatedAt": "2026-11-23T14:43:54.075Z",
     "lastChecked": "2026-11-23T14:43:56.254Z"
+  },
+  {
+    "tmdbId": 59967,
+    "title": "Looper",
+    "year": "2012",
+    "director": "Rian Johnson",
+    "poster": "https://image.tmdb.org/t/p/w500/cTo2oVRvLEiaIg1UAKu0ZxkYTNL.jpg",
+    "synopsis": "Dans un futur proche, la Mafia a mis au point un système infaillible pour faire disparaître tous les témoins gênants. Elle expédie ses victimes dans le passé, à notre époque, où des tueurs d’un genre nouveau (les « Loopers ») les éliminent.  Un jour, l’un d’entre eux, Joe, découvre que la victime qu’il doit exécuter n’est autre que… lui-même, avec 30 ans de plus. La machine si bien huilée déraille…",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Science-Fiction"
+    ],
+    "cast": [
+      "Joseph Gordon-Levitt",
+      "Bruce Willis",
+      "Emily Blunt",
+      "Paul Dano",
+      "Noah Segan"
+    ],
+    "tmdbRating": 6.918,
+    "tmdbVotes": 11376,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1276104",
+    "letterboxdUrl": "https://letterboxd.com/film/looper/",
+    "providers": {
+      "abonnement": [
+        "HBO Max",
+        "HBO Max Amazon Channel"
+      ],
+      "vod": [
+        "Molotov TV",
+        "Apple TV Store",
+        "Orange VOD",
+        "YouTube",
+        "Rakuten TV",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "ARTE VOD"
+      ]
+    },
+    "availableSince": "2026-11-23T14:44:41.322Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-23T14:44:38.877Z",
+    "updatedAt": "2026-11-23T14:44:38.877Z",
+    "lastChecked": "2026-11-23T14:44:41.322Z"
   }
 ]
