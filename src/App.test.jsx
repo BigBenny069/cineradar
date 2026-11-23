@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch, isReportedUnavailable, splitHomeSections, getProviderLogoUrl } from "./App.jsx";
+import { normalizeText, toPosterSize, getPlatformSearchUrl, mapToCinemaisonPlatform, formatRelativeDate, getInitialView, looksLikeLetterboxdLink, pickBestTmdbMatch, filterMoviesByTitle, describeLetterboxdSource, applyPendingChanges, getWatchmodeBadge, describeWatchmodeMismatch, isReportedUnavailable, splitHomeSections, getProviderLogoUrl, isMediathequeOnly, MEDIATHEQUE_PLATFORM } from "./App.jsx";
 
 describe("normalizeText", () => {
   it("retire les accents, met en minuscule, retire les espaces superflus", () => {
@@ -285,8 +285,33 @@ describe("isReportedUnavailable / splitHomeSections", () => {
     expect(splitHomeSections(films).lastAdded.map((m) => m.tmdbId)).toEqual([5, 4, 3, 2, 1]);
   });
 
-  it("aucun film : trois listes vides, sans erreur", () => {
-    expect(splitHomeSections(undefined)).toEqual({ available: [], doubtful: [], lastAdded: [] });
+  it("aucun film : listes vides, sans erreur", () => {
+    expect(splitHomeSections(undefined)).toEqual({ available: [], mediatheque: [], doubtful: [], lastAdded: [] });
+  });
+
+  describe("ligne Médiathèque numérique", () => {
+    const MN = MEDIATHEQUE_PLATFORM;
+    const mn = (id, ab, extra = {}) => ({ tmdbId: id, title: "M" + id, providers: { abonnement: ab, vod: [] }, availableSince: `2026-11-0${id}T00:00:00Z`, updatedAt: `2026-10-0${id}T00:00:00Z`, ...extra });
+    const list = [mn(1, [MN]), mn(2, [MN, "Netflix"]), mn(3, ["Netflix"]), mn(4, [MN], { reported: { platforms: [MN], at: "2026-11-09T00:00:00Z" } })];
+
+    it("reconnaît un film uniquement sur la Médiathèque", () => {
+      expect(isMediathequeOnly(list[0])).toBe(true);
+      expect(isMediathequeOnly(list[1])).toBe(false);
+      expect(isMediathequeOnly(list[2])).toBe(false);
+      expect(isMediathequeOnly({ providers: { abonnement: [] } })).toBe(false);
+      expect(isMediathequeOnly(undefined)).toBe(false);
+    });
+    it("les films uniquement sur la Médiathèque quittent « Disponible »", () => {
+      expect(splitHomeSections(list).available.map((m) => m.tmdbId)).toEqual([3, 2]);
+    });
+    it("la ligne Médiathèque contient tous ses films (même ceux aussi ailleurs), du plus récent au plus ancien", () => {
+      expect(splitHomeSections(list).mediatheque.map((m) => m.tmdbId)).toEqual([2, 1]);
+    });
+    it("un film signalé « pas disponible » passe en douteux, pas dans la ligne", () => {
+      const r = splitHomeSections(list);
+      expect(r.mediatheque.map((m) => m.tmdbId)).not.toContain(4);
+      expect(r.doubtful.map((m) => m.tmdbId)).toContain(4);
+    });
   });
 
   it("pas de badge Watchmode sur un film signalé", () => {
