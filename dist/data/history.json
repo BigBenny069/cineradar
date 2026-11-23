@@ -1,0 +1,1598 @@
+[
+  {
+    "title": "Hana-bi",
+    "year": "1997",
+    "tmdbId": 5910,
+    "addedAt": "2026-08-20T08:03:23.638Z"
+  },
+  {
+    "title": "The Thing",
+    "year": "1982",
+    "tmdbId": 1091,
+    "addedAt": "2026-08-20T08:03:23.762Z"
+  },
+  {
+    "title": "Les Frères Sisters",
+    "year": "2018",
+    "tmdbId": 440161,
+    "addedAt": "2026-08-20T08:03:24.045Z"
+  },
+  {
+    "title": "Le Troisième Homme",
+    "year": "1949",
+    "tmdbId": 1092,
+    "addedAt": "2026-08-20T08:03:24.295Z"
+  },
+  {
+    "title": "Cabin Fever",
+    "year": "2003",
+    "tmdbId": 11547,
+    "addedAt": "2026-08-20T08:03:24.592Z"
+  },
+  {
+    "title": "Presence",
+    "year": "2025",
+    "tmdbId": 1140535,
+    "addedAt": "2026-08-09T16:07:38.946Z"
+  },
+  {
+    "title": "Logan Lucky",
+    "year": "2017",
+    "tmdbId": 399170,
+    "addedAt": "2026-08-09T16:08:52.772Z"
+  },
+  {
+    "title": "La Fureur de vivre",
+    "year": "1955",
+    "tmdbId": 221,
+    "addedAt": "2026-08-09T16:10:02.797Z"
+  },
+  {
+    "title": "Le Retour des morts-vivants 3",
+    "year": "1993",
+    "tmdbId": 28260,
+    "addedAt": "2026-08-09T16:12:20.239Z"
+  },
+  {
+    "title": "L'Aventure intérieure",
+    "year": "1987",
+    "tmdbId": 2614,
+    "addedAt": "2026-08-09T16:34:02.844Z"
+  },
+  {
+    "title": "L'Aventure du Poséidon",
+    "year": "1972",
+    "tmdbId": 551,
+    "addedAt": "2026-08-09T19:30:27.136Z"
+  },
+  {
+    "title": "747 en péril",
+    "year": "1974",
+    "tmdbId": 27932,
+    "addedAt": "2026-08-09T19:38:27.239Z"
+  },
+  {
+    "title": "Le Retour des morts-vivants 2",
+    "year": "1988",
+    "tmdbId": 24929,
+    "addedAt": "2026-08-13T21:55:35.358Z"
+  },
+  {
+    "title": "Evil Dead",
+    "year": "2013",
+    "tmdbId": 109428,
+    "addedAt": "2026-08-13T21:59:08.036Z"
+  },
+  {
+    "title": "Evil Dead Rise",
+    "year": "2023",
+    "tmdbId": 713704,
+    "addedAt": "2026-08-13T22:00:03.051Z"
+  },
+  {
+    "title": "It Follows",
+    "year": "2015",
+    "tmdbId": 270303,
+    "addedAt": "2026-08-14T17:23:35.231Z"
+  },
+  {
+    "title": "Jason et les Argonautes",
+    "year": "1963",
+    "tmdbId": 11533,
+    "addedAt": "2026-08-14T22:10:28.023Z"
+  },
+  {
+    "title": "The Raid 2",
+    "year": "2014",
+    "tmdbId": 180299,
+    "addedAt": "2026-08-15T21:59:18.507Z"
+  },
+  {
+    "title": "Normal",
+    "year": "2026",
+    "tmdbId": 1242332,
+    "addedAt": "2026-08-16T07:05:17.637Z"
+  },
+  {
+    "title": "Le Convoi de la peur",
+    "year": "1977",
+    "tmdbId": 38985,
+    "addedAt": "2026-08-16T08:52:30.243Z"
+  },
+  {
+    "title": "Casablanca",
+    "year": "1943",
+    "tmdbId": 289,
+    "addedAt": "2026-08-16T20:03:44.201Z"
+  },
+  {
+    "title": "Citizen Kane",
+    "year": "1941",
+    "tmdbId": 15,
+    "addedAt": "2026-08-16T20:05:21.291Z"
+  },
+  {
+    "title": "Bullitt",
+    "year": "1968",
+    "tmdbId": 916,
+    "addedAt": "2026-08-17T20:18:42.224Z"
+  },
+  {
+    "title": "Police Fédérale - Los Angeles",
+    "year": "1985",
+    "tmdbId": 9846,
+    "addedAt": "2026-08-17T20:22:02.919Z"
+  },
+  {
+    "title": "Traîné sur le bitume",
+    "year": "2019",
+    "tmdbId": 438674,
+    "addedAt": "2026-08-18T04:27:32.650Z"
+  },
+  {
+    "title": "The Irishman",
+    "year": "2019",
+    "tmdbId": 398978,
+    "addedAt": "2026-08-18T04:26:10.289Z"
+  },
+  {
+    "title": "Ghost in the Shell",
+    "year": "1995",
+    "tmdbId": 9323,
+    "addedAt": "2026-08-21T20:04:25.349Z"
+  },
+  {
+    "title": "Les Envahisseurs de la planète rouge",
+    "year": "1953",
+    "tmdbId": 20424,
+    "addedAt": "2026-08-21T20:04:27.588Z"
+  },
+  {
+    "title": "2001 : L'Odyssée de l'espace",
+    "year": "1968",
+    "tmdbId": 62,
+    "addedAt": "2026-08-21T20:04:29.031Z"
+  },
+  {
+    "title": "Oklahoma Honey",
+    "year": "2026",
+    "tmdbId": 1124142,
+    "addedAt": "2026-08-21T20:11:46.030Z"
+  },
+  {
+    "title": "Liens secrets",
+    "year": "1997",
+    "tmdbId": 60033,
+    "addedAt": "2026-08-21T20:11:46.100Z"
+  },
+  {
+    "title": "Akira",
+    "year": "1988",
+    "tmdbId": 149,
+    "addedAt": "2026-08-21T20:11:46.176Z"
+  },
+  {
+    "title": "Moonrise Kingdom",
+    "year": "2012",
+    "tmdbId": 83666,
+    "addedAt": "2026-08-21T20:11:46.244Z"
+  },
+  {
+    "title": "La Grande Évasion",
+    "year": "1963",
+    "tmdbId": 5925,
+    "addedAt": "2026-08-21T20:11:46.387Z"
+  },
+  {
+    "title": "Johnny Mnemonic",
+    "year": "1995",
+    "tmdbId": 9886,
+    "addedAt": "2026-08-21T20:11:46.462Z"
+  },
+  {
+    "title": "L'Arme fatale 4",
+    "year": "1998",
+    "tmdbId": 944,
+    "addedAt": "2026-08-21T20:11:46.535Z"
+  },
+  {
+    "title": "L'Arme fatale 3",
+    "year": "1992",
+    "tmdbId": 943,
+    "addedAt": "2026-08-21T20:11:46.609Z"
+  },
+  {
+    "title": "L'Arme fatale 2",
+    "year": "1989",
+    "tmdbId": 942,
+    "addedAt": "2026-08-21T20:11:46.680Z"
+  },
+  {
+    "title": "1984",
+    "year": "1984",
+    "tmdbId": 9314,
+    "addedAt": "2026-08-21T20:11:46.755Z"
+  },
+  {
+    "title": "Soleil vert",
+    "year": "1973",
+    "tmdbId": 12101,
+    "addedAt": "2026-08-21T20:11:46.827Z"
+  },
+  {
+    "title": "Serial mother",
+    "year": "1994",
+    "tmdbId": 11592,
+    "addedAt": "2026-08-21T20:11:46.928Z"
+  },
+  {
+    "title": "A Bullet in the Head",
+    "year": "1990",
+    "tmdbId": 31089,
+    "addedAt": "2026-08-21T20:11:47.000Z"
+  },
+  {
+    "title": "Los Angeles Plays Itself",
+    "year": "2004",
+    "tmdbId": 38643,
+    "addedAt": "2026-08-21T20:11:47.110Z"
+  },
+  {
+    "title": "Munich",
+    "year": "2005",
+    "tmdbId": 612,
+    "addedAt": "2026-08-21T20:11:47.180Z"
+  },
+  {
+    "title": "Interstellar",
+    "year": "2014",
+    "tmdbId": 157336,
+    "addedAt": "2026-08-21T20:11:47.253Z"
+  },
+  {
+    "title": "Il était une fois en Amérique",
+    "year": "1984",
+    "tmdbId": 311,
+    "addedAt": "2026-08-21T20:11:47.327Z"
+  },
+  {
+    "title": "Super 8",
+    "year": "2011",
+    "tmdbId": 37686,
+    "addedAt": "2026-08-21T20:11:47.398Z"
+  },
+  {
+    "title": "Bone Tomahawk",
+    "year": "2015",
+    "tmdbId": 294963,
+    "addedAt": "2026-08-21T20:11:47.566Z"
+  },
+  {
+    "title": "Une Journée en enfer",
+    "year": "1995",
+    "tmdbId": 1572,
+    "addedAt": "2026-08-21T20:11:47.657Z"
+  },
+  {
+    "title": "58 minutes pour vivre",
+    "year": "1990",
+    "tmdbId": 1573,
+    "addedAt": "2026-08-21T20:11:47.728Z"
+  },
+  {
+    "title": "S.O.S. Fantômes : L'Héritage",
+    "year": "2021",
+    "tmdbId": 425909,
+    "addedAt": "2026-08-21T20:11:47.821Z"
+  },
+  {
+    "title": "Chérie, nous avons été rétrécis",
+    "year": "1997",
+    "tmdbId": 11425,
+    "addedAt": "2026-08-21T20:11:47.892Z"
+  },
+  {
+    "title": "Chérie, j'ai agrandi le bébé",
+    "year": "1992",
+    "tmdbId": 11158,
+    "addedAt": "2026-08-21T20:11:47.994Z"
+  },
+  {
+    "title": "Good Luck, Have Fun, Don't Die",
+    "year": "2026",
+    "tmdbId": 1119449,
+    "addedAt": "2026-08-21T20:11:48.066Z"
+  },
+  {
+    "title": "Le Silence des agneaux",
+    "year": "1991",
+    "tmdbId": 274,
+    "addedAt": "2026-08-21T20:11:48.134Z"
+  },
+  {
+    "title": "Marty Supreme",
+    "year": "2025",
+    "tmdbId": 1317288,
+    "addedAt": "2026-08-21T20:11:48.207Z"
+  },
+  {
+    "title": "Une Bataille après l'autre",
+    "year": "2025",
+    "tmdbId": 1054867,
+    "addedAt": "2026-08-21T20:11:48.279Z"
+  },
+  {
+    "title": "Évanouis",
+    "year": "2025",
+    "tmdbId": 1078605,
+    "addedAt": "2026-08-21T20:11:48.356Z"
+  },
+  {
+    "title": "Projet Dernière Chance",
+    "year": "2026",
+    "tmdbId": 687163,
+    "addedAt": "2026-08-21T20:11:48.431Z"
+  },
+  {
+    "title": "Shutter Island",
+    "year": "2010",
+    "tmdbId": 11324,
+    "addedAt": "2026-08-22T20:05:56.869Z"
+  },
+  {
+    "title": "Le Parrain, 3e partie",
+    "year": "1990",
+    "tmdbId": 242,
+    "addedAt": "2026-08-24T08:26:07.433Z"
+  },
+  {
+    "title": "Zombie",
+    "year": "1978",
+    "tmdbId": 923,
+    "addedAt": "2026-08-25T16:55:40.163Z"
+  },
+  {
+    "title": "Cruising : La Chasse",
+    "year": "1980",
+    "tmdbId": 27958,
+    "addedAt": "2026-08-25T16:57:52.142Z"
+  },
+  {
+    "title": "Killer Joe",
+    "year": "2012",
+    "tmdbId": 73567,
+    "addedAt": "2026-08-25T16:58:45.279Z"
+  },
+  {
+    "title": "L'affaire de la mutinerie du Caine",
+    "year": "2023",
+    "tmdbId": 1018332,
+    "addedAt": "2026-08-25T16:59:45.097Z"
+  },
+  {
+    "title": "Vol au-dessus d'un nid de coucou",
+    "year": "1975",
+    "tmdbId": 510,
+    "addedAt": "2026-08-26T18:47:19.621Z"
+  },
+  {
+    "title": "Teenage Sex and Death at Camp Miasma",
+    "year": "2026",
+    "tmdbId": 1240889,
+    "addedAt": "2026-08-27T09:05:59.691Z"
+  },
+  {
+    "title": "Histoires de la nuit",
+    "year": "2026",
+    "tmdbId": 1191818,
+    "addedAt": "2026-08-27T09:06:23.466Z"
+  },
+  {
+    "title": "Les Survivants du Che",
+    "year": "2026",
+    "tmdbId": 1666700,
+    "addedAt": "2026-08-27T09:07:43.464Z"
+  },
+  {
+    "title": "L’inconnue",
+    "year": "2026",
+    "tmdbId": 1182935,
+    "addedAt": "2026-08-27T09:08:23.366Z"
+  },
+  {
+    "title": "Parasite",
+    "year": "2019",
+    "tmdbId": 496243,
+    "addedAt": "2026-08-29T14:30:04.504Z"
+  },
+  {
+    "title": "Mise à mort du cerf sacré",
+    "year": "2017",
+    "tmdbId": 399057,
+    "addedAt": "2026-08-30T00:47:18.436Z"
+  },
+  {
+    "title": "Un Soleil",
+    "year": "2019",
+    "tmdbId": 622951,
+    "addedAt": "2026-08-30T00:49:00.539Z"
+  },
+  {
+    "title": "La Servante",
+    "year": "1960",
+    "tmdbId": 42506,
+    "addedAt": "2026-08-30T00:50:09.450Z"
+  },
+  {
+    "title": "Le Retour des sept",
+    "year": "1966",
+    "tmdbId": 12639,
+    "addedAt": "2026-08-31T06:03:53.342Z"
+  },
+  {
+    "title": "La Horde sauvage",
+    "year": "1969",
+    "tmdbId": 576,
+    "addedAt": "2026-08-31T06:03:53.362Z"
+  },
+  {
+    "title": "Josey Wales : hors-la-loi",
+    "year": "1976",
+    "tmdbId": 10747,
+    "addedAt": "2026-08-31T06:03:53.392Z"
+  },
+  {
+    "title": "Il était une fois dans l'Ouest",
+    "year": "1968",
+    "tmdbId": 335,
+    "addedAt": "2026-08-31T06:03:53.408Z"
+  },
+  {
+    "title": "Twilight, chapitre 2 : Tentation",
+    "year": "2009",
+    "tmdbId": 18239,
+    "addedAt": "2026-08-31T09:02:03.618Z"
+  },
+  {
+    "title": "Boy Kills World",
+    "year": "2024",
+    "tmdbId": 882059,
+    "addedAt": "2026-09-02T16:01:20.610Z"
+  },
+  {
+    "title": "Black Phone",
+    "year": "2022",
+    "tmdbId": 756999,
+    "addedAt": "2026-09-02T21:31:18.494Z"
+  },
+  {
+    "title": "L'homme qui voulait savoir",
+    "year": "1988",
+    "tmdbId": 8740,
+    "addedAt": "2026-09-03T11:33:00.677Z"
+  },
+  {
+    "title": "Brainstorm",
+    "year": "1983",
+    "tmdbId": 15050,
+    "addedAt": "2026-09-04T07:27:43.641Z"
+  },
+  {
+    "title": "Kwaïdan",
+    "year": "1965",
+    "tmdbId": 30959,
+    "addedAt": "2026-09-04T07:28:26.440Z"
+  },
+  {
+    "title": "Les Monstres sont toujours vivants",
+    "year": "1978",
+    "tmdbId": 28155,
+    "addedAt": "2026-09-04T07:29:51.345Z"
+  },
+  {
+    "title": "Zeiramu - Le Film",
+    "year": "1991",
+    "tmdbId": 27302,
+    "addedAt": "2026-09-04T07:30:32.812Z"
+  },
+  {
+    "title": "Sacré Robin des bois",
+    "year": "1993",
+    "tmdbId": 8005,
+    "addedAt": "2026-09-04T15:05:56.590Z"
+  },
+  {
+    "title": "Coyote vs. Acme",
+    "year": "2026",
+    "tmdbId": 1204680,
+    "addedAt": "2026-09-05T17:13:07.348Z"
+  },
+  {
+    "title": "Buddy",
+    "year": "2026",
+    "tmdbId": 1514026,
+    "addedAt": "2026-09-05T17:13:52.460Z"
+  },
+  {
+    "title": "Tony",
+    "year": "2026",
+    "tmdbId": 1329016,
+    "addedAt": "2026-09-05T17:15:42.034Z"
+  },
+  {
+    "title": "L'Invitation",
+    "year": "2026",
+    "tmdbId": 950028,
+    "addedAt": "2026-09-05T17:16:15.302Z"
+  },
+  {
+    "title": "Tremblement de terre",
+    "year": "1974",
+    "tmdbId": 11123,
+    "addedAt": "2026-09-07T14:24:53.307Z"
+  },
+  {
+    "title": "Les Naufragés du 747",
+    "year": "1977",
+    "tmdbId": 7227,
+    "addedAt": "2026-09-07T14:26:17.347Z"
+  },
+  {
+    "title": "Simetierre",
+    "year": "1989",
+    "tmdbId": 8913,
+    "addedAt": "2026-09-07T17:40:03.357Z"
+  },
+  {
+    "title": "L'École fantastique",
+    "year": "2005",
+    "tmdbId": 11459,
+    "addedAt": "2026-09-08T20:36:28.421Z"
+  },
+  {
+    "title": "Kick-Ass",
+    "year": "2010",
+    "tmdbId": 23483,
+    "addedAt": "2026-09-08T20:37:38.850Z"
+  },
+  {
+    "title": "Moon",
+    "year": "2009",
+    "tmdbId": 17431,
+    "addedAt": "2026-09-11T10:22:36.354Z"
+  },
+  {
+    "title": "L'Innocence",
+    "year": "2023",
+    "tmdbId": 1050035,
+    "addedAt": "2026-09-11T18:20:45.287Z"
+  },
+  {
+    "title": "Génération perdue",
+    "year": "1987",
+    "tmdbId": 1547,
+    "addedAt": "2026-09-12T19:15:49.539Z"
+  },
+  {
+    "title": "Chute libre",
+    "year": "1993",
+    "tmdbId": 37094,
+    "addedAt": "2026-09-12T19:16:47.408Z"
+  },
+  {
+    "title": "True Romance",
+    "year": "1993",
+    "tmdbId": 319,
+    "addedAt": "2026-09-12T19:21:44.291Z"
+  },
+  {
+    "title": "Cure",
+    "year": "1997",
+    "tmdbId": 36095,
+    "addedAt": "2026-09-13T05:42:57.714Z"
+  },
+  {
+    "title": "J'ai rencontré le Diable",
+    "year": "2010",
+    "tmdbId": 49797,
+    "addedAt": "2026-09-13T05:43:28.969Z"
+  },
+  {
+    "title": "Les Diables",
+    "year": "1971",
+    "tmdbId": 31767,
+    "addedAt": "2026-09-13T05:43:59.244Z"
+  },
+  {
+    "title": "Midnight Run",
+    "year": "1988",
+    "tmdbId": 9013,
+    "addedAt": "2026-09-13T06:23:21.245Z"
+  },
+  {
+    "title": "New York - Miami",
+    "year": "1934",
+    "tmdbId": 3078,
+    "addedAt": "2026-09-13T06:26:10.120Z"
+  },
+  {
+    "title": "La vie est belle",
+    "year": "1946",
+    "tmdbId": 1585,
+    "addedAt": "2026-09-13T06:26:34.765Z"
+  },
+  {
+    "title": "Harakiri",
+    "year": "1962",
+    "tmdbId": 14537,
+    "addedAt": "2026-09-13T06:27:39.167Z"
+  },
+  {
+    "title": "Entre le ciel et l'enfer",
+    "year": "1963",
+    "tmdbId": 12493,
+    "addedAt": "2026-09-13T06:28:40.348Z"
+  },
+  {
+    "title": "Le Trou",
+    "year": "1960",
+    "tmdbId": 29259,
+    "addedAt": "2026-09-13T06:29:51.529Z"
+  },
+  {
+    "title": "Nobody Knows",
+    "year": "2004",
+    "tmdbId": 2517,
+    "addedAt": "2026-09-13T06:30:52.654Z"
+  },
+  {
+    "title": "Coherence",
+    "year": "2014",
+    "tmdbId": 220289,
+    "addedAt": "2026-09-13T08:02:39.578Z"
+  },
+  {
+    "title": "The Strangers",
+    "year": "2016",
+    "tmdbId": 293670,
+    "addedAt": "2026-09-13T08:31:32.899Z"
+  },
+  {
+    "title": "La Cabane dans les bois",
+    "year": "2012",
+    "tmdbId": 22970,
+    "addedAt": "2026-09-13T12:43:36.866Z"
+  },
+  {
+    "title": "Plus fort que moi",
+    "year": "2025",
+    "tmdbId": 1317149,
+    "addedAt": "2026-09-13T17:01:27.081Z"
+  },
+  {
+    "title": "But I'm a Cheerleader",
+    "year": "2000",
+    "tmdbId": 20770,
+    "addedAt": "2026-09-13T17:01:40.120Z"
+  },
+  {
+    "title": "Blow-Up",
+    "year": "1966",
+    "tmdbId": 1052,
+    "addedAt": "2026-09-13T19:18:15.211Z"
+  },
+  {
+    "title": "La Mort aux trousses",
+    "year": "1959",
+    "tmdbId": 213,
+    "addedAt": "2026-09-13T19:18:59.881Z"
+  },
+  {
+    "title": "Iron Claw",
+    "year": "2023",
+    "tmdbId": 850165,
+    "addedAt": "2026-09-13T19:33:24.347Z"
+  },
+  {
+    "title": "Kaïro",
+    "year": "2001",
+    "tmdbId": 27324,
+    "addedAt": "2026-09-14T06:49:32.953Z"
+  },
+  {
+    "title": "L'Échine du diable",
+    "year": "2001",
+    "tmdbId": 1433,
+    "addedAt": "2026-09-14T06:59:06.876Z"
+  },
+  {
+    "title": "Casino",
+    "year": "1995",
+    "tmdbId": 524,
+    "addedAt": "2026-09-18T13:19:08.182Z"
+  },
+  {
+    "title": "Poison",
+    "year": "1991",
+    "tmdbId": 47620,
+    "addedAt": "2026-09-18T18:02:26.364Z"
+  },
+  {
+    "title": "Safe",
+    "year": "1995",
+    "tmdbId": 32646,
+    "addedAt": "2026-09-18T18:02:59.050Z"
+  },
+  {
+    "title": "I'm Not There",
+    "year": "2007",
+    "tmdbId": 3902,
+    "addedAt": "2026-09-18T18:04:45.169Z"
+  },
+  {
+    "title": "Les Incorruptibles",
+    "year": "1987",
+    "tmdbId": 117,
+    "addedAt": "2026-09-20T16:06:33.587Z"
+  },
+  {
+    "title": "La Valse des pantins",
+    "year": "1982",
+    "tmdbId": 262,
+    "addedAt": "2026-09-20T16:06:54.091Z"
+  },
+  {
+    "title": "Sourires d'une nuit d'été",
+    "year": "1955",
+    "tmdbId": 11700,
+    "addedAt": "2026-09-21T12:04:36.407Z"
+  },
+  {
+    "title": "Yannick",
+    "year": "2023",
+    "tmdbId": 1110358,
+    "addedAt": "2026-09-21T13:09:08.223Z"
+  },
+  {
+    "title": "Rubber",
+    "year": "2010",
+    "tmdbId": 45649,
+    "addedAt": "2026-09-21T13:09:32.421Z"
+  },
+  {
+    "title": "Au poste !",
+    "year": "2018",
+    "tmdbId": 474331,
+    "addedAt": "2026-09-21T13:09:56.945Z"
+  },
+  {
+    "title": "Le Joueur de Go",
+    "year": "2024",
+    "tmdbId": 1264349,
+    "addedAt": "2026-09-21T16:28:10.871Z"
+  },
+  {
+    "title": "Holy Motors",
+    "year": "2012",
+    "tmdbId": 103328,
+    "addedAt": "2026-09-21T16:29:06.127Z"
+  },
+  {
+    "title": "Truman Capote",
+    "year": "2005",
+    "tmdbId": 398,
+    "addedAt": "2026-09-21T16:29:33.256Z"
+  },
+  {
+    "title": "The Host",
+    "year": "2006",
+    "tmdbId": 1255,
+    "addedAt": "2026-09-21T16:30:25.848Z"
+  },
+  {
+    "title": "Mulholland Drive",
+    "year": "2001",
+    "tmdbId": 1018,
+    "addedAt": "2026-09-21T16:31:19.991Z"
+  },
+  {
+    "title": "Tokyo Gore Police",
+    "year": "2008",
+    "tmdbId": 16061,
+    "addedAt": "2026-09-21T19:14:49.378Z"
+  },
+  {
+    "title": "La Liste de Schindler",
+    "year": "1993",
+    "tmdbId": 424,
+    "addedAt": "2026-09-21T19:15:17.821Z"
+  },
+  {
+    "title": "John Rambo",
+    "year": "2008",
+    "tmdbId": 7555,
+    "addedAt": "2026-09-21T19:15:47.329Z"
+  },
+  {
+    "title": "Razzia sur la Chnouf",
+    "year": "1955",
+    "tmdbId": 44256,
+    "addedAt": "2026-09-21T19:16:31.731Z"
+  },
+  {
+    "title": "Le Procès",
+    "year": "1962",
+    "tmdbId": 3009,
+    "addedAt": "2026-09-21T19:17:06.944Z"
+  },
+  {
+    "title": "L'Équipée sauvage",
+    "year": "1953",
+    "tmdbId": 28696,
+    "addedAt": "2026-09-21T19:17:44.781Z"
+  },
+  {
+    "title": "Le Criminel",
+    "year": "1946",
+    "tmdbId": 20246,
+    "addedAt": "2026-09-21T19:18:04.793Z"
+  },
+  {
+    "title": "Les Autres",
+    "year": "2001",
+    "tmdbId": 1933,
+    "addedAt": "2026-09-21T21:27:04.546Z"
+  },
+  {
+    "title": "There Will Be Blood",
+    "year": "2007",
+    "tmdbId": 7345,
+    "addedAt": "2026-09-21T21:28:16.608Z"
+  },
+  {
+    "title": "Sympathie pour le diable",
+    "year": "2019",
+    "tmdbId": 636835,
+    "addedAt": "2026-09-21T21:29:17.689Z"
+  },
+  {
+    "title": "Minuit dans le jardin du bien et du mal",
+    "year": "1997",
+    "tmdbId": 8197,
+    "addedAt": "2026-09-21T21:30:01.329Z"
+  },
+  {
+    "title": "Vivarium",
+    "year": "2019",
+    "tmdbId": 458305,
+    "addedAt": "2026-09-21T21:30:13.847Z"
+  },
+  {
+    "title": "Rocky Balboa",
+    "year": "2006",
+    "tmdbId": 1246,
+    "addedAt": "2026-09-23T19:33:02.476Z"
+  },
+  {
+    "title": "Jim Queen",
+    "year": "2026",
+    "tmdbId": 1061798,
+    "addedAt": "2026-09-24T13:55:54.785Z"
+  },
+  {
+    "title": "Wrong",
+    "year": "2012",
+    "tmdbId": 83186,
+    "addedAt": "2026-09-24T17:03:24.408Z"
+  },
+  {
+    "title": "Cinema Paradiso",
+    "year": "1988",
+    "tmdbId": 11216,
+    "addedAt": "2026-09-24T17:04:28.152Z"
+  },
+  {
+    "title": "Sur le chemin de la rédemption",
+    "year": "2018",
+    "tmdbId": 458737,
+    "addedAt": "2026-09-26T10:21:28.464Z"
+  },
+  {
+    "title": "Panique à Needle Park",
+    "year": "1971",
+    "tmdbId": 27554,
+    "addedAt": "2026-09-28T10:52:08.627Z"
+  },
+  {
+    "title": "Un après-midi de chien",
+    "year": "1975",
+    "tmdbId": 968,
+    "addedAt": "2026-09-28T10:52:23.870Z"
+  },
+  {
+    "title": "La Condition de l’homme III",
+    "year": "1961",
+    "tmdbId": 34530,
+    "addedAt": "2026-09-28T13:48:36.723Z"
+  },
+  {
+    "title": "La Condition de l’homme I",
+    "year": "1959",
+    "tmdbId": 31217,
+    "addedAt": "2026-09-28T13:48:54.975Z"
+  },
+  {
+    "title": "La Condition de l’homme II",
+    "year": "1959",
+    "tmdbId": 34528,
+    "addedAt": "2026-09-28T13:49:16.020Z"
+  },
+  {
+    "title": "Douze hommes en colère",
+    "year": "1957",
+    "tmdbId": 389,
+    "addedAt": "2026-09-28T13:49:31.476Z"
+  },
+  {
+    "title": "Requiem pour un massacre",
+    "year": "1985",
+    "tmdbId": 25237,
+    "addedAt": "2026-09-28T13:50:06.177Z"
+  },
+  {
+    "title": "Les Sept Samouraïs",
+    "year": "1954",
+    "tmdbId": 346,
+    "addedAt": "2026-09-28T13:52:42.429Z"
+  },
+  {
+    "title": "Les Évadés",
+    "year": "1994",
+    "tmdbId": 278,
+    "addedAt": "2026-09-28T13:53:24.890Z"
+  },
+  {
+    "title": "Yi Yi",
+    "year": "2000",
+    "tmdbId": 25538,
+    "addedAt": "2026-09-28T13:53:42.550Z"
+  },
+  {
+    "title": "Vivre",
+    "year": "1952",
+    "tmdbId": 3782,
+    "addedAt": "2026-09-28T13:54:15.016Z"
+  },
+  {
+    "title": "Ran",
+    "year": "1985",
+    "tmdbId": 11645,
+    "addedAt": "2026-09-28T13:54:36.168Z"
+  },
+  {
+    "title": "A Brighter Summer Day",
+    "year": "1991",
+    "tmdbId": 15804,
+    "addedAt": "2026-09-28T13:55:14.626Z"
+  },
+  {
+    "title": "La Bataille d'Alger",
+    "year": "1966",
+    "tmdbId": 17295,
+    "addedAt": "2026-09-28T13:55:35.083Z"
+  },
+  {
+    "title": "Soy Cuba",
+    "year": "1964",
+    "tmdbId": 32015,
+    "addedAt": "2026-09-28T13:55:51.807Z"
+  },
+  {
+    "title": "Incendies",
+    "year": "2010",
+    "tmdbId": 46738,
+    "addedAt": "2026-09-28T13:56:09.254Z"
+  },
+  {
+    "title": "La Femme des sables",
+    "year": "1964",
+    "tmdbId": 16672,
+    "addedAt": "2026-09-28T13:56:21.873Z"
+  },
+  {
+    "title": "Les Sentiers de la gloire",
+    "year": "1957",
+    "tmdbId": 975,
+    "addedAt": "2026-09-28T13:56:36.526Z"
+  },
+  {
+    "title": "Pique-nique à Hanging Rock",
+    "year": "1975",
+    "tmdbId": 11020,
+    "addedAt": "2026-09-29T21:25:39.885Z"
+  },
+  {
+    "title": "Digger",
+    "year": "2026",
+    "tmdbId": 1248832,
+    "addedAt": "2026-10-01T11:18:23.177Z"
+  },
+  {
+    "title": "Nowhere",
+    "year": "1997",
+    "tmdbId": 1811,
+    "addedAt": "2026-10-02T06:06:21.667Z"
+  },
+  {
+    "title": "Dark Blue",
+    "year": "2002",
+    "tmdbId": 4911,
+    "addedAt": "2026-10-04T13:29:10.328Z"
+  },
+  {
+    "title": "Training Day",
+    "year": "2001",
+    "tmdbId": 2034,
+    "addedAt": "2026-10-04T13:29:47.395Z"
+  },
+  {
+    "title": "Last Action Hero",
+    "year": "1993",
+    "tmdbId": 9593,
+    "addedAt": "2026-10-05T13:14:41.543Z"
+  },
+  {
+    "title": "La Tour infernale",
+    "year": "1974",
+    "tmdbId": 5919,
+    "addedAt": "2026-10-09T07:40:50.027Z"
+  },
+  {
+    "title": "The Dead Don't Die",
+    "year": "2019",
+    "tmdbId": 535581,
+    "addedAt": "2026-10-09T07:49:48.248Z"
+  },
+  {
+    "title": "Raging Bull",
+    "year": "1980",
+    "tmdbId": 1578,
+    "addedAt": "2026-10-09T07:51:53.957Z"
+  },
+  {
+    "title": "Planète interdite",
+    "year": "1956",
+    "tmdbId": 830,
+    "addedAt": "2026-10-09T09:07:39.871Z"
+  },
+  {
+    "title": "Ex Machina",
+    "year": "2015",
+    "tmdbId": 264660,
+    "addedAt": "2026-10-09T09:08:44.725Z"
+  },
+  {
+    "title": "District 9",
+    "year": "2009",
+    "tmdbId": 17654,
+    "addedAt": "2026-10-09T09:09:13.993Z"
+  },
+  {
+    "title": "Happy Birthdead",
+    "year": "2017",
+    "tmdbId": 440021,
+    "addedAt": "2026-10-09T09:10:27.842Z"
+  },
+  {
+    "title": "La Nuit des morts-vivants",
+    "year": "1990",
+    "tmdbId": 19185,
+    "addedAt": "2026-10-09T09:11:42.864Z"
+  },
+  {
+    "title": "La Nuit des fous vivants",
+    "year": "1973",
+    "tmdbId": 29425,
+    "addedAt": "2026-10-09T09:12:35.135Z"
+  },
+  {
+    "title": "Psychose II",
+    "year": "1983",
+    "tmdbId": 10576,
+    "addedAt": "2026-10-09T09:13:13.272Z"
+  },
+  {
+    "title": "Nocturama",
+    "year": "2016",
+    "tmdbId": 380623,
+    "addedAt": "2026-10-09T09:13:43.347Z"
+  },
+  {
+    "title": "Les Lois de l'attraction",
+    "year": "2002",
+    "tmdbId": 1809,
+    "addedAt": "2026-10-09T09:14:22.589Z"
+  },
+  {
+    "title": "La Corde",
+    "year": "1948",
+    "tmdbId": 1580,
+    "addedAt": "2026-10-09T09:15:29.494Z"
+  },
+  {
+    "title": "Love Lies Bleeding",
+    "year": "2024",
+    "tmdbId": 948549,
+    "addedAt": "2026-10-09T09:18:26.109Z"
+  },
+  {
+    "title": "L'homme qui en savait trop",
+    "year": "1934",
+    "tmdbId": 8208,
+    "addedAt": "2026-10-09T09:19:21.467Z"
+  },
+  {
+    "title": "Cujo",
+    "year": "1983",
+    "tmdbId": 10489,
+    "addedAt": "2026-10-09T09:20:02.284Z"
+  },
+  {
+    "title": "Les Griffes de la nuit",
+    "year": "1984",
+    "tmdbId": 377,
+    "addedAt": "2026-10-09T09:20:21.870Z"
+  },
+  {
+    "title": "Rocky V",
+    "year": "1990",
+    "tmdbId": 1375,
+    "addedAt": "2026-10-09T09:21:19.266Z"
+  },
+  {
+    "title": "Heretic",
+    "year": "2024",
+    "tmdbId": 1138194,
+    "addedAt": "2026-10-11T14:15:32.341Z"
+  },
+  {
+    "title": "Samhain",
+    "year": "2022",
+    "tmdbId": 771536,
+    "addedAt": "2026-10-14T14:05:51.424Z"
+  },
+  {
+    "title": "Fahrenheit 451",
+    "year": "1966",
+    "tmdbId": 1714,
+    "addedAt": "2026-10-15T10:39:43.099Z"
+  },
+  {
+    "title": "Metropolis",
+    "year": "2001",
+    "tmdbId": 9606,
+    "addedAt": "2026-10-15T10:39:43.344Z"
+  },
+  {
+    "title": "Enter the Void",
+    "year": "2010",
+    "tmdbId": 34647,
+    "addedAt": "2026-10-16T13:03:08.161Z"
+  },
+  {
+    "title": "Climax",
+    "year": "2018",
+    "tmdbId": 507076,
+    "addedAt": "2026-10-16T13:03:25.759Z"
+  },
+  {
+    "title": "La Cité de l'ombre",
+    "year": "2008",
+    "tmdbId": 13600,
+    "addedAt": "2026-10-17T08:16:55.001Z"
+  },
+  {
+    "title": "Guns Akimbo",
+    "year": "2020",
+    "tmdbId": 457335,
+    "addedAt": "2026-10-17T16:35:49.460Z"
+  },
+  {
+    "title": "Emprise",
+    "year": "2002",
+    "tmdbId": 12149,
+    "addedAt": "2026-10-18T15:29:10.772Z"
+  },
+  {
+    "title": "Skeleton Key",
+    "year": "2006",
+    "tmdbId": 27818,
+    "addedAt": "2026-10-18T15:29:33.691Z"
+  },
+  {
+    "title": "Thunder Road",
+    "year": "2018",
+    "tmdbId": 502422,
+    "addedAt": "2026-10-18T15:30:15.590Z"
+  },
+  {
+    "title": "Ip Man",
+    "year": "2008",
+    "tmdbId": 14756,
+    "addedAt": "2026-10-21T04:25:08.428Z"
+  },
+  {
+    "title": "Lumière ! L'aventure commence",
+    "year": "2016",
+    "tmdbId": 411003,
+    "addedAt": "2026-10-21T04:29:02.397Z"
+  },
+  {
+    "title": "Mes meilleures amies",
+    "year": "2011",
+    "tmdbId": 55721,
+    "addedAt": "2026-10-22T17:01:05.672Z"
+  },
+  {
+    "title": "Your Mother Your Mother Your Mother",
+    "year": "2026",
+    "tmdbId": 1437396,
+    "addedAt": "2026-10-23T13:30:00.867Z"
+  },
+  {
+    "title": "Cobra",
+    "year": "1986",
+    "tmdbId": 9874,
+    "addedAt": "2026-10-23T18:09:18.955Z"
+  },
+  {
+    "title": "Dans l'ombre de la Lune",
+    "year": "2007",
+    "tmdbId": 14284,
+    "addedAt": "2026-10-23T18:24:05.658Z"
+  },
+  {
+    "title": "Antichrist",
+    "year": "2009",
+    "tmdbId": 17609,
+    "addedAt": "2026-10-25T16:18:36.006Z"
+  },
+  {
+    "title": "Incantation",
+    "year": "2022",
+    "tmdbId": 864370,
+    "addedAt": "2026-10-25T18:42:15.774Z"
+  },
+  {
+    "title": "Braveheart",
+    "year": "1995",
+    "tmdbId": 197,
+    "addedAt": "2026-10-26T22:44:20.913Z"
+  },
+  {
+    "title": "Apocalypto",
+    "year": "2006",
+    "tmdbId": 1579,
+    "addedAt": "2026-10-26T22:44:52.530Z"
+  },
+  {
+    "title": "Les Ailes du désir",
+    "year": "1987",
+    "tmdbId": 144,
+    "addedAt": "2026-10-27T20:45:14.897Z"
+  },
+  {
+    "title": "Adaptation.",
+    "year": "2002",
+    "tmdbId": 2757,
+    "addedAt": "2026-10-28T11:55:23.067Z"
+  },
+  {
+    "title": "Clayface",
+    "year": "2026",
+    "tmdbId": 1400940,
+    "addedAt": "2026-10-28T16:03:11.837Z"
+  },
+  {
+    "title": "L'Armée des Morts",
+    "year": "2004",
+    "tmdbId": 924,
+    "addedAt": "2026-10-29T17:44:24.225Z"
+  },
+  {
+    "title": "Setan Alas!",
+    "year": "2026",
+    "tmdbId": 1066313,
+    "addedAt": "2026-10-30T20:50:48.528Z"
+  },
+  {
+    "title": "Blood Clots",
+    "year": "2018",
+    "tmdbId": 550845,
+    "addedAt": "2026-10-30T20:51:30.318Z"
+  },
+  {
+    "title": "Boogie Nights",
+    "year": "1997",
+    "tmdbId": 4995,
+    "addedAt": "2026-10-30T20:52:02.436Z"
+  },
+  {
+    "title": "Dark City",
+    "year": "1998",
+    "tmdbId": 2666,
+    "addedAt": "2026-10-30T20:52:31.340Z"
+  },
+  {
+    "title": "Premier Contact",
+    "year": "2016",
+    "tmdbId": 329865,
+    "addedAt": "2026-10-30T20:53:10.604Z"
+  },
+  {
+    "title": "Le Pianiste",
+    "year": "2002",
+    "tmdbId": 423,
+    "addedAt": "2026-10-30T20:53:44.041Z"
+  },
+  {
+    "title": "Sortilège",
+    "year": "2020",
+    "tmdbId": 621151,
+    "addedAt": "2026-10-30T20:54:54.504Z"
+  },
+  {
+    "title": "Foxcatcher",
+    "year": "2014",
+    "tmdbId": 87492,
+    "addedAt": "2026-10-30T20:55:36.163Z"
+  },
+  {
+    "title": "Les Griffes du cauchemar",
+    "year": "1987",
+    "tmdbId": 10072,
+    "addedAt": "2026-11-01T20:21:12.908Z"
+  },
+  {
+    "title": "Profession Tueur",
+    "year": "2018",
+    "tmdbId": 455236,
+    "addedAt": "2026-11-02T17:35:49.814Z"
+  },
+  {
+    "title": "The Cycle",
+    "year": "2026",
+    "tmdbId": 1290418,
+    "addedAt": "2026-11-02T17:44:52.577Z"
+  },
+  {
+    "title": "Hope",
+    "year": "2026",
+    "tmdbId": 1058424,
+    "addedAt": "2026-11-02T17:50:13.272Z"
+  },
+  {
+    "title": "Jeu d'enfant",
+    "year": "1988",
+    "tmdbId": 10585,
+    "addedAt": "2026-11-03T11:12:02.941Z"
+  },
+  {
+    "title": "Paprika",
+    "year": "2006",
+    "tmdbId": 4977,
+    "addedAt": "2026-11-03T11:12:40.474Z"
+  },
+  {
+    "title": "4 de l'apocalypse",
+    "year": "1975",
+    "tmdbId": 48855,
+    "addedAt": "2026-11-03T11:55:47.062Z"
+  },
+  {
+    "title": "Breakdown : Point de rupture",
+    "year": "1997",
+    "tmdbId": 2163,
+    "addedAt": "2026-11-03T11:56:05.358Z"
+  },
+  {
+    "title": "Le Droit de tuer ?",
+    "year": "1996",
+    "tmdbId": 1645,
+    "addedAt": "2026-11-03T17:14:19.266Z"
+  },
+  {
+    "title": "Shaft, les nuits rouges de Harlem",
+    "year": "1971",
+    "tmdbId": 482,
+    "addedAt": "2026-11-04T10:07:17.825Z"
+  },
+  {
+    "title": "Pulsions",
+    "year": "1980",
+    "tmdbId": 11033,
+    "addedAt": "2026-11-04T22:47:22.370Z"
+  },
+  {
+    "title": "Suspiria",
+    "year": "1977",
+    "tmdbId": 11906,
+    "addedAt": "2026-11-04T22:48:25.178Z"
+  },
+  {
+    "title": "Scarface",
+    "year": "1983",
+    "tmdbId": 111,
+    "addedAt": "2026-11-05T10:04:02.202Z"
+  },
+  {
+    "title": "Silenced",
+    "year": "2011",
+    "tmdbId": 81481,
+    "addedAt": "2026-11-05T10:04:49.793Z"
+  },
+  {
+    "title": "Le Mécano de la Générale",
+    "year": "1926",
+    "tmdbId": 961,
+    "addedAt": "2026-11-05T13:21:37.798Z"
+  },
+  {
+    "title": "Avec Django ça va saigner",
+    "year": "1968",
+    "tmdbId": 101744,
+    "addedAt": "2026-11-05T13:22:54.600Z"
+  },
+  {
+    "title": "En attendant la nuit",
+    "year": "2024",
+    "tmdbId": 1158416,
+    "addedAt": "2026-11-07T17:49:56.516Z"
+  },
+  {
+    "title": "Triangle",
+    "year": "2009",
+    "tmdbId": 26466,
+    "addedAt": "2026-11-08T17:35:14.357Z"
+  },
+  {
+    "title": "The Loved Ones",
+    "year": "2010",
+    "tmdbId": 46420,
+    "addedAt": "2026-11-08T17:36:19.712Z"
+  },
+  {
+    "title": "Scrooge",
+    "year": "2026",
+    "tmdbId": 1567605,
+    "addedAt": "2026-11-09T14:51:43.340Z"
+  },
+  {
+    "title": "The Chair",
+    "year": "2022",
+    "tmdbId": 1118403,
+    "addedAt": "2026-11-09T17:56:03.544Z"
+  },
+  {
+    "title": "3h10 pour Yuma",
+    "year": "1957",
+    "tmdbId": 14168,
+    "addedAt": "2026-11-09T20:17:31.745Z"
+  },
+  {
+    "title": "Les 3 Royaumes, 2ème partie",
+    "year": "2009",
+    "tmdbId": 15384,
+    "addedAt": "2026-11-14T11:09:37.100Z"
+  },
+  {
+    "title": "Le Labyrinthe de Pan",
+    "year": "2006",
+    "tmdbId": 1417,
+    "addedAt": "2026-11-15T19:48:55.505Z"
+  },
+  {
+    "title": "Pieta",
+    "year": "2012",
+    "tmdbId": 123377,
+    "addedAt": "2026-11-16T20:47:04.672Z"
+  },
+  {
+    "title": "Nocturnal Animals",
+    "year": "2016",
+    "tmdbId": 340666,
+    "addedAt": "2026-11-16T20:47:31.623Z"
+  },
+  {
+    "title": "L'Ange de la vengeance",
+    "year": "1981",
+    "tmdbId": 22171,
+    "addedAt": "2026-11-16T20:51:00.061Z"
+  },
+  {
+    "title": "Confessions",
+    "year": "2010",
+    "tmdbId": 54186,
+    "addedAt": "2026-11-16T20:51:26.678Z"
+  },
+  {
+    "title": "Good Morning England",
+    "year": "2009",
+    "tmdbId": 18947,
+    "addedAt": "2026-11-17T08:53:43.016Z"
+  },
+  {
+    "title": "Heartland",
+    "year": "1981",
+    "tmdbId": 49427,
+    "addedAt": "2026-11-17T14:17:06.563Z"
+  },
+  {
+    "title": "L'Avocat du diable",
+    "year": "1993",
+    "tmdbId": 4916,
+    "addedAt": "2026-11-17T19:18:45.400Z"
+  },
+  {
+    "title": "L'Associé du diable",
+    "year": "1997",
+    "tmdbId": 1813,
+    "addedAt": "2026-11-17T19:19:59.084Z"
+  },
+  {
+    "title": "Equilibrium",
+    "year": "2002",
+    "tmdbId": 7299,
+    "addedAt": "2026-11-17T19:34:36.645Z"
+  },
+  {
+    "title": "Un Indien dans la ville",
+    "year": "1994",
+    "tmdbId": 11479,
+    "addedAt": "2026-11-20T11:04:47.168Z"
+  },
+  {
+    "title": "Ichi the Killer",
+    "year": "2001",
+    "tmdbId": 9696,
+    "addedAt": "2026-11-21T07:09:02.086Z"
+  },
+  {
+    "title": "The Sadness",
+    "year": "2021",
+    "tmdbId": 776797,
+    "addedAt": "2026-11-21T07:10:19.253Z"
+  },
+  {
+    "title": "Bons baisers d'Hollywood",
+    "year": "1990",
+    "tmdbId": 22414,
+    "addedAt": "2026-11-23T07:01:50.836Z"
+  },
+  {
+    "title": "Milk & Serial",
+    "year": "2024",
+    "tmdbId": 1838510,
+    "addedAt": "2026-11-09T20:28:34.820Z"
+  }
+]

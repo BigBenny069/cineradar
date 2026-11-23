@@ -1,0 +1,40 @@
+{
+  "id": "/",
+  "name": "CinéRadar",
+  "short_name": "CinéRadar",
+  "description": "Séance privée · 2 places",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#13100C",
+  "theme_color": "#13100C",
+  "categories": ["entertainment", "movies"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ajouter un film",
+      "short_name": "Ajouter",
+      "url": "/?view=add",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Rechercher",
+      "short_name": "Rechercher",
+      "url": "/?view=search",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Historique",
+      "short_name": "Historique",
+      "url": "/?view=history",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

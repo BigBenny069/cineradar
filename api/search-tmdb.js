@@ -1,6 +1,21 @@
+import { searchMediatheque } from "./_shared/mediatheque.cjs";
+
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Méthode non autorisée" });
+  }
+
+  // Mode "Médiathèque numérique" : recherche par titre dans son catalogue,
+  // depuis la région Paris de Vercel (le catalogue complet n'est servi qu'aux
+  // visiteurs situés en France). Pas besoin de la clé TMDB.
+  const mn = (req.query.mn || "").trim();
+  if (mn) {
+    try {
+      const out = await searchMediatheque(mn);
+      return res.status(200).json({ region: process.env.VERCEL_REGION || null, ...out });
+    } catch (e) {
+      return res.status(502).json({ region: process.env.VERCEL_REGION || null, error: e.message });
+    }
   }
   const apiKey = process.env.TMDB_API_KEY;
   if (!apiKey) {

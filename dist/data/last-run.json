@@ -1,0 +1,10 @@
+{
+  "startedAt": "2026-11-23T07:03:04.450Z",
+  "finishedAt": "2026-11-23T07:03:47.041Z",
+  "trigger": "push sur movies.json",
+  "status": "success",
+  "moviesChecked": 191,
+  "unmatchedCount": 0,
+  "newlyAvailableCount": 0,
+  "errors": []
+}
