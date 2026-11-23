@@ -570,5 +570,12 @@
     "tmdbId": 45612,
     "reason": "cinemaison",
     "deletedAt": "2026-11-23T14:48:47.728Z"
+  },
+  {
+    "title": "Looper",
+    "year": 2012,
+    "tmdbId": 59967,
+    "reason": "cinemaison",
+    "deletedAt": "2026-11-23T14:49:15.467Z"
   }
 ]
