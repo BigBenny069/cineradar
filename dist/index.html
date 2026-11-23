@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>CinéRadar</title>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Prévient le navigateur qu'il va bientôt devoir parler à ces deux
+         adresses (polices Google, affiches TMDB) pour qu'il commence la
+         prise de contact dès maintenant, plutôt que d'attendre le moment où
+         la ressource est réellement demandée. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://image.tmdb.org" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+
+    <meta name="theme-color" content="#13100C" />
+    <meta name="description" content="CinéRadar — où voir les films de ta watchlist, sur tes abonnements." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CinéRadar" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800&family=Archivo+Black&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600&family=Noto+Serif+Display:wght@500;600&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Special+Elite&display=swap"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { background: #13100C; min-height: 100%; }
+      @font-face {
+        font-family: 'Simpsonfont';
+        src: url('/fonts/Simpsonfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      body { font-family: 'Source Serif 4', serif; -webkit-tap-highlight-color: transparent; }
+      a { text-decoration: none; color: inherit; }
+      button { font-family: inherit; cursor: pointer; background: none; border: none; }
+      #root { min-height: 100vh; }
+
+      @keyframes cr-radar-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes cr-radar-pulse {
+        0%, 100% { opacity: 0.25; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.15); }
+      }
+      @keyframes cr-radar-lock {
+        from { transform: scale(1.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      @keyframes cr-radar-flash {
+        0% { opacity: 0; }
+        35% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      /* Intro « billet de cinéma » */
+      @keyframes cr-ticket-up {
+        from { transform: translateY(110%) rotate(-4deg); opacity: 0; }
+        to { transform: none; opacity: 1; }
+      }
+      @keyframes cr-ticket-scan {
+        0% { top: 0; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+      @keyframes cr-stamp {
+        to { opacity: 0.92; transform: rotate(-12deg) scale(1); }
+      }
+      @keyframes cr-stamp-out {
+        from { opacity: 0.92; transform: rotate(-12deg) scale(1); }
+        to { opacity: 0; transform: rotate(-12deg) scale(1.1); }
+      }
+      @keyframes cr-tear-top {
+        from { transform: none; opacity: 1; }
+        to { transform: translate(-30px, -170px) rotate(-14deg); opacity: 0; }
+      }
+      @keyframes cr-tear-bot {
+        from { transform: none; opacity: 1; }
+        to { transform: translate(34px, 190px) rotate(10deg); opacity: 0; }
+      }
+      @keyframes cr-fade-gone {
+        to { opacity: 0; }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DwxMhI-K.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
