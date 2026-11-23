@@ -530,11 +530,27 @@ export function isReportedUnavailable(movie) {
 // Découpe des fiches pour l'accueil : films disponibles (hors signalés),
 // films à disponibilité douteuse (signalés, du plus récent signalement au
 // plus ancien) et derniers ajouts.
+// Nom de la plateforme posée par le robot pour la Médiathèque numérique.
+export const MEDIATHEQUE_PLATFORM = "Médiathèque numérique";
+
+// Film dont la SEULE plateforme d'abonnement est la Médiathèque numérique :
+// il va dans sa ligne dédiée et pas dans « Disponible ».
+export function isMediathequeOnly(movie) {
+  const ab = movie?.providers?.abonnement || [];
+  return ab.length > 0 && ab.every((p) => p === MEDIATHEQUE_PLATFORM);
+}
+
 export function splitHomeSections(movies) {
   const list = movies || [];
+  const byAvailability = (a, b) => new Date(b.availableSince) - new Date(a.availableSince);
   const available = list
-    .filter((m) => m.availableSince && !isReportedUnavailable(m))
-    .sort((a, b) => new Date(b.availableSince) - new Date(a.availableSince));
+    .filter((m) => m.availableSince && !isReportedUnavailable(m) && !isMediathequeOnly(m))
+    .sort(byAvailability);
+  // Tous les films de la Médiathèque (y compris ceux aussi présents ailleurs,
+  // qui restent en plus dans « Disponible »).
+  const mediatheque = list
+    .filter((m) => (m.providers?.abonnement || []).includes(MEDIATHEQUE_PLATFORM) && !isReportedUnavailable(m))
+    .sort((a, b) => new Date(b.availableSince || 0) - new Date(a.availableSince || 0));
   const doubtful = list
     .filter(isReportedUnavailable)
     .sort((a, b) => String(b.reported.at || "").localeCompare(String(a.reported.at || "")));
@@ -542,7 +558,7 @@ export function splitHomeSections(movies) {
     .filter((m) => m.updatedAt)
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
     .slice(0, 5);
-  return { available, doubtful, lastAdded };
+  return { available, mediatheque, doubtful, lastAdded };
 }
 
 // Second avis Watchmode (champ "wm" posé par le robot) : badge à afficher
@@ -1470,11 +1486,11 @@ function StampBadge({ children, size = "normal" }) {
   );
 }
 
-function CompactCard({ movie, onOpen, colorIndex = 0 }) {
+function CompactCard({ movie, onOpen, colorIndex = 0, forceProvider = null, hideWatchmode = false }) {
   const borderColors = [T.accent, T.accentSecondary, T.accentDim];
   const borderColor = borderColors[colorIndex % borderColors.length];
   const rating = movie.letterboxdRating ?? movie.tmdbRating;
-  const providerLabel = movie.providers?.abonnement?.[0] || movie.providers?.vod?.[0] || null;
+  const providerLabel = forceProvider || movie.providers?.abonnement?.[0] || movie.providers?.vod?.[0] || null;
   const providerLogos = useProviderLogos();
   const providerLogoUrl = providerLabel ? getProviderLogoUrl(providerLogos, providerLabel) : null;
 
@@ -1539,7 +1555,7 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
             </span>
           </div>
         )}
-        <WatchmodeChip movie={movie} compact />
+        {!hideWatchmode && <WatchmodeChip movie={movie} compact />}
       </div>
       <div style={{ padding: "7px 8px 9px" }}>
         <div
@@ -1561,6 +1577,27 @@ function CompactCard({ movie, onOpen, colorIndex = 0 }) {
         <div style={{ fontFamily: F.mono, fontSize: 8.5, color: T.muted, marginTop: 4, lineHeight: 1.4 }}>
           {providerLabel && (
             <span style={{ color: T.accent }}>
+              {!providerLogoUrl && providerLabel === MEDIATHEQUE_PLATFORM && (
+                <span
+                  aria-hidden="true"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 16,
+                    height: 16,
+                    borderRadius: 4,
+                    background: "#1F3A5F",
+                    color: "#FFFFFF",
+                    fontSize: 7,
+                    fontWeight: 700,
+                    verticalAlign: "-4px",
+                    marginRight: 5,
+                  }}
+                >
+                  MN
+                </span>
+              )}
               {providerLogoUrl && (
                 <img
                   src={providerLogoUrl}
@@ -2646,6 +2683,90 @@ export function filterMoviesByTitle(movies, query) {
     .map(({ m }) => m);
 }
 
+// Ligne spéciale « Médiathèque numérique » : bandeau teinté avec « Tout voir »
+// qui déplie tous les films en grille (puis « Réduire »). Couleurs du bandeau
+// fixes (bleu nuit) pour rester lisibles quel que soit le thème.
+function MediathequeBand({ movies, onOpen }) {
+  const [expanded, setExpanded] = useState(false);
+  if (!movies || movies.length === 0) return null;
+  return (
+    <div
+      data-testid="mediatheque-band"
+      style={{
+        marginTop: 22,
+        padding: "14px 0 14px 14px",
+        borderRadius: 14,
+        background: "rgba(31,58,95,0.16)",
+        border: "1px solid rgba(31,58,95,0.35)",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 12, paddingRight: 14, marginBottom: 12 }}>
+        <div
+          aria-hidden="true"
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 9,
+            background: "#1F3A5F",
+            color: "#FFFFFF",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: F.mono,
+            fontSize: 14,
+            fontWeight: 700,
+            flexShrink: 0,
+          }}
+        >
+          MN
+        </div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontFamily: F.marquee, fontSize: 18, lineHeight: 1.1, color: T.cream }}>{MEDIATHEQUE_PLATFORM}</div>
+          <div style={{ fontFamily: F.mono, fontSize: 9.5, letterSpacing: 0.4, color: T.muted, marginTop: 3 }}>
+            {movies.length} FILM{movies.length > 1 ? "S" : ""} · AVEC TA CARTE DE BIBLIOTHÈQUE
+          </div>
+        </div>
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          style={{
+            background: "#1F3A5F",
+            color: "#FFFFFF",
+            fontFamily: F.mono,
+            fontSize: 10.5,
+            letterSpacing: 0.6,
+            padding: "0 12px",
+            minHeight: 44,
+            borderRadius: 8,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {expanded ? "RÉDUIRE ↑" : "TOUT VOIR →"}
+        </button>
+      </div>
+      <div
+        style={
+          expanded
+            ? { display: "flex", flexWrap: "wrap", gap: 10, paddingRight: 14 }
+            : {
+                display: "flex",
+                gap: 10,
+                overflowX: "auto",
+                paddingRight: 14,
+                paddingBottom: 4,
+                WebkitMaskImage: "linear-gradient(90deg, #000 calc(100% - 36px), transparent)",
+                maskImage: "linear-gradient(90deg, #000 calc(100% - 36px), transparent)",
+              }
+        }
+      >
+        {movies.map((m, i) => (
+          <CompactCard key={m.tmdbId} movie={m} onOpen={onOpen} colorIndex={i} forceProvider={MEDIATHEQUE_PLATFORM} hideWatchmode />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd, onRefresh, refreshing, query, onQueryChange }) {
   const maxWidth = useResponsiveMaxWidth();
   const searchActive = (query || "").trim().length > 0;
@@ -2653,7 +2774,7 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
   // Toutes les fiches disponibles sur un abonnement, par ordre chronologique
   // (plus récente disponibilité en premier) — plus de limite à 5, sur
   // demande explicite : on veut voir toute la liste, pas juste un aperçu.
-  const { available: recentlyAvailable, doubtful, lastAdded } = splitHomeSections(movies);
+  const { available: recentlyAvailable, mediatheque, doubtful, lastAdded } = splitHomeSections(movies);
 
   const isSpringfield = CURRENT_THEME === "springfield";
 
@@ -2839,6 +2960,8 @@ function HomeView({ movies, onOpen, loading, error, offline, lastSyncedAt, onAdd
               onOpen={onOpen}
               emptyText="Rien de nouveau sur tes abonnements pour l'instant."
             />
+
+            <MediathequeBand movies={mediatheque} onOpen={onOpen} />
 
             {doubtful.length > 0 && (
               <HorizontalRow
