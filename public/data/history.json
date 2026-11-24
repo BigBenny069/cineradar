@@ -1434,12 +1434,6 @@
     "addedAt": "2026-11-04T22:47:22.370Z"
   },
   {
-    "title": "Suspiria",
-    "year": "1977",
-    "tmdbId": 11906,
-    "addedAt": "2026-11-04T22:48:25.178Z"
-  },
-  {
     "title": "Scarface",
     "year": "1983",
     "tmdbId": 111,
@@ -1624,5 +1618,11 @@
     "year": "2014",
     "tmdbId": 242090,
     "addedAt": "2026-11-23T14:44:59.477Z"
+  },
+  {
+    "title": "Suspiria",
+    "year": "2018",
+    "tmdbId": 361292,
+    "addedAt": "2026-11-24T16:49:12.907Z"
   }
 ]

@@ -577,5 +577,13 @@
     "tmdbId": 59967,
     "reason": "cinemaison",
     "deletedAt": "2026-11-23T14:49:15.467Z"
+  },
+  {
+    "title": "Suspiria",
+    "year": 1977,
+    "tmdbId": 11906,
+    "reason": "watchlist",
+    "wantedBy": "benoit",
+    "deletedAt": "2026-11-24T16:49:22.762Z"
   }
 ]

@@ -1469,16 +1469,6 @@
     "tmdbId": 482
   },
   {
-    "title": "Suspiria",
-    "year": 1977,
-    "director": "",
-    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
-    "tmdbId": 11906,
-    "wantedBy": "benoit",
-    "addedAt": "2026-11-04T22:48:25.178Z",
-    "updatedAt": "2026-11-04T22:48:25.178Z"
-  },
-  {
     "title": "Scarface",
     "year": 1983,
     "director": "Brian De Palma",
@@ -1703,5 +1693,15 @@
     "addedAt": "2026-11-23T14:44:59.477Z",
     "updatedAt": "2026-11-23T14:44:59.477Z",
     "tmdbId": 242090
+  },
+  {
+    "title": "Suspiria",
+    "year": 2018,
+    "director": "",
+    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
+    "tmdbId": 361292,
+    "wantedBy": "benoit",
+    "addedAt": "2026-11-24T16:49:12.907Z",
+    "updatedAt": "2026-11-24T16:49:12.907Z"
   }
 ]
