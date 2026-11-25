@@ -8312,5 +8312,45 @@
     "addedAt": "2026-11-25T06:49:01.951Z",
     "updatedAt": "2026-11-25T06:49:01.951Z",
     "lastChecked": "2026-11-25T06:50:47.783Z"
+  },
+  {
+    "tmdbId": 19833,
+    "title": "In the Loop",
+    "year": "2009",
+    "director": "Armando Iannucci",
+    "poster": "https://image.tmdb.org/t/p/w500/a32XwQTvbS7LXWuCT6rHCYZFT2n.jpg",
+    "synopsis": "Entre Londres et Washington, les gouvernements britannique et américain se livrent à de folles tractations dans la dernière ligne droite avant une possible invasion de l'Irak… Dans une interview, l'ambitieux mais maladroit Secrétaire d’État britannique au développement international, Simon Foster, commet une gaffe qui va provoquer un vent de panique dans les arcanes du pouvoir et des médias, des deux côtés de l'Atlantique, à l'approche d'un vote décisif à l'ONU…",
+    "genres": [
+      "Comédie"
+    ],
+    "cast": [
+      "Peter Capaldi",
+      "Tom Hollander",
+      "Gina McKee",
+      "James Gandolfini",
+      "Chris Addison"
+    ],
+    "tmdbRating": 7.007,
+    "tmdbVotes": 835,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1226774",
+    "letterboxdUrl": "https://letterboxd.com/film/in-the-loop/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-25T06:51:58.328Z",
+    "updatedAt": "2026-11-25T06:51:58.328Z",
+    "lastChecked": "2026-11-25T06:51:59.977Z"
   }
 ]
