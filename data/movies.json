@@ -1721,5 +1721,14 @@
     "wantedBy": "benoit",
     "addedAt": "2026-11-25T06:49:01.951Z",
     "updatedAt": "2026-11-25T06:49:01.951Z"
+  },
+  {
+    "title": "In the Loop",
+    "year": 2009,
+    "director": "Armando Iannucci",
+    "letterboxdUrl": "https://letterboxd.com/film/in-the-loop/",
+    "addedAt": "2026-11-25T06:51:58.328Z",
+    "updatedAt": "2026-11-25T06:51:58.328Z",
+    "tmdbId": 19833
   }
 ]
