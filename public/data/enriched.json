@@ -8352,5 +8352,41 @@
     "addedAt": "2026-11-25T06:51:58.328Z",
     "updatedAt": "2026-11-25T06:51:58.328Z",
     "lastChecked": "2026-11-25T06:51:59.977Z"
+  },
+  {
+    "tmdbId": 586,
+    "title": "Des hommes d'influence",
+    "year": "1997",
+    "director": "Barry Levinson",
+    "poster": "https://image.tmdb.org/t/p/w500/jlkl12QX5SSspUg2rmUpRuARZ2z.jpg",
+    "synopsis": "Pour sauver le candidat Président des États-Unis, éclaboussé par un scandale de mœurs quelques jours avant l'élection présidentielle, ses conseillers décident, pour détourner l'attention des électeurs, d'inventer une guerre dans quelque coin obscur de la vieille Europe.",
+    "genres": [
+      "Comédie",
+      "Drame"
+    ],
+    "cast": [
+      "Dustin Hoffman",
+      "Robert De Niro",
+      "Anne Heche",
+      "Woody Harrelson",
+      "Denis Leary"
+    ],
+    "tmdbRating": 6.927,
+    "tmdbVotes": 1124,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0120885",
+    "letterboxdUrl": "https://letterboxd.com/film/wag-the-dog/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Canal VOD"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-25T06:52:46.828Z",
+    "updatedAt": "2026-11-25T06:52:46.828Z",
+    "lastChecked": "2026-11-25T06:52:48.584Z"
   }
 ]
