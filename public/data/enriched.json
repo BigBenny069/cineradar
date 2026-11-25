@@ -8242,5 +8242,47 @@
     "addedAt": "2026-11-25T06:46:47.005Z",
     "updatedAt": "2026-11-25T06:46:47.005Z",
     "lastChecked": "2026-11-25T06:46:49.098Z"
+  },
+  {
+    "tmdbId": 189068,
+    "title": "Nicky Larson, City Hunter : Bay City Wars",
+    "year": "1990",
+    "director": "こだま兼嗣",
+    "poster": "https://image.tmdb.org/t/p/w500/jZNNdnnWT2v7auoAtXJHuqpaLyz.jpg",
+    "synopsis": "Alors que Miki et Kaori assistent à l'inauguration du complexe de Bay City, Ryô, qui a perdu son carton d'invitation, erre dans les rues en quête de l'adresse de la réception. Il tombe alors sur une charmante jeune femme qui se révèle être poursuivie par Falcon. Profitant de l'intervention de Ryô, elle s'enfuit à bord d'une luxueuse Rolls Royce. Les deux amis se lancent alors à sa poursuite ce qui les mènent tout droit à l'hôtel de Bay City…",
+    "genres": [
+      "Action",
+      "Comédie",
+      "Animation",
+      "Thriller",
+      "Crime"
+    ],
+    "cast": [
+      "Akira Kamiya",
+      "伊倉一恵",
+      "Yoko Asagami",
+      "Tessyo Genda",
+      "Miki Itō"
+    ],
+    "tmdbRating": 6.282,
+    "tmdbVotes": 39,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0099272",
+    "letterboxdUrl": "https://letterboxd.com/film/city-hunter-bay-city-wars/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Amazon Prime Video",
+        "Netflix Standard with Ads",
+        "Amazon Prime Video with Ads"
+      ],
+      "vod": []
+    },
+    "availableSince": "2026-11-25T06:47:03.666Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-25T06:47:01.752Z",
+    "updatedAt": "2026-11-25T06:47:01.752Z",
+    "lastChecked": "2026-11-25T06:47:03.667Z"
   }
 ]
