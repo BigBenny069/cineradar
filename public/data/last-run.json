@@ -1,11 +1,11 @@
 {
-  "startedAt": "2026-11-26T07:35:27.367Z",
-  "finishedAt": "2026-11-26T07:37:11.822Z",
+  "startedAt": "2026-11-26T07:47:27.525Z",
+  "finishedAt": "2026-11-26T07:49:19.278Z",
   "trigger": "push sur movies.json",
   "status": "error",
-  "moviesChecked": 198,
+  "moviesChecked": 199,
   "unmatchedCount": 1,
-  "newlyAvailableCount": 0,
+  "newlyAvailableCount": 1,
   "errors": [
     {
       "title": "Milk & Serial",
