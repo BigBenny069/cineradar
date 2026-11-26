@@ -8240,54 +8240,6 @@
     }
   },
   {
-    "tmdbId": 11906,
-    "title": "Suspiria",
-    "year": "1977",
-    "director": "Dario Argento",
-    "poster": "https://image.tmdb.org/t/p/w500/bfLwAQ27hgSabVsyHe1cT1dHNWp.jpg",
-    "synopsis": "Suzy, une jeune américaine, arrive à Fribourg afin de suivre des cours dans une académie de danse prestigieuse. L’atmosphère générale dans l’école surprend la jeune fille, c’est une atmosphère étrange et inquiétante. Puis cela tourne au cauchemar lorsque surviennent des accidents terribles : un jeune élève est assassiné, un pianiste aveugle est égorgé par son propre chien… Suzy est par ailleurs souvent prise de malaises. Elle apprend que l’académie était autrefois la demeure d’une terrible sorcière surnommée la Mère des Soupirs. Et si l’école était encore sous son emprise ?",
-    "genres": [
-      "Horreur",
-      "Mystère"
-    ],
-    "cast": [
-      "Jessica Harper",
-      "Stefania Casini",
-      "Flavio Bucci",
-      "Miguel Bosé",
-      "Barbara Magnolfi"
-    ],
-    "tmdbRating": 7.449,
-    "tmdbVotes": 3329,
-    "letterboxdRating": 3.73,
-    "letterboxdVotes": 583803,
-    "imdbId": "tt0076786",
-    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
-    "providers": {
-      "abonnement": [
-        "Canal+",
-        "Médiathèque numérique"
-      ],
-      "vod": [
-        "Molotov TV",
-        "SFR Play",
-        "Orange VOD",
-        "Sooner",
-        "LaCinetek",
-        "ARTE VOD"
-      ]
-    },
-    "mn": {
-      "url": "https://vod.mediatheque-numerique.com/films/suspiria",
-      "checkedAt": "2026-11-26T16:10:55.678Z"
-    },
-    "availableSince": "2026-11-26T16:10:55.678Z",
-    "wantedBy": "benoit",
-    "addedAt": "2026-11-25T06:49:01.951Z",
-    "updatedAt": "2026-11-25T06:49:01.951Z",
-    "lastChecked": "2026-11-26T16:10:55.854Z"
-  },
-  {
     "tmdbId": 19833,
     "title": "In the Loop",
     "year": "2009",
