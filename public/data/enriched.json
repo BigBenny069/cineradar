@@ -8412,5 +8412,50 @@
     "addedAt": "2026-11-26T07:44:51.780Z",
     "updatedAt": "2026-11-26T07:44:51.780Z",
     "lastChecked": "2026-11-26T17:05:31.506Z"
+  },
+  {
+    "tmdbId": 361292,
+    "title": "Suspiria",
+    "year": "2018",
+    "director": "Luca Guadagnino",
+    "poster": "https://image.tmdb.org/t/p/w500/tmPhFQBUsxMuDUmGr0ysKTZAQEg.jpg",
+    "synopsis": "Susie Bannion, jeune danseuse américaine, débarque à Berlin dans l'espoir d'intégrer la célèbre compagnie de danse Helena Markos. Madame Blanc, sa chorégraphe, impressionnée par son talent, promeut Susie danseuse étoile. Tandis que les répétitions du ballet final s’intensifient, les deux femmes deviennent de plus en plus proches. C’est alors que Susie commence à faire de terrifiantes découvertes sur la compagnie et celles qui la dirigent…",
+    "genres": [
+      "Horreur",
+      "Mystère",
+      "Drame"
+    ],
+    "cast": [
+      "Dakota Johnson",
+      "Tilda Swinton",
+      "Mia Goth",
+      "Angela Winkler",
+      "Ingrid Caven"
+    ],
+    "tmdbRating": 6.882,
+    "tmdbVotes": 2891,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt1034415",
+    "letterboxdUrl": "https://letterboxd.com/film/suspiria-2018/",
+    "providers": {
+      "abonnement": [],
+      "vod": [
+        "Apple TV Store",
+        "Orange VOD",
+        "Canal VOD",
+        "Sooner",
+        "Amazon Video",
+        "Pathé Home",
+        "VIVA by videofutur",
+        "Premiere Max",
+        "YouTube"
+      ]
+    },
+    "availableSince": null,
+    "wantedBy": null,
+    "addedAt": "2026-11-26T17:40:50.271Z",
+    "updatedAt": "2026-11-26T17:40:50.271Z",
+    "lastChecked": "2026-11-26T17:40:52.143Z"
   }
 ]
