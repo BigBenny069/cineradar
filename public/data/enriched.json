@@ -8412,5 +8412,47 @@
       "id": 1686394,
       "checkedAt": "2026-11-26T07:37:11.511Z"
     }
+  },
+  {
+    "tmdbId": 18311,
+    "title": "Nos années sauvages",
+    "year": "1990",
+    "director": "Wong Kar-wai",
+    "poster": "https://image.tmdb.org/t/p/w500/gljoaQxJzDUUF9YiNRNx1TQpQtF.jpg",
+    "synopsis": "Dans les années 60 à Hong Kong, Yuddy, élevé par sa mère adoptive, indolent et charmeur, se laisse bercer par la vie, passant de bras en bras, seulement alarmé quand on lui propose le mariage. Narcissique, obsédé par le besoin qu'il éprouve de découvrir ses origines, Yuddy quitte amis, maîtresses et mère pour partir aux Philippines à la recherche de son passé.",
+    "genres": [
+      "Crime",
+      "Drame",
+      "Romance"
+    ],
+    "cast": [
+      "Leslie Cheung",
+      "Maggie Cheung",
+      "Andy Lau",
+      "Carina Lau",
+      "Jacky Cheung"
+    ],
+    "tmdbRating": 7.3,
+    "tmdbVotes": 639,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt0101258",
+    "letterboxdUrl": "https://letterboxd.com/film/ah-fei-jing-juen/",
+    "providers": {
+      "abonnement": [
+        "Cine+ OCS Amazon Channel "
+      ],
+      "vod": [
+        "Molotov TV",
+        "SFR Play",
+        "Orange VOD",
+        "Canal VOD"
+      ]
+    },
+    "availableSince": "2026-11-26T07:44:53.871Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-26T07:44:51.780Z",
+    "updatedAt": "2026-11-26T07:44:51.780Z",
+    "lastChecked": "2026-11-26T07:44:53.871Z"
   }
 ]
