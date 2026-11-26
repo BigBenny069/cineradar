@@ -1,10 +1,15 @@
 {
-  "startedAt": "2026-11-25T16:36:16.476Z",
-  "finishedAt": "2026-11-25T16:37:59.460Z",
-  "trigger": "automatique (6h)",
-  "status": "success",
+  "startedAt": "2026-11-26T07:35:27.367Z",
+  "finishedAt": "2026-11-26T07:37:11.822Z",
+  "trigger": "push sur movies.json",
+  "status": "error",
   "moviesChecked": 198,
-  "unmatchedCount": 0,
+  "unmatchedCount": 1,
   "newlyAvailableCount": 0,
-  "errors": []
+  "errors": [
+    {
+      "title": "Milk & Serial",
+      "message": "TMDB a répondu 404 pour le film 1838510"
+    }
+  ]
 }
