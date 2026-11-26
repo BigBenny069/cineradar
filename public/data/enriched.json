@@ -8394,5 +8394,42 @@
     "addedAt": "2026-11-25T06:52:46.828Z",
     "updatedAt": "2026-11-25T06:52:46.828Z",
     "lastChecked": "2026-11-25T16:37:59.450Z"
+  },
+  {
+    "tmdbId": 989662,
+    "title": "A Different Man",
+    "year": "2024",
+    "director": "Aaron Schimberg",
+    "poster": "https://image.tmdb.org/t/p/w500/zVNgmlgFSnTm9GbT987pU9hcbDt.jpg",
+    "synopsis": "Edward, un aspirant acteur, subit une procédure médicale radicale afin de transformer drastiquement son apparence. Son nouveau visage de rêve tourne rapidement au cauchemar alors qu’il perd le rôle qu'il était destiné à jouer et devient obsédé par l'idée de récupérer ce qu'il a perdu.",
+    "genres": [
+      "Comédie",
+      "Drame"
+    ],
+    "cast": [
+      "Sebastian Stan",
+      "Renate Reinsve",
+      "Adam Pearson",
+      "Miles G. Jackson",
+      "Patrick Wang"
+    ],
+    "tmdbRating": 6.892,
+    "tmdbVotes": 544,
+    "letterboxdRating": null,
+    "letterboxdVotes": null,
+    "imdbId": "tt21097228",
+    "letterboxdUrl": "https://letterboxd.com/film/a-different-man/",
+    "providers": {
+      "abonnement": [
+        "Netflix",
+        "Netflix Standard with Ads"
+      ],
+      "vod": []
+    },
+    "availableSince": "2026-11-26T07:33:09.069Z",
+    "wantedBy": null,
+    "addedAt": "2026-11-26T07:33:06.852Z",
+    "updatedAt": "2026-11-26T07:33:06.852Z",
+    "lastChecked": "2026-11-26T07:33:09.069Z"
   }
 ]
